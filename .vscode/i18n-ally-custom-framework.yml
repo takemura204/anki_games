@@ -1,0 +1,11 @@
+languageIds:
+  - dart
+
+usageMatchRegex:
+  # t.key.path形式（slang）- tが単独の変数名の場合のみマッチ
+  - "(?<![\\w.])t\\.([a-zA-Z][a-zA-Z0-9]*(?:\\.[a-zA-Z][a-zA-Z0-9]*)*)(?![\\w])"
+
+refactorTemplates:
+  - "t.$1"
+
+monopoly: true

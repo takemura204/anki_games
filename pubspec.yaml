@@ -1,0 +1,52 @@
+name: mono_games
+description: "A new Flutter project."
+
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # 状態管理
+  flutter_riverpod: 
+  riverpod_annotation: 
+  hooks_riverpod: 
+  flutter_hooks:
+  freezed_annotation: 
+  json_annotation: 
+  slang: 
+  slang_flutter: 
+
+  #コード品質管理
+  very_good_analysis:
+
+  #UI
+  cupertino_icons:
+  flex_color_scheme: ^8.3.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # 自動生成
+  build_runner: 
+  riverpod_generator: 
+  freezed:
+  json_serializable:
+  envied_generator: 
+  slang_build_runner: 
+
+flutter:
+  uses-material-design: true
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
+        - asset: assets/fonts/Poppins-Bold.ttf

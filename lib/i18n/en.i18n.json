@@ -1,0 +1,13 @@
+{
+  "appTitle": "Mono Games",
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "ok": "OK",
+    "cancel": "Cancel"
+  },
+  "home": {
+    "title": "Home"
+  }
+}
