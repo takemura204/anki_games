@@ -24,11 +24,15 @@ dependencies:
   slang_flutter: 
 
   #コード品質管理
-  very_good_analysis:
+  pedantic_mono:
 
   #UI
   cupertino_icons:
-  flex_color_scheme: ^8.3.1
+  flex_color_scheme: ^8.4.0
+  shared_preferences:
+  flame: ^1.35.0
+  flame_forge2d: ^0.19.2+3
+  sensors_plus: ^7.0.0
 
 dev_dependencies:
   flutter_test:

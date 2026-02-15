@@ -1,3 +1,6 @@
 {
-    "dart.flutterSdkPath": "/Users/takemurataiki/.local/share/mise/installs/flutter/3.38.4-stable"
+    "dart.flutterSdkPath": "/Users/takemurataiki/.local/share/mise/installs/flutter/3.38.4-stable",
+    "i18n-ally.localesPaths": [
+        "lib/i18n"
+    ]
 }
