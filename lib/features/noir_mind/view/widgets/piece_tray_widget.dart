@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:mono_games/features/noir_mind/model/game_theme.dart';
 import 'package:mono_games/features/noir_mind/model/piece.dart';
 import 'package:mono_games/features/noir_mind/view/widgets/piece_widget.dart';
 import 'package:mono_games/features/noir_mind/view_model/noir_mind_view_model.dart';
@@ -7,10 +8,17 @@ import 'package:mono_games/features/noir_mind/view_model/noir_mind_view_model.da
 /// 画面下部に3つのドラッグ可能なピースを表示するトレイ。
 class PieceTrayWidget extends ConsumerWidget {
   /// ピーストレイを作成する。
-  const PieceTrayWidget({required this.cellSize, super.key});
+  const PieceTrayWidget({
+    required this.cellSize,
+    required this.theme,
+    super.key,
+  });
 
   /// 各セルの論理ピクセルサイズ。
   final double cellSize;
+
+  /// 現在のゲームテーマ。
+  final GameTheme theme;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -29,6 +37,7 @@ class PieceTrayWidget extends ConsumerWidget {
                 piece: pieces[i],
                 index: i,
                 cellSize: cellSize,
+                theme: theme,
               ),
             ),
         ],
@@ -42,12 +51,14 @@ class _AnimatedPieceSlot extends StatefulWidget {
     required this.piece,
     required this.index,
     required this.cellSize,
+    required this.theme,
     super.key,
   });
 
   final Piece? piece;
   final int index;
   final double cellSize;
+  final GameTheme theme;
 
   @override
   State<_AnimatedPieceSlot> createState() => _AnimatedPieceSlotState();
@@ -125,6 +136,7 @@ class _AnimatedPieceSlotState extends State<_AnimatedPieceSlot>
           piece: piece,
           pieceIndex: widget.index,
           cellSize: widget.cellSize * 0.6,
+          theme: widget.theme,
         ),
       ),
     );

@@ -1,10 +1,15 @@
+import 'dart:async' show unawaited;
 import 'dart:math';
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mono_games/features/noir_mind/model/board.dart';
+import 'package:mono_games/features/noir_mind/model/game_theme.dart';
 import 'package:mono_games/features/noir_mind/model/piece.dart';
+import 'package:mono_games/features/noir_mind/service/audio_service.dart';
+import 'package:mono_games/features/noir_mind/view/painters/cell_renderer.dart';
 import 'package:mono_games/features/noir_mind/view_model/noir_mind_view_model.dart';
 
 /// ドラッグフィードバックの上方オフセット（ボードセル数）。
@@ -13,10 +18,17 @@ const _dragOffsetCells = 2.0;
 /// 8x8のゲームボード。ピースのドロップを受け付ける。
 class BoardWidget extends ConsumerStatefulWidget {
   /// ボードウィジェットを作成する。
-  const BoardWidget({required this.cellSize, super.key});
+  const BoardWidget({
+    required this.cellSize,
+    required this.theme,
+    super.key,
+  });
 
   /// 各セルの論理ピクセルサイズ。
   final double cellSize;
+
+  /// 現在のゲームテーマ。
+  final GameTheme theme;
 
   @override
   ConsumerState<BoardWidget> createState() => _BoardWidgetState();
@@ -43,6 +55,17 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
   // 消去予定セルのパルスアニメーション
   late final AnimationController _pulseController;
 
+  // フラッシュオーバーレイ（flash/glitch用）
+  late final AnimationController _flashController;
+
+  // 波紋エフェクト（ripple用）
+  final List<_Ripple> _ripples = [];
+  late final AnimationController _rippleController;
+
+  // 遅延破壊用セル遅延マップ
+  Map<(int, int), double> _cellDelays = const {};
+  double _maxDelay = 0;
+
   // フローティングスコア
   final List<_FloatingScore> _floatingScores = [];
 
@@ -50,91 +73,152 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
   final List<_Particle> _particles = [];
   late final AnimationController _particleController;
 
+  // セルシェーダーアニメーション用クロック
+  late final AnimationController _clockController;
+  late final DateTime _clockStart;
+  Map<CellRenderMode, FragmentShader>? _cellShaders;
+
+  // ライト/ダークモード（colorsFor の引数に使用）
+  Brightness _brightness = Brightness.light;
+
   @override
   void initState() {
     super.initState();
+    _initAnimations();
+    unawaited(_loadShaders());
+  }
+
+  Future<void> _loadShaders() async {
+    final programs = await Future.wait([
+      FragmentProgram.fromAsset('shaders/noir_mind/glassmorphism.frag'),
+      FragmentProgram.fromAsset('shaders/noir_mind/wireframe.frag'),
+      FragmentProgram.fromAsset('shaders/noir_mind/matte.frag'),
+      FragmentProgram.fromAsset('shaders/noir_mind/bubble.frag'),
+      FragmentProgram.fromAsset('shaders/noir_mind/ice.frag'),
+      FragmentProgram.fromAsset('shaders/noir_mind/slate.frag'),
+      FragmentProgram.fromAsset('shaders/noir_mind/slime.frag'),
+    ]);
+    if (!mounted) {
+      return;
+    }
+    setState(() {
+      _cellShaders = {
+        CellRenderMode.glassmorphism: programs[0].fragmentShader(),
+        CellRenderMode.wireframe: programs[1].fragmentShader(),
+        CellRenderMode.matte: programs[2].fragmentShader(),
+        CellRenderMode.bubble: programs[3].fragmentShader(),
+        CellRenderMode.ice: programs[4].fragmentShader(),
+        CellRenderMode.slate: programs[5].fragmentShader(),
+        CellRenderMode.slime: programs[6].fragmentShader(),
+      };
+    });
+  }
+
+  void _initAnimations() {
+    final anims = widget.theme.animations;
+    final intensity = anims.shakeIntensity;
 
     _shakeController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 300),
+      duration: anims.shakeDuration,
     );
     _shakeAnimation = TweenSequence<double>([
       TweenSequenceItem(
-        tween: Tween(begin: 0, end: 4),
+        tween: Tween(begin: 0, end: intensity),
         weight: 1,
       ),
       TweenSequenceItem(
-        tween: Tween(begin: 4, end: -4),
+        tween: Tween(begin: intensity, end: -intensity),
         weight: 1,
       ),
       TweenSequenceItem(
-        tween: Tween(begin: -4, end: 2),
+        tween: Tween(begin: -intensity, end: intensity * 0.5),
         weight: 1,
       ),
       TweenSequenceItem(
-        tween: Tween(begin: 2, end: -1),
+        tween: Tween(begin: intensity * 0.5, end: -intensity * 0.25),
         weight: 1,
       ),
       TweenSequenceItem(
-        tween: Tween(begin: -1, end: 0),
+        tween: Tween(begin: -intensity * 0.25, end: 0),
         weight: 1,
       ),
     ]).animate(
       CurvedAnimation(
         parent: _shakeController,
-        curve: Curves.easeOut,
+        curve: anims.placementCurve,
       ),
     );
 
     _clearController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 400),
+      duration: anims.clearDuration,
     );
     _clearAnimation = Tween<double>(begin: 1, end: 0).animate(
       CurvedAnimation(
         parent: _clearController,
-        curve: Curves.easeOut,
+        curve: anims.placementCurve,
       ),
     );
 
     _bounceController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 300),
+      duration: anims.bounceDuration,
     );
-    _bounceAnimation = TweenSequence<double>([
-      TweenSequenceItem(
-        tween: Tween(begin: 0, end: 1.12),
-        weight: 3,
-      ),
-      TweenSequenceItem(
-        tween: Tween(begin: 1.12, end: 0.96),
-        weight: 2,
-      ),
-      TweenSequenceItem(
-        tween: Tween(begin: 0.96, end: 1),
-        weight: 1,
-      ),
-    ]).animate(
+    _bounceAnimation = _buildBounceSequence(anims.bounceSequence).animate(
       CurvedAnimation(
         parent: _bounceController,
-        curve: Curves.easeOut,
+        curve: anims.placementCurve,
       ),
     );
 
-    // 消去予定セルのパルス（ゆっくり明滅、0.8秒周期）
     _pulseController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 800),
+      duration: anims.pulseDuration,
     )..addListener(() {
         setState(() {});
       });
 
     _particleController = AnimationController(
       vsync: this,
+      duration: anims.clearDuration,
+    )..addListener(() {
+        setState(() {});
+      });
+
+    _flashController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 200),
+    )..addListener(() {
+        setState(() {});
+      });
+
+    _rippleController = AnimationController(
+      vsync: this,
       duration: const Duration(milliseconds: 600),
     )..addListener(() {
         setState(() {});
       });
+
+    _clockController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 60),
+    )..repeat();
+    _clockStart = DateTime.now();
+  }
+
+  /// バウンスシーケンス値リストからTweenSequenceを構築する。
+  Animatable<double> _buildBounceSequence(List<double> values) {
+    final items = <TweenSequenceItem<double>>[];
+    for (var i = 0; i < values.length - 1; i++) {
+      items.add(
+        TweenSequenceItem(
+          tween: Tween(begin: values[i], end: values[i + 1]),
+          weight: 1,
+        ),
+      );
+    }
+    return TweenSequence<double>(items);
   }
 
   @override
@@ -144,13 +228,17 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
     _bounceController.dispose();
     _pulseController.dispose();
     _particleController.dispose();
+    _flashController.dispose();
+    _rippleController.dispose();
+    _clockController.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    _brightness = Theme.of(context).brightness;
     final gameState = ref.watch(noirMindViewModelProvider);
-    final colorScheme = Theme.of(context).colorScheme;
+    final theme = widget.theme;
     final boardSize = widget.cellSize * Board.size;
     // DragTarget用の下方拡張領域
     final dragExtension = widget.cellSize * _dragOffsetCells;
@@ -173,6 +261,14 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
               ..reset()
               ..forward();
             HapticFeedback.lightImpact();
+            // 配置位置に応じたステレオパンで再生
+            final avgCol = next.map((cell) => cell.$2).reduce((a, b) => a + b) /
+                next.length;
+            final pan = _columnToPan(avgCol.round());
+            AudioService.instance.playWithPan(
+              widget.theme.sounds.placePath,
+              pan: pan,
+            );
           }
         },
       );
@@ -181,9 +277,8 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
     final canPlace = _canPlaceHover();
 
     // 消去予定セルを計算（配置可能な場合のみ）
-    final clearPreviewCells = canPlace
-        ? _computeClearPreview(gameState)
-        : const <(int, int)>{};
+    final clearPreviewCells =
+        canPlace ? _computeClearPreview(gameState) : const <(int, int)>{};
 
     // パルスアニメーションの制御（消去予定がある時のみ再生）
     if (clearPreviewCells.isNotEmpty) {
@@ -227,8 +322,13 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
                 animation: Listenable.merge([
                   _clearAnimation,
                   _bounceAnimation,
+                  _clockController,
                 ]),
                 builder: (context, _) {
+                  final shaderTime = DateTime.now()
+                          .difference(_clockStart)
+                          .inMilliseconds /
+                      1000;
                   return CustomPaint(
                     size: Size(boardSize, boardSize),
                     painter: _BoardPainter(
@@ -244,18 +344,49 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
                       clearPreviewCells: clearPreviewCells,
                       pulseGlow: pulseGlow,
                       cellSize: widget.cellSize,
-                      pieceColor: colorScheme.onSurface,
-                      emptyCellColor:
-                          colorScheme.surfaceContainerHighest,
-                      gridColor: colorScheme.outlineVariant
-                          .withValues(alpha: 0.3),
+                      theme: theme,
+                      brightness: _brightness,
                       clearProgress: _clearAnimation.value,
                       bounceScale: _bounceAnimation.value,
+                      cellDelays: _cellDelays,
+                      maxDelay: _maxDelay,
+                      cellShaders: _cellShaders,
+                      cellShaderTime: shaderTime,
                     ),
                   );
                 },
               ),
             ),
+            // フラッシュオーバーレイ
+            if (_flashController.isAnimating)
+              IgnorePointer(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(14),
+                  child: ColoredBox(
+                    color: (theme.clearEffect.flashColor ?? Colors.white)
+                        .withValues(
+                      alpha: (1 - _flashController.value) * 0.6,
+                    ),
+                    child: SizedBox(
+                      width: boardSize,
+                      height: boardSize,
+                    ),
+                  ),
+                ),
+              ),
+            // 波紋エフェクト
+            if (_ripples.isNotEmpty && _rippleController.isAnimating)
+              IgnorePointer(
+                child: CustomPaint(
+                  size: Size(boardSize, boardSize),
+                  painter: _RipplePainter(
+                    ripples: _ripples,
+                    progress: _rippleController.value,
+                    color: theme.colorsFor(_brightness).glowColor,
+                    maxRadius: theme.clearEffect.rippleMaxRadius,
+                  ),
+                ),
+              ),
             // DragTarget（ボード＋下方拡張領域をカバー）
             Positioned.fill(
               child: DragTarget<int>(
@@ -297,7 +428,6 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
                   });
                 },
                 builder: (context, candidateData, rejectedData) {
-                  // 透明（ヒット検出のみ、描画はCustomPaintが担当）
                   return const SizedBox.expand();
                 },
               ),
@@ -310,7 +440,6 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
                   painter: _ParticlePainter(
                     particles: _particles,
                     progress: _particleController.value,
-                    color: colorScheme.onSurface,
                   ),
                 ),
               ),
@@ -324,6 +453,8 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
                   child: _FloatingScoreWidget(
                     floatingScore: fs,
                     cellSize: widget.cellSize,
+                    textColor: theme.colorsFor(_brightness).onSurface,
+                    shadowColor: theme.colorsFor(_brightness).surface,
                     onComplete: () {
                       setState(() => _floatingScores.remove(fs));
                     },
@@ -350,9 +481,7 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
 
   /// 配置した場合に消去されるセルを事前計算する。
   Set<(int, int)> _computeClearPreview(NoirMindState gameState) {
-    if (_hoverRow == null ||
-        _hoverCol == null ||
-        _hoverPieceIndex == null) {
+    if (_hoverRow == null || _hoverCol == null || _hoverPieceIndex == null) {
       return const {};
     }
 
@@ -373,43 +502,181 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
     return result.clearedCells;
   }
 
+  /// 左端/上端から順に消えるセル遅延を計算する。
+  Map<(int, int), double> _computeCellDelays(ClearResult result) {
+    final delays = <(int, int), double>{};
+    // ユーザー要望に合わせて少しゆっくりめの遅延（0.1s推奨だがテーマ設定に従う）
+    final cellDelay = widget.theme.animations.cellDelay;
+
+    for (final (r, c) in result.cells) {
+      double? delay;
+
+      // 行クリアに含まれる場合: 左から右へ (col * delay)
+      if (result.clearedRows.contains(r)) {
+        delay = c * cellDelay;
+      }
+
+      // 列クリアに含まれる場合: 上から下へ (row * delay)
+      if (result.clearedCols.contains(c)) {
+        final colDelay = r * cellDelay;
+        // 両方に含まれる（交差）場合は、早い方を採用してリズムを崩さないようにする
+        if (delay != null) {
+          delay = min(delay, colDelay);
+        } else {
+          delay = colDelay;
+        }
+      }
+
+      if (delay != null) {
+        // 既存のエントリがある場合（稀だが）も考慮
+        final existing = delays[(r, c)];
+        if (existing != null) {
+          delays[(r, c)] = min(existing, delay);
+        } else {
+          delays[(r, c)] = delay;
+        }
+      }
+    }
+    return delays;
+  }
+
+  /// 列位置からステレオパン値を計算する (-1.0=左, +1.0=右)。
+  double _columnToPan(int col) {
+    return (col / (Board.size - 1)) * 2 - 1;
+  }
+
   void _triggerClearAnimation(ClearResult result) {
+    final anims = widget.theme.animations;
+    final clearEffect = widget.theme.clearEffect;
+    final colors = widget.theme.colorsFor(_brightness);
+
+    // 遅延破壊: セルごとの遅延を計算
+    final cellDelays = _computeCellDelays(result);
+    final maxDelay = cellDelays.values.fold<double>(0, (a, b) => a > b ? a : b);
+    setState(() {
+      _cellDelays = cellDelays;
+      _maxDelay = maxDelay;
+    });
+
+    // コントローラの長さを遅延分だけ延長
+    final totalDuration =
+        anims.clearDuration + Duration(milliseconds: (maxDelay * 1000).round());
+    _clearController.duration = totalDuration;
+    _particleController.duration = totalDuration;
+    _rippleController.duration = totalDuration;
+
     _clearController
       ..reset()
       ..forward();
 
-    // パーティクル生成（消去セルから放射状に）
-    final rng = Random();
-    _particles.clear();
-    for (final (r, c) in result.cells) {
-      final cx = (c + 0.5) * widget.cellSize;
-      final cy = (r + 0.5) * widget.cellSize;
-      for (var i = 0; i < 6; i++) {
-        final angle = rng.nextDouble() * 2 * pi;
-        final speed = 30 + rng.nextDouble() * 50;
-        _particles.add(
-          _Particle(
-            x: cx,
-            y: cy,
-            vx: cos(angle) * speed,
-            vy: sin(angle) * speed,
-            size: 2 + rng.nextDouble() * 3,
-          ),
+    // クリアエフェクトモード別処理
+    // クリアエフェクトモード別処理
+    switch (clearEffect.mode) {
+      case ClearEffectMode.flash:
+        // _flashController ..reset() ..forward(); // 全体フラッシュ廃止
+        _spawnParticles(result, anims, colors, cellDelays, totalDuration);
+
+      case ClearEffectMode.glitch:
+        _flashController
+          ..reset()
+          ..forward();
+        // グリッチ: 強化シェイク（横+縦）
+        if (anims.shakeIntensity > 0) {
+          _shakeController
+            ..reset()
+            ..forward();
+        }
+        _spawnParticles(result, anims, colors, cellDelays, totalDuration);
+
+      case ClearEffectMode.confetti:
+        _spawnConfetti(
+          result,
+          anims,
+          colors,
+          clearEffect,
+          cellDelays,
+          totalDuration,
         );
-      }
+
+      case ClearEffectMode.ripple:
+        _spawnRipples(result, cellDelays, totalDuration);
+        _spawnParticles(result, anims, colors, cellDelays, totalDuration);
+
+      case ClearEffectMode.dice:
+      case ClearEffectMode.dissolve:
+      case ClearEffectMode.pop:
+      case ClearEffectMode.shatter:
+        _spawnParticles(result, anims, colors, cellDelays, totalDuration);
     }
+
     _particleController
       ..reset()
       ..forward();
 
     // 触覚フィードバック（ライン数に応じて強さ変更）
     if (result.linesCleared >= 2) {
-      _shakeController
-        ..reset()
-        ..forward();
-      HapticFeedback.heavyImpact();
-    } else {
-      HapticFeedback.mediumImpact();
+      if (anims.shakeIntensity > 0 &&
+          clearEffect.mode != ClearEffectMode.glitch) {
+        _shakeController
+          ..reset()
+          ..forward();
+      }
+    }
+
+    // 遅延破壊: セルごとに個別SEと触覚フィードバックを再生
+    final clearPath = widget.theme.sounds.clearPath;
+    // 同じタイミングのセルを集約して重複音を排除する。
+    // キー: 遅延ms、値: そのタイミングの全セル。
+    final soundGroups = <int, List<(int, int)>>{};
+    for (final entry in cellDelays.entries) {
+      final delayMs = (entry.value * 1000).round();
+      soundGroups.putIfAbsent(delayMs, () => []).add(entry.key);
+    }
+    final maxDelayMs =
+        soundGroups.keys.fold(0, (prev, ms) => ms > prev ? ms : prev);
+
+    // コンボ段階ごとにピッチを +12% ブースト（上限 ×1.8）。
+    final comboBoost = (1.0 + (result.combo - 1) * 0.12).clamp(1.0, 1.8);
+    final pitchMin = widget.theme.sounds.clearPitchMin;
+    final pitchMax = widget.theme.sounds.clearPitchMax;
+
+    for (final entry in soundGroups.entries) {
+      final delayMs = entry.key;
+      final cells = entry.value;
+      final isLastGroup = delayMs == maxDelayMs;
+
+      // 複数セルがある場合は列の平均でパンを計算。
+      final avgCol =
+          cells.map((cell) => cell.$2).reduce((a, b) => a + b) / cells.length;
+      final pan = (avgCol / (Board.size - 1)) * 2 - 1;
+
+      // セル位置の平均でベースピッチを算出し、コンボブーストを乗算。
+      final avgNormPos = cells
+              .map((cell) => (cell.$1 + cell.$2) / ((Board.size - 1) * 2.0))
+              .reduce((a, b) => a + b) /
+          cells.length;
+      final rate =
+          (pitchMin + avgNormPos * (pitchMax - pitchMin)) * comboBoost;
+
+      Future<void>.delayed(
+        Duration(milliseconds: delayMs),
+        () {
+          if (!mounted) {
+            return;
+          }
+          AudioService.instance.playWithPan(clearPath, pan: pan, rate: rate);
+          // 最後のグループで強い振動、それ以外は軽い振動。
+          if (isLastGroup) {
+            if (result.linesCleared >= 2) {
+              HapticFeedback.heavyImpact();
+            } else {
+              HapticFeedback.mediumImpact();
+            }
+          } else {
+            HapticFeedback.lightImpact();
+          }
+        },
+      );
     }
 
     // フローティングスコア追加
@@ -426,13 +693,275 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
     });
   }
 
+  /// 通常パーティクルを生成する。
+  void _spawnParticles(
+    ClearResult result,
+    GameThemeAnimations anims,
+    GameThemeColors colors,
+    Map<(int, int), double> cellDelays,
+    Duration totalDuration,
+  ) {
+    final rng = Random();
+    final theme = widget.theme;
+    final particleColors = colors.particleColors.isNotEmpty
+        ? colors.particleColors
+        : [colors.particleColor];
+    final shapes = theme.clearEffect.confettiShapes.isNotEmpty
+        ? theme.clearEffect.confettiShapes
+        : [ParticleShape.circle];
+
+    final durationSec = totalDuration.inMilliseconds / 1000;
+    final clearDurSec = anims.clearDuration.inMilliseconds / 1000;
+    // アニメーション全体の長さに対する、1ブロック分のクリア時間の割合
+    final normalizedLife = durationSec > 0 ? (clearDurSec / durationSec) : 1.0;
+
+    _particles.clear();
+    for (final (r, c) in result.cells) {
+      final cx = (c + 0.5) * widget.cellSize;
+      final cy = (r + 0.5) * widget.cellSize;
+
+      // このブロックの開始割合
+      final delay = cellDelays[(r, c)] ?? 0;
+      final startP = durationSec > 0 ? (delay / durationSec) : 0.0;
+      final endP = startP + normalizedLife;
+
+      for (var i = 0; i < anims.particlesPerCell; i++) {
+        _spawnParticleForMode(
+          theme.clearEffect.mode,
+          cx,
+          cy,
+          colors.particleColor,
+          rng,
+          anims,
+          particleColors,
+          shapes,
+          startP,
+          endP,
+        );
+      }
+    }
+  }
+
+  /// 紙吹雪パーティクルを生成する（多色・多形状）。
+  void _spawnConfetti(
+    ClearResult result,
+    GameThemeAnimations anims,
+    GameThemeColors colors,
+    GameThemeClearEffect clearEffect,
+    Map<(int, int), double> cellDelays,
+    Duration totalDuration,
+  ) {
+    final rng = Random();
+    _particles.clear();
+    final particleColors = colors.particleColors.isNotEmpty
+        ? colors.particleColors
+        : [colors.particleColor];
+    final shapes = clearEffect.confettiShapes.isNotEmpty
+        ? clearEffect.confettiShapes
+        : [ParticleShape.circle];
+
+    final durationSec = totalDuration.inMilliseconds / 1000;
+    final clearDurSec = anims.clearDuration.inMilliseconds / 1000;
+    final normalizedLife = durationSec > 0 ? (clearDurSec / durationSec) : 1.0;
+
+    for (final (r, c) in result.cells) {
+      final cx = (c + 0.5) * widget.cellSize;
+      final cy = (r + 0.5) * widget.cellSize;
+
+      final delay = cellDelays[(r, c)] ?? 0;
+      final startP = durationSec > 0 ? (delay / durationSec) : 0.0;
+      final endP = startP + normalizedLife;
+
+      for (var i = 0; i < anims.particlesPerCell; i++) {
+        _spawnParticleForMode(
+          widget.theme.clearEffect.mode,
+          cx,
+          cy,
+          colors.particleColor,
+          rng,
+          anims,
+          particleColors,
+          shapes,
+          startP,
+          endP,
+        );
+      }
+    }
+  }
+
+  void _spawnParticleForMode(
+    ClearEffectMode mode,
+    double cx,
+    double cy,
+    Color color,
+    Random rng,
+    GameThemeAnimations anims,
+    List<Color> particleColors,
+    List<ParticleShape> shapes,
+    double startP,
+    double endP,
+  ) {
+    switch (mode) {
+      case ClearEffectMode.dice:
+        // 賽の目: グリッド状に細かく切れる
+        // 3x3のグリッドに分割するイメージ
+        for (var i = 0; i < 3; i++) {
+          for (var j = 0; j < 3; j++) {
+            final offsetX = (i - 1) * widget.cellSize * 0.25;
+            final offsetY = (j - 1) * widget.cellSize * 0.25;
+            _particles.add(
+              _Particle(
+                x: cx + offsetX,
+                y: cy + offsetY,
+                vx: (rng.nextDouble() - 0.5) * 10, // 横にはあまり散らばらない
+                vy: 50 + rng.nextDouble() * 50, // 重力で落ちる
+                size: 4,
+                color: color,
+                shape: ParticleShape.square,
+                rotationSpeed: (rng.nextDouble() - 0.5) * 2,
+                startProgress: startP,
+                endProgress: endP,
+              ),
+            );
+          }
+        }
+
+      case ClearEffectMode.dissolve:
+        // 崩壊: 風に吹かれるように流れる
+        // final angle = (rng.nextDouble() - 0.5) * 0.5; // unused
+        final speed = anims.particleMinSpeed +
+            rng.nextDouble() *
+                (anims.particleMaxSpeed - anims.particleMinSpeed);
+        _particles.add(
+          _Particle(
+            x: cx + (rng.nextDouble() - 0.5) * widget.cellSize * 0.8,
+            y: cy + (rng.nextDouble() - 0.5) * widget.cellSize * 0.8,
+            vx: speed * (rng.nextBool() ? 1 : -1), // 左右どちらかに流れる
+            vy: 20 + rng.nextDouble() * 20, // 少し落ちる
+            size: 2 + rng.nextDouble() * 2,
+            color: color.withValues(alpha: 0.8), // 砂っぽい
+            shape: ParticleShape.square, // 砂粒
+            rotation: rng.nextDouble() * 2 * pi,
+            rotationSpeed: (rng.nextDouble() - 0.5) * 5,
+            startProgress: startP,
+            endProgress: endP,
+          ),
+        );
+
+      case ClearEffectMode.pop:
+        // 破裂: 弾ける + 紙吹雪
+        final angle = rng.nextDouble() * 2 * pi;
+        final speed = anims.particleMaxSpeed * (0.5 + rng.nextDouble() * 0.5);
+        _particles.add(
+          _Particle(
+            x: cx,
+            y: cy,
+            vx: cos(angle) * speed,
+            vy: sin(angle) * speed - 50, // 上に弾ける
+            size: 4 + rng.nextDouble() * 4,
+            color: particleColors.isNotEmpty
+                ? particleColors[rng.nextInt(particleColors.length)]
+                : color,
+            shape: shapes.isNotEmpty
+                ? shapes[rng.nextInt(shapes.length)]
+                : ParticleShape.circle,
+            rotation: rng.nextDouble() * 2 * pi,
+            rotationSpeed: (rng.nextDouble() - 0.5) * 15, // 高速回転
+            startProgress: startP,
+            endProgress: endP,
+          ),
+        );
+
+      case ClearEffectMode.shatter:
+        // 粉砕: 鋭い破片が飛び散る
+        final angle = rng.nextDouble() * 2 * pi;
+        final speed = anims.particleMaxSpeed * (0.8 + rng.nextDouble() * 0.4);
+        _particles.add(
+          _Particle(
+            x: cx + (rng.nextDouble() - 0.5) * 10,
+            y: cy + (rng.nextDouble() - 0.5) * 10,
+            vx: cos(angle) * speed,
+            vy: sin(angle) * speed,
+            size: 3 + rng.nextDouble() * 5,
+            color: Colors.white.withValues(alpha: 0.9), // 氷の破片は白っぽい
+            shape: ParticleShape.shard,
+            rotation: rng.nextDouble() * 2 * pi,
+            rotationSpeed: (rng.nextDouble() - 0.5) * 10,
+            startProgress: startP,
+            endProgress: endP,
+          ),
+        );
+
+      case ClearEffectMode.flash:
+      case ClearEffectMode.glitch:
+      case ClearEffectMode.confetti:
+      case ClearEffectMode.ripple:
+        // 既存の汎用パーティクル
+        final angle = rng.nextDouble() * 2 * pi;
+        final speed = anims.particleMinSpeed +
+            rng.nextDouble() *
+                (anims.particleMaxSpeed - anims.particleMinSpeed);
+        _particles.add(
+          _Particle(
+            x: cx,
+            y: cy,
+            vx: cos(angle) * speed,
+            vy: sin(angle) * speed - 20,
+            size: 3 + rng.nextDouble() * 4,
+            color: particleColors.isNotEmpty
+                ? particleColors[rng.nextInt(particleColors.length)]
+                : color,
+            shape: shapes.isNotEmpty
+                ? shapes[rng.nextInt(shapes.length)]
+                : ParticleShape.circle,
+            rotation: rng.nextDouble() * 2 * pi,
+            rotationSpeed: (rng.nextDouble() - 0.5) * 8,
+            startProgress: startP,
+            endProgress: endP,
+          ),
+        );
+    }
+  }
+
+  /// 波紋エフェクトを生成する。
+  void _spawnRipples(
+    ClearResult result,
+    Map<(int, int), double> cellDelays,
+    Duration totalDuration,
+  ) {
+    _ripples.clear();
+    final anims = widget.theme.animations;
+    final durationSec = totalDuration.inMilliseconds / 1000;
+    final clearDurSec = anims.clearDuration.inMilliseconds / 1000;
+    // 波紋の寿命（リングのアニメーション時間を含むので、clearDurSecより長めにする）
+    final rippleDurSec = clearDurSec * 1.5;
+    final normalizedLife = durationSec > 0 ? (rippleDurSec / durationSec) : 1.0;
+
+    for (final (r, c) in result.cells) {
+      final delay = cellDelays[(r, c)] ?? 0;
+      final startP = durationSec > 0 ? (delay / durationSec) : 0.0;
+      final endP = startP + normalizedLife;
+
+      _ripples.add(
+        _Ripple(
+          cx: (c + 0.5) * widget.cellSize,
+          cy: (r + 0.5) * widget.cellSize,
+          startProgress: startP,
+          endProgress: endP,
+        ),
+      );
+    }
+    _rippleController
+      ..reset()
+      ..forward();
+  }
+
   void _updateHoverPosition(
     Offset globalOffset,
     BuildContext ctx,
   ) {
     final box = ctx.findRenderObject()! as RenderBox;
     final local = box.globalToLocal(globalOffset);
-    // ドラッグフィードバックのオフセット分を調整（指の上に表示）
     final adjustedY = local.dy - widget.cellSize * _dragOffsetCells;
     setState(() {
       _hoverCol = (local.dx / widget.cellSize).floor();
@@ -461,6 +990,12 @@ class _Particle {
     required this.vx,
     required this.vy,
     required this.size,
+    required this.color,
+    this.shape = ParticleShape.circle,
+    this.rotation = 0,
+    this.rotationSpeed = 0,
+    required this.startProgress,
+    required this.endProgress,
   });
 
   final double x;
@@ -468,18 +1003,156 @@ class _Particle {
   final double vx;
   final double vy;
   final double size;
+  final Color color;
+  final ParticleShape shape;
+  final double rotation;
+  final double rotationSpeed;
+  final double startProgress;
+  final double endProgress;
 }
 
 class _ParticlePainter extends CustomPainter {
   const _ParticlePainter({
     required this.particles,
     required this.progress,
-    required this.color,
   });
 
   final List<_Particle> particles;
   final double progress;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    for (final p in particles) {
+      // パーティクルの個別時間を計算 (0.0 -> 1.0)
+      final duration = p.endProgress - p.startProgress;
+      if (duration <= 0) {
+        continue;
+      }
+
+      final localProgress = (progress - p.startProgress) / duration;
+
+      if (localProgress < 0 || localProgress > 1) {
+        continue;
+      }
+
+      final opacity = (1 - localProgress).clamp(0.0, 1.0);
+      if (opacity <= 0) {
+        continue;
+      }
+
+      final px = p.x + p.vx * localProgress;
+      final py = p.y + p.vy * localProgress;
+      final s = p.size * (1 - localProgress * 0.5);
+      final paint = Paint()..color = p.color.withValues(alpha: opacity);
+
+      canvas
+        ..save()
+        ..translate(px, py)
+        ..rotate(p.rotation + p.rotationSpeed * localProgress);
+
+      switch (p.shape) {
+        case ParticleShape.circle:
+          canvas.drawCircle(Offset.zero, s, paint);
+        case ParticleShape.square:
+          canvas.drawRect(
+            Rect.fromCenter(center: Offset.zero, width: s * 2, height: s * 2),
+            paint,
+          );
+        case ParticleShape.star:
+          _drawStar(canvas, s, paint);
+        case ParticleShape.heart:
+          _drawHeart(canvas, s, paint);
+        case ParticleShape.shard:
+          _drawShard(canvas, s, paint);
+      }
+
+      canvas.restore();
+    }
+  }
+
+  void _drawStar(Canvas canvas, double size, Paint paint) {
+    final path = Path();
+    const points = 5;
+    final outerR = size;
+    final innerR = size * 0.4;
+    for (var i = 0; i < points * 2; i++) {
+      final r = i.isEven ? outerR : innerR;
+      final angle = (i * pi / points) - pi / 2;
+      final point = Offset(cos(angle) * r, sin(angle) * r);
+      if (i == 0) {
+        path.moveTo(point.dx, point.dy);
+      } else {
+        path.lineTo(point.dx, point.dy);
+      }
+    }
+    path.close();
+    canvas.drawPath(path, paint);
+  }
+
+  void _drawHeart(Canvas canvas, double size, Paint paint) {
+    final path = Path()
+      ..moveTo(0, size * 0.3)
+      ..cubicTo(
+        -size,
+        -size * 0.5,
+        -size * 0.3,
+        -size * 1.2,
+        0,
+        -size * 0.5,
+      )
+      ..cubicTo(
+        size * 0.3,
+        -size * 1.2,
+        size,
+        -size * 0.5,
+        0,
+        size * 0.3,
+      );
+    canvas.drawPath(path, paint);
+  }
+
+  void _drawShard(Canvas canvas, double size, Paint paint) {
+    // 鋭角な三角形
+    final path = Path()
+      ..moveTo(0, -size) // Top
+      ..lineTo(size * 0.4, size) // Bottom Right
+      ..lineTo(-size * 0.4, size) // Bottom Left
+      ..close();
+    canvas.drawPath(path, paint);
+  }
+
+  @override
+  bool shouldRepaint(_ParticlePainter oldDelegate) => true;
+}
+
+// --- 波紋データ ---
+
+class _Ripple {
+  _Ripple({
+    required this.cx,
+    required this.cy,
+    required this.startProgress,
+    required this.endProgress,
+  });
+
+  final double cx;
+  final double cy;
+  final double startProgress;
+  final double endProgress;
+}
+
+class _RipplePainter extends CustomPainter {
+  const _RipplePainter({
+    required this.ripples,
+    required this.progress,
+    required this.color,
+    required this.maxRadius,
+  });
+
+  final List<_Ripple> ripples;
+  final double progress;
   final Color color;
+  final double maxRadius;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -488,18 +1161,44 @@ class _ParticlePainter extends CustomPainter {
       return;
     }
 
-    final paint = Paint()..color = color.withValues(alpha: opacity);
+    // 波紋の同心円数（3つのリングを時間差で表示）
+    const ringCount = 3;
+    for (final ripple in ripples) {
+      final duration = ripple.endProgress - ripple.startProgress;
+      if (duration <= 0) {
+        continue;
+      }
 
-    for (final p in particles) {
-      final px = p.x + p.vx * progress;
-      final py = p.y + p.vy * progress;
-      final s = p.size * (1 - progress * 0.5);
-      canvas.drawCircle(Offset(px, py), s, paint);
+      final rippleProgress = (progress - ripple.startProgress) / duration;
+      if (rippleProgress < 0 || rippleProgress > 1) {
+        continue;
+      }
+
+      final rippleOpacity = (1 - rippleProgress).clamp(0.0, 1.0);
+
+      for (var i = 0; i < ringCount; i++) {
+        final delay = i * 0.15; // リング間のズレ
+        // リング個別の進行度
+        final localProgress =
+            ((rippleProgress - delay) / (1 - delay)).clamp(0.0, 1.0);
+
+        if (localProgress <= 0) {
+          continue;
+        }
+
+        final radius = maxRadius * localProgress;
+        final ringOpacity = rippleOpacity * (1 - localProgress);
+        final paint = Paint()
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 2 * (1 - localProgress)
+          ..color = color.withValues(alpha: ringOpacity * 0.6);
+        canvas.drawCircle(Offset(ripple.cx, ripple.cy), radius, paint);
+      }
     }
   }
 
   @override
-  bool shouldRepaint(_ParticlePainter oldDelegate) => true;
+  bool shouldRepaint(_RipplePainter oldDelegate) => true;
 }
 
 // --- フローティングスコア ---
@@ -524,11 +1223,15 @@ class _FloatingScoreWidget extends StatefulWidget {
   const _FloatingScoreWidget({
     required this.floatingScore,
     required this.cellSize,
+    required this.textColor,
+    required this.shadowColor,
     required this.onComplete,
   });
 
   final _FloatingScore floatingScore;
   final double cellSize;
+  final Color textColor;
+  final Color shadowColor;
   final VoidCallback onComplete;
 
   @override
@@ -561,7 +1264,6 @@ class _FloatingScoreWidgetState extends State<_FloatingScoreWidget>
         curve: Curves.easeOut,
       ),
     );
-    // ポップイン効果: 0 → 1.2 → 1.0
     _scale = TweenSequence<double>([
       TweenSequenceItem(
         tween: Tween(begin: 0.5, end: 1.2),
@@ -594,7 +1296,6 @@ class _FloatingScoreWidgetState extends State<_FloatingScoreWidget>
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
     final fs = widget.floatingScore;
 
     return AnimatedBuilder(
@@ -615,10 +1316,10 @@ class _FloatingScoreWidgetState extends State<_FloatingScoreWidget>
                       fontFamily: 'Poppins',
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
-                      color: colorScheme.onSurface,
+                      color: widget.textColor,
                       shadows: [
                         Shadow(
-                          color: colorScheme.surface,
+                          color: widget.shadowColor,
                           blurRadius: 8,
                         ),
                       ],
@@ -632,8 +1333,7 @@ class _FloatingScoreWidgetState extends State<_FloatingScoreWidget>
                         fontWeight: FontWeight.bold,
                         fontSize: 11,
                         letterSpacing: 1,
-                        color: colorScheme.onSurface
-                            .withValues(alpha: 0.7),
+                        color: widget.textColor.withValues(alpha: 0.7),
                       ),
                     ),
                 ],
@@ -654,26 +1354,28 @@ class _BoardPainter extends CustomPainter {
     required this.clearingCells,
     required this.lastPlacedCells,
     required this.cellSize,
-    required this.pieceColor,
-    required this.emptyCellColor,
-    required this.gridColor,
+    required this.theme,
+    required this.brightness,
     required this.clearProgress,
     required this.bounceScale,
     required this.clearPreviewCells,
     required this.pulseGlow,
+    required this.cellDelays,
+    required this.maxDelay,
     this.hoverRow,
     this.hoverCol,
     this.hoverPiece,
     this.canPlaceHover = false,
+    this.cellShaders,
+    this.cellShaderTime = 0,
   });
 
   final List<List<bool>> board;
   final Set<(int, int)> clearingCells;
   final Set<(int, int)> lastPlacedCells;
   final double cellSize;
-  final Color pieceColor;
-  final Color emptyCellColor;
-  final Color gridColor;
+  final GameTheme theme;
+  final Brightness brightness;
   final double clearProgress;
   final double bounceScale;
   final int? hoverRow;
@@ -687,13 +1389,27 @@ class _BoardPainter extends CustomPainter {
   /// パルスアニメーションのグロー強度（0.15 ~ 0.45）。
   final double pulseGlow;
 
+  /// セルごとの遅延秒数マップ。
+  final Map<(int, int), double> cellDelays;
+
+  /// セル遅延の最大値（秒）。
+  final double maxDelay;
+
+  /// レンダーモード別GLSLシェーダー（nullの場合はCanvasフォールバック）。
+  final Map<CellRenderMode, FragmentShader>? cellShaders;
+
+  /// シェーダーアニメーション用の経過時刻（秒）。
+  final double cellShaderTime;
+
   @override
   void paint(Canvas canvas, Size size) {
     const gap = 1.5;
-    const cellRadius = 3.0;
-    final emptyCellPaint = Paint()..color = emptyCellColor;
+    final colors = theme.colorsFor(brightness);
+    final style = theme.cellStyle;
+    final shader = cellShaders?[style.renderMode];
+    final emptyCellPaint = Paint()..color = colors.emptyCellFill;
 
-    // 空セルの背景を描画（ボードの存在感を出す）
+    // 空セルの背景を描画
     for (var r = 0; r < Board.size; r++) {
       for (var c = 0; c < Board.size; c++) {
         canvas.drawRRect(
@@ -704,70 +1420,147 @@ class _BoardPainter extends CustomPainter {
               cellSize - gap * 2,
               cellSize - gap * 2,
             ),
-            const Radius.circular(cellRadius),
+            Radius.circular(style.cellBorderRadius),
           ),
           emptyCellPaint,
         );
       }
     }
 
-    // 配置済みセルを描画（グラデーション付き立体タイル）
+    // 配置済みセルを描画
     for (var r = 0; r < Board.size; r++) {
       for (var c = 0; c < Board.size; c++) {
         if (clearingCells.contains((r, c))) {
-          // 消去アニメーション: フェード+縮小
-          _drawGradientCell(
-            canvas,
-            r,
-            c,
-            gap,
-            cellRadius,
-            opacity: clearProgress,
-            shrink: (1 - clearProgress) * cellSize * 0.3,
+          // 遅延破壊: このセルのアニメーション開始・終了時間を計算 (0.0 -> 1.0)
+          final delay = cellDelays[(r, c)] ?? 0;
+          final clearDurSec =
+              theme.animations.clearDuration.inMilliseconds / 1000;
+          final totalSec = maxDelay + clearDurSec;
+
+          // t: 全体の経過時間割合 (0.0 -> 1.0)
+          final t = 1 - clearProgress;
+
+          final startT = totalSec > 0 ? (delay / totalSec) : 0.0;
+          final endT = totalSec > 0 ? ((delay + clearDurSec) / totalSec) : 1.0;
+
+          // 1. まだ始まっていない（待機中） -> 通常描画
+          if (t < startT) {
+            final rect = Rect.fromLTWH(
+              c * cellSize + gap,
+              r * cellSize + gap,
+              cellSize - gap * 2,
+              cellSize - gap * 2,
+            );
+            drawCell(canvas, rect, style, colors,
+                shader: shader, time: cellShaderTime);
+            continue;
+          }
+
+          // 2. 終わった -> 非表示
+          if (t >= endT) {
+            continue;
+          }
+
+          // 3. アニメーション中 -> エフェクト描画 (progress: 0.0 -> 1.0)
+          final progress = ((t - startT) / (endT - startT)).clamp(0.0, 1.0);
+
+          var scale = 1.0;
+          var opacity = 1.0;
+          Color? overlayColor;
+
+          if (progress < 0.2) {
+            // Stage 1: Anticipation (縮む/予備動作)
+            // 0.2かけて 1.0 -> 0.9
+            final p = progress / 0.2;
+            scale = 1.0 - (0.1 * Curves.easeOut.transform(p));
+          } else if (progress < 0.4) {
+            // Stage 2: Glow (発光)
+            // 0.2かけて 0.9 -> 1.0
+            final p = (progress - 0.2) / 0.2;
+            scale = 0.9 + (0.1 * Curves.elasticOut.transform(p));
+            // 発光強度（山なり）
+            final glowIntensity = sin(p * pi);
+            overlayColor = Colors.white.withValues(alpha: 0.8 * glowIntensity);
+          } else {
+            // Stage 3: Pop & Fade (弾けて消える)
+            // 0.6かけて 1.0 -> 1.2, opacity 1.0 -> 0.0
+            final p = (progress - 0.4) / 0.6;
+            scale = 1.0 + (0.2 * Curves.easeOutQuad.transform(p));
+            opacity = 1.0 - p;
+          }
+
+          if (opacity <= 0) {
+            continue;
+          }
+
+          // 中心からスケールさせるための矩形計算
+          final currentSize = (cellSize - gap * 2) * scale;
+          final offset = ((cellSize - gap * 2) - currentSize) / 2;
+          final rect = Rect.fromLTWH(
+            c * cellSize + gap + offset,
+            r * cellSize + gap + offset,
+            currentSize,
+            currentSize,
           );
-        } else if (lastPlacedCells.contains((r, c)) &&
-            bounceScale > 0) {
-          // 配置直後のバウンスアニメーション
-          _drawGradientCellScaled(
-            canvas,
-            r,
-            c,
-            gap,
-            cellRadius,
-            bounceScale,
+
+          drawCell(canvas, rect, style, colors,
+              opacity: opacity, shader: shader, time: cellShaderTime);
+
+          // 発光オーバーレイの描画
+          if (overlayColor != null) {
+            final rrect = RRect.fromRectAndRadius(
+              rect,
+              Radius.circular(style.cellBorderRadius),
+            );
+            canvas.drawRRect(rrect, Paint()..color = overlayColor);
+          }
+        } else if (lastPlacedCells.contains((r, c)) && bounceScale > 0) {
+          final cw = (cellSize - gap * 2) * bounceScale;
+          final ch = (cellSize - gap * 2) * bounceScale;
+          final cx = c * cellSize + cellSize / 2;
+          final cy = r * cellSize + cellSize / 2;
+          final rect = Rect.fromCenter(
+            center: Offset(cx, cy),
+            width: cw,
+            height: ch,
           );
+          drawCell(canvas, rect, style, colors,
+              shader: shader, time: cellShaderTime);
         } else if (board[r][c]) {
-          _drawGradientCell(canvas, r, c, gap, cellRadius);
-          // 消去予定セルのパルスグロー
+          final rect = Rect.fromLTWH(
+            c * cellSize + gap,
+            r * cellSize + gap,
+            cellSize - gap * 2,
+            cellSize - gap * 2,
+          );
+          drawCell(canvas, rect, style, colors,
+              shader: shader, time: cellShaderTime);
           if (clearPreviewCells.contains((r, c))) {
-            _drawGlowOverlay(
-              canvas,
-              r,
-              c,
-              gap,
-              cellRadius,
-              pulseGlow,
+            final rrect = RRect.fromRectAndRadius(
+              rect,
+              Radius.circular(style.cellBorderRadius),
+            );
+            canvas.drawRRect(
+              rrect,
+              Paint()..color = colors.glowColor.withValues(alpha: pulseGlow),
             );
           }
         }
       }
     }
 
-    // ホバープレビュー（配置可能な場合のみ表示）
+    // ホバープレビュー
     if (canPlaceHover &&
         hoverRow != null &&
         hoverCol != null &&
         hoverPiece != null) {
       final previewPaint = Paint()
-        ..color = pieceColor.withValues(alpha: 0.2);
+        ..color = colors.onSurface.withValues(alpha: 0.2);
 
       for (final (dr, dc) in hoverPiece!.offsets) {
         final r = hoverRow! + dr;
         final c = hoverCol! + dc;
-        if (r >= 0 &&
-            r < Board.size &&
-            c >= 0 &&
-            c < Board.size) {
+        if (r >= 0 && r < Board.size && c >= 0 && c < Board.size) {
           canvas.drawRRect(
             RRect.fromRectAndRadius(
               Rect.fromLTWH(
@@ -776,145 +1569,13 @@ class _BoardPainter extends CustomPainter {
                 cellSize - gap * 2,
                 cellSize - gap * 2,
               ),
-              const Radius.circular(cellRadius),
+              Radius.circular(style.cellBorderRadius),
             ),
             previewPaint,
           );
         }
       }
     }
-  }
-
-  /// 消去予定セルにパルスグローオーバーレイを描画する。
-  void _drawGlowOverlay(
-    Canvas canvas,
-    int r,
-    int c,
-    double gap,
-    double cellRadius,
-    double glowAlpha,
-  ) {
-    final rect = Rect.fromLTWH(
-      c * cellSize + gap,
-      r * cellSize + gap,
-      cellSize - gap * 2,
-      cellSize - gap * 2,
-    );
-    final rrect = RRect.fromRectAndRadius(
-      rect,
-      Radius.circular(cellRadius),
-    );
-    // 白いグロー（パルスで明滅）
-    canvas.drawRRect(
-      rrect,
-      Paint()..color = Colors.white.withValues(alpha: glowAlpha),
-    );
-  }
-
-  /// グラデーション付きセルを描画（立体感のあるリッチなタイル）。
-  void _drawGradientCell(
-    Canvas canvas,
-    int r,
-    int c,
-    double gap,
-    double cellRadius, {
-    double opacity = 1.0,
-    double shrink = 0.0,
-  }) {
-    final rect = Rect.fromLTWH(
-      c * cellSize + gap + shrink,
-      r * cellSize + gap + shrink,
-      cellSize - gap * 2 - shrink * 2,
-      cellSize - gap * 2 - shrink * 2,
-    );
-    final rrect = RRect.fromRectAndRadius(
-      rect,
-      Radius.circular(cellRadius),
-    );
-
-    // ベースカラー
-    final basePaint = Paint()
-      ..color = pieceColor.withValues(alpha: opacity);
-    canvas.drawRRect(rrect, basePaint);
-
-    // 上部ハイライト（光沢感）
-    final highlightPaint = Paint()
-      ..shader = LinearGradient(
-        begin: Alignment.topCenter,
-        end: Alignment.bottomCenter,
-        colors: [
-          Colors.white.withValues(alpha: 0.25 * opacity),
-          Colors.white.withValues(alpha: 0),
-        ],
-        stops: const [0.0, 0.5],
-      ).createShader(rect);
-    canvas.drawRRect(rrect, highlightPaint);
-
-    // 下部シャドウ（奥行き感）
-    final shadowPaint = Paint()
-      ..shader = LinearGradient(
-        begin: Alignment.topCenter,
-        end: Alignment.bottomCenter,
-        colors: [
-          Colors.black.withValues(alpha: 0),
-          Colors.black.withValues(alpha: 0.15 * opacity),
-        ],
-        stops: const [0.6, 1.0],
-      ).createShader(rect);
-    canvas.drawRRect(rrect, shadowPaint);
-  }
-
-  /// スケール付きグラデーションセル（バウンスアニメーション用）。
-  void _drawGradientCellScaled(
-    Canvas canvas,
-    int r,
-    int c,
-    double gap,
-    double cellRadius,
-    double scale,
-  ) {
-    final cw = (cellSize - gap * 2) * scale;
-    final ch = (cellSize - gap * 2) * scale;
-    final cx = c * cellSize + cellSize / 2;
-    final cy = r * cellSize + cellSize / 2;
-    final rect = Rect.fromCenter(
-      center: Offset(cx, cy),
-      width: cw,
-      height: ch,
-    );
-    final rrect = RRect.fromRectAndRadius(
-      rect,
-      Radius.circular(cellRadius),
-    );
-
-    // ベース
-    canvas.drawRRect(rrect, Paint()..color = pieceColor);
-
-    // ハイライト
-    final highlightPaint = Paint()
-      ..shader = LinearGradient(
-        begin: Alignment.topCenter,
-        end: Alignment.bottomCenter,
-        colors: [
-          Colors.white.withValues(alpha: 0.25),
-          Colors.white.withValues(alpha: 0),
-        ],
-        stops: const [0.0, 0.5],
-      ).createShader(rect);
-    canvas.drawRRect(rrect, highlightPaint);
-
-    // シャドウ
-    final shadowPaint = Paint()
-      ..shader = LinearGradient(
-        begin: Alignment.topCenter,
-        end: Alignment.bottomCenter,
-        colors: [
-          Colors.black.withValues(alpha: 0),
-          Colors.black.withValues(alpha: 0.15),
-        ],
-        stops: const [0.6, 1.0],
-      ).createShader(rect);
-    canvas.drawRRect(rrect, shadowPaint);
   }
 
   @override

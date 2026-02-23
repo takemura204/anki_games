@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:mono_games/features/noir_mind/model/game_theme.dart';
+import 'package:mono_games/features/noir_mind/service/audio_service.dart';
 import 'package:mono_games/features/noir_mind/view_model/noir_mind_view_model.dart';
 
-/// Full-screen overlay shown when the game is over.
+/// ゲームオーバー時に表示するフルスクリーンオーバーレイ。
 class GameOverOverlay extends ConsumerStatefulWidget {
-  /// Creates the game over overlay.
-  const GameOverOverlay({super.key});
+  /// ゲームオーバーオーバーレイを作成する。
+  const GameOverOverlay({required this.theme, super.key});
+
+  /// 現在のゲームテーマ。
+  final GameTheme theme;
 
   @override
   ConsumerState<GameOverOverlay> createState() =>
@@ -24,6 +29,7 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
   void initState() {
     super.initState();
     HapticFeedback.heavyImpact();
+    AudioService.instance.play(widget.theme.sounds.gameOverPath);
 
     _controller = AnimationController(
       vsync: this,
@@ -71,15 +77,15 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
+    final colors = widget.theme.colorsFor(Theme.of(context).brightness);
     final gameState = ref.watch(noirMindViewModelProvider);
 
     return AnimatedBuilder(
       animation: _controller,
       builder: (context, _) {
         return ColoredBox(
-          color: Colors.black.withValues(
-            alpha: _fadeIn.value * 0.7,
+          color: colors.overlayBg.withValues(
+            alpha: _fadeIn.value * colors.overlayBg.a,
           ),
           child: Center(
             child: Transform.translate(
@@ -95,7 +101,7 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
                     vertical: 40,
                   ),
                   decoration: BoxDecoration(
-                    color: colorScheme.surface,
+                    color: colors.surface,
                     borderRadius: BorderRadius.circular(24),
                   ),
                   child: Column(
@@ -108,7 +114,7 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
                           letterSpacing: 3,
-                          color: colorScheme.onSurface,
+                          color: colors.onSurface,
                         ),
                       ),
                       const SizedBox(height: 24),
@@ -118,7 +124,7 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
                           fontFamily: 'Poppins',
                           fontSize: 48,
                           fontWeight: FontWeight.bold,
-                          color: colorScheme.onSurface,
+                          color: colors.onSurface,
                           height: 1,
                         ),
                       ),
@@ -130,23 +136,23 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
                           fontSize: 11,
                           fontWeight: FontWeight.w600,
                           letterSpacing: 2,
-                          color: colorScheme.onSurface
+                          color: colors.onSurface
                               .withValues(alpha: 0.4),
                         ),
                       ),
                       const SizedBox(height: 16),
-                      // High score
+                      // ハイスコア
                       Text(
                         'BEST  ${gameState.highScore}',
                         style: TextStyle(
                           fontFamily: 'Poppins',
                           fontSize: 14,
                           fontWeight: FontWeight.w600,
-                          color: colorScheme.onSurface
+                          color: colors.onSurface
                               .withValues(alpha: 0.5),
                         ),
                       ),
-                      // New high score badge
+                      // NEW BESTバッジ
                       if (gameState.isNewHighScore) ...[
                         const SizedBox(height: 12),
                         Transform.scale(
@@ -157,26 +163,26 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
                               vertical: 6,
                             ),
                             decoration: BoxDecoration(
-                              color: const Color(0xFFD4A438)
+                              color: colors.accent
                                   .withValues(alpha: 0.15),
                               borderRadius:
                                   BorderRadius.circular(20),
                             ),
-                            child: const Text(
+                            child: Text(
                               'NEW BEST!',
                               style: TextStyle(
                                 fontFamily: 'Poppins',
                                 fontSize: 13,
                                 fontWeight: FontWeight.bold,
                                 letterSpacing: 1.5,
-                                color: Color(0xFFD4A438),
+                                color: colors.accent,
                               ),
                             ),
                           ),
                         ),
                       ],
                       const SizedBox(height: 32),
-                      // Play again button
+                      // Play Againボタン
                       SizedBox(
                         width: double.infinity,
                         child: TextButton(
@@ -190,8 +196,8 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
                                 .resetGame();
                           },
                           style: TextButton.styleFrom(
-                            backgroundColor: colorScheme.onSurface,
-                            foregroundColor: colorScheme.surface,
+                            backgroundColor: colors.onSurface,
+                            foregroundColor: colors.surface,
                             padding: const EdgeInsets.symmetric(
                               vertical: 14,
                             ),

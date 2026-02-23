@@ -33,6 +33,12 @@ abstract class ClearResult with _$ClearResult {
 
     /// ピースが配置された列。
     required int placementCol,
+
+    /// 消去された行番号の集合。
+    required Set<int> clearedRows,
+
+    /// 消去された列番号の集合。
+    required Set<int> clearedCols,
   }) = _ClearResult;
 }
 
@@ -169,13 +175,15 @@ class NoirMindViewModel extends _$NoirMindViewModel {
           cells: clearResult.clearedCells,
           placementRow: row,
           placementCol: col,
+          clearedRows: clearResult.clearedRows,
+          clearedCols: clearResult.clearedCols,
         ),
         lastPlacedCells: placedCells,
         isNewHighScore: isNewHigh,
       );
 
-      // 消去アニメーション終了後にクリア
-      Future<void>.delayed(const Duration(milliseconds: 400), () {
+      // 消去アニメーション終了後にクリア（遅延破壊分を含む）
+      Future<void>.delayed(const Duration(milliseconds: 800), () {
         state = state.copyWith(
           clearingCells: const {},
           lastClearResult: null,

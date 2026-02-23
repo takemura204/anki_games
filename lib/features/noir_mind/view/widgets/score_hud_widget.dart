@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:mono_games/features/noir_mind/model/game_theme.dart';
 import 'package:mono_games/features/noir_mind/view_model/noir_mind_view_model.dart';
 
-/// Displays score, high score, and combo in the HUD area.
+/// スコア・ハイスコア・コンボを表示するHUD。
 class ScoreHudWidget extends ConsumerStatefulWidget {
-  /// Creates the score HUD widget.
-  const ScoreHudWidget({super.key});
+  /// スコアHUDウィジェットを作成する。
+  const ScoreHudWidget({required this.theme, super.key});
+
+  /// 現在のゲームテーマ。
+  final GameTheme theme;
 
   @override
   ConsumerState<ScoreHudWidget> createState() => _ScoreHudWidgetState();
@@ -58,7 +62,7 @@ class _ScoreHudWidgetState extends ConsumerState<ScoreHudWidget>
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
+    final colors = widget.theme.colorsFor(Theme.of(context).brightness);
     final highScore = ref.watch(
       noirMindViewModelProvider.select((s) => s.highScore),
     );
@@ -66,7 +70,7 @@ class _ScoreHudWidgetState extends ConsumerState<ScoreHudWidget>
       noirMindViewModelProvider.select((s) => s.combo),
     );
 
-    // Animate score count-up and combo pop
+    // スコアカウントアップ・コンボポップアニメーション
     ref
       ..listen(
         noirMindViewModelProvider.select((s) => s.score),
@@ -98,7 +102,7 @@ class _ScoreHudWidgetState extends ConsumerState<ScoreHudWidget>
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          // Score section
+          // スコア
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
@@ -110,8 +114,7 @@ class _ScoreHudWidgetState extends ConsumerState<ScoreHudWidget>
                   fontSize: 10,
                   fontWeight: FontWeight.w600,
                   letterSpacing: 1.5,
-                  color: colorScheme.onSurface
-                      .withValues(alpha: 0.4),
+                  color: colors.onSurface.withValues(alpha: 0.4),
                 ),
               ),
               Text(
@@ -120,13 +123,13 @@ class _ScoreHudWidgetState extends ConsumerState<ScoreHudWidget>
                   fontFamily: 'Poppins',
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
-                  color: colorScheme.onSurface,
+                  color: colors.onSurface,
                   height: 1.1,
                 ),
               ),
             ],
           ),
-          // Combo badge
+          // コンボバッジ
           if (combo > 1)
             AnimatedBuilder(
               animation: _comboScale,
@@ -142,8 +145,7 @@ class _ScoreHudWidgetState extends ConsumerState<ScoreHudWidget>
                   vertical: 4,
                 ),
                 decoration: BoxDecoration(
-                  color: colorScheme.onSurface
-                      .withValues(alpha: 0.1),
+                  color: colors.accent.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Text(
@@ -152,12 +154,12 @@ class _ScoreHudWidgetState extends ConsumerState<ScoreHudWidget>
                     fontFamily: 'Poppins',
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: colorScheme.onSurface,
+                    color: colors.accent,
                   ),
                 ),
               ),
             ),
-          // High score section
+          // ハイスコア
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisSize: MainAxisSize.min,
@@ -169,8 +171,7 @@ class _ScoreHudWidgetState extends ConsumerState<ScoreHudWidget>
                   fontSize: 10,
                   fontWeight: FontWeight.w600,
                   letterSpacing: 1.5,
-                  color: colorScheme.onSurface
-                      .withValues(alpha: 0.4),
+                  color: colors.onSurface.withValues(alpha: 0.4),
                 ),
               ),
               Text(
@@ -179,8 +180,7 @@ class _ScoreHudWidgetState extends ConsumerState<ScoreHudWidget>
                   fontFamily: 'Poppins',
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
-                  color: colorScheme.onSurface
-                      .withValues(alpha: 0.5),
+                  color: colors.onSurface.withValues(alpha: 0.5),
                   height: 1.1,
                 ),
               ),

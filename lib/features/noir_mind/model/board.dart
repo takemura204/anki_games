@@ -6,6 +6,8 @@ class ClearLineResult {
   const ClearLineResult({
     required this.clearedCells,
     required this.linesCleared,
+    required this.clearedRows,
+    required this.clearedCols,
   });
 
   /// 消去された (row, col) セルの集合。
@@ -13,6 +15,12 @@ class ClearLineResult {
 
   /// 消去されたライン数（行 + 列）。
   final int linesCleared;
+
+  /// 消去された行番号の集合。
+  final Set<int> clearedRows;
+
+  /// 消去された列番号の集合。
+  final Set<int> clearedCols;
 }
 
 /// Noir Mindの8x8ゲームボード。
@@ -57,12 +65,15 @@ class Board {
   /// 完成した行・列をチェックし、消去すべきセル情報を返す（状態は変更しない）。
   ClearLineResult checkClearLines() {
     final cleared = <(int, int)>{};
+    final clearedRows = <int>{};
+    final clearedCols = <int>{};
     var linesCleared = 0;
 
     // 行チェック
     for (var r = 0; r < size; r++) {
       if (cells[r].every((c) => c)) {
         linesCleared++;
+        clearedRows.add(r);
         for (var c = 0; c < size; c++) {
           cleared.add((r, c));
         }
@@ -80,6 +91,7 @@ class Board {
       }
       if (full) {
         linesCleared++;
+        clearedCols.add(c);
         for (var r = 0; r < size; r++) {
           cleared.add((r, c));
         }
@@ -89,6 +101,8 @@ class Board {
     return ClearLineResult(
       clearedCells: cleared,
       linesCleared: linesCleared,
+      clearedRows: clearedRows,
+      clearedCols: clearedCols,
     );
   }
 

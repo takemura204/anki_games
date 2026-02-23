@@ -1,6 +1,11 @@
+import 'dart:async' show unawaited;
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:mono_games/features/noir_mind/model/game_theme.dart';
 import 'package:mono_games/features/noir_mind/model/piece.dart';
+import 'package:mono_games/features/noir_mind/view/painters/cell_renderer.dart';
 
 /// ドラッグ可能なピースウィジェット。
 class PieceWidget extends StatefulWidget {
@@ -9,6 +14,7 @@ class PieceWidget extends StatefulWidget {
     required this.piece,
     required this.pieceIndex,
     required this.cellSize,
+    required this.theme,
     super.key,
   });
 
@@ -21,17 +27,84 @@ class PieceWidget extends StatefulWidget {
   /// 各セルの論理ピクセルサイズ。
   final double cellSize;
 
+  /// 現在のゲームテーマ。
+  final GameTheme theme;
+
   @override
   State<PieceWidget> createState() => _PieceWidgetState();
 }
 
-class _PieceWidgetState extends State<PieceWidget> {
+class _PieceWidgetState extends State<PieceWidget>
+    with SingleTickerProviderStateMixin {
   bool _isDragging = false;
+  FragmentShader? _shader;
+  late final AnimationController _clockController;
+  late final DateTime _clockStart;
+
+  @override
+  void initState() {
+    super.initState();
+    _clockStart = DateTime.now();
+    _clockController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 60),
+    )..repeat();
+    _clockController.addListener(_onTick);
+    unawaited(_loadShader(widget.theme.cellStyle.renderMode));
+  }
+
+  @override
+  void didUpdateWidget(PieceWidget oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.theme.cellStyle.renderMode !=
+        widget.theme.cellStyle.renderMode) {
+      setState(() => _shader = null);
+      unawaited(_loadShader(widget.theme.cellStyle.renderMode));
+    }
+  }
+
+  void _onTick() {
+    if (mounted) {
+      setState(() {});
+    }
+  }
+
+  Future<void> _loadShader(CellRenderMode mode) async {
+    final path = _shaderPath(mode);
+    if (path == null) {
+      return;
+    }
+    final program = await FragmentProgram.fromAsset(path);
+    if (mounted) {
+      setState(() => _shader = program.fragmentShader());
+    }
+  }
+
+  static String? _shaderPath(CellRenderMode mode) => switch (mode) {
+        CellRenderMode.glassmorphism =>
+          'shaders/noir_mind/glassmorphism.frag',
+        CellRenderMode.wireframe => 'shaders/noir_mind/wireframe.frag',
+        CellRenderMode.matte => 'shaders/noir_mind/matte.frag',
+        CellRenderMode.bubble => 'shaders/noir_mind/bubble.frag',
+        CellRenderMode.ice => 'shaders/noir_mind/ice.frag',
+        CellRenderMode.slate => 'shaders/noir_mind/slate.frag',
+        CellRenderMode.slime => 'shaders/noir_mind/slime.frag',
+        _ => null,
+      };
+
+  double get _time =>
+      DateTime.now().difference(_clockStart).inMilliseconds / 1000.0;
+
+  @override
+  void dispose() {
+    _clockController
+      ..removeListener(_onTick)
+      ..dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
-
     return Draggable<int>(
       data: widget.pieceIndex,
       onDragStarted: () {
@@ -54,7 +127,9 @@ class _PieceWidgetState extends State<PieceWidget> {
             child: _PieceShape(
               piece: widget.piece,
               cellSize: widget.cellSize / 0.6,
-              color: colorScheme.onSurface,
+              theme: widget.theme,
+              shader: _shader,
+              time: _time,
             ),
           ),
         ),
@@ -71,7 +146,9 @@ class _PieceWidgetState extends State<PieceWidget> {
         child: _PieceShape(
           piece: widget.piece,
           cellSize: widget.cellSize,
-          color: colorScheme.onSurface,
+          theme: widget.theme,
+          shader: _shader,
+          time: _time,
         ),
       ),
     );
@@ -82,12 +159,16 @@ class _PieceShape extends StatelessWidget {
   const _PieceShape({
     required this.piece,
     required this.cellSize,
-    required this.color,
+    required this.theme,
+    required this.shader,
+    required this.time,
   });
 
   final Piece piece;
   final double cellSize;
-  final Color color;
+  final GameTheme theme;
+  final FragmentShader? shader;
+  final double time;
 
   @override
   Widget build(BuildContext context) {
@@ -96,7 +177,10 @@ class _PieceShape extends StatelessWidget {
       painter: _PiecePainter(
         piece: piece,
         cellSize: cellSize,
-        color: color,
+        theme: theme,
+        brightness: Theme.of(context).brightness,
+        shader: shader,
+        time: time,
       ),
     );
   }
@@ -106,17 +190,22 @@ class _PiecePainter extends CustomPainter {
   _PiecePainter({
     required this.piece,
     required this.cellSize,
-    required this.color,
+    required this.theme,
+    required this.brightness,
+    required this.shader,
+    required this.time,
   });
 
   final Piece piece;
   final double cellSize;
-  final Color color;
+  final GameTheme theme;
+  final Brightness brightness;
+  final FragmentShader? shader;
+  final double time;
 
   @override
   void paint(Canvas canvas, Size size) {
     const gap = 1.5;
-    const radius = 3.0;
 
     for (final (row, col) in piece.offsets) {
       final rect = Rect.fromLTWH(
@@ -125,44 +214,24 @@ class _PiecePainter extends CustomPainter {
         cellSize - gap * 2,
         cellSize - gap * 2,
       );
-      final rrect = RRect.fromRectAndRadius(
+      drawCell(
+        canvas,
         rect,
-        const Radius.circular(radius),
+        theme.cellStyle,
+        theme.colorsFor(brightness),
+        shader: shader,
+        time: time,
       );
-
-      // ベース + ハイライト + シャドウ（立体感のあるタイル）
-      canvas
-        ..drawRRect(rrect, Paint()..color = color)
-        ..drawRRect(
-          rrect,
-          Paint()
-            ..shader = LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Colors.white.withValues(alpha: 0.25),
-                Colors.white.withValues(alpha: 0),
-              ],
-              stops: const [0.0, 0.5],
-            ).createShader(rect),
-        )
-        ..drawRRect(
-          rrect,
-          Paint()
-            ..shader = LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Colors.black.withValues(alpha: 0),
-                Colors.black.withValues(alpha: 0.15),
-              ],
-              stops: const [0.6, 1.0],
-            ).createShader(rect),
-        );
     }
   }
 
   @override
-  bool shouldRepaint(_PiecePainter oldDelegate) =>
-      color != oldDelegate.color;
+  bool shouldRepaint(_PiecePainter oldDelegate) {
+    if (shader == null) {
+      return theme != oldDelegate.theme;
+    }
+    return theme != oldDelegate.theme ||
+        shader != oldDelegate.shader ||
+        time != oldDelegate.time;
+  }
 }

@@ -33,6 +33,7 @@ dependencies:
   flame: ^1.35.0
   flame_forge2d: ^0.19.2+3
   sensors_plus: ^7.0.0
+  audioplayers: ^6.1.0
 
 dev_dependencies:
   flutter_test:
@@ -48,6 +49,19 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/sounds/noir_mind/
+
+  shaders:
+    - shaders/noir_mind/glassmorphism.frag
+    - shaders/noir_mind/wireframe.frag
+    - shaders/noir_mind/matte.frag
+    - shaders/noir_mind/bubble.frag
+    - shaders/noir_mind/ice.frag
+    - shaders/noir_mind/slate.frag
+    - shaders/noir_mind/slime.frag
+
 
   fonts:
     - family: Poppins
