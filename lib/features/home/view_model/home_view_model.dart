@@ -15,6 +15,6 @@ abstract class HomeState with _$HomeState {
 class HomeViewModel extends _$HomeViewModel {
   @override
   HomeState build() {
-    return HomeState();
+    return const HomeState();
   }
 }

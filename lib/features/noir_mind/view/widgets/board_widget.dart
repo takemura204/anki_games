@@ -8,9 +8,9 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mono_games/features/noir_mind/model/board.dart';
 import 'package:mono_games/features/noir_mind/model/game_theme.dart';
 import 'package:mono_games/features/noir_mind/model/piece.dart';
-import 'package:mono_games/features/noir_mind/service/audio_service.dart';
 import 'package:mono_games/features/noir_mind/view/painters/cell_renderer.dart';
 import 'package:mono_games/features/noir_mind/view_model/noir_mind_view_model.dart';
+import 'package:mono_games/until/service/audio_service.dart';
 
 /// ドラッグフィードバックの上方オフセット（ボードセル数）。
 const _dragOffsetCells = 2.0;
@@ -175,30 +175,25 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
     _pulseController = AnimationController(
       vsync: this,
       duration: anims.pulseDuration,
-    )..addListener(() {
-        setState(() {});
-      });
+    );
 
     _particleController = AnimationController(
       vsync: this,
       duration: anims.clearDuration,
-    )..addListener(() {
-        setState(() {});
-      });
+    );
 
     _flashController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 200),
-    )..addListener(() {
-        setState(() {});
-      });
+    );
 
     _rippleController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 600),
-    )..addListener(() {
-        setState(() {});
-      });
+    );
+
+    // 消去アニメーション完了時にビューモデルへ通知する。
+    _clearController.addStatusListener(_onClearAnimationStatus);
 
     _clockController = AnimationController(
       vsync: this,
@@ -293,9 +288,6 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
       }
     }
 
-    // パルス強度（0.15 ~ 0.45 の間で滑らかに変動）
-    final pulseGlow = 0.15 + _pulseController.value * 0.3;
-
     return AnimatedBuilder(
       animation: Listenable.merge([
         _shakeAnimation,
@@ -323,12 +315,16 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
                   _clearAnimation,
                   _bounceAnimation,
                   _clockController,
+                  _pulseController,
                 ]),
                 builder: (context, _) {
                   final shaderTime = DateTime.now()
                           .difference(_clockStart)
                           .inMilliseconds /
                       1000;
+                  // パルス強度（0.15 ~ 0.45）はシェーダークロックと同じ
+                  // AnimatedBuilder 内で計算してフル再ビルドを避ける。
+                  final pulseGlow = 0.15 + _pulseController.value * 0.3;
                   return CustomPaint(
                     size: Size(boardSize, boardSize),
                     painter: _BoardPainter(
@@ -357,36 +353,50 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
                 },
               ),
             ),
-            // フラッシュオーバーレイ
-            if (_flashController.isAnimating)
-              IgnorePointer(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(14),
-                  child: ColoredBox(
-                    color: (theme.clearEffect.flashColor ?? Colors.white)
-                        .withValues(
-                      alpha: (1 - _flashController.value) * 0.6,
-                    ),
-                    child: SizedBox(
-                      width: boardSize,
-                      height: boardSize,
+            // フラッシュオーバーレイ（AnimatedBuilder で分離しフル再ビルドを回避）
+            AnimatedBuilder(
+              animation: _flashController,
+              builder: (context, _) {
+                if (!_flashController.isAnimating) {
+                  return const SizedBox.shrink();
+                }
+                return IgnorePointer(
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(14),
+                    child: ColoredBox(
+                      color: (theme.clearEffect.flashColor ?? Colors.white)
+                          .withValues(
+                        alpha: (1 - _flashController.value) * 0.6,
+                      ),
+                      child: SizedBox(
+                        width: boardSize,
+                        height: boardSize,
+                      ),
                     ),
                   ),
-                ),
-              ),
-            // 波紋エフェクト
-            if (_ripples.isNotEmpty && _rippleController.isAnimating)
-              IgnorePointer(
-                child: CustomPaint(
-                  size: Size(boardSize, boardSize),
-                  painter: _RipplePainter(
-                    ripples: _ripples,
-                    progress: _rippleController.value,
-                    color: theme.colorsFor(_brightness).glowColor,
-                    maxRadius: theme.clearEffect.rippleMaxRadius,
+                );
+              },
+            ),
+            // 波紋エフェクト（AnimatedBuilder で分離）
+            AnimatedBuilder(
+              animation: _rippleController,
+              builder: (context, _) {
+                if (_ripples.isEmpty || !_rippleController.isAnimating) {
+                  return const SizedBox.shrink();
+                }
+                return IgnorePointer(
+                  child: CustomPaint(
+                    size: Size(boardSize, boardSize),
+                    painter: _RipplePainter(
+                      ripples: _ripples,
+                      progress: _rippleController.value,
+                      color: theme.colorsFor(_brightness).glowColor,
+                      maxRadius: theme.clearEffect.rippleMaxRadius,
+                    ),
                   ),
-                ),
-              ),
+                );
+              },
+            ),
             // DragTarget（ボード＋下方拡張領域をカバー）
             Positioned.fill(
               child: DragTarget<int>(
@@ -432,17 +442,24 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
                 },
               ),
             ),
-            // パーティクルエフェクト描画
-            if (_particles.isNotEmpty)
-              IgnorePointer(
-                child: CustomPaint(
-                  size: Size(boardSize, boardSize),
-                  painter: _ParticlePainter(
-                    particles: _particles,
-                    progress: _particleController.value,
+            // パーティクルエフェクト描画（AnimatedBuilder で分離しフル再ビルドを回避）
+            AnimatedBuilder(
+              animation: _particleController,
+              builder: (context, _) {
+                if (_particles.isEmpty) {
+                  return const SizedBox.shrink();
+                }
+                return IgnorePointer(
+                  child: CustomPaint(
+                    size: Size(boardSize, boardSize),
+                    painter: _ParticlePainter(
+                      particles: _particles,
+                      progress: _particleController.value,
+                    ),
                   ),
-                ),
-              ),
+                );
+              },
+            ),
             // フローティングスコア
             ..._floatingScores.map(
               (fs) => Positioned(
@@ -543,6 +560,13 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
   /// 列位置からステレオパン値を計算する (-1.0=左, +1.0=右)。
   double _columnToPan(int col) {
     return (col / (Board.size - 1)) * 2 - 1;
+  }
+
+  /// 消去アニメーション完了時にビューモデルへクリーンアップを委譲する。
+  void _onClearAnimationStatus(AnimationStatus status) {
+    if (status == AnimationStatus.completed && mounted) {
+      ref.read(noirMindViewModelProvider.notifier).completeClearAnimation();
+    }
   }
 
   void _triggerClearAnimation(ClearResult result) {

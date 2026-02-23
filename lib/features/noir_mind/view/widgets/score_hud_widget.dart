@@ -25,6 +25,7 @@ class _ScoreHudWidgetState extends ConsumerState<ScoreHudWidget>
   @override
   void initState() {
     super.initState();
+    _displayScore = ref.read(noirMindViewModelProvider).score;
     _scoreController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 400),
@@ -65,6 +66,12 @@ class _ScoreHudWidgetState extends ConsumerState<ScoreHudWidget>
     final colors = widget.theme.colorsFor(Theme.of(context).brightness);
     final highScore = ref.watch(
       noirMindViewModelProvider.select((s) => s.highScore),
+    );
+    final isQuestMode = ref.watch(
+      noirMindViewModelProvider.select((s) => s.isQuestMode),
+    );
+    final targetScore = ref.watch(
+      noirMindViewModelProvider.select((s) => s.targetScore),
     );
     final combo = ref.watch(
       noirMindViewModelProvider.select((s) => s.combo),
@@ -159,13 +166,13 @@ class _ScoreHudWidgetState extends ConsumerState<ScoreHudWidget>
                 ),
               ),
             ),
-          // ハイスコア
+          // クエストモードはTARGET、クラシックモードはBEST
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                'BEST',
+                isQuestMode ? 'TARGET' : 'BEST',
                 style: TextStyle(
                   fontFamily: 'Poppins',
                   fontSize: 10,
@@ -175,7 +182,7 @@ class _ScoreHudWidgetState extends ConsumerState<ScoreHudWidget>
                 ),
               ),
               Text(
-                '$highScore',
+                isQuestMode ? '$targetScore' : '$highScore',
                 style: TextStyle(
                   fontFamily: 'Poppins',
                   fontSize: 18,

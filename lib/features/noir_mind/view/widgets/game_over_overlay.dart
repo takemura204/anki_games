@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mono_games/features/noir_mind/model/game_theme.dart';
-import 'package:mono_games/features/noir_mind/service/audio_service.dart';
 import 'package:mono_games/features/noir_mind/view_model/noir_mind_view_model.dart';
+import 'package:mono_games/until/service/audio_service.dart';
 
 /// ゲームオーバー時に表示するフルスクリーンオーバーレイ。
 class GameOverOverlay extends ConsumerStatefulWidget {
@@ -14,8 +14,7 @@ class GameOverOverlay extends ConsumerStatefulWidget {
   final GameTheme theme;
 
   @override
-  ConsumerState<GameOverOverlay> createState() =>
-      _GameOverOverlayState();
+  ConsumerState<GameOverOverlay> createState() => _GameOverOverlayState();
 }
 
 class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
@@ -107,8 +106,22 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
+                      // クエストモードではレベル表示
+                      if (gameState.isQuestMode) ...[
+                        Text(
+                          'LEVEL ${gameState.questLevel}',
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 13,
+                            fontWeight: FontWeight.w600,
+                            letterSpacing: 2,
+                            color: colors.onSurface.withValues(alpha: 0.5),
+                          ),
+                        ),
+                        const SizedBox(height: 4),
+                      ],
                       Text(
-                        'GAME OVER',
+                        gameState.isQuestMode ? 'LEVEL FAILED' : 'GAME OVER',
                         style: TextStyle(
                           fontFamily: 'Poppins',
                           fontSize: 24,
@@ -130,70 +143,77 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        'SCORE',
+                        gameState.isQuestMode
+                            ? 'SCORE  (TARGET: ${gameState.targetScore})'
+                            : 'SCORE',
                         style: TextStyle(
                           fontFamily: 'Poppins',
                           fontSize: 11,
                           fontWeight: FontWeight.w600,
                           letterSpacing: 2,
-                          color: colors.onSurface
-                              .withValues(alpha: 0.4),
+                          color: colors.onSurface.withValues(alpha: 0.4),
                         ),
                       ),
-                      const SizedBox(height: 16),
-                      // ハイスコア
-                      Text(
-                        'BEST  ${gameState.highScore}',
-                        style: TextStyle(
-                          fontFamily: 'Poppins',
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
-                          color: colors.onSurface
-                              .withValues(alpha: 0.5),
+                      if (!gameState.isQuestMode) ...[
+                        const SizedBox(height: 16),
+                        // クラシックモードのみハイスコア表示
+                        Text(
+                          'BEST  ${gameState.highScore}',
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                            color: colors.onSurface.withValues(alpha: 0.5),
+                          ),
                         ),
-                      ),
-                      // NEW BESTバッジ
-                      if (gameState.isNewHighScore) ...[
-                        const SizedBox(height: 12),
-                        Transform.scale(
-                          scale: _newBestScale.value,
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 16,
-                              vertical: 6,
-                            ),
-                            decoration: BoxDecoration(
-                              color: colors.accent
-                                  .withValues(alpha: 0.15),
-                              borderRadius:
-                                  BorderRadius.circular(20),
-                            ),
-                            child: Text(
-                              'NEW BEST!',
-                              style: TextStyle(
-                                fontFamily: 'Poppins',
-                                fontSize: 13,
-                                fontWeight: FontWeight.bold,
-                                letterSpacing: 1.5,
-                                color: colors.accent,
+                        // NEW BESTバッジ
+                        if (gameState.isNewHighScore) ...[
+                          const SizedBox(height: 12),
+                          Transform.scale(
+                            scale: _newBestScale.value,
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 16,
+                                vertical: 6,
+                              ),
+                              decoration: BoxDecoration(
+                                color: colors.accent.withValues(alpha: 0.15),
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Text(
+                                'NEW BEST!',
+                                style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.bold,
+                                  letterSpacing: 1.5,
+                                  color: colors.accent,
+                                ),
                               ),
                             ),
                           ),
-                        ),
+                        ],
                       ],
                       const SizedBox(height: 32),
-                      // Play Againボタン
+                      // メインアクションボタン
                       SizedBox(
                         width: double.infinity,
                         child: TextButton(
                           onPressed: () {
                             HapticFeedback.lightImpact();
-                            ref
-                                .read(
-                                  noirMindViewModelProvider
-                                      .notifier,
-                                )
-                                .resetGame();
+                            if (gameState.isQuestMode) {
+                              ref
+                                  .read(
+                                    noirMindViewModelProvider.notifier,
+                                  )
+                                  .retryQuestLevel();
+                            } else {
+                              ref
+                                  .read(
+                                    noirMindViewModelProvider.notifier,
+                                  )
+                                  .resetGame();
+                            }
                           },
                           style: TextButton.styleFrom(
                             backgroundColor: colors.onSurface,
@@ -202,13 +222,12 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
                               vertical: 14,
                             ),
                             shape: RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.circular(50),
+                              borderRadius: BorderRadius.circular(50),
                             ),
                           ),
-                          child: const Text(
-                            'Play Again',
-                            style: TextStyle(
+                          child: Text(
+                            gameState.isQuestMode ? 'Retry Level' : 'Play Again',
+                            style: const TextStyle(
                               fontFamily: 'Poppins',
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
@@ -216,6 +235,30 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
                           ),
                         ),
                       ),
+                      // クエストモードのみHomeボタン
+                      if (gameState.isQuestMode) ...[
+                        const SizedBox(height: 8),
+                        SizedBox(
+                          width: double.infinity,
+                          child: TextButton(
+                            onPressed: () {
+                              HapticFeedback.lightImpact();
+                              Navigator.of(context).pop();
+                            },
+                            style: TextButton.styleFrom(
+                              foregroundColor: colors.onSurface.withValues(alpha: 0.55),
+                            ),
+                            child: const Text(
+                              'Home',
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ],
                   ),
                 ),

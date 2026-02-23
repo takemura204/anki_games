@@ -2,58 +2,56 @@ import 'package:flutter/animation.dart';
 
 import 'package:mono_games/features/noir_mind/model/game_theme.dart';
 
-/// Stone — 漆黒スレート（デフォルト）。ライト/ダーク問わず純黒タイル＋微細縦グラデ。
-const stoneTheme = GameTheme(
-  id: 'stone',
-  name: 'Stone',
-  icon: '\u{1FAA8}', // 🪨
+/// Monotone — マットブラック＆オフホワイト（デフォルト）。ミニマルなモノクロデザイン。
+const monotoneTheme = GameTheme(
+  id: 'monotone',
+  name: 'Monotone',
+  icon: '\u{2B1B}', // ⬛
   colors: GameThemeColors(
-    surface: Color(0xFFF0EDE6), // ウォームクリーム背景
-    onSurface: Color(0xFF000000), // 純黒タイル（グラデーション底）
-    emptyCellFill: Color(0xFFD5D2CB), // ミディアムグレー空セル
-    gridLine: Color(0x14000000), // black 0.08
-    accent: Color(0xFF909090), // ニュートラルグレー
-    highlightTop: Color(0x21FFFFFF), // white 0.13 — 上端ベベルハイライト
-    shadowBottom: Color(0x0F000000), // black 0.06
-    glowColor: Color(0xFF1A1A1A), // グラデーション頂点（onSurface より 10% 明るい）
-    particleColor: Color(0xFFBBB9B5),
-    overlayBg: Color(0xD9F0EDE6), // cream 0.85
+    surface: Color(0xFFF5F5F0), // 目に優しいウォームオフホワイト背景
+    onSurface: Color(0xFF121212), // マットな近黒ブロック
+    emptyCellFill: Color(0xFFDEDEDA), // ウォームライトグレー空セル
+    gridLine: Color(0x0F000000), // black 0.06 — 極めて繊細なグリッド
+    accent: Color(0xFF6E6E6E), // ミッドグレーアクセント
+    highlightTop: Color(0x14FFFFFF), // white 0.08 — 控えめハイライト
+    shadowBottom: Color(0x08000000), // black 0.03
+    glowColor: Color(0xFF2A2A2A), // ブロックより少し明るいグラデ頂点
+    particleColor: Color(0xFF8C8C8C),
+    overlayBg: Color(0xD9F5F5F0), // off-white 0.85
   ),
   colorsDark: GameThemeColors(
-    surface: Color(0xFF0C0C0C), // 純黒に近い背景
-    onSurface: Color(0xFF000000), // 純黒タイル（グラデーション底）
-    emptyCellFill: Color(0xFF282828), // ダークグレー空セル
-    gridLine: Color(0x14FFFFFF), // white 0.08
-    accent: Color(0xFF666666), // ニュートラルグレー
-    highlightTop: Color(0x21FFFFFF), // white 0.13 — 上端ベベルハイライト
-    shadowBottom: Color(0x29000000), // black 0.16
-    glowColor: Color(0xFF1A1A1A), // グラデーション頂点（onSurface より 10% 明るい）
-    particleColor: Color(0xFF484848),
-    overlayBg: Color(0xCC0C0C0C), // near-black 0.8
+    surface: Color(0xFF0F0F0F), // 近黒背景
+    onSurface: Color(0xFFD8D8D8), // ソフトオフホワイトブロック
+    emptyCellFill: Color(0xFF242424), // ダークグレー空セル
+    gridLine: Color(0x0FFFFFFF), // white 0.06 — 極めて繊細なグリッド
+    accent: Color(0xFF8C8C8C), // ミッドグレーアクセント
+    highlightTop: Color(0x0FFFFFFF), // white 0.06 — 控えめハイライト
+    shadowBottom: Color(0x1A000000), // black 0.1
+    glowColor: Color(0xFFE8E8E8), // ブロックより少し明るいグラデ頂点
+    particleColor: Color(0xFF6E6E6E),
+    overlayBg: Color(0xCC0F0F0F), // near-black 0.8
   ),
   cellStyle: GameThemeCellStyle(
-    renderMode: CellRenderMode.slate,
-    cellBorderRadius: 2, // わずかな面取り（石のカット感）
+    renderMode: CellRenderMode.matte, // マット質感
   ),
   clearEffect: GameThemeClearEffect(
-    mode: ClearEffectMode.ripple,
-    rippleMaxRadius: 150, // 広がる波紋で石の重厚感
+    mode: ClearEffectMode.dissolve, // じわっと溶ける消去
   ),
   background: GameThemeBackground(
     mode: BackgroundMode.solid,
   ),
   animations: GameThemeAnimations(
-    clearDuration: Duration(milliseconds: 700), // ゆっくり広がるリップル
-    bounceDuration: Duration(milliseconds: 280),
-    shakeDuration: Duration(milliseconds: 280),
-    pulseDuration: Duration(milliseconds: 800),
-    placementCurve: Curves.easeInOutQuart,
-    shakeIntensity: 4, // 石の重さ
-    bounceSequence: [0, 1.07, 0.96, 1.02, 1],
-    particlesPerCell: 12, // 石の破片
-    particleMinSpeed: 40,
-    particleMaxSpeed: 90,
-    cellDelay: 0.04, // タイトな消去カスケード
+    clearDuration: Duration(milliseconds: 680), // じわっと溶ける
+    bounceDuration: Duration(milliseconds: 240),
+    shakeDuration: Duration(milliseconds: 200),
+    pulseDuration: Duration(milliseconds: 700),
+    placementCurve: Curves.easeOutQuart,
+    shakeIntensity: 3,
+    bounceSequence: [0, 1.05, 0.97, 1.02, 1],
+    particlesPerCell: 10,
+    particleMinSpeed: 30,
+    particleMaxSpeed: 80,
+    cellDelay: 0.08,
   ),
   sounds: GameThemeSounds(
     placePath: 'sounds/noir_mind/put.mp3',
@@ -102,7 +100,7 @@ const cyberNeonTheme = GameTheme(
     scanlineOpacity: 0.03,
   ),
   animations: GameThemeAnimations(
-    clearDuration: Duration(milliseconds: 420), // 高速デジタル爆発
+    clearDuration: Duration(milliseconds: 560), // 高速デジタル爆発
     bounceDuration: Duration(milliseconds: 240),
     shakeDuration: Duration(milliseconds: 280),
     pulseDuration: Duration(milliseconds: 500),
@@ -112,7 +110,7 @@ const cyberNeonTheme = GameTheme(
     particlesPerCell: 14, // ピクセル破片
     particleMinSpeed: 60,
     particleMaxSpeed: 150,
-    cellDelay: 0.06,
+    cellDelay: 0.08,
   ),
   sounds: GameThemeSounds(
     placePath: 'sounds/noir_mind/put.mp3',
@@ -160,7 +158,7 @@ const slimeTheme = GameTheme(
     ],
   ),
   animations: GameThemeAnimations(
-    clearDuration: Duration(milliseconds: 380), // 弾けるポップ感
+    clearDuration: Duration(milliseconds: 520), // 弾けるポップ感
     bounceDuration: Duration(milliseconds: 500), // 粘液の弾性
     shakeDuration: Duration(milliseconds: 220),
     pulseDuration: Duration(milliseconds: 550),
@@ -170,7 +168,7 @@ const slimeTheme = GameTheme(
     particlesPerCell: 16, // 緑の飛沫
     particleMinSpeed: 60,
     particleMaxSpeed: 150,
-    cellDelay: 0.04, // 次々とポップ
+    cellDelay: 0.06, // 次々とポップ
   ),
   sounds: GameThemeSounds(
     placePath: 'sounds/noir_mind/put.mp3',
@@ -217,7 +215,7 @@ const soapCutTheme = GameTheme(
     ],
   ),
   animations: GameThemeAnimations(
-    clearDuration: Duration(milliseconds: 500), // じわじわ溶ける
+    clearDuration: Duration(milliseconds: 680), // じわじわ溶ける
     bounceDuration: Duration(milliseconds: 220),
     shakeDuration: Duration(milliseconds: 160),
     pulseDuration: Duration(milliseconds: 700),
@@ -227,7 +225,7 @@ const soapCutTheme = GameTheme(
     particlesPerCell: 12,
     particleMinSpeed: 20,
     particleMaxSpeed: 70,
-    cellDelay: 0.08,
+    cellDelay: 0.10,
   ),
   sounds: GameThemeSounds(
     placePath: 'sounds/noir_mind/put.mp3',
@@ -273,7 +271,7 @@ const bubbleWrapTheme = GameTheme(
     gradientColors: [Color(0xFFE3F2FD), Color(0xFFF3E5F5)],
   ),
   animations: GameThemeAnimations(
-    clearDuration: Duration(milliseconds: 350), // 瞬間プチっ！
+    clearDuration: Duration(milliseconds: 480), // 瞬間プチっ！
     bounceDuration: Duration(milliseconds: 450), // ビニールの弾性
     shakeDuration: Duration(milliseconds: 200),
     pulseDuration: Duration(milliseconds: 500),
@@ -283,7 +281,7 @@ const bubbleWrapTheme = GameTheme(
     particlesPerCell: 18, // 飛び散る水滴
     particleMinSpeed: 70,
     particleMaxSpeed: 170,
-    cellDelay: 0.03, // 高速連続ポップ
+    cellDelay: 0.045, // 高速連続ポップ
   ),
   sounds: GameThemeSounds(
     placePath: 'sounds/noir_mind/put.mp3',
@@ -327,7 +325,7 @@ const iceGlassTheme = GameTheme(
     ], // 冷たいグラデーション
   ),
   animations: GameThemeAnimations(
-    clearDuration: Duration(milliseconds: 500),
+    clearDuration: Duration(milliseconds: 700),
     bounceDuration: Duration(milliseconds: 180), // 硬質な衝撃
     shakeDuration: Duration(milliseconds: 350), // 粉砕の余震
     pulseDuration: Duration(milliseconds: 1000),
@@ -337,7 +335,7 @@ const iceGlassTheme = GameTheme(
     particlesPerCell: 14, // 鋭い氷の破片
     particleMinSpeed: 80,
     particleMaxSpeed: 180, // 高速で飛び散る
-    cellDelay: 0.04, // 鋭いカスケード
+    cellDelay: 0.06, // 鋭いカスケード
   ),
   sounds: GameThemeSounds(
     placePath: 'sounds/noir_mind/put.mp3',
@@ -349,7 +347,7 @@ const iceGlassTheme = GameTheme(
 
 /// 全テーマのリスト。
 const List<GameTheme> allGameThemes = [
-  stoneTheme,
+  monotoneTheme,
   cyberNeonTheme,
   slimeTheme,
   soapCutTheme,
@@ -361,6 +359,6 @@ const List<GameTheme> allGameThemes = [
 GameTheme getThemeById(String id) {
   return allGameThemes.firstWhere(
     (t) => t.id == id,
-    orElse: () => stoneTheme,
+    orElse: () => monotoneTheme,
   );
 }

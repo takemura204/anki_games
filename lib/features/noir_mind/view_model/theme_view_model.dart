@@ -13,7 +13,7 @@ class ThemeViewModel extends _$ThemeViewModel {
   @override
   GameTheme build() {
     _loadSaved();
-    return stoneTheme;
+    return monotoneTheme;
   }
 
   /// テーマを選択して永続化する。

@@ -4,8 +4,7 @@ import 'package:mono_games/features/gravity_sand/game/components/wall_body.dart'
 import 'package:mono_games/features/gravity_sand/game/gravity_sand_game.dart';
 
 /// Handles drag input to create wall bodies from finger gestures.
-class WallManager extends Component
-    with HasGameReference<GravitySandGame>, DragCallbacks {
+class WallManager extends Component with HasGameReference<GravitySandGame>, DragCallbacks {
   /// Minimum distance between consecutive wall points (world units).
   static const double _minSegmentLength = 0.5;
 
@@ -21,7 +20,9 @@ class WallManager extends Component
   @override
   void onDragUpdate(DragUpdateEvent event) {
     super.onDragUpdate(event);
-    if (_currentPoints == null) return;
+    if (_currentPoints == null) {
+      return;
+    }
     final worldPos = game.screenToWorld(event.canvasEndPosition);
     if (_currentPoints!.last.distanceTo(worldPos) >= _minSegmentLength) {
       _currentPoints!.add(worldPos);

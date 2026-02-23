@@ -26,7 +26,26 @@ class Piece {
 class PieceDefinitions {
   PieceDefinitions._();
 
-  static const List<Piece> _allPieces = [
+  /// Small, simple pieces (1–4 cells). Used in early quest levels.
+  static const List<Piece> easyPool = [
+    dot, dominoH, dominoV,
+    triominoH, triominoV,
+    barH, barV,
+    square2x2,
+  ];
+
+  /// Medium-difficulty pieces: easyPool plus L/T-shapes (4 cells each).
+  static const List<Piece> mediumPool = [
+    dot, dominoH, dominoV,
+    triominoH, triominoV,
+    barH, barV,
+    square2x2,
+    lShape0, lShape90, lShape180, lShape270,
+    tShape0, tShape90, tShape180, tShape270,
+  ];
+
+  /// All available piece shapes including large shapes (e.g. 3×3 square).
+  static const List<Piece> allPieces = [
     dot, dominoH, dominoV,
     triominoH, triominoV,
     barH, barV,
@@ -36,8 +55,12 @@ class PieceDefinitions {
     zShape0, zShape90, sShape0, sShape90,
   ];
 
+  /// Returns a random piece from [pool].
+  static Piece randomFrom(List<Piece> pool, Random rng) =>
+      pool[rng.nextInt(pool.length)];
+
   /// Returns a random piece from all definitions.
-  static Piece random(Random rng) => _allPieces[rng.nextInt(_allPieces.length)];
+  static Piece random(Random rng) => randomFrom(allPieces, rng);
 
   /// 1x1 dot.
   static const dot = Piece([(0, 0)]);

@@ -41,7 +41,9 @@ class GravitySandGame extends Forge2DGame {
   /// Triggers light haptic feedback, throttled to max 10/sec.
   void triggerHaptic() {
     final now = DateTime.now();
-    if (now.difference(_lastHaptic).inMilliseconds < 100) return;
+    if (now.difference(_lastHaptic).inMilliseconds < 100) {
+      return;
+    }
     _lastHaptic = now;
     HapticFeedback.lightImpact();
   }

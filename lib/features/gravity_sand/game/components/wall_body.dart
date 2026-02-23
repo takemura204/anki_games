@@ -25,8 +25,7 @@ class WallBody extends BodyComponent with ContactCallbacks {
 
   @override
   Body createBody() {
-    final body = world.createBody(BodyDef())
-      ..userData = this;
+    final body = world.createBody(BodyDef())..userData = this;
 
     for (var i = 0; i < points.length - 1; i++) {
       body.createFixture(
@@ -52,7 +51,9 @@ class WallBody extends BodyComponent with ContactCallbacks {
 
   @override
   void render(Canvas canvas) {
-    if (points.length < 2) return;
+    if (points.length < 2) {
+      return;
+    }
 
     final wallPaint = Paint()
       ..color = Color.fromRGBO(255, 255, 255, _opacity)

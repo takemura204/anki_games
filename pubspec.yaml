@@ -34,18 +34,24 @@ dependencies:
   flame_forge2d: ^0.19.2+3
   sensors_plus: ^7.0.0
   audioplayers: ^6.1.0
+  url_launcher: ^6.3.1
+  
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   # 自動生成
-  build_runner: 
-  riverpod_generator: 
+  build_runner:
+  riverpod_generator:
+  flutter_gen_runner:
   freezed:
   json_serializable:
-  envied_generator: 
-  slang_build_runner: 
+  envied_generator:
+  slang_build_runner:
+
+  # アイコン生成
+  flutter_launcher_icons: ^0.14.3
 
 flutter:
   uses-material-design: true
@@ -68,3 +74,19 @@ flutter:
       fonts:
         - asset: assets/fonts/Poppins-Regular.ttf
         - asset: assets/fonts/Poppins-Bold.ttf
+
+flutter_launcher_icons:
+  android: true
+  adaptive_icon_foreground: "assets/logo/logo_android_light.png"
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_monochrome: "assets/logo/logo_android_dark.png"
+
+  ios: true
+  image_path_ios: "assets/logo/logo_ios_light.png"
+  remove_alpha_ios: true
+  image_path_ios_dark_transparent: "assets/logo/logo_ios_dark.png"
+  image_path_ios_tinted_grayscale: "assets/logo/logo_ios_light.png"
+  desaturate_tinted_to_grayscale_ios: true
+
+flutter_gen:
+  output: lib/gen/
