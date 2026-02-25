@@ -1,4 +1,4 @@
-import 'package:mono_games/features/noir_mind/model/piece.dart';
+import 'package:mono_games/features/block_puzzle/model/piece.dart';
 
 /// ライン消去の結果。
 class ClearLineResult {

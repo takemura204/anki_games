@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:mono_games/features/noir_mind/model/game_theme.dart';
-import 'package:mono_games/features/noir_mind/view_model/noir_mind_view_model.dart';
-import 'package:mono_games/features/noir_mind/view_model/quest_progress_view_model.dart';
+import 'package:mono_games/features/block_puzzle/model/game_theme.dart';
+import 'package:mono_games/features/block_puzzle/view_model/block_puzzle_view_model.dart';
+import 'package:mono_games/features/block_puzzle/view_model/quest_progress_view_model.dart';
+import 'package:mono_games/features/settings/view_model/settings_view_model.dart';
 
 /// クエストモードのレベル達成時に表示するフルスクリーンオーバーレイ。
 class QuestSuccessOverlay extends ConsumerStatefulWidget {
@@ -45,7 +46,9 @@ class _QuestSuccessOverlayState extends ConsumerState<QuestSuccessOverlay>
   @override
   void initState() {
     super.initState();
-    HapticFeedback.heavyImpact();
+    if (ref.read(settingsViewModelProvider).vibrationEnabled) {
+      HapticFeedback.heavyImpact();
+    }
 
     _controller = AnimationController(
       vsync: this,
@@ -185,9 +188,13 @@ class _QuestSuccessOverlayState extends ConsumerState<QuestSuccessOverlay>
                         width: double.infinity,
                         child: TextButton(
                           onPressed: () {
-                            HapticFeedback.lightImpact();
+                            if (ref
+                                .read(settingsViewModelProvider)
+                                .vibrationEnabled) {
+                              HapticFeedback.lightImpact();
+                            }
                             ref
-                                .read(noirMindViewModelProvider.notifier)
+                                .read(blockPuzzleViewModelProvider.notifier)
                                 .startQuestLevel(widget.level + 1);
                           },
                           style: TextButton.styleFrom(
@@ -214,7 +221,11 @@ class _QuestSuccessOverlayState extends ConsumerState<QuestSuccessOverlay>
                         width: double.infinity,
                         child: TextButton(
                           onPressed: () {
-                            HapticFeedback.lightImpact();
+                            if (ref
+                                .read(settingsViewModelProvider)
+                                .vibrationEnabled) {
+                              HapticFeedback.lightImpact();
+                            }
                             Navigator.of(context).pop();
                           },
                           style: TextButton.styleFrom(

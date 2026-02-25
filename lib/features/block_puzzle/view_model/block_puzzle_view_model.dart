@@ -1,26 +1,26 @@
 import 'dart:math';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:mono_games/features/noir_mind/model/board.dart';
-import 'package:mono_games/features/noir_mind/model/piece.dart';
+import 'package:mono_games/features/block_puzzle/model/board.dart';
+import 'package:mono_games/features/block_puzzle/model/piece.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-part 'noir_mind_view_model.freezed.dart';
-part 'noir_mind_view_model.g.dart';
+part 'block_puzzle_view_model.freezed.dart';
+part 'block_puzzle_view_model.g.dart';
 
-const _highScoreKey = 'noir_mind_high_score';
+const _highScoreKey = 'block_puzzle_high_score';
 
 // ゲーム状態の永続化キー
-const _savedBoardKey = 'noir_mind_saved_board';
-const _savedPiecesKey = 'noir_mind_saved_pieces';
-const _savedScoreKey = 'noir_mind_saved_score';
-const _savedComboKey = 'noir_mind_saved_combo';
-const _savedNonClearTurnsKey = 'noir_mind_saved_non_clear_turns';
-const _savedIsQuestModeKey = 'noir_mind_saved_is_quest_mode';
-const _savedQuestLevelKey = 'noir_mind_saved_quest_level';
-const _savedTargetScoreKey = 'noir_mind_saved_target_score';
-const _savedIsQuestCompleteKey = 'noir_mind_saved_is_quest_complete';
+const _savedBoardKey = 'block_puzzle_saved_board';
+const _savedPiecesKey = 'block_puzzle_saved_pieces';
+const _savedScoreKey = 'block_puzzle_saved_score';
+const _savedComboKey = 'block_puzzle_saved_combo';
+const _savedNonClearTurnsKey = 'block_puzzle_saved_non_clear_turns';
+const _savedIsQuestModeKey = 'block_puzzle_saved_is_quest_mode';
+const _savedQuestLevelKey = 'block_puzzle_saved_quest_level';
+const _savedTargetScoreKey = 'block_puzzle_saved_target_score';
+const _savedIsQuestCompleteKey = 'block_puzzle_saved_is_quest_complete';
 
 /// 直前のライン消去情報（アニメーション用）。
 @freezed
@@ -55,9 +55,9 @@ abstract class ClearResult with _$ClearResult {
 
 /// Noir Mindパズルゲームの状態。
 @freezed
-abstract class NoirMindState with _$NoirMindState {
+abstract class BlockPuzzleState with _$BlockPuzzleState {
   /// ゲーム状態を作成する。
-  const factory NoirMindState({
+  const factory BlockPuzzleState({
     /// 8x8ボードのセルグリッド。`true` = 配置済み。
     required List<List<bool>> board,
 
@@ -102,24 +102,23 @@ abstract class NoirMindState with _$NoirMindState {
 
     /// クエスト達成済みかどうか。
     @Default(false) bool isQuestComplete,
-  }) = _NoirMindState;
+  }) = _BlockPuzzleState;
 }
 
 /// Noir Mindパズルゲームのビューモデル。
 @riverpod
-class NoirMindViewModel extends _$NoirMindViewModel {
+class BlockPuzzleViewModel extends _$BlockPuzzleViewModel {
   final _rng = Random();
 
   @override
-  NoirMindState build() {
+  BlockPuzzleState build() {
     final highScore = _loadHighScore();
     _loadSavedGame();
-    return NoirMindState(
-      board: List.generate(
-        Board.size,
-        (_) => List.filled(Board.size, false),
-      ),
-      pieces: _generatePieces(),
+    final emptyBoard =
+        List.generate(Board.size, (_) => List.filled(Board.size, false));
+    return BlockPuzzleState(
+      board: emptyBoard,
+      pieces: _generatePieces(emptyBoard),
       highScore: highScore,
     );
   }
@@ -163,7 +162,8 @@ class NoirMindViewModel extends _$NoirMindViewModel {
       // ラインを即座にクリア
       finalBoard = board.clearCells(clearResult.clearedCells);
 
-      final newCombo = state.combo + 1;
+      // 同時消去ライン数分だけコンボを加算（複数行消去でコンボが加速する）
+      final newCombo = state.combo + clearResult.linesCleared;
 
       // ライン消去スコア: 10 × ライン数²
       final lineScore =
@@ -280,12 +280,11 @@ class NoirMindViewModel extends _$NoirMindViewModel {
 
   /// ゲームをリセットして新しいラウンドを開始する（クラシックモード）。
   void resetGame() {
-    state = NoirMindState(
-      board: List.generate(
-        Board.size,
-        (_) => List.filled(Board.size, false),
-      ),
-      pieces: _generatePieces(),
+    final emptyBoard =
+        List.generate(Board.size, (_) => List.filled(Board.size, false));
+    state = BlockPuzzleState(
+      board: emptyBoard,
+      pieces: _generatePieces(emptyBoard),
       highScore: state.highScore,
     );
     _saveGame();
@@ -294,9 +293,9 @@ class NoirMindViewModel extends _$NoirMindViewModel {
   /// クエストモードで指定レベルを開始する。
   void startQuestLevel(int level) {
     final questBoard = _generateQuestBoard(level);
-    state = NoirMindState(
+    state = BlockPuzzleState(
       board: questBoard,
-      pieces: _generatePieces(board: questBoard, questLevel: level),
+      pieces: _generatePieces(questBoard),
       highScore: state.highScore,
       isQuestMode: true,
       questLevel: level,
@@ -364,10 +363,7 @@ class NoirMindViewModel extends _$NoirMindViewModel {
     // 3ピース全て使用済みなら補充
     var piecesToCheck = state.pieces;
     if (piecesToCheck.every((p) => p == null)) {
-      final newPieces = _generatePieces(
-        board: state.board,
-        questLevel: state.questLevel,
-      );
+      final newPieces = _generatePieces(state.board);
       state = state.copyWith(pieces: newPieces);
       piecesToCheck = newPieces;
     }
@@ -380,70 +376,97 @@ class NoirMindViewModel extends _$NoirMindViewModel {
     _saveGame();
   }
 
-  /// ボードの埋まり具合（0.0〜1.0）を返す。
-  double _boardDensity(List<List<bool>> board) {
-    var filled = 0;
-    for (final row in board) {
-      for (final cell in row) {
-        if (cell) {
-          filled++;
+  /// [piece] が現在の [boardCells] 上でラインクリアに貢献できるか判定する。
+  bool _canClearLine(Piece piece, List<List<bool>> boardCells) {
+    final baseBoard = Board.from(boardCells);
+    for (var r = 0; r < Board.size; r++) {
+      for (var c = 0; c < Board.size; c++) {
+        if (baseBoard.canPlace(piece, r, c)) {
+          final testBoard = baseBoard.copy()..place(piece, r, c);
+          if (testBoard.checkClearLines().clearedCells.isNotEmpty) {
+            return true;
+          }
         }
       }
     }
-    return filled / (Board.size * Board.size);
+    return false;
   }
 
-  /// クエストレベルとボード密度に基づいてピースプールを選択する。
-  /// ボード密度 > 65% の場合は常に easyPool を返す。
-  List<Piece> _selectPool({required int questLevel, required double density}) {
-    if (density > 0.65) {
-      return PieceDefinitions.easyPool;
-    }
-    if (questLevel == 0) {
-      return PieceDefinitions.allPieces;
-    }
-    if (questLevel <= 5) {
-      return PieceDefinitions.easyPool;
-    }
-    if (questLevel <= 12) {
-      return PieceDefinitions.mediumPool;
-    }
-    return PieceDefinitions.allPieces;
-  }
-
-  /// 3ピースのバッチを生成する。
+  /// 3ピースのバッチを生成する（クエスト・クラシック共通ロジック）。
   ///
-  /// [board] が指定された場合、少なくとも1ピースがボード上に配置可能なことを
-  /// 保証するためリトライする（最大10回）。
-  /// [questLevel] が 0 のときはクラシックモードとして扱う。
-  List<Piece> _generatePieces({
-    List<List<bool>>? board,
-    int questLevel = 0,
-  }) {
-    final boardState = board ??
-        List.generate(
-          Board.size,
-          (_) => List.filled(Board.size, false),
-        );
-    final density = _boardDensity(boardState);
-    final pool = _selectPool(questLevel: questLevel, density: density);
+  /// 1. Piece 1: mediumPoolをシャッフルして最初に配置可能なピースを選択。
+  ///    mediumPoolに配置可能なピースがなければeasyPoolにフォールバック。
+  /// 2. ラインクリア可能ピースをallPieces全体から一括算出（事前計算）。
+  ///    P1がクリアできる場合は算出をスキップ。
+  /// 3. Piece 2 & 3: ラインクリア候補リストから重複なしでO(1)選択。
+  ///    候補なしの場合はallPiecesから重複なし選択。それも不可の場合は完全ランダム。
+  /// 4. 小ピース保証: 3セル以下のピースがなければP3を小ピースに置き換え。
+  List<Piece> _generatePieces(List<List<bool>> board) {
+    final boardObj = Board.from(board);
 
-    // 配置可能なバッチが生成されるまでリトライ（最大10回）
-    for (var attempt = 0; attempt < 10; attempt++) {
-      final pieces = List.generate(
-        3,
-        (_) => PieceDefinitions.randomFrom(pool, _rng),
+    // ── Piece 1: mediumPool をシャッフルして配置可能な先頭ピースを選択 ──
+    final shuffledMedium = [...PieceDefinitions.mediumPool]..shuffle(_rng);
+    var piece1 = shuffledMedium.firstWhere(
+      (p) => boardObj.canPlaceAny([p]),
+      orElse: () => shuffledMedium.first,
+    );
+    if (!boardObj.canPlaceAny([piece1])) {
+      // mediumPool に配置可能なピースがない → easyPool にフォールバック
+      final shuffledEasy = [...PieceDefinitions.easyPool]..shuffle(_rng);
+      piece1 = shuffledEasy.firstWhere(
+        (p) => boardObj.canPlaceAny([p]),
+        orElse: () => piece1,
       );
-      if (Board.from(boardState).canPlaceAny(pieces)) {
-        return pieces;
-      }
     }
 
-    // フォールバック: easyPool から生成（必ず配置できる最小ピースが含まれる）
-    return List.generate(
-      3,
-      (_) => PieceDefinitions.randomFrom(PieceDefinitions.easyPool, _rng),
-    );
+    // ── ラインクリア可能ピースをallPieces全体から一括算出 ──
+    final p1ClearsLine = _canClearLine(piece1, board);
+    final lineClearers = p1ClearsLine
+        ? <Piece>[]
+        : [
+            for (final p in PieceDefinitions.allPieces)
+              if (_canClearLine(p, board)) p,
+          ];
+
+    // ── Piece 2 & 3: 事前計算済みリストから O(1) 選択 ──
+    final pieces = <Piece>[piece1];
+    for (var i = 0; i < 2; i++) {
+      final clearCandidates =
+          lineClearers.where((p) => !pieces.contains(p)).toList();
+      final allCandidates = clearCandidates.isNotEmpty
+          ? clearCandidates
+          : PieceDefinitions.allPieces
+              .where((p) => !pieces.contains(p))
+              .toList();
+
+      pieces.add(
+        allCandidates.isNotEmpty
+            ? allCandidates[_rng.nextInt(allCandidates.length)]
+            : PieceDefinitions.randomFrom(PieceDefinitions.allPieces, _rng),
+      );
+    }
+
+    // ── 小ピース保証: 3セル以下のピースがなければ P3 を置き換え ──
+    const smallPieces = [
+      PieceDefinitions.dot,
+      PieceDefinitions.dominoH,
+      PieceDefinitions.dominoV,
+      PieceDefinitions.triominoH,
+      PieceDefinitions.triominoV,
+      PieceDefinitions.cornerA,
+      PieceDefinitions.cornerB,
+      PieceDefinitions.cornerC,
+      PieceDefinitions.cornerD,
+    ];
+    final hasSmall = pieces.any((p) => p.offsets.length <= 3);
+    if (!hasSmall) {
+      final available =
+          smallPieces.where((p) => !pieces.sublist(0, 2).contains(p)).toList();
+      final pool = available.isNotEmpty ? available : smallPieces;
+      pieces[2] = pool[_rng.nextInt(pool.length)];
+    }
+
+    return pieces;
   }
 
   /// ハイスコアをローカルストレージから読み込む。

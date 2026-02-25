@@ -30,6 +30,7 @@ class PieceDefinitions {
   static const List<Piece> easyPool = [
     dot, dominoH, dominoV,
     triominoH, triominoV,
+    cornerA, cornerB, cornerC, cornerD,
     barH, barV,
     square2x2,
   ];
@@ -38,13 +39,16 @@ class PieceDefinitions {
   static const List<Piece> mediumPool = [
     dot, dominoH, dominoV,
     triominoH, triominoV,
+    cornerA, cornerB, cornerC, cornerD,
     barH, barV,
     square2x2,
     lShape0, lShape90, lShape180, lShape270,
     tShape0, tShape90, tShape180, tShape270,
   ];
 
-  /// All available piece shapes including large shapes (e.g. 3×3 square).
+  /// All available piece shapes including large/complex shapes.
+  ///
+  /// 新ピースは末尾に追加してセーブデータのインデックスを保持する。
   static const List<Piece> allPieces = [
     dot, dominoH, dominoV,
     triominoH, triominoV,
@@ -53,6 +57,11 @@ class PieceDefinitions {
     lShape0, lShape90, lShape180, lShape270,
     tShape0, tShape90, tShape180, tShape270,
     zShape0, zShape90, sShape0, sShape90,
+    // 追加ピース（インデックス保持のため末尾に追加）
+    cornerA, cornerB, cornerC, cornerD,
+    barH5, barV5,
+    rect2x3, rect3x2,
+    plus,
   ];
 
   /// Returns a random piece from [pool].
@@ -128,4 +137,49 @@ class PieceDefinitions {
 
   /// S-shape, vertical.
   static const sShape90 = Piece([(0, 0), (1, 0), (1, 1), (2, 1)]);
+
+  /// Corner (3-cell L), bottom-right orientation.
+  /// ■□
+  /// ■■
+  static const cornerA = Piece([(0, 0), (1, 0), (1, 1)]);
+
+  /// Corner (3-cell L), bottom-left orientation.
+  /// □■
+  /// ■■
+  static const cornerB = Piece([(0, 1), (1, 0), (1, 1)]);
+
+  /// Corner (3-cell L), top-right orientation.
+  /// ■■
+  /// ■□
+  static const cornerC = Piece([(0, 0), (0, 1), (1, 0)]);
+
+  /// Corner (3-cell L), top-left orientation.
+  /// ■■
+  /// □■
+  static const cornerD = Piece([(0, 0), (0, 1), (1, 1)]);
+
+  /// Horizontal 1×5 bar.
+  static const barH5 = Piece([(0, 0), (0, 1), (0, 2), (0, 3), (0, 4)]);
+
+  /// Vertical 5×1 bar.
+  static const barV5 = Piece([(0, 0), (1, 0), (2, 0), (3, 0), (4, 0)]);
+
+  /// 2×3 rectangle (2 rows × 3 cols).
+  static const rect2x3 = Piece([
+    (0, 0), (0, 1), (0, 2),
+    (1, 0), (1, 1), (1, 2),
+  ]);
+
+  /// 3×2 rectangle (3 rows × 2 cols).
+  static const rect3x2 = Piece([
+    (0, 0), (0, 1),
+    (1, 0), (1, 1),
+    (2, 0), (2, 1),
+  ]);
+
+  /// Plus (cross) shape.
+  /// □■□
+  /// ■■■
+  /// □■□
+  static const plus = Piece([(0, 1), (1, 0), (1, 1), (1, 2), (2, 1)]);
 }

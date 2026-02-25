@@ -1,6 +1,6 @@
 import 'package:flutter/animation.dart';
 
-import 'package:mono_games/features/noir_mind/model/game_theme.dart';
+import 'package:mono_games/features/block_puzzle/model/game_theme.dart';
 
 /// Monotone — マットブラック＆オフホワイト（デフォルト）。ミニマルなモノクロデザイン。
 const monotoneTheme = GameTheme(
@@ -8,31 +8,31 @@ const monotoneTheme = GameTheme(
   name: 'Monotone',
   icon: '\u{2B1B}', // ⬛
   colors: GameThemeColors(
-    surface: Color(0xFFF5F5F0), // 目に優しいウォームオフホワイト背景
-    onSurface: Color(0xFF121212), // マットな近黒ブロック
+    surface: Color(0xFFFFFFFF), // ホーム画面背景と同一のピュアホワイト
+    onSurface: Color(0xFF374142), // マットな近黒ブロック（ベタ塗り）
     emptyCellFill: Color(0xFFDEDEDA), // ウォームライトグレー空セル
     gridLine: Color(0x0F000000), // black 0.06 — 極めて繊細なグリッド
     accent: Color(0xFF6E6E6E), // ミッドグレーアクセント
-    highlightTop: Color(0x14FFFFFF), // white 0.08 — 控えめハイライト
+    highlightTop: Color(0x00FFFFFF), // 完全透明 — グロッシーハイライトを無効化
     shadowBottom: Color(0x08000000), // black 0.03
-    glowColor: Color(0xFF2A2A2A), // ブロックより少し明るいグラデ頂点
+    glowColor: Color(0xFF2A2A2A),
     particleColor: Color(0xFF8C8C8C),
-    overlayBg: Color(0xD9F5F5F0), // off-white 0.85
+    overlayBg: Color(0xD9FFFFFF), // white 0.85
   ),
   colorsDark: GameThemeColors(
     surface: Color(0xFF0F0F0F), // 近黒背景
-    onSurface: Color(0xFFD8D8D8), // ソフトオフホワイトブロック
+    onSurface: Color(0xFFC8C8C8), // ソフトグレーブロック（ベタ塗り）
     emptyCellFill: Color(0xFF242424), // ダークグレー空セル
     gridLine: Color(0x0FFFFFFF), // white 0.06 — 極めて繊細なグリッド
     accent: Color(0xFF8C8C8C), // ミッドグレーアクセント
-    highlightTop: Color(0x0FFFFFFF), // white 0.06 — 控えめハイライト
+    highlightTop: Color(0x00FFFFFF), // 完全透明 — グロッシーハイライトを無効化
     shadowBottom: Color(0x1A000000), // black 0.1
-    glowColor: Color(0xFFE8E8E8), // ブロックより少し明るいグラデ頂点
+    glowColor: Color(0xFFE8E8E8),
     particleColor: Color(0xFF6E6E6E),
     overlayBg: Color(0xCC0F0F0F), // near-black 0.8
   ),
   cellStyle: GameThemeCellStyle(
-    renderMode: CellRenderMode.matte, // マット質感
+    renderMode: CellRenderMode.glossy, // ベタ塗り（highlightTop alpha=0 で無地）
   ),
   clearEffect: GameThemeClearEffect(
     mode: ClearEffectMode.dissolve, // じわっと溶ける消去
@@ -54,8 +54,8 @@ const monotoneTheme = GameTheme(
     cellDelay: 0.08,
   ),
   sounds: GameThemeSounds(
-    placePath: 'sounds/noir_mind/put.mp3',
-    clearPath: 'sounds/noir_mind/stone_cut.mp3',
+    placePath: 'sounds/block_puzzle/put.mp3',
+    clearPath: 'sounds/block_puzzle/stone_cut.mp3',
   ),
 );
 
@@ -113,8 +113,8 @@ const cyberNeonTheme = GameTheme(
     cellDelay: 0.08,
   ),
   sounds: GameThemeSounds(
-    placePath: 'sounds/noir_mind/put.mp3',
-    clearPath: 'sounds/noir_mind/neon_cut.mp3',
+    placePath: 'sounds/block_puzzle/put.mp3',
+    clearPath: 'sounds/block_puzzle/neon_cut.mp3',
     clearPitchMax: 1.2,
   ),
 );
@@ -171,8 +171,8 @@ const slimeTheme = GameTheme(
     cellDelay: 0.06, // 次々とポップ
   ),
   sounds: GameThemeSounds(
-    placePath: 'sounds/noir_mind/put.mp3',
-    clearPath: 'sounds/noir_mind/slime_cut.mp3',
+    placePath: 'sounds/block_puzzle/put.mp3',
+    clearPath: 'sounds/block_puzzle/slime_cut.mp3',
     clearPitchMin: 0.85,
     clearPitchMax: 1.2,
   ),
@@ -228,8 +228,8 @@ const soapCutTheme = GameTheme(
     cellDelay: 0.10,
   ),
   sounds: GameThemeSounds(
-    placePath: 'sounds/noir_mind/put.mp3',
-    clearPath: 'sounds/noir_mind/soap_cut.mp3',
+    placePath: 'sounds/block_puzzle/put.mp3',
+    clearPath: 'sounds/block_puzzle/soap_cut.mp3',
     clearPitchMin: 0.85,
   ),
 );
@@ -284,8 +284,8 @@ const bubbleWrapTheme = GameTheme(
     cellDelay: 0.045, // 高速連続ポップ
   ),
   sounds: GameThemeSounds(
-    placePath: 'sounds/noir_mind/put.mp3',
-    clearPath: 'sounds/noir_mind/bubble_cut.mp3',
+    placePath: 'sounds/block_puzzle/put.mp3',
+    clearPath: 'sounds/block_puzzle/bubble_cut.mp3',
     clearPitchMin: 0.95,
     clearPitchMax: 1.3,
   ),
@@ -338,8 +338,8 @@ const iceGlassTheme = GameTheme(
     cellDelay: 0.06, // 鋭いカスケード
   ),
   sounds: GameThemeSounds(
-    placePath: 'sounds/noir_mind/put.mp3',
-    clearPath: 'sounds/noir_mind/ice_cut.mp3',
+    placePath: 'sounds/block_puzzle/put.mp3',
+    clearPath: 'sounds/block_puzzle/ice_cut.mp3',
     clearPitchMin: 0.75,
     clearPitchMax: 1.05,
   ),

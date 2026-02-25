@@ -2,7 +2,7 @@ import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:mono_games/features/noir_mind/model/game_theme.dart';
+import 'package:mono_games/features/block_puzzle/model/game_theme.dart';
 
 /// セル1つを描画する。
 ///

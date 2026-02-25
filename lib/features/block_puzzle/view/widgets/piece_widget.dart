@@ -3,12 +3,14 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mono_games/features/noir_mind/model/game_theme.dart';
-import 'package:mono_games/features/noir_mind/model/piece.dart';
-import 'package:mono_games/features/noir_mind/view/painters/cell_renderer.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:mono_games/features/block_puzzle/model/game_theme.dart';
+import 'package:mono_games/features/block_puzzle/model/piece.dart';
+import 'package:mono_games/features/block_puzzle/view/painters/cell_renderer.dart';
+import 'package:mono_games/features/settings/view_model/settings_view_model.dart';
 
 /// ドラッグ可能なピースウィジェット。
-class PieceWidget extends StatefulWidget {
+class PieceWidget extends ConsumerStatefulWidget {
   /// ドラッグ可能なピースウィジェットを作成する。
   const PieceWidget({
     required this.piece,
@@ -31,10 +33,10 @@ class PieceWidget extends StatefulWidget {
   final GameTheme theme;
 
   @override
-  State<PieceWidget> createState() => _PieceWidgetState();
+  ConsumerState<PieceWidget> createState() => _PieceWidgetState();
 }
 
-class _PieceWidgetState extends State<PieceWidget>
+class _PieceWidgetState extends ConsumerState<PieceWidget>
     with SingleTickerProviderStateMixin {
   bool _isDragging = false;
   FragmentShader? _shader;
@@ -82,13 +84,13 @@ class _PieceWidgetState extends State<PieceWidget>
 
   static String? _shaderPath(CellRenderMode mode) => switch (mode) {
         CellRenderMode.glassmorphism =>
-          'shaders/noir_mind/glassmorphism.frag',
-        CellRenderMode.wireframe => 'shaders/noir_mind/wireframe.frag',
-        CellRenderMode.matte => 'shaders/noir_mind/matte.frag',
-        CellRenderMode.bubble => 'shaders/noir_mind/bubble.frag',
-        CellRenderMode.ice => 'shaders/noir_mind/ice.frag',
-        CellRenderMode.slate => 'shaders/noir_mind/slate.frag',
-        CellRenderMode.slime => 'shaders/noir_mind/slime.frag',
+          'shaders/block_puzzle/glassmorphism.frag',
+        CellRenderMode.wireframe => 'shaders/block_puzzle/wireframe.frag',
+        CellRenderMode.matte => 'shaders/block_puzzle/matte.frag',
+        CellRenderMode.bubble => 'shaders/block_puzzle/bubble.frag',
+        CellRenderMode.ice => 'shaders/block_puzzle/ice.frag',
+        CellRenderMode.slate => 'shaders/block_puzzle/slate.frag',
+        CellRenderMode.slime => 'shaders/block_puzzle/slime.frag',
         _ => null,
       };
 
@@ -108,7 +110,9 @@ class _PieceWidgetState extends State<PieceWidget>
     return Draggable<int>(
       data: widget.pieceIndex,
       onDragStarted: () {
-        HapticFeedback.selectionClick();
+        if (ref.read(settingsViewModelProvider).vibrationEnabled) {
+          HapticFeedback.selectionClick();
+        }
         setState(() => _isDragging = true);
       },
       onDragEnd: (_) {

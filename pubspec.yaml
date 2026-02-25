@@ -35,6 +35,8 @@ dependencies:
   sensors_plus: ^7.0.0
   audioplayers: ^6.1.0
   url_launcher: ^6.3.1
+  flutter_svg:
+  gap: 
   
 
 dev_dependencies:
@@ -51,22 +53,22 @@ dev_dependencies:
   slang_build_runner:
 
   # アイコン生成
-  flutter_launcher_icons: ^0.14.3
+  flutter_launcher_icons:
 
 flutter:
   uses-material-design: true
 
   assets:
-    - assets/sounds/noir_mind/
-
+    - assets/sounds/block_puzzle/
+    - assets/logo/
   shaders:
-    - shaders/noir_mind/glassmorphism.frag
-    - shaders/noir_mind/wireframe.frag
-    - shaders/noir_mind/matte.frag
-    - shaders/noir_mind/bubble.frag
-    - shaders/noir_mind/ice.frag
-    - shaders/noir_mind/slate.frag
-    - shaders/noir_mind/slime.frag
+    - shaders/block_puzzle/glassmorphism.frag
+    - shaders/block_puzzle/wireframe.frag
+    - shaders/block_puzzle/matte.frag
+    - shaders/block_puzzle/bubble.frag
+    - shaders/block_puzzle/ice.frag
+    - shaders/block_puzzle/slate.frag
+    - shaders/block_puzzle/slime.frag
 
 
   fonts:
@@ -77,7 +79,7 @@ flutter:
 
 flutter_launcher_icons:
   android: true
-  image_path_android: "assets/logo/logo_android_light.png"
+  image_path_android: "assets/logos/logo_android_light.png"
   adaptive_icon_foreground: "assets/logo/logo_android_light.png"
   adaptive_icon_background: "#FFFFFF"
   adaptive_icon_monochrome: "assets/logo/logo_android_dark.png"

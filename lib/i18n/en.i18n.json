@@ -13,12 +13,12 @@
   "gravitySand": {
     "title": "Gravity Sand"
   },
-  "noirMind": {
+  "blockPuzzle": {
     "title": "Noir Mind",
     "subtitle": "Block Puzzle",
-    "questMode": "Quest Mode",
+    "questMode": "Quest",
     "questModeDesc": "Clear score targets to advance",
-    "classicMode": "Classic Mode",
+    "classicMode": "Classic",
     "classicModeDesc": "Endless score challenge"
   },
   "settings": {

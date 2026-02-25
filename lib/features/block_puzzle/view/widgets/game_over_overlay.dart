@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:mono_games/features/noir_mind/model/game_theme.dart';
-import 'package:mono_games/features/noir_mind/view_model/noir_mind_view_model.dart';
+import 'package:mono_games/features/block_puzzle/model/game_theme.dart';
+import 'package:mono_games/features/block_puzzle/view_model/block_puzzle_view_model.dart';
+import 'package:mono_games/features/settings/view_model/settings_view_model.dart';
 import 'package:mono_games/until/service/audio_service.dart';
 
 /// ゲームオーバー時に表示するフルスクリーンオーバーレイ。
@@ -27,8 +28,13 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
   @override
   void initState() {
     super.initState();
-    HapticFeedback.heavyImpact();
-    AudioService.instance.play(widget.theme.sounds.gameOverPath);
+    final settings = ref.read(settingsViewModelProvider);
+    if (settings.vibrationEnabled) {
+      HapticFeedback.heavyImpact();
+    }
+    if (settings.soundEnabled) {
+      AudioService.instance.play(widget.theme.sounds.gameOverPath);
+    }
 
     _controller = AnimationController(
       vsync: this,
@@ -77,7 +83,7 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
   @override
   Widget build(BuildContext context) {
     final colors = widget.theme.colorsFor(Theme.of(context).brightness);
-    final gameState = ref.watch(noirMindViewModelProvider);
+    final gameState = ref.watch(blockPuzzleViewModelProvider);
 
     return AnimatedBuilder(
       animation: _controller,
@@ -200,17 +206,22 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
                         width: double.infinity,
                         child: TextButton(
                           onPressed: () {
-                            HapticFeedback.lightImpact();
+                            final vibration = ref
+                                .read(settingsViewModelProvider)
+                                .vibrationEnabled;
+                            if (vibration) {
+                              HapticFeedback.lightImpact();
+                            }
                             if (gameState.isQuestMode) {
                               ref
                                   .read(
-                                    noirMindViewModelProvider.notifier,
+                                    blockPuzzleViewModelProvider.notifier,
                                   )
                                   .retryQuestLevel();
                             } else {
                               ref
                                   .read(
-                                    noirMindViewModelProvider.notifier,
+                                    blockPuzzleViewModelProvider.notifier,
                                   )
                                   .resetGame();
                             }
@@ -242,7 +253,12 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
                           width: double.infinity,
                           child: TextButton(
                             onPressed: () {
-                              HapticFeedback.lightImpact();
+                              final vibration = ref
+                                  .read(settingsViewModelProvider)
+                                  .vibrationEnabled;
+                              if (vibration) {
+                                HapticFeedback.lightImpact();
+                              }
                               Navigator.of(context).pop();
                             },
                             style: TextButton.styleFrom(

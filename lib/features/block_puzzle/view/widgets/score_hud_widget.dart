@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:mono_games/features/noir_mind/model/game_theme.dart';
-import 'package:mono_games/features/noir_mind/view_model/noir_mind_view_model.dart';
+import 'package:mono_games/features/block_puzzle/model/game_theme.dart';
+import 'package:mono_games/features/block_puzzle/view_model/block_puzzle_view_model.dart';
 
 /// スコア・ハイスコア・コンボを表示するHUD。
 class ScoreHudWidget extends ConsumerStatefulWidget {
@@ -15,8 +15,7 @@ class ScoreHudWidget extends ConsumerStatefulWidget {
   ConsumerState<ScoreHudWidget> createState() => _ScoreHudWidgetState();
 }
 
-class _ScoreHudWidgetState extends ConsumerState<ScoreHudWidget>
-    with TickerProviderStateMixin {
+class _ScoreHudWidgetState extends ConsumerState<ScoreHudWidget> with TickerProviderStateMixin {
   int _displayScore = 0;
   late final AnimationController _scoreController;
   late final AnimationController _comboController;
@@ -25,7 +24,7 @@ class _ScoreHudWidgetState extends ConsumerState<ScoreHudWidget>
   @override
   void initState() {
     super.initState();
-    _displayScore = ref.read(noirMindViewModelProvider).score;
+    _displayScore = ref.read(blockPuzzleViewModelProvider).score;
     _scoreController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 400),
@@ -65,36 +64,35 @@ class _ScoreHudWidgetState extends ConsumerState<ScoreHudWidget>
   Widget build(BuildContext context) {
     final colors = widget.theme.colorsFor(Theme.of(context).brightness);
     final highScore = ref.watch(
-      noirMindViewModelProvider.select((s) => s.highScore),
+      blockPuzzleViewModelProvider.select((s) => s.highScore),
     );
     final isQuestMode = ref.watch(
-      noirMindViewModelProvider.select((s) => s.isQuestMode),
+      blockPuzzleViewModelProvider.select((s) => s.isQuestMode),
     );
     final targetScore = ref.watch(
-      noirMindViewModelProvider.select((s) => s.targetScore),
+      blockPuzzleViewModelProvider.select((s) => s.targetScore),
     );
     final combo = ref.watch(
-      noirMindViewModelProvider.select((s) => s.combo),
+      blockPuzzleViewModelProvider.select((s) => s.combo),
     );
 
     // スコアカウントアップ・コンボポップアニメーション
     ref
       ..listen(
-        noirMindViewModelProvider.select((s) => s.score),
+        blockPuzzleViewModelProvider.select((s) => s.score),
         (prev, next) {
           final from = prev ?? 0;
           _scoreController
             ..reset()
             ..addListener(() {
               final t = _scoreController.value;
-              _displayScore =
-                  (from + (next - from) * t).round();
+              _displayScore = (from + (next - from) * t).round();
             })
             ..forward();
         },
       )
       ..listen(
-        noirMindViewModelProvider.select((s) => s.combo),
+        blockPuzzleViewModelProvider.select((s) => s.combo),
         (prev, next) {
           if (next > 0 && next != prev) {
             _comboController

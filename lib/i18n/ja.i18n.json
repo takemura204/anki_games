@@ -13,12 +13,12 @@
   "gravitySand": {
     "title": "重力サンド"
   },
-  "noirMind": {
+  "blockPuzzle": {
     "title": "Noir Mind",
     "subtitle": "ブロックパズル",
-    "questMode": "クエストモード",
+    "questMode": "クエスト",
     "questModeDesc": "スコア目標をクリアして次のレベルへ",
-    "classicMode": "クラシックモード",
+    "classicMode": "クラシック",
     "classicModeDesc": "エンドレスでスコアを競おう"
   },
   "settings": {

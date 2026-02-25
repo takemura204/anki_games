@@ -1,11 +1,11 @@
-import 'package:mono_games/features/noir_mind/model/game_theme.dart';
-import 'package:mono_games/features/noir_mind/model/game_themes.dart';
+import 'package:mono_games/features/block_puzzle/model/game_theme.dart';
+import 'package:mono_games/features/block_puzzle/model/game_themes.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 part 'theme_view_model.g.dart';
 
-const _themeKey = 'noir_mind_theme';
+const _themeKey = 'block_puzzle_theme';
 
 /// Noir Mindのテーマ状態を管理するビューモデル。
 @riverpod

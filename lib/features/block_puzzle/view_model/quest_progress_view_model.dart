@@ -5,7 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 part 'quest_progress_view_model.freezed.dart';
 part 'quest_progress_view_model.g.dart';
 
-const _questMaxLevelKey = 'noir_mind_quest_max_level';
+const _questMaxLevelKey = 'block_puzzle_quest_max_level';
 
 /// クエストモードの進捗状態。
 @freezed

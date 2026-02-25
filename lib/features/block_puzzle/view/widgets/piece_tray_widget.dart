@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:mono_games/features/noir_mind/model/game_theme.dart';
-import 'package:mono_games/features/noir_mind/model/piece.dart';
-import 'package:mono_games/features/noir_mind/view/widgets/piece_widget.dart';
-import 'package:mono_games/features/noir_mind/view_model/noir_mind_view_model.dart';
+import 'package:mono_games/features/block_puzzle/model/game_theme.dart';
+import 'package:mono_games/features/block_puzzle/model/piece.dart';
+import 'package:mono_games/features/block_puzzle/view/widgets/piece_widget.dart';
+import 'package:mono_games/features/block_puzzle/view_model/block_puzzle_view_model.dart';
 
 /// 画面下部に3つのドラッグ可能なピースを表示するトレイ。
 class PieceTrayWidget extends ConsumerWidget {
@@ -23,7 +23,7 @@ class PieceTrayWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final pieces = ref.watch(
-      noirMindViewModelProvider.select((s) => s.pieces),
+      blockPuzzleViewModelProvider.select((s) => s.pieces),
     );
 
     return SizedBox(

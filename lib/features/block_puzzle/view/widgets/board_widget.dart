@@ -5,11 +5,12 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:mono_games/features/noir_mind/model/board.dart';
-import 'package:mono_games/features/noir_mind/model/game_theme.dart';
-import 'package:mono_games/features/noir_mind/model/piece.dart';
-import 'package:mono_games/features/noir_mind/view/painters/cell_renderer.dart';
-import 'package:mono_games/features/noir_mind/view_model/noir_mind_view_model.dart';
+import 'package:mono_games/features/block_puzzle/model/board.dart';
+import 'package:mono_games/features/block_puzzle/model/game_theme.dart';
+import 'package:mono_games/features/block_puzzle/model/piece.dart';
+import 'package:mono_games/features/block_puzzle/view/painters/cell_renderer.dart';
+import 'package:mono_games/features/block_puzzle/view_model/block_puzzle_view_model.dart';
+import 'package:mono_games/features/settings/view_model/settings_view_model.dart';
 import 'package:mono_games/until/service/audio_service.dart';
 
 /// ドラッグフィードバックの上方オフセット（ボードセル数）。
@@ -66,6 +67,13 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
   Map<(int, int), double> _cellDelays = const {};
   double _maxDelay = 0;
 
+  // ライン消去プレビュー有無のトラッキング（haptic の二重発火防止用）
+  var _wasClearPreview = false;
+
+  // 設定値キャッシュ（build() で毎フレーム更新）
+  var _soundEnabled = true;
+  var _vibrationEnabled = true;
+
   // フローティングスコア
   final List<_FloatingScore> _floatingScores = [];
 
@@ -90,13 +98,13 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
 
   Future<void> _loadShaders() async {
     final programs = await Future.wait([
-      FragmentProgram.fromAsset('shaders/noir_mind/glassmorphism.frag'),
-      FragmentProgram.fromAsset('shaders/noir_mind/wireframe.frag'),
-      FragmentProgram.fromAsset('shaders/noir_mind/matte.frag'),
-      FragmentProgram.fromAsset('shaders/noir_mind/bubble.frag'),
-      FragmentProgram.fromAsset('shaders/noir_mind/ice.frag'),
-      FragmentProgram.fromAsset('shaders/noir_mind/slate.frag'),
-      FragmentProgram.fromAsset('shaders/noir_mind/slime.frag'),
+      FragmentProgram.fromAsset('shaders/block_puzzle/glassmorphism.frag'),
+      FragmentProgram.fromAsset('shaders/block_puzzle/wireframe.frag'),
+      FragmentProgram.fromAsset('shaders/block_puzzle/matte.frag'),
+      FragmentProgram.fromAsset('shaders/block_puzzle/bubble.frag'),
+      FragmentProgram.fromAsset('shaders/block_puzzle/ice.frag'),
+      FragmentProgram.fromAsset('shaders/block_puzzle/slate.frag'),
+      FragmentProgram.fromAsset('shaders/block_puzzle/slime.frag'),
     ]);
     if (!mounted) {
       return;
@@ -232,7 +240,10 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
   @override
   Widget build(BuildContext context) {
     _brightness = Theme.of(context).brightness;
-    final gameState = ref.watch(noirMindViewModelProvider);
+    final gameState = ref.watch(blockPuzzleViewModelProvider);
+    final settings = ref.watch(settingsViewModelProvider);
+    _soundEnabled = settings.soundEnabled;
+    _vibrationEnabled = settings.vibrationEnabled;
     final theme = widget.theme;
     final boardSize = widget.cellSize * Board.size;
     // DragTarget用の下方拡張領域
@@ -241,7 +252,7 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
     // ライン消去・配置イベントを監視してアニメーション発火
     ref
       ..listen(
-        noirMindViewModelProvider.select((s) => s.lastClearResult),
+        blockPuzzleViewModelProvider.select((s) => s.lastClearResult),
         (prev, next) {
           if (next != null && prev == null) {
             _triggerClearAnimation(next);
@@ -249,21 +260,25 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
         },
       )
       ..listen(
-        noirMindViewModelProvider.select((s) => s.lastPlacedCells),
+        blockPuzzleViewModelProvider.select((s) => s.lastPlacedCells),
         (prev, next) {
           if (next.isNotEmpty && (prev == null || prev.isEmpty)) {
             _bounceController
               ..reset()
               ..forward();
-            HapticFeedback.lightImpact();
+            if (_vibrationEnabled) {
+              HapticFeedback.lightImpact();
+            }
             // 配置位置に応じたステレオパンで再生
             final avgCol = next.map((cell) => cell.$2).reduce((a, b) => a + b) /
                 next.length;
             final pan = _columnToPan(avgCol.round());
-            AudioService.instance.playWithPan(
-              widget.theme.sounds.placePath,
-              pan: pan,
-            );
+            if (_soundEnabled) {
+              AudioService.instance.playWithPan(
+                widget.theme.sounds.placePath,
+                pan: pan,
+              );
+            }
           }
         },
       );
@@ -271,9 +286,28 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
     // 配置可能かどうか判定
     final canPlace = _canPlaceHover();
 
-    // 消去予定セルを計算（配置可能な場合のみ）
-    final clearPreviewCells =
-        canPlace ? _computeClearPreview(gameState) : const <(int, int)>{};
+    // 消去予定セル・行・列を計算（配置可能な場合のみ）
+    const emptyPreview = (
+      cells: <(int, int)>{},
+      rows: <int>{},
+      cols: <int>{},
+    );
+    final clearPreview =
+        canPlace ? _computeClearPreview(gameState) : emptyPreview;
+    final clearPreviewCells = clearPreview.cells;
+    final clearPreviewRows = clearPreview.rows;
+    final clearPreviewCols = clearPreview.cols;
+
+    // ライン消去可能位置に初めて乗ったとき selectionClick haptic を発火
+    final nowClearPreview = clearPreviewCells.isNotEmpty;
+    if (nowClearPreview && !_wasClearPreview) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted && _vibrationEnabled) {
+          HapticFeedback.selectionClick();
+        }
+      });
+    }
+    _wasClearPreview = nowClearPreview;
 
     // パルスアニメーションの制御（消去予定がある時のみ再生）
     if (clearPreviewCells.isNotEmpty) {
@@ -338,6 +372,8 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
                           : null,
                       canPlaceHover: canPlace,
                       clearPreviewCells: clearPreviewCells,
+                      clearPreviewRows: clearPreviewRows,
+                      clearPreviewCols: clearPreviewCols,
                       pulseGlow: pulseGlow,
                       cellSize: widget.cellSize,
                       theme: theme,
@@ -427,7 +463,7 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
                   if (row != null && col != null) {
                     ref
                         .read(
-                          noirMindViewModelProvider.notifier,
+                          blockPuzzleViewModelProvider.notifier,
                         )
                         .placePiece(details.data, row, col);
                   }
@@ -489,34 +525,40 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
     return _hoverRow != null &&
         _hoverCol != null &&
         _hoverPieceIndex != null &&
-        ref.read(noirMindViewModelProvider.notifier).canPlace(
+        ref.read(blockPuzzleViewModelProvider.notifier).canPlace(
               _hoverPieceIndex!,
               _hoverRow!,
               _hoverCol!,
             );
   }
 
-  /// 配置した場合に消去されるセルを事前計算する。
-  Set<(int, int)> _computeClearPreview(NoirMindState gameState) {
+  /// 配置した場合に消去されるセル・行・列を事前計算する。
+  ({Set<(int, int)> cells, Set<int> rows, Set<int> cols}) _computeClearPreview(
+    BlockPuzzleState gameState,
+  ) {
+    const empty = (
+      cells: <(int, int)>{},
+      rows: <int>{},
+      cols: <int>{},
+    );
     if (_hoverRow == null || _hoverCol == null || _hoverPieceIndex == null) {
-      return const {};
+      return empty;
     }
-
     final piece = gameState.pieces[_hoverPieceIndex!];
     if (piece == null) {
-      return const {};
+      return empty;
     }
-
-    // ボードを複製してピースを仮配置
     final tempBoard = Board.from(gameState.board);
     if (!tempBoard.canPlace(piece, _hoverRow!, _hoverCol!)) {
-      return const {};
+      return empty;
     }
     tempBoard.place(piece, _hoverRow!, _hoverCol!);
-
-    // 消去チェック
     final result = tempBoard.checkClearLines();
-    return result.clearedCells;
+    return (
+      cells: result.clearedCells,
+      rows: result.clearedRows,
+      cols: result.clearedCols,
+    );
   }
 
   /// 左端/上端から順に消えるセル遅延を計算する。
@@ -565,7 +607,7 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
   /// 消去アニメーション完了時にビューモデルへクリーンアップを委譲する。
   void _onClearAnimationStatus(AnimationStatus status) {
     if (status == AnimationStatus.completed && mounted) {
-      ref.read(noirMindViewModelProvider.notifier).completeClearAnimation();
+      ref.read(blockPuzzleViewModelProvider.notifier).completeClearAnimation();
     }
   }
 
@@ -688,16 +730,20 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
           if (!mounted) {
             return;
           }
-          AudioService.instance.playWithPan(clearPath, pan: pan, rate: rate);
+          if (_soundEnabled) {
+            AudioService.instance.playWithPan(clearPath, pan: pan, rate: rate);
+          }
           // 最後のグループで強い振動、それ以外は軽い振動。
-          if (isLastGroup) {
-            if (result.linesCleared >= 2) {
-              HapticFeedback.heavyImpact();
+          if (_vibrationEnabled) {
+            if (isLastGroup) {
+              if (result.linesCleared >= 2) {
+                HapticFeedback.heavyImpact();
+              } else {
+                HapticFeedback.mediumImpact();
+              }
             } else {
-              HapticFeedback.mediumImpact();
+              HapticFeedback.lightImpact();
             }
-          } else {
-            HapticFeedback.lightImpact();
           }
         },
       );
@@ -1383,6 +1429,8 @@ class _BoardPainter extends CustomPainter {
     required this.clearProgress,
     required this.bounceScale,
     required this.clearPreviewCells,
+    required this.clearPreviewRows,
+    required this.clearPreviewCols,
     required this.pulseGlow,
     required this.cellDelays,
     required this.maxDelay,
@@ -1407,8 +1455,14 @@ class _BoardPainter extends CustomPainter {
   final Piece? hoverPiece;
   final bool canPlaceHover;
 
-  /// 配置時に消去されるセルの集合（グロー表示用）。
+  /// 配置時に消去されるセルの集合（既存セルのグロー表示用）。
   final Set<(int, int)> clearPreviewCells;
+
+  /// 消去予定の行番号の集合（行全体グロー用）。
+  final Set<int> clearPreviewRows;
+
+  /// 消去予定の列番号の集合（列全体グロー用）。
+  final Set<int> clearPreviewCols;
 
   /// パルスアニメーションのグロー強度（0.15 ~ 0.45）。
   final double pulseGlow;
@@ -1448,6 +1502,31 @@ class _BoardPainter extends CustomPainter {
           ),
           emptyCellPaint,
         );
+      }
+    }
+
+    // 消去予定の行・列の空セルにグロー（行・列全体を発光させる）
+    if (clearPreviewRows.isNotEmpty || clearPreviewCols.isNotEmpty) {
+      final glowPaint = Paint()
+        ..color = colors.glowColor.withValues(alpha: pulseGlow);
+      for (var r = 0; r < Board.size; r++) {
+        for (var c = 0; c < Board.size; c++) {
+          if (!board[r][c] &&
+              (clearPreviewRows.contains(r) || clearPreviewCols.contains(c))) {
+            canvas.drawRRect(
+              RRect.fromRectAndRadius(
+                Rect.fromLTWH(
+                  c * cellSize + gap,
+                  r * cellSize + gap,
+                  cellSize - gap * 2,
+                  cellSize - gap * 2,
+                ),
+                Radius.circular(style.cellBorderRadius),
+              ),
+              glowPaint,
+            );
+          }
+        }
       }
     }
 
