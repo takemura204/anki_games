@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mono_games/features/block_puzzle/model/game_theme.dart';
 import 'package:mono_games/features/block_puzzle/model/piece.dart';
 import 'package:mono_games/features/block_puzzle/view/widgets/piece_widget.dart';
 import 'package:mono_games/features/block_puzzle/view_model/block_puzzle_view_model.dart';
+import 'package:mono_games/features/settings/view_model/settings_view_model.dart';
+import 'package:mono_games/gen/assets.gen.dart';
+import 'package:mono_games/until/service/audio_service.dart';
 
 /// 画面下部に3つのドラッグ可能なピースを表示するトレイ。
 class PieceTrayWidget extends ConsumerWidget {
@@ -46,7 +50,7 @@ class PieceTrayWidget extends ConsumerWidget {
   }
 }
 
-class _AnimatedPieceSlot extends StatefulWidget {
+class _AnimatedPieceSlot extends ConsumerStatefulWidget {
   const _AnimatedPieceSlot({
     required this.piece,
     required this.index,
@@ -57,14 +61,16 @@ class _AnimatedPieceSlot extends StatefulWidget {
 
   final Piece? piece;
   final int index;
+
+  /// ボードセルサイズ（トレイ表示は 0.6 倍して使用）。
   final double cellSize;
   final GameTheme theme;
 
   @override
-  State<_AnimatedPieceSlot> createState() => _AnimatedPieceSlotState();
+  ConsumerState<_AnimatedPieceSlot> createState() => _AnimatedPieceSlotState();
 }
 
-class _AnimatedPieceSlotState extends State<_AnimatedPieceSlot>
+class _AnimatedPieceSlotState extends ConsumerState<_AnimatedPieceSlot>
     with SingleTickerProviderStateMixin {
   late final AnimationController _controller;
   late final Animation<double> _scaleAnimation;
@@ -98,7 +104,6 @@ class _AnimatedPieceSlotState extends State<_AnimatedPieceSlot>
   @override
   void didUpdateWidget(_AnimatedPieceSlot oldWidget) {
     super.didUpdateWidget(oldWidget);
-    // ピースが出現したとき（null → 有効値）アニメーション開始
     if (oldWidget.piece == null && widget.piece != null) {
       _controller
         ..reset()
@@ -120,23 +125,73 @@ class _AnimatedPieceSlotState extends State<_AnimatedPieceSlot>
       return const SizedBox.shrink();
     }
 
-    return Center(
-      child: AnimatedBuilder(
-        animation: _controller,
-        builder: (context, child) {
-          return Opacity(
-            opacity: _opacityAnimation.value,
-            child: Transform.scale(
-              scale: _scaleAnimation.value,
-              child: child,
-            ),
-          );
+    // スロット全体（Expanded の 1/3 幅 × cellSize*4 高さ）を Draggable にする。
+    // SizedBox.expand() が Draggable の child になることで、
+    // ブロックを直接タップしなくてもスロット内ならどこでもドラッグ開始できる。
+    return SizedBox.expand(
+      child: Draggable<int>(
+        data: widget.index,
+        // 指の位置を基点に Transform.translate で feedback を配置する
+        dragAnchorStrategy: pointerDragAnchorStrategy,
+        onDragStarted: () {
+          final settings = ref.read(settingsViewModelProvider);
+          if (settings.vibrationEnabled) {
+            HapticFeedback.selectionClick();
+          }
+          if (settings.soundEnabled) {
+            AudioService.instance.playWithPan(
+              'sounds/block_puzzle/block_select.mp3',
+              rate: 0.85,
+            );
+          }
         },
-        child: PieceWidget(
-          piece: piece,
-          pieceIndex: widget.index,
-          cellSize: widget.cellSize * 0.6,
-          theme: widget.theme,
+        // ドラッグ中フィードバック: ボードセルサイズで表示。横中央合わせ・底辺が指の1セル上
+        feedback: Transform.translate(
+          offset: Offset(
+            -(piece.width / 2) * widget.cellSize,
+            -(piece.height + 1) * widget.cellSize,
+          ),
+          child: Material(
+            color: Colors.transparent,
+            child: Opacity(
+              opacity: 0.85,
+              child: PieceWidget(
+                piece: piece,
+                cellSize: widget.cellSize,
+                theme: widget.theme,
+              ),
+            ),
+          ),
+        ),
+        // ドラッグ中はスロット全体を空にする
+        childWhenDragging: const SizedBox.expand(),
+        // 通常表示: ピースをスロット中央にトレイサイズ（0.6倍）で配置
+        // Listener(opaque) でスロット全体をヒットテスト対象にする。
+        // CustomPaint は塗りつぶし領域外でhitTest=falseを返すため、
+        // opaque Listener がスロット全域でhitTarget=trueを保証する。
+        child: Listener(
+          behavior: HitTestBehavior.opaque,
+          child: AnimatedBuilder(
+            animation: _controller,
+            builder: (context, child) {
+              return Opacity(
+                opacity: _opacityAnimation.value,
+                // transformHitTests: false でスポーンアニメーション中も全スロット幅を維持
+                child: Transform.scale(
+                  scale: _scaleAnimation.value,
+                  transformHitTests: false,
+                  child: child,
+                ),
+              );
+            },
+            child: Center(
+              child: PieceWidget(
+                piece: piece,
+                cellSize: widget.cellSize * 0.6,
+                theme: widget.theme,
+              ),
+            ),
+          ),
         ),
       ),
     );

@@ -34,29 +34,32 @@ class _ThemeSelectorSheetState extends ConsumerState<_ThemeSelectorSheet> {
 
   @override
   Widget build(BuildContext context) {
-    final currentTheme = ref.watch(themeViewModelProvider);
+    // currentTheme はinitStateの初期化のみに使用済み。
+    ref.watch(themeViewModelProvider);
     final brightness = Theme.of(context).brightness;
-    final currentColors = currentTheme.colorsFor(brightness);
 
     final pendingTheme = allGameThemes.firstWhere(
       (t) => t.id == _pendingThemeId,
       orElse: () => allGameThemes.first,
     );
+    // ボトムシート全体の配色はペンディングテーマに追従する。
+    final pendingColors = pendingTheme.colorsFor(brightness);
 
     return ConstrainedBox(
       constraints: BoxConstraints(
-        maxHeight: MediaQuery.of(context).size.height * 0.78,
+        maxHeight: MediaQuery.of(context).size.height * 0.65,
       ),
-      child: Container(
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
         decoration: BoxDecoration(
-          color: currentColors.surface,
+          color: pendingColors.surface,
           borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
         ),
         padding: EdgeInsets.fromLTRB(
           24,
           16,
           24,
-          24 + MediaQuery.of(context).padding.bottom,
+          12 + MediaQuery.of(context).padding.bottom,
         ),
         child: Column(
           children: [
@@ -65,7 +68,7 @@ class _ThemeSelectorSheetState extends ConsumerState<_ThemeSelectorSheet> {
               width: 40,
               height: 4,
               decoration: BoxDecoration(
-                color: currentColors.onSurface.withValues(alpha: 0.2),
+                color: pendingColors.onSurface.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(2),
               ),
             ),
@@ -77,7 +80,7 @@ class _ThemeSelectorSheetState extends ConsumerState<_ThemeSelectorSheet> {
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
                 letterSpacing: 2,
-                color: currentColors.onSurface,
+                color: pendingColors.onSurface,
               ),
             ),
             const SizedBox(height: 20),
@@ -89,33 +92,34 @@ class _ThemeSelectorSheetState extends ConsumerState<_ThemeSelectorSheet> {
               style: TextStyle(
                 fontFamily: 'Poppins',
                 fontSize: 13,
-                color: currentColors.onSurface.withValues(alpha: 0.6),
+                color: pendingColors.onSurface,
+                fontWeight: FontWeight.w600,
               ),
             ),
             const SizedBox(height: 20),
             // テーマボタン 2列グリッド
             Expanded(
-              child: GridView.builder(
-                padding: const EdgeInsets.only(bottom: 4),
-                gridDelegate:
-                    const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: 8,
-                  crossAxisSpacing: 8,
-                  mainAxisExtent: 56,
+              child: Scrollbar(
+                child: GridView.builder(
+                  padding: const EdgeInsets.only(bottom: 4),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 8,
+                    crossAxisSpacing: 8,
+                    mainAxisExtent: 56,
+                  ),
+                  itemCount: allGameThemes.length,
+                  itemBuilder: (_, index) {
+                    final theme = allGameThemes[index];
+                    return _ThemeButton(
+                      theme: theme,
+                      isSelected: theme.id == _pendingThemeId,
+                      brightness: brightness,
+                      colors: pendingColors,
+                      onTap: () => setState(() => _pendingThemeId = theme.id),
+                    );
+                  },
                 ),
-                itemCount: allGameThemes.length,
-                itemBuilder: (_, index) {
-                  final theme = allGameThemes[index];
-                  return _ThemeButton(
-                    theme: theme,
-                    isSelected: theme.id == _pendingThemeId,
-                    brightness: brightness,
-                    colors: currentColors,
-                    onTap: () =>
-                        setState(() => _pendingThemeId = theme.id),
-                  );
-                },
               ),
             ),
             const SizedBox(height: 12),
@@ -124,8 +128,8 @@ class _ThemeSelectorSheetState extends ConsumerState<_ThemeSelectorSheet> {
               width: double.infinity,
               child: TextButton(
                 style: TextButton.styleFrom(
-                  backgroundColor: currentColors.onSurface,
-                  foregroundColor: currentColors.surface,
+                  backgroundColor: pendingColors.onSurface,
+                  foregroundColor: pendingColors.surface,
                   padding: const EdgeInsets.symmetric(vertical: 14),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
@@ -188,7 +192,7 @@ class _ThemeButton extends StatelessWidget {
         ),
         child: Row(
           children: [
-            ThemeSingleBlock(theme: theme, brightness: brightness, size: 28),
+            ThemeSingleBlock(theme: theme, brightness: brightness, size: 24),
             const SizedBox(width: 10),
             Expanded(
               child: Text(
@@ -196,8 +200,7 @@ class _ThemeButton extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'Poppins',
                   fontSize: 13,
-                  fontWeight:
-                      isSelected ? FontWeight.w600 : FontWeight.normal,
+                  fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
                   color: colors.onSurface,
                 ),
                 overflow: TextOverflow.ellipsis,

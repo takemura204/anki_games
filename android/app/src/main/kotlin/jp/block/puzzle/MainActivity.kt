@@ -1,4 +1,4 @@
-package com.example.mono_games
+package jp.tt.block.puzzle
 
 import io.flutter.embedding.android.FlutterActivity
 

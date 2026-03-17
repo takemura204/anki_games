@@ -14,12 +14,18 @@
     "title": "重力サンド"
   },
   "blockPuzzle": {
-    "title": "Noir Mind",
-    "subtitle": "ブロックパズル",
+    "title": "Block.",
+    "subtitle": "音と触覚のASMRパズル",
     "questMode": "クエスト",
-    "questModeDesc": "スコア目標をクリアして次のレベルへ",
+    "questModeDesc": "すべてのノイズブロックを消してクリア",
     "classicMode": "クラシック",
-    "classicModeDesc": "エンドレスでスコアを競おう"
+    "classicModeDesc": "エンドレスでスコアを競おう",
+    "timeAttackMode": "タイム",
+    "timeAttackModeDesc": "90秒でどれだけ稼げるか",
+    "timeAttackLabel": "タイム",
+    "timeAttackTimesUp": "タイム終了！",
+    "timeAttackResult": "5分間の結果",
+    "timeAttackPlayAgain": "もう一度"
   },
   "settings": {
     "title": "設定",

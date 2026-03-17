@@ -1,4 +1,4 @@
-import 'dart:async' show unawaited;
+import 'dart:async' show Timer, unawaited;
 import 'dart:math';
 import 'dart:ui';
 
@@ -13,8 +13,8 @@ import 'package:mono_games/features/block_puzzle/view_model/block_puzzle_view_mo
 import 'package:mono_games/features/settings/view_model/settings_view_model.dart';
 import 'package:mono_games/until/service/audio_service.dart';
 
-/// ドラッグフィードバックの上方オフセット（ボードセル数）。
-const _dragOffsetCells = 2.0;
+/// DragTargetをボード下方へ延長するセル数（指がボード下1セル分まで到達可能にする）。
+const _dragExtensionCells = 1.0;
 
 /// 8x8のゲームボード。ピースのドロップを受け付ける。
 class BoardWidget extends ConsumerStatefulWidget {
@@ -70,6 +70,9 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
   // ライン消去プレビュー有無のトラッキング（haptic の二重発火防止用）
   var _wasClearPreview = false;
 
+  // サウンドタイマー（新アニメーション開始時にキャンセルして音の重複を防ぐ）
+  final List<Timer> _soundTimers = [];
+
   // 設定値キャッシュ（build() で毎フレーム更新）
   var _soundEnabled = true;
   var _vibrationEnabled = true;
@@ -85,6 +88,10 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
   late final AnimationController _clockController;
   late final DateTime _clockStart;
   Map<CellRenderMode, FragmentShader>? _cellShaders;
+
+  // ノイズセルダメージフラッシュアニメーション
+  late final AnimationController _noiseFlashController;
+  late final Animation<double> _noiseFlashAnimation;
 
   // ライト/ダークモード（colorsFor の引数に使用）
   Brightness _brightness = Brightness.light;
@@ -151,12 +158,7 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
         tween: Tween(begin: -intensity * 0.25, end: 0),
         weight: 1,
       ),
-    ]).animate(
-      CurvedAnimation(
-        parent: _shakeController,
-        curve: anims.placementCurve,
-      ),
-    );
+    ]).animate(_shakeController);
 
     _clearController = AnimationController(
       vsync: this,
@@ -173,12 +175,8 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
       vsync: this,
       duration: anims.bounceDuration,
     );
-    _bounceAnimation = _buildBounceSequence(anims.bounceSequence).animate(
-      CurvedAnimation(
-        parent: _bounceController,
-        curve: anims.placementCurve,
-      ),
-    );
+    _bounceAnimation =
+        _buildBounceSequence(anims.bounceSequence).animate(_bounceController);
 
     _pulseController = AnimationController(
       vsync: this,
@@ -208,6 +206,14 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
       duration: const Duration(seconds: 60),
     )..repeat();
     _clockStart = DateTime.now();
+
+    _noiseFlashController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 300),
+    );
+    _noiseFlashAnimation = Tween<double>(begin: 1, end: 0).animate(
+      CurvedAnimation(parent: _noiseFlashController, curve: Curves.easeOut),
+    );
   }
 
   /// バウンスシーケンス値リストからTweenSequenceを構築する。
@@ -226,6 +232,9 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
 
   @override
   void dispose() {
+    for (final t in _soundTimers) {
+      t.cancel();
+    }
     _shakeController.dispose();
     _clearController.dispose();
     _bounceController.dispose();
@@ -234,6 +243,7 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
     _flashController.dispose();
     _rippleController.dispose();
     _clockController.dispose();
+    _noiseFlashController.dispose();
     super.dispose();
   }
 
@@ -247,15 +257,25 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
     final theme = widget.theme;
     final boardSize = widget.cellSize * Board.size;
     // DragTarget用の下方拡張領域
-    final dragExtension = widget.cellSize * _dragOffsetCells;
+    final dragExtension = widget.cellSize * _dragExtensionCells;
 
     // ライン消去・配置イベントを監視してアニメーション発火
     ref
       ..listen(
         blockPuzzleViewModelProvider.select((s) => s.lastClearResult),
         (prev, next) {
-          if (next != null && prev == null) {
+          if (next != null && next != prev) {
             _triggerClearAnimation(next);
+          }
+        },
+      )
+      ..listen(
+        blockPuzzleViewModelProvider.select((s) => s.damagedNoiseCells),
+        (prev, next) {
+          if (next.isNotEmpty) {
+            _noiseFlashController
+              ..reset()
+              ..forward();
           }
         },
       )
@@ -350,6 +370,7 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
                   _bounceAnimation,
                   _clockController,
                   _pulseController,
+                  _noiseFlashController,
                 ]),
                 builder: (context, _) {
                   final shaderTime = DateTime.now()
@@ -365,6 +386,9 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
                       board: gameState.board,
                       clearingCells: gameState.clearingCells,
                       lastPlacedCells: gameState.lastPlacedCells,
+                      noiseBoard: gameState.noiseBoard,
+                      damagedNoiseCells: gameState.damagedNoiseCells,
+                      damageFlash: _noiseFlashAnimation.value,
                       hoverRow: _hoverRow,
                       hoverCol: _hoverCol,
                       hoverPiece: _hoverPieceIndex != null
@@ -437,8 +461,9 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
             Positioned.fill(
               child: DragTarget<int>(
                 onWillAcceptWithDetails: (details) {
-                  _updateHoverPosition(
+                  _updateHoverPositionWithIndex(
                     details.offset,
+                    details.data,
                     context,
                   );
                   return true;
@@ -564,8 +589,8 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
   /// 左端/上端から順に消えるセル遅延を計算する。
   Map<(int, int), double> _computeCellDelays(ClearResult result) {
     final delays = <(int, int), double>{};
-    // ユーザー要望に合わせて少しゆっくりめの遅延（0.1s推奨だがテーマ設定に従う）
-    final cellDelay = widget.theme.animations.cellDelay;
+    // セル間遅延: 1.2 倍でウェーブを適度に保ちつつテンポよく。
+    final cellDelay = widget.theme.animations.cellDelay * 1.2;
 
     for (final (r, c) in result.cells) {
       double? delay;
@@ -624,9 +649,11 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
       _maxDelay = maxDelay;
     });
 
-    // コントローラの長さを遅延分だけ延長
-    final totalDuration =
-        anims.clearDuration + Duration(milliseconds: (maxDelay * 1000).round());
+    // コントローラの長さを遅延分だけ延長（1.2 倍でテンポよく）
+    final scaledClearMs =
+        (anims.clearDuration.inMilliseconds * 1.2).round();
+    final totalDuration = Duration(milliseconds: scaledClearMs) +
+        Duration(milliseconds: (maxDelay * 1000).round());
     _clearController.duration = totalDuration;
     _particleController.duration = totalDuration;
     _rippleController.duration = totalDuration;
@@ -691,10 +718,29 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
 
     // 遅延破壊: セルごとに個別SEと触覚フィードバックを再生
     final clearPath = widget.theme.sounds.clearPath;
+    // サウンド対象: クリアされた全行・全列のセル（HP≥2ノイズ含む）。
+    // ビジュアルアニメーションは actualClearCells のみだが、サウンドは
+    // ノイズブロックがダメージを受けた場合も同じSEを再生する。
+    final soundCellDelay = widget.theme.animations.cellDelay * 1.2;
+    final soundCellDelays = <(int, int), double>{};
+    for (final r in result.clearedRows) {
+      for (var c = 0; c < Board.size; c++) {
+        final d = c * soundCellDelay;
+        final existing = soundCellDelays[(r, c)];
+        soundCellDelays[(r, c)] = existing == null ? d : min(existing, d);
+      }
+    }
+    for (final c in result.clearedCols) {
+      for (var r = 0; r < Board.size; r++) {
+        final d = r * soundCellDelay;
+        final existing = soundCellDelays[(r, c)];
+        soundCellDelays[(r, c)] = existing == null ? d : min(existing, d);
+      }
+    }
     // 同じタイミングのセルを集約して重複音を排除する。
     // キー: 遅延ms、値: そのタイミングの全セル。
     final soundGroups = <int, List<(int, int)>>{};
-    for (final entry in cellDelays.entries) {
+    for (final entry in soundCellDelays.entries) {
       final delayMs = (entry.value * 1000).round();
       soundGroups.putIfAbsent(delayMs, () => []).add(entry.key);
     }
@@ -702,9 +748,16 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
         soundGroups.keys.fold(0, (prev, ms) => ms > prev ? ms : prev);
 
     // コンボ段階ごとにピッチを +12% ブースト（上限 ×1.8）。
+    // ASMR感: ベースピッチを 0.1 下げて落ち着いた音質にする。
+    // ASMR感: ベースピッチを 0.1 下げて落ち着いた音質にする。
+    const asmrPitchOffset = -0.1;
     final comboBoost = (1.0 + (result.combo - 1) * 0.12).clamp(1.0, 1.8);
-    final pitchMin = widget.theme.sounds.clearPitchMin;
-    final pitchMax = widget.theme.sounds.clearPitchMax;
+    final pitchMin =
+        (widget.theme.sounds.clearPitchMin + asmrPitchOffset)
+            .clamp(0.4, 2.0);
+    final pitchMax =
+        (widget.theme.sounds.clearPitchMax + asmrPitchOffset)
+            .clamp(0.4, 2.0);
 
     for (final entry in soundGroups.entries) {
       final delayMs = entry.key;
@@ -724,14 +777,17 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
       final rate =
           (pitchMin + avgNormPos * (pitchMax - pitchMin)) * comboBoost;
 
-      Future<void>.delayed(
+      late final Timer soundTimer;
+      soundTimer = Timer(
         Duration(milliseconds: delayMs),
         () {
+          _soundTimers.remove(soundTimer);
           if (!mounted) {
             return;
           }
           if (_soundEnabled) {
-            AudioService.instance.playWithPan(clearPath, pan: pan, rate: rate);
+            AudioService.instance
+                .playWithPan(clearPath, pan: pan, rate: rate);
           }
           // 最後のグループで強い振動、それ以外は軽い振動。
           if (_vibrationEnabled) {
@@ -747,6 +803,7 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
           }
         },
       );
+      _soundTimers.add(soundTimer);
     }
 
     // フローティングスコア追加
@@ -1026,26 +1083,29 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
       ..forward();
   }
 
-  void _updateHoverPosition(
-    Offset globalOffset,
-    BuildContext ctx,
-  ) {
-    final box = ctx.findRenderObject()! as RenderBox;
-    final local = box.globalToLocal(globalOffset);
-    final adjustedY = local.dy - widget.cellSize * _dragOffsetCells;
-    setState(() {
-      _hoverCol = (local.dx / widget.cellSize).floor();
-      _hoverRow = (adjustedY / widget.cellSize).floor();
-    });
-  }
-
+  /// ピースインデックスを使ってホバー位置を更新する。
+  ///
+  /// feedback の配置（横中央・底辺が指の1セル上）と整合するよう、
+  /// 指の位置からピースのサイズ分を引いた座標を nearest-cell にスナップする。
   void _updateHoverPositionWithIndex(
     Offset globalOffset,
     int pieceIndex,
     BuildContext ctx,
   ) {
-    _updateHoverPosition(globalOffset, ctx);
+    final box = ctx.findRenderObject()! as RenderBox;
+    final local = box.globalToLocal(globalOffset);
+    final piece = ref.read(blockPuzzleViewModelProvider).pieces[pieceIndex];
+    final h = piece?.height ?? 1;
+    final w = piece?.width ?? 1;
+    final cs = widget.cellSize;
+
+    // 指を基点にピースを横中央・底辺1セル上に配置したときの top-left 座標
+    final adjustedX = local.dx - cs * (w / 2);
+    final adjustedY = local.dy - cs * (h + 1);
+
     setState(() {
+      _hoverCol = (adjustedX / cs).round().clamp(0, Board.size - w);
+      _hoverRow = (adjustedY / cs).round().clamp(0, Board.size - h);
       _hoverPieceIndex = pieceIndex;
     });
   }
@@ -1423,6 +1483,9 @@ class _BoardPainter extends CustomPainter {
     required this.board,
     required this.clearingCells,
     required this.lastPlacedCells,
+    required this.noiseBoard,
+    required this.damagedNoiseCells,
+    required this.damageFlash,
     required this.cellSize,
     required this.theme,
     required this.brightness,
@@ -1445,6 +1508,15 @@ class _BoardPainter extends CustomPainter {
   final List<List<bool>> board;
   final Set<(int, int)> clearingCells;
   final Set<(int, int)> lastPlacedCells;
+
+  /// ノイズブロックHP盤面（0=通常, 1-3=HP）。クエストモード専用。
+  final List<List<int>> noiseBoard;
+
+  /// ダメージを受けたノイズセル（フラッシュアニメーション用）。
+  final Set<(int, int)> damagedNoiseCells;
+
+  /// ノイズセルダメージフラッシュ強度（0〜1）。
+  final double damageFlash;
   final double cellSize;
   final GameTheme theme;
   final Brightness brightness;
@@ -1636,8 +1708,26 @@ class _BoardPainter extends CustomPainter {
             cellSize - gap * 2,
             cellSize - gap * 2,
           );
-          drawCell(canvas, rect, style, colors,
-              shader: shader, time: cellShaderTime);
+          // ノイズブロックはテーマカラーベース + 錠前オーバーレイで描画
+          final noiseHp = noiseBoard.isNotEmpty ? noiseBoard[r][c] : 0;
+          if (noiseHp > 0) {
+            final flash =
+                damagedNoiseCells.contains((r, c)) ? damageFlash : 0.0;
+            drawNoiseCell(
+              canvas,
+              rect,
+              noiseHp,
+              3,
+              style,
+              colors,
+              damageFlash: flash,
+              shader: shader,
+              shaderTime: cellShaderTime,
+            );
+          } else {
+            drawCell(canvas, rect, style, colors,
+                shader: shader, time: cellShaderTime);
+          }
           if (clearPreviewCells.contains((r, c))) {
             final rrect = RRect.fromRectAndRadius(
               rect,

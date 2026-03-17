@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mono_games/features/block_puzzle/model/game_theme.dart';
 import 'package:mono_games/features/block_puzzle/view_model/block_puzzle_view_model.dart';
+import 'package:mono_games/i18n/translations.g.dart';
 
 /// スコア・ハイスコア・コンボを表示するHUD。
 class ScoreHudWidget extends ConsumerStatefulWidget {
@@ -15,8 +16,9 @@ class ScoreHudWidget extends ConsumerStatefulWidget {
   ConsumerState<ScoreHudWidget> createState() => _ScoreHudWidgetState();
 }
 
-class _ScoreHudWidgetState extends ConsumerState<ScoreHudWidget> with TickerProviderStateMixin {
-  int _displayScore = 0;
+class _ScoreHudWidgetState extends ConsumerState<ScoreHudWidget>
+    with TickerProviderStateMixin {
+  var _displayScore = 0;
   late final AnimationController _scoreController;
   late final AnimationController _comboController;
   late final Animation<double> _comboScale;
@@ -60,6 +62,13 @@ class _ScoreHudWidgetState extends ConsumerState<ScoreHudWidget> with TickerProv
     super.dispose();
   }
 
+  static String _formatTime(int totalSeconds) {
+    final m = totalSeconds ~/ 60;
+    final s = totalSeconds % 60;
+    return '${m.toString().padLeft(2, '0')}:'
+        '${s.toString().padLeft(2, '0')}';
+  }
+
   @override
   Widget build(BuildContext context) {
     final colors = widget.theme.colorsFor(Theme.of(context).brightness);
@@ -69,9 +78,23 @@ class _ScoreHudWidgetState extends ConsumerState<ScoreHudWidget> with TickerProv
     final isQuestMode = ref.watch(
       blockPuzzleViewModelProvider.select((s) => s.isQuestMode),
     );
-    final targetScore = ref.watch(
-      blockPuzzleViewModelProvider.select((s) => s.targetScore),
+    final isTimeAttackMode = ref.watch(
+      blockPuzzleViewModelProvider.select((s) => s.isTimeAttackMode),
     );
+    final timeAttackRemaining = ref.watch(
+      blockPuzzleViewModelProvider.select((s) => s.timeAttackRemainingSeconds),
+    );
+    // クエストモード: 残りノイズブロック数を表示
+    final noiseBoard = ref.watch(
+      blockPuzzleViewModelProvider.select((s) => s.noiseBoard),
+    );
+    final noiseCount = noiseBoard.isEmpty
+        ? 0
+        : noiseBoard.fold<int>(
+            0,
+            (int sum, List<int> row) =>
+                sum + row.where((int hp) => hp > 0).length,
+          );
     final combo = ref.watch(
       blockPuzzleViewModelProvider.select((s) => s.combo),
     );
@@ -164,13 +187,17 @@ class _ScoreHudWidgetState extends ConsumerState<ScoreHudWidget> with TickerProv
                 ),
               ),
             ),
-          // クエストモードはTARGET、クラシックモードはBEST
+          // タイムアタック=TIME、クエスト=NOISE、クラシック=BEST
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                isQuestMode ? 'TARGET' : 'BEST',
+                isTimeAttackMode
+                    ? t.blockPuzzle.timeAttackLabel
+                    : isQuestMode
+                        ? 'NOISE'
+                        : 'BEST',
                 style: TextStyle(
                   fontFamily: 'Poppins',
                   fontSize: 10,
@@ -180,12 +207,18 @@ class _ScoreHudWidgetState extends ConsumerState<ScoreHudWidget> with TickerProv
                 ),
               ),
               Text(
-                isQuestMode ? '$targetScore' : '$highScore',
+                isTimeAttackMode
+                    ? _formatTime(timeAttackRemaining)
+                    : isQuestMode
+                        ? '$noiseCount'
+                        : '$highScore',
                 style: TextStyle(
                   fontFamily: 'Poppins',
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
-                  color: colors.onSurface.withValues(alpha: 0.5),
+                  color: isTimeAttackMode && timeAttackRemaining <= 30
+                      ? colors.accent
+                      : colors.onSurface.withValues(alpha: 0.5),
                   height: 1.1,
                 ),
               ),

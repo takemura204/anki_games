@@ -14,12 +14,18 @@
     "title": "Gravity Sand"
   },
   "blockPuzzle": {
-    "title": "Noir Mind",
-    "subtitle": "Block Puzzle",
+    "title": "Block.",
+    "subtitle": "ASMR puzzle with sound & haptics",
     "questMode": "Quest",
-    "questModeDesc": "Clear score targets to advance",
+    "questModeDesc": "Clear all noise blocks to advance",
     "classicMode": "Classic",
-    "classicModeDesc": "Endless score challenge"
+    "classicModeDesc": "Endless score challenge",
+    "timeAttackMode": "Time",
+    "timeAttackModeDesc": "Score in 90 seconds",
+    "timeAttackLabel": "TIME",
+    "timeAttackTimesUp": "TIME'S UP",
+    "timeAttackResult": "5 min result",
+    "timeAttackPlayAgain": "Play Again"
   },
   "settings": {
     "title": "Settings",

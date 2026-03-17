@@ -23,16 +23,16 @@ class _ModeCard extends StatelessWidget {
       child: GestureDetector(
         onTap: onTap,
         child: Container(
-          padding: const EdgeInsets.all(24),
+          padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
-            color: colors.emptyCellFill,
+            color: colors.surface,
             borderRadius: BorderRadius.circular(10),
             border: Border.all(
               color: colors.onSurface.withValues(alpha: 0.2),
-              width: 1.0,
             ),
           ),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(
                 icon,
@@ -44,7 +44,7 @@ class _ModeCard extends StatelessWidget {
                 title,
                 style: TextStyle(
                   fontFamily: 'Poppins',
-                  fontSize: 16,
+                  fontSize: 14,
                   fontWeight: FontWeight.w600,
                   color: colors.onSurface,
                 ),
@@ -54,7 +54,7 @@ class _ModeCard extends StatelessWidget {
                 badge,
                 style: TextStyle(
                   fontFamily: 'Poppins',
-                  fontSize: 10,
+                  fontSize: 12,
                   fontWeight: FontWeight.w600,
                   letterSpacing: 1,
                   color: colors.onSurface,

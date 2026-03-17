@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:mono_games/features/admob/admob_interstitial.dart';
 import 'package:mono_games/features/block_puzzle/model/game_theme.dart';
 import 'package:mono_games/features/block_puzzle/view_model/block_puzzle_view_model.dart';
-import 'package:mono_games/features/block_puzzle/view_model/quest_progress_view_model.dart';
 import 'package:mono_games/features/settings/view_model/settings_view_model.dart';
 
 /// クエストモードのレベル達成時に表示するフルスクリーンオーバーレイ。
@@ -13,7 +13,6 @@ class QuestSuccessOverlay extends ConsumerStatefulWidget {
     required this.theme,
     required this.level,
     required this.score,
-    required this.targetScore,
     super.key,
   });
 
@@ -25,9 +24,6 @@ class QuestSuccessOverlay extends ConsumerStatefulWidget {
 
   /// 達成スコア。
   final int score;
-
-  /// 目標スコア。
-  final int targetScore;
 
   @override
   ConsumerState<QuestSuccessOverlay> createState() =>
@@ -41,7 +37,7 @@ class _QuestSuccessOverlayState extends ConsumerState<QuestSuccessOverlay>
   late final Animation<double> _slideUp;
   late final Animation<double> _starBounce;
 
-  bool _progressSaved = false;
+  var _progressSaved = false;
 
   @override
   void initState() {
@@ -81,6 +77,11 @@ class _QuestSuccessOverlayState extends ConsumerState<QuestSuccessOverlay>
 
     _controller.forward();
     _saveProgress();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) {
+        AdmobInterstitial().loadAndShow();
+      }
+    });
   }
 
   Future<void> _saveProgress() async {
@@ -89,8 +90,8 @@ class _QuestSuccessOverlayState extends ConsumerState<QuestSuccessOverlay>
     }
     _progressSaved = true;
     await ref
-        .read(questProgressViewModelProvider.notifier)
-        .completeLevel(widget.level);
+        .read(blockPuzzleViewModelProvider.notifier)
+        .completeQuestLevel(widget.level);
   }
 
   @override
@@ -173,7 +174,7 @@ class _QuestSuccessOverlayState extends ConsumerState<QuestSuccessOverlay>
                         ),
                       ),
                       Text(
-                        'SCORE  (TARGET: ${widget.targetScore})',
+                        'SCORE',
                         style: TextStyle(
                           fontFamily: 'Poppins',
                           fontSize: 11,

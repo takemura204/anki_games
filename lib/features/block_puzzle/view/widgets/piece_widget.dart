@@ -2,19 +2,15 @@ import 'dart:async' show unawaited;
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mono_games/features/block_puzzle/model/game_theme.dart';
 import 'package:mono_games/features/block_puzzle/model/piece.dart';
 import 'package:mono_games/features/block_puzzle/view/painters/cell_renderer.dart';
-import 'package:mono_games/features/settings/view_model/settings_view_model.dart';
 
-/// ドラッグ可能なピースウィジェット。
-class PieceWidget extends ConsumerStatefulWidget {
-  /// ドラッグ可能なピースウィジェットを作成する。
+/// ピースの視覚表示ウィジェット（シェーダー・クロックアニメーション付き）。
+class PieceWidget extends StatefulWidget {
+  /// ピースウィジェットを作成する。
   const PieceWidget({
     required this.piece,
-    required this.pieceIndex,
     required this.cellSize,
     required this.theme,
     super.key,
@@ -23,9 +19,6 @@ class PieceWidget extends ConsumerStatefulWidget {
   /// 描画するピース。
   final Piece piece;
 
-  /// トレイ内のインデックス（ドラッグデータとして使用）。
-  final int pieceIndex;
-
   /// 各セルの論理ピクセルサイズ。
   final double cellSize;
 
@@ -33,12 +26,11 @@ class PieceWidget extends ConsumerStatefulWidget {
   final GameTheme theme;
 
   @override
-  ConsumerState<PieceWidget> createState() => _PieceWidgetState();
+  State<PieceWidget> createState() => _PieceWidgetState();
 }
 
-class _PieceWidgetState extends ConsumerState<PieceWidget>
+class _PieceWidgetState extends State<PieceWidget>
     with SingleTickerProviderStateMixin {
-  bool _isDragging = false;
   FragmentShader? _shader;
   late final AnimationController _clockController;
   late final DateTime _clockStart;
@@ -107,54 +99,12 @@ class _PieceWidgetState extends ConsumerState<PieceWidget>
 
   @override
   Widget build(BuildContext context) {
-    return Draggable<int>(
-      data: widget.pieceIndex,
-      onDragStarted: () {
-        if (ref.read(settingsViewModelProvider).vibrationEnabled) {
-          HapticFeedback.selectionClick();
-        }
-        setState(() => _isDragging = true);
-      },
-      onDragEnd: (_) {
-        setState(() => _isDragging = false);
-      },
-      onDraggableCanceled: (_, __) {
-        setState(() => _isDragging = false);
-      },
-      // ドラッグ中のフィードバック（指の上にオフセット、ボードセル等倍サイズ）
-      feedback: Transform.translate(
-        offset: Offset(0, -(widget.cellSize / 0.6) * 2),
-        child: Material(
-          color: Colors.transparent,
-          child: Opacity(
-            opacity: 0.85,
-            child: _PieceShape(
-              piece: widget.piece,
-              cellSize: widget.cellSize / 0.6,
-              theme: widget.theme,
-              shader: _shader,
-              time: _time,
-            ),
-          ),
-        ),
-      ),
-      // ドラッグ中は元の位置を空にする
-      childWhenDragging: SizedBox(
-        width: widget.piece.width * widget.cellSize,
-        height: widget.piece.height * widget.cellSize,
-      ),
-      child: AnimatedScale(
-        scale: _isDragging ? 1.15 : 1,
-        duration: const Duration(milliseconds: 150),
-        curve: Curves.easeOut,
-        child: _PieceShape(
-          piece: widget.piece,
-          cellSize: widget.cellSize,
-          theme: widget.theme,
-          shader: _shader,
-          time: _time,
-        ),
-      ),
+    return _PieceShape(
+      piece: widget.piece,
+      cellSize: widget.cellSize,
+      theme: widget.theme,
+      shader: _shader,
+      time: _time,
     );
   }
 }

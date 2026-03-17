@@ -1,8 +1,9 @@
 #version 460 core
 #include <flutter/runtime_effect.glsl>
 
-// Bubble Wrap ASMR: realistic spherical depth + Phong lighting + thin-film iridescence
-// Vinyl plastic bubble: proper 3D sphere illusion with satisfying depth
+// Bubble Wrap ASMR: vivid 3D sphere with sharp vinyl specular and strong iridescence
+// Vinyl plastic bubble: proper 3D sphere with sharp primary specular (power 64),
+// soft secondary lobe, vivid saturated rainbow iridescence, and bottom depth shadow
 
 uniform vec2 uSize;
 uniform vec2 uOrigin;
@@ -32,7 +33,7 @@ void main() {
     return;
   }
 
-  // --- Sphere surface normal (proper 3D sphere illusion) ---
+  // --- Sphere surface normal (3D sphere illusion) ---
   float sphereZ = sqrt(max(0.0, 1.0 - r * r * 0.85));
   vec3 normal = normalize(vec3(centered * 2.0, sphereZ));
 
@@ -47,37 +48,50 @@ void main() {
   vec3 viewDir = vec3(0.0, 0.0, 1.0);
   float diffuse = max(0.0, dot(normal, lightDir));
 
-  // Specular: sharp lobe (plastic vinyl surface)
   vec3 reflectDir = reflect(-lightDir, normal);
-  float spec = pow(max(0.0, dot(reflectDir, viewDir)), 32.0) * 0.82;
+  float NdotR = max(0.0, dot(reflectDir, viewDir));
 
-  // --- Fresnel: edge brightening (thin-film effect) ---
-  float fresnel = 1.0 - max(0.0, dot(normal, viewDir));
-  fresnel = pow(fresnel, 2.2);
+  // Sharp primary specular (vinyl plastic: power 64 for crisp highlight)
+  float spec = pow(NdotR, 64.0) * 1.05;
+  // Soft secondary specular (wide lobe: wet plastic surface feel)
+  float spec2 = pow(NdotR, 8.0) * 0.22;
 
-  // --- Thin-film iridescence (rainbow at Fresnel edges) ---
+  // --- Fresnel: edge brightening ---
+  float fresnel = pow(1.0 - max(0.0, dot(normal, viewDir)), 2.2);
+
+  // --- Vivid thin-film iridescence: saturated rainbow at Fresnel edges ---
   float hue = fract(atan(centered.y, centered.x) / 6.28318 + uTime * 0.065);
-  vec3 rainbow = hue2rgb(hue);
-  float iridStrength = fresnel * 0.58;
+  // Boost saturation by mixing towards pure hue from grey
+  vec3 rainbow = mix(vec3(0.5), hue2rgb(hue), 1.55);
+  rainbow = clamp(rainbow, 0.0, 1.0);
+  float iridStrength = fresnel * 0.80; // was 0.58
 
   // --- Base translucent color with sphere depth shading ---
   vec3 deepColor = uBase.rgb * (0.38 + diffuse * 0.48);
   vec3 color = mix(deepColor, rainbow, iridStrength);
 
-  // Sharp specular (the satisfying bright "pop" highlight)
+  // Primary sharp specular (the satisfying bright "pop" highlight)
   color += vec3(spec);
+  // Secondary soft specular
+  color += vec3(spec2) * 0.55;
 
-  // Subtle center darkening (sphere depth illusion - convex center looks thicker)
+  // Center darkening (sphere depth — convex center looks thicker)
   float centerDark = (1.0 - smoothstep(0.0, 0.28, r)) * 0.08;
   color -= vec3(centerDark);
 
-  // Rim glow from glowColor
-  color += uGlow.rgb * fresnel * 0.18;
+  // Bottom depth shadow (enhances 3D sphere illusion — lighter top, darker bottom)
+  float bottomShadow = smoothstep(-0.3, 0.45, centered.y)
+                     * (1.0 - smoothstep(0.50, 0.82, r))
+                     * 0.10;
+  color -= vec3(bottomShadow);
+
+  // Rim glow from glowColor (slightly stronger than before)
+  color += uGlow.rgb * fresnel * 0.22;
 
   color = clamp(color, 0.0, 1.0);
 
-  // --- Alpha: translucent plastic with Fresnel opacity boost at edges ---
-  float alpha = uBase.a * (0.52 + fresnel * 0.22 + spec * 0.28) * circleMask * uOpacity;
+  // Alpha: translucent plastic — fresnel + specular boost opacity at edges/highlights
+  float alpha = uBase.a * (0.52 + fresnel * 0.26 + spec * 0.30) * circleMask * uOpacity;
   alpha = clamp(alpha, 0.0, 1.0);
 
   fragColor = vec4(color, alpha);

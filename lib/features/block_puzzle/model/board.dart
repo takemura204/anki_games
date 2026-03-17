@@ -35,7 +35,7 @@ class Board {
         ];
 
   /// ボードの一辺のセル数 (8x8)。
-  static const int size = 8;
+  static const size = 8;
 
   /// 2Dセルグリッド。`true` = 配置済み、`false` = 空。
   final List<List<bool>> cells;

@@ -5,7 +5,6 @@ import 'package:mono_games/features/block_puzzle/model/game_theme.dart';
 import 'package:mono_games/features/block_puzzle/view/block_puzzle_screen.dart';
 import 'package:mono_games/features/block_puzzle/view/widgets/theme_block_preview.dart';
 import 'package:mono_games/features/block_puzzle/view_model/block_puzzle_view_model.dart';
-import 'package:mono_games/features/block_puzzle/view_model/quest_progress_view_model.dart';
 import 'package:mono_games/features/block_puzzle/view_model/theme_view_model.dart';
 import 'package:mono_games/features/settings/view/settings_dialog.dart';
 import 'package:mono_games/i18n/translations.g.dart';
@@ -19,9 +18,14 @@ class HomeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final questState = ref.watch(questProgressViewModelProvider);
     final highScore = ref.watch(
       blockPuzzleViewModelProvider.select((s) => s.highScore),
+    );
+    final taHighScore = ref.watch(
+      blockPuzzleViewModelProvider.select((s) => s.timeAttackHighScore),
+    );
+    final maxUnlockedLevel = ref.watch(
+      blockPuzzleViewModelProvider.select((s) => s.maxUnlockedLevel),
     );
     final gameTheme = ref.watch(themeViewModelProvider);
     final brightness = Theme.of(context).brightness;
@@ -67,7 +71,7 @@ class HomeScreen extends ConsumerWidget {
                 style: TextStyle(
                   fontFamily: 'Poppins',
                   fontSize: 14,
-                  color: colors.onSurface.withValues(alpha: 0.45),
+                  color: colors.onSurface,
                 ),
               ),
 
@@ -79,16 +83,18 @@ class HomeScreen extends ConsumerWidget {
                     icon: Icons.flag_rounded,
                     title: t.blockPuzzle.questMode,
                     description: t.blockPuzzle.questModeDesc,
-                    badge: 'LEVEL ${questState.maxUnlockedLevel}',
+                    badge: 'LEVEL $maxUnlockedLevel',
                     colors: colors,
                     onTap: () {
                       final vm = ref.read(blockPuzzleViewModelProvider);
-                      final hasActiveQuest =
-                          vm.isQuestMode && !vm.isGameOver && !vm.isQuestComplete;
-                      if (!hasActiveQuest) {
+                      if (vm.hasSavedQuestGame) {
                         ref
                             .read(blockPuzzleViewModelProvider.notifier)
-                            .startQuestLevel(questState.maxUnlockedLevel);
+                            .resumeQuestGame();
+                      } else {
+                        ref
+                            .read(blockPuzzleViewModelProvider.notifier)
+                            .startQuestLevel(maxUnlockedLevel);
                       }
                       Navigator.of(context).push(
                         MaterialPageRoute<void>(
@@ -97,7 +103,7 @@ class HomeScreen extends ConsumerWidget {
                       );
                     },
                   ),
-                  const Gap(16),
+                  const Gap(10),
                   _ModeCard(
                     icon: Icons.all_inclusive_rounded,
                     title: t.blockPuzzle.classicMode,
@@ -106,10 +112,33 @@ class HomeScreen extends ConsumerWidget {
                     colors: colors,
                     onTap: () {
                       final vm = ref.read(blockPuzzleViewModelProvider);
-                      final hasActiveClassic = !vm.isQuestMode && !vm.isGameOver;
-                      if (!hasActiveClassic) {
-                        ref.read(blockPuzzleViewModelProvider.notifier).resetGame();
+                      if (vm.hasSavedClassicGame) {
+                        ref
+                            .read(blockPuzzleViewModelProvider.notifier)
+                            .resumeClassicGame();
+                      } else {
+                        ref
+                            .read(blockPuzzleViewModelProvider.notifier)
+                            .resetGame();
                       }
+                      Navigator.of(context).push(
+                        MaterialPageRoute<void>(
+                          builder: (_) => const BlockPuzzleScreen(),
+                        ),
+                      );
+                    },
+                  ),
+                  const Gap(10),
+                  _ModeCard(
+                    icon: Icons.timer_outlined,
+                    title: t.blockPuzzle.timeAttackMode,
+                    description: t.blockPuzzle.timeAttackModeDesc,
+                    badge: taHighScore > 0 ? 'BEST  $taHighScore' : '5 MIN',
+                    colors: colors,
+                    onTap: () {
+                      ref
+                          .read(blockPuzzleViewModelProvider.notifier)
+                          .startTimeAttack();
                       Navigator.of(context).push(
                         MaterialPageRoute<void>(
                           builder: (_) => const BlockPuzzleScreen(),

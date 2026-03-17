@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:mono_games/features/admob/admob_interstitial.dart';
+import 'package:mono_games/features/admob/admob_reward.dart';
 import 'package:mono_games/features/block_puzzle/model/game_theme.dart';
 import 'package:mono_games/features/block_puzzle/view_model/block_puzzle_view_model.dart';
 import 'package:mono_games/features/settings/view_model/settings_view_model.dart';
@@ -24,6 +26,7 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
   late final Animation<double> _fadeIn;
   late final Animation<double> _slideUp;
   late final Animation<double> _newBestScale;
+  late final RewardedAdService _rewardedAdService;
 
   @override
   void initState() {
@@ -72,11 +75,24 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
     );
 
     _controller.forward();
+
+    _rewardedAdService = RewardedAdService();
+    final gameState = ref.read(blockPuzzleViewModelProvider);
+    if (!gameState.isQuestMode && !gameState.isTimeAttackMode) {
+      _rewardedAdService.load();
+    }
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) {
+        AdmobInterstitial().loadAndShow();
+      }
+    });
   }
 
   @override
   void dispose() {
     _controller.dispose();
+    _rewardedAdService.dispose();
     super.dispose();
   }
 
@@ -84,6 +100,10 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
   Widget build(BuildContext context) {
     final colors = widget.theme.colorsFor(Theme.of(context).brightness);
     final gameState = ref.watch(blockPuzzleViewModelProvider);
+    final bestScore = gameState.isTimeAttackMode
+        ? gameState.timeAttackHighScore
+        : gameState.highScore;
+    final isClassicMode = !gameState.isQuestMode && !gameState.isTimeAttackMode;
 
     return AnimatedBuilder(
       animation: _controller,
@@ -162,9 +182,9 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
                       ),
                       if (!gameState.isQuestMode) ...[
                         const SizedBox(height: 16),
-                        // クラシックモードのみハイスコア表示
+                        // クラシック / タイムアタックのベストスコア表示
                         Text(
-                          'BEST  ${gameState.highScore}',
+                          'BEST  $bestScore',
                           style: TextStyle(
                             fontFamily: 'Poppins',
                             fontSize: 14,
@@ -201,6 +221,64 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
                         ],
                       ],
                       const SizedBox(height: 32),
+                      // クラシックモード + コンティニュー可能: Continue ボタン
+                      if (isClassicMode && gameState.canContinue) ...[
+                        SizedBox(
+                          width: double.infinity,
+                          child: TextButton(
+                            onPressed: () {
+                              final vibration = ref
+                                  .read(settingsViewModelProvider)
+                                  .vibrationEnabled;
+                              if (vibration) {
+                                HapticFeedback.lightImpact();
+                              }
+                              final shown = _rewardedAdService.show(
+                                (ad, reward) {
+                                  if (mounted) {
+                                    ref
+                                        .read(
+                                          blockPuzzleViewModelProvider.notifier,
+                                        )
+                                        .continueGame();
+                                  }
+                                },
+                              );
+                              if (!shown) {
+                                // 広告未ロード時は再ロードしてスナックバー通知
+                                _rewardedAdService.load();
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                    content: Text(
+                                      'Ad is loading, try again shortly.',
+                                    ),
+                                    duration: Duration(seconds: 2),
+                                  ),
+                                );
+                              }
+                            },
+                            style: TextButton.styleFrom(
+                              backgroundColor: colors.accent,
+                              foregroundColor: colors.surface,
+                              padding: const EdgeInsets.symmetric(
+                                vertical: 14,
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(50),
+                              ),
+                            ),
+                            child: const Text(
+                              'Continue',
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+                      ],
                       // メインアクションボタン
                       SizedBox(
                         width: double.infinity,
@@ -212,18 +290,15 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
                             if (vibration) {
                               HapticFeedback.lightImpact();
                             }
-                            if (gameState.isQuestMode) {
-                              ref
-                                  .read(
-                                    blockPuzzleViewModelProvider.notifier,
-                                  )
-                                  .retryQuestLevel();
+                            final notifier = ref.read(
+                              blockPuzzleViewModelProvider.notifier,
+                            );
+                            if (gameState.isTimeAttackMode) {
+                              notifier.retryTimeAttack();
+                            } else if (gameState.isQuestMode) {
+                              notifier.retryQuestLevel();
                             } else {
-                              ref
-                                  .read(
-                                    blockPuzzleViewModelProvider.notifier,
-                                  )
-                                  .resetGame();
+                              notifier.resetGame();
                             }
                           },
                           style: TextButton.styleFrom(
@@ -237,7 +312,9 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
                             ),
                           ),
                           child: Text(
-                            gameState.isQuestMode ? 'Retry Level' : 'Play Again',
+                            gameState.isQuestMode
+                                ? 'Retry Level'
+                                : 'Play Again',
                             style: const TextStyle(
                               fontFamily: 'Poppins',
                               fontSize: 16,
@@ -246,8 +323,9 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
                           ),
                         ),
                       ),
-                      // クエストモードのみHomeボタン
-                      if (gameState.isQuestMode) ...[
+                      // クエスト / タイムアタックはHomeボタンを表示
+                      if (gameState.isQuestMode ||
+                          gameState.isTimeAttackMode) ...[
                         const SizedBox(height: 8),
                         SizedBox(
                           width: double.infinity,
@@ -262,7 +340,8 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
                               Navigator.of(context).pop();
                             },
                             style: TextButton.styleFrom(
-                              foregroundColor: colors.onSurface.withValues(alpha: 0.55),
+                              foregroundColor:
+                                  colors.onSurface.withValues(alpha: 0.55),
                             ),
                             child: const Text(
                               'Home',

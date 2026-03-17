@@ -205,7 +205,7 @@ void _drawGlossy(
   canvas.drawRRect(rrect, highlightPaint);
 }
 
-/// マット: 低彩度ベタ塗り + 微細ノイズドットで石質感。
+/// 石鹸カット: 3色レイヤー + 対角ハイライト + ワックスエッジ（Canvas フォールバック）。
 void _drawMatte(
   Canvas canvas,
   Rect rect,
@@ -218,35 +218,80 @@ void _drawMatte(
     Radius.circular(style.cellBorderRadius),
   );
 
-  // ベベル（面取り）処理: 上面と側面を描き分ける
-  const bevel = 4.0;
-  final topRect = Rect.fromLTRB(
+  // 3色レイヤー: 縦グラデーションで断面の層を表現
+  final topColor = Color.lerp(colors.glowColor, const Color(0xFFFFFFF8), 0.50)!;
+  final bottomColor =
+      Color.lerp(colors.onSurface, const Color(0xFF2E8090), 0.35)!;
+  final layerPaint = Paint()
+    ..shader = LinearGradient(
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      colors: [
+        topColor.withValues(alpha: opacity),
+        colors.onSurface.withValues(alpha: opacity),
+        bottomColor.withValues(alpha: opacity),
+      ],
+      stops: const [0.0, 0.45, 1.0],
+    ).createShader(rect);
+  canvas.drawRRect(rrect, layerPaint);
+
+  // 強いベベル（立体感）
+  const bevel = 3.5;
+  final bevelRect = Rect.fromLTRB(
     rect.left + bevel,
     rect.top + bevel,
     rect.right - bevel,
     rect.bottom - bevel,
   );
+  final innerRRect = RRect.fromRectAndRadius(
+    bevelRect,
+    Radius.circular((style.cellBorderRadius - bevel).clamp(0.0, 100.0)),
+  );
+  final bevelPaint = Paint()
+    ..shader = LinearGradient(
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight,
+      colors: [
+        Colors.white.withValues(alpha: 0.18 * opacity),
+        Colors.transparent,
+        Colors.black.withValues(alpha: 0.14 * opacity),
+      ],
+      stops: const [0.0, 0.4, 1.0],
+    ).createShader(rect);
+  canvas.drawRRect(innerRRect, bevelPaint);
 
-  // 側面（暗い色）
-  final sidePath = Path()
-    ..addRRect(rrect)
-    ..addRect(topRect)
-    ..fillType = PathFillType.evenOdd;
-  final sidePaint = Paint()
-    ..color = colors.onSurface.withValues(alpha: opacity);
-  canvas.drawPath(sidePath, sidePaint);
+  // 対角ハイライト（右上から左下方向への白い光の帯）
+  final diagPaint = Paint()
+    ..shader = LinearGradient(
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight,
+      colors: [
+        Colors.white.withValues(alpha: 0.42 * opacity),
+        Colors.white.withValues(alpha: 0.18 * opacity),
+        Colors.transparent,
+      ],
+      stops: const [0.0, 0.22, 0.55],
+    ).createShader(rect);
+  canvas.drawRRect(rrect, diagPaint);
 
-  // 上面（明るい色）
-  final topPaint = Paint()
-    ..color = colors.glowColor.withValues(alpha: opacity);
-  canvas.drawRect(topRect, topPaint);
+  // ワックスエッジ（半透明な縁の光沢）
+  final waxPaint = Paint()
+    ..shader = RadialGradient(
+      radius: 1,
+      colors: [
+        Colors.transparent,
+        colors.glowColor.withValues(alpha: 0.28 * opacity),
+      ],
+      stops: const [0.65, 1.0],
+    ).createShader(rect);
+  canvas.drawRRect(rrect, waxPaint);
 
-  // ノイズドット（grainIntensity > 0の場合）
+  // グレイン（粉っぽいテクスチャ）
   if (style.grainIntensity > 0) {
     canvas
       ..save()
-      ..clipRect(topRect);
-    _drawGrainNoise(canvas, topRect, style.grainIntensity, opacity);
+      ..clipRRect(rrect);
+    _drawGrainNoise(canvas, rect, style.grainIntensity, opacity);
     canvas.restore();
   }
 }
@@ -315,7 +360,7 @@ void _drawSand(
   canvas.restore();
 }
 
-/// バブル: ビニール質感 + 強烈なハイライト + 透過。
+/// バブル: 3D球面 + 鋭いスペキュラー + 虹色リム + ボトムシャドウ（Canvas フォールバック）。
 void _drawBubble(
   Canvas canvas,
   Rect rect,
@@ -323,7 +368,6 @@ void _drawBubble(
   GameThemeColors colors,
   double opacity,
 ) {
-  // 円形に近いほどプチプチ感が出るので、角丸を強制的に大きくする
   final rradius = rect.width / 2.5;
   final rrect = RRect.fromRectAndRadius(
     rect,
@@ -340,57 +384,77 @@ void _drawBubble(
       ),
     );
   canvas.drawShadow(
-      shadowPath, Colors.black.withValues(alpha: 0.3 * opacity), 4, true);
+    shadowPath,
+    Colors.black.withValues(alpha: 0.3 * opacity),
+    4,
+    true,
+  );
 
-  // ベース（半透明、光沢感のある色）
+  // ベース（半透明ビニール）
   final basePaint = Paint()
-    ..color = colors.onSurface.withValues(alpha: 0.6 * opacity);
+    ..color = colors.onSurface.withValues(alpha: 0.60 * opacity);
   canvas.drawRRect(rrect, basePaint);
 
-  // 内部グラデーション（立体感）
-  final innerGlowPaint = Paint()
-    ..shader = RadialGradient(
-      radius: 0.8,
+  // 上部ライト → 下部シャドウ（3D球体の深度）
+  final depthPaint = Paint()
+    ..shader = LinearGradient(
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
       colors: [
-        Colors.white.withValues(alpha: 0.2 * opacity),
+        Colors.white.withValues(alpha: 0.14 * opacity),
         Colors.transparent,
+        Colors.black.withValues(alpha: 0.12 * opacity),
       ],
+      stops: const [0.0, 0.45, 1.0],
     ).createShader(rect);
-  canvas.drawRRect(rrect, innerGlowPaint);
+  canvas.drawRRect(rrect, depthPaint);
 
-  // 強いハイライト（左上）- より鋭く
-  final highlightPath = Path()
-    ..addOval(
-      Rect.fromLTWH(
-        rect.left + rect.width * 0.25,
-        rect.top + rect.height * 0.25,
-        rect.width * 0.2,
-        rect.height * 0.12,
-      ),
-    );
-  final highlightPaint = Paint()
-    ..color = Colors.white.withValues(alpha: 0.9 * opacity)
-    ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 1);
-  canvas.drawPath(highlightPath, highlightPaint);
+  // 虹色リム（Fresnel 近似: エッジだけ glow色）
+  final iridPaint = Paint()
+    ..shader = RadialGradient(
+      radius: 1,
+      colors: [
+        Colors.transparent,
+        colors.glowColor.withValues(alpha: 0.35 * opacity),
+      ],
+      stops: const [0.55, 1.0],
+    ).createShader(rect);
+  canvas.drawRRect(rrect, iridPaint);
 
-  // リムライト（右下）- 輪郭強調
+  // 鋭いプライマリスペキュラー（上部左寄り）
+  final specRect = Rect.fromLTWH(
+    rect.left + rect.width * 0.24,
+    rect.top + rect.height * 0.22,
+    rect.width * 0.22,
+    rect.height * 0.10,
+  );
+  canvas.drawOval(
+    specRect,
+    Paint()
+      ..color = Colors.white.withValues(alpha: 0.92 * opacity)
+      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 1),
+  );
+
+  // リムライト輪郭（上半分）
   final rimPath = Path()
     ..addArc(
       Rect.fromLTWH(
-        rect.left + rect.width * 0.1,
-        rect.top + rect.height * 0.1,
-        rect.width * 0.8,
-        rect.height * 0.8,
+        rect.left + rect.width * 0.08,
+        rect.top + rect.height * 0.08,
+        rect.width * 0.84,
+        rect.height * 0.84,
       ),
-      0.5,
-      2,
+      3.67,
+      2.8,
     );
-  final rimPaint = Paint()
-    ..style = PaintingStyle.stroke
-    ..strokeWidth = 1.5
-    ..strokeCap = StrokeCap.round
-    ..color = Colors.white.withValues(alpha: 0.5 * opacity);
-  canvas.drawPath(rimPath, rimPaint);
+  canvas.drawPath(
+    rimPath,
+    Paint()
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 1.5
+      ..strokeCap = StrokeCap.round
+      ..color = Colors.white.withValues(alpha: 0.50 * opacity),
+  );
 }
 
 /// スレート: ベベル（面取り）+ 上面縦グラデ + 薄い上端ハイライト。
@@ -454,7 +518,7 @@ void _drawSlate(
   canvas.drawRRect(rrect, highlightPaint);
 }
 
-/// スライム: 半透明グリーン + 中央サブサーフェスグロー + 白いシーン（Canvas フォールバック）。
+/// スライム: 鮮やかなグリーン + リムSSS + グリッター + 複数スペキュラー（Canvas フォールバック）。
 void _drawSlime(
   Canvas canvas,
   Rect rect,
@@ -467,36 +531,237 @@ void _drawSlime(
     Radius.circular(style.cellBorderRadius),
   );
 
-  // ベース（半透明グリーン）
+  // ベース（鮮やかな半透明グリーン）
   final basePaint = Paint()
-    ..color = colors.onSurface.withValues(alpha: 0.82 * opacity);
+    ..color = colors.onSurface.withValues(alpha: 0.88 * opacity);
   canvas.drawRRect(rrect, basePaint);
 
-  // サブサーフェスグロー（中央から glowColor が滲む）
-  final sssPaint = Paint()
+  // 中央 SSS（中心から mint が滲む）
+  final sssCenterPaint = Paint()
     ..shader = RadialGradient(
-      radius: 0.55,
+      radius: 0.65,
       colors: [
-        colors.glowColor.withValues(alpha: 0.28 * opacity),
+        colors.glowColor.withValues(alpha: 0.38 * opacity),
         Colors.transparent,
       ],
     ).createShader(rect);
-  canvas.drawRRect(rrect, sssPaint);
+  canvas.drawRRect(rrect, sssCenterPaint);
 
-  // 表面シーン（左上の白いハイライト）
-  final sheenPaint = Paint()
+  // リム SSS（エッジから明るいライム光が入る）
+  final sssRimPaint = Paint()
     ..shader = RadialGradient(
-      center: const Alignment(-0.4, -0.5),
-      radius: 0.9,
+      radius: 1,
       colors: [
-        Colors.white.withValues(alpha: 0.55 * opacity),
+        Colors.transparent,
+        colors.glowColor.withValues(alpha: 0.30 * opacity),
+      ],
+      stops: const [0.60, 1.0],
+    ).createShader(rect);
+  canvas.drawRRect(rrect, sssRimPaint);
+
+  // ウェット表面シーン（左上 — 広いソフト + 小さいコア）
+  final sheenSoftPaint = Paint()
+    ..shader = RadialGradient(
+      center: const Alignment(-0.45, -0.52),
+      radius: 1,
+      colors: [
+        Colors.white.withValues(alpha: 0.38 * opacity),
         Colors.white.withValues(alpha: 0),
       ],
     ).createShader(rect);
-  canvas.drawRRect(rrect, sheenPaint);
+  canvas.drawRRect(rrect, sheenSoftPaint);
+
+  // プライマリスペキュラー（鋭い白ホットスポット）
+  final coreSize = rect.width * 0.12;
+  final coreRect = Rect.fromCenter(
+    center: Offset(
+      rect.left + rect.width * 0.28,
+      rect.top + rect.height * 0.22,
+    ),
+    width: coreSize,
+    height: coreSize * 0.65,
+  );
+  canvas.drawOval(
+    coreRect,
+    Paint()
+      ..color = Colors.white.withValues(alpha: 0.88 * opacity)
+      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 1.5),
+  );
 }
 
-/// アイス: 透明感 + 鋭利なライン + 内部クラック。
+/// ノイズブロックを描画する。
+///
+/// テーマカラーのベースブロックの上に×チェーン背景・HP数字・錠前アイコンを重ねる。
+/// [style] と [colors] はベースブロックの描画に使用する。
+/// [hp] は現在のHP（1〜[maxHp]）。[damageFlash] は 0〜1 のダメージフラッシュ強度。
+void drawNoiseCell(
+  Canvas canvas,
+  Rect rect,
+  int hp,
+  int maxHp,
+  GameThemeCellStyle style,
+  GameThemeColors colors, {
+  double damageFlash = 0.0,
+  FragmentShader? shader,
+  double shaderTime = 0.0,
+}) {
+  // ① ベースブロック（テーマカラーそのまま）
+  drawCell(canvas, rect, style, colors, shader: shader, time: shaderTime);
+
+  final rrect = RRect.fromRectAndRadius(
+    rect,
+    Radius.circular(style.cellBorderRadius),
+  );
+
+  // ② 薄い暗オーバーレイ（通常ブロックとの識別）
+  canvas.drawRRect(
+    rrect,
+    Paint()..color = Colors.black.withValues(alpha: 0.22),
+  );
+
+  // ③ バッテンチェーン背景（×型の破線）
+  _drawChainX(canvas, rect, style.cellBorderRadius);
+
+  // ④ 錠前アイコン（下部寄り）
+  _drawLockIcon(canvas, rect);
+
+  // ⑤ HP 数字（錠前の上部）
+  _drawHpNumber(canvas, rect, hp);
+
+  // ⑥ ダメージフラッシュ（白いフラッシュ）
+  if (damageFlash > 0) {
+    canvas.drawRRect(
+      rrect,
+      Paint()..color = Colors.white.withValues(alpha: damageFlash * 0.65),
+    );
+  }
+}
+
+/// ×型の破線チェーンを描画する。
+void _drawChainX(Canvas canvas, Rect rect, double borderRadius) {
+  canvas
+    ..save()
+    ..clipRRect(RRect.fromRectAndRadius(rect, Radius.circular(borderRadius)));
+  final chainPaint = Paint()
+    ..color = Colors.white.withValues(alpha: 0.28)
+    ..strokeWidth = 1.5
+    ..strokeCap = StrokeCap.round;
+  _drawDashedLine(canvas, rect.topLeft, rect.bottomRight, chainPaint, 4, 3);
+  _drawDashedLine(canvas, rect.topRight, rect.bottomLeft, chainPaint, 4, 3);
+  canvas.restore();
+}
+
+/// 2点間を破線で描画する（チェーン表現用）。
+void _drawDashedLine(
+  Canvas canvas,
+  Offset from,
+  Offset to,
+  Paint paint,
+  double dashLen,
+  double gapLen,
+) {
+  final dx = to.dx - from.dx;
+  final dy = to.dy - from.dy;
+  final totalLen = sqrt(dx * dx + dy * dy);
+  if (totalLen <= 0) {
+    return;
+  }
+  final ux = dx / totalLen;
+  final uy = dy / totalLen;
+
+  var t = 0.0;
+  var drawing = true;
+  while (t < totalLen) {
+    final segLen = drawing ? dashLen : gapLen;
+    final end = (t + segLen).clamp(0.0, totalLen);
+    if (drawing) {
+      canvas.drawLine(
+        Offset(from.dx + ux * t, from.dy + uy * t),
+        Offset(from.dx + ux * end, from.dy + uy * end),
+        paint,
+      );
+    }
+    t = end;
+    drawing = !drawing;
+  }
+}
+
+/// 錠前アイコンを白で描画する（数字スペース確保のため下部寄り）。
+void _drawLockIcon(Canvas canvas, Rect rect) {
+  final cw = rect.width;
+  final cx = rect.center.dx;
+  // 上部の数字領域を空けるため、錠前を下側に配置
+  final bodyCenter = Offset(cx, rect.top + rect.height * 0.64);
+
+  final bodyW = cw * 0.36;
+  final bodyH = bodyW * 0.55;
+  final bodyLeft = bodyCenter.dx - bodyW / 2;
+  final bodyTop = bodyCenter.dy - bodyH / 2;
+
+  const lockAlpha = 0.88;
+
+  // 本体（角丸矩形）
+  canvas.drawRRect(
+    RRect.fromRectAndRadius(
+      Rect.fromLTWH(bodyLeft, bodyTop, bodyW, bodyH),
+      Radius.circular(bodyW * 0.12),
+    ),
+    Paint()..color = Colors.white.withValues(alpha: lockAlpha),
+  );
+
+  // シャックル（半円弧、本体上部から突出）
+  final shackleR = bodyW * 0.33;
+  canvas
+    ..drawArc(
+      Rect.fromCenter(
+        center: Offset(cx, bodyTop + shackleR * 0.1),
+        width: shackleR * 2,
+        height: shackleR * 2,
+      ),
+      pi,  // 左（9時方向）から
+      -pi, // 反時計回りで右（上を通る半円）
+      false,
+      Paint()
+        ..color = Colors.white.withValues(alpha: lockAlpha)
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = bodyW * 0.18
+        ..strokeCap = StrokeCap.butt,
+    )
+    // キーホール（本体中央の小円）
+    ..drawCircle(
+      Offset(cx, bodyTop + bodyH * 0.42),
+      bodyW * 0.1,
+      Paint()..color = Colors.black.withValues(alpha: 0.32),
+    );
+}
+
+/// HP 数字を錠前の上部に描画する。
+void _drawHpNumber(Canvas canvas, Rect rect, int hp) {
+  final tp = TextPainter(
+    text: TextSpan(
+      text: '$hp',
+      style: TextStyle(
+        fontSize: rect.width * 0.30,
+        fontWeight: FontWeight.bold,
+        color: Colors.white.withValues(alpha: 0.9),
+        height: 1,
+      ),
+    ),
+    textDirection: TextDirection.ltr,
+  );
+  tp
+    ..layout()
+    ..paint(
+      canvas,
+      Offset(
+        rect.center.dx - tp.width / 2,
+        rect.top + rect.height * 0.11,
+      ),
+    )
+    ..dispose();
+}
+
+/// アイス: 水晶質感 + ファセットライン + フロストエッジ + 内部クラック（Canvas フォールバック）。
 void _drawIce(
   Canvas canvas,
   Rect rect,
@@ -504,48 +769,51 @@ void _drawIce(
   GameThemeColors colors,
   double opacity,
 ) {
-  // 氷は角ばっている
   final rrect = RRect.fromRectAndRadius(
     rect,
     const Radius.circular(2),
   );
 
-  // ベース（透明度高め、冷たい感じ）
+  // ベース（透明感のある水色）
   final basePaint = Paint()
-    ..color = colors.onSurface.withValues(alpha: 0.3 * opacity);
+    ..color = colors.onSurface.withValues(alpha: 0.30 * opacity);
   canvas.drawRRect(rrect, basePaint);
 
-  // インナーボーダー（厚み表現）
-  final innerBorderRect = rect.deflate(2);
-  final innerRRect = RRect.fromRectAndRadius(
-    innerBorderRect,
-    const Radius.circular(1),
-  );
-  final innerBorderPaint = Paint()
-    ..style = PaintingStyle.stroke
-    ..strokeWidth = 1
-    ..color = Colors.white.withValues(alpha: 0.4 * opacity);
-  canvas.drawRRect(innerRRect, innerBorderPaint);
-
-  // 表面の反射（線形で鋭く）
+  // コースティック風: TL明 → BR暗の斜めグラデ
   final sheenPaint = Paint()
     ..shader = LinearGradient(
       begin: Alignment.topLeft,
       end: Alignment.bottomRight,
       colors: [
-        Colors.white.withValues(alpha: 0.7 * opacity),
+        Colors.white.withValues(alpha: 0.72 * opacity),
         Colors.white.withValues(alpha: 0),
         Colors.white.withValues(alpha: 0),
-        Colors.white.withValues(alpha: 0.2 * opacity),
+        Colors.white.withValues(alpha: 0.22 * opacity),
       ],
-      stops: const [0.0, 0.3, 0.7, 1.0],
+      stops: const [0.0, 0.28, 0.72, 1.0],
     ).createShader(rect);
   canvas.drawRRect(rrect, sheenPaint);
 
-  // 内部クラック（ひび割れ）
+  // フロストエッジ（縁の霜: シアン白のリムグロー）
+  final frostPaint = Paint()
+    ..shader = RadialGradient(
+      radius: 1,
+      colors: [
+        Colors.transparent,
+        const Color(0xFFD0F0FF).withValues(alpha: 0.45 * opacity),
+      ],
+      stops: const [0.58, 1.0],
+    ).createShader(rect);
+  canvas.drawRRect(rrect, frostPaint);
+
+  // 内部クラック（複数本、ランダム）
   final seed = (rect.left * 11 + rect.top * 17).toInt();
   final rng = Random(seed);
-  if (rng.nextDouble() < 0.3) {
+  final crackPaint = Paint()
+    ..color = Colors.white.withValues(alpha: 0.62 * opacity)
+    ..strokeWidth = 1;
+  final crackCount = 1 + rng.nextInt(3); // 1〜3本
+  for (var i = 0; i < crackCount; i++) {
     final p1 = Offset(
       rect.left + rng.nextDouble() * rect.width,
       rect.top + rng.nextDouble() * rect.height,
@@ -554,16 +822,23 @@ void _drawIce(
       rect.left + rng.nextDouble() * rect.width,
       rect.top + rng.nextDouble() * rect.height,
     );
-    final crackPaint = Paint()
-      ..color = Colors.white.withValues(alpha: 0.6 * opacity)
-      ..strokeWidth = 1;
     canvas.drawLine(p1, p2, crackPaint);
   }
 
-  // エッジ強調（外枠）
-  final borderPaint = Paint()
-    ..style = PaintingStyle.stroke
-    ..strokeWidth = 1
-    ..color = Colors.white.withValues(alpha: 0.5 * opacity);
-  canvas.drawRRect(rrect, borderPaint);
+  // インナーボーダー（氷の厚み表現）＋ アウターエッジ（強い白縁: Fresnel 近似）
+  canvas
+    ..drawRRect(
+      RRect.fromRectAndRadius(rect.deflate(2), const Radius.circular(1)),
+      Paint()
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 1
+        ..color = Colors.white.withValues(alpha: 0.38 * opacity),
+    )
+    ..drawRRect(
+      rrect,
+      Paint()
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 1.5
+        ..color = Colors.white.withValues(alpha: 0.62 * opacity),
+    );
 }
