@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/takemurataiki/Development/mono_games/**)",
+      "Bash(git add:*)"
+    ],
+    "additionalDirectories": [
+      "/Users/takemurataiki/Development/mono_games/lib/features/quiz/view"
+    ]
+  }
+}

@@ -27,7 +27,7 @@ class WordRecords extends Table {
 /// クイズ学習データの SQLite データベース。
 ///
 /// Drift ORM を使用。将来 Firestore へ移行する場合は
-/// [WordRecordRepository] の実装を差し替えるだけで対応可能。
+/// WordRecordRepository の実装を差し替えるだけで対応可能。
 @DriftDatabase(tables: [WordRecords])
 class AppDatabase extends _$AppDatabase {
   /// [AppDatabase] を作成する。

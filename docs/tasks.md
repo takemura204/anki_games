@@ -1,6 +1,6 @@
 # タスクドキュメント — Block.
 
-> 最終更新: 2026-03-20
+> 最終更新: 2026-03-20（リファクタリング実施）
 
 ---
 
@@ -98,6 +98,20 @@
 
 ---
 
+### リファクタリング ✅
+
+- [x] 孤立ファイル削除（8ファイル）
+  - `quiz_screen.dart`（旧クイズ画面、BlockPuzzleScreen に統合済み）
+  - `dot_indicator.dart`（quiz_screen のみ参照）
+  - `quiz_result_overlay.dart`（quiz_screen のみ参照）
+  - `admob_native.dart`（未使用のネイティブ広告）
+  - `context_extension.dart`（未使用の拡張メソッド）
+  - `home_view_model.dart` + 生成ファイル2本（未使用ViewModel）
+- [x] doc コメントの `[ClassName]` 参照エラー修正（2箇所）
+- [x] `Switch.adaptive` の非推奨 `activeColor` → `activeThumbColor` へ修正
+
+---
+
 ## コミット履歴（主要）
 
 | コミット | 内容 |
@@ -113,6 +127,8 @@
 | `9371927` | fix: クイズPlay Again/Restart動線修正 |
 | `62441fa` | feat: 初回スワイプヒントUI |
 | `9f38fc9` | feat: 不正解単語の優先出題 |
+| `7dd48be` | docs: プロダクト・開発・タスクドキュメント新規作成 |
+| *(次)* | refactor: 不要ファイル削除・コード整理 |
 
 ---
 

@@ -2,7 +2,7 @@ import 'package:mono_games/features/quiz/db/app_database.dart';
 
 /// 単語学習履歴の永続化インターフェース。
 ///
-/// ローカル実装 ([LocalWordRecordRepository]) を使用。
+/// ローカル実装 (LocalWordRecordRepository) を使用。
 /// 将来 Firestore へ移行する場合はこのインターフェースの実装を差し替える。
 abstract interface class WordRecordRepository {
   /// 全単語レコードを取得する。
