@@ -78,7 +78,9 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
 
     _rewardedAdService = RewardedAdService();
     final gameState = ref.read(blockPuzzleViewModelProvider);
-    if (!gameState.isQuestMode && !gameState.isTimeAttackMode) {
+    if (!gameState.isQuestMode &&
+        !gameState.isTimeAttackMode &&
+        !gameState.isQuizMode) {
       _rewardedAdService.load();
     }
 
@@ -103,7 +105,9 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
     final bestScore = gameState.isTimeAttackMode
         ? gameState.timeAttackHighScore
         : gameState.highScore;
-    final isClassicMode = !gameState.isQuestMode && !gameState.isTimeAttackMode;
+    final isClassicMode = !gameState.isQuestMode &&
+        !gameState.isTimeAttackMode &&
+        !gameState.isQuizMode;
 
     return AnimatedBuilder(
       animation: _controller,
@@ -180,7 +184,7 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
                           color: colors.onSurface.withValues(alpha: 0.4),
                         ),
                       ),
-                      if (!gameState.isQuestMode) ...[
+                      if (!gameState.isQuestMode && !gameState.isQuizMode) ...[
                         const SizedBox(height: 16),
                         // クラシック / タイムアタックのベストスコア表示
                         Text(
@@ -297,6 +301,8 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
                               notifier.retryTimeAttack();
                             } else if (gameState.isQuestMode) {
                               notifier.retryQuestLevel();
+                            } else if (gameState.isQuizMode) {
+                              notifier.startQuizMode();
                             } else {
                               notifier.resetGame();
                             }
@@ -323,9 +329,10 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
                           ),
                         ),
                       ),
-                      // クエスト / タイムアタックはHomeボタンを表示
+                      // クエスト / タイムアタック / クイズはHomeボタンを表示
                       if (gameState.isQuestMode ||
-                          gameState.isTimeAttackMode) ...[
+                          gameState.isTimeAttackMode ||
+                          gameState.isQuizMode) ...[
                         const SizedBox(height: 8),
                         SizedBox(
                           width: double.infinity,

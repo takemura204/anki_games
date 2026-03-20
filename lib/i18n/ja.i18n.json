@@ -37,6 +37,9 @@
     "loading": "読み込み中...",
     "questionDirectionEnToJa": "英 → 日",
     "questionDirectionJaToEn": "日 → 英",
+    "questionDirection": "出題方向",
+    "directionRandom": "ランダム",
+    "playAgain": "もう一度",
     "quizMode": "英単語モード"
   },
   "settings": {

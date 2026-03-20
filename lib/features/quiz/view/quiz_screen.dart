@@ -152,15 +152,24 @@ class _QuizScreenState extends ConsumerState<QuizScreen> {
                           ),
                         ),
                       ),
-                      // 英→日 / 日→英 切り替えボタン
+                      // 出題方向サイクルボタン
                       TextButton(
-                        onPressed: () => ref
-                            .read(quizViewModelProvider.notifier)
-                            .toggleDirection(),
+                        onPressed: () {
+                          final next = QuizDirectionMode.values[
+                              (quizState.directionMode.index + 1) %
+                                  QuizDirectionMode.values.length];
+                          ref
+                              .read(quizViewModelProvider.notifier)
+                              .setDirectionMode(next);
+                        },
                         child: Text(
-                          quizState.isEnToJa
-                              ? t.quiz.questionDirectionEnToJa
-                              : t.quiz.questionDirectionJaToEn,
+                          switch (quizState.directionMode) {
+                            QuizDirectionMode.enToJa =>
+                              t.quiz.questionDirectionEnToJa,
+                            QuizDirectionMode.jaToEn =>
+                              t.quiz.questionDirectionJaToEn,
+                            QuizDirectionMode.random => t.quiz.directionRandom,
+                          },
                           style: TextStyle(
                             fontFamily: 'Poppins',
                             fontSize: 11,

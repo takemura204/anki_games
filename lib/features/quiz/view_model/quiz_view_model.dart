@@ -9,6 +9,7 @@ import 'package:mono_games/features/quiz/model/quiz_word.dart';
 import 'package:mono_games/features/quiz/repository/local_word_record_repository.dart';
 import 'package:mono_games/features/quiz/repository/word_record_repository.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 part 'quiz_view_model.freezed.dart';
 part 'quiz_view_model.g.dart';
@@ -26,6 +27,18 @@ enum SwipeDirection {
 
   /// 右スワイプ。
   right,
+}
+
+/// 出題方向モード。
+enum QuizDirectionMode {
+  /// 英語を見て日本語を選ぶ。
+  enToJa,
+
+  /// 日本語を見て英語を選ぶ。
+  jaToEn,
+
+  /// 問題ごとにランダムで決定。
+  random,
 }
 
 /// 1方向に表示される選択肢チップのデータ。
@@ -83,10 +96,12 @@ abstract class QuizViewState with _$QuizViewState {
     /// 3問全て回答済みかどうか。
     @Default(false) bool isComplete,
 
-    /// 英→日モード（trueなら英単語を見て日本語を選ぶ）。
-    @Default(true) bool isEnToJa,
+    /// 出題方向モード。
+    @Default(QuizDirectionMode.enToJa) QuizDirectionMode directionMode,
   }) = _QuizViewState;
 }
+
+const _quizDirectionKey = 'quiz_direction_mode';
 
 /// クイズ機能の ViewModel。
 ///
@@ -108,6 +123,13 @@ class QuizViewModel extends _$QuizViewModel {
   // ── 初期化 ───────────────────────────────────────────────────
 
   Future<void> _initialize() async {
+    final prefs = await SharedPreferences.getInstance();
+    final savedDirection = prefs.getString(_quizDirectionKey);
+    final directionMode = QuizDirectionMode.values.firstWhere(
+      (m) => m.name == savedDirection,
+      orElse: () => QuizDirectionMode.enToJa,
+    );
+    state = state.copyWith(directionMode: directionMode);
     _allWords = await CsvWordDatasource().load();
     await _startNewRound();
     state = state.copyWith(isLoading: false);
@@ -149,7 +171,7 @@ class QuizViewModel extends _$QuizViewModel {
     final result = QuizAnswerResult(
       word: question.word,
       isCorrect: isCorrect,
-      correctAnswer: state.isEnToJa ? question.word.ja : question.word.en,
+      correctAnswer: question.choices.firstWhere((c) => c.isCorrect).text,
     );
 
     final newAnswers = [...state.answers, result];
@@ -172,14 +194,16 @@ class QuizViewModel extends _$QuizViewModel {
 
   // ── 設定 ────────────────────────────────────────────────────
 
-  /// 英→日 / 日→英 モードを切り替える。
-  void toggleDirection() {
-    state = state.copyWith(isEnToJa: !state.isEnToJa);
+  /// 出題方向モードを変更して保存する。
+  Future<void> setDirectionMode(QuizDirectionMode mode) async {
+    state = state.copyWith(directionMode: mode);
     // 問題テキストを再構築（各問題から元の単語を取り出してビルド）
     final questions = state.questions
         .map((QuizQuestion q) => _buildQuestion(q.word))
         .toList();
     state = state.copyWith(questions: questions);
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(_quizDirectionKey, mode.name);
   }
 
   // ── 内部ロジック ─────────────────────────────────────────────
@@ -222,7 +246,11 @@ class QuizViewModel extends _$QuizViewModel {
 
   /// 1問分の [QuizQuestion] を構築する（4択チップ + 正解方向ランダム割り当て）。
   QuizQuestion _buildQuestion(QuizWord word) {
-    final isEnToJa = state.isEnToJa;
+    final isEnToJa = switch (state.directionMode) {
+      QuizDirectionMode.enToJa => true,
+      QuizDirectionMode.jaToEn => false,
+      QuizDirectionMode.random => _rng.nextBool(),
+    };
     final display = isEnToJa ? word.en : word.ja;
     final correctText = isEnToJa ? word.ja : word.en;
 

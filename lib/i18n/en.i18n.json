@@ -37,6 +37,9 @@
     "loading": "Loading...",
     "questionDirectionEnToJa": "EN → JA",
     "questionDirectionJaToEn": "JA → EN",
+    "questionDirection": "Direction",
+    "directionRandom": "Random",
+    "playAgain": "Play Again",
     "quizMode": "Word Mode"
   },
   "settings": {

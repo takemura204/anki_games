@@ -5,6 +5,7 @@ import 'package:mono_games/features/block_puzzle/model/game_theme.dart';
 import 'package:mono_games/features/block_puzzle/view/modals/theme_selector_sheet.dart';
 import 'package:mono_games/features/block_puzzle/view_model/block_puzzle_view_model.dart';
 import 'package:mono_games/features/block_puzzle/view_model/theme_view_model.dart';
+import 'package:mono_games/features/quiz/view_model/quiz_view_model.dart';
 import 'package:mono_games/features/settings/view_model/settings_view_model.dart';
 import 'package:mono_games/i18n/translations.g.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -104,6 +105,31 @@ class _SettingsSheet extends ConsumerWidget {
             },
             colors: colors,
           ),
+          // クイズモード専用: 出題方向
+          if (isGameScreen &&
+              ref.watch(
+                blockPuzzleViewModelProvider.select((s) => s.isQuizMode),
+              )) ...[
+            _SheetDivider(colors: colors),
+            _SegmentRow(
+              icon: Icons.swap_horiz_rounded,
+              label: t.quiz.questionDirection,
+              options: [
+                t.quiz.questionDirectionEnToJa,
+                t.quiz.questionDirectionJaToEn,
+                t.quiz.directionRandom,
+              ],
+              selectedIndex: ref.watch(
+                quizViewModelProvider.select(
+                  (s) => s.directionMode.index,
+                ),
+              ),
+              onSelected: (int i) => ref
+                  .read(quizViewModelProvider.notifier)
+                  .setDirectionMode(QuizDirectionMode.values[i]),
+              colors: colors,
+            ),
+          ],
           // ゲーム画面専用: ホームへ戻る・リスタート
           if (isGameScreen) ...[
             _SheetDivider(colors: colors),
@@ -307,6 +333,87 @@ class _LinkRow extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _SegmentRow extends StatelessWidget {
+  const _SegmentRow({
+    required this.icon,
+    required this.label,
+    required this.options,
+    required this.selectedIndex,
+    required this.onSelected,
+    required this.colors,
+  });
+
+  final IconData icon;
+  final String label;
+  final List<String> options;
+  final int selectedIndex;
+  final ValueChanged<int> onSelected;
+  final GameThemeColors colors;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8),
+      child: Row(
+        children: [
+          Icon(icon, size: 20, color: colors.onSurface.withValues(alpha: 0.6)),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Text(
+              label,
+              style: TextStyle(
+                fontFamily: 'Poppins',
+                fontSize: 14,
+                color: colors.onSurface,
+              ),
+            ),
+          ),
+          const SizedBox(width: 8),
+          DecoratedBox(
+            decoration: BoxDecoration(
+              color: colors.onSurface.withValues(alpha: 0.06),
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                for (var i = 0; i < options.length; i++)
+                  GestureDetector(
+                    onTap: () => onSelected(i),
+                    child: AnimatedContainer(
+                      duration: const Duration(milliseconds: 150),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 10,
+                        vertical: 5,
+                      ),
+                      decoration: BoxDecoration(
+                        color: i == selectedIndex
+                            ? colors.accent
+                            : Colors.transparent,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Text(
+                        options[i],
+                        style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontSize: 12,
+                          fontWeight: FontWeight.w600,
+                          color: i == selectedIndex
+                              ? colors.surface
+                              : colors.onSurface.withValues(alpha: 0.6),
+                        ),
+                      ),
+                    ),
+                  ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
