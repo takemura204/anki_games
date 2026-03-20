@@ -201,7 +201,14 @@ class QuizViewModel extends _$QuizViewModel {
     final questions = state.questions
         .map((QuizQuestion q) => _buildQuestion(q.word))
         .toList();
-    state = state.copyWith(questions: questions);
+    // クイズ中に方向変更した場合は回答済み状態もリセットして整合性を保つ
+    state = state.copyWith(
+      questions: questions,
+      answeredCount: 0,
+      answers: const [],
+      lastAnswer: null,
+      isComplete: false,
+    );
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString(_quizDirectionKey, mode.name);
   }
