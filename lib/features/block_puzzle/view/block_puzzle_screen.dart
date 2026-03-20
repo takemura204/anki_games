@@ -20,6 +20,7 @@ import 'package:mono_games/features/quiz/view/widgets/quiz_card.dart';
 import 'package:mono_games/features/quiz/view_model/quiz_view_model.dart';
 import 'package:mono_games/features/settings/view/settings_dialog.dart';
 import 'package:mono_games/i18n/translations.g.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 /// Noir Mindパズルゲームのメイン画面。
 ///
@@ -261,11 +262,30 @@ class _QuizLayoutState extends ConsumerState<_QuizLayout> {
   final List<bool?> _slotCorrectness = [null, null, null];
   final List<String?> _slotWords = [null, null, null];
   var _roundKey = 0;
+  var _showHint = false;
 
   @override
   void initState() {
     super.initState();
     _swiperController = CardSwiperController();
+    _checkFirstPlay();
+  }
+
+  Future<void> _checkFirstPlay() async {
+    final prefs = await SharedPreferences.getInstance();
+    final shown = prefs.getBool('quiz_swipe_hint_shown') ?? false;
+    if (!shown && mounted) {
+      setState(() => _showHint = true);
+    }
+  }
+
+  void _dismissHint() {
+    if (!_showHint) {
+      return;
+    }
+    setState(() => _showHint = false);
+    SharedPreferences.getInstance()
+        .then((prefs) => prefs.setBool('quiz_swipe_hint_shown', true));
   }
 
   @override
@@ -294,6 +314,7 @@ class _QuizLayoutState extends ConsumerState<_QuizLayout> {
     int? currentIndex,
     CardSwiperDirection cardDir,
   ) {
+    _dismissHint();
     if (_isShowingFeedback) {
       return false;
     }
@@ -392,8 +413,10 @@ class _QuizLayoutState extends ConsumerState<_QuizLayout> {
       children: [
         // スワイプカード
         Expanded(
-          child: quizState.isLoading
-              ? Center(
+          child: Stack(
+            children: [
+              if (quizState.isLoading)
+                Center(
                   child: Text(
                     t.quiz.loading,
                     style: TextStyle(
@@ -403,32 +426,43 @@ class _QuizLayoutState extends ConsumerState<_QuizLayout> {
                     ),
                   ),
                 )
-              : quizState.questions.isEmpty
-                  ? const SizedBox.shrink()
-                  : CardSwiper(
-                      key: ValueKey(_roundKey),
-                      controller: _swiperController,
-                      cardsCount: quizState.questions.length,
-                      isLoop: false,
-                      onSwipe: _onSwipe,
-                      cardBuilder: (
-                        context,
-                        index,
+              else if (quizState.questions.isEmpty)
+                const SizedBox.shrink()
+              else
+                CardSwiper(
+                  key: ValueKey(_roundKey),
+                  controller: _swiperController,
+                  cardsCount: quizState.questions.length,
+                  isLoop: false,
+                  onSwipe: _onSwipe,
+                  cardBuilder: (
+                    context,
+                    index,
+                    horizontalOffsetPercent,
+                    verticalOffsetPercent,
+                  ) {
+                    if (index >= quizState.questions.length) {
+                      return const SizedBox.shrink();
+                    }
+                    return QuizCard(
+                      question: quizState.questions[index],
+                      activeDirection: _directionFromOffsets(
                         horizontalOffsetPercent,
                         verticalOffsetPercent,
-                      ) {
-                        if (index >= quizState.questions.length) {
-                          return const SizedBox.shrink();
-                        }
-                        return QuizCard(
-                          question: quizState.questions[index],
-                          activeDirection: _directionFromOffsets(
-                            horizontalOffsetPercent,
-                            verticalOffsetPercent,
-                          ),
-                        );
-                      },
-                    ),
+                      ),
+                    );
+                  },
+                ),
+              // 初回スワイプヒント
+              if (_showHint && quizState.questions.isNotEmpty)
+                Positioned.fill(
+                  child: _SwipeHintOverlay(
+                    choices: quizState.questions.first.choices,
+                    onDismiss: _dismissHint,
+                  ),
+                ),
+            ],
+          ),
         ),
         // 獲得ピースプレビュー（PieceTrayWidget のクイズモードで表示）
         PieceTrayWidget(
@@ -466,6 +500,191 @@ class _TimerBar extends StatelessWidget {
         minHeight: 4,
         backgroundColor: trackColor,
         valueColor: AlwaysStoppedAnimation<Color>(color),
+      ),
+    );
+  }
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// 初回スワイプヒントオーバーレイ
+// ════════════════════════════════════════════════════════════════════════════
+
+class _SwipeHintOverlay extends StatefulWidget {
+  const _SwipeHintOverlay({
+    required this.choices,
+    required this.onDismiss,
+  });
+
+  final List<QuizChoice> choices;
+  final VoidCallback onDismiss;
+
+  @override
+  State<_SwipeHintOverlay> createState() => _SwipeHintOverlayState();
+}
+
+class _SwipeHintOverlayState extends State<_SwipeHintOverlay>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _pulseController;
+  late final Animation<double> _pulse;
+
+  @override
+  void initState() {
+    super.initState();
+    _pulseController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 900),
+    )..repeat(reverse: true);
+    _pulse = Tween<double>(begin: 0.4, end: 1).animate(
+      CurvedAnimation(parent: _pulseController, curve: Curves.easeInOut),
+    );
+  }
+
+  @override
+  void dispose() {
+    _pulseController.dispose();
+    super.dispose();
+  }
+
+  QuizChoice? _choiceFor(SwipeDirection dir) {
+    final matches = widget.choices.where((c) => c.direction == dir);
+    return matches.isEmpty ? null : matches.first;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final up = _choiceFor(SwipeDirection.up);
+    final down = _choiceFor(SwipeDirection.down);
+    final left = _choiceFor(SwipeDirection.left);
+    final right = _choiceFor(SwipeDirection.right);
+
+    return GestureDetector(
+      onTap: widget.onDismiss,
+      child: ColoredBox(
+        color: Colors.black.withValues(alpha: 0.62),
+        child: AnimatedBuilder(
+          animation: _pulse,
+          builder: (context, _) => Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                _HintArrow(
+                  icon: Icons.keyboard_arrow_up_rounded,
+                  text: up?.text ?? '',
+                  isVertical: true,
+                  arrowFirst: true,
+                  opacity: _pulse.value,
+                ),
+                const SizedBox(height: 12),
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    _HintArrow(
+                      icon: Icons.keyboard_arrow_left_rounded,
+                      text: left?.text ?? '',
+                      isVertical: false,
+                      arrowFirst: true,
+                      opacity: _pulse.value,
+                    ),
+                    const SizedBox(width: 20),
+                    Text(
+                      'スワイプして回答',
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white.withValues(alpha: 0.85),
+                        letterSpacing: 0.5,
+                      ),
+                    ),
+                    const SizedBox(width: 20),
+                    _HintArrow(
+                      icon: Icons.keyboard_arrow_right_rounded,
+                      text: right?.text ?? '',
+                      isVertical: false,
+                      arrowFirst: false,
+                      opacity: _pulse.value,
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 12),
+                _HintArrow(
+                  icon: Icons.keyboard_arrow_down_rounded,
+                  text: down?.text ?? '',
+                  isVertical: true,
+                  arrowFirst: false,
+                  opacity: _pulse.value,
+                ),
+                const SizedBox(height: 28),
+                Text(
+                  'タップまたはスワイプで閉じる',
+                  style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontSize: 11,
+                    color: Colors.white.withValues(alpha: 0.4),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _HintArrow extends StatelessWidget {
+  const _HintArrow({
+    required this.icon,
+    required this.text,
+    required this.isVertical,
+    required this.arrowFirst,
+    required this.opacity,
+  });
+
+  final IconData icon;
+  final String text;
+  final bool isVertical;
+  final bool arrowFirst;
+  final double opacity;
+
+  @override
+  Widget build(BuildContext context) {
+    final arrow = Icon(
+      icon,
+      color: Colors.white.withValues(alpha: opacity),
+      size: 36,
+    );
+    final label = Text(
+      text,
+      style: TextStyle(
+        fontFamily: 'Poppins',
+        fontSize: 11,
+        fontWeight: FontWeight.w500,
+        color: Colors.white.withValues(alpha: opacity * 0.85),
+      ),
+      textAlign: TextAlign.center,
+      maxLines: 2,
+      overflow: TextOverflow.ellipsis,
+    );
+
+    if (isVertical) {
+      return SizedBox(
+        width: 80,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: arrowFirst ? [arrow, label] : [label, arrow],
+        ),
+      );
+    }
+    return SizedBox(
+      width: 90,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment:
+            arrowFirst ? MainAxisAlignment.start : MainAxisAlignment.end,
+        children: arrowFirst
+            ? [arrow, Flexible(child: label)]
+            : [Flexible(child: label), arrow],
       ),
     );
   }
