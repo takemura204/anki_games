@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -6,15 +8,18 @@ import 'package:mono_games/features/block_puzzle/model/piece.dart';
 import 'package:mono_games/features/block_puzzle/view/widgets/piece_widget.dart';
 import 'package:mono_games/features/block_puzzle/view_model/block_puzzle_view_model.dart';
 import 'package:mono_games/features/settings/view_model/settings_view_model.dart';
-import 'package:mono_games/gen/assets.gen.dart';
 import 'package:mono_games/until/service/audio_service.dart';
 
-/// 画面下部に3つのドラッグ可能なピースを表示するトレイ。
+/// 画面下部に3つのピースを表示するトレイ。
+///
+/// [quizWords] が非null のときはクイズモード表示（非ドラッグ・正方形枠・単語ラベル）。
 class PieceTrayWidget extends ConsumerWidget {
   /// ピーストレイを作成する。
   const PieceTrayWidget({
     required this.cellSize,
     required this.theme,
+    this.quizWords,
+    this.quizCorrectness,
     super.key,
   });
 
@@ -24,25 +29,45 @@ class PieceTrayWidget extends ConsumerWidget {
   /// 現在のゲームテーマ。
   final GameTheme theme;
 
+  /// クイズモード時の単語ラベル（非null でクイズモード表示に切り替わる）。
+  final List<String?>? quizWords;
+
+  /// クイズモード時の正誤（true=緑・false=赤・null=未回答）。
+  final List<bool?>? quizCorrectness;
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final pieces = ref.watch(
       blockPuzzleViewModelProvider.select((s) => s.pieces),
     );
+    final isQuizMode = quizWords != null;
+    const slotCount = 3;
 
     return SizedBox(
       height: cellSize * 4,
       child: Row(
         children: [
-          for (var i = 0; i < pieces.length; i++)
+          for (var i = 0; i < slotCount; i++)
             Expanded(
-              child: _AnimatedPieceSlot(
-                key: ValueKey('slot_$i'),
-                piece: pieces[i],
-                index: i,
-                cellSize: cellSize,
-                theme: theme,
-              ),
+              child: isQuizMode
+                  ? _QuizPieceSlot(
+                      key: ValueKey('quiz_slot_$i'),
+                      piece: i < pieces.length ? pieces[i] : null,
+                      word: i < quizWords!.length ? quizWords![i] : null,
+                      isCorrect: quizCorrectness != null &&
+                              i < quizCorrectness!.length
+                          ? quizCorrectness![i]
+                          : null,
+                      cellSize: cellSize,
+                      theme: theme,
+                    )
+                  : _AnimatedPieceSlot(
+                      key: ValueKey('slot_$i'),
+                      piece: i < pieces.length ? pieces[i] : null,
+                      index: i,
+                      cellSize: cellSize,
+                      theme: theme,
+                    ),
             ),
         ],
       ),
@@ -194,6 +219,114 @@ class _AnimatedPieceSlotState extends ConsumerState<_AnimatedPieceSlot>
           ),
         ),
       ),
+    );
+  }
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// クイズモードのスロット
+// ════════════════════════════════════════════════════════════════════════════
+
+/// クイズ回答で獲得したピースを正方形の枠内に表示し、枠の真下に単語ラベルを配置する。
+class _QuizPieceSlot extends StatelessWidget {
+  const _QuizPieceSlot({
+    required this.piece,
+    required this.word,
+    required this.isCorrect,
+    required this.cellSize,
+    required this.theme,
+    super.key,
+  });
+
+  final Piece? piece;
+  final String? word;
+  final bool? isCorrect;
+  final double cellSize;
+  final GameTheme theme;
+
+  static const _wordLabelHeight = 20.0;
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    final Color borderColor;
+    final Color bgColor;
+    final Color? wordColor;
+
+    if (piece != null && isCorrect != null) {
+      final base = isCorrect! ? Colors.green : Colors.red;
+      borderColor = base.withValues(alpha: 0.6);
+      bgColor = base.withValues(alpha: isDark ? 0.25 : 0.15);
+      wordColor = isCorrect! ? Colors.green.shade300 : Colors.red.shade300;
+    } else {
+      borderColor =
+          (isDark ? Colors.white : Colors.black).withValues(alpha: 0.2);
+      bgColor =
+          (isDark ? Colors.white : Colors.black).withValues(alpha: 0.05);
+      wordColor = null;
+    }
+
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final frameSize = min(
+          constraints.maxWidth - 12,
+          constraints.maxHeight - _wordLabelHeight - 12,
+        );
+
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            AnimatedContainer(
+              duration: const Duration(milliseconds: 300),
+              width: frameSize,
+              height: frameSize,
+              decoration: BoxDecoration(
+                color: bgColor,
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: borderColor),
+              ),
+              child: AnimatedSwitcher(
+                duration: const Duration(milliseconds: 250),
+                transitionBuilder: (child, anim) => ScaleTransition(
+                  scale: anim,
+                  child: FadeTransition(opacity: anim, child: child),
+                ),
+                child: piece != null
+                    ? Center(
+                        key: ValueKey(piece),
+                        child: PieceWidget(
+                          piece: piece!,
+                          cellSize: cellSize * 0.6,
+                          theme: theme,
+                        ),
+                      )
+                    : const SizedBox.shrink(),
+              ),
+            ),
+            SizedBox(
+              height: _wordLabelHeight,
+              child: word != null
+                  ? Padding(
+                      padding: const EdgeInsets.only(top: 3),
+                      child: Text(
+                        word!,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontSize: 10,
+                          fontWeight: FontWeight.w600,
+                          color: wordColor,
+                        ),
+                      ),
+                    )
+                  : null,
+            ),
+          ],
+        );
+      },
     );
   }
 }

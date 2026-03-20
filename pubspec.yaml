@@ -41,6 +41,9 @@ dependencies:
   flutter_svg:
   gap:
   envied:
+  flutter_card_swiper: ^7.0.1
+  drift: ^2.22.1
+  drift_flutter: ^0.2.3
 
 dev_dependencies:
   flutter_test:
@@ -48,6 +51,7 @@ dev_dependencies:
 
   # 自動生成
   build_runner:
+  drift_dev: ^2.22.1
   riverpod_generator:
   flutter_gen_runner:
   freezed:
@@ -65,6 +69,7 @@ flutter:
     - assets/logo/
     - assets/fonts/
     - assets/sounds/block_puzzle/
+    - assets/quiz/
   shaders:
     - shaders/block_puzzle/glassmorphism.frag
     - shaders/block_puzzle/wireframe.frag

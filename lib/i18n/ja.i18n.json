@@ -27,6 +27,18 @@
     "timeAttackResult": "5分間の結果",
     "timeAttackPlayAgain": "もう一度"
   },
+  "quiz": {
+    "modeTitle": "英単語 × パズル",
+    "modeDesc": "英単語を覚えながらブロックを積もう",
+    "correct": "正解！",
+    "incorrect": "不正解",
+    "result": "$correct / 3 正解",
+    "startBlock": "ブロックへ",
+    "loading": "読み込み中...",
+    "questionDirectionEnToJa": "英 → 日",
+    "questionDirectionJaToEn": "日 → 英",
+    "quizMode": "英単語モード"
+  },
   "settings": {
     "title": "設定",
     "sound": "サウンド",

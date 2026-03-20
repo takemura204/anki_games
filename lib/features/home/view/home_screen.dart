@@ -149,6 +149,31 @@ class HomeScreen extends ConsumerWidget {
                 ],
               ),
 
+              const Gap(10),
+
+              // 英単語×パズルモード
+              Row(
+                children: [
+                  _ModeCard(
+                    icon: Icons.translate_rounded,
+                    title: t.quiz.modeTitle,
+                    description: t.quiz.modeDesc,
+                    badge: 'QUIZ × PUZZLE',
+                    colors: colors,
+                    onTap: () {
+                      ref
+                          .read(blockPuzzleViewModelProvider.notifier)
+                          .startQuizMode();
+                      Navigator.of(context).push(
+                        MaterialPageRoute<void>(
+                          builder: (_) => const BlockPuzzleScreen(),
+                        ),
+                      );
+                    },
+                  ),
+                ],
+              ),
+
               const Spacer(),
             ],
           ),

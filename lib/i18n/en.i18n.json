@@ -27,6 +27,18 @@
     "timeAttackResult": "5 min result",
     "timeAttackPlayAgain": "Play Again"
   },
+  "quiz": {
+    "modeTitle": "Words × Puzzle",
+    "modeDesc": "Learn English while placing blocks",
+    "correct": "Correct!",
+    "incorrect": "Incorrect",
+    "result": "$correct / 3 correct",
+    "startBlock": "Start Block",
+    "loading": "Loading...",
+    "questionDirectionEnToJa": "EN → JA",
+    "questionDirectionJaToEn": "JA → EN",
+    "quizMode": "Word Mode"
+  },
   "settings": {
     "title": "Settings",
     "sound": "Sound",

@@ -98,6 +98,9 @@ class _ScoreHudWidgetState extends ConsumerState<ScoreHudWidget>
     final combo = ref.watch(
       blockPuzzleViewModelProvider.select((s) => s.combo),
     );
+    final quizMultiplier = ref.watch(
+      blockPuzzleViewModelProvider.select((s) => s.quizMultiplier),
+    );
 
     // スコアカウントアップ・コンボポップアニメーション
     ref
@@ -118,6 +121,16 @@ class _ScoreHudWidgetState extends ConsumerState<ScoreHudWidget>
         blockPuzzleViewModelProvider.select((s) => s.combo),
         (prev, next) {
           if (next > 0 && next != prev) {
+            _comboController
+              ..reset()
+              ..forward();
+          }
+        },
+      )
+      ..listen(
+        blockPuzzleViewModelProvider.select((s) => s.quizMultiplier),
+        (prev, next) {
+          if (next > (prev ?? 1)) {
             _comboController
               ..reset()
               ..forward();
@@ -157,35 +170,58 @@ class _ScoreHudWidgetState extends ConsumerState<ScoreHudWidget>
               ),
             ],
           ),
-          // コンボバッジ
-          if (combo > 1)
+          // コンボバッジ / ×2ボーナスバッジ
+          if (quizMultiplier > 1 || combo > 1)
             AnimatedBuilder(
               animation: _comboScale,
-              builder: (context, child) {
-                return Transform.scale(
-                  scale: _comboScale.value.clamp(0.0, 2.0),
-                  child: child,
-                );
-              },
-              child: Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 4,
-                ),
-                decoration: BoxDecoration(
-                  color: colors.accent.withValues(alpha: 0.15),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Text(
-                  'x$combo',
-                  style: TextStyle(
-                    fontFamily: 'Poppins',
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: colors.accent,
-                  ),
-                ),
+              builder: (context, child) => Transform.scale(
+                scale: _comboScale.value.clamp(0.0, 2.0),
+                child: child,
               ),
+              child: quizMultiplier > 1
+                  ? Container(
+                      key: ValueKey('x$quizMultiplier'),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 12,
+                        vertical: 4,
+                      ),
+                      decoration: BoxDecoration(
+                        color: Colors.amber.shade400.withValues(alpha: 0.2),
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(
+                          color: Colors.amber.shade400.withValues(alpha: 0.6),
+                        ),
+                      ),
+                      child: Text(
+                        '×$quizMultiplier',
+                        style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.amber.shade400,
+                        ),
+                      ),
+                    )
+                  : Container(
+                      key: const ValueKey('combo'),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 12,
+                        vertical: 4,
+                      ),
+                      decoration: BoxDecoration(
+                        color: colors.accent.withValues(alpha: 0.15),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Text(
+                        'x$combo',
+                        style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: colors.accent,
+                        ),
+                      ),
+                    ),
             ),
           // タイムアタック=TIME、クエスト=NOISE、クラシック=BEST
           Column(
