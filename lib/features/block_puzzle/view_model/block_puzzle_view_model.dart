@@ -4,6 +4,8 @@ import 'dart:math';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:mono_games/features/block_puzzle/model/board.dart';
 import 'package:mono_games/features/block_puzzle/model/piece.dart';
+import 'package:mono_games/features/block_puzzle/model/piece_generator.dart';
+import 'package:mono_games/features/block_puzzle/model/quest_board_generator.dart';
 import 'package:mono_games/features/quiz/model/quiz_word.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -13,8 +15,6 @@ part 'block_puzzle_view_model.g.dart';
 
 const _highScoreKey = 'block_puzzle_high_score';
 const _timeAttackHighScoreKey = 'block_puzzle_ta_high_score';
-
-// クラシックモードの永続化キー
 const _classicBoardKey = 'block_puzzle_classic_board';
 const _classicPiecesKey = 'block_puzzle_classic_pieces';
 const _classicScoreKey = 'block_puzzle_classic_score';
@@ -22,8 +22,6 @@ const _classicComboKey = 'block_puzzle_classic_combo';
 const _classicNonClearTurnsKey = 'block_puzzle_classic_non_clear_turns';
 const _classicIsGameOverKey = 'block_puzzle_classic_is_game_over';
 const _classicCanContinueKey = 'block_puzzle_classic_can_continue';
-
-// クイズ連動モードの永続化キー
 const _quizBoardKey = 'block_puzzle_quiz_board';
 const _quizPiecesKey = 'block_puzzle_quiz_pieces';
 const _quizScoreKey = 'block_puzzle_quiz_score';
@@ -32,8 +30,6 @@ const _quizNonClearTurnsKey = 'block_puzzle_quiz_non_clear_turns';
 const _quizMultiplierKey = 'block_puzzle_quiz_multiplier';
 const _quizIsGameOverKey = 'block_puzzle_quiz_is_game_over';
 const _quizIsQuizPhaseKey = 'block_puzzle_quiz_is_quiz_phase';
-
-// クエストモードの永続化キー
 const _questMaxLevelKey = 'block_puzzle_quest_max_level';
 const _questBoardKey = 'block_puzzle_quest_board';
 const _questPiecesKey = 'block_puzzle_quest_pieces';
@@ -46,7 +42,9 @@ const _questIsGameOverKey = 'block_puzzle_quest_is_game_over';
 const _questIsCompleteKey = 'block_puzzle_quest_is_complete';
 const _questNoiseBoardKey = 'block_puzzle_quest_noise_board';
 
-// クイズ連動モードのインメモリキャッシュ型
+const _streakToMedium = 3;
+const _streakToHard = 6;
+
 typedef _QuizModeCache = ({
   List<List<bool>> board,
   List<Piece?> pieces,
@@ -58,7 +56,6 @@ typedef _QuizModeCache = ({
   bool isQuizPhase,
 });
 
-// クラシックゲームのインメモリキャッシュ型
 typedef _ClassicCache = ({
   List<List<bool>> board,
   List<Piece?> pieces,
@@ -69,7 +66,6 @@ typedef _ClassicCache = ({
   bool canContinue,
 });
 
-// クエストゲームのインメモリキャッシュ型
 typedef _QuestCache = ({
   List<List<bool>> board,
   List<Piece?> pieces,
@@ -229,26 +225,29 @@ class BlockPuzzleViewModel extends _$BlockPuzzleViewModel {
   _QuestCache? _questCache;
   _QuizModeCache? _quizModeCache;
 
+  // クイズモード用バッグ（全ピースを1巡してからリフィル）
+  final _quizEasyBag = <Piece>[];
+  final _quizMediumBag = <Piece>[];
+  final _quizHardBag = <Piece>[];
+
+  // 連続正解ストリーク（クイズモード内で管理）
+  var _quizCorrectStreak = 0;
+
   @override
   BlockPuzzleState build() {
-    final highScore = _loadHighScore();
-    final taHighScore = _loadTimeAttackHighScore();
-    _loadSavedGames();
+    Future<void>.microtask(_loadPersistedData);
+    ref.onDispose(() => _timeAttackTimer?.cancel());
     final emptyBoard =
         List.generate(Board.size, (_) => List.filled(Board.size, false));
-    ref.onDispose(() => _timeAttackTimer?.cancel());
     return BlockPuzzleState(
       board: emptyBoard,
-      pieces: _generatePieces(emptyBoard),
-      highScore: highScore,
-      timeAttackHighScore: taHighScore,
+      pieces: generatePieces(emptyBoard, _rng),
     );
   }
 
   /// [pieceIndex]番目のピースを([row], [col])に配置する。
   /// 配置成功なら`true`を返す。
   bool placePiece(int pieceIndex, int row, int col) {
-    // カウントダウン中は配置不可
     if (state.isTimeAttackCountingDown) {
       return false;
     }
@@ -257,13 +256,11 @@ class BlockPuzzleViewModel extends _$BlockPuzzleViewModel {
       return false;
     }
 
-    // ボードを複製して配置可能か判定
     final board = Board.from(state.board);
     if (!board.canPlace(piece, row, col)) {
       return false;
     }
 
-    // ピースを配置
     board.place(piece, row, col);
 
     // バウンスアニメーション用に配置セルを記録
@@ -272,11 +269,9 @@ class BlockPuzzleViewModel extends _$BlockPuzzleViewModel {
       placedCells.add((row + dr, col + dc));
     }
 
-    // ピースを使用済みにする
     final newPieces = [...state.pieces];
     newPieces[pieceIndex] = null;
 
-    // クイズ連続全問正解による得点倍率
     final scoreMultiplier = state.quizMultiplier;
 
     // 基本スコア: セル数 × 1pt（コンボ倍率を適用）
@@ -285,7 +280,6 @@ class BlockPuzzleViewModel extends _$BlockPuzzleViewModel {
     // ライン消去チェック（ボード状態は変更しない）
     final clearResult = board.checkClearLines();
 
-    // 最終ボード状態を準備
     Board finalBoard;
     if (clearResult.clearedCells.isNotEmpty) {
       // ── ノイズセルのHP処理（クエストモードのみ） ──────────────
@@ -325,9 +319,10 @@ class BlockPuzzleViewModel extends _$BlockPuzzleViewModel {
       // 同時消去ライン数分だけコンボを加算（複数行消去でコンボが加速する）
       final newCombo = state.combo + clearResult.linesCleared;
 
-      // クイズモードではライン消去のたびに倍率を+1
-      final newMultiplier =
-          state.isQuizMode ? state.quizMultiplier + 1 : state.quizMultiplier;
+      // クイズモードではライン消去のたびに倍率を+1（最大10）
+      final newMultiplier = state.isQuizMode
+          ? (state.quizMultiplier + 1).clamp(1, 10)
+          : state.quizMultiplier;
 
       // ライン消去スコア: 10 × ライン数²
       final lineScore =
@@ -392,11 +387,12 @@ class BlockPuzzleViewModel extends _$BlockPuzzleViewModel {
       // クリア完了はビュー側のアニメーション終了時に completeClearAnimation()
       // で通知する。
     } else {
-      // ライン消去なし — 配置済みボードをそのまま使用
       finalBoard = board;
 
       final nonClearTurns = state.consecutiveNonClearTurns + 1;
       final newCombo = nonClearTurns >= 3 ? 0 : state.combo;
+      final newMultiplier =
+          state.isQuizMode && nonClearTurns >= 3 ? 1 : state.quizMultiplier;
       final newScore = state.score + pointsEarned;
       final isNewHigh = !state.isTimeAttackMode && newScore > state.highScore;
       final newHighScore = isNewHigh ? newScore : state.highScore;
@@ -415,6 +411,7 @@ class BlockPuzzleViewModel extends _$BlockPuzzleViewModel {
         score: newScore,
         highScore: newHighScore,
         combo: newCombo,
+        quizMultiplier: newMultiplier,
         consecutiveNonClearTurns: nonClearTurns,
         lastClearResult: null,
         lastPlacedCells: placedCells,
@@ -423,7 +420,6 @@ class BlockPuzzleViewModel extends _$BlockPuzzleViewModel {
         // クエスト達成でセーブ不要になる
         hasSavedQuestGame: !questComplete && state.hasSavedQuestGame,
       );
-      // 配置直後に状態を永続化
       _saveGame();
 
       // 配置アニメーション終了後にクリア
@@ -467,10 +463,9 @@ class BlockPuzzleViewModel extends _$BlockPuzzleViewModel {
         List.generate(Board.size, (_) => List.filled(Board.size, false));
     state = BlockPuzzleState(
       board: emptyBoard,
-      pieces: _generatePieces(emptyBoard),
+      pieces: generatePieces(emptyBoard, _rng),
       highScore: state.highScore,
       timeAttackHighScore: state.timeAttackHighScore,
-      // クエストのセーブフラグを引き継ぐ
       hasSavedQuestGame: state.hasSavedQuestGame,
       hasSavedClassicGame: true,
       maxUnlockedLevel: state.maxUnlockedLevel,
@@ -504,16 +499,15 @@ class BlockPuzzleViewModel extends _$BlockPuzzleViewModel {
   /// クエストモードで指定レベルを開始する。
   void startQuestLevel(int level) {
     _timeAttackTimer?.cancel();
-    final result = _generateQuestBoardAndNoise(level);
+    final result = generateQuestBoardAndNoise(level);
     state = BlockPuzzleState(
       board: result.board,
       noiseBoard: result.noiseBoard,
-      pieces: _generatePieces(result.board),
+      pieces: generatePieces(result.board, _rng),
       highScore: state.highScore,
       timeAttackHighScore: state.timeAttackHighScore,
       isQuestMode: true,
       questLevel: level,
-      // クラシックのセーブフラグを引き継ぐ
       hasSavedClassicGame: state.hasSavedClassicGame,
       hasSavedQuestGame: true,
       maxUnlockedLevel: state.maxUnlockedLevel,
@@ -589,244 +583,8 @@ class BlockPuzzleViewModel extends _$BlockPuzzleViewModel {
     _saveGame();
   }
 
-  /// レベルに応じたノイズブロックのHP値リストを計算する。
-  ///
-  /// 設計:
-  ///   noiseCount = min(10, level)
-  ///   maxHp     = min(5, 1 + (level-1) ÷ 8)  // HP2@L9, HP3@L17, ...
-  ///   totalHp   = min(level, noiseCount × maxHp)
-  ///   HP分布: base = totalHp ÷ noiseCount, extras = totalHp % noiseCount
-  ///           → extras 個は HP(base+1)、残りは HP(base)
-  ///
-  /// 例: L1  → [1]
-  ///     L11 → [2,1,1,1,1,1,1,1,1,1]  (HP2が1個だけ登場)
-  ///     L20 → [2,2,2,2,2,2,2,2,2,2]  (全HP2)
-  ///     L30 → [3,3,3,3,3,3,3,3,3,3]  (全HP3)
-  static List<int> _computeNoiseHPs(int level) {
-    final noiseCount = min(10, level);
-    final maxHp = min(5, 1 + (level - 1) ~/ 8);
-    final totalHp = min(level, noiseCount * maxHp);
-    final base = totalHp ~/ noiseCount;
-    final extras = totalHp % noiseCount;
-    return [
-      for (var i = 0; i < noiseCount; i++)
-        if (i < extras) base + 1 else base,
-    ];
-  }
-
-  /// ノイズブロック数別のアイコン形状パターン。
-  ///
-  /// (dr, dc) はパターン左上からの相対オフセット。
-  /// 各カウントに複数バリアントを用意し、(level-1) % variants.length でサイクル。
-  ///
-  /// ```text
-  ///   count=1:  ● dot
-  ///   count=2:  | vertical, — horizontal
-  ///   count=3:  ┃ line, ∧ chevron, ⌐ corner
-  ///   count=4:  ■ square, L-shape, S/Z
-  ///   count=5:  + plus, × X, ✓ checkmark
-  ///   count=6:  [ bracket, Z/S, ◇ diamond-outline
-  ///   count=7:  ◆ diamond-solid, ✳ cross, ⊓ U-shape
-  ///   count=8:  ✕ bigX, ○ square-frame, ⊕ cross-circle
-  ///   count=9:  ❤ heart, ✿ flower, ⚡ lightning
-  ///   count=10: ♣ club, ⬛ bigblock, ✦ star
-  /// ```
-  static const _noiseIconShapes = <int, List<List<(int, int)>>>{
-    1: [
-      [(0, 0)],
-    ],
-    2: [
-      [(0, 0), (1, 0)],
-      [(0, 0), (0, 1)],
-    ],
-    3: [
-      [(0, 0), (1, 0), (2, 0)],
-      [(0, 0), (1, 1), (2, 0)],
-      [(0, 0), (0, 1), (1, 0)],
-    ],
-    4: [
-      [(0, 0), (0, 1), (1, 0), (1, 1)],
-      [(0, 0), (1, 0), (2, 0), (2, 1)],
-      [(0, 1), (1, 0), (1, 1), (2, 0)],
-    ],
-    5: [
-      [(0, 1), (1, 0), (1, 1), (1, 2), (2, 1)],
-      [(0, 0), (0, 2), (1, 1), (2, 0), (2, 2)],
-      [(0, 0), (1, 1), (2, 0), (2, 1), (2, 2)],
-    ],
-    6: [
-      [(0, 0), (0, 1), (1, 0), (2, 0), (3, 0), (3, 1)],
-      [(0, 1), (0, 2), (1, 0), (1, 1), (2, 0), (2, 1)],
-      [(0, 1), (1, 0), (1, 2), (2, 0), (2, 2), (3, 1)],
-    ],
-    7: [
-      [(0, 1), (1, 0), (1, 2), (2, 0), (2, 1), (2, 2), (3, 1)],
-      [(0, 0), (0, 2), (1, 0), (1, 1), (1, 2), (2, 0), (2, 2)],
-      [(0, 0), (0, 2), (1, 0), (1, 2), (2, 0), (2, 1), (2, 2)],
-    ],
-    8: [
-      [(0, 0), (0, 3), (1, 1), (1, 2), (2, 1), (2, 2), (3, 0), (3, 3)],
-      [(0, 0), (0, 1), (0, 2), (1, 0), (1, 2), (2, 0), (2, 1), (2, 2)],
-      [(0, 1), (1, 0), (1, 2), (2, 0), (2, 1), (2, 2), (3, 0), (3, 2)],
-    ],
-    9: [
-      [(0, 0), (0, 2), (1, 0), (1, 1), (1, 2), (2, 0), (2, 1), (2, 2), (3, 1)],
-      [(0, 1), (1, 0), (1, 1), (1, 2), (2, 0), (2, 2), (3, 0), (3, 1), (3, 2)],
-      [(0, 1), (0, 2), (1, 1), (1, 2), (2, 0), (2, 1), (2, 2), (3, 0), (3, 1)],
-    ],
-    10: [
-      [
-        (0, 1), (1, 0), (1, 1), (1, 2), (2, 0), (2, 1),
-        (2, 2), (3, 0), (3, 1), (3, 2),
-      ],
-      [
-        (0, 0), (0, 1), (0, 2), (0, 3), (1, 1), (1, 2),
-        (2, 1), (2, 2), (3, 1), (3, 2),
-      ],
-      [
-        (0, 2), (1, 1), (1, 3), (2, 0), (2, 1), (2, 2),
-        (2, 3), (2, 4), (3, 1), (3, 3),
-      ],
-    ],
-  };
-
-  /// クエスト用の盤面とノイズブロック配置を生成する。
-  ///
-  /// アイコン形状パターンでノイズブロックを配置し、
-  /// 同じレベルは常に同じ配置になる（シード固定）。
-  /// 普通ブロックはノイズを消すための最小限の補助のみ配置する。
-  ///
-  /// アイコンパターン: _noiseIconShapes を参照。
-  ({List<List<bool>> board, List<List<int>> noiseBoard})
-      _generateQuestBoardAndNoise(int level) {
-    final rng = Random(level * 1337 + 42);
-    final board =
-        List.generate(Board.size, (_) => List.filled(Board.size, false));
-    final noiseBoard =
-        List.generate(Board.size, (_) => List.filled(Board.size, 0));
-
-    // ── デュアルゾーン計算 ──────────────────────────────────────
-    // アクティブ列数: L1=2, L4=3, L7=4, L10=5, L13=6, L16=7, L19+=8
-    final activeCols = min(Board.size, 2 + (level - 1) ~/ 3);
-    // 中央寄せで配置
-    final colStart = (Board.size - activeCols) ~/ 2;
-    final colEnd = colStart + activeCols; // exclusive
-
-    // アクティブ行数: L1=3行, L5=4行, L9=5行, L13=6行, L17=7行, L21+=8行（下から）
-    final activeRows = min(Board.size, 3 + (level - 1) ~/ 4);
-    final rowStart = Board.size - activeRows; // inclusive
-
-    // ── ノイズHP計算 ────────────────────────────────────────────
-    final noiseHPs = _computeNoiseHPs(level);
-    final noiseCount = noiseHPs.length;
-
-    // ── アイコン形状でノイズ配置セルを生成 ────────────────────────
-    final noisePositions = <(int, int)>[];
-
-    final shapes = _noiseIconShapes[noiseCount]!;
-    final shape = shapes[(level - 1) % shapes.length];
-    final patternRows = shape.map((p) => p.$1).reduce(max) + 1;
-    final patternCols = shape.map((p) => p.$2).reduce(max) + 1;
-
-    if (patternRows <= activeRows && patternCols <= activeCols) {
-      // パターンをアクティブゾーン中央に配置
-      final startR = rowStart + (activeRows - patternRows) ~/ 2;
-      final startC = colStart + (activeCols - patternCols) ~/ 2;
-      for (final (dr, dc) in shape) {
-        final r = startR + dr;
-        final c = startC + dc;
-        if (r >= 0 && r < Board.size && c >= 0 && c < Board.size) {
-          noisePositions.add((r, c));
-        }
-      }
-    }
-
-    // ── 不足分をランダムで補完 ─────────────────────────────────
-    if (noisePositions.length < noiseCount) {
-      final usedSet = noisePositions.toSet();
-      final available = <(int, int)>[];
-      for (var r = rowStart; r < Board.size; r++) {
-        for (var c = colStart; c < colEnd; c++) {
-          if (!usedSet.contains((r, c))) {
-            available.add((r, c));
-          }
-        }
-      }
-      available.shuffle(rng);
-      noisePositions.addAll(available.take(noiseCount - noisePositions.length));
-    }
-
-    // ── ノイズブロックをボードに配置 ─────────────────────────────
-    var ni = 0;
-    for (final (r, c) in noisePositions) {
-      if (ni >= noiseHPs.length) {
-        break;
-      }
-      if (r >= 0 && r < Board.size && c >= 0 && c < Board.size) {
-        board[r][c] = true;
-        noiseBoard[r][c] = noiseHPs[ni++];
-      }
-    }
-
-    // ── 普通ブロック: ノイズを消す補助として最小限を配置 ────────────
-    // 1ラインあたりの補助ブロック数をレベルで段階的に減らす:
-    //   L1-10: 3個、L11-20: 2個、L21-30: 1個、L31+: 0個
-    final normalPerLine = max(0, 3 - (level - 1) ~/ 10);
-    if (normalPerLine > 0) {
-      // 行・列ごとのノイズ数を集計
-      final rowNoiseCnt = List.filled(Board.size, 0);
-      final colNoiseCnt = List.filled(Board.size, 0);
-      for (final (r, c) in noisePositions) {
-        if (r >= 0 && r < Board.size && c >= 0 && c < Board.size) {
-          rowNoiseCnt[r]++;
-          colNoiseCnt[c]++;
-        }
-      }
-
-      // 補完量が少ない軸（ノイズが集中している軸）を選択
-      final totalNormalRows = rowNoiseCnt.fold<int>(
-        0,
-        (s, n) => n > 0 ? s + max(0, Board.size - n) : s,
-      );
-      final totalNormalCols = colNoiseCnt.fold<int>(
-        0,
-        (s, n) => n > 0 ? s + max(0, Board.size - n) : s,
-      );
-      final useRows = totalNormalRows <= totalNormalCols;
-      final targetCounts = useRows ? rowNoiseCnt : colNoiseCnt;
-
-      // ノイズが多い順に補助ライン数を決定 (noiseCount ÷ 4、最小1・最大3)
-      final assistLines = max(1, min(3, noiseCount ~/ 4));
-      final sortedLines = List.generate(Board.size, (i) => i)
-        ..sort((a, b) => targetCounts[b].compareTo(targetCounts[a]));
-      final targetLines =
-          sortedLines.where((i) => targetCounts[i] > 0).take(assistLines);
-
-      // 各ラインに normalPerLine 個だけ補助ブロックを配置
-      for (final lineIdx in targetLines) {
-        final empties = <(int, int)>[];
-        for (var i = 0; i < Board.size; i++) {
-          final r = useRows ? lineIdx : i;
-          final c = useRows ? i : lineIdx;
-          if (!board[r][c]) {
-            empties.add((r, c));
-          }
-        }
-        empties.shuffle(rng);
-        final toFill = min(normalPerLine, empties.length);
-        for (var i = 0; i < toFill; i++) {
-          board[empties[i].$1][empties[i].$2] = true;
-          // noiseBoard は 0 のまま（普通ブロック）
-        }
-      }
-    }
-
-    return (board: board, noiseBoard: noiseBoard);
-  }
-
   /// ピース補充とゲームオーバー判定を行う。
   void _checkRefillAndGameOver() {
-    // 3ピース全て使用済みなら補充
     var piecesToCheck = state.pieces;
     if (piecesToCheck.every((p) => p == null)) {
       // クイズモードではクイズフェーズへ切り替えてピーストレイをクリア
@@ -838,12 +596,11 @@ class BlockPuzzleViewModel extends _$BlockPuzzleViewModel {
         _saveGame();
         return;
       }
-      final newPieces = _generatePieces(state.board);
+      final newPieces = generatePieces(state.board, _rng);
       state = state.copyWith(pieces: newPieces);
       piecesToCheck = newPieces;
     }
 
-    // 現在の（補充後の）ピースで配置可能か判定
     final board = Board.from(state.board);
     if (!board.canPlaceAny(piecesToCheck)) {
       _timeAttackTimer?.cancel();
@@ -867,124 +624,15 @@ class BlockPuzzleViewModel extends _$BlockPuzzleViewModel {
     _saveGame();
   }
 
-  /// [piece] が現在の [boardCells] 上でラインクリアに貢献できるか判定する。
-  bool _canClearLine(Piece piece, List<List<bool>> boardCells) {
-    final baseBoard = Board.from(boardCells);
-    for (var r = 0; r < Board.size; r++) {
-      for (var c = 0; c < Board.size; c++) {
-        if (baseBoard.canPlace(piece, r, c)) {
-          final testBoard = baseBoard.copy()..place(piece, r, c);
-          if (testBoard.checkClearLines().clearedCells.isNotEmpty) {
-            return true;
-          }
-        }
-      }
-    }
-    return false;
-  }
-
-  /// 3ピースのバッチを生成する（クエスト・クラシック共通ロジック）。
-  ///
-  /// 1. Piece 1: mediumPoolをシャッフルして最初に配置可能なピースを選択。
-  ///    mediumPoolに配置可能なピースがなければeasyPoolにフォールバック。
-  /// 2. ラインクリア可能ピースをallPieces全体から一括算出（事前計算）。
-  ///    P1がクリアできる場合は算出をスキップ。
-  /// 3. Piece 2 & 3: ラインクリア候補リストから重複なしでO(1)選択。
-  ///    候補なしの場合はallPiecesから重複なし選択。それも不可の場合は完全ランダム。
-  /// 4. 小ピース保証: 3セル以下のピースがなければP3を小ピースに置き換え。
-  List<Piece> _generatePieces(List<List<bool>> board) {
-    final boardObj = Board.from(board);
-
-    // ── Piece 1: mediumPool をシャッフルして配置可能な先頭ピースを選択 ──
-    final shuffledMedium = [...PieceDefinitions.mediumPool]..shuffle(_rng);
-    var piece1 = shuffledMedium.firstWhere(
-      (p) => boardObj.canPlaceAny([p]),
-      orElse: () => shuffledMedium.first,
-    );
-    if (!boardObj.canPlaceAny([piece1])) {
-      // mediumPool に配置可能なピースがない → easyPool にフォールバック
-      final shuffledEasy = [...PieceDefinitions.easyPool]..shuffle(_rng);
-      piece1 = shuffledEasy.firstWhere(
-        (p) => boardObj.canPlaceAny([p]),
-        orElse: () => piece1,
-      );
-    }
-
-    // ── ラインクリア可能ピースをallPieces全体から一括算出 ──
-    final p1ClearsLine = _canClearLine(piece1, board);
-    final lineClearers = p1ClearsLine
-        ? <Piece>[]
-        : [
-            for (final p in PieceDefinitions.allPieces)
-              if (_canClearLine(p, board)) p,
-          ];
-
-    // ── Piece 2 & 3: 事前計算済みリストから O(1) 選択 ──
-    final pieces = <Piece>[piece1];
-    for (var i = 0; i < 2; i++) {
-      final clearCandidates =
-          lineClearers.where((p) => !pieces.contains(p)).toList();
-      final allCandidates = clearCandidates.isNotEmpty
-          ? clearCandidates
-          : PieceDefinitions.allPieces
-              .where((p) => !pieces.contains(p))
-              .toList();
-
-      pieces.add(
-        allCandidates.isNotEmpty
-            ? allCandidates[_rng.nextInt(allCandidates.length)]
-            : PieceDefinitions.randomFrom(PieceDefinitions.allPieces, _rng),
-      );
-    }
-
-    // ── 小ピース保証: 3セル以下のピースがなければ P3 を置き換え ──
-    const smallPieces = [
-      PieceDefinitions.dot,
-      PieceDefinitions.dominoH,
-      PieceDefinitions.dominoV,
-      PieceDefinitions.triominoH,
-      PieceDefinitions.triominoV,
-      PieceDefinitions.cornerA,
-      PieceDefinitions.cornerB,
-      PieceDefinitions.cornerC,
-      PieceDefinitions.cornerD,
-    ];
-    final hasSmall = pieces.any((p) => p.offsets.length <= 3);
-    if (!hasSmall) {
-      final available =
-          smallPieces.where((p) => !pieces.sublist(0, 2).contains(p)).toList();
-      final pool = available.isNotEmpty ? available : smallPieces;
-      pieces[2] = pool[_rng.nextInt(pool.length)];
-    }
-
-    return pieces;
-  }
-
-  /// ハイスコアをローカルストレージから読み込む。
-  int _loadHighScore() {
-    SharedPreferences.getInstance().then((prefs) {
-      final value = prefs.getInt(_highScoreKey);
-      if (value != null && value > state.highScore) {
-        state = state.copyWith(highScore: value);
-      }
-    });
-    return 0;
-  }
-
-  /// ハイスコアをローカルストレージに保存する。
-  void _saveHighScore(int score) {
-    SharedPreferences.getInstance().then((prefs) {
-      prefs.setInt(_highScoreKey, score);
-    });
-  }
-
-  // ── タイムアタック ──────────────────────────────────────────
-
   // ── クイズモード ─────────────────────────────────────────────
 
   /// クイズモードを開始する。保存済みデータがあれば自動復元する。
   void startQuizMode() {
     _timeAttackTimer?.cancel();
+    _quizCorrectStreak = 0;
+    _quizEasyBag.clear();
+    _quizMediumBag.clear();
+    _quizHardBag.clear();
     final cache = _quizModeCache;
     if (cache != null && !cache.isGameOver) {
       // キャッシュからリストアする。全ピース未配置（全null）ならクイズフェーズへ。
@@ -1016,7 +664,7 @@ class BlockPuzzleViewModel extends _$BlockPuzzleViewModel {
         List.generate(Board.size, (_) => List.filled(Board.size, false));
     state = BlockPuzzleState(
       board: emptyBoard,
-      pieces: _generatePieces(emptyBoard),
+      pieces: generatePieces(emptyBoard, _rng),
       highScore: state.highScore,
       isQuizMode: true,
       hasSavedClassicGame: state.hasSavedClassicGame,
@@ -1033,10 +681,10 @@ class BlockPuzzleViewModel extends _$BlockPuzzleViewModel {
   /// [comboActive] が true の場合、得点倍率を+1する。
   /// false の場合は1にリセットする。
   void endQuizPhase({bool comboActive = false}) {
-    final newMultiplier =
-        comboActive ? state.quizMultiplier + 1 : 1;
+    final newMultiplier = comboActive
+        ? (state.quizMultiplier + 1).clamp(1, 10)
+        : state.quizMultiplier;
     state = state.copyWith(isQuizPhase: false, quizMultiplier: newMultiplier);
-    // 新ピースで配置不可なら即ゲームオーバー
     final board = Board.from(state.board);
     if (!board.canPlaceAny(state.pieces)) {
       state = state.copyWith(isGameOver: true);
@@ -1046,29 +694,56 @@ class BlockPuzzleViewModel extends _$BlockPuzzleViewModel {
 
   /// クイズ1問の回答結果から[slot]番スロットにピースを追加する。
   ///
-  /// 「正誤 × 充填率」の2軸でピースサイズを決定する。
-  /// - 充填率 >= 75%: 常に小ピース（サバイバル優先）
-  /// - 充填率 >= 65% かつ不正解: 中ピース（緩和ペナルティ）
-  /// - それ以外: 正解=小ピース / 不正解=大ピース
+  /// ストリーク × 充填率 の2軸でピースを選択:
+  /// - 充填率 >= 75%: 常にEasy（サバイバル優先）
+  /// - 不正解: streak リセット。充填率 < 65% なら Hard、65%以上なら Medium
+  /// - 正解 streak 0-2: Easy / 3-5: Medium / 6+: Hard
+  ///
+  /// 各ティア内はバッグ方式（全ピースを1巡してからリフィル）で重複を抑制する。
   void addQuizPiece(
     int slot, {
     required bool isCorrect,
     QuizWord? word,
   }) {
+    if (isCorrect) {
+      _quizCorrectStreak++;
+    } else {
+      _quizCorrectStreak = 0;
+    }
+
     final board = Board.from(state.board);
     final fillRate = _boardFillRate(board);
     final Piece piece;
+
     if (fillRate >= 0.75) {
-      piece = _pickEasyPiece(board);
-    } else if (!isCorrect && fillRate >= 0.65) {
-      piece = _pickMediumPiece(board);
+      piece = _drawFromQuizBag(
+        _quizEasyBag, PieceDefinitions.quizEasyPool, board,
+      );
+    } else if (!isCorrect) {
+      piece = fillRate < 0.65
+          ? _drawFromQuizBag(
+              _quizHardBag, PieceDefinitions.quizHardPool, board,
+            )
+          : _drawFromQuizBag(
+              _quizMediumBag, PieceDefinitions.quizMediumPool, board,
+            );
+    } else if (_quizCorrectStreak >= _streakToHard) {
+      piece = _drawFromQuizBag(
+        _quizHardBag, PieceDefinitions.quizHardPool, board,
+      );
+    } else if (_quizCorrectStreak >= _streakToMedium) {
+      piece = _drawFromQuizBag(
+        _quizMediumBag, PieceDefinitions.quizMediumPool, board,
+      );
     } else {
-      piece = isCorrect ? _pickEasyPiece(board) : _pickHardPiece(board);
+      piece = _drawFromQuizBag(
+        _quizEasyBag, PieceDefinitions.quizEasyPool, board,
+      );
     }
+
     final newPieces = List<Piece?>.from(state.pieces);
     newPieces[slot] = piece;
 
-    // セッション統計を更新
     final newCorrect = word != null && isCorrect
         ? [...state.sessionCorrectWords, word]
         : state.sessionCorrectWords;
@@ -1084,64 +759,39 @@ class BlockPuzzleViewModel extends _$BlockPuzzleViewModel {
     _saveGame();
   }
 
-  /// ボードの充填率（0.0〜1.0）を返す。
+  /// [bag]からピースを1枚引く（バッグが空なら[pool]でリフィル）。
+  ///
+  /// バッグ内で配置可能な先頭ピースを返す。
+  /// バッグに配置可能なピースがない場合はeasyPoolにフォールバック。
+  Piece _drawFromQuizBag(
+    List<Piece> bag,
+    List<Piece> pool,
+    Board board,
+  ) {
+    if (bag.isEmpty) {
+      bag
+        ..addAll(pool)
+        ..shuffle(_rng);
+    }
+    final idx = bag.indexWhere((p) => board.canPlaceAny([p]));
+    if (idx != -1) {
+      return bag.removeAt(idx);
+    }
+    // フォールバック: easyPool から配置可能なピースを選ぶ
+    final fallback = PieceDefinitions.quizEasyPool
+        .where((p) => board.canPlaceAny([p]))
+        .toList()
+      ..shuffle(_rng);
+    return fallback.isNotEmpty ? fallback.first : PieceDefinitions.dot;
+  }
+
   double _boardFillRate(Board board) {
     const total = Board.size * Board.size;
     final filled = board.cells.expand((r) => r).where((c) => c).length;
     return filled / total;
   }
 
-  /// 中難易度ピース（4セル）を選ぶ。充填率が高いときの不正解ペナルティ緩和用。
-  Piece _pickMediumPiece(Board board) {
-    final medium = PieceDefinitions.allPieces
-        .where((p) => p.offsets.length == 4)
-        .toList();
-    final candidates = medium
-        .where((p) => board.canPlaceAny([p]))
-        .toList()
-      ..shuffle(_rng);
-    return candidates.isNotEmpty ? candidates.first : _pickEasyPiece(board);
-  }
-
-  /// 正解報酬用: 配置可能な小ピース（3セル以下）を選ぶ。
-  Piece _pickEasyPiece(Board board) {
-    const small = [
-      PieceDefinitions.dot,
-      PieceDefinitions.dominoH,
-      PieceDefinitions.dominoV,
-      PieceDefinitions.triominoH,
-      PieceDefinitions.triominoV,
-      PieceDefinitions.cornerA,
-      PieceDefinitions.cornerB,
-      PieceDefinitions.cornerC,
-      PieceDefinitions.cornerD,
-    ];
-    final candidates = small
-        .where((p) => board.canPlaceAny([p]))
-        .toList()
-      ..shuffle(_rng);
-    return candidates.isNotEmpty ? candidates.first : PieceDefinitions.dot;
-  }
-
-  /// 不正解ペナルティ用: 配置可能な大ピース（5セル以上）を選ぶ。
-  Piece _pickHardPiece(Board board) {
-    final large = PieceDefinitions.allPieces
-        .where((p) => p.offsets.length >= 5)
-        .toList();
-    final candidates = large
-        .where((p) => board.canPlaceAny([p]))
-        .toList()
-      ..shuffle(_rng);
-    if (candidates.isNotEmpty) {
-      return candidates.first;
-    }
-    // フォールバック: mediumPool から
-    final med = PieceDefinitions.mediumPool
-        .where((p) => board.canPlaceAny([p]))
-        .toList()
-      ..shuffle(_rng);
-    return med.isNotEmpty ? med.first : PieceDefinitions.square2x2;
-  }
+  // ── タイムアタック ──────────────────────────────────────────
 
   /// タイムアタックモードを開始する（3秒カウントダウン → 90秒ゲーム開始）。
   void startTimeAttack() {
@@ -1150,13 +800,12 @@ class BlockPuzzleViewModel extends _$BlockPuzzleViewModel {
         List.generate(Board.size, (_) => List.filled(Board.size, false));
     state = BlockPuzzleState(
       board: emptyBoard,
-      pieces: _generatePieces(emptyBoard),
+      pieces: generatePieces(emptyBoard, _rng),
       highScore: state.highScore,
       isTimeAttackMode: true,
       isTimeAttackCountingDown: true,
       timeAttackCountdownSeconds: 3,
       timeAttackHighScore: state.timeAttackHighScore,
-      // 両モードのセーブフラグを引き継ぐ
       hasSavedClassicGame: state.hasSavedClassicGame,
       hasSavedQuestGame: state.hasSavedQuestGame,
       maxUnlockedLevel: state.maxUnlockedLevel,
@@ -1210,25 +859,109 @@ class BlockPuzzleViewModel extends _$BlockPuzzleViewModel {
     });
   }
 
-  /// タイムアタックのベストスコアをローカルストレージから読み込む。
-  int _loadTimeAttackHighScore() {
-    SharedPreferences.getInstance().then((prefs) {
-      final value = prefs.getInt(_timeAttackHighScoreKey);
-      if (value != null && value > state.timeAttackHighScore) {
-        state = state.copyWith(timeAttackHighScore: value);
-      }
-    });
-    return 0;
-  }
-
-  /// タイムアタックのベストスコアをローカルストレージに保存する。
-  void _saveTimeAttackHighScore(int score) {
-    SharedPreferences.getInstance().then((prefs) {
-      prefs.setInt(_timeAttackHighScoreKey, score);
-    });
-  }
-
   // ── ゲーム状態の永続化 ──────────────────────────────────────
+
+  /// 全データを一括ロードし、キャッシュとスコアを初期化する。
+  Future<void> _loadPersistedData() async {
+    final prefs = await SharedPreferences.getInstance();
+    _migrateOldSave(prefs);
+
+    final highScore = prefs.getInt(_highScoreKey) ?? 0;
+    final taHighScore = prefs.getInt(_timeAttackHighScoreKey) ?? 0;
+
+    final classicBoardStr = prefs.getString(_classicBoardKey);
+    if (classicBoardStr != null) {
+      try {
+        final board = _boardFromString(classicBoardStr);
+        if (board.length == Board.size &&
+            board.every((r) => r.length == Board.size)) {
+          _classicCache = (
+            board: board,
+            pieces: _piecesFromString(
+              prefs.getString(_classicPiecesKey) ?? '',
+            ),
+            score: prefs.getInt(_classicScoreKey) ?? 0,
+            combo: prefs.getInt(_classicComboKey) ?? 0,
+            nonClearTurns: prefs.getInt(_classicNonClearTurnsKey) ?? 0,
+            isGameOver: prefs.getBool(_classicIsGameOverKey) ?? false,
+            canContinue: prefs.getBool(_classicCanContinueKey) ?? true,
+          );
+        }
+      } on Exception catch (_) {
+        // データ破損時はキャッシュなし
+      }
+    }
+
+    final questBoardStr = prefs.getString(_questBoardKey);
+    if (questBoardStr != null) {
+      try {
+        final board = _boardFromString(questBoardStr);
+        if (board.length == Board.size &&
+            board.every((r) => r.length == Board.size)) {
+          _questCache = (
+            board: board,
+            pieces: _piecesFromString(
+              prefs.getString(_questPiecesKey) ?? '',
+            ),
+            score: prefs.getInt(_questScoreKey) ?? 0,
+            combo: prefs.getInt(_questComboKey) ?? 0,
+            nonClearTurns: prefs.getInt(_questNonClearTurnsKey) ?? 0,
+            questLevel: prefs.getInt(_questLevelKey) ?? 1,
+            targetScore: prefs.getInt(_questTargetScoreKey) ?? 0,
+            isGameOver: prefs.getBool(_questIsGameOverKey) ?? false,
+            isQuestComplete: prefs.getBool(_questIsCompleteKey) ?? false,
+            noiseBoard: _noiseBoardFromString(
+              prefs.getString(_questNoiseBoardKey) ?? '',
+            ),
+          );
+        }
+      } on Exception catch (_) {
+        // データ破損時はキャッシュなし
+      }
+    }
+
+    final quizBoardStr = prefs.getString(_quizBoardKey);
+    if (quizBoardStr != null) {
+      try {
+        final board = _boardFromString(quizBoardStr);
+        if (board.length == Board.size &&
+            board.every((r) => r.length == Board.size)) {
+          _quizModeCache = (
+            board: board,
+            pieces: _piecesFromString(
+              prefs.getString(_quizPiecesKey) ?? '',
+            ),
+            score: prefs.getInt(_quizScoreKey) ?? 0,
+            combo: prefs.getInt(_quizComboKey) ?? 0,
+            nonClearTurns: prefs.getInt(_quizNonClearTurnsKey) ?? 0,
+            quizMultiplier: prefs.getInt(_quizMultiplierKey) ?? 1,
+            isGameOver: prefs.getBool(_quizIsGameOverKey) ?? false,
+            isQuizPhase: prefs.getBool(_quizIsQuizPhaseKey) ?? false,
+          );
+        }
+      } on Exception catch (_) {
+        // データ破損時はキャッシュなし
+      }
+    }
+
+    final classicCache = _classicCache;
+    final questCache = _questCache;
+    final hasSavedClassic = classicCache != null && !classicCache.isGameOver;
+    final hasSavedQuest = questCache != null &&
+        !questCache.isGameOver &&
+        !questCache.isQuestComplete;
+    final savedMaxLevel = prefs.getInt(_questMaxLevelKey) ?? 1;
+
+    state = state.copyWith(
+      highScore: highScore,
+      timeAttackHighScore: taHighScore,
+      hasSavedClassicGame: hasSavedClassic,
+      hasSavedQuestGame: hasSavedQuest,
+      maxUnlockedLevel: savedMaxLevel > state.maxUnlockedLevel
+          ? savedMaxLevel
+          : state.maxUnlockedLevel,
+    );
+  }
 
   /// 現在のゲーム状態を保存する。タイムアタックは永続化しない。
   void _saveGame() {
@@ -1244,7 +977,6 @@ class BlockPuzzleViewModel extends _$BlockPuzzleViewModel {
     }
   }
 
-  /// クラシックゲームの状態をキャッシュと永続ストレージに保存する。
   void _saveClassicGame() {
     final s = state;
     // インメモリキャッシュを更新（resume で同期的に使用）
@@ -1259,11 +991,10 @@ class BlockPuzzleViewModel extends _$BlockPuzzleViewModel {
       isGameOver: s.isGameOver,
       canContinue: s.canContinue,
     );
-    // 再開可能フラグを更新
-    if (state.hasSavedClassicGame == s.isGameOver) {
-      state = state.copyWith(hasSavedClassicGame: !s.isGameOver);
+    final shouldSave = !s.isGameOver;
+    if (state.hasSavedClassicGame != shouldSave) {
+      state = state.copyWith(hasSavedClassicGame: shouldSave);
     }
-    // 非同期で永続化
     SharedPreferences.getInstance().then((prefs) {
       prefs
         ..setString(_classicBoardKey, _boardToString(s.board))
@@ -1276,7 +1007,6 @@ class BlockPuzzleViewModel extends _$BlockPuzzleViewModel {
     });
   }
 
-  /// クエストゲームの状態をキャッシュと永続ストレージに保存する。
   void _saveQuestGame() {
     final s = state;
     // インメモリキャッシュを更新（resume で同期的に使用）
@@ -1296,12 +1026,10 @@ class BlockPuzzleViewModel extends _$BlockPuzzleViewModel {
         for (final row in s.noiseBoard) [...row]
       ],
     );
-    // 再開可能フラグを更新
     final canResume = !s.isGameOver && !s.isQuestComplete;
     if (state.hasSavedQuestGame != canResume) {
       state = state.copyWith(hasSavedQuestGame: canResume);
     }
-    // 非同期で永続化
     SharedPreferences.getInstance().then((prefs) {
       prefs
         ..setString(_questBoardKey, _boardToString(s.board))
@@ -1317,7 +1045,6 @@ class BlockPuzzleViewModel extends _$BlockPuzzleViewModel {
     });
   }
 
-  /// クイズ連動モードの状態をキャッシュと永続ストレージに保存する。
   void _saveQuizGame() {
     final s = state;
     _quizModeCache = (
@@ -1345,109 +1072,14 @@ class BlockPuzzleViewModel extends _$BlockPuzzleViewModel {
     });
   }
 
-  /// 両モードのセーブデータを非同期で読み込み、キャッシュとフラグを更新する。
-  ///
-  /// 旧フォーマット（単一スロット）のデータが存在する場合はマイグレーションする。
-  void _loadSavedGames() {
-    SharedPreferences.getInstance().then((prefs) {
-      _migrateOldSave(prefs);
+  void _saveHighScore(int score) {
+    SharedPreferences.getInstance()
+        .then((prefs) => prefs.setInt(_highScoreKey, score));
+  }
 
-      // クラシックセーブを読み込む
-      final classicBoardStr = prefs.getString(_classicBoardKey);
-      if (classicBoardStr != null) {
-        try {
-          final board = _boardFromString(classicBoardStr);
-          if (board.length == Board.size &&
-              board.every((r) => r.length == Board.size)) {
-            _classicCache = (
-              board: board,
-              pieces: _piecesFromString(
-                prefs.getString(_classicPiecesKey) ?? '',
-              ),
-              score: prefs.getInt(_classicScoreKey) ?? 0,
-              combo: prefs.getInt(_classicComboKey) ?? 0,
-              nonClearTurns: prefs.getInt(_classicNonClearTurnsKey) ?? 0,
-              isGameOver: prefs.getBool(_classicIsGameOverKey) ?? false,
-              canContinue: prefs.getBool(_classicCanContinueKey) ?? true,
-            );
-          }
-        } on Exception catch (_) {
-          // データ破損時はキャッシュなし
-        }
-      }
-
-      // クエストセーブを読み込む
-      final questBoardStr = prefs.getString(_questBoardKey);
-      if (questBoardStr != null) {
-        try {
-          final board = _boardFromString(questBoardStr);
-          if (board.length == Board.size &&
-              board.every((r) => r.length == Board.size)) {
-            _questCache = (
-              board: board,
-              pieces: _piecesFromString(
-                prefs.getString(_questPiecesKey) ?? '',
-              ),
-              score: prefs.getInt(_questScoreKey) ?? 0,
-              combo: prefs.getInt(_questComboKey) ?? 0,
-              nonClearTurns: prefs.getInt(_questNonClearTurnsKey) ?? 0,
-              questLevel: prefs.getInt(_questLevelKey) ?? 1,
-              targetScore: prefs.getInt(_questTargetScoreKey) ?? 0,
-              isGameOver: prefs.getBool(_questIsGameOverKey) ?? false,
-              isQuestComplete: prefs.getBool(_questIsCompleteKey) ?? false,
-              noiseBoard: _noiseBoardFromString(
-                prefs.getString(_questNoiseBoardKey) ?? '',
-              ),
-            );
-          }
-        } on Exception catch (_) {
-          // データ破損時はキャッシュなし
-        }
-      }
-
-      // クイズセーブを読み込む
-      final quizBoardStr = prefs.getString(_quizBoardKey);
-      if (quizBoardStr != null) {
-        try {
-          final board = _boardFromString(quizBoardStr);
-          if (board.length == Board.size &&
-              board.every((r) => r.length == Board.size)) {
-            _quizModeCache = (
-              board: board,
-              pieces: _piecesFromString(
-                prefs.getString(_quizPiecesKey) ?? '',
-              ),
-              score: prefs.getInt(_quizScoreKey) ?? 0,
-              combo: prefs.getInt(_quizComboKey) ?? 0,
-              nonClearTurns: prefs.getInt(_quizNonClearTurnsKey) ?? 0,
-              quizMultiplier: prefs.getInt(_quizMultiplierKey) ?? 1,
-              isGameOver: prefs.getBool(_quizIsGameOverKey) ?? false,
-              isQuizPhase: prefs.getBool(_quizIsQuizPhaseKey) ?? false,
-            );
-          }
-        } on Exception catch (_) {
-          // データ破損時はキャッシュなし
-        }
-      }
-
-      // 再開可能フラグを更新
-      final classicCache = _classicCache;
-      final questCache = _questCache;
-      final hasSavedClassic = classicCache != null && !classicCache.isGameOver;
-      final hasSavedQuest = questCache != null &&
-          !questCache.isGameOver &&
-          !questCache.isQuestComplete;
-
-      // クエスト最大解放レベルを読み込む
-      final savedMaxLevel = prefs.getInt(_questMaxLevelKey) ?? 1;
-      state = state.copyWith(
-        hasSavedClassicGame: hasSavedClassic,
-        hasSavedQuestGame: hasSavedQuest,
-        maxUnlockedLevel: savedMaxLevel > state.maxUnlockedLevel
-            ? savedMaxLevel
-            : state.maxUnlockedLevel,
-      );
-    });
+  void _saveTimeAttackHighScore(int score) {
+    SharedPreferences.getInstance()
+        .then((prefs) => prefs.setInt(_timeAttackHighScoreKey, score));
   }
 
   /// 旧フォーマット（単一スロット）のセーブデータを新フォーマットへ移行する。
@@ -1512,7 +1144,6 @@ class BlockPuzzleViewModel extends _$BlockPuzzleViewModel {
         ..setBool(_classicCanContinueKey, true);
     }
 
-    // 旧キーを削除
     prefs
       ..remove(oldBoardKey)
       ..remove(oldPiecesKey)
@@ -1525,7 +1156,7 @@ class BlockPuzzleViewModel extends _$BlockPuzzleViewModel {
       ..remove(oldIsQuestCompleteKey);
   }
 
-  // ── シリアライズヘルパー ──────────────────────────────────
+  // ── シリアライズヘルパー ──────────────────────────────────────
 
   static String _boardToString(List<List<bool>> board) =>
       board.map((row) => row.map((c) => c ? '1' : '0').join()).join(',');
@@ -1542,7 +1173,8 @@ class BlockPuzzleViewModel extends _$BlockPuzzleViewModel {
       )
       .join(',');
 
-  static List<Piece?> _piecesFromString(String s) => s.split(',').map((idx) {
+  static List<Piece?> _piecesFromString(String s) =>
+      s.split(',').map((idx) {
         final i = int.tryParse(idx) ?? -1;
         if (i < 0 || i >= PieceDefinitions.allPieces.length) {
           return null;

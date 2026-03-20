@@ -1,6 +1,6 @@
 # 開発ドキュメント — Block.
 
-> 最終更新: 2026-03-20
+> 最終更新: 2026-03-20（リファクタリング Phase A+B2）
 
 ---
 
@@ -94,7 +94,11 @@ class MyScreen extends ConsumerWidget {
 ### 1. BlockPuzzleViewModel（ゲームコア）
 
 **Provider**: `blockPuzzleViewModelProvider`
-**ファイル**: `lib/features/block_puzzle/view_model/block_puzzle_view_model.dart`
+**ファイル**: `lib/features/block_puzzle/view_model/block_puzzle_view_model.dart` (1192行)
+
+**関連ユーティリティ（モデル層）**:
+- `lib/features/block_puzzle/model/piece_generator.dart` — `generatePieces()`, `canClearLine()`
+- `lib/features/block_puzzle/model/quest_board_generator.dart` — `generateQuestBoardAndNoise()`
 
 #### BlockPuzzleState
 
@@ -381,15 +385,16 @@ lib/
 │   ├── admob/
 │   │   ├── admob_banner.dart       # バナー広告
 │   │   ├── admob_interstitial.dart # インタースティシャル
-│   │   ├── admob_native.dart       # ネイティブ広告
 │   │   └── admob_reward.dart       # リワード広告
 │   │
 │   ├── block_puzzle/
 │   │   ├── model/
-│   │   │   ├── board.dart          # 8×8ボードロジック
-│   │   │   ├── game_theme.dart     # テーマ定義（enum + 色 + 効果音）
-│   │   │   ├── game_themes.dart    # 全テーマリスト
-│   │   │   └── piece.dart          # ピース定義
+│   │   │   ├── board.dart                  # 8×8ボードロジック
+│   │   │   ├── game_theme.dart             # テーマ定義（enum + 色 + 効果音）
+│   │   │   ├── game_themes.dart            # 全テーマリスト
+│   │   │   ├── piece.dart                  # ピース定義
+│   │   │   ├── piece_generator.dart        # ピース生成ロジック
+│   │   │   └── quest_board_generator.dart  # クエスト盤面生成ロジック
 │   │   ├── view_model/
 │   │   │   ├── block_puzzle_view_model.dart  # メインVM
 │   │   │   ├── quest_progress_view_model.dart

@@ -153,6 +153,14 @@ abstract class QuizViewState with _$QuizViewState {
 const _quizDirectionKey = 'quiz_direction_mode';
 const _wordRangeFilterKey = 'word_range_filter';
 
+// SRS重みの閾値・係数
+const _hardThreshold = 2.0;
+const _perfectThreshold = 0.5;
+const _correctWeightMultiplier = 0.7;
+const _incorrectWeightMultiplier = 1.5;
+const _minWeight = 0.1;
+const _maxWeight = 5.0;
+
 /// クイズ機能の ViewModel。
 ///
 /// CSV ロード・重み付きランダム選出・正誤判定・学習データ更新を担当する。
@@ -168,7 +176,6 @@ class QuizViewModel extends _$QuizViewModel {
   @override
   QuizViewState build() {
     _repo = LocalWordRecordRepository(AppDatabase());
-    // 非同期で初期化
     Future<void>.microtask(_initialize);
     return const QuizViewState();
   }
@@ -301,9 +308,9 @@ class QuizViewModel extends _$QuizViewModel {
         final weight = weightMap[w.id];
         if (weight == null) {
           newW++;
-        } else if (weight >= 2.0) {
+        } else if (weight >= _hardThreshold) {
           hard++;
-        } else if (weight < 0.5) {
+        } else if (weight < _perfectThreshold) {
           perfect++;
         } else {
           good++;
@@ -341,11 +348,11 @@ class QuizViewModel extends _$QuizViewModel {
         WordRangeFilter.all => words,
         WordRangeFilter.weakAndNew => words.where((w) {
             final weight = weightMap[w.id];
-            return weight == null || weight >= 2.0;
+            return weight == null || weight >= _hardThreshold;
           }).toList(),
         WordRangeFilter.weakOnly => words.where((w) {
             final weight = weightMap[w.id];
-            return weight != null && weight >= 2.0;
+            return weight != null && weight >= _hardThreshold;
           }).toList(),
         WordRangeFilter.eiken5 =>
           words.where((w) => w.level == 'eiken5').toList(),
@@ -365,14 +372,12 @@ class QuizViewModel extends _$QuizViewModel {
     final records = await _repo.getAll();
     final weightMap = {for (final r in records) r.id: r.weight};
 
-    // フィルター適用
     final filtered =
         _applyRangeFilter(_allWords, state.wordRangeFilter, weightMap);
     if (filtered.isEmpty) {
       return [];
     }
 
-    // 各単語の重みを取得（DBに未登録なら初期値 1.0）
     // セッション内で不正解だった単語は weight を2倍に一時増幅して優先出題
     final weights = filtered.map((w) {
       final base = weightMap[w.id] ?? 1.0;
@@ -427,7 +432,6 @@ class QuizViewModel extends _$QuizViewModel {
         .map((w) => isEnToJa ? w.ja : w.en)
         .toList();
 
-    // 4方向をシャッフルして割り当て
     final directions = List<SwipeDirection>.from(SwipeDirection.values)
       ..shuffle(_rng);
     final correctDir = directions[0];
@@ -450,14 +454,13 @@ class QuizViewModel extends _$QuizViewModel {
 
   /// 正誤に応じて単語の重みを更新する。
   Future<void> _updateWeight(int wordId, {required bool isCorrect}) async {
-    const minWeight = 0.1;
-    const maxWeight = 5.0;
-
     final record = await _repo.getById(wordId);
     final currentWeight = record?.weight ?? 1.0;
     final newWeight = isCorrect
-        ? (currentWeight * 0.7).clamp(minWeight, maxWeight)
-        : (currentWeight * 1.5).clamp(minWeight, maxWeight);
+        ? (currentWeight * _correctWeightMultiplier)
+            .clamp(_minWeight, _maxWeight)
+        : (currentWeight * _incorrectWeightMultiplier)
+            .clamp(_minWeight, _maxWeight);
 
     await _repo.upsert(
       WordRecordsCompanion(

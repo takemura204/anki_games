@@ -1,6 +1,6 @@
 # タスクドキュメント — Block.
 
-> 最終更新: 2026-03-20（リファクタリング実施）
+> 最終更新: 2026-03-20（リファクタリング Phase A+B2）
 
 ---
 
@@ -74,6 +74,16 @@
 
 ## 今後の候補タスク
 
+### Phase 5: クイズモード ピース選択リデザイン ✅
+
+- [x] **新ピース追加**: `uShape` / `bigLShape0` / `bigLShape90` / `wShape`（5セル Hard ピース4種）
+- [x] **クイズ専用プール定義**: `quizEasyPool`（9種）/ `quizMediumPool`（15種）/ `quizHardPool`（10種）
+- [x] **バッグ方式導入**: 各ティアで全ピースを1巡してからリフィル。連続出現を抑制
+- [x] **ストリーク連動難易度**: 正解streak 0-2→Easy / 3-5→Medium / 6+→Hard。不正解でstreak=0にリセット
+- [x] **充填率ガード維持**: fillRate ≥75% → 強制Easy / 不正解+65%以上 → Medium キャップ
+
+---
+
 ### 高優先度
 
 - [ ] **AdMob クイズモード制御**: クイズモード中のインタースティシャル表示を抑制（現状はゲームオーバー時に常に表示されてしまう）
@@ -109,6 +119,14 @@
   - `home_view_model.dart` + 生成ファイル2本（未使用ViewModel）
 - [x] doc コメントの `[ClassName]` 参照エラー修正（2箇所）
 - [x] `Switch.adaptive` の非推奨 `activeColor` → `activeThumbColor` へ修正
+- [x] **Phase A リファクタリング**
+  - A1: 全 ViewModel から自明なインラインコメントを削除
+  - A2: `quiz_view_model.dart` — SRS重み係数・閾値を top-level 定数に抽出（`_hardThreshold`, `_perfectThreshold`, `_correctWeightMultiplier` 等）
+  - A3: `block_puzzle_view_model.dart` — `_loadHighScore()` / `_loadTimeAttackHighScore()` / `_loadSavedGames()` を `_loadPersistedData()` に統合（SharedPreferences 呼び出しを1回に削減）
+- [x] **Phase B2 リファクタリング**
+  - `piece_generator.dart` 新規作成 — `generatePieces()`, `canClearLine()` を ViewModel から抽出
+  - `quest_board_generator.dart` 新規作成 — `generateQuestBoardAndNoise()`, `_computeNoiseHPs()`, `_noiseIconShapes` を ViewModel から抽出
+  - BlockPuzzleViewModel: 1582行 → 1192行（−390行）
 
 ---
 
