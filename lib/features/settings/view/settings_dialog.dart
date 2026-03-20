@@ -147,13 +147,19 @@ class _SettingsSheet extends ConsumerWidget {
               icon: Icons.refresh_rounded,
               label: t.settings.restart,
               onTap: () {
-                Navigator.of(context).pop();
                 final vm = ref.read(blockPuzzleViewModelProvider);
                 final vmNotifier =
                     ref.read(blockPuzzleViewModelProvider.notifier);
-                if (vm.isQuestMode) {
+                if (vm.isQuizMode) {
+                  // シートを閉じてゲーム画面も閉じ → 学習範囲選択画面へ
+                  Navigator.of(context)
+                    ..pop()
+                    ..pop();
+                } else if (vm.isQuestMode) {
+                  Navigator.of(context).pop();
                   vmNotifier.retryQuestLevel();
                 } else {
+                  Navigator.of(context).pop();
                   vmNotifier.resetGame();
                 }
               },

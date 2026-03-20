@@ -312,7 +312,9 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
                             } else if (gameState.isQuestMode) {
                               notifier.retryQuestLevel();
                             } else if (gameState.isQuizMode) {
-                              notifier.startQuizMode();
+                              // 学習範囲選択画面に戻る
+                              Navigator.of(context).pop();
+                              return;
                             } else {
                               notifier.resetGame();
                             }
@@ -354,7 +356,13 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
                               if (vibration) {
                                 HapticFeedback.lightImpact();
                               }
-                              Navigator.of(context).pop();
+                              // クイズモードは中間画面があるので最初のルートまで戻る
+                              if (gameState.isQuizMode) {
+                                Navigator.of(context)
+                                    .popUntil((route) => route.isFirst);
+                              } else {
+                                Navigator.of(context).pop();
+                              }
                             },
                             style: TextButton.styleFrom(
                               foregroundColor:
