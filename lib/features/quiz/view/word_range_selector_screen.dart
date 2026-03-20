@@ -195,6 +195,9 @@ class _WordRangeSelectorScreenState
                       onPressed: canStart
                           ? () {
                               ref
+                                  .read(quizViewModelProvider.notifier)
+                                  .resetSession();
+                              ref
                                   .read(blockPuzzleViewModelProvider.notifier)
                                   .startQuizMode();
                               Navigator.of(context).push(

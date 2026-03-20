@@ -162,6 +162,9 @@ class QuizViewModel extends _$QuizViewModel {
   late final WordRecordRepository _repo;
   List<QuizWord> _allWords = [];
 
+  /// セッション内で不正解だった単語 ID（次ラウンドで weight を一時増幅するため保持）。
+  final _sessionMissedIds = <int>{};
+
   @override
   QuizViewState build() {
     _repo = LocalWordRecordRepository(AppDatabase());
@@ -243,6 +246,9 @@ class QuizViewModel extends _$QuizViewModel {
       isComplete: newCount >= 3,
     );
 
+    if (!isCorrect) {
+      _sessionMissedIds.add(question.word.id);
+    }
     await _updateWeight(question.word.id, isCorrect: isCorrect);
   }
 
@@ -322,6 +328,9 @@ class QuizViewModel extends _$QuizViewModel {
   /// 習熟度内訳を再読み込みして公開する（学習範囲選択画面から呼ぶ）。
   Future<void> loadMasteryStats() => _loadMasteryBreakdowns();
 
+  /// セッション内の不正解履歴をリセットする（新しいクイズゲーム開始時に呼ぶ）。
+  void resetSession() => _sessionMissedIds.clear();
+
   /// [filter] に基づいて単語リストを絞り込む。
   List<QuizWord> _applyRangeFilter(
     List<QuizWord> words,
@@ -364,9 +373,11 @@ class QuizViewModel extends _$QuizViewModel {
     }
 
     // 各単語の重みを取得（DBに未登録なら初期値 1.0）
-    final weights = filtered
-        .map((w) => weightMap[w.id] ?? 1.0)
-        .toList();
+    // セッション内で不正解だった単語は weight を2倍に一時増幅して優先出題
+    final weights = filtered.map((w) {
+      final base = weightMap[w.id] ?? 1.0;
+      return _sessionMissedIds.contains(w.id) ? base * 2 : base;
+    }).toList();
 
     final picked = <QuizWord>[];
     final available = List<QuizWord>.from(filtered);
