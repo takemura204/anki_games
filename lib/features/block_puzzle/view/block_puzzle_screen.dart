@@ -304,20 +304,23 @@ class _QuizLayoutState extends ConsumerState<_QuizLayout> {
 
     _isShowingFeedback = true;
     final quizStateBeforeAnswer = ref.read(quizViewModelProvider);
-    final word = previousIndex < quizStateBeforeAnswer.questions.length
-        ? quizStateBeforeAnswer.questions[previousIndex].displayText
+    final question = previousIndex < quizStateBeforeAnswer.questions.length
+        ? quizStateBeforeAnswer.questions[previousIndex]
         : null;
+    final displayWord = question?.displayText;
     ref.read(quizViewModelProvider.notifier).answer(previousIndex, swipeDir);
 
     final quizState = ref.read(quizViewModelProvider);
     final isCorrect =
         quizState.answers.isNotEmpty && quizState.answers.last.isCorrect;
-    ref
-        .read(blockPuzzleViewModelProvider.notifier)
-        .addQuizPiece(previousIndex, isCorrect: isCorrect);
+    ref.read(blockPuzzleViewModelProvider.notifier).addQuizPiece(
+          previousIndex,
+          isCorrect: isCorrect,
+          word: question?.word,
+        );
     setState(() {
       _slotCorrectness[previousIndex] = isCorrect;
-      _slotWords[previousIndex] = word;
+      _slotWords[previousIndex] = displayWord;
     });
 
     Future<void>.delayed(const Duration(milliseconds: 300), () {

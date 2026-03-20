@@ -25,6 +25,7 @@ class CsvWordDatasource {
       en: parts[1].trim(),
       ja: parts[2].trim(),
       category: parts[3].trim(),
+      level: parts.length >= 5 ? parts[4].trim() : 'general',
     );
   }
 }

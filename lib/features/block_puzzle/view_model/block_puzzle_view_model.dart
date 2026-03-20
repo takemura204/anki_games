@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:mono_games/features/block_puzzle/model/board.dart';
 import 'package:mono_games/features/block_puzzle/model/piece.dart';
+import 'package:mono_games/features/quiz/model/quiz_word.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -207,6 +208,12 @@ abstract class BlockPuzzleState with _$BlockPuzzleState {
 
     /// クイズ連続全問正解による得点倍率（デフォルト1、全問正解のたびに+1）。
     @Default(1) int quizMultiplier,
+
+    /// クイズセッション中に正解した単語リスト（ゲームオーバー時の表示用）。
+    @Default([]) List<QuizWord> sessionCorrectWords,
+
+    /// クイズセッション中に不正解だった単語リスト（ゲームオーバー時の表示用）。
+    @Default([]) List<QuizWord> sessionIncorrectWords,
   }) = _BlockPuzzleState;
 }
 
@@ -1016,6 +1023,8 @@ class BlockPuzzleViewModel extends _$BlockPuzzleViewModel {
       hasSavedQuestGame: state.hasSavedQuestGame,
       maxUnlockedLevel: state.maxUnlockedLevel,
       timeAttackHighScore: state.timeAttackHighScore,
+      sessionCorrectWords: [],
+      sessionIncorrectWords: [],
     );
   }
 
@@ -1041,7 +1050,11 @@ class BlockPuzzleViewModel extends _$BlockPuzzleViewModel {
   /// - 充填率 >= 75%: 常に小ピース（サバイバル優先）
   /// - 充填率 >= 65% かつ不正解: 中ピース（緩和ペナルティ）
   /// - それ以外: 正解=小ピース / 不正解=大ピース
-  void addQuizPiece(int slot, {required bool isCorrect}) {
+  void addQuizPiece(
+    int slot, {
+    required bool isCorrect,
+    QuizWord? word,
+  }) {
     final board = Board.from(state.board);
     final fillRate = _boardFillRate(board);
     final Piece piece;
@@ -1054,7 +1067,20 @@ class BlockPuzzleViewModel extends _$BlockPuzzleViewModel {
     }
     final newPieces = List<Piece?>.from(state.pieces);
     newPieces[slot] = piece;
-    state = state.copyWith(pieces: newPieces);
+
+    // セッション統計を更新
+    final newCorrect = word != null && isCorrect
+        ? [...state.sessionCorrectWords, word]
+        : state.sessionCorrectWords;
+    final newIncorrect = word != null && !isCorrect
+        ? [...state.sessionIncorrectWords, word]
+        : state.sessionIncorrectWords;
+
+    state = state.copyWith(
+      pieces: newPieces,
+      sessionCorrectWords: newCorrect,
+      sessionIncorrectWords: newIncorrect,
+    );
     _saveGame();
   }
 

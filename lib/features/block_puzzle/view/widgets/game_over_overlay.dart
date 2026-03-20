@@ -5,6 +5,7 @@ import 'package:mono_games/features/admob/admob_interstitial.dart';
 import 'package:mono_games/features/admob/admob_reward.dart';
 import 'package:mono_games/features/block_puzzle/model/game_theme.dart';
 import 'package:mono_games/features/block_puzzle/view_model/block_puzzle_view_model.dart';
+import 'package:mono_games/features/quiz/model/quiz_word.dart';
 import 'package:mono_games/features/settings/view_model/settings_view_model.dart';
 import 'package:mono_games/until/service/audio_service.dart';
 
@@ -184,6 +185,15 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
                           color: colors.onSurface.withValues(alpha: 0.4),
                         ),
                       ),
+                      // クイズモード: セッション統計
+                      if (gameState.isQuizMode) ...[
+                        const SizedBox(height: 20),
+                        _QuizSessionStats(
+                          correctWords: gameState.sessionCorrectWords,
+                          incorrectWords: gameState.sessionIncorrectWords,
+                          colors: colors,
+                        ),
+                      ],
                       if (!gameState.isQuestMode && !gameState.isQuizMode) ...[
                         const SizedBox(height: 16),
                         // クラシック / タイムアタックのベストスコア表示
@@ -369,6 +379,127 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
           ),
         );
       },
+    );
+  }
+}
+
+// ────────────────────────────────────────────────────────────────
+// クイズモード: セッション統計ウィジェット
+// ────────────────────────────────────────────────────────────────
+
+class _QuizSessionStats extends StatelessWidget {
+  const _QuizSessionStats({
+    required this.correctWords,
+    required this.incorrectWords,
+    required this.colors,
+  });
+
+  final List<QuizWord> correctWords;
+  final List<QuizWord> incorrectWords;
+  final GameThemeColors colors;
+
+  @override
+  Widget build(BuildContext context) {
+    final total = correctWords.length + incorrectWords.length;
+    final correctCount = correctWords.length;
+
+    // 苦手単語: id重複排除 + 最大5件
+    final seen = <int>{};
+    final uniqueIncorrect = incorrectWords
+        .where((w) => seen.add(w.id))
+        .take(5)
+        .toList();
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // 正解率バー
+        Row(
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    total > 0
+                        ? '$correctCount / $total 正解'
+                        : '0 問回答',
+                    style: TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: 13,
+                      fontWeight: FontWeight.w600,
+                      color: colors.onSurface.withValues(alpha: 0.7),
+                    ),
+                  ),
+                  const SizedBox(height: 6),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(3),
+                    child: LinearProgressIndicator(
+                      value: total > 0 ? correctCount / total : 0,
+                      minHeight: 6,
+                      backgroundColor:
+                          colors.onSurface.withValues(alpha: 0.1),
+                      valueColor: AlwaysStoppedAnimation<Color>(
+                        Colors.green.shade400,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+        // 苦手単語リスト
+        if (uniqueIncorrect.isNotEmpty) ...[
+          const SizedBox(height: 14),
+          Text(
+            '苦手だった単語',
+            style: TextStyle(
+              fontFamily: 'Poppins',
+              fontSize: 11,
+              fontWeight: FontWeight.w600,
+              letterSpacing: 1,
+              color: colors.onSurface.withValues(alpha: 0.4),
+            ),
+          ),
+          const SizedBox(height: 6),
+          for (final word in uniqueIncorrect)
+            Padding(
+              padding: const EdgeInsets.only(bottom: 4),
+              child: Row(
+                children: [
+                  Container(
+                    width: 4,
+                    height: 4,
+                    decoration: BoxDecoration(
+                      color: Colors.red.shade400,
+                      shape: BoxShape.circle,
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Text(
+                    word.en,
+                    style: TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: 13,
+                      fontWeight: FontWeight.w600,
+                      color: colors.onSurface,
+                    ),
+                  ),
+                  const SizedBox(width: 6),
+                  Text(
+                    word.ja,
+                    style: TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: 12,
+                      color: colors.onSurface.withValues(alpha: 0.5),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+        ],
+      ],
     );
   }
 }

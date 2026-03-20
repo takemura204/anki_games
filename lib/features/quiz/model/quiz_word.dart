@@ -18,5 +18,8 @@ abstract class QuizWord with _$QuizWord {
 
     /// カテゴリ（fruit, verb, adjective, noun, animal, color, body, food）。
     required String category,
+
+    /// 資格レベル（eiken5, eiken4, eiken3, toeic_basic, general）。
+    @Default('general') String level,
   }) = _QuizWord;
 }

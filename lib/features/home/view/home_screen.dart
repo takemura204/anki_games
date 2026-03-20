@@ -6,6 +6,7 @@ import 'package:mono_games/features/block_puzzle/view/block_puzzle_screen.dart';
 import 'package:mono_games/features/block_puzzle/view/widgets/theme_block_preview.dart';
 import 'package:mono_games/features/block_puzzle/view_model/block_puzzle_view_model.dart';
 import 'package:mono_games/features/block_puzzle/view_model/theme_view_model.dart';
+import 'package:mono_games/features/quiz/view/word_range_selector_screen.dart';
 import 'package:mono_games/features/settings/view/settings_dialog.dart';
 import 'package:mono_games/i18n/translations.g.dart';
 
@@ -160,16 +161,11 @@ class HomeScreen extends ConsumerWidget {
                     description: t.quiz.modeDesc,
                     badge: 'QUIZ × PUZZLE',
                     colors: colors,
-                    onTap: () {
-                      ref
-                          .read(blockPuzzleViewModelProvider.notifier)
-                          .startQuizMode();
-                      Navigator.of(context).push(
-                        MaterialPageRoute<void>(
-                          builder: (_) => const BlockPuzzleScreen(),
-                        ),
-                      );
-                    },
+                    onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute<void>(
+                        builder: (_) => const WordRangeSelectorScreen(),
+                      ),
+                    ),
                   ),
                 ],
               ),

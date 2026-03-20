@@ -41,6 +41,49 @@ enum QuizDirectionMode {
   random,
 }
 
+/// 学習範囲フィルター。
+enum WordRangeFilter {
+  /// すべての単語。
+  all,
+
+  /// 苦手（weight≥2.0）＋未学習（DB未登録）。
+  weakAndNew,
+
+  /// 苦手のみ（weight≥2.0）。
+  weakOnly,
+
+  /// 英検5級レベル。
+  eiken5,
+
+  /// 英検4級レベル。
+  eiken4,
+
+  /// 英検3級レベル。
+  eiken3,
+
+  /// TOEIC基礎レベル。
+  toiecBasic,
+}
+
+/// 習熟度4段階の内訳カウント。
+@freezed
+abstract class MasteryBreakdown with _$MasteryBreakdown {
+  /// [MasteryBreakdown] を作成する。
+  const factory MasteryBreakdown({
+    /// 未学習（DB未登録）の単語数。
+    @Default(0) int newWords,
+
+    /// 苦手（weight≥2.0）の単語数。
+    @Default(0) int hard,
+
+    /// 得意（0.5≤weight<2.0）の単語数。
+    @Default(0) int good,
+
+    /// 完璧（weight<0.5かつDB登録済み）の単語数。
+    @Default(0) int perfect,
+  }) = _MasteryBreakdown;
+}
+
 /// 1方向に表示される選択肢チップのデータ。
 @freezed
 abstract class QuizChoice with _$QuizChoice {
@@ -98,10 +141,17 @@ abstract class QuizViewState with _$QuizViewState {
 
     /// 出題方向モード。
     @Default(QuizDirectionMode.enToJa) QuizDirectionMode directionMode,
+
+    /// 学習範囲フィルター。
+    @Default(WordRangeFilter.all) WordRangeFilter wordRangeFilter,
+
+    /// フィルター別の習熟度内訳。キーは WordRangeFilter.name。
+    @Default({}) Map<String, MasteryBreakdown> masteryBreakdowns,
   }) = _QuizViewState;
 }
 
 const _quizDirectionKey = 'quiz_direction_mode';
+const _wordRangeFilterKey = 'word_range_filter';
 
 /// クイズ機能の ViewModel。
 ///
@@ -129,8 +179,17 @@ class QuizViewModel extends _$QuizViewModel {
       (m) => m.name == savedDirection,
       orElse: () => QuizDirectionMode.enToJa,
     );
-    state = state.copyWith(directionMode: directionMode);
+    final savedFilter = prefs.getString(_wordRangeFilterKey);
+    final wordRangeFilter = WordRangeFilter.values.firstWhere(
+      (f) => f.name == savedFilter,
+      orElse: () => WordRangeFilter.all,
+    );
+    state = state.copyWith(
+      directionMode: directionMode,
+      wordRangeFilter: wordRangeFilter,
+    );
     _allWords = await CsvWordDatasource().load();
+    await _loadMasteryBreakdowns();
     await _startNewRound();
     state = state.copyWith(isLoading: false);
   }
@@ -194,6 +253,13 @@ class QuizViewModel extends _$QuizViewModel {
 
   // ── 設定 ────────────────────────────────────────────────────
 
+  /// 学習範囲フィルターを変更して保存する。
+  Future<void> setWordRangeFilter(WordRangeFilter filter) async {
+    state = state.copyWith(wordRangeFilter: filter);
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(_wordRangeFilterKey, filter.name);
+  }
+
   /// 出題方向モードを変更して保存する。
   Future<void> setDirectionMode(QuizDirectionMode mode) async {
     state = state.copyWith(directionMode: mode);
@@ -215,6 +281,73 @@ class QuizViewModel extends _$QuizViewModel {
 
   // ── 内部ロジック ─────────────────────────────────────────────
 
+  /// 全フィルターの習熟度内訳を計算して state を更新する。
+  Future<void> _loadMasteryBreakdowns() async {
+    final records = await _repo.getAll();
+    final weightMap = {for (final r in records) r.id: r.weight};
+
+    MasteryBreakdown calcBreakdown(List<QuizWord> words) {
+      var newW = 0;
+      var hard = 0;
+      var good = 0;
+      var perfect = 0;
+      for (final w in words) {
+        final weight = weightMap[w.id];
+        if (weight == null) {
+          newW++;
+        } else if (weight >= 2.0) {
+          hard++;
+        } else if (weight < 0.5) {
+          perfect++;
+        } else {
+          good++;
+        }
+      }
+      return MasteryBreakdown(
+        newWords: newW,
+        hard: hard,
+        good: good,
+        perfect: perfect,
+      );
+    }
+
+    final breakdowns = <String, MasteryBreakdown>{};
+    for (final filter in WordRangeFilter.values) {
+      final filtered = _applyRangeFilter(_allWords, filter, weightMap);
+      breakdowns[filter.name] = calcBreakdown(filtered);
+    }
+    state = state.copyWith(masteryBreakdowns: breakdowns);
+  }
+
+  /// 習熟度内訳を再読み込みして公開する（学習範囲選択画面から呼ぶ）。
+  Future<void> loadMasteryStats() => _loadMasteryBreakdowns();
+
+  /// [filter] に基づいて単語リストを絞り込む。
+  List<QuizWord> _applyRangeFilter(
+    List<QuizWord> words,
+    WordRangeFilter filter,
+    Map<int, double> weightMap,
+  ) =>
+      switch (filter) {
+        WordRangeFilter.all => words,
+        WordRangeFilter.weakAndNew => words.where((w) {
+            final weight = weightMap[w.id];
+            return weight == null || weight >= 2.0;
+          }).toList(),
+        WordRangeFilter.weakOnly => words.where((w) {
+            final weight = weightMap[w.id];
+            return weight != null && weight >= 2.0;
+          }).toList(),
+        WordRangeFilter.eiken5 =>
+          words.where((w) => w.level == 'eiken5').toList(),
+        WordRangeFilter.eiken4 =>
+          words.where((w) => w.level == 'eiken4').toList(),
+        WordRangeFilter.eiken3 =>
+          words.where((w) => w.level == 'eiken3').toList(),
+        WordRangeFilter.toiecBasic =>
+          words.where((w) => w.level == 'toeic_basic').toList(),
+      };
+
   /// 重み付きランダムで [count] 件の単語を選出する。
   Future<List<QuizWord>> _pickWeightedWords(int count) async {
     if (_allWords.isEmpty) {
@@ -223,13 +356,20 @@ class QuizViewModel extends _$QuizViewModel {
     final records = await _repo.getAll();
     final weightMap = {for (final r in records) r.id: r.weight};
 
+    // フィルター適用
+    final filtered =
+        _applyRangeFilter(_allWords, state.wordRangeFilter, weightMap);
+    if (filtered.isEmpty) {
+      return [];
+    }
+
     // 各単語の重みを取得（DBに未登録なら初期値 1.0）
-    final weights = _allWords
+    final weights = filtered
         .map((w) => weightMap[w.id] ?? 1.0)
         .toList();
 
     final picked = <QuizWord>[];
-    final available = List<QuizWord>.from(_allWords);
+    final available = List<QuizWord>.from(filtered);
     final availableWeights = List<double>.from(weights);
 
     final pickCount = min(count, available.length);
