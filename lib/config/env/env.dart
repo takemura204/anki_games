@@ -62,4 +62,13 @@ abstract class Env {
   @EnviedField(varName: 'INTERSTITIAL_AD_UNIT_ID_IOS_RELEASE')
   static const String interstitialAdUnitIdIosRelease =
       _Env.interstitialAdUnitIdIosRelease;
+
+  @EnviedField(varName: 'REVENUECAT_API_KEY_IOS')
+  static const String revenueCatApiKeyIos = _Env.revenueCatApiKeyIos;
+
+  @EnviedField(varName: 'REVENUECAT_API_KEY_ANDROID')
+  static const String revenueCatApiKeyAndroid = _Env.revenueCatApiKeyAndroid;
+
+  @EnviedField(varName: 'PREMIUM_1M')
+  static const String premium1m = _Env.premium1m;
 }

@@ -89,10 +89,6 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
   late final DateTime _clockStart;
   Map<CellRenderMode, FragmentShader>? _cellShaders;
 
-  // ノイズセルダメージフラッシュアニメーション
-  late final AnimationController _noiseFlashController;
-  late final Animation<double> _noiseFlashAnimation;
-
   // ライト/ダークモード（colorsFor の引数に使用）
   Brightness _brightness = Brightness.light;
 
@@ -207,13 +203,6 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
     )..repeat();
     _clockStart = DateTime.now();
 
-    _noiseFlashController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 300),
-    );
-    _noiseFlashAnimation = Tween<double>(begin: 1, end: 0).animate(
-      CurvedAnimation(parent: _noiseFlashController, curve: Curves.easeOut),
-    );
   }
 
   /// バウンスシーケンス値リストからTweenSequenceを構築する。
@@ -243,7 +232,6 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
     _flashController.dispose();
     _rippleController.dispose();
     _clockController.dispose();
-    _noiseFlashController.dispose();
     super.dispose();
   }
 
@@ -266,16 +254,6 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
         (prev, next) {
           if (next != null && next != prev) {
             _triggerClearAnimation(next);
-          }
-        },
-      )
-      ..listen(
-        blockPuzzleViewModelProvider.select((s) => s.damagedNoiseCells),
-        (prev, next) {
-          if (next.isNotEmpty) {
-            _noiseFlashController
-              ..reset()
-              ..forward();
           }
         },
       )
@@ -370,7 +348,6 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
                   _bounceAnimation,
                   _clockController,
                   _pulseController,
-                  _noiseFlashController,
                 ]),
                 builder: (context, _) {
                   final shaderTime = DateTime.now()
@@ -386,9 +363,6 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
                       board: gameState.board,
                       clearingCells: gameState.clearingCells,
                       lastPlacedCells: gameState.lastPlacedCells,
-                      noiseBoard: gameState.noiseBoard,
-                      damagedNoiseCells: gameState.damagedNoiseCells,
-                      damageFlash: _noiseFlashAnimation.value,
                       hoverRow: _hoverRow,
                       hoverCol: _hoverCol,
                       hoverPiece: _hoverPieceIndex != null
@@ -1455,7 +1429,7 @@ class _FloatingScoreWidgetState extends State<_FloatingScoreWidget>
                       ],
                     ),
                   ),
-                  if (fs.combo > 1)
+                  if (fs.combo >= 1)
                     Text(
                       'COMBO x${fs.combo}',
                       style: TextStyle(
@@ -1483,9 +1457,6 @@ class _BoardPainter extends CustomPainter {
     required this.board,
     required this.clearingCells,
     required this.lastPlacedCells,
-    required this.noiseBoard,
-    required this.damagedNoiseCells,
-    required this.damageFlash,
     required this.cellSize,
     required this.theme,
     required this.brightness,
@@ -1508,15 +1479,6 @@ class _BoardPainter extends CustomPainter {
   final List<List<bool>> board;
   final Set<(int, int)> clearingCells;
   final Set<(int, int)> lastPlacedCells;
-
-  /// ノイズブロックHP盤面（0=通常, 1-3=HP）。クエストモード専用。
-  final List<List<int>> noiseBoard;
-
-  /// ダメージを受けたノイズセル（フラッシュアニメーション用）。
-  final Set<(int, int)> damagedNoiseCells;
-
-  /// ノイズセルダメージフラッシュ強度（0〜1）。
-  final double damageFlash;
   final double cellSize;
   final GameTheme theme;
   final Brightness brightness;
@@ -1708,26 +1670,8 @@ class _BoardPainter extends CustomPainter {
             cellSize - gap * 2,
             cellSize - gap * 2,
           );
-          // ノイズブロックはテーマカラーベース + 錠前オーバーレイで描画
-          final noiseHp = noiseBoard.isNotEmpty ? noiseBoard[r][c] : 0;
-          if (noiseHp > 0) {
-            final flash =
-                damagedNoiseCells.contains((r, c)) ? damageFlash : 0.0;
-            drawNoiseCell(
-              canvas,
-              rect,
-              noiseHp,
-              3,
-              style,
-              colors,
-              damageFlash: flash,
-              shader: shader,
-              shaderTime: cellShaderTime,
-            );
-          } else {
-            drawCell(canvas, rect, style, colors,
-                shader: shader, time: cellShaderTime);
-          }
+          drawCell(canvas, rect, style, colors,
+              shader: shader, time: cellShaderTime);
           if (clearPreviewCells.contains((r, c))) {
             final rrect = RRect.fromRectAndRadius(
               rect,

@@ -16,10 +16,16 @@ abstract class QuizWord with _$QuizWord {
     /// 日本語訳。
     required String ja,
 
-    /// カテゴリ（fruit, verb, adjective, noun, animal, color, body, food）。
-    required String category,
+    /// 品詞（noun / verb / adjective / adverb / preposition / conjunction / phrase）。
+    required String pos,
 
-    /// 資格レベル（eiken5, eiken4, eiken3, toeic_basic, general）。
+    /// テーマ（nature / daily / people / place / action / mind / general）。
+    required String theme,
+
+    /// 資格レベル（eiken5, eiken4, eiken3, eiken_pre2, eiken2, toeic_basic, general）。
     @Default('general') String level,
+
+    /// 頻出単語フラグ（頻出50選に含まれる場合 true）。
+    @Default(false) bool isFrequent,
   }) = _QuizWord;
 }

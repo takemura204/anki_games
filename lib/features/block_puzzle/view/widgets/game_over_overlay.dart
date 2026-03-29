@@ -5,7 +5,9 @@ import 'package:mono_games/features/admob/admob_interstitial.dart';
 import 'package:mono_games/features/admob/admob_reward.dart';
 import 'package:mono_games/features/block_puzzle/model/game_theme.dart';
 import 'package:mono_games/features/block_puzzle/view_model/block_puzzle_view_model.dart';
+import 'package:mono_games/features/purchase/view_model/premium_view_model.dart';
 import 'package:mono_games/features/quiz/model/quiz_word.dart';
+import 'package:mono_games/features/quiz/view_model/quiz_view_model.dart';
 import 'package:mono_games/features/settings/view_model/settings_view_model.dart';
 import 'package:mono_games/until/service/audio_service.dart';
 
@@ -79,17 +81,12 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
 
     _rewardedAdService = RewardedAdService();
     final gameState = ref.read(blockPuzzleViewModelProvider);
-    if (!gameState.isQuestMode &&
-        !gameState.isTimeAttackMode &&
-        !gameState.isQuizMode) {
+    final isPremium =
+        ref.read(premiumViewModelProvider).valueOrNull?.isPremium ?? false;
+
+    if (!isPremium && !gameState.isQuizMode) {
       _rewardedAdService.load();
     }
-
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (mounted) {
-        AdmobInterstitial().loadAndShow();
-      }
-    });
   }
 
   @override
@@ -103,12 +100,8 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
   Widget build(BuildContext context) {
     final colors = widget.theme.colorsFor(Theme.of(context).brightness);
     final gameState = ref.watch(blockPuzzleViewModelProvider);
-    final bestScore = gameState.isTimeAttackMode
-        ? gameState.timeAttackHighScore
-        : gameState.highScore;
-    final isClassicMode = !gameState.isQuestMode &&
-        !gameState.isTimeAttackMode &&
-        !gameState.isQuizMode;
+    final bestScore = gameState.highScore;
+    final isClassicMode = !gameState.isQuizMode;
 
     return AnimatedBuilder(
       animation: _controller,
@@ -137,22 +130,8 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      // クエストモードではレベル表示
-                      if (gameState.isQuestMode) ...[
-                        Text(
-                          'LEVEL ${gameState.questLevel}',
-                          style: TextStyle(
-                            fontFamily: 'Poppins',
-                            fontSize: 13,
-                            fontWeight: FontWeight.w600,
-                            letterSpacing: 2,
-                            color: colors.onSurface.withValues(alpha: 0.5),
-                          ),
-                        ),
-                        const SizedBox(height: 4),
-                      ],
                       Text(
-                        gameState.isQuestMode ? 'LEVEL FAILED' : 'GAME OVER',
+                        'GAME OVER',
                         style: TextStyle(
                           fontFamily: 'Poppins',
                           fontSize: 24,
@@ -174,9 +153,7 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        gameState.isQuestMode
-                            ? 'SCORE  (TARGET: ${gameState.targetScore})'
-                            : 'SCORE',
+                        'SCORE',
                         style: TextStyle(
                           fontFamily: 'Poppins',
                           fontSize: 11,
@@ -191,10 +168,13 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
                         _QuizSessionStats(
                           correctWords: gameState.sessionCorrectWords,
                           incorrectWords: gameState.sessionIncorrectWords,
+                          tomorrowReviewCount: ref
+                              .watch(quizViewModelProvider)
+                              .tomorrowReviewCount,
                           colors: colors,
                         ),
                       ],
-                      if (!gameState.isQuestMode && !gameState.isQuizMode) ...[
+                      if (!gameState.isQuizMode) ...[
                         const SizedBox(height: 16),
                         // クラシック / タイムアタックのベストスコア表示
                         Text(
@@ -307,16 +287,28 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
                             final notifier = ref.read(
                               blockPuzzleViewModelProvider.notifier,
                             );
-                            if (gameState.isTimeAttackMode) {
-                              notifier.retryTimeAttack();
-                            } else if (gameState.isQuestMode) {
-                              notifier.retryQuestLevel();
-                            } else if (gameState.isQuizMode) {
-                              // 学習範囲選択画面に戻る
+                            if (gameState.isQuizMode) {
                               Navigator.of(context).pop();
                               return;
-                            } else {
+                            }
+                            final isPremiumNow =
+                                ref
+                                    .read(premiumViewModelProvider)
+                                    .valueOrNull
+                                    ?.isPremium ??
+                                false;
+                            void proceed() {
+                              if (!mounted) {
+                                return;
+                              }
                               notifier.resetGame();
+                            }
+
+                            if (isPremiumNow) {
+                              proceed();
+                            } else {
+                              AdmobInterstitial()
+                                  .loadAndShow(onDismissed: proceed);
                             }
                           },
                           style: TextButton.styleFrom(
@@ -329,11 +321,9 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
                               borderRadius: BorderRadius.circular(50),
                             ),
                           ),
-                          child: Text(
-                            gameState.isQuestMode
-                                ? 'Retry Level'
-                                : 'Play Again',
-                            style: const TextStyle(
+                          child: const Text(
+                            'Play Again',
+                            style: TextStyle(
                               fontFamily: 'Poppins',
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
@@ -341,10 +331,8 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
                           ),
                         ),
                       ),
-                      // クエスト / タイムアタック / クイズはHomeボタンを表示
-                      if (gameState.isQuestMode ||
-                          gameState.isTimeAttackMode ||
-                          gameState.isQuizMode) ...[
+                      // クイズはHomeボタンを表示
+                      if (gameState.isQuizMode) ...[
                         const SizedBox(height: 8),
                         SizedBox(
                           width: double.infinity,
@@ -399,11 +387,13 @@ class _QuizSessionStats extends StatelessWidget {
   const _QuizSessionStats({
     required this.correctWords,
     required this.incorrectWords,
+    required this.tomorrowReviewCount,
     required this.colors,
   });
 
   final List<QuizWord> correctWords;
   final List<QuizWord> incorrectWords;
+  final int tomorrowReviewCount;
   final GameThemeColors colors;
 
   @override
@@ -457,6 +447,28 @@ class _QuizSessionStats extends StatelessWidget {
             ),
           ],
         ),
+        // 翌日復習フック
+        if (tomorrowReviewCount > 0) ...[
+          const SizedBox(height: 14),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+            decoration: BoxDecoration(
+              color: colors.accent.withValues(alpha: 0.12),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Text(
+              '明日 $tomorrowReviewCount 語を復習できます',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Poppins',
+                fontSize: 12,
+                fontWeight: FontWeight.w600,
+                color: colors.accent,
+              ),
+            ),
+          ),
+        ],
         // 苦手単語リスト
         if (uniqueIncorrect.isNotEmpty) ...[
           const SizedBox(height: 14),

@@ -16,4 +16,7 @@ abstract interface class WordRecordRepository {
 
   /// 全単語の重みを初期値（1.0）にリセットする。
   Future<void> resetWeights();
+
+  /// 全単語の学習データを削除する。
+  Future<void> deleteAll();
 }

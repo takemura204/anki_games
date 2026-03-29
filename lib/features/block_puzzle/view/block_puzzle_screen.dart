@@ -8,18 +8,19 @@ import 'package:mono_games/features/block_puzzle/model/board.dart';
 import 'package:mono_games/features/block_puzzle/model/game_theme.dart';
 import 'package:mono_games/features/block_puzzle/view/widgets/background_effect_widget.dart';
 import 'package:mono_games/features/block_puzzle/view/widgets/board_widget.dart';
-import 'package:mono_games/features/block_puzzle/view/widgets/countdown_overlay.dart';
 import 'package:mono_games/features/block_puzzle/view/widgets/game_over_overlay.dart';
 import 'package:mono_games/features/block_puzzle/view/widgets/piece_tray_widget.dart';
-import 'package:mono_games/features/block_puzzle/view/widgets/quest_success_overlay.dart';
 import 'package:mono_games/features/block_puzzle/view/widgets/score_hud_widget.dart';
-import 'package:mono_games/features/block_puzzle/view/widgets/time_attack_result_overlay.dart';
 import 'package:mono_games/features/block_puzzle/view_model/block_puzzle_view_model.dart';
 import 'package:mono_games/features/block_puzzle/view_model/theme_view_model.dart';
+import 'package:mono_games/features/purchase/view_model/premium_view_model.dart';
+import 'package:mono_games/features/quiz/model/quiz_word.dart';
 import 'package:mono_games/features/quiz/view/widgets/quiz_card.dart';
 import 'package:mono_games/features/quiz/view_model/quiz_view_model.dart';
 import 'package:mono_games/features/settings/view/settings_dialog.dart';
+import 'package:mono_games/features/settings/view_model/settings_view_model.dart';
 import 'package:mono_games/i18n/translations.g.dart';
+import 'package:mono_games/until/service/tts_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// Noir Mindパズルゲームのメイン画面。
@@ -34,27 +35,43 @@ class BlockPuzzleScreen extends ConsumerWidget {
     final theme = ref.watch(themeViewModelProvider);
     final gameState = ref.watch(blockPuzzleViewModelProvider);
     final isGameOver = gameState.isGameOver;
-    final isQuestComplete = gameState.isQuestComplete;
-    final isQuestMode = gameState.isQuestMode;
-    final isTimeAttackMode = gameState.isTimeAttackMode;
-    final isTimeAttackComplete = gameState.isTimeAttackComplete;
-    final isTimeAttackCountingDown = gameState.isTimeAttackCountingDown;
     final isQuizMode = gameState.isQuizMode;
     final isQuizPhase = gameState.isQuizPhase;
+    final isPremium = ref.watch(
+      premiumViewModelProvider.select((s) => s.valueOrNull?.isPremium ?? false),
+    );
     final colors = theme.colorsFor(Theme.of(context).brightness);
 
-    // クイズフェーズ開始を検知して新しいラウンドを開始
-    ref.listen<bool>(
-      blockPuzzleViewModelProvider.select((s) => s.isQuizPhase),
-      (prev, next) {
-        if (next && !(prev ?? false)) {
-          ref.read(quizViewModelProvider.notifier).startNewRound();
-        }
-      },
-    );
+    // クイズフェーズ開始を検知して新しいラウンドを開始。問題0件時は前画面へ戻る。
+    ref
+      ..listen<bool>(
+        blockPuzzleViewModelProvider.select((s) => s.isQuizPhase),
+        (bool? prev, bool next) {
+          if (next && !(prev ?? false)) {
+            ref.read(quizViewModelProvider.notifier).startNewRound();
+          }
+        },
+      )
+      ..listen<(bool, int)>(
+        quizViewModelProvider.select(
+          (s) => (s.isLoading, s.questions.length),
+        ),
+        ((bool, int)? prev, (bool, int) next) {
+          final (prevLoading, _) = prev ?? (false, 0);
+          final (nextLoading, nextCount) = next;
+          if (prevLoading && !nextLoading && nextCount == 0) {
+            if (!context.mounted) {
+              return;
+            }
+            ref.read(blockPuzzleViewModelProvider.notifier).endQuizPhase();
+            Navigator.of(context).pop();
+          }
+        },
+      );
 
     return Scaffold(
       backgroundColor: colors.surface,
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Stack(
           children: [
@@ -80,29 +97,7 @@ class BlockPuzzleScreen extends ConsumerWidget {
                         ),
                         onPressed: () => Navigator.of(context).pop(),
                       ),
-                      if (isTimeAttackMode)
-                        Text(
-                          'TIME ATTACK',
-                          style: TextStyle(
-                            fontFamily: 'Poppins',
-                            fontSize: 13,
-                            fontWeight: FontWeight.w600,
-                            letterSpacing: 2,
-                            color: colors.onSurface.withValues(alpha: 0.6),
-                          ),
-                        )
-                      else if (isQuestMode)
-                        Text(
-                          'LEVEL ${gameState.questLevel}',
-                          style: TextStyle(
-                            fontFamily: 'Poppins',
-                            fontSize: 13,
-                            fontWeight: FontWeight.w600,
-                            letterSpacing: 2,
-                            color: colors.onSurface.withValues(alpha: 0.6),
-                          ),
-                        )
-                      else if (isQuizMode)
+                      if (isQuizMode)
                         Text(
                           t.quiz.quizMode.toUpperCase(),
                           style: TextStyle(
@@ -124,16 +119,6 @@ class BlockPuzzleScreen extends ConsumerWidget {
                     ],
                   ),
                 ),
-                // タイムアタック: タイマーバー
-                if (isTimeAttackMode)
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: _TimerBar(
-                      fraction: gameState.timeAttackRemainingSeconds / 90,
-                      color: colors.accent,
-                      trackColor: colors.emptyCellFill,
-                    ),
-                  ),
                 // スコアHUD（クイズ中は非表示、レイアウトは維持）
                 Visibility(
                   visible: !isQuizPhase,
@@ -175,24 +160,12 @@ class BlockPuzzleScreen extends ConsumerWidget {
                     },
                   ),
                 ),
-                const AdmobBanner(),
+                if (!isPremium) const AdmobBanner(),
               ],
             ),
             // 固定オーバーレイ
-            if (isGameOver && !isTimeAttackMode)
+            if (isGameOver)
               Positioned.fill(child: GameOverOverlay(theme: theme)),
-            if (isQuestComplete)
-              Positioned.fill(
-                child: QuestSuccessOverlay(
-                  theme: theme,
-                  level: gameState.questLevel,
-                  score: gameState.score,
-                ),
-              ),
-            if (isTimeAttackComplete)
-              Positioned.fill(child: TimeAttackResultOverlay(theme: theme)),
-            if (isTimeAttackCountingDown)
-              Positioned.fill(child: CountdownOverlay(theme: theme)),
           ],
         ),
       ),
@@ -258,16 +231,26 @@ class _QuizLayout extends ConsumerStatefulWidget {
 
 class _QuizLayoutState extends ConsumerState<_QuizLayout> {
   late CardSwiperController _swiperController;
+  late FocusNode _typingFocusNode;
   var _isShowingFeedback = false;
+  var _isTypingCardActive = false;
+  var _isLetterTapCardActive = false;
   final List<bool?> _slotCorrectness = [null, null, null];
-  final List<String?> _slotWords = [null, null, null];
+  final List<QuizWord?> _slotWords = [null, null, null];
   var _roundKey = 0;
   var _showHint = false;
+
+  /// タイピングで回答済みのカードインデックス（_onSwipe で二重処理を防ぐ）。
+  final _typingAnsweredIndices = <int>{};
+
+  /// letterTap で回答済みのカードインデックス（_onSwipe で二重処理を防ぐ）。
+  final _letterTapAnsweredIndices = <int>{};
 
   @override
   void initState() {
     super.initState();
     _swiperController = CardSwiperController();
+    _typingFocusNode = FocusNode();
     _checkFirstPlay();
   }
 
@@ -291,21 +274,153 @@ class _QuizLayoutState extends ConsumerState<_QuizLayout> {
   @override
   void dispose() {
     _swiperController.dispose();
+    _typingFocusNode.dispose();
+    TtsService.instance.stop();
     super.dispose();
+  }
+
+  /// カードが切り替わった際にフォーマットを反映し、必要ならフォーカスを当てる。
+  void _updateActiveCardType(int index) {
+    final quizState = ref.read(quizViewModelProvider);
+    if (index >= quizState.questions.length) {
+      return;
+    }
+    final format = quizState.questions[index].format;
+    final isTyping = format == QuizFormat.jaToEnTyping;
+    final isLetterTap = format == QuizFormat.letterTap;
+    setState(() {
+      _isTypingCardActive = isTyping;
+      _isLetterTapCardActive = isLetterTap;
+    });
+    if (isTyping) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) {
+          _typingFocusNode.requestFocus();
+        }
+      });
+    }
   }
 
   void _resetForNewRound() {
     _swiperController.dispose();
     _swiperController = CardSwiperController();
+    _typingAnsweredIndices.clear();
+    _letterTapAnsweredIndices.clear();
     setState(() {
       _roundKey++;
       _isShowingFeedback = false;
+      _isLetterTapCardActive = false;
       _slotCorrectness[0] = null;
       _slotCorrectness[1] = null;
       _slotCorrectness[2] = null;
       _slotWords[0] = null;
       _slotWords[1] = null;
       _slotWords[2] = null;
+    });
+    _speakCurrentCard(0);
+    _updateActiveCardType(0);
+  }
+
+  void _speakCurrentCard(int index) {
+    final settings = ref.read(settingsViewModelProvider);
+    if (!settings.ttsEnabled) {
+      return;
+    }
+    final quizState = ref.read(quizViewModelProvider);
+    final questions = quizState.questions;
+    if (index >= questions.length) {
+      return;
+    }
+    if (questions[index].format != QuizFormat.enToJaChoice) {
+      return;
+    }
+    TtsService.instance.speak(questions[index].word.en);
+  }
+
+  /// タイピング形式の問題に回答する。
+  void _onTypingSubmit(int questionIndex, String text) {
+    if (_isShowingFeedback) {
+      return;
+    }
+    FocusScope.of(context).unfocus();
+    _isShowingFeedback = true;
+
+    final quizStateBeforeAnswer = ref.read(quizViewModelProvider);
+    final question = questionIndex < quizStateBeforeAnswer.questions.length
+        ? quizStateBeforeAnswer.questions[questionIndex]
+        : null;
+
+    ref
+        .read(quizViewModelProvider.notifier)
+        .answerWithText(questionIndex, text);
+
+    final quizState = ref.read(quizViewModelProvider);
+    final lastAnswer =
+        quizState.answers.isNotEmpty ? quizState.answers.last : null;
+    final isCorrect = lastAnswer?.isCorrect ?? false;
+
+    ref.read(blockPuzzleViewModelProvider.notifier).addQuizPiece(
+          questionIndex,
+          isCorrect: isCorrect,
+          word: question?.word,
+          overdueBonus: lastAnswer?.overdueBonus ?? 0,
+        );
+    setState(() {
+      _slotCorrectness[questionIndex] = isCorrect;
+      _slotWords[questionIndex] = question?.word;
+    });
+
+    // 回答済みとしてマークし、遅延後にプログラム的にカードを進める
+    _typingAnsweredIndices.add(questionIndex);
+    Future<void>.delayed(const Duration(milliseconds: 300), () {
+      if (!mounted) {
+        return;
+      }
+      ref.read(quizViewModelProvider.notifier).clearLastAnswer();
+      setState(() => _isShowingFeedback = false);
+      _swiperController.swipe(CardSwiperDirection.right);
+    });
+  }
+
+  /// letterTap 形式の問題に回答する。
+  void _onLetterTapSubmit(int questionIndex, bool isCorrect) {
+    if (_isShowingFeedback) {
+      return;
+    }
+    _isShowingFeedback = true;
+
+    final quizStateBeforeAnswer = ref.read(quizViewModelProvider);
+    final question = questionIndex < quizStateBeforeAnswer.questions.length
+        ? quizStateBeforeAnswer.questions[questionIndex]
+        : null;
+
+    ref
+        .read(quizViewModelProvider.notifier)
+        .answerLetterTap(questionIndex, isCorrect: isCorrect);
+
+    final quizState = ref.read(quizViewModelProvider);
+    final lastAnswer =
+        quizState.answers.isNotEmpty ? quizState.answers.last : null;
+
+    ref.read(blockPuzzleViewModelProvider.notifier).addQuizPiece(
+          questionIndex,
+          isCorrect: isCorrect,
+          word: question?.word,
+          overdueBonus: lastAnswer?.overdueBonus ?? 0,
+        );
+    setState(() {
+      _slotCorrectness[questionIndex] = isCorrect;
+      _slotWords[questionIndex] = question?.word;
+    });
+
+    _letterTapAnsweredIndices.add(questionIndex);
+    Future<void>.delayed(const Duration(milliseconds: 300), () {
+      if (!mounted) {
+        return;
+      }
+      ref.read(quizViewModelProvider.notifier).clearLastAnswer();
+      setState(() => _isShowingFeedback = false);
+      _swiperController.swipe(CardSwiperDirection.right);
     });
   }
 
@@ -315,6 +430,44 @@ class _QuizLayoutState extends ConsumerState<_QuizLayout> {
     CardSwiperDirection cardDir,
   ) {
     _dismissHint();
+
+    // タイピング回答済みのカードがプログラム的にスワイプされた場合
+    if (_typingAnsweredIndices.remove(previousIndex)) {
+      if (currentIndex == null) {
+        final allCorrect = _slotCorrectness.every((c) => c == true);
+        ref
+            .read(blockPuzzleViewModelProvider.notifier)
+            .endQuizPhase(comboActive: allCorrect);
+      } else {
+        _speakCurrentCard(currentIndex);
+        _updateActiveCardType(currentIndex);
+      }
+      return true;
+    }
+
+    // letterTap 回答済みのカードがプログラム的にスワイプされた場合
+    if (_letterTapAnsweredIndices.remove(previousIndex)) {
+      if (currentIndex == null) {
+        final allCorrect = _slotCorrectness.every((c) => c == true);
+        ref
+            .read(blockPuzzleViewModelProvider.notifier)
+            .endQuizPhase(comboActive: allCorrect);
+      } else {
+        _speakCurrentCard(currentIndex);
+        _updateActiveCardType(currentIndex);
+      }
+      return true;
+    }
+
+    // タイピング・letterTap 形式はユーザーのスワイプを無効化
+    final quizState = ref.read(quizViewModelProvider);
+    if (previousIndex < quizState.questions.length) {
+      final fmt = quizState.questions[previousIndex].format;
+      if (fmt == QuizFormat.jaToEnTyping || fmt == QuizFormat.letterTap) {
+        return false;
+      }
+    }
+
     if (_isShowingFeedback) {
       return false;
     }
@@ -328,20 +481,22 @@ class _QuizLayoutState extends ConsumerState<_QuizLayout> {
     final question = previousIndex < quizStateBeforeAnswer.questions.length
         ? quizStateBeforeAnswer.questions[previousIndex]
         : null;
-    final displayWord = question?.displayText;
     ref.read(quizViewModelProvider.notifier).answer(previousIndex, swipeDir);
 
-    final quizState = ref.read(quizViewModelProvider);
-    final isCorrect =
-        quizState.answers.isNotEmpty && quizState.answers.last.isCorrect;
+    final answeredState = ref.read(quizViewModelProvider);
+    final lastAnswer = answeredState.answers.isNotEmpty
+        ? answeredState.answers.last
+        : null;
+    final isCorrect = lastAnswer?.isCorrect ?? false;
     ref.read(blockPuzzleViewModelProvider.notifier).addQuizPiece(
           previousIndex,
           isCorrect: isCorrect,
           word: question?.word,
+          overdueBonus: lastAnswer?.overdueBonus ?? 0,
         );
     setState(() {
       _slotCorrectness[previousIndex] = isCorrect;
-      _slotWords[previousIndex] = displayWord;
+      _slotWords[previousIndex] = question?.word;
     });
 
     Future<void>.delayed(const Duration(milliseconds: 300), () {
@@ -351,11 +506,13 @@ class _QuizLayoutState extends ConsumerState<_QuizLayout> {
       ref.read(quizViewModelProvider.notifier).clearLastAnswer();
       setState(() => _isShowingFeedback = false);
       if (currentIndex == null) {
-        // 全3問正解でコンボ有効化
         final allCorrect = _slotCorrectness.every((c) => c == true);
         ref
             .read(blockPuzzleViewModelProvider.notifier)
             .endQuizPhase(comboActive: allCorrect);
+      } else {
+        _speakCurrentCard(currentIndex);
+        _updateActiveCardType(currentIndex);
       }
     });
 
@@ -433,7 +590,12 @@ class _QuizLayoutState extends ConsumerState<_QuizLayout> {
                   key: ValueKey(_roundKey),
                   controller: _swiperController,
                   cardsCount: quizState.questions.length,
+                  numberOfCardsDisplayed: 1,
                   isLoop: false,
+                  allowedSwipeDirection:
+                      (_isTypingCardActive || _isLetterTapCardActive)
+                          ? const AllowedSwipeDirection.none()
+                          : const AllowedSwipeDirection.all(),
                   onSwipe: _onSwipe,
                   cardBuilder: (
                     context,
@@ -444,17 +606,41 @@ class _QuizLayoutState extends ConsumerState<_QuizLayout> {
                     if (index >= quizState.questions.length) {
                       return const SizedBox.shrink();
                     }
+                    final q = quizState.questions[index];
+                    final ttsEnabled =
+                        ref.read(settingsViewModelProvider).ttsEnabled;
                     return QuizCard(
-                      question: quizState.questions[index],
+                      question: q,
                       activeDirection: _directionFromOffsets(
                         horizontalOffsetPercent,
                         verticalOffsetPercent,
                       ),
+                      onSpeak: ttsEnabled &&
+                              q.format == QuizFormat.enToJaChoice
+                          ? () => TtsService.instance.speak(q.word.en)
+                          : null,
+                      onTypingSubmit:
+                          q.format == QuizFormat.jaToEnTyping
+                              ? (text) => _onTypingSubmit(index, text)
+                              : null,
+                      onLetterTapSubmit:
+                          q.format == QuizFormat.letterTap
+                              ? ({required bool isCorrect}) =>
+                                  _onLetterTapSubmit(index, isCorrect)
+                              : null,
+                      typingFocusNode: index == quizState.answeredCount
+                          ? _typingFocusNode
+                          : null,
                     );
                   },
                 ),
-              // 初回スワイプヒント
-              if (_showHint && quizState.questions.isNotEmpty)
+              // 初回スワイプヒント（4択スワイプ形式のみ表示）
+              if (_showHint &&
+                  quizState.questions.isNotEmpty &&
+                  (quizState.questions.first.format ==
+                          QuizFormat.enToJaChoice ||
+                      quizState.questions.first.format ==
+                          QuizFormat.jaToEnChoice))
                 Positioned.fill(
                   child: _SwipeHintOverlay(
                     choices: quizState.questions.first.choices,
@@ -472,35 +658,6 @@ class _QuizLayoutState extends ConsumerState<_QuizLayout> {
           quizCorrectness: _slotCorrectness,
         ),
       ],
-    );
-  }
-}
-
-// ════════════════════════════════════════════════════════════════════════════
-// タイマーバー（タイムアタック用）
-// ════════════════════════════════════════════════════════════════════════════
-
-class _TimerBar extends StatelessWidget {
-  const _TimerBar({
-    required this.fraction,
-    required this.color,
-    required this.trackColor,
-  });
-
-  final double fraction;
-  final Color color;
-  final Color trackColor;
-
-  @override
-  Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(2),
-      child: LinearProgressIndicator(
-        value: fraction.clamp(0, 1),
-        minHeight: 4,
-        backgroundColor: trackColor,
-        valueColor: AlwaysStoppedAnimation<Color>(color),
-      ),
     );
   }
 }

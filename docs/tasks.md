@@ -1,158 +1,70 @@
-# タスクドキュメント — Block.
+# タスク — Block.
 
-> 最終更新: 2026-03-20（リファクタリング Phase A+B2）
+> 最終更新: 2026-03-29
+
+---
+
+## 今すぐやること
+
+### UX クイックウィン（`docs/ux_evaluation.md` 優先アクション）
+- [ ] **広告タイミング変更**: ゲームオーバー時のインタースティシャルを、即表示 → Play Again ボタン押下後に変更（`game_over_overlay.dart` 1〜2行の修正）
+- [ ] **Word Mode 視覚的強調**: ホーム画面でWord Modeカードを他モードと差別化（サイズ・バッジ・強調色）
+- [ ] **コアループ説明**: 初回プレイ時のみ「正解するといいピースが来る！」のコーチマークを表示
+- [ ] **ゲームオーバー翌日フック**: ゲームオーバー後に「明日レビューできる語: N語」を表示
+
+### Phase 9: プレミアムプラン（本番化）
+- [ ] **動作確認チェックリスト**（`docs/specs/premium_plan_spec.md` 参照）
+- [ ] **本番リリース前**: `.env` の RevenueCat API Key を実キーに差し替えてビルド検証
+
+### Phase 10: 学習品質向上
+- [ ] **1日の新規単語数キャップ**: 設定で10〜20語/日の上限 + `WordRangeSelectorScreen` に「本日の新規語数 N/上限」表示
+- [ ] **例文・コンテキスト表示**: `example_en` をクイズカードに表示（英→日: 問題文下に小さく表示 / 正解後: 日本語訳もあわせて表示）
+
+### KPI計測基盤
+- [ ] **Firebase Analytics 導入**: D1/D7/D30 Retention 計測、Word Mode 起動カスタムイベント設定
+- [ ] **Firebase Crashlytics 導入**
+
+---
+
+## 次の候補（優先度順）
+
+| 優先度 | タスク | 理由 |
+|--------|--------|------|
+| 高 | SRS復習プッシュ通知 | D7 Retention の最重要レバー（`docs/kpi.md` 参照） |
+| 高 | ASO最適化（スクショ・説明文） | DL数への直接インパクト |
+| 中 | 学習ハブ初回コーチマーク | 初回離脱防止（`docs/ux_evaluation.md` 参照） |
+| 中 | ペイウォール価値訴求テキストの具体化 | サブスクCVR改善 |
+| 中 | ストリーク表示 | 習慣化・DAU/MAU改善 |
+| 中 | 英検2級単語追加 | Word Mode のコンテンツ拡充 |
+| 低 | ソーシャル機能（スコアランキング） | 将来構想 |
+| 低 | iCloud 同期 | 将来構想 |
 
 ---
 
 ## 完了済みフェーズ
 
-### Phase 1: ゲームコア ✅
+詳細な実装ログは `git log` を参照。
 
-- [x] 8×8ボードのブロック配置ロジック
-- [x] ライン消去ロジック（行・列）
-- [x] ピース生成・ドラッグ配置UI
-- [x] スコア・コンボシステム
-- [x] ゲームオーバー判定
-
-### Phase 2: ゲームモード拡充 ✅
-
-- [x] クラシックモード（セーブ・ロード・コンティニュー）
-- [x] クエストモード（レベル管理・目標スコア・レベル解放）
-- [x] タイムアタックモード（90秒・カウントダウン演出）
-- [x] テーマ・スキンシステム（9種のセルレンダリングモード）
-- [x] 設定ダイアログ（サウンド・バイブレーション・テーマ変更・ホーム/リスタート）
-- [x] AdMob 広告統合（バナー・インタースティシャル・リワード）
-- [x] アプリアイコン・ロゴ更新
-
-### Phase 2.5: クイズモード基盤 ✅
-
-- [x] CSV単語データソース（`assets/quiz/words.csv`）
-- [x] Drift DB（`WordRecords` テーブル、weight/正誤回数/最終出題日）
-- [x] QuizWord モデル（Freezed）
-- [x] QuizViewModel 基盤（重み付きランダム選出・4択生成・回答処理）
-- [x] スワイプカードUI（`flutter_card_swiper`）
-- [x] ブロックフェーズ ↔ クイズフェーズの切り替えアニメーション
-- [x] ピース難易度割り当て（充填率×正誤の2軸: `addQuizPiece()`）
-- [x] クイズモードのゲームオーバー・Play Again
-- [x] 出題方向モード（英→日 / 日→英 / ランダム）設定
-- [x] クイズモード中の設定ダイアログ（出題方向セグメント）
-- [x] **バグ修正**: 設定画面で出題方向変更後にラウンドが即終了する不具合（`setDirectionMode` で answeredCount等をリセット）
-
-### Phase 3: 習熟度表示・学習範囲選択 ✅
-
-- [x] CSVに `level` フィールド追加（eiken5/4/3/toeic_basic）
-- [x] 単語165語に拡充（各レベル別）
-- [x] QuizWord モデルに `level` フィールド追加
-- [x] `WordRangeFilter` enum（all/weakAndNew/weakOnly/eiken5/4/3/toiecBasic）
-- [x] `MasteryBreakdown` Freezed クラス（未学習/苦手/得意/完璧の4段階カウント）
-- [x] フィルター別習熟度内訳の計算・表示（`_loadMasteryBreakdowns`）
-- [x] 学習範囲選択画面（`WordRangeSelectorScreen`）
-  - 全体習熟度サマリーカード（4段階チップ＋プログレスバー）
-  - 習熟度系フィルター選択（all/weakAndNew/weakOnly）
-  - 資格レベル系フィルター選択（eiken5/4/3/toiecBasic）
-  - 各フィルター行に単語数・習熟度ミニバー表示
-  - 3語未満のフィルターはSTARTボタン無効
-- [x] ホーム画面から「英単語モード」タップで `WordRangeSelectorScreen` に遷移
-- [x] `BlockPuzzleState` にセッション統計（`sessionCorrectWords` / `sessionIncorrectWords`）追加
-- [x] `addQuizPiece()` に `QuizWord? word` 引数追加
-- [x] ゲームオーバー画面（クイズモード）に正解率バー＋苦手単語リスト（最大5語）表示
-
-### Phase 4: UX改善・学習強化 ✅
-
-- [x] Play Again（クイズ）→ `pop()` で `WordRangeSelectorScreen` に戻る
-- [x] Home ボタン（クイズ）→ `popUntil(isFirst)` で `HomeScreen` まで戻る
-- [x] 設定 Restart（クイズ）→ `pop()×2` で `WordRangeSelectorScreen` に戻る
-- [x] 初回スワイプヒントUI
-  - 初回プレイ時のみ4方向アニメーション矢印オーバーレイを表示
-  - 各矢印のそばに選択肢テキストを表示
-  - タップまたはスワイプで非表示（`SharedPreferences` で初回フラグ管理）
-- [x] 不正解単語の優先出題
-  - セッション内不正解単語の weight を一時的に2倍にして次ラウンドで優先
-  - `resetSession()` を START ボタン押下時に呼ぶ
-
----
-
-## 今後の候補タスク
-
-### Phase 5: クイズモード ピース選択リデザイン ✅
-
-- [x] **新ピース追加**: `uShape` / `bigLShape0` / `bigLShape90` / `wShape`（5セル Hard ピース4種）
-- [x] **クイズ専用プール定義**: `quizEasyPool`（9種）/ `quizMediumPool`（15種）/ `quizHardPool`（10種）
-- [x] **バッグ方式導入**: 各ティアで全ピースを1巡してからリフィル。連続出現を抑制
-- [x] **ストリーク連動難易度**: 正解streak 0-2→Easy / 3-5→Medium / 6+→Hard。不正解でstreak=0にリセット
-- [x] **充填率ガード維持**: fillRate ≥75% → 強制Easy / 不正解+65%以上 → Medium キャップ
-
----
-
-### 高優先度
-
-- [ ] **AdMob クイズモード制御**: クイズモード中のインタースティシャル表示を抑制（現状はゲームオーバー時に常に表示されてしまう）
-- [ ] **ゲームオーバー苦手単語→再スタート連携**: 苦手単語リストの「このフィルターで再挑戦」ボタン追加
-- [ ] **英語→日本語 以外の問題表示調整**: `jaToEn` 時にカードの文字サイズや折り返しが崩れないか検証
-
-### 中優先度
-
-- [ ] **クイズ設問数の調整**: 現状3問固定。難易度選択（3/5問）の追加
-- [ ] **ゲームオーバー後の習熟度更新**: ゲームオーバー画面でのリアルタイム表示
-- [ ] **WordRangeSelectorScreen の日本語テキスト**: 一部ハードコードされているラベルをi18nに移行
-- [ ] **タイムアタック時間設定**: 5分ではなく90秒になっているラベル修正（i18n `timeAttackResult: "5分間の結果"` が不正確）
-
-### 低優先度 / 将来構想
-
-- [ ] **Phase 5: ソーシャル機能**: スコアランキング・フレンド機能
-- [ ] **iCloud 同期**: 学習データのデバイス間同期
-- [ ] **単語追加**: 165語から拡充（TOEIC中級・英検2級など）
-- [ ] **学習統計画面**: 累計学習数・連続学習日数・カレンダーヒートマップ
-- [ ] **通知**: 学習リマインダー
-- [ ] **Apple Watch / Widget**: 今日の学習単語を表示
-
----
-
-### リファクタリング ✅
-
-- [x] 孤立ファイル削除（8ファイル）
-  - `quiz_screen.dart`（旧クイズ画面、BlockPuzzleScreen に統合済み）
-  - `dot_indicator.dart`（quiz_screen のみ参照）
-  - `quiz_result_overlay.dart`（quiz_screen のみ参照）
-  - `admob_native.dart`（未使用のネイティブ広告）
-  - `context_extension.dart`（未使用の拡張メソッド）
-  - `home_view_model.dart` + 生成ファイル2本（未使用ViewModel）
-- [x] doc コメントの `[ClassName]` 参照エラー修正（2箇所）
-- [x] `Switch.adaptive` の非推奨 `activeColor` → `activeThumbColor` へ修正
-- [x] **Phase A リファクタリング**
-  - A1: 全 ViewModel から自明なインラインコメントを削除
-  - A2: `quiz_view_model.dart` — SRS重み係数・閾値を top-level 定数に抽出（`_hardThreshold`, `_perfectThreshold`, `_correctWeightMultiplier` 等）
-  - A3: `block_puzzle_view_model.dart` — `_loadHighScore()` / `_loadTimeAttackHighScore()` / `_loadSavedGames()` を `_loadPersistedData()` に統合（SharedPreferences 呼び出しを1回に削減）
-- [x] **Phase B2 リファクタリング**
-  - `piece_generator.dart` 新規作成 — `generatePieces()`, `canClearLine()` を ViewModel から抽出
-  - `quest_board_generator.dart` 新規作成 — `generateQuestBoardAndNoise()`, `_computeNoiseHPs()`, `_noiseIconShapes` を ViewModel から抽出
-  - BlockPuzzleViewModel: 1582行 → 1192行（−390行）
-
----
-
-## コミット履歴（主要）
-
-| コミット | 内容 |
-|---------|------|
-| `4486efb` | init |
-| `c79cdb4` | セットアップ |
-| `f73eb81` | fix |
-| `300bc0f` | スキン追加 |
-| `afe24c2` | ロゴ更新 |
-| `d44764b` | refactor |
-| `bf30e8a` | fix: クイズ出題方向変更バグ修正 |
-| `71664ad` | feat: Phase 3 — 学習範囲選択・習熟度表示・セッション統計 |
-| `9371927` | fix: クイズPlay Again/Restart動線修正 |
-| `62441fa` | feat: 初回スワイプヒントUI |
-| `9f38fc9` | feat: 不正解単語の優先出題 |
-| `7dd48be` | docs: プロダクト・開発・タスクドキュメント新規作成 |
-| *(次)* | refactor: 不要ファイル削除・コード整理 |
+- [x] **Phase 1**: ゲームコア（8×8ボード・ライン消去・スコア）
+- [x] **Phase 2**: ゲームモード拡充（クラシック・クエスト・タイムアタック）＋AdMob広告統合
+- [x] **Phase 2.5**: クイズモード基盤（CSV・Drift DB・スワイプカードUI）
+- [x] **Phase 3**: 習熟度表示・学習範囲選択画面
+- [x] **Phase 4**: UX改善（Play Again動線・スワイプヒント・不正解優先出題）
+- [x] **Phase 5**: クイズモード ピース選択リデザイン（バッグ方式・ストリーク連動難易度）
+- [x] **Phase 6**: WordMode UI/UXリデザイン（フィルター分離・ピーストレイ2行表示）
+- [x] **Phase 6.5**: WordMode ハブ画面リデザイン（donutチャート・TOP5ランキング・単語ボトムシート）
+- [x] **Phase 6.6**: ジャンルフィルター追加（頻出50選 + 7ジャンル）
+- [x] **Phase 7**: TTS発音（`flutter_tts`）＋単語500語以上に拡充（英検2〜5級・TOEIC基礎）
+- [x] **Phase 9**: プレミアムプラン モック実装完了（RevenueCat統合・PaywallBottomSheet・広告制御）
+- [x] **Phase 10-1**: SRS出題アルゴリズム刷新 第1弾（DBスキーマv3・3スロット方式）
+- [x] **Phase 10-2**: SRS出題アルゴリズム刷新 第2弾（セッション管理強化・ステージ昇降格）
+- [x] **リファクタリング A・B2**: 孤立ファイル削除・ViewModel分割（1,582行→1,192行）
 
 ---
 
 ## ドキュメント管理ルール
 
-- 機能実装・修正のたびに `docs/product.md` / `docs/development.md` / `docs/tasks.md` を更新する
-- タスクの完了時: `tasks.md` の該当項目を `[x]` に変更
-- 新機能追加時: `product.md` に機能仕様を追記、`development.md` に状態管理の変更を追記
-- ドキュメントの更新は実装コミットと同じコミットに含める
+- 機能実装・修正のたびに `docs/product.md` / `docs/kpi.md` / `docs/tasks.md` / `docs/ux_evaluation.md` を更新する
+- タスク完了時: 該当 `[ ]` を `[x]` に変更し、完了済みフェーズに移動
+- 新機能追加時: `product.md` に仕様を追記
+- KPI計測開始後: `kpi.md` の実績欄を月次で更新

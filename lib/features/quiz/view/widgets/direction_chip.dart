@@ -1,9 +1,11 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:mono_games/features/quiz/view_model/quiz_view_model.dart';
 
 /// 4方向スワイプの選択肢を表すチップウィジェット。
 ///
 /// スワイプ中は [isHighlighted] が true になり視覚的に強調される。
+/// テキストが長い場合は [AutoSizeText] が自動縮小する（最小 8pt）。
 class DirectionChip extends StatelessWidget {
   /// [DirectionChip] を作成する。
   const DirectionChip({
@@ -43,18 +45,17 @@ class DirectionChip extends StatelessWidget {
         color: bg,
         borderRadius: BorderRadius.circular(20),
       ),
-      child: Text(
+      child: AutoSizeText(
         text,
         style: TextStyle(
           fontFamily: 'Poppins',
           fontSize: 13,
-          fontWeight:
-              isHighlighted ? FontWeight.w700 : FontWeight.w500,
+          fontWeight: isHighlighted ? FontWeight.w700 : FontWeight.w500,
           color: fg,
         ),
         textAlign: TextAlign.center,
         maxLines: 1,
-        overflow: TextOverflow.ellipsis,
+        minFontSize: 8,
       ),
     );
   }

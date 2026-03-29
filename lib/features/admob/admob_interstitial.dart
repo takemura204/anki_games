@@ -44,6 +44,7 @@ class AdmobInterstitial {
         },
         onAdFailedToLoad: (error) {
           debugPrint('InterstitialAd failed to load: $error');
+          onDismissed?.call();
         },
       ),
     );

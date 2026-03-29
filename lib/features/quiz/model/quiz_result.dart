@@ -16,6 +16,9 @@ abstract class QuizAnswerResult with _$QuizAnswerResult {
 
     /// 正解の訳文（常に表示用）。
     required String correctAnswer,
+
+    /// 期限超過単語を正解した場合のボーナス得点（0 = ボーナスなし）。
+    @Default(0) int overdueBonus,
   }) = _QuizAnswerResult;
 }
 

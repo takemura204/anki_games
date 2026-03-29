@@ -13,7 +13,7 @@ class CsvWordDatasource {
 
   QuizWord? _parseLine(String line) {
     final parts = line.split(',');
-    if (parts.length < 4) {
+    if (parts.length < 5) {
       return null;
     }
     final id = int.tryParse(parts[0].trim());
@@ -24,8 +24,10 @@ class CsvWordDatasource {
       id: id,
       en: parts[1].trim(),
       ja: parts[2].trim(),
-      category: parts[3].trim(),
-      level: parts.length >= 5 ? parts[4].trim() : 'general',
+      pos: parts[3].trim(),
+      theme: parts[4].trim(),
+      level: parts.length >= 6 ? parts[5].trim() : 'general',
+      isFrequent: parts.length >= 7 && parts[6].trim() == '1',
     );
   }
 }

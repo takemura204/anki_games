@@ -61,8 +61,7 @@ class PieceDefinitions {
     cornerA, cornerB, cornerC, cornerD,
     barH5, barV5,
     rect2x3, rect3x2,
-    plus,
-    uShape, bigLShape0, bigLShape90, wShape,
+    bigLShape0, bigLShape90, bigLShape180, bigLShape270,
   ];
 
   /// クイズモード用: 小ピースプール（1〜3セル）。
@@ -82,8 +81,8 @@ class PieceDefinitions {
 
   /// クイズモード用: 大ピースプール（5セル以上）。
   static const List<Piece> quizHardPool = [
-    square3x3, barH5, barV5, rect2x3, rect3x2, plus,
-    uShape, bigLShape0, bigLShape90, wShape,
+    square3x3, barH5, barV5, rect2x3, rect3x2,
+    bigLShape0, bigLShape90, bigLShape180, bigLShape270,
   ];
 
   /// Returns a random piece from [pool].
@@ -199,20 +198,6 @@ class PieceDefinitions {
     (2, 0), (2, 1),
   ]);
 
-  /// Plus (cross) shape.
-  /// □■□
-  /// ■■■
-  /// □■□
-  static const plus = Piece([(0, 1), (1, 0), (1, 1), (1, 2), (2, 1)]);
-
-  /// U-shape (5 cells).
-  /// ■□■
-  /// ■■■
-  static const uShape = Piece([
-    (0, 0), (0, 2),
-    (1, 0), (1, 1), (1, 2),
-  ]);
-
   /// Big L-shape, 0 degree (5 cells).
   /// ■□
   /// ■□
@@ -233,13 +218,24 @@ class PieceDefinitions {
     (1, 0),
   ]);
 
-  /// W-staircase shape (5 cells).
-  /// ■□□
-  /// ■■□
-  /// □■■
-  static const wShape = Piece([
-    (0, 0),
-    (1, 0), (1, 1),
-    (2, 1), (2, 2),
+  /// Big L-shape, 180 degree (5 cells).
+  /// ■■
+  /// □■
+  /// □■
+  /// □■
+  static const bigLShape180 = Piece([
+    (0, 0), (0, 1),
+    (1, 1),
+    (2, 1),
+    (3, 1),
   ]);
+
+  /// Big L-shape, 270 degree (5 cells).
+  /// □□□■
+  /// ■■■■
+  static const bigLShape270 = Piece([
+    (0, 3),
+    (1, 0), (1, 1), (1, 2), (1, 3),
+  ]);
+
 }

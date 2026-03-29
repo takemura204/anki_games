@@ -5,6 +5,7 @@ part 'settings_view_model.g.dart';
 
 const _soundKey = 'settings_sound_enabled';
 const _vibrationKey = 'settings_vibration_enabled';
+const _ttsKey = 'settings_tts_enabled';
 
 /// アプリ設定の状態。
 class SettingsState {
@@ -12,6 +13,7 @@ class SettingsState {
   const SettingsState({
     this.soundEnabled = true,
     this.vibrationEnabled = true,
+    this.ttsEnabled = true,
   });
 
   /// サウンドが有効かどうか。
@@ -20,14 +22,19 @@ class SettingsState {
   /// バイブレーションが有効かどうか。
   final bool vibrationEnabled;
 
+  /// TTS（発音読み上げ）が有効かどうか。
+  final bool ttsEnabled;
+
   /// 指定フィールドを置き換えたコピーを返す。
   SettingsState copyWith({
     bool? soundEnabled,
     bool? vibrationEnabled,
+    bool? ttsEnabled,
   }) =>
       SettingsState(
         soundEnabled: soundEnabled ?? this.soundEnabled,
         vibrationEnabled: vibrationEnabled ?? this.vibrationEnabled,
+        ttsEnabled: ttsEnabled ?? this.ttsEnabled,
       );
 }
 
@@ -45,6 +52,7 @@ class SettingsViewModel extends _$SettingsViewModel {
       state = SettingsState(
         soundEnabled: prefs.getBool(_soundKey) ?? true,
         vibrationEnabled: prefs.getBool(_vibrationKey) ?? true,
+        ttsEnabled: prefs.getBool(_ttsKey) ?? true,
       );
     });
   }
@@ -63,5 +71,13 @@ class SettingsViewModel extends _$SettingsViewModel {
     state = state.copyWith(vibrationEnabled: next);
     SharedPreferences.getInstance()
         .then((prefs) => prefs.setBool(_vibrationKey, next));
+  }
+
+  /// TTS（発音読み上げ）の有効/無効を切り替える。
+  void toggleTts() {
+    final next = !state.ttsEnabled;
+    state = state.copyWith(ttsEnabled: next);
+    SharedPreferences.getInstance()
+        .then((prefs) => prefs.setBool(_ttsKey, next));
   }
 }

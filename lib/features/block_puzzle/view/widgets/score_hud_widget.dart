@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mono_games/features/block_puzzle/model/game_theme.dart';
 import 'package:mono_games/features/block_puzzle/view_model/block_puzzle_view_model.dart';
-import 'package:mono_games/i18n/translations.g.dart';
 
 /// スコア・ハイスコア・コンボを表示するHUD。
 class ScoreHudWidget extends ConsumerStatefulWidget {
@@ -62,39 +61,12 @@ class _ScoreHudWidgetState extends ConsumerState<ScoreHudWidget>
     super.dispose();
   }
 
-  static String _formatTime(int totalSeconds) {
-    final m = totalSeconds ~/ 60;
-    final s = totalSeconds % 60;
-    return '${m.toString().padLeft(2, '0')}:'
-        '${s.toString().padLeft(2, '0')}';
-  }
-
   @override
   Widget build(BuildContext context) {
     final colors = widget.theme.colorsFor(Theme.of(context).brightness);
     final highScore = ref.watch(
       blockPuzzleViewModelProvider.select((s) => s.highScore),
     );
-    final isQuestMode = ref.watch(
-      blockPuzzleViewModelProvider.select((s) => s.isQuestMode),
-    );
-    final isTimeAttackMode = ref.watch(
-      blockPuzzleViewModelProvider.select((s) => s.isTimeAttackMode),
-    );
-    final timeAttackRemaining = ref.watch(
-      blockPuzzleViewModelProvider.select((s) => s.timeAttackRemainingSeconds),
-    );
-    // クエストモード: 残りノイズブロック数を表示
-    final noiseBoard = ref.watch(
-      blockPuzzleViewModelProvider.select((s) => s.noiseBoard),
-    );
-    final noiseCount = noiseBoard.isEmpty
-        ? 0
-        : noiseBoard.fold<int>(
-            0,
-            (int sum, List<int> row) =>
-                sum + row.where((int hp) => hp > 0).length,
-          );
     final combo = ref.watch(
       blockPuzzleViewModelProvider.select((s) => s.combo),
     );
@@ -223,17 +195,12 @@ class _ScoreHudWidgetState extends ConsumerState<ScoreHudWidget>
                       ),
                     ),
             ),
-          // タイムアタック=TIME、クエスト=NOISE、クラシック=BEST
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                isTimeAttackMode
-                    ? t.blockPuzzle.timeAttackLabel
-                    : isQuestMode
-                        ? 'NOISE'
-                        : 'BEST',
+                'BEST',
                 style: TextStyle(
                   fontFamily: 'Poppins',
                   fontSize: 10,
@@ -243,18 +210,12 @@ class _ScoreHudWidgetState extends ConsumerState<ScoreHudWidget>
                 ),
               ),
               Text(
-                isTimeAttackMode
-                    ? _formatTime(timeAttackRemaining)
-                    : isQuestMode
-                        ? '$noiseCount'
-                        : '$highScore',
+                '$highScore',
                 style: TextStyle(
                   fontFamily: 'Poppins',
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
-                  color: isTimeAttackMode && timeAttackRemaining <= 30
-                      ? colors.accent
-                      : colors.onSurface.withValues(alpha: 0.5),
+                  color: colors.onSurface.withValues(alpha: 0.5),
                   height: 1.1,
                 ),
               ),

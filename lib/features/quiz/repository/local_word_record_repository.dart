@@ -28,4 +28,7 @@ class LocalWordRecordRepository implements WordRecordRepository {
       _db.update(_db.wordRecords).write(
         const WordRecordsCompanion(weight: Value(1)),
       );
+
+  @override
+  Future<void> deleteAll() => _db.delete(_db.wordRecords).go();
 }

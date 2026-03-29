@@ -8,59 +8,50 @@ environment:
   sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
-  flutter:
-    sdk: flutter
-  flutter_localizations:
-    sdk: flutter
-    
-  # Firebase
-  google_mobile_ads: 
-
-  # 状態管理
-  flutter_riverpod: 
-  riverpod_annotation: 
-  hooks_riverpod: 
-  flutter_hooks:
-  freezed_annotation: 
-  json_annotation: 
-  slang: 
-  slang_flutter: 
-
-  #コード品質管理
-  pedantic_mono:
-
-  #UI
+  audioplayers:
+  auto_size_text: ^3.0.0
   cupertino_icons:
-  flex_color_scheme: ^8.4.0
-  shared_preferences:
-  flame: 
-  flame_forge2d: 
-  sensors_plus: 
-  audioplayers: 
-  url_launcher:
-  flutter_svg:
-  gap:
-  envied:
-  flutter_card_swiper: ^7.0.1
   drift: ^2.22.1
   drift_flutter: ^0.2.3
+  envied:
+  flame:
+  flame_forge2d:
+  flex_color_scheme: ^8.4.0
+  flutter:
+    sdk: flutter
+  flutter_card_swiper: ^7.0.1
+  flutter_hooks:
+  flutter_localizations:
+    sdk: flutter
+  flutter_riverpod:
+  flutter_svg:
+  flutter_tts: ^4.0.0
+  freezed_annotation:
+  gap:
+  google_mobile_ads:
+  hooks_riverpod:
+  json_annotation:
+  pedantic_mono:
+  purchases_flutter: ^9.15.1
+  riverpod_annotation:
+  sensors_plus:
+  shared_preferences:
+  slang:
+  slang_flutter:
+  url_launcher:
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
-
-  # 自動生成
   build_runner:
   drift_dev: ^2.22.1
-  riverpod_generator:
+  envied_generator:
   flutter_gen_runner:
+  flutter_launcher_icons:
+  flutter_test:
+    sdk: flutter
   freezed:
   json_serializable:
-  envied_generator:
+  riverpod_generator:
   slang_build_runner:
-
-  # アイコン生成
-  flutter_launcher_icons:
 
 flutter:
   uses-material-design: true

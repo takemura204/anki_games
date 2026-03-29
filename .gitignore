@@ -44,8 +44,15 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
+# iOS
+.storekit
+
 # Flutter
 *.freezed.dart
 *.g.dart
 *.gen.dart
 pubspec.lock
+
+# 単語生成ツールの大容量データファイル
+tools/data/
+.env

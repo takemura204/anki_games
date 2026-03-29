@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart' show kDebugMode;
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mono_games/config/constants/app_urls.dart';
@@ -5,6 +6,8 @@ import 'package:mono_games/features/block_puzzle/model/game_theme.dart';
 import 'package:mono_games/features/block_puzzle/view/modals/theme_selector_sheet.dart';
 import 'package:mono_games/features/block_puzzle/view_model/block_puzzle_view_model.dart';
 import 'package:mono_games/features/block_puzzle/view_model/theme_view_model.dart';
+import 'package:mono_games/features/purchase/view/paywall_bottom_sheet.dart';
+import 'package:mono_games/features/purchase/view_model/premium_view_model.dart';
 import 'package:mono_games/features/quiz/view_model/quiz_view_model.dart';
 import 'package:mono_games/features/settings/view_model/settings_view_model.dart';
 import 'package:mono_games/i18n/translations.g.dart';
@@ -40,6 +43,11 @@ class _SettingsSheet extends ConsumerWidget {
     final settings = ref.watch(settingsViewModelProvider);
     final notifier = ref.read(settingsViewModelProvider.notifier);
     final currentTheme = ref.watch(themeViewModelProvider);
+    final isPremium = ref.watch(
+      premiumViewModelProvider.select(
+        (AsyncValue<PremiumState> s) => s.valueOrNull?.isPremium ?? false,
+      ),
+    );
     final brightness = Theme.of(context).brightness;
     final colors = currentTheme.colorsFor(brightness);
 
@@ -94,6 +102,14 @@ class _SettingsSheet extends ConsumerWidget {
             onChanged: (_) => notifier.toggleVibration(),
             colors: colors,
           ),
+          // TTS（発音）
+          _ToggleRow(
+            icon: Icons.record_voice_over_rounded,
+            label: t.settings.tts,
+            value: settings.ttsEnabled,
+            onChanged: (_) => notifier.toggleTts(),
+            colors: colors,
+          ),
           _SheetDivider(colors: colors),
           // テーマ選択
           _ActionRow(
@@ -105,31 +121,6 @@ class _SettingsSheet extends ConsumerWidget {
             },
             colors: colors,
           ),
-          // クイズモード専用: 出題方向
-          if (isGameScreen &&
-              ref.watch(
-                blockPuzzleViewModelProvider.select((s) => s.isQuizMode),
-              )) ...[
-            _SheetDivider(colors: colors),
-            _SegmentRow(
-              icon: Icons.swap_horiz_rounded,
-              label: t.quiz.questionDirection,
-              options: [
-                t.quiz.questionDirectionEnToJa,
-                t.quiz.questionDirectionJaToEn,
-                t.quiz.directionRandom,
-              ],
-              selectedIndex: ref.watch(
-                quizViewModelProvider.select(
-                  (s) => s.directionMode.index,
-                ),
-              ),
-              onSelected: (int i) => ref
-                  .read(quizViewModelProvider.notifier)
-                  .setDirectionMode(QuizDirectionMode.values[i]),
-              colors: colors,
-            ),
-          ],
           // ゲーム画面専用: ホームへ戻る・リスタート
           if (isGameScreen) ...[
             _SheetDivider(colors: colors),
@@ -155,9 +146,6 @@ class _SettingsSheet extends ConsumerWidget {
                   Navigator.of(context)
                     ..pop()
                     ..pop();
-                } else if (vm.isQuestMode) {
-                  Navigator.of(context).pop();
-                  vmNotifier.retryQuestLevel();
                 } else {
                   Navigator.of(context).pop();
                   vmNotifier.resetGame();
@@ -166,8 +154,26 @@ class _SettingsSheet extends ConsumerWidget {
               colors: colors,
             ),
           ],
-          // ホーム画面専用: 利用規約・プライバシーポリシー・お問い合わせ
+          // ホーム画面専用: プレミアム・利用規約・プライバシーポリシー・お問い合わせ
           if (!isGameScreen) ...[
+            _SheetDivider(colors: colors),
+            _ActionRow(
+              icon: isPremium
+                  ? Icons.workspace_premium_rounded
+                  : Icons.workspace_premium_outlined,
+              label: isPremium ? t.premium.activeBadge : t.premium.title,
+              onTap: () => showPaywallBottomSheet(context),
+              colors: colors,
+            ),
+            if (kDebugMode)
+              _ActionRow(
+                icon: Icons.developer_mode_rounded,
+                label: t.premium.devToggle,
+                onTap: () => ref
+                    .read(premiumViewModelProvider.notifier)
+                    .toggleMockPremium(),
+                colors: colors,
+              ),
             _SheetDivider(colors: colors),
             _LinkRow(
               icon: Icons.description_outlined,
@@ -187,6 +193,8 @@ class _SettingsSheet extends ConsumerWidget {
               url: AppUrls.contact,
               colors: colors,
             ),
+            _SheetDivider(colors: colors),
+            _DeleteLearningDataRow(colors: colors),
           ],
         ],
       ),
@@ -344,86 +352,6 @@ class _LinkRow extends StatelessWidget {
   }
 }
 
-class _SegmentRow extends StatelessWidget {
-  const _SegmentRow({
-    required this.icon,
-    required this.label,
-    required this.options,
-    required this.selectedIndex,
-    required this.onSelected,
-    required this.colors,
-  });
-
-  final IconData icon;
-  final String label;
-  final List<String> options;
-  final int selectedIndex;
-  final ValueChanged<int> onSelected;
-  final GameThemeColors colors;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8),
-      child: Row(
-        children: [
-          Icon(icon, size: 20, color: colors.onSurface.withValues(alpha: 0.6)),
-          const SizedBox(width: 12),
-          Expanded(
-            child: Text(
-              label,
-              style: TextStyle(
-                fontFamily: 'Poppins',
-                fontSize: 14,
-                color: colors.onSurface,
-              ),
-            ),
-          ),
-          const SizedBox(width: 8),
-          DecoratedBox(
-            decoration: BoxDecoration(
-              color: colors.onSurface.withValues(alpha: 0.06),
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                for (var i = 0; i < options.length; i++)
-                  GestureDetector(
-                    onTap: () => onSelected(i),
-                    child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 150),
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 10,
-                        vertical: 5,
-                      ),
-                      decoration: BoxDecoration(
-                        color: i == selectedIndex
-                            ? colors.accent
-                            : Colors.transparent,
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: Text(
-                        options[i],
-                        style: TextStyle(
-                          fontFamily: 'Poppins',
-                          fontSize: 12,
-                          fontWeight: FontWeight.w600,
-                          color: i == selectedIndex
-                              ? colors.surface
-                              : colors.onSurface.withValues(alpha: 0.6),
-                        ),
-                      ),
-                    ),
-                  ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
 
 class _SheetDivider extends StatelessWidget {
   const _SheetDivider({required this.colors});
@@ -435,6 +363,72 @@ class _SheetDivider extends StatelessWidget {
     return Divider(
       color: colors.onSurface.withValues(alpha: 0.1),
       height: 16,
+    );
+  }
+}
+
+class _DeleteLearningDataRow extends ConsumerWidget {
+  const _DeleteLearningDataRow({required this.colors});
+
+  final GameThemeColors colors;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return InkWell(
+      onTap: () async {
+        final confirmed = await showDialog<bool>(
+          context: context,
+          builder: (ctx) => AlertDialog(
+            title: Text(t.settings.deleteLearningDataConfirmTitle),
+            content: Text(t.settings.deleteLearningDataConfirmBody),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.of(ctx).pop(false),
+                child: Text(t.settings.cancel),
+              ),
+              TextButton(
+                onPressed: () => Navigator.of(ctx).pop(true),
+                style: TextButton.styleFrom(
+                  foregroundColor: Colors.red,
+                ),
+                child: Text(t.settings.deleteLearningDataConfirm),
+              ),
+            ],
+          ),
+        );
+        if (confirmed == true && context.mounted) {
+          await ref
+              .read(quizViewModelProvider.notifier)
+              .deleteAllLearningData();
+          if (context.mounted) {
+            Navigator.of(context).pop();
+          }
+        }
+      },
+      borderRadius: BorderRadius.circular(8),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 12),
+        child: Row(
+          children: [
+            const Icon(
+              Icons.delete_outline_rounded,
+              size: 20,
+              color: Colors.red,
+            ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Text(
+                t.settings.deleteLearningData,
+                style: const TextStyle(
+                  fontFamily: 'Poppins',
+                  fontSize: 14,
+                  color: Colors.red,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

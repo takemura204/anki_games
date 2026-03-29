@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -7,6 +5,7 @@ import 'package:mono_games/features/block_puzzle/model/game_theme.dart';
 import 'package:mono_games/features/block_puzzle/model/piece.dart';
 import 'package:mono_games/features/block_puzzle/view/widgets/piece_widget.dart';
 import 'package:mono_games/features/block_puzzle/view_model/block_puzzle_view_model.dart';
+import 'package:mono_games/features/quiz/model/quiz_word.dart';
 import 'package:mono_games/features/settings/view_model/settings_view_model.dart';
 import 'package:mono_games/until/service/audio_service.dart';
 
@@ -29,8 +28,8 @@ class PieceTrayWidget extends ConsumerWidget {
   /// 現在のゲームテーマ。
   final GameTheme theme;
 
-  /// クイズモード時の単語ラベル（非null でクイズモード表示に切り替わる）。
-  final List<String?>? quizWords;
+  /// クイズモード時の単語（非null でクイズモード表示に切り替わる）。
+  final List<QuizWord?>? quizWords;
 
   /// クイズモード時の正誤（true=緑・false=赤・null=未回答）。
   final List<bool?>? quizCorrectness;
@@ -53,7 +52,7 @@ class PieceTrayWidget extends ConsumerWidget {
                   ? _QuizPieceSlot(
                       key: ValueKey('quiz_slot_$i'),
                       piece: i < pieces.length ? pieces[i] : null,
-                      word: i < quizWords!.length ? quizWords![i] : null,
+                      quizWord: i < quizWords!.length ? quizWords![i] : null,
                       isCorrect: quizCorrectness != null &&
                               i < quizCorrectness!.length
                           ? quizCorrectness![i]
@@ -87,7 +86,7 @@ class _AnimatedPieceSlot extends ConsumerStatefulWidget {
   final Piece? piece;
   final int index;
 
-  /// ボードセルサイズ（トレイ表示は 0.6 倍して使用）。
+  /// ボードセルサイズ（トレイ表示は 0.5 倍して使用）。
   final double cellSize;
   final GameTheme theme;
 
@@ -190,7 +189,8 @@ class _AnimatedPieceSlotState extends ConsumerState<_AnimatedPieceSlot>
         ),
         // ドラッグ中はスロット全体を空にする
         childWhenDragging: const SizedBox.expand(),
-        // 通常表示: ピースをスロット中央にトレイサイズ（0.6倍）で配置
+        // 通常表示: ピースをブロックエリア（上 cellSize*3）の中央に配置。
+        // 下 cellSize 分の余白はクイズモードの単語ラベルエリアと高さを揃えるため。
         // Listener(opaque) でスロット全体をヒットテスト対象にする。
         // CustomPaint は塗りつぶし領域外でhitTest=falseを返すため、
         // opaque Listener がスロット全域でhitTarget=trueを保証する。
@@ -209,12 +209,20 @@ class _AnimatedPieceSlotState extends ConsumerState<_AnimatedPieceSlot>
                 ),
               );
             },
-            child: Center(
-              child: PieceWidget(
-                piece: piece,
-                cellSize: widget.cellSize * 0.6,
-                theme: widget.theme,
-              ),
+            child: Column(
+              children: [
+                SizedBox(
+                  height: widget.cellSize * 3,
+                  child: Center(
+                    child: PieceWidget(
+                      piece: piece,
+                      cellSize: widget.cellSize * 0.5,
+                      theme: widget.theme,
+                    ),
+                  ),
+                ),
+                SizedBox(height: widget.cellSize),
+              ],
             ),
           ),
         ),
@@ -227,11 +235,14 @@ class _AnimatedPieceSlotState extends ConsumerState<_AnimatedPieceSlot>
 // クイズモードのスロット
 // ════════════════════════════════════════════════════════════════════════════
 
-/// クイズ回答で獲得したピースを正方形の枠内に表示し、枠の真下に単語ラベルを配置する。
+/// クイズ回答で獲得したピースを表示するスロット。
+///
+/// 上 cellSize*3 をフレームエリア（枠＋ブロック）、下 cellSize を単語ラベルエリアに分割する。
+/// ブロックモードも同じ高さ配分なので、モード切替時にブロック位置がずれない。
 class _QuizPieceSlot extends StatelessWidget {
   const _QuizPieceSlot({
     required this.piece,
-    required this.word,
+    required this.quizWord,
     required this.isCorrect,
     required this.cellSize,
     required this.theme,
@@ -239,12 +250,10 @@ class _QuizPieceSlot extends StatelessWidget {
   });
 
   final Piece? piece;
-  final String? word;
+  final QuizWord? quizWord;
   final bool? isCorrect;
   final double cellSize;
   final GameTheme theme;
-
-  static const _wordLabelHeight = 20.0;
 
   @override
   Widget build(BuildContext context) {
@@ -267,66 +276,76 @@ class _QuizPieceSlot extends StatelessWidget {
       wordColor = null;
     }
 
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final frameSize = min(
-          constraints.maxWidth - 12,
-          constraints.maxHeight - _wordLabelHeight - 12,
-        );
-
-        return Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            AnimatedContainer(
+    return Column(
+      children: [
+        // フレームエリア: ブロックのみを囲む（cellSize * 3）
+        SizedBox(
+          height: cellSize * 3,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
+            child: AnimatedContainer(
               duration: const Duration(milliseconds: 300),
-              width: frameSize,
-              height: frameSize,
               decoration: BoxDecoration(
                 color: bgColor,
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(color: borderColor),
               ),
-              child: AnimatedSwitcher(
-                duration: const Duration(milliseconds: 250),
-                transitionBuilder: (child, anim) => ScaleTransition(
-                  scale: anim,
-                  child: FadeTransition(opacity: anim, child: child),
-                ),
-                child: piece != null
-                    ? Center(
-                        key: ValueKey(piece),
-                        child: PieceWidget(
+              child: Center(
+                child: AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 250),
+                  transitionBuilder: (child, anim) => ScaleTransition(
+                    scale: anim,
+                    child: FadeTransition(opacity: anim, child: child),
+                  ),
+                  child: piece != null
+                      ? PieceWidget(
+                          key: ValueKey(piece),
                           piece: piece!,
-                          cellSize: cellSize * 0.6,
+                          cellSize: cellSize * 0.5,
                           theme: theme,
-                        ),
-                      )
-                    : const SizedBox.shrink(),
+                        )
+                      : const SizedBox.shrink(),
+                ),
               ),
             ),
-            SizedBox(
-              height: _wordLabelHeight,
-              child: word != null
-                  ? Padding(
-                      padding: const EdgeInsets.only(top: 3),
-                      child: Text(
-                        word!,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'Poppins',
-                          fontSize: 10,
-                          fontWeight: FontWeight.w600,
-                          color: wordColor,
-                        ),
+          ),
+        ),
+        // 単語ラベルエリア: 枠の外・下部（cellSize * 1）
+        SizedBox(
+          height: cellSize,
+          child: quizWord != null
+              ? Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      quizWord!.en,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 12,
+                        fontWeight: FontWeight.w700,
+                        color: wordColor,
                       ),
-                    )
-                  : null,
-            ),
-          ],
-        );
-      },
+                    ),
+                    Text(
+                      quizWord!.ja,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 11,
+                        fontWeight: FontWeight.w700,
+                        color: wordColor,
+                      ),
+                    ),
+                  ],
+                )
+              : const SizedBox.shrink(),
+        ),
+      ],
     );
   }
 }
