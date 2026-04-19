@@ -1,4 +1,6 @@
 {
+	// ユーザー keybindings.json（Cmd+S HR / Cmd+Shift+S リスタート→接続先を前面）の when 句と連動
+	"workspaceKeybindings.ankiGamesFlutterEmuFocus.enabled": true,
 	"dart.flutterSdkPath": "~/.asdf/installs/flutter/3.38.4-stable",
 	"dart.lineLength": 80,
 	"editor.formatOnSave": true,
@@ -27,5 +29,8 @@
 		"editor.defaultFormatter": "Dart-Code.dart-code",
 		"editor.formatOnSave": true
 	},
-	"i18n-ally.localesPaths": ["lib/i18n"]
+	"i18n-ally.localesPaths": ["lib/i18n"],
+	"i18n-ally.pathMatcher": "{locale}.i18n.json",
+	"i18n-ally.keystyle": "nested",
+	"i18n-ally.sourceLanguage": "ja"
 }

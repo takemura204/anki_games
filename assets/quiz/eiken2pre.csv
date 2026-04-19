@@ -1,0 +1,1236 @@
+id,en,ja,pos,theme,level,is_frequent
+1,afford to do,〜する余裕がある,verb,grammar,eiken2pre,0
+2,agree to do,～することに同意する,verb,grammar,eiken2pre,0
+3,be based on,～に基づいている,verb,grammar,eiken2pre,0
+4,intend to do,～するつもりだ,verb,grammar,eiken2pre,0
+5,mean to do,～するつもりである,verb,grammar,eiken2pre,0
+6,might,かもしれない,verb,grammar,eiken2pre,1
+7,offer to do,～しようと申し出る,verb,grammar,eiken2pre,0
+8,prefer to do,〜することを好む,verb,grammar,eiken2pre,0
+9,seem to do,～するようだ,verb,grammar,eiken2pre,0
+10,tend to do,～しがちだ,verb,grammar,eiken2pre,0
+11,used to do,以前は〜していた,verb,grammar,eiken2pre,0
+12,accept,～を受け入れる,verb,action,eiken2pre,1
+13,accomplish,～を達成する,verb,action,eiken2pre,0
+14,accord,一致する,verb,action,eiken2pre,0
+15,achieve,～を達成する,verb,action,eiken2pre,0
+16,admit,〜を認める,verb,action,eiken2pre,0
+17,affect,～に影響を及ぼす,verb,action,eiken2pre,0
+18,allow,～するのを許す,verb,action,eiken2pre,1
+19,amuse,～を楽しませる,verb,action,eiken2pre,0
+20,apply,申し込む,verb,action,eiken2pre,0
+21,apply for,～に応募する,verb,action,eiken2pre,0
+22,arrest,～を逮捕する,verb,action,eiken2pre,0
+23,attract,〜を惹きつける,verb,action,eiken2pre,1
+24,babysit,子守りをする,verb,action,eiken2pre,0
+25,balance,バランスをとる,verb,action,eiken2pre,1
+26,bark,吠える,verb,action,eiken2pre,0
+27,base,基づける,verb,action,eiken2pre,0
+28,be away,留守にする,verb,action,eiken2pre,0
+29,be in danger,危険にさらされている,verb,action,eiken2pre,0
+30,be injured,怪我をする,verb,action,eiken2pre,0
+31,beat,〜を負かす,verb,action,eiken2pre,0
+32,behave,振る舞う,verb,action,eiken2pre,0
+33,belong,所属する,verb,action,eiken2pre,1
+34,bend,〜を曲げる,verb,action,eiken2pre,0
+35,bet,きっと〜だ,verb,action,eiken2pre,0
+36,bite,噛む,verb,action,eiken2pre,1
+37,blame,～を責める,verb,action,eiken2pre,0
+38,bloom,咲く,verb,action,eiken2pre,0
+39,blow,吹く,verb,action,eiken2pre,0
+40,bore,～を退屈させる,verb,action,eiken2pre,0
+41,bother,～に迷惑をかける,verb,action,eiken2pre,1
+42,break down,故障する,verb,action,eiken2pre,0
+43,break out,勃発する,verb,action,eiken2pre,0
+44,break up,（恋人と）別れる,verb,action,eiken2pre,0
+45,breathe,呼吸する,verb,action,eiken2pre,1
+46,bring about,〜を引き起こす,verb,action,eiken2pre,0
+47,bring up,〜を育てる,verb,action,eiken2pre,0
+48,burn down,焼け落ちる,verb,action,eiken2pre,0
+49,burst,破裂する,verb,action,eiken2pre,0
+50,call for,～を要求する,verb,action,eiken2pre,0
+51,call off,〜を中止する,verb,action,eiken2pre,0
+52,call out,大声で助けを呼ぶ,verb,action,eiken2pre,0
+53,carry out,～を実行する,verb,action,eiken2pre,0
+54,chase,〜を追う,verb,action,eiken2pre,0
+55,chew,〜をかむ,verb,action,eiken2pre,0
+56,combine,〜を結合する,verb,action,eiken2pre,1
+57,come up with,〜を思いつく,verb,action,eiken2pre,0
+58,compare,～を比較する,verb,action,eiken2pre,0
+59,compete,競争する,verb,action,eiken2pre,1
+60,complain,不平をいう,verb,action,eiken2pre,0
+61,complete,〜を終わらせる,verb,action,eiken2pre,1
+62,concentrate,集中する,verb,action,eiken2pre,0
+63,confuse,～を混同する,verb,action,eiken2pre,1
+64,connect,～をつなぐ,verb,action,eiken2pre,1
+65,contain,含む,verb,action,eiken2pre,0
+66,criticize,～を非難する,verb,action,eiken2pre,0
+67,cut down,〜を切り倒す,verb,action,eiken2pre,0
+68,cut off,〜を遮断する,verb,action,eiken2pre,0
+69,decrease,減少する,verb,action,eiken2pre,0
+70,delay,～を遅らせる,verb,action,eiken2pre,0
+71,demonstrate,～を示す,verb,action,eiken2pre,0
+72,depend,頼る,verb,action,eiken2pre,0
+73,differ,違う,verb,action,eiken2pre,0
+74,differ from,～と異なる,verb,action,eiken2pre,0
+75,dig,掘る,verb,action,eiken2pre,0
+76,disagree,意見が合わない,verb,action,eiken2pre,0
+77,disappoint,～を失望させる,verb,action,eiken2pre,0
+78,divide,～を分ける,verb,action,eiken2pre,0
+79,do good,善行をする,verb,action,eiken2pre,0
+80,do harm,～に損害を与える,verb,action,eiken2pre,0
+81,do without,〜なしでやりくりする,verb,action,eiken2pre,0
+82,donate,～を寄付する,verb,action,eiken2pre,0
+83,dress up,正装する,verb,action,eiken2pre,0
+84,earn,～を稼ぐ,verb,action,eiken2pre,1
+85,eat out,外食する,verb,action,eiken2pre,0
+86,educate,〜を教育する,verb,action,eiken2pre,0
+87,embarrass,〜に恥をかかせる,verb,action,eiken2pre,0
+88,employ,〜を雇う,verb,action,eiken2pre,0
+89,encourage,～を励ます,verb,action,eiken2pre,0
+90,end up with,結果的に〜を持つことになる,verb,action,eiken2pre,0
+91,erase,～を消す,verb,action,eiken2pre,0
+92,estimate,〜を見積もる,verb,action,eiken2pre,0
+93,excite,〜を興奮させる,verb,action,eiken2pre,0
+94,exist,存在する,verb,action,eiken2pre,0
+95,expand,〜を拡大する,verb,action,eiken2pre,0
+96,extend,～を延ばす,verb,action,eiken2pre,0
+97,fill out,～に記入する,verb,action,eiken2pre,0
+98,fill up,〜をいっぱいにする,verb,action,eiken2pre,0
+99,flash,ピカッとひかる,verb,action,eiken2pre,0
+100,focus on,～に焦点を絞る,verb,action,eiken2pre,0
+101,fold,〜を折りたたむ,verb,action,eiken2pre,0
+102,force,強制する,verb,action,eiken2pre,0
+103,forgive,～を許す,verb,action,eiken2pre,0
+104,freeze,凍る,verb,action,eiken2pre,0
+105,frighten,〜を怖がらせる,verb,action,eiken2pre,0
+106,fulfill,～を果たす,verb,action,eiken2pre,0
+107,gather,集まる,verb,action,eiken2pre,1
+108,get away,抜け出す,verb,action,eiken2pre,0
+109,get out of,〜（義務・責任）から免れる,verb,action,eiken2pre,0
+110,get used to,～に慣れる,verb,action,eiken2pre,0
+111,govern,～を統治する,verb,action,eiken2pre,0
+112,grab,～を引っ掴む,verb,action,eiken2pre,0
+113,grill,焼く,verb,action,eiken2pre,1
+114,guard,守る,verb,action,eiken2pre,1
+115,hand in,～を提出する,verb,action,eiken2pre,0
+116,hand out,〜を配る,verb,action,eiken2pre,0
+117,hang up,電話を切る,verb,action,eiken2pre,0
+118,happen to do,たまたま～する,verb,action,eiken2pre,0
+119,harm,〜を損なう,verb,action,eiken2pre,0
+120,have a baby,赤ちゃんを産む,verb,action,eiken2pre,0
+121,hire,〜を雇う,verb,action,eiken2pre,1
+122,hold on,待つ,verb,action,eiken2pre,0
+123,hope for,～を願う,verb,action,eiken2pre,0
+124,hug,～を抱きしめる,verb,action,eiken2pre,1
+125,hunt,狩る,verb,action,eiken2pre,1
+126,import,～を輸入する,verb,action,eiken2pre,0
+127,impress,～を感動させる,verb,action,eiken2pre,0
+128,include,～を含む,verb,action,eiken2pre,1
+129,increase,増加する,verb,action,eiken2pre,0
+130,inspire,〜を鼓舞する,verb,action,eiken2pre,0
+131,involve,～を巻き込む,verb,action,eiken2pre,0
+132,keep up with,遅れずに付いていく,verb,action,eiken2pre,0
+133,knit,〜を編む,verb,action,eiken2pre,0
+134,lack,欠けている,verb,action,eiken2pre,0
+135,lead to,～につながる,verb,action,eiken2pre,0
+136,leave alone,～をひとりにしておく,verb,action,eiken2pre,0
+137,leave behind,～を置いていく,verb,action,eiken2pre,0
+138,let down,～を失望させる,verb,action,eiken2pre,0
+139,lie,うそをつく,verb,action,eiken2pre,1
+140,lift,～を持ち上げる,verb,action,eiken2pre,1
+141,link,～を結びつける,verb,action,eiken2pre,0
+142,live on,～を常食とする,verb,action,eiken2pre,0
+143,locate,（〜の）位置を突き止める,verb,action,eiken2pre,0
+144,lock,～に鍵をかける,verb,action,eiken2pre,0
+145,look down on,～を見下す,verb,action,eiken2pre,0
+146,look into,〜を調べる,verb,action,eiken2pre,0
+147,look out,用心する,verb,action,eiken2pre,0
+148,look over,〜をざっと調べる,verb,action,eiken2pre,0
+149,look through,～にざっと目を通す,verb,action,eiken2pre,0
+150,look up,～を調べる,verb,action,eiken2pre,0
+151,lose control,〜を抑えられなくなる,verb,action,eiken2pre,0
+152,lower,～を下げる,verb,action,eiken2pre,0
+153,maintain,維持する,verb,action,eiken2pre,0
+154,major,専攻する,verb,action,eiken2pre,0
+155,major in,〜を専攻する,verb,action,eiken2pre,0
+156,make effort,努力する,verb,action,eiken2pre,0
+157,make fun of,〜をからかう,verb,action,eiken2pre,0
+158,make sense,筋が通る,verb,action,eiken2pre,0
+159,make up for,～の埋め合わせをする,verb,action,eiken2pre,0
+160,manage,〜をなんとかやり遂げる,verb,action,eiken2pre,0
+161,measure,～を測定する,verb,action,eiken2pre,1
+162,memorize,〜を暗記する,verb,action,eiken2pre,0
+163,mix up,～を混同する,verb,action,eiken2pre,0
+164,obey,～に従う,verb,action,eiken2pre,0
+165,observe,観察する,verb,action,eiken2pre,0
+166,occupy,～を占める,verb,action,eiken2pre,0
+167,operate,操作する,verb,action,eiken2pre,0
+168,pack,〜を詰め込む,verb,action,eiken2pre,1
+169,participate,参加する,verb,action,eiken2pre,0
+170,pass by,～のそばを通る,verb,action,eiken2pre,0
+171,paste,貼り付ける,verb,action,eiken2pre,0
+172,pick up,〜を車で迎えに行く,verb,action,eiken2pre,0
+173,plug,〜を塞ぐ,verb,action,eiken2pre,0
+174,polish,～を磨く,verb,action,eiken2pre,0
+175,pour,～を注ぐ,verb,action,eiken2pre,1
+176,pray,祈る,verb,action,eiken2pre,0
+177,prepare for,～の準備をする,verb,action,eiken2pre,0
+178,press,押す,verb,action,eiken2pre,1
+179,pretend,〜のふりをする,verb,action,eiken2pre,0
+180,prevent,～を防ぐ,verb,action,eiken2pre,0
+181,promote,〜を昇進させる,verb,action,eiken2pre,0
+182,prove,～を証明する,verb,action,eiken2pre,0
+183,provide,〜を提供する,verb,action,eiken2pre,0
+184,punish,〜を罰する,verb,action,eiken2pre,0
+185,put aside,〜を貯めておく,verb,action,eiken2pre,0
+186,put away,〜を片付ける,verb,action,eiken2pre,0
+187,put down,書き留める,verb,action,eiken2pre,0
+188,put off,〜を延期する,verb,action,eiken2pre,0
+189,put out,火を消す,verb,action,eiken2pre,0
+190,put up with,～を我慢する,verb,action,eiken2pre,0
+191,reach for,～に手を伸ばす,verb,action,eiken2pre,0
+192,recognize,〜だとわかる,verb,action,eiken2pre,0
+193,recover,回復する,verb,action,eiken2pre,0
+194,reduce,〜を減らす,verb,action,eiken2pre,0
+195,refresh,気分転換する,verb,action,eiken2pre,0
+196,reject,～を拒否する,verb,action,eiken2pre,0
+197,relate,関係がある,verb,action,eiken2pre,0
+198,release,～を解放する,verb,action,eiken2pre,0
+199,remain,～のままである,verb,action,eiken2pre,0
+200,remind,（人）に〜を思い出させる,verb,action,eiken2pre,1
+201,remove,〜を取り除く,verb,action,eiken2pre,1
+202,rent,～を借りる,verb,action,eiken2pre,1
+203,replace,〜を取り換える,verb,action,eiken2pre,1
+204,require,〜を必要とする,verb,action,eiken2pre,1
+205,rescue,～を救助する,verb,action,eiken2pre,1
+206,resemble,～に似ている,verb,action,eiken2pre,0
+207,reserve,〜を予約する,verb,action,eiken2pre,1
+208,result from,～の結果として起こる,verb,action,eiken2pre,0
+209,result in,〜をもたらす,verb,action,eiken2pre,0
+210,retire,引退する,verb,action,eiken2pre,1
+211,reverse,〜を逆にする,verb,action,eiken2pre,0
+212,review,復習する,verb,action,eiken2pre,1
+213,run into,～と偶然出会う,verb,action,eiken2pre,0
+214,run out of,～がなくなる,verb,action,eiken2pre,0
+215,scare,怖がらせる,verb,action,eiken2pre,1
+216,search,探す,verb,action,eiken2pre,1
+217,search for,～を探す,verb,action,eiken2pre,0
+218,see if,～かどうか確かめる,verb,action,eiken2pre,0
+219,see off,〜を見送る,verb,action,eiken2pre,0
+220,see that,〜するように取り計らう,verb,action,eiken2pre,0
+221,seek,求める,verb,action,eiken2pre,0
+222,seem like,～のように見える,verb,action,eiken2pre,0
+223,select,〜を選ぶ,verb,action,eiken2pre,1
+224,send out,～を発送する,verb,action,eiken2pre,0
+225,separate,〜を分ける,verb,action,eiken2pre,1
+226,sew,縫う,verb,action,eiken2pre,0
+227,shoot,撃つ,verb,action,eiken2pre,0
+228,shorten,～を短くする,verb,action,eiken2pre,0
+229,show off,見せびらかす,verb,action,eiken2pre,0
+230,shut down,～を閉鎖する,verb,action,eiken2pre,0
+231,sign up for,〜に入会する,verb,action,eiken2pre,0
+232,sink,沈む,verb,action,eiken2pre,0
+233,skip,省く,verb,action,eiken2pre,0
+234,sleep well,よく眠る,verb,action,eiken2pre,0
+235,specialize,専門とする,verb,action,eiken2pre,0
+236,spill,〜をこぼす,verb,action,eiken2pre,0
+237,stand by,〜を支援する,verb,action,eiken2pre,0
+238,stare,見つめる,verb,action,eiken2pre,0
+239,start with,～から始める,verb,action,eiken2pre,0
+240,stay in bed,ベッドで休む,verb,action,eiken2pre,0
+241,stay out,関与しない,verb,action,eiken2pre,0
+242,stick,くっつく,verb,action,eiken2pre,0
+243,stretch,ストレッチをする,verb,action,eiken2pre,1
+244,succeed,成功する,verb,action,eiken2pre,0
+245,succeed in,〜に成功する,verb,action,eiken2pre,0
+246,suffer,苦しむ,verb,action,eiken2pre,0
+247,suffer from,〜に苦しむ,verb,action,eiken2pre,0
+248,supply,～を供給する,verb,action,eiken2pre,0
+249,surround,～を囲む,verb,action,eiken2pre,0
+250,swing,〜を揺らす,verb,action,eiken2pre,0
+251,switch,切り替える,verb,action,eiken2pre,0
+252,take a bite,一口食べる,verb,action,eiken2pre,0
+253,take a nap,昼寝をする,verb,action,eiken2pre,0
+254,take after,〜に似ている,verb,action,eiken2pre,0
+255,take away,〜を片付ける,verb,action,eiken2pre,0
+256,take care,注意する,verb,action,eiken2pre,0
+257,take over,～を引き継ぐ,verb,action,eiken2pre,0
+258,tear,〜を裂く,verb,action,eiken2pre,0
+259,tease,～をからかう,verb,action,eiken2pre,0
+260,trade,交換する,verb,action,eiken2pre,1
+261,trap,～を閉じ込める,verb,action,eiken2pre,0
+262,treat,〜を治療する,verb,action,eiken2pre,0
+263,turn,～歳になる,verb,action,eiken2pre,1
+264,turn down,～を断る,verb,action,eiken2pre,0
+265,turn on,〜をつける,verb,action,eiken2pre,0
+266,vote,投票する,verb,action,eiken2pre,0
+267,wave,手を振る,verb,action,eiken2pre,0
+268,wear out,〜をすり減らす,verb,action,eiken2pre,0
+269,weigh,〜の重さを測る,verb,action,eiken2pre,0
+270,wipe,～を拭く,verb,action,eiken2pre,1
+271,wound,～を傷つける,verb,action,eiken2pre,0
+272,admire,～に感心する,verb,mind,eiken2pre,0
+273,appreciate,〜に感謝する,verb,mind,eiken2pre,0
+274,come to do,〜するようになる,verb,mind,eiken2pre,0
+275,consider,〜についてよく考える,verb,mind,eiken2pre,0
+276,decide on,〜に決める,verb,mind,eiken2pre,0
+277,dislike,〜を嫌う,verb,mind,eiken2pre,0
+278,feel at home,くつろぐ,verb,mind,eiken2pre,0
+279,figure out,～を理解する,verb,mind,eiken2pre,0
+280,get over,～を克服する,verb,mind,eiken2pre,0
+281,ignore,～を無視する,verb,mind,eiken2pre,0
+282,intend,～を意図する,verb,mind,eiken2pre,0
+283,keep in mind,〜を心に留めておく,verb,mind,eiken2pre,0
+284,look up to,～を尊敬する,verb,mind,eiken2pre,0
+285,make out,〜を理解する,verb,mind,eiken2pre,0
+286,make sure,～だと確かめる,verb,mind,eiken2pre,0
+287,prefer,～を好む,verb,mind,eiken2pre,0
+288,regret,～を後悔する,verb,mind,eiken2pre,0
+289,rely,頼る,verb,mind,eiken2pre,0
+290,rely on,〜に頼る,verb,mind,eiken2pre,0
+291,respect,～を尊敬する,verb,mind,eiken2pre,1
+292,suppose,〜と思う,verb,mind,eiken2pre,1
+293,trust,～を信用する,verb,mind,eiken2pre,0
+294,wonder about,～について不思議に思う,verb,mind,eiken2pre,0
+295,announce,発表する,verb,communication,eiken2pre,1
+296,apologize,謝罪する,verb,communication,eiken2pre,0
+297,appeal,控訴する,verb,communication,eiken2pre,0
+298,appeal to,〜の興味を引く,verb,communication,eiken2pre,0
+299,argue,～と主張する,verb,communication,eiken2pre,0
+300,ask to do,人に〜してほしいと頼む,verb,communication,eiken2pre,0
+301,broadcast,放送する,verb,communication,eiken2pre,1
+302,chat,おしゃべりする,verb,communication,eiken2pre,0
+303,communicate,意思を通じ合う,verb,communication,eiken2pre,1
+304,describe,～を描写する,verb,communication,eiken2pre,1
+305,discuss,〜について議論する,verb,communication,eiken2pre,1
+306,greet,～に挨拶する,verb,communication,eiken2pre,1
+307,insist,強く主張する,verb,communication,eiken2pre,0
+308,make noise,音を立てる,verb,communication,eiken2pre,0
+309,mention,〜に言及する,verb,communication,eiken2pre,0
+310,point out,～を指摘する,verb,communication,eiken2pre,0
+311,pronounce,～を発音する,verb,communication,eiken2pre,0
+312,propose,提案する,verb,communication,eiken2pre,0
+313,recommend,〜を勧める,verb,communication,eiken2pre,1
+314,refer,言及する,verb,communication,eiken2pre,0
+315,reply,返事をする,verb,communication,eiken2pre,0
+316,request,～を要請する,verb,communication,eiken2pre,0
+317,scold,～を叱る,verb,communication,eiken2pre,0
+318,scream,叫び声を上げる,verb,communication,eiken2pre,0
+319,speak up,もっと大きな声で話す,verb,communication,eiken2pre,0
+320,stand for,～を意味する,verb,communication,eiken2pre,0
+321,suggest,〜を提案する,verb,communication,eiken2pre,1
+322,tell a lie,嘘をつく,verb,communication,eiken2pre,0
+323,translate,〜を翻訳する,verb,communication,eiken2pre,1
+324,warn,〜に警告する,verb,communication,eiken2pre,0
+325,whisper,～をささやく,verb,communication,eiken2pre,0
+326,yell,叫び声を上げる,verb,communication,eiken2pre,0
+327,advertise,宣伝する,verb,creation,eiken2pre,0
+328,arrange,手配する,verb,creation,eiken2pre,0
+329,create,～を創造する,verb,creation,eiken2pre,1
+330,develop,〜を開発する,verb,creation,eiken2pre,1
+331,establish,～を設立する,verb,creation,eiken2pre,0
+332,exhibit,～を展示する,verb,creation,eiken2pre,0
+333,film,撮影する,verb,creation,eiken2pre,1
+334,improve,～を改良する,verb,creation,eiken2pre,1
+335,make use of,～を利用する,verb,creation,eiken2pre,0
+336,print out,～を印刷する,verb,creation,eiken2pre,0
+337,record,～を記録する,verb,creation,eiken2pre,0
+338,repair,～を修理する,verb,creation,eiken2pre,1
+339,set up,～を設立する,verb,creation,eiken2pre,0
+340,start up,〜を始める,verb,creation,eiken2pre,0
+341,approach,～に接近する,verb,movement,eiken2pre,0
+342,canoe,カヌーを漕ぐ,verb,movement,eiken2pre,0
+343,check in,チェックインする,verb,movement,eiken2pre,0
+344,check out,チェックアウトする,verb,movement,eiken2pre,0
+345,come across,偶然出会う,verb,movement,eiken2pre,0
+346,come down,降りてくる,verb,movement,eiken2pre,0
+347,come to life,活気づく,verb,movement,eiken2pre,0
+348,come up to,～のところまでくる,verb,movement,eiken2pre,0
+349,cycle,自転車に乗る,verb,movement,eiken2pre,0
+350,depart,出発する,verb,movement,eiken2pre,0
+351,drop by,ひょいと立ち寄る,verb,movement,eiken2pre,0
+352,drop in at,～にちょっと立ち寄る,verb,movement,eiken2pre,0
+353,drop off,〜を降ろす,verb,movement,eiken2pre,0
+354,float,漂う,verb,movement,eiken2pre,0
+355,get around,広まる,verb,movement,eiken2pre,0
+356,go against,～に反する,verb,movement,eiken2pre,0
+357,go over,〜を見直す,verb,movement,eiken2pre,0
+358,go through,〜を経験する,verb,movement,eiken2pre,0
+359,go with,〜に似合う,verb,movement,eiken2pre,0
+360,go wrong,うまくいかない,verb,movement,eiken2pre,0
+361,head for,～へ向かう,verb,movement,eiken2pre,0
+362,line up,列を作る,verb,movement,eiken2pre,0
+363,march,行進する,verb,movement,eiken2pre,0
+364,run after,～を追いかける,verb,movement,eiken2pre,0
+365,run over,ちょっと行ってくる,verb,movement,eiken2pre,0
+366,show up,現れる,verb,movement,eiken2pre,0
+367,sled,そりで滑る,verb,movement,eiken2pre,0
+368,slide,滑る,verb,movement,eiken2pre,0
+369,slip,滑る,verb,movement,eiken2pre,0
+370,stop by,立ち寄る,verb,movement,eiken2pre,0
+371,ant,アリ,noun,animal,eiken2pre,1
+372,bee,ミツバチ,noun,animal,eiken2pre,0
+373,beetle,甲虫,noun,animal,eiken2pre,0
+374,eagle,ワシ,noun,animal,eiken2pre,0
+375,frog,カエル,noun,animal,eiken2pre,0
+376,insect,虫,noun,animal,eiken2pre,1
+377,jellyfish,クラゲ,noun,animal,eiken2pre,1
+378,lobster,ロブスター,noun,animal,eiken2pre,1
+379,oyster,牡蠣,noun,animal,eiken2pre,0
+380,pigeon,ハト,noun,animal,eiken2pre,0
+381,salmon,サケ,noun,animal,eiken2pre,0
+382,shellfish,貝類,noun,animal,eiken2pre,0
+383,shrimp,小エビ,noun,animal,eiken2pre,0
+384,spider,クモ,noun,animal,eiken2pre,1
+385,wolf,オオカミ,noun,animal,eiken2pre,0
+386,allergy,アレルギー,noun,body,eiken2pre,0
+387,cough,咳,noun,body,eiken2pre,1
+388,cure,治療,noun,body,eiken2pre,0
+389,diet,ダイエット,noun,body,eiken2pre,0
+390,disease,病気,noun,body,eiken2pre,0
+391,drug,薬,noun,body,eiken2pre,0
+392,fitness,フィットネス,noun,body,eiken2pre,0
+393,hearing,聴力,noun,body,eiken2pre,0
+394,injury,負傷,noun,body,eiken2pre,0
+395,muscle,筋肉,noun,body,eiken2pre,0
+396,operation,手術,noun,body,eiken2pre,0
+397,throat,のど,noun,body,eiken2pre,0
+398,cotton,コットン,noun,clothing,eiken2pre,0
+399,hairstyle,髪型,noun,clothing,eiken2pre,0
+400,handbag,ハンドバッグ,noun,clothing,eiken2pre,0
+401,jewelry,アクセサリー,noun,clothing,eiken2pre,0
+402,leather,革,noun,clothing,eiken2pre,0
+403,makeup,化粧,noun,clothing,eiken2pre,1
+404,mask,マスク,noun,clothing,eiken2pre,0
+405,necktie,ネクタイ,noun,clothing,eiken2pre,0
+406,purse,ハンドバッグ,noun,clothing,eiken2pre,0
+407,raincoat,レインコート,noun,clothing,eiken2pre,0
+408,avocado,アボカド,noun,food,eiken2pre,1
+409,bean,豆,noun,food,eiken2pre,0
+410,blueberry,ブルーベリー,noun,food,eiken2pre,0
+411,crop,作物,noun,food,eiken2pre,0
+412,flavor,味,noun,food,eiken2pre,1
+413,ginger,ショウガ,noun,food,eiken2pre,0
+414,grocery,食料品,noun,food,eiken2pre,1
+415,herb,ハーブ,noun,food,eiken2pre,0
+416,honey,はちみつ,noun,food,eiken2pre,1
+417,ketchup,ケチャップ,noun,food,eiken2pre,0
+418,lime,ライム,noun,food,eiken2pre,0
+419,pastry,焼き菓子,noun,food,eiken2pre,0
+420,peanut,ピーナッツ,noun,food,eiken2pre,0
+421,roll,ロールパン,noun,food,eiken2pre,0
+422,sauce,ソース,noun,food,eiken2pre,1
+423,spice,スパイス,noun,food,eiken2pre,0
+424,backyard,裏庭,noun,home,eiken2pre,1
+425,blanket,毛布,noun,home,eiken2pre,0
+426,calculator,電卓,noun,home,eiken2pre,0
+427,carpet,カーペット,noun,home,eiken2pre,0
+428,conditioner,リンス,noun,home,eiken2pre,0
+429,fence,柵,noun,home,eiken2pre,0
+430,frame,額縁,noun,home,eiken2pre,0
+431,heater,暖房装置,noun,home,eiken2pre,1
+432,ink,インク,noun,home,eiken2pre,0
+433,laundry,洗濯物,noun,home,eiken2pre,1
+434,microwave,電子レンジ,noun,home,eiken2pre,0
+435,pot,鍋,noun,home,eiken2pre,0
+436,refrigerator,冷蔵庫,noun,home,eiken2pre,1
+437,restroom,トイレ,noun,home,eiken2pre,0
+438,shelf,棚,noun,home,eiken2pre,1
+439,soap,石鹸,noun,home,eiken2pre,0
+440,stove,ストーブ,noun,home,eiken2pre,0
+441,wallpaper,壁紙,noun,home,eiken2pre,1
+442,washing,洗濯,noun,home,eiken2pre,0
+443,ancestor,祖先,noun,people,eiken2pre,0
+444,audience,観衆,noun,people,eiken2pre,1
+445,borrower,借り手,noun,people,eiken2pre,0
+446,boyfriend,彼氏,noun,people,eiken2pre,1
+447,businessman,実業家,noun,people,eiken2pre,0
+448,citizen,市民,noun,people,eiken2pre,0
+449,clown,ピエロ,noun,people,eiken2pre,0
+450,co-worker,同僚,noun,people,eiken2pre,0
+451,crew,乗務員,noun,people,eiken2pre,0
+452,employee,従業員,noun,people,eiken2pre,0
+453,fisherman,漁師,noun,people,eiken2pre,0
+454,girlfriend,彼女,noun,people,eiken2pre,0
+455,immigrant,移民,noun,people,eiken2pre,0
+456,majority,大多数,noun,people,eiken2pre,0
+457,nephew,甥,noun,people,eiken2pre,0
+458,niece,姪,noun,people,eiken2pre,0
+459,pal,友達,noun,people,eiken2pre,0
+460,partner,パートナー,noun,people,eiken2pre,0
+461,relative,親戚,noun,people,eiken2pre,1
+462,rider,乗り手,noun,people,eiken2pre,0
+463,senior,上級生,noun,people,eiken2pre,0
+464,shopper,買い物客,noun,people,eiken2pre,1
+465,smoker,喫煙者,noun,people,eiken2pre,0
+466,stranger,見知らぬ人,noun,people,eiken2pre,0
+467,teenager,ティーンエイジャー,noun,people,eiken2pre,0
+468,user,使用者,noun,people,eiken2pre,0
+469,victim,被害者,noun,people,eiken2pre,0
+470,waitress,ウェイトレス,noun,people,eiken2pre,0
+471,author,著者,noun,occupation,eiken2pre,0
+472,baker,パンを焼く人,noun,occupation,eiken2pre,0
+473,cleaner,清掃員,noun,occupation,eiken2pre,1
+474,designer,デザイナー,noun,occupation,eiken2pre,0
+475,diver,ダイバー,noun,occupation,eiken2pre,1
+476,editor,編集者,noun,occupation,eiken2pre,0
+477,engineer,エンジニア,noun,occupation,eiken2pre,0
+478,entertainer,芸能人,noun,occupation,eiken2pre,0
+479,expert,専門家,noun,occupation,eiken2pre,0
+480,explorer,探検家,noun,occupation,eiken2pre,0
+481,instructor,指導者,noun,occupation,eiken2pre,0
+482,lawyer,弁護士,noun,occupation,eiken2pre,0
+483,lifeguard,ライフガード,noun,occupation,eiken2pre,0
+484,mayor,市長,noun,occupation,eiken2pre,0
+485,painter,画家,noun,occupation,eiken2pre,0
+486,planner,計画者,noun,occupation,eiken2pre,0
+487,politician,政治家,noun,occupation,eiken2pre,0
+488,professor,教授,noun,occupation,eiken2pre,1
+489,researcher,研究者,noun,occupation,eiken2pre,0
+490,runner,走る人,noun,occupation,eiken2pre,0
+491,superhero,スーパーヒーロー,noun,occupation,eiken2pre,0
+492,tutor,家庭教師,noun,occupation,eiken2pre,0
+493,arena,競技場,noun,place,eiken2pre,0
+494,avenue,大通り,noun,place,eiken2pre,0
+495,campus,キャンパス,noun,place,eiken2pre,1
+496,clinic,診療所,noun,place,eiken2pre,0
+497,depot,車両基地,noun,place,eiken2pre,0
+498,dormitory,寮,noun,place,eiken2pre,0
+499,gallery,美術館,noun,place,eiken2pre,1
+500,lobby,ロビー,noun,place,eiken2pre,0
+501,location,場所,noun,place,eiken2pre,0
+502,neighborhood,近所,noun,place,eiken2pre,1
+503,outback,奥地,noun,place,eiken2pre,0
+504,palace,宮殿,noun,place,eiken2pre,0
+505,port,港,noun,place,eiken2pre,0
+506,residence,住居,noun,place,eiken2pre,0
+507,salon,美容院,noun,place,eiken2pre,1
+508,shelter,避難所,noun,place,eiken2pre,0
+509,site,用地,noun,place,eiken2pre,0
+510,studio,スタジオ,noun,place,eiken2pre,0
+511,workplace,職場,noun,place,eiken2pre,0
+512,atmosphere,雰囲気,noun,nature,eiken2pre,0
+513,bacteria,細菌,noun,nature,eiken2pre,0
+514,bay,湾,noun,nature,eiken2pre,0
+515,branch,枝,noun,nature,eiken2pre,0
+516,chemical,化学物質,noun,nature,eiken2pre,0
+517,climate,気候,noun,nature,eiken2pre,1
+518,coast,海岸,noun,nature,eiken2pre,0
+519,countryside,田舎,noun,nature,eiken2pre,0
+520,desert,砂漠,noun,nature,eiken2pre,1
+521,disaster,災害,noun,nature,eiken2pre,0
+522,earth,地球,noun,nature,eiken2pre,1
+523,earthquake,地震,noun,nature,eiken2pre,0
+524,edge,縁,noun,nature,eiken2pre,0
+525,electricity,電気,noun,nature,eiken2pre,0
+526,forecast,予報,noun,nature,eiken2pre,0
+527,fuel,燃料,noun,nature,eiken2pre,0
+528,gasoline,ガソリン,noun,nature,eiken2pre,0
+529,horn,角,noun,nature,eiken2pre,0
+530,iron,鉄,noun,nature,eiken2pre,0
+531,jungle,ジャングル,noun,nature,eiken2pre,0
+532,liquid,液体,noun,nature,eiken2pre,0
+533,metal,金属,noun,nature,eiken2pre,0
+534,path,小道,noun,nature,eiken2pre,1
+535,rainbow,虹,noun,nature,eiken2pre,0
+536,rainforest,熱帯雨林,noun,nature,eiken2pre,0
+537,seed,種,noun,nature,eiken2pre,1
+538,shadow,影,noun,nature,eiken2pre,0
+539,sunset,夕日,noun,nature,eiken2pre,0
+540,sunshine,日光,noun,nature,eiken2pre,0
+541,surface,表面,noun,nature,eiken2pre,0
+542,temperature,気温,noun,nature,eiken2pre,0
+543,championship,選手権,noun,sports,eiken2pre,1
+544,climbing,登山,noun,sports,eiken2pre,0
+545,coaster,ジェットコースター,noun,sports,eiken2pre,0
+546,competition,大会,noun,sports,eiken2pre,0
+547,dancing,ダンス,noun,sports,eiken2pre,0
+548,diving,ダイビング,noun,sports,eiken2pre,0
+549,driving,運転,noun,sports,eiken2pre,0
+550,hunting,狩猟,noun,sports,eiken2pre,0
+551,running,ランニング,noun,sports,eiken2pre,0
+552,skating,スケート,noun,sports,eiken2pre,0
+553,sledding,そり滑り,noun,sports,eiken2pre,0
+554,swimming,水泳,noun,sports,eiken2pre,0
+555,victory,勝利,noun,sports,eiken2pre,0
+556,yoga,ヨガ,noun,sports,eiken2pre,1
+557,article,記事,noun,media,eiken2pre,1
+558,brief,要約,noun,media,eiken2pre,0
+559,channel,チャンネル,noun,media,eiken2pre,0
+560,commercial,コマーシャル,noun,media,eiken2pre,0
+561,cookbook,料理の本,noun,media,eiken2pre,0
+562,document,文書,noun,media,eiken2pre,0
+563,essay,作文,noun,media,eiken2pre,0
+564,excerpt,抜粋,noun,media,eiken2pre,0
+565,fiction,小説,noun,media,eiken2pre,0
+566,guidebook,ガイドブック,noun,media,eiken2pre,0
+567,image,映像,noun,media,eiken2pre,0
+568,literature,文学,noun,media,eiken2pre,0
+569,manual,説明書,noun,media,eiken2pre,0
+570,note,メモ,noun,media,eiken2pre,1
+571,photograph,写真,noun,media,eiken2pre,0
+572,photography,写真撮影,noun,media,eiken2pre,1
+573,phrase,句,noun,media,eiken2pre,0
+574,poem,詩,noun,media,eiken2pre,1
+575,recording,録音,noun,media,eiken2pre,0
+576,screen,画面,noun,media,eiken2pre,1
+577,sketch,スケッチ,noun,media,eiken2pre,0
+578,summary,要約,noun,media,eiken2pre,0
+579,title,題名,noun,media,eiken2pre,1
+580,web,ウェブ,noun,media,eiken2pre,0
+581,battery,電池,noun,tech,eiken2pre,1
+582,cable,ケーブル,noun,tech,eiken2pre,0
+583,data,データ,noun,tech,eiken2pre,0
+584,disk,ディスク,noun,tech,eiken2pre,0
+585,electronics,電子工学,noun,tech,eiken2pre,0
+586,headphone,ヘッドホン,noun,tech,eiken2pre,1
+587,keyboard,キーボード,noun,tech,eiken2pre,0
+588,laptop,ノートパソコン,noun,tech,eiken2pre,0
+589,network,ネットワーク,noun,tech,eiken2pre,1
+590,printer,プリンター,noun,tech,eiken2pre,0
+591,projector,映写機,noun,tech,eiken2pre,0
+592,software,ソフトウェア,noun,tech,eiken2pre,0
+593,tablet,タブレット,noun,tech,eiken2pre,0
+594,technology,科学技術,noun,tech,eiken2pre,1
+595,airline,航空会社,noun,transport,eiken2pre,0
+596,boarding,搭乗,noun,transport,eiken2pre,0
+597,cruise,クルーズ,noun,transport,eiken2pre,0
+598,fare,運賃,noun,transport,eiken2pre,0
+599,highway,主要道路,noun,transport,eiken2pre,0
+600,jet,ジェット機,noun,transport,eiken2pre,0
+601,motorbike,オートバイ,noun,transport,eiken2pre,0
+602,motorcycle,オートバイ,noun,transport,eiken2pre,0
+603,navigation,航行,noun,transport,eiken2pre,0
+604,route,道順,noun,transport,eiken2pre,0
+605,row,列,noun,transport,eiken2pre,0
+606,sailboat,帆船,noun,transport,eiken2pre,0
+607,shuttle,シャトル便,noun,transport,eiken2pre,0
+608,stair,段,noun,transport,eiken2pre,0
+609,truck,トラック,noun,transport,eiken2pre,1
+610,tunnel,トンネル,noun,transport,eiken2pre,0
+611,anniversary,記念日,noun,time,eiken2pre,0
+612,appointment,予約,noun,time,eiken2pre,0
+613,beginning,初め,noun,time,eiken2pre,0
+614,childhood,子供の頃,noun,time,eiken2pre,0
+615,closing,締め切り,noun,time,eiken2pre,0
+616,day off,休日,noun,time,eiken2pre,0
+617,deadline,締め切り,noun,time,eiken2pre,0
+618,generation,世代,noun,time,eiken2pre,0
+619,lifetime,生涯,noun,time,eiken2pre,0
+620,pause,休止,noun,time,eiken2pre,0
+621,reservation,予約,noun,time,eiken2pre,1
+622,rush,突進,noun,time,eiken2pre,0
+623,semester,学期,noun,time,eiken2pre,0
+624,ability,能力,noun,abstract,eiken2pre,0
+625,access,アクセス,noun,abstract,eiken2pre,0
+626,achievement,業績,noun,abstract,eiken2pre,0
+627,acting,演技,noun,abstract,eiken2pre,0
+628,addition,追加,noun,abstract,eiken2pre,0
+629,admission,入場,noun,abstract,eiken2pre,0
+630,advance,進歩,noun,abstract,eiken2pre,0
+631,advantage,有利な点,noun,abstract,eiken2pre,0
+632,advertising,広告,noun,abstract,eiken2pre,0
+633,agency,代理店,noun,abstract,eiken2pre,0
+634,agreement,合意,noun,abstract,eiken2pre,0
+635,aisle,通路,noun,abstract,eiken2pre,0
+636,alien,宇宙人,noun,abstract,eiken2pre,0
+637,anger,怒り,noun,abstract,eiken2pre,0
+638,angle,角度,noun,abstract,eiken2pre,0
+639,announcement,発表,noun,abstract,eiken2pre,1
+640,application,応募,noun,abstract,eiken2pre,1
+641,argument,口論,noun,abstract,eiken2pre,0
+642,arrival,到着,noun,abstract,eiken2pre,0
+643,aside,余談,noun,abstract,eiken2pre,0
+644,assistance,助け,noun,abstract,eiken2pre,0
+645,assistant,助手,noun,abstract,eiken2pre,0
+646,attitude,態度,noun,abstract,eiken2pre,0
+647,beauty,美しさ,noun,abstract,eiken2pre,0
+648,behavior,振る舞い,noun,abstract,eiken2pre,0
+649,belief,信念,noun,abstract,eiken2pre,0
+650,benefit,利点,noun,abstract,eiken2pre,0
+651,bill,請求書,noun,abstract,eiken2pre,1
+652,biology,生物学,noun,abstract,eiken2pre,0
+653,bonus,ボーナス,noun,abstract,eiken2pre,0
+654,bookshelf,本棚,noun,abstract,eiken2pre,0
+655,brand,ブランド,noun,abstract,eiken2pre,1
+656,career,職業,noun,abstract,eiken2pre,1
+657,cash,現金,noun,abstract,eiken2pre,1
+658,cell,細胞,noun,abstract,eiken2pre,0
+659,challenge,挑戦,noun,abstract,eiken2pre,1
+660,character,登場人物,noun,abstract,eiken2pre,1
+661,charity,慈善団体,noun,abstract,eiken2pre,1
+662,chemistry,化学,noun,abstract,eiken2pre,1
+663,chess,チェス,noun,abstract,eiken2pre,0
+664,choice,選択権,noun,abstract,eiken2pre,0
+665,claim,主張,noun,abstract,eiken2pre,0
+666,collecting,収集,noun,abstract,eiken2pre,0
+667,comment,意見,noun,abstract,eiken2pre,0
+668,concern,心配,noun,abstract,eiken2pre,0
+669,condition,状態,noun,abstract,eiken2pre,0
+670,conference,会議,noun,abstract,eiken2pre,0
+671,connection,接続,noun,abstract,eiken2pre,0
+672,convenience,便利さ,noun,abstract,eiken2pre,1
+673,conversation,会話,noun,abstract,eiken2pre,0
+674,corridor,廊下,noun,abstract,eiken2pre,0
+675,counter,カウンター,noun,abstract,eiken2pre,0
+676,creation,創設,noun,abstract,eiken2pre,0
+677,credit,信用,noun,abstract,eiken2pre,1
+678,crime,犯罪,noun,abstract,eiken2pre,0
+679,danger,危険,noun,abstract,eiken2pre,1
+680,deal,取引,noun,abstract,eiken2pre,0
+681,decision,決心,noun,abstract,eiken2pre,0
+682,department,部,noun,abstract,eiken2pre,1
+683,desire,欲求,noun,abstract,eiken2pre,0
+684,detail,詳細,noun,abstract,eiken2pre,1
+685,difficulty,困難,noun,abstract,eiken2pre,0
+686,direction,方向,noun,abstract,eiken2pre,1
+687,discovery,発見,noun,abstract,eiken2pre,1
+688,discussion,討論,noun,abstract,eiken2pre,0
+689,doubt,疑い,noun,abstract,eiken2pre,0
+690,education,教育,noun,abstract,eiken2pre,0
+691,effect,影響,noun,abstract,eiken2pre,0
+692,effort,努力,noun,abstract,eiken2pre,1
+693,emergency,緊急事態,noun,abstract,eiken2pre,1
+694,emotion,感情,noun,abstract,eiken2pre,0
+695,equipment,用具,noun,abstract,eiken2pre,0
+696,exhilaration,爽快感,noun,abstract,eiken2pre,0
+697,experiment,実験,noun,abstract,eiken2pre,0
+698,explanation,説明,noun,abstract,eiken2pre,0
+699,expression,表情,noun,abstract,eiken2pre,0
+700,factor,要因,noun,abstract,eiken2pre,0
+701,farming,農業,noun,abstract,eiken2pre,0
+702,fault,欠点,noun,abstract,eiken2pre,0
+703,favor,頼みごと,noun,abstract,eiken2pre,1
+704,fear,恐れ,noun,abstract,eiken2pre,0
+705,feature,特徴,noun,abstract,eiken2pre,0
+706,freedom,自由,noun,abstract,eiken2pre,0
+707,friendship,友情,noun,abstract,eiken2pre,0
+708,function,機能,noun,abstract,eiken2pre,0
+709,geography,地理学,noun,abstract,eiken2pre,0
+710,gesture,身ぶり,noun,abstract,eiken2pre,0
+711,greeting,あいさつ,noun,abstract,eiken2pre,0
+712,harmony,調和,noun,abstract,eiken2pre,0
+713,harvest,収穫,noun,abstract,eiken2pre,0
+714,homeroom,ホームルーム,noun,abstract,eiken2pre,0
+715,honor,敬意,noun,abstract,eiken2pre,0
+716,ID,身分証明書,noun,abstract,eiken2pre,1
+717,impression,印象,noun,abstract,eiken2pre,0
+718,improvement,改善,noun,abstract,eiken2pre,0
+719,industry,産業,noun,abstract,eiken2pre,0
+720,influence,影響,noun,abstract,eiken2pre,0
+721,instance,例,noun,abstract,eiken2pre,0
+722,instruction,指示,noun,abstract,eiken2pre,1
+723,invitation,招待,noun,abstract,eiken2pre,1
+724,issue,問題,noun,abstract,eiken2pre,0
+725,item,項目,noun,abstract,eiken2pre,1
+726,journey,旅行,noun,abstract,eiken2pre,1
+727,knowledge,知識,noun,abstract,eiken2pre,1
+728,laughter,笑い,noun,abstract,eiken2pre,0
+729,lifestyle,ライフスタイル,noun,abstract,eiken2pre,1
+730,loss,喪失,noun,abstract,eiken2pre,0
+731,ma'am,女性への敬称（丁寧）,noun,abstract,eiken2pre,1
+732,magic,魔法,noun,abstract,eiken2pre,1
+733,material,材料,noun,abstract,eiken2pre,0
+734,membership,会員であること,noun,abstract,eiken2pre,1
+735,mess,散らかった状態,noun,abstract,eiken2pre,0
+736,method,方法,noun,abstract,eiken2pre,0
+737,millions of,何百万もの〜,noun,abstract,eiken2pre,0
+738,miracle,奇跡,noun,abstract,eiken2pre,0
+739,movement,動き,noun,abstract,eiken2pre,0
+740,nation,国家,noun,abstract,eiken2pre,0
+741,nest,巣,noun,abstract,eiken2pre,0
+742,nut,木の実,noun,abstract,eiken2pre,1
+743,object,物,noun,abstract,eiken2pre,0
+744,objection,反対,noun,abstract,eiken2pre,0
+745,objective,目標,noun,abstract,eiken2pre,0
+746,observation,観察,noun,abstract,eiken2pre,0
+747,opportunity,機会,noun,abstract,eiken2pre,0
+748,opposite,正反対,noun,abstract,eiken2pre,0
+749,option,選択肢,noun,abstract,eiken2pre,0
+750,orchestra,オーケストラ,noun,abstract,eiken2pre,1
+751,organization,組織,noun,abstract,eiken2pre,0
+752,origin,起源,noun,abstract,eiken2pre,0
+753,pace,速さ,noun,abstract,eiken2pre,0
+754,pain,痛み,noun,abstract,eiken2pre,0
+755,penalty,罰金,noun,abstract,eiken2pre,0
+756,permission,許可,noun,abstract,eiken2pre,0
+757,photocopy,コピー,noun,abstract,eiken2pre,0
+758,planning,計画,noun,abstract,eiken2pre,0
+759,policy,政策,noun,abstract,eiken2pre,0
+760,popularity,人気,noun,abstract,eiken2pre,0
+761,population,人口,noun,abstract,eiken2pre,0
+762,position,位置,noun,abstract,eiken2pre,0
+763,praise,称賛,noun,abstract,eiken2pre,0
+764,prayer,祈り,noun,abstract,eiken2pre,0
+765,preservation,保存,noun,abstract,eiken2pre,0
+766,pride,誇り,noun,abstract,eiken2pre,0
+767,privacy,プライバシー,noun,abstract,eiken2pre,0
+768,process,過程,noun,abstract,eiken2pre,0
+769,product,製品,noun,abstract,eiken2pre,1
+770,profit,利益,noun,abstract,eiken2pre,0
+771,purchase,購入,noun,abstract,eiken2pre,0
+772,puzzle,パズル,noun,abstract,eiken2pre,0
+773,quality,質,noun,abstract,eiken2pre,0
+774,rank,階級,noun,abstract,eiken2pre,0
+775,reaction,反応,noun,abstract,eiken2pre,0
+776,reality,現実,noun,abstract,eiken2pre,0
+777,relation,関係,noun,abstract,eiken2pre,0
+778,relationship,関係,noun,abstract,eiken2pre,0
+779,relief,安心,noun,abstract,eiken2pre,0
+780,research,調査,noun,abstract,eiken2pre,1
+781,resource,資源,noun,abstract,eiken2pre,0
+782,response,返答,noun,abstract,eiken2pre,0
+783,result,結果,noun,abstract,eiken2pre,1
+784,reward,報い,noun,abstract,eiken2pre,0
+785,risk,危険,noun,abstract,eiken2pre,0
+786,role,役,noun,abstract,eiken2pre,0
+787,rumor,うわさ,noun,abstract,eiken2pre,0
+788,salary,給料,noun,abstract,eiken2pre,0
+789,sample,試供品,noun,abstract,eiken2pre,0
+790,scenery,風景,noun,abstract,eiken2pre,0
+791,secret,秘密,noun,abstract,eiken2pre,0
+792,security,安全,noun,abstract,eiken2pre,0
+793,selection,品ぞろえ,noun,abstract,eiken2pre,0
+794,sense,感覚,noun,abstract,eiken2pre,0
+795,shade,日陰,noun,abstract,eiken2pre,0
+796,shortage,不足,noun,abstract,eiken2pre,0
+797,signal,信号,noun,abstract,eiken2pre,0
+798,silence,静寂,noun,abstract,eiken2pre,0
+799,silver,銀,noun,abstract,eiken2pre,0
+800,situation,状況,noun,abstract,eiken2pre,1
+801,solo,独奏,noun,abstract,eiken2pre,0
+802,spirit,士気,noun,abstract,eiken2pre,0
+803,statement,陳述,noun,abstract,eiken2pre,0
+804,strength,強さ,noun,abstract,eiken2pre,0
+805,style,様式,noun,abstract,eiken2pre,0
+806,survey,調査,noun,abstract,eiken2pre,0
+807,talent,才能,noun,abstract,eiken2pre,0
+808,task,仕事,noun,abstract,eiken2pre,0
+809,teamwork,チームワーク,noun,abstract,eiken2pre,0
+810,technique,技術,noun,abstract,eiken2pre,1
+811,thought,考え,noun,abstract,eiken2pre,0
+812,topic,話題,noun,abstract,eiken2pre,1
+813,treatment,治療,noun,abstract,eiken2pre,0
+814,trend,傾向,noun,abstract,eiken2pre,0
+815,truth,真相,noun,abstract,eiken2pre,0
+816,value,価値,noun,abstract,eiken2pre,0
+817,version,版,noun,abstract,eiken2pre,0
+818,voyage,航海,noun,abstract,eiken2pre,0
+819,warning,警告,noun,abstract,eiken2pre,0
+820,nationality,国籍,noun,country,eiken2pre,0
+821,audition,オーディション,noun,event,eiken2pre,0
+822,debate,討論,noun,event,eiken2pre,1
+823,exhibition,展覧会,noun,event,eiken2pre,0
+824,graduation,卒業,noun,event,eiken2pre,0
+825,lecture,講義,noun,event,eiken2pre,0
+826,presentation,発表,noun,event,eiken2pre,1
+827,training,訓練,noun,event,eiken2pre,1
+828,bar,棒,noun,object,eiken2pre,1
+829,cart,ショッピングカート,noun,object,eiken2pre,1
+830,coupon,割引券,noun,object,eiken2pre,1
+831,envelope,封筒,noun,object,eiken2pre,0
+832,file,ファイル,noun,object,eiken2pre,0
+833,form,用紙,noun,object,eiken2pre,1
+834,goods,商品,noun,object,eiken2pre,1
+835,pole,棒,noun,object,eiken2pre,0
+836,receipt,レシート,noun,object,eiken2pre,0
+837,sword,剣,noun,object,eiken2pre,0
+838,wheel,車輪,noun,object,eiken2pre,1
+839,amount,量,noun,unit,eiken2pre,1
+840,average,平均,noun,unit,eiken2pre,1
+841,capacity,収容人数,noun,unit,eiken2pre,0
+842,degree,度,noun,unit,eiken2pre,0
+843,level,水準,noun,unit,eiken2pre,0
+844,rate,率,noun,unit,eiken2pre,0
+845,volume,音量,noun,unit,eiken2pre,0
+846,weight,重さ,noun,unit,eiken2pre,1
+847,when to do,いつ〜すべきか,noun,unit,eiken2pre,0
+848,width,幅,noun,unit,eiken2pre,0
+849,above all,とりわけ,adverb,adverb_phrase,eiken2pre,0
+850,accidentally,誤って,adverb,adverb,eiken2pre,0
+851,after all,結局,adverb,adverb_phrase,eiken2pre,0
+852,afterward,後で,adverb,time,eiken2pre,1
+853,all at once,突然,adverb,adverb_phrase,eiken2pre,0
+854,angrily,怒って,adverb,adverb,eiken2pre,0
+855,annually,毎年,adverb,time,eiken2pre,0
+856,apparently,どうやら,adverb,adverb,eiken2pre,0
+857,as a result,その結果として,adverb,adverb_phrase,eiken2pre,0
+858,at a time,一度に,adverb,adverb_phrase,eiken2pre,0
+859,at length,詳細に,adverb,adverb_phrase,eiken2pre,0
+860,at most,せいぜい,adverb,adverb_phrase,eiken2pre,0
+861,at present,現在は,adverb,time,eiken2pre,0
+862,before long,間もなく,adverb,time,eiken2pre,0
+863,besides,そのうえ,adverb,adverb,eiken2pre,0
+864,by accident,偶然に,adverb,adverb_phrase,eiken2pre,0
+865,by chance,偶然,adverb,adverb_phrase,eiken2pre,0
+866,by far,断然,adverb,adverb_phrase,eiken2pre,0
+867,by nature,生まれつき,adverb,adverb_phrase,eiken2pre,0
+868,by sea,海路で,adverb,adverb_phrase,eiken2pre,0
+869,by turns,順繰りに,adverb,adverb_phrase,eiken2pre,0
+870,casually,普段着で,adverb,adverb,eiken2pre,0
+871,cheerfully,陽気に,adverb,adverb,eiken2pre,0
+872,commonly,一般に,adverb,adverb,eiken2pre,0
+873,completely,完全に,adverb,adverb,eiken2pre,0
+874,correctly,正確に,adverb,adverb,eiken2pre,0
+875,currently,現在のところ,adverb,time,eiken2pre,0
+876,deeply,深く,adverb,adverb,eiken2pre,1
+877,directly,直接,adverb,adverb,eiken2pre,0
+878,eventually,最終的に,adverb,time,eiken2pre,0
+879,exactly,正確に,adverb,adverb,eiken2pre,0
+880,extremely,非常に,adverb,adverb,eiken2pre,0
+881,fairly,かなり,adverb,adverb,eiken2pre,0
+882,for instance,例えば,adverb,adverb_phrase,eiken2pre,0
+883,for long,長い間,adverb,time,eiken2pre,0
+884,for sure,確かに,adverb,adverb_phrase,eiken2pre,0
+885,forever,永遠に,adverb,time,eiken2pre,0
+886,frankly,率直にいうと,adverb,adverb,eiken2pre,0
+887,freely,自由に,adverb,adverb,eiken2pre,0
+888,from now on,これからは,adverb,time,eiken2pre,0
+889,further,もっと先に,adverb,adverb,eiken2pre,0
+890,generally,一般的に,adverb,adverb,eiken2pre,0
+891,gently,優しく,adverb,adverb,eiken2pre,0
+892,gradually,徐々に,adverb,adverb,eiken2pre,0
+893,greatly,大いに,adverb,adverb,eiken2pre,0
+894,heavily,激しく,adverb,adverb,eiken2pre,1
+895,honestly,正直に,adverb,adverb,eiken2pre,0
+896,immediately,直ちに,adverb,time,eiken2pre,0
+897,importantly,重要なのは,adverb,adverb,eiken2pre,0
+898,in a group,グループで,adverb,adverb_phrase,eiken2pre,0
+899,in addition,そのうえ,adverb,adverb_phrase,eiken2pre,0
+900,in advance,あらかじめ,adverb,adverb_phrase,eiken2pre,0
+901,in any case,とにかく,adverb,adverb_phrase,eiken2pre,0
+902,in brief,手短に,adverb,adverb_phrase,eiken2pre,0
+903,in contrast,それとは対照的に,adverb,adverb_phrase,eiken2pre,0
+904,in detail,詳細に,adverb,adverb_phrase,eiken2pre,0
+905,in general,一般的に,adverb,adverb_phrase,eiken2pre,0
+906,in harmony,調和して,adverb,adverb_phrase,eiken2pre,0
+907,in many ways,いろいろな点で,adverb,adverb_phrase,eiken2pre,0
+908,in pairs,二人ずつ,adverb,adverb_phrase,eiken2pre,0
+909,in practice,実際には,adverb,adverb_phrase,eiken2pre,0
+910,in public,人前で,adverb,adverb_phrase,eiken2pre,0
+911,in reality,実際は,adverb,adverb_phrase,eiken2pre,0
+912,indeed,確かに,adverb,adverb,eiken2pre,0
+913,indoors,屋内で,adverb,adverb,eiken2pre,1
+914,instantly,直ちに,adverb,time,eiken2pre,0
+915,lately,最近,adverb,time,eiken2pre,0
+916,loudly,大声で,adverb,adverb,eiken2pre,0
+917,more or less,だいたい,adverb,adverb_phrase,eiken2pre,0
+918,moreover,さらに,adverb,adverb,eiken2pre,0
+919,mostly,主として,adverb,adverb,eiken2pre,1
+920,narrowly,かろうじて,adverb,adverb,eiken2pre,0
+921,naturally,自然に,adverb,adverb,eiken2pre,0
+922,nearby,近くに,adverb,adverb,eiken2pre,1
+923,nearly,ほとんど,adverb,adverb,eiken2pre,1
+924,neatly,きちんと,adverb,adverb,eiken2pre,0
+925,nevertheless,それにもかかわらず,adverb,adverb,eiken2pre,0
+926,nicely,うまく,adverb,adverb,eiken2pre,1
+927,no longer,もはや〜でない,adverb,time,eiken2pre,0
+928,normally,通常は,adverb,adverb,eiken2pre,0
+929,nowadays,今日では,adverb,time,eiken2pre,1
+930,on and on,長々と,adverb,adverb_phrase,eiken2pre,0
+931,on average,平均して,adverb,adverb_phrase,eiken2pre,0
+932,on board,〜に乗って,adverb,adverb_phrase,eiken2pre,0
+933,on demand,必要に応じて,adverb,adverb_phrase,eiken2pre,0
+934,on purpose,わざと,adverb,adverb_phrase,eiken2pre,0
+935,on schedule,予定通りに,adverb,time,eiken2pre,0
+936,one by one,一つずつ,adverb,adverb_phrase,eiken2pre,0
+937,originally,最初は,adverb,time,eiken2pre,0
+938,otherwise,さもなければ,adverb,adverb,eiken2pre,0
+939,outdoors,屋外で,adverb,adverb,eiken2pre,1
+940,overseas,海外で,adverb,adverb,eiken2pre,0
+941,peacefully,平和に,adverb,adverb,eiken2pre,0
+942,perhaps,もしかすると,adverb,adverb,eiken2pre,0
+943,physically,身体的に,adverb,adverb,eiken2pre,0
+944,pleasantly,楽しく,adverb,adverb,eiken2pre,0
+945,poorly,下手に,adverb,adverb,eiken2pre,0
+946,properly,適切に,adverb,adverb,eiken2pre,0
+947,proudly,誇らしげに,adverb,adverb,eiken2pre,0
+948,rapidly,急速に,adverb,adverb,eiken2pre,0
+949,rarely,めったに〜ない,adverb,adverb,eiken2pre,0
+950,rather,かなり,adverb,adverb,eiken2pre,0
+951,regularly,定期的に,adverb,adverb,eiken2pre,0
+952,sadly,悲しそうに,adverb,adverb,eiken2pre,0
+953,seldom,めったに〜ない,adverb,adverb,eiken2pre,0
+954,separately,別々に,adverb,adverb,eiken2pre,0
+955,shortly,じきに,adverb,time,eiken2pre,0
+956,side by side,並んで,adverb,adverb_phrase,eiken2pre,0
+957,silently,静かに,adverb,adverb,eiken2pre,0
+958,simply,単に,adverb,adverb,eiken2pre,0
+959,so far,今までのところ,adverb,adverb_phrase,eiken2pre,0
+960,socially,社会的に,adverb,adverb,eiken2pre,0
+961,surprisingly,驚くほど,adverb,adverb,eiken2pre,0
+962,terribly,ひどく,adverb,adverb,eiken2pre,0
+963,that way,そのやり方で,adverb,adverb_phrase,eiken2pre,0
+964,tightly,しっかりと,adverb,adverb,eiken2pre,0
+965,to be sure,念のため,adverb,adverb_phrase,eiken2pre,0
+966,totally,完全に,adverb,adverb,eiken2pre,0
+967,upside down,上下逆さまに,adverb,adverb_phrase,eiken2pre,0
+968,widely,広く,adverb,adverb,eiken2pre,0
+969,with care,注意して,adverb,adverb_phrase,eiken2pre,0
+970,without fail,必ず,adverb,adverb_phrase,eiken2pre,0
+971,worldwide,世界中で,adverb,adverb,eiken2pre,0
+972,wrongly,間違って,adverb,adverb,eiken2pre,0
+973,at risk,危険にさらされて,adjective,adj_emotion,eiken2pre,0
+974,awake,起きている,adjective,adj_emotion,eiken2pre,0
+975,be aware of,～に気づいている,adjective,adj_emotion,eiken2pre,0
+976,be busy with,～で忙しい,adjective,adj_emotion,eiken2pre,0
+977,be close to,〜に近い,adjective,adj_emotion,eiken2pre,0
+978,be free from,〜がない,adjective,adj_emotion,eiken2pre,0
+979,be used to,～に慣れている,adjective,adj_emotion,eiken2pre,0
+980,brave,勇敢な,adjective,adj_emotion,eiken2pre,0
+981,capable,能力がある,adjective,adj_emotion,eiken2pre,0
+982,careless,不注意な,adjective,adj_emotion,eiken2pre,0
+983,concerned,心配している,adjective,adj_emotion,eiken2pre,0
+984,curious,好奇心が強い,adjective,adj_emotion,eiken2pre,0
+985,delighted,とてもうれしい,adjective,adj_emotion,eiken2pre,0
+986,delirious,有頂天の,adjective,adj_emotion,eiken2pre,0
+987,disappointed,がっかりした,adjective,adj_emotion,eiken2pre,1
+988,foolish,愚かな,adjective,adj_emotion,eiken2pre,0
+989,guilty,有罪の,adjective,adj_emotion,eiken2pre,0
+990,hopeful,期待している,adjective,adj_emotion,eiken2pre,0
+991,in shape,健康だ,adjective,adj_emotion,eiken2pre,0
+992,independent,自立した,adjective,adj_emotion,eiken2pre,0
+993,lazy,怠惰な,adjective,adj_emotion,eiken2pre,0
+994,mad,怒って,adjective,adj_emotion,eiken2pre,0
+995,negative,否定的な,adjective,adj_emotion,eiken2pre,0
+996,out of date,時代遅れの,adjective,adj_emotion,eiken2pre,0
+997,out of order,故障している,adjective,adj_emotion,eiken2pre,0
+998,pleased,嬉しい,adjective,adj_emotion,eiken2pre,0
+999,positive,前向きな,adjective,adj_emotion,eiken2pre,0
+1000,relaxing,リラックスできる,adjective,adj_emotion,eiken2pre,1
+1001,responsible,責任感がある,adjective,adj_emotion,eiken2pre,0
+1002,shocking,衝撃的な,adjective,adj_emotion,eiken2pre,0
+1003,stressed,ストレスを感じている,adjective,adj_emotion,eiken2pre,0
+1004,surprising,驚くべき,adjective,adj_emotion,eiken2pre,0
+1005,thankful,感謝している,adjective,adj_emotion,eiken2pre,0
+1006,unhappy,悲しい,adjective,adj_emotion,eiken2pre,0
+1007,acceptable,受け入れられる,adjective,adj_quality,eiken2pre,0
+1008,active,活動的な,adjective,adj_quality,eiken2pre,1
+1009,additional,追加の,adjective,adj_quality,eiken2pre,1
+1010,advanced,上級の,adjective,adj_quality,eiken2pre,1
+1011,alike,似ている,adjective,adj_quality,eiken2pre,0
+1012,ancient,古代の,adjective,adj_quality,eiken2pre,1
+1013,annual,年一度の,adjective,adj_quality,eiken2pre,0
+1014,balanced,バランスの取れた,adjective,adj_quality,eiken2pre,0
+1015,basic,基本的な,adjective,adj_quality,eiken2pre,1
+1016,calm,落ち着いた,adjective,adj_quality,eiken2pre,0
+1017,certain,ある種の,adjective,adj_quality,eiken2pre,1
+1018,charming,魅力的な,adjective,adj_quality,eiken2pre,0
+1019,colorful,色彩豊かな,adjective,adj_quality,eiken2pre,1
+1020,creative,独創的な,adjective,adj_quality,eiken2pre,0
+1021,criminal,犯罪の,adjective,adj_quality,eiken2pre,0
+1022,delicate,壊れやすい,adjective,adj_quality,eiken2pre,0
+1023,dental,歯科の,adjective,adj_quality,eiken2pre,0
+1024,digital,デジタル,adjective,adj_quality,eiken2pre,0
+1025,direct,率直な,adjective,adj_quality,eiken2pre,0
+1026,double,２人用の,adjective,adj_quality,eiken2pre,0
+1027,dramatic,劇的な,adjective,adj_quality,eiken2pre,0
+1028,electric,電動の,adjective,adj_quality,eiken2pre,1
+1029,electrical,電気の,adjective,adj_quality,eiken2pre,0
+1030,electronic,電子的な,adjective,adj_quality,eiken2pre,1
+1031,elementary,初級の,adjective,adj_quality,eiken2pre,1
+1032,equal,平等な,adjective,adj_quality,eiken2pre,0
+1033,exact,正確な,adjective,adj_quality,eiken2pre,0
+1034,extra,追加の,adjective,adj_quality,eiken2pre,1
+1035,fancy,しゃれた,adjective,adj_quality,eiken2pre,0
+1036,fantastic,素晴らしい,adjective,adj_quality,eiken2pre,0
+1037,fashionable,流行の,adjective,adj_quality,eiken2pre,0
+1038,following,次の,adjective,adj_quality,eiken2pre,0
+1039,formal,公式の,adjective,adj_quality,eiken2pre,0
+1040,fried,油で揚げた,adjective,adj_quality,eiken2pre,0
+1041,full-time,常勤の,adjective,adj_quality,eiken2pre,0
+1042,general,世間一般の,adjective,adj_quality,eiken2pre,0
+1043,gentle,優しい,adjective,adj_quality,eiken2pre,0
+1044,global,世界的な,adjective,adj_quality,eiken2pre,0
+1045,grilled,焼いた,adjective,adj_quality,eiken2pre,0
+1046,harmful,有害な,adjective,adj_quality,eiken2pre,1
+1047,hidden,隠された,adjective,adj_quality,eiken2pre,0
+1048,historical,歴史的な,adjective,adj_quality,eiken2pre,0
+1049,holy,神聖な,adjective,adj_quality,eiken2pre,0
+1050,honest,正直な,adjective,adj_quality,eiken2pre,0
+1051,ideal,理想的な,adjective,adj_quality,eiken2pre,0
+1052,ill,具合が悪い,adjective,adj_quality,eiken2pre,0
+1053,impossible,不可能な,adjective,adj_quality,eiken2pre,0
+1054,inconvenient,不便な,adjective,adj_quality,eiken2pre,0
+1055,indoor,屋内の,adjective,adj_quality,eiken2pre,0
+1056,instant,即時の,adjective,adj_quality,eiken2pre,0
+1057,intelligent,聡明な,adjective,adj_quality,eiken2pre,0
+1058,legal,合法的な,adjective,adj_quality,eiken2pre,0
+1059,lifelong,一生の,adjective,adj_quality,eiken2pre,0
+1060,likely,～しそうである,adjective,adj_quality,eiken2pre,0
+1061,limited,限られた,adjective,adj_quality,eiken2pre,0
+1062,living,生きている,adjective,adj_quality,eiken2pre,0
+1063,loose,ゆるい,adjective,adj_quality,eiken2pre,0
+1064,magical,魔法の,adjective,adj_quality,eiken2pre,0
+1065,medical,医学の,adjective,adj_quality,eiken2pre,0
+1066,messy,散らかっている,adjective,adj_quality,eiken2pre,0
+1067,mild,穏やかな,adjective,adj_quality,eiken2pre,0
+1068,modern,現代の,adjective,adj_quality,eiken2pre,1
+1069,nonsmoking,禁煙の,adjective,adj_quality,eiken2pre,0
+1070,normal,普通の,adjective,adj_quality,eiken2pre,1
+1071,official,公式の,adjective,adj_quality,eiken2pre,0
+1072,ordinary,普通の,adjective,adj_quality,eiken2pre,0
+1073,original,元の,adjective,adj_quality,eiken2pre,0
+1074,particular,特定の,adjective,adj_quality,eiken2pre,0
+1075,past,過去の,adjective,adj_quality,eiken2pre,1
+1076,personal,個人の,adjective,adj_quality,eiken2pre,0
+1077,plain,質素な,adjective,adj_quality,eiken2pre,0
+1078,pleasant,気持ちの良い,adjective,adj_quality,eiken2pre,0
+1079,precious,貴重な,adjective,adj_quality,eiken2pre,0
+1080,precise,正確な,adjective,adj_quality,eiken2pre,0
+1081,private,私的な,adjective,adj_quality,eiken2pre,1
+1082,pure,純粋な,adjective,adj_quality,eiken2pre,0
+1083,rare,まれな,adjective,adj_quality,eiken2pre,0
+1084,recent,最近の,adjective,adj_quality,eiken2pre,1
+1085,regular,通常の,adjective,adj_quality,eiken2pre,1
+1086,roast,ローストした,adjective,adj_quality,eiken2pre,0
+1087,romantic,ロマンチックな,adjective,adj_quality,eiken2pre,0
+1088,rough,おおまかな,adjective,adj_quality,eiken2pre,0
+1089,secondhand,中古の,adjective,adj_quality,eiken2pre,0
+1090,secure,安全な,adjective,adj_quality,eiken2pre,0
+1091,similar,似ている,adjective,adj_quality,eiken2pre,1
+1092,smooth,滑らかな,adjective,adj_quality,eiken2pre,0
+1093,specific,特定の,adjective,adj_quality,eiken2pre,0
+1094,steady,一定の,adjective,adj_quality,eiken2pre,0
+1095,stressful,ストレスの多い,adjective,adj_quality,eiken2pre,0
+1096,strict,厳しい,adjective,adj_quality,eiken2pre,0
+1097,successful,成功した,adjective,adj_quality,eiken2pre,1
+1098,suitable,適した,adjective,adj_quality,eiken2pre,0
+1099,tasty,おいしい,adjective,adj_quality,eiken2pre,0
+1100,tidy,きちんとした,adjective,adj_quality,eiken2pre,0
+1101,tough,困難な,adjective,adj_quality,eiken2pre,0
+1102,typical,典型的な,adjective,adj_quality,eiken2pre,0
+1103,unable,できない,adjective,adj_quality,eiken2pre,0
+1104,unfriendly,不親切な,adjective,adj_quality,eiken2pre,0
+1105,unique,独特の,adjective,adj_quality,eiken2pre,0
+1106,unknown,知られていない,adjective,adj_quality,eiken2pre,0
+1107,unlikely,可能性が低い,adjective,adj_quality,eiken2pre,0
+1108,valuable,貴重な,adjective,adj_quality,eiken2pre,1
+1109,various,さまざまな,adjective,adj_quality,eiken2pre,0
+1110,violent,暴力的な,adjective,adj_quality,eiken2pre,0
+1111,well-known,よく知られている,adjective,adj_quality,eiken2pre,0
+1112,wooden,木製の,adjective,adj_quality,eiken2pre,0
+1113,worth,価値がある,adjective,adj_quality,eiken2pre,0
+1114,brand new,真新しい,adjective,adj_quantity,eiken2pre,0
+1115,least,最も少ない,adjective,adj_quantity,eiken2pre,1
+1116,missing,欠けている,adjective,adj_quantity,eiken2pre,0
+1117,mixed,男女混合の,adjective,adj_quantity,eiken2pre,0
+1118,patient,忍耐強い,adjective,adj_quantity,eiken2pre,0
+1119,dead,死んだ,adjective,adj_size,eiken2pre,0
+1120,giant,巨大な,adjective,adj_size,eiken2pre,0
+1121,jumbo,ずば抜けて大きな,adjective,adj_size,eiken2pre,0
+1122,overweight,太り過ぎの,adjective,adj_size,eiken2pre,0
+1123,square,正方形の,adjective,adj_size,eiken2pre,0
+1124,tiny,とても小さい,adjective,adj_size,eiken2pre,0
+1125,Atlantic,大西洋の,adjective,adj_state,eiken2pre,1
+1126,audio,音声の,adjective,adj_state,eiken2pre,0
+1127,aware,気づいている,adjective,adj_state,eiken2pre,0
+1128,awful,ひどい,adjective,adj_state,eiken2pre,0
+1129,bald,はげた,adjective,adj_state,eiken2pre,0
+1130,colored,色の付いた,adjective,adj_state,eiken2pre,0
+1131,elderly,年配の,adjective,adj_state,eiken2pre,1
+1132,empty,空の,adjective,adj_state,eiken2pre,0
+1133,evergreen,常緑の,adjective,adj_state,eiken2pre,0
+1134,freezing,凍えるほど寒い,adjective,adj_state,eiken2pre,0
+1135,frozen,凍った,adjective,adj_state,eiken2pre,1
+1136,handsome,ハンサムな,adjective,adj_state,eiken2pre,0
+1137,inexpensive,安い,adjective,adj_state,eiken2pre,0
+1138,outdoor,戸外の,adjective,adj_state,eiken2pre,0
+1139,painful,痛みを伴う,adjective,adj_state,eiken2pre,0
+1140,raw,生の,adjective,adj_state,eiken2pre,0
+1141,salty,塩辛い,adjective,adj_state,eiken2pre,0
+1142,shiny,光沢のある,adjective,adj_state,eiken2pre,0
+1143,sore,痛い,adjective,adj_state,eiken2pre,0
+1144,southern,南の,adjective,adj_state,eiken2pre,0
+1145,sudden,突然の,adjective,adj_state,eiken2pre,0
+1146,underground,地下の,adjective,adj_state,eiken2pre,0
+1147,unhealthy,不健康な,adjective,adj_state,eiken2pre,0
+1148,unlucky,運が悪い,adjective,adj_state,eiken2pre,0
+1149,used,中古の,adjective,adj_state,eiken2pre,0
+1150,wealthy,裕福な,adjective,adj_state,eiken2pre,0
+1151,western,西の,adjective,adj_state,eiken2pre,0
+1152,worn,使い古した,adjective,adj_state,eiken2pre,0
+1153,aboriginal,先住民の,adjective,adj_nationality,eiken2pre,0
+1154,Christian,キリスト教の,adjective,adj_nationality,eiken2pre,0
+1155,named,～という名前の,adjective,adj_nationality,eiken2pre,0
+1156,part-time,パートタイムの,adjective,adj_nationality,eiken2pre,0
+1157,Russian,ロシアの,adjective,adj_nationality,eiken2pre,1
+1158,a bunch of,たくさんの～,phrase,phrase,eiken2pre,0
+1159,a number of,たくさんの～,phrase,phrase,eiken2pre,0
+1160,a variety of,多様な,phrase,phrase,eiken2pre,0
+1161,and so on,～など,phrase,phrase,eiken2pre,0
+1162,as you know,ご存知のとおり,phrase,phrase,eiken2pre,0
+1163,at a loss,途方に暮れて,phrase,phrase,eiken2pre,0
+1164,be against,～に反対である,phrase,phrase,eiken2pre,0
+1165,be bad at,～が下手である,phrase,phrase,eiken2pre,0
+1166,be far from,決して～でない,phrase,phrase,eiken2pre,0
+1167,be in shape,体力がある,phrase,phrase,eiken2pre,0
+1168,be poor at,〜が苦手である,phrase,phrase,eiken2pre,0
+1169,be short of,～が不足している,phrase,phrase,eiken2pre,0
+1170,be sick of,～にうんざりしている,phrase,phrase,eiken2pre,0
+1171,be sure of,〜を確信している,phrase,phrase,eiken2pre,0
+1172,by heart,暗記している,phrase,phrase,eiken2pre,0
+1173,for a change,気分転換に,phrase,phrase,eiken2pre,0
+1174,for fear of,～を恐れて,phrase,phrase,eiken2pre,0
+1175,for nothing,無料で,phrase,phrase,eiken2pre,0
+1176,for short,略して,phrase,phrase,eiken2pre,0
+1177,get in shape,体を鍛える,phrase,phrase,eiken2pre,0
+1178,get rid of,〜を取り除く,phrase,phrase,eiken2pre,0
+1179,have in mind,～を考えている,phrase,phrase,eiken2pre,0
+1180,in a sense,ある意味では,phrase,phrase,eiken2pre,0
+1181,in charge of,～を担当している,phrase,phrase,eiken2pre,0
+1182,in common,共通点がある,phrase,phrase,eiken2pre,0
+1183,in return,お返しに,phrase,phrase,eiken2pre,0
+1184,in turn,順番に,phrase,phrase,eiken2pre,0
+1185,make it,うまくいく,phrase,phrase,eiken2pre,0
+1186,no more than,～しか,phrase,phrase,eiken2pre,0
+1187,nothing but,ただ〜だけ,phrase,phrase,eiken2pre,0
+1188,on business,仕事で,phrase,phrase,eiken2pre,0
+1189,on earth,一体,phrase,phrase,eiken2pre,0
+1190,plenty of,たくさんの～,phrase,phrase,eiken2pre,0
+1191,speaking of,～といえば,phrase,phrase,eiken2pre,0
+1192,that's how,そのようにして,phrase,phrase,eiken2pre,0
+1193,with luck,運が良ければ,phrase,phrase,eiken2pre,0
+1194,according to,～によると,preposition,preposition,eiken2pre,0
+1195,ahead of,〜より先に,preposition,preposition,eiken2pre,0
+1196,along with,〜と一緒に,preposition,preposition,eiken2pre,0
+1197,apart,〜を除いて,preposition,preposition,eiken2pre,0
+1198,apart from,～は別にして,preposition,preposition,eiken2pre,0
+1199,as for,〜に関しては,preposition,preposition,eiken2pre,0
+1200,aside from,～のほかに,preposition,preposition,eiken2pre,0
+1201,beyond,～を超えて,preposition,preposition,eiken2pre,0
+1202,by car,車で,preposition,preposition,eiken2pre,0
+1203,close to,〜の近くに,preposition,preposition,eiken2pre,0
+1204,due to,〜が原因で,preposition,preposition,eiken2pre,0
+1205,except,～を除いては,preposition,preposition,eiken2pre,1
+1206,except for,～を除いては,preposition,preposition,eiken2pre,0
+1207,in line,〜に沿って,preposition,preposition,eiken2pre,0
+1208,in place of,～の代わりに,preposition,preposition,eiken2pre,0
+1209,in spite of,～にもかかわらず,preposition,preposition,eiken2pre,0
+1210,including,〜を含めて,preposition,preposition,eiken2pre,0
+1211,over coffee,コーヒーを飲みながら,preposition,preposition,eiken2pre,0
+1212,throughout,～の間中,preposition,preposition,eiken2pre,0
+1213,unlike,〜とは違って,preposition,preposition,eiken2pre,0
+1214,up to,～次第である,preposition,preposition,eiken2pre,0
+1215,within,〜以内に,preposition,preposition,eiken2pre,0
+1216,neither of,どちらも〜ない,pronoun,pronoun,eiken2pre,0
+1217,nobody,誰もいない,pronoun,pronoun,eiken2pre,0
+1218,none,一つも～ない,pronoun,pronoun,eiken2pre,1
+1219,none of,〜のうちどれも〜ない,pronoun,pronoun,eiken2pre,0
+1220,one another,お互いに,pronoun,pronoun,eiken2pre,0
+1221,whatever,何を〜しても,pronoun,pronoun,eiken2pre,0
+1222,whoever,〜する人は誰でも,pronoun,pronoun,eiken2pre,0
+1223,as if,まるで〜のように,conjunction,conjunction,eiken2pre,0
+1224,as long as,～する限り,conjunction,conjunction,eiken2pre,0
+1225,even if,たとえ～でも,conjunction,conjunction,eiken2pre,0
+1226,even though,〜だけれども,conjunction,conjunction,eiken2pre,0
+1227,ever since,それ以来ずっと,conjunction,conjunction,eiken2pre,0
+1228,if only,もし〜であればよいのに,conjunction,conjunction,eiken2pre,0
+1229,in case,万が一に備えて,conjunction,conjunction,eiken2pre,0
+1230,in that case,その場合には,conjunction,conjunction,eiken2pre,0
+1231,now that,今〜なので,conjunction,conjunction,eiken2pre,0
+1232,that's why,そのようなわけで,conjunction,conjunction,eiken2pre,0
+1233,unless,〜ない限り,conjunction,conjunction,eiken2pre,0
+1234,whenever,〜するときはいつでも,conjunction,conjunction,eiken2pre,1
+1235,wherever,どこへ行っても,conjunction,conjunction,eiken2pre,0

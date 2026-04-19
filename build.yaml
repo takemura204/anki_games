@@ -3,9 +3,9 @@ targets:
     builders:
       slang_build_runner:
         options:
-          input_directory: lib/i18n
+          input_directory: lib/common/i18n
           input_file_pattern: .i18n.json
-          output_directory: lib/i18n
+          output_directory: lib/common/i18n
           output_file_name: translations.g.dart
           base_locale: ja
           fallback_strategy: base_locale

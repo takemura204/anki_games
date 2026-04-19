@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "951744047426",
+    "project_id": "anki-quiz-dev",
+    "storage_bucket": "anki-quiz-dev.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:951744047426:android:77798e5cd4063982a640db",
+        "android_client_info": {
+          "package_name": "jp.block.puzzle"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAN8vb4k-YK0Dul_hKfJZ2Bt9hnueIT0Oo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

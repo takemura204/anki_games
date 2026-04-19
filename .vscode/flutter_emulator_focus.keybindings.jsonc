@@ -1,0 +1,48 @@
+// Cursor / VS Code はこのファイルを自動では読みません。
+// 実際に効くのは「ユーザー」keybindings.json（例: macOS Cursor は
+// ~/Library/Application Support/Cursor/User/keybindings.json）。
+// この配列は同期用のテンプレートです。コピーする場合は下記の順で。
+//
+// 1) Cmd+S が「保存」に負けないよう、同じ when で -workbench.action.files.save を先に置く
+// 2) runCommands で dart.hotReload / flutter.hotRestart の直後に bring-flutter-target-to-front
+//
+// Mac: Cmd+S = HR + 前面 / Shift+Cmd+S = ホットリスタート + 前面（従来の flutter.hotRestart 単体は置き換え）
+// 他OS: Ctrl+S / Ctrl+Shift+S 版は key を差し替えて同じ構造に。
+//
+// workspaceKeybindings.ankiGamesFlutterEmuFocus.enabled は本リポジトリの .vscode/settings.json で true。
+
+[
+	{
+		"key": "cmd+s",
+		"command": "-workbench.action.files.save",
+		"when": "config.workspaceKeybindings.ankiGamesFlutterEmuFocus.enabled && inDebugMode && debugType == dart && (dart-code:service.reloadSources || dart-code:isInDartDebugSession)"
+	},
+	{
+		"key": "cmd+s",
+		"command": "runCommands",
+		"args": {
+			"commands": [
+				"dart.hotReload",
+				{
+					"command": "workbench.action.tasks.runTask",
+					"args": "bring-flutter-target-to-front"
+				}
+			]
+		},
+		"when": "config.workspaceKeybindings.ankiGamesFlutterEmuFocus.enabled && inDebugMode && debugType == dart && (dart-code:service.reloadSources || dart-code:isInDartDebugSession)"
+	},
+	{
+		"key": "shift+cmd+s",
+		"command": "runCommands",
+		"args": {
+			"commands": [
+				"flutter.hotRestart",
+				{
+					"command": "workbench.action.tasks.runTask",
+					"args": "bring-flutter-target-to-front"
+				}
+			]
+		},
+		"when": "config.workspaceKeybindings.ankiGamesFlutterEmuFocus.enabled && dart-code:anyFlutterProjectLoaded && inDebugMode && debugType == dart"
+	}
+]

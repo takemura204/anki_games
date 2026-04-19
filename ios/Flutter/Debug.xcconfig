@@ -1,2 +1,8 @@
 #include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"
 #include "Generated.xcconfig"
+
+// Default flavor: blockPuzzle
+// To switch flavor, create a new Xcode build configuration and
+// point it to ios/Flutter/flavors/{flavor}-Debug.xcconfig
+BUNDLE_ID = jp.block.puzzle
+APP_NAME = Block.

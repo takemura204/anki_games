@@ -2,6 +2,9 @@ import java.util.Properties
 
 plugins {
     id("com.android.application")
+    // START: FlutterFire Configuration
+    id("com.google.gms.google-services")
+    // END: FlutterFire Configuration
     id("kotlin-android")
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
@@ -40,11 +43,25 @@ android {
     }
 
     defaultConfig {
-        applicationId = "jp.block.puzzle"
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+    }
+
+    flavorDimensions += "app"
+
+    productFlavors {
+        create("blockPuzzle") {
+            dimension = "app"
+            applicationId = "jp.block.puzzle"
+            resValue("string", "app_name", "Block.")
+        }
+        create("project2") {
+            dimension = "app"
+            applicationId = "jp.it.game"
+            resValue("string", "app_name", "Project 2")
+        }
     }
 
     buildTypes {

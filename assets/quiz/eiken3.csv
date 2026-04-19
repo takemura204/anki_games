@@ -1,0 +1,872 @@
+id,en,ja,pos,theme,level,is_frequent
+1,be from,〜の出身である,verb,grammar,eiken3,0
+2,be made from,〜で作られている,verb,grammar,eiken3,0
+3,be made into,～に作り替えられる,verb,grammar,eiken3,0
+4,be made of,～で作られている,verb,grammar,eiken3,0
+5,had better,〜する方がよい,verb,grammar,eiken3,0
+6,let's,～しましょう,verb,grammar,eiken3,0
+7,not have to,～する必要はない,verb,grammar,eiken3,0
+8,appear,現れる,verb,action,eiken3,0
+9,attend,〜に出席する,verb,action,eiken3,1
+10,be born,生まれる,verb,action,eiken3,0
+11,be caught in,～に巻き込まれる,verb,action,eiken3,0
+12,be home,家にいる,verb,action,eiken3,0
+13,be in bed,就寝している,verb,action,eiken3,0
+14,be kind to,〜に親切である,verb,action,eiken3,0
+15,be over,終わる,verb,action,eiken3,0
+16,begin doing,〜し始める,verb,action,eiken3,0
+17,begin to,〜し始める,verb,action,eiken3,0
+18,belong to,～に所属している,verb,action,eiken3,0
+19,bring back,〜を返す,verb,action,eiken3,0
+20,burn,燃える,verb,action,eiken3,1
+21,cancel,〜を取り消す,verb,action,eiken3,1
+22,cause,〜を引き起こす,verb,action,eiken3,0
+23,celebrate,〜を祝う,verb,action,eiken3,1
+24,check for,〜の有無を確認する,verb,action,eiken3,0
+25,cheer up,〜を元気づける,verb,action,eiken3,0
+26,clean up,～を片付ける,verb,action,eiken3,0
+27,come true,実現する,verb,action,eiken3,0
+28,continue,～を続ける,verb,action,eiken3,1
+29,control,～を操作する,verb,action,eiken3,0
+30,cool down,落ち着く,verb,action,eiken3,0
+31,cost,～がかかる,verb,action,eiken3,1
+32,count,数える,verb,action,eiken3,0
+33,cover,〜を覆う,verb,action,eiken3,1
+34,crash,衝突する,verb,action,eiken3,0
+35,cry,泣く,verb,action,eiken3,1
+36,deliver,〜を配達する,verb,action,eiken3,0
+37,depend on,〜次第である,verb,action,eiken3,0
+38,destroy,～を破壊する,verb,action,eiken3,0
+39,die,死ぬ,verb,action,eiken3,1
+40,disappear,姿を消す,verb,action,eiken3,0
+41,discover,～を発見する,verb,action,eiken3,0
+42,display,〜を展示する,verb,action,eiken3,0
+43,do well,いい成績を取る,verb,action,eiken3,0
+44,drive me to,私を車で〜へ送る,verb,action,eiken3,0
+45,exchange,～を交換する,verb,action,eiken3,1
+46,exercise,運動する,verb,action,eiken3,0
+47,fail,失敗する,verb,action,eiken3,0
+48,fasten,～を締める,verb,action,eiken3,0
+49,feed,えさをやる,verb,action,eiken3,0
+50,fight,戦う,verb,action,eiken3,0
+51,fight with,～と戦う,verb,action,eiken3,0
+52,fill,満たす,verb,action,eiken3,0
+53,fit,ぴったり合う,verb,action,eiken3,0
+54,follow,～に従う,verb,action,eiken3,1
+55,get better,よくなる,verb,action,eiken3,0
+56,get dressed,服を着る,verb,action,eiken3,0
+57,get married,結婚する,verb,action,eiken3,0
+58,get together,集まる,verb,action,eiken3,0
+59,get well,(病気が)よくなる,verb,action,eiken3,0
+60,give a ride,車で送る,verb,action,eiken3,0
+61,give back,〜を返す,verb,action,eiken3,0
+62,go ahead,先に始めてください,verb,action,eiken3,0
+63,go to lunch,昼食に行く,verb,action,eiken3,0
+64,go to sleep,眠る,verb,action,eiken3,0
+65,graduate,卒業する,verb,action,eiken3,0
+66,grow up,成長する,verb,action,eiken3,0
+67,hang,～を掛ける,verb,action,eiken3,0
+68,have a fight,けんかをする,verb,action,eiken3,0
+69,have a party,パーティーを開く,verb,action,eiken3,0
+70,have a time,楽しい時間を過ごす,verb,action,eiken3,0
+71,have back,〜を取り戻す,verb,action,eiken3,0
+72,have been to,～に行ったことがある,verb,action,eiken3,0
+73,have fun,楽しむ,verb,action,eiken3,0
+74,have lunch,昼食を取る,verb,action,eiken3,0
+75,help me to,私が〜するのを手伝う,verb,action,eiken3,0
+76,help me with,私の〜を手伝う,verb,action,eiken3,0
+77,hide,隠れる,verb,action,eiken3,0
+78,hit,～をぶつける,verb,action,eiken3,1
+79,hold,～を開く,verb,action,eiken3,1
+80,hurt,～を傷つける,verb,action,eiken3,1
+81,injure,〜をけがさせる,verb,action,eiken3,1
+82,invest,投資する,verb,action,eiken3,1
+83,keep,～を保つ,verb,action,eiken3,1
+84,keep doing,〜し続ける,verb,action,eiken3,0
+85,keep using,使い続ける,verb,action,eiken3,0
+86,kick,〜を蹴る,verb,action,eiken3,0
+87,kill,〜を殺す,verb,action,eiken3,1
+88,knock,ノックする,verb,action,eiken3,0
+89,laugh,笑う,verb,action,eiken3,1
+90,laugh at,～を笑う,verb,action,eiken3,0
+91,lay,～を産む,verb,action,eiken3,0
+92,lead,率いる,verb,action,eiken3,0
+93,learn to do,～できるようになる,verb,action,eiken3,0
+94,lend,～を貸す,verb,action,eiken3,1
+95,look after,〜の世話をする,verb,action,eiken3,0
+96,look in,〜をのぞく,verb,action,eiken3,0
+97,make money,お金を稼ぐ,verb,action,eiken3,0
+98,marry,結婚する,verb,action,eiken3,1
+99,melt,とける,verb,action,eiken3,0
+100,overcome,〜を克服する,verb,action,eiken3,0
+101,oversleep,寝過ごす,verb,action,eiken3,0
+102,pass,合格する,verb,action,eiken3,1
+103,pay,支払う,verb,action,eiken3,1
+104,pay for,～の代金を払う,verb,action,eiken3,0
+105,protect,〜を保護する,verb,action,eiken3,1
+106,pull,引く,verb,action,eiken3,1
+107,push,押す,verb,action,eiken3,1
+108,raise,〜を上げる,verb,action,eiken3,0
+109,rest,休む,verb,action,eiken3,1
+110,save,～を救う,verb,action,eiken3,1
+111,save money,お金を貯める,verb,action,eiken3,0
+112,see a doctor,医者に診てもらう,verb,action,eiken3,0
+113,serve,～を出す,verb,action,eiken3,1
+114,shake,〜を振る,verb,action,eiken3,0
+115,shine,輝く,verb,action,eiken3,0
+116,shock,〜にショックを与える,verb,action,eiken3,0
+117,shut,〜を閉める,verb,action,eiken3,1
+118,smell,～の香りがする,verb,action,eiken3,1
+119,smoke,タバコを吸う,verb,action,eiken3,0
+120,solve,～を解決する,verb,action,eiken3,0
+121,spend,～を過ごす,verb,action,eiken3,1
+122,spread,〜を広げる,verb,action,eiken3,0
+123,start to,～し始める,verb,action,eiken3,0
+124,stay at,～に泊まる,verb,action,eiken3,0
+125,stay up,遅くまで起きている,verb,action,eiken3,0
+126,steal,～を盗む,verb,action,eiken3,1
+127,stop at,〜に立ち寄る,verb,action,eiken3,0
+128,stop working,機能しなくなる,verb,action,eiken3,0
+129,study abroad,留学する,verb,action,eiken3,0
+130,survive,生き残る,verb,action,eiken3,0
+131,take a break,休憩を取る,verb,action,eiken3,0
+132,take a class,～の授業を受ける,verb,action,eiken3,0
+133,take a photo,写真を撮る,verb,action,eiken3,0
+134,take a seat,席におかけください,verb,action,eiken3,0
+135,take a test,試験を受ける,verb,action,eiken3,0
+136,take lessons,レッスンを受ける,verb,action,eiken3,0
+137,take part in,～に参加する,verb,action,eiken3,0
+138,take place,行われる,verb,action,eiken3,0
+139,take time to,～する時間を取る,verb,action,eiken3,0
+140,taste,〜の味がする,verb,action,eiken3,1
+141,throw,投げる,verb,action,eiken3,1
+142,throw away,～を捨てる,verb,action,eiken3,0
+143,trick,だます,verb,action,eiken3,0
+144,try on,～を試着する,verb,action,eiken3,0
+145,turn up,～の音量を上げる,verb,action,eiken3,0
+146,waste,～を無駄に使う,verb,action,eiken3,0
+147,work at,～に勤めている,verb,action,eiken3,0
+148,work on,〜に取り組む,verb,action,eiken3,0
+149,work well,調子良く動く,verb,action,eiken3,0
+150,wrestle,レスリングをする,verb,action,eiken3,0
+151,be afraid of,〜を恐れる,verb,mind,eiken3,0
+152,be pleased,喜ぶ,verb,mind,eiken3,0
+153,be proud of,〜を誇りに思う,verb,mind,eiken3,0
+154,be scared of,〜を怖がる,verb,mind,eiken3,0
+155,be tired of,〜にうんざりする,verb,mind,eiken3,0
+156,believe,信じる,verb,mind,eiken3,1
+157,care about,〜を気にかける,verb,mind,eiken3,0
+158,choose,選ぶ,verb,mind,eiken3,1
+159,decide,〜を決める,verb,mind,eiken3,1
+160,decide to,〜しようと決心する,verb,mind,eiken3,0
+161,expect,〜を期待する,verb,mind,eiken3,0
+162,feel sick,気分が悪い,verb,mind,eiken3,0
+163,feel well,体調が良い,verb,mind,eiken3,0
+164,find out,～を知る,verb,mind,eiken3,0
+165,forget about,～のことを忘れる,verb,mind,eiken3,0
+166,get angry,怒る,verb,mind,eiken3,0
+167,guess,～だと思う,verb,mind,eiken3,1
+168,hate,嫌う,verb,mind,eiken3,0
+169,hope to,～することを望む,verb,mind,eiken3,0
+170,imagine,〜を想像する,verb,mind,eiken3,1
+171,like to,～することが好きだ,verb,mind,eiken3,0
+172,look well,元気そうに見える,verb,mind,eiken3,0
+173,love to,～することが大好きだ,verb,mind,eiken3,0
+174,plan to,～するつもりである,verb,mind,eiken3,0
+175,realize,～と気付く,verb,mind,eiken3,0
+176,seem,〜のように見える,verb,mind,eiken3,0
+177,sound like,～のように聞こえる,verb,mind,eiken3,0
+178,think about,～について考える,verb,mind,eiken3,0
+179,wonder,～かなと思う,verb,mind,eiken3,0
+180,would like,〜が欲しい,verb,mind,eiken3,0
+181,agree,同意する,verb,communication,eiken3,0
+182,agree with,〜に同意する,verb,communication,eiken3,0
+183,be known as,〜として知られている,verb,communication,eiken3,0
+184,cheer,応援する,verb,communication,eiken3,0
+185,contact,～に連絡を取る,verb,communication,eiken3,1
+186,explain,説明する,verb,communication,eiken3,1
+187,hear of,〜のことを聞いたことがある,verb,communication,eiken3,0
+188,introduce,～を紹介する,verb,communication,eiken3,1
+189,mean,～を意味する,verb,communication,eiken3,1
+190,name,〜と名付ける,verb,communication,eiken3,0
+191,offer,〜を申し出る,verb,communication,eiken3,0
+192,publish,出版する,verb,communication,eiken3,0
+193,recite,～を暗唱する,verb,communication,eiken3,0
+194,repeat,繰り返して言う,verb,communication,eiken3,0
+195,say hi to,〜によろしくと言う,verb,communication,eiken3,0
+196,shake hands,握手をする,verb,communication,eiken3,0
+197,shout,大声で叫ぶ,verb,communication,eiken3,0
+198,spell,～を綴る,verb,communication,eiken3,0
+199,teach to,〜するように教える,verb,communication,eiken3,0
+200,walk through,（人）に手順を説明する,verb,communication,eiken3,0
+201,want you to,あなたに〜してほしい,verb,communication,eiken3,0
+202,write down,～を書き留める,verb,communication,eiken3,0
+203,act,演じる,verb,creation,eiken3,0
+204,add,〜を加える,verb,creation,eiken3,0
+205,boil,～を茹でる,verb,creation,eiken3,1
+206,build,〜を建てる,verb,creation,eiken3,1
+207,carve,彫る,verb,creation,eiken3,0
+208,design,～をデザインする,verb,creation,eiken3,1
+209,fix,～を修理する,verb,creation,eiken3,1
+210,fry,揚げる,verb,creation,eiken3,0
+211,invent,～を発明する,verb,creation,eiken3,0
+212,mix,～を混ぜる,verb,creation,eiken3,0
+213,peel,皮をむく,verb,creation,eiken3,0
+214,perform,～を上演する,verb,creation,eiken3,1
+215,prepare,準備する,verb,creation,eiken3,1
+216,print,印刷する,verb,creation,eiken3,0
+217,produce,～を生産する,verb,creation,eiken3,0
+218,recycle,～をリサイクルする,verb,creation,eiken3,1
+219,set,〜を用意する,verb,creation,eiken3,0
+220,wrap,～を包む,verb,creation,eiken3,0
+221,be back,戻る,verb,movement,eiken3,0
+222,climb,登る,verb,movement,eiken3,1
+223,come and do,～しに来る,verb,movement,eiken3,0
+224,come out,出てくる,verb,movement,eiken3,0
+225,come over,訪ねてくる,verb,movement,eiken3,0
+226,cross,～を横断する,verb,movement,eiken3,1
+227,drive home,〜を車で家に送る,verb,movement,eiken3,0
+228,escape,逃げる,verb,movement,eiken3,0
+229,explore,〜を探検する,verb,movement,eiken3,0
+230,fall asleep,眠る,verb,movement,eiken3,0
+231,fall down,転ぶ,verb,movement,eiken3,0
+232,fall into,～に落ちる,verb,movement,eiken3,0
+233,fall off,〜から落ちる,verb,movement,eiken3,0
+234,fly away,飛び去る,verb,movement,eiken3,0
+235,get in,～に乗り込む,verb,movement,eiken3,0
+236,get into,～に入学する,verb,movement,eiken3,0
+237,get lost,道に迷う,verb,movement,eiken3,0
+238,get on,(乗り物に)乗る,verb,movement,eiken3,0
+239,go abroad,海外へ行く,verb,movement,eiken3,0
+240,go and do,〜しに行く,verb,movement,eiken3,0
+241,go away,立ち去る,verb,movement,eiken3,0
+242,go down,通りを進む,verb,movement,eiken3,0
+243,go driving,ドライブに行く,verb,movement,eiken3,0
+244,go fishing,釣りに行く,verb,movement,eiken3,0
+245,go hiking,ハイキングにいく,verb,movement,eiken3,0
+246,go into,～に入る,verb,movement,eiken3,0
+247,go jogging,ジョギングする,verb,movement,eiken3,0
+248,go on a trip,旅行に出かける,verb,movement,eiken3,0
+249,go over to,～のところに行く,verb,movement,eiken3,0
+250,go riding,乗馬に行く,verb,movement,eiken3,0
+251,go running,走りに行く,verb,movement,eiken3,0
+252,go swimming,泳ぎに行く,verb,movement,eiken3,0
+253,hurry to,〜へ急ぐ,verb,movement,eiken3,0
+254,jump into,〜に飛び込む,verb,movement,eiken3,0
+255,lose my way,道に迷う,verb,movement,eiken3,0
+256,move around,動き回る,verb,movement,eiken3,0
+257,move away,引っ越す,verb,movement,eiken3,0
+258,reach,～に着く,verb,movement,eiken3,1
+259,return,～を返す,verb,movement,eiken3,1
+260,return home,帰宅する,verb,movement,eiken3,0
+261,rise,上がる,verb,movement,eiken3,0
+262,sail,航行する,verb,movement,eiken3,0
+263,take a bus,バスに乗る,verb,movement,eiken3,0
+264,take a train,電車に乗る,verb,movement,eiken3,0
+265,take off,離陸する,verb,movement,eiken3,0
+266,travel to,～へ旅行する,verb,movement,eiken3,0
+267,turn left,左に曲がる,verb,movement,eiken3,0
+268,walk along,～に沿って歩く,verb,movement,eiken3,0
+269,walk around,〜を歩き回る,verb,movement,eiken3,0
+270,walk out of,～から歩いて出る,verb,movement,eiken3,0
+271,bear,熊,noun,animal,eiken3,0
+272,deer,シカ,noun,animal,eiken3,0
+273,lion,ライオン,noun,animal,eiken3,0
+274,mouse,ネズミ,noun,animal,eiken3,0
+275,panda,パンダ,noun,animal,eiken3,1
+276,snake,ヘビ,noun,animal,eiken3,0
+277,tiger,トラ,noun,animal,eiken3,1
+278,turkey,シチメンチョウ,noun,animal,eiken3,0
+279,whale,クジラ,noun,animal,eiken3,0
+280,ankle,足首,noun,body,eiken3,0
+281,body,体,noun,body,eiken3,1
+282,cancer,がん,noun,body,eiken3,1
+283,headache,頭痛,noun,body,eiken3,0
+284,health,健康,noun,body,eiken3,1
+285,heart,心,noun,body,eiken3,0
+286,knee,膝,noun,body,eiken3,0
+287,medicine,薬,noun,body,eiken3,0
+288,sight,視力,noun,body,eiken3,0
+289,stomach,腹,noun,body,eiken3,0
+290,belt,ベルト,noun,clothing,eiken3,1
+291,cloth,布,noun,clothing,eiken3,0
+292,clothing,衣料品,noun,clothing,eiken3,0
+293,costume,衣装,noun,clothing,eiken3,0
+294,fashion,ファッション,noun,clothing,eiken3,1
+295,jeans,ジーンズ,noun,clothing,eiken3,0
+296,sneaker,スニーカー,noun,clothing,eiken3,0
+297,suit,スーツ,noun,clothing,eiken3,1
+298,sunglasses,サングラス,noun,clothing,eiken3,0
+299,swimsuit,水着,noun,clothing,eiken3,1
+300,bowl,ボウル,noun,food,eiken3,0
+301,flour,小麦粉,noun,food,eiken3,0
+302,French fries,フライドポテト,noun,food,eiken3,0
+303,meal,食事,noun,food,eiken3,0
+304,mushroom,きのこ,noun,food,eiken3,1
+305,pepper,コショウ,noun,food,eiken3,0
+306,pork,豚肉,noun,food,eiken3,0
+307,radish,ハツカダイコン,noun,food,eiken3,0
+308,recipe,レシピ,noun,food,eiken3,1
+309,seafood,シーフード,noun,food,eiken3,0
+310,slice,一切れ,noun,food,eiken3,0
+311,sugar,砂糖,noun,food,eiken3,1
+312,appliance,電化製品,noun,home,eiken3,0
+313,bookcase,本棚,noun,home,eiken3,0
+314,candle,ろうそく,noun,home,eiken3,0
+315,ceiling,天井,noun,home,eiken3,0
+316,closet,クローゼット,noun,home,eiken3,0
+317,dining,食事,noun,home,eiken3,0
+318,fridge,冷蔵庫,noun,home,eiken3,1
+319,furniture,家具,noun,home,eiken3,0
+320,garage,ガレージ,noun,home,eiken3,0
+321,garbage,ごみ,noun,home,eiken3,0
+322,glue,接着剤,noun,home,eiken3,0
+323,hallway,廊下,noun,home,eiken3,0
+324,handle,取っ手,noun,home,eiken3,0
+325,housework,家事,noun,home,eiken3,0
+326,mirror,鏡,noun,home,eiken3,1
+327,playground,遊び場,noun,home,eiken3,0
+328,toilet,トイレ,noun,home,eiken3,0
+329,trash,ごみ,noun,home,eiken3,0
+330,yard,庭,noun,home,eiken3,0
+331,adult,大人,noun,people,eiken3,1
+332,beginner,初心者,noun,people,eiken3,0
+333,boss,上司,noun,people,eiken3,1
+334,captain,主将,noun,people,eiken3,1
+335,couple,夫婦,noun,people,eiken3,0
+336,crowd,群衆,noun,people,eiken3,0
+337,enemy,敵,noun,people,eiken3,0
+338,fan,ファン,noun,people,eiken3,0
+339,gentleman,紳士,noun,people,eiken3,0
+340,guest,客,noun,people,eiken3,0
+341,guy,男の人,noun,people,eiken3,0
+342,hero,英雄,noun,people,eiken3,0
+343,kid,子供,noun,people,eiken3,1
+344,king,王,noun,people,eiken3,0
+345,neighbor,近所の人,noun,people,eiken3,0
+346,owner,所有者,noun,people,eiken3,1
+347,passenger,乗客,noun,people,eiken3,0
+348,person,人,noun,people,eiken3,1
+349,queen,女王,noun,people,eiken3,1
+350,teammate,チームメイト,noun,people,eiken3,0
+351,tourist,観光客,noun,people,eiken3,1
+352,traveler,旅行者,noun,people,eiken3,0
+353,winner,優勝者,noun,people,eiken3,1
+354,youth,若い頃,noun,people,eiken3,0
+355,actress,女優,noun,occupation,eiken3,1
+356,astronaut,宇宙飛行士,noun,occupation,eiken3,1
+357,athlete,運動選手,noun,occupation,eiken3,0
+358,boxer,ボクサー,noun,occupation,eiken3,0
+359,carpenter,大工,noun,occupation,eiken3,0
+360,chef,シェフ,noun,occupation,eiken3,0
+361,detective,刑事,noun,occupation,eiken3,0
+362,director,監督,noun,occupation,eiken3,0
+363,guide,ガイド,noun,occupation,eiken3,0
+364,judge,審査員,noun,occupation,eiken3,0
+365,leader,指導者,noun,occupation,eiken3,0
+366,manager,支配人,noun,occupation,eiken3,0
+367,officer,警察官,noun,occupation,eiken3,0
+368,performer,出演者,noun,occupation,eiken3,0
+369,police,警察,noun,occupation,eiken3,0
+370,president,大統領,noun,occupation,eiken3,1
+371,principal,校長,noun,occupation,eiken3,0
+372,reporter,記者,noun,occupation,eiken3,0
+373,sailor,船員,noun,occupation,eiken3,0
+374,salesclerk,店員,noun,occupation,eiken3,0
+375,soldier,兵士,noun,occupation,eiken3,1
+376,worker,働く人,noun,occupation,eiken3,1
+377,amusement,娯楽,noun,place,eiken3,0
+378,aquarium,水族館,noun,place,eiken3,1
+379,bakery,パン屋,noun,place,eiken3,1
+380,block,街区,noun,place,eiken3,0
+381,capital,首都,noun,place,eiken3,1
+382,castle,城,noun,place,eiken3,0
+383,church,教会,noun,place,eiken3,0
+384,city hall,市役所,noun,place,eiken3,0
+385,community,地域社会,noun,place,eiken3,0
+386,district,地区,noun,place,eiken3,0
+387,drugstore,ドラッグストア,noun,place,eiken3,0
+388,entrance,入り口,noun,place,eiken3,0
+389,factory,工場,noun,place,eiken3,0
+390,fair,見本市,noun,place,eiken3,0
+391,market,市場,noun,place,eiken3,0
+392,parking,駐車,noun,place,eiken3,0
+393,platform,プラットフォーム,noun,place,eiken3,1
+394,rental,賃貸物件,noun,place,eiken3,0
+395,resort,行楽地,noun,place,eiken3,0
+396,shrine,神社,noun,place,eiken3,1
+397,spot,場所,noun,place,eiken3,0
+398,stage,舞台,noun,place,eiken3,1
+399,state,州,noun,place,eiken3,0
+400,temple,寺,noun,place,eiken3,0
+401,area,区域,noun,nature,eiken3,1
+402,energy,エネルギー,noun,nature,eiken3,0
+403,environment,環境,noun,nature,eiken3,1
+404,field,野原,noun,nature,eiken3,1
+405,fire,火事,noun,nature,eiken3,0
+406,forest,森,noun,nature,eiken3,1
+407,grass,草,noun,nature,eiken3,0
+408,grove,小さな林,noun,nature,eiken3,0
+409,hill,丘,noun,nature,eiken3,1
+410,horizon,地平線,noun,nature,eiken3,1
+411,hurricane,ハリケーン,noun,nature,eiken3,0
+412,island,島,noun,nature,eiken3,0
+413,land,陸,noun,nature,eiken3,0
+414,leaf,葉,noun,nature,eiken3,0
+415,nature,自然,noun,nature,eiken3,1
+416,oil,油,noun,nature,eiken3,0
+417,planet,惑星,noun,nature,eiken3,0
+418,pollution,汚染,noun,nature,eiken3,0
+419,ray,光線,noun,nature,eiken3,0
+420,space,宇宙,noun,nature,eiken3,1
+421,storm,嵐,noun,nature,eiken3,0
+422,sunlight,日光,noun,nature,eiken3,0
+423,typhoon,台風,noun,nature,eiken3,0
+424,wing,翼,noun,nature,eiken3,0
+425,wood,木材,noun,nature,eiken3,0
+426,ballet,バレエ,noun,sports,eiken3,0
+427,hockey,ホッケー,noun,sports,eiken3,0
+428,marathon,マラソン,noun,sports,eiken3,0
+429,snowboard,スノーボード,noun,sports,eiken3,1
+430,table tennis,卓球,noun,sports,eiken3,0
+431,tournament,トーナメント,noun,sports,eiken3,1
+432,track,線路,noun,sports,eiken3,0
+433,cartoon,まんが,noun,media,eiken3,0
+434,documentary,ドキュメンタリー番組,noun,media,eiken3,0
+435,drawing,絵,noun,media,eiken3,0
+436,horror,ホラー,noun,media,eiken3,1
+437,Internet,インターネット,noun,media,eiken3,0
+438,jazz,ジャズ,noun,media,eiken3,0
+439,melody,メロディー,noun,media,eiken3,0
+440,mystery,推理小説,noun,media,eiken3,1
+441,novel,小説,noun,media,eiken3,0
+442,pen pal,ペンパル,noun,media,eiken3,0
+443,smartphone,スマートフォン,noun,media,eiken3,0
+444,television,テレビ,noun,media,eiken3,0
+445,alarm,目覚まし時計,noun,tech,eiken3,0
+446,engine,エンジン,noun,tech,eiken3,0
+447,rocket,ロケット,noun,tech,eiken3,1
+448,army,軍隊,noun,transport,eiken3,0
+449,ferry,フェリー,noun,transport,eiken3,0
+450,flight,便,noun,transport,eiken3,1
+451,navy,海軍,noun,transport,eiken3,0
+452,suitcase,スーツケース,noun,transport,eiken3,1
+453,traffic,交通,noun,transport,eiken3,0
+454,century,世紀,noun,time,eiken3,1
+455,half an hour,30分,noun,time,eiken3,0
+456,last time,前回,noun,time,eiken3,0
+457,midnight,真夜中,noun,time,eiken3,0
+458,schedule,予定,noun,time,eiken3,1
+459,session,集まり,noun,time,eiken3,0
+460,weekday,平日,noun,time,eiken3,0
+461,accident,事故,noun,abstract,eiken3,1
+462,action,行動,noun,abstract,eiken3,1
+463,adventure,冒険,noun,abstract,eiken3,0
+464,advice,助言,noun,abstract,eiken3,1
+465,award,賞,noun,abstract,eiken3,1
+466,bottom,底,noun,abstract,eiken3,0
+467,business,商売,noun,abstract,eiken3,1
+468,chance,機会,noun,abstract,eiken3,0
+469,circle,円,noun,abstract,eiken3,0
+470,collection,収蔵品,noun,abstract,eiken3,0
+471,course,講座,noun,abstract,eiken3,0
+472,custom,慣習,noun,abstract,eiken3,0
+473,damage,被害,noun,abstract,eiken3,0
+474,difference,違い,noun,abstract,eiken3,0
+475,discount,割引,noun,abstract,eiken3,0
+476,distance,距離,noun,abstract,eiken3,0
+477,examination,試験,noun,abstract,eiken3,0
+478,exit,出口,noun,abstract,eiken3,0
+479,experience,経験,noun,abstract,eiken3,1
+480,fact,事実,noun,abstract,eiken3,1
+481,fee,料金,noun,abstract,eiken3,0
+482,figure,図,noun,abstract,eiken3,0
+483,god,神,noun,abstract,eiken3,0
+484,government,政府,noun,abstract,eiken3,0
+485,habit,習慣,noun,abstract,eiken3,0
+486,happiness,幸福,noun,abstract,eiken3,0
+487,height,高さ,noun,abstract,eiken3,0
+488,hole,穴,noun,abstract,eiken3,1
+489,how to do,〜する方法,noun,abstract,eiken3,0
+490,humor,ユーモア,noun,abstract,eiken3,0
+491,imagination,想像力,noun,abstract,eiken3,0
+492,importance,重要性,noun,abstract,eiken3,0
+493,interest,興味,noun,abstract,eiken3,0
+494,interview,面接,noun,abstract,eiken3,1
+495,joke,冗談,noun,abstract,eiken3,0
+496,language,言語,noun,abstract,eiken3,1
+497,license,免許証,noun,abstract,eiken3,1
+498,limit,限界,noun,abstract,eiken3,0
+499,matter,事柄,noun,abstract,eiken3,0
+500,meaning,意味,noun,abstract,eiken3,0
+501,memory,思い出,noun,abstract,eiken3,1
+502,middle,真ん中,noun,abstract,eiken3,1
+503,mind,心,noun,abstract,eiken3,1
+504,mistake,誤り,noun,abstract,eiken3,0
+505,noise,物音,noun,abstract,eiken3,0
+506,opening,開演,noun,abstract,eiken3,0
+507,opinion,意見,noun,abstract,eiken3,0
+508,passage,一節,noun,abstract,eiken3,1
+509,peace,平和,noun,abstract,eiken3,0
+510,performance,演奏,noun,abstract,eiken3,0
+511,perseverance,忍耐,noun,abstract,eiken3,1
+512,piece,部分,noun,abstract,eiken3,0
+513,pleasure,楽しみ,noun,abstract,eiken3,0
+514,point,得点,noun,abstract,eiken3,0
+515,power,力,noun,abstract,eiken3,1
+516,prize,賞,noun,abstract,eiken3,1
+517,production,生産,noun,abstract,eiken3,0
+518,promise,約束,noun,abstract,eiken3,0
+519,purpose,目的,noun,abstract,eiken3,0
+520,reason,理由,noun,abstract,eiken3,1
+521,rule,規則,noun,abstract,eiken3,1
+522,safety,安全,noun,abstract,eiken3,0
+523,scene,場面,noun,abstract,eiken3,0
+524,section,区画,noun,abstract,eiken3,0
+525,sentence,文,noun,abstract,eiken3,0
+526,service,サービス,noun,abstract,eiken3,0
+527,shape,形,noun,abstract,eiken3,1
+528,side,側面,noun,abstract,eiken3,1
+529,sightseeing,観光,noun,abstract,eiken3,1
+530,skill,技能,noun,abstract,eiken3,0
+531,souvenir,みやげ,noun,abstract,eiken3,0
+532,speed,速度,noun,abstract,eiken3,0
+533,spelling,つづり,noun,abstract,eiken3,0
+534,step,段階,noun,abstract,eiken3,0
+535,success,成功,noun,abstract,eiken3,0
+536,support,支援,noun,abstract,eiken3,0
+537,symbol,象徴,noun,abstract,eiken3,1
+538,system,制度,noun,abstract,eiken3,0
+539,tradition,伝統,noun,abstract,eiken3,1
+540,trouble,面倒,noun,abstract,eiken3,0
+541,type,種類,noun,abstract,eiken3,1
+542,view,眺め,noun,abstract,eiken3,0
+543,voice,声,noun,abstract,eiken3,0
+544,war,戦争,noun,abstract,eiken3,1
+545,what to do,何をすればよいか,noun,abstract,eiken3,0
+546,wish,願い,noun,abstract,eiken3,0
+547,Asia,アジア,noun,country,eiken3,0
+548,Belgium,ベルギー,noun,country,eiken3,0
+549,Boston,ボストン,noun,country,eiken3,0
+550,California,カリフォルニア州,noun,country,eiken3,0
+551,Egypt,エジプト,noun,country,eiken3,0
+552,Europe,ヨーロッパ,noun,country,eiken3,0
+553,Germany,ドイツ,noun,country,eiken3,0
+554,Greece,ギリシャ,noun,country,eiken3,0
+555,Greek,ギリシャ語,noun,country,eiken3,0
+556,Indonesia,インドネシア,noun,country,eiken3,0
+557,New Zealand,ニュージーランド,noun,country,eiken3,0
+558,Paris,パリ,noun,country,eiken3,0
+559,Rome,ローマ,noun,country,eiken3,0
+560,Scotland,スコットランド,noun,country,eiken3,0
+561,Thailand,タイ,noun,country,eiken3,0
+562,Toronto,トロント,noun,country,eiken3,0
+563,U.S.,アメリカ合衆国,noun,country,eiken3,0
+564,Wales,ウェールズ,noun,country,eiken3,0
+565,activity,活動,noun,event,eiken3,1
+566,barbecue,バーベキュー,noun,event,eiken3,1
+567,battle,戦い,noun,event,eiken3,0
+568,carnival,カーニバル,noun,event,eiken3,0
+569,firework,花火,noun,event,eiken3,1
+570,Halloween,ハロウィーン,noun,event,eiken3,0
+571,Olympics,国際オリンピック大会,noun,event,eiken3,0
+572,parade,パレード,noun,event,eiken3,1
+573,button,ボタン,noun,object,eiken3,1
+574,cracker,クラッカー,noun,object,eiken3,0
+575,decoration,飾り,noun,object,eiken3,0
+576,diamond,ダイヤモンド,noun,object,eiken3,0
+577,flag,旗,noun,object,eiken3,0
+578,grave,墓,noun,object,eiken3,0
+579,medal,メダル,noun,object,eiken3,1
+580,package,包み,noun,object,eiken3,1
+581,pair,一組,noun,object,eiken3,0
+582,post,柱,noun,object,eiken3,0
+583,safe,金庫,noun,object,eiken3,0
+584,scissors,ハサミ,noun,object,eiken3,0
+585,sheet,1枚の紙,noun,object,eiken3,0
+586,shell,貝殻,noun,object,eiken3,0
+587,sign,看板,noun,object,eiken3,1
+588,statue,像,noun,object,eiken3,1
+589,tool,道具,noun,object,eiken3,0
+590,a couple of,二、三の〜,noun,unit,eiken3,0
+591,a part of,～の一部,noun,unit,eiken3,0
+592,a ticket to,～への切符,noun,unit,eiken3,0
+593,billion,10億,noun,unit,eiken3,1
+594,bit,少し,noun,unit,eiken3,0
+595,hundreds of,何百もの〜,noun,unit,eiken3,0
+596,mile,マイル,noun,unit,eiken3,0
+597,million,100万,noun,unit,eiken3,1
+598,part of,一部,noun,unit,eiken3,0
+599,percent,パーセント,noun,unit,eiken3,0
+600,thousands of,何千もの〜,noun,unit,eiken3,0
+601,ghost,幽霊,noun,other,eiken3,0
+602,abroad,海外に,adverb,adverb,eiken3,1
+603,actually,実は,adverb,adverb,eiken3,1
+604,all around,あちこちで,adverb,adverb_phrase,eiken3,0
+605,all day long,一日中,adverb,adverb_phrase,eiken3,0
+606,alone,一人で,adverb,adverb,eiken3,1
+607,anymore,今はもう,adverb,time,eiken3,1
+608,anytime,いつでも,adverb,time,eiken3,1
+609,anyway,とにかく,adverb,adverb,eiken3,1
+610,as usual,いつものように,adverb,adverb_phrase,eiken3,0
+611,at last,やっと,adverb,adverb_phrase,eiken3,0
+612,at least,少なくとも,adverb,adverb_phrase,eiken3,0
+613,at one time,かつて,adverb,adverb_phrase,eiken3,0
+614,at that time,そのとき,adverb,time,eiken3,0
+615,badly,ひどく,adverb,adverb,eiken3,0
+616,below,下に,adverb,adverb,eiken3,1
+617,by mistake,間違って,adverb,adverb_phrase,eiken3,0
+618,by myself,1人で,adverb,adverb_phrase,eiken3,0
+619,by oneself,1人で,adverb,adverb_phrase,eiken3,0
+620,carefully,注意深く,adverb,adverb,eiken3,1
+621,certainly,確かに,adverb,adverb,eiken3,0
+622,cheaply,安く,adverb,adverb,eiken3,0
+623,clearly,はっきりと,adverb,adverb,eiken3,0
+624,downstairs,階下に,adverb,adverb,eiken3,0
+625,downtown,繁華街に,adverb,adverb,eiken3,0
+626,else,その他に,adverb,adverb,eiken3,1
+627,enough to do,〜するのに十分,adverb,adverb_phrase,eiken3,0
+628,especially,特に,adverb,adverb,eiken3,0
+629,even,〜さえ,adverb,adverb,eiken3,0
+630,ever,今までに,adverb,time,eiken3,1
+631,everywhere,至る所に,adverb,adverb,eiken3,1
+632,finally,ついに,adverb,time,eiken3,1
+633,first of all,まず最初に,adverb,adverb_phrase,eiken3,0
+634,for a while,しばらくの間,adverb,time,eiken3,0
+635,for hours,何時間も,adverb,time,eiken3,0
+636,for now,今のところ,adverb,time,eiken3,0
+637,for oneself,自分で,adverb,adverb_phrase,eiken3,0
+638,for years,何年も,adverb,time,eiken3,0
+639,forward,前方へ,adverb,adverb,eiken3,0
+640,hardly,ほとんど〜ない,adverb,adverb,eiken3,0
+641,how far,どれくらいの距離,adverb,adverb_phrase,eiken3,0
+642,how often,どれくらいの頻度で,adverb,adverb_phrase,eiken3,0
+643,however,しかしながら,adverb,adverb,eiken3,1
+644,in a hurry,急いで,adverb,adverb_phrase,eiken3,0
+645,in a minute,すぐに,adverb,adverb_phrase,eiken3,0
+646,in fact,実際は,adverb,adverb_phrase,eiken3,0
+647,in nature,本質的に,adverb,adverb_phrase,eiken3,0
+648,in time,〜に間に合って,adverb,adverb_phrase,eiken3,0
+649,instead,代わりに,adverb,adverb,eiken3,1
+650,luckily,幸運にも,adverb,adverb,eiken3,1
+651,never,一度も〜ない,adverb,adverb,eiken3,1
+652,next time,今度は,adverb,time,eiken3,0
+653,not anymore,もはや〜ない,adverb,adverb_phrase,eiken3,0
+654,not at all,全く〜ない,adverb,adverb_phrase,eiken3,0
+655,not yet,まだ〜ない,adverb,time,eiken3,0
+656,on land,陸上で,adverb,adverb_phrase,eiken3,0
+657,on stage,舞台で,adverb,adverb_phrase,eiken3,0
+658,on time,時間通りに,adverb,adverb_phrase,eiken3,0
+659,once a month,月に一回,adverb,time,eiken3,0
+660,once a week,週に一回,adverb,time,eiken3,0
+661,once a year,年に一回,adverb,time,eiken3,0
+662,online,オンラインで,adverb,adverb,eiken3,0
+663,over here,こちらへ,adverb,adverb_phrase,eiken3,0
+664,probably,たぶん,adverb,adverb,eiken3,0
+665,quickly,素早く,adverb,adverb,eiken3,1
+666,quietly,静かに,adverb,adverb,eiken3,0
+667,quite,非常に,adverb,adverb,eiken3,0
+668,recently,最近,adverb,time,eiken3,0
+669,right away,すぐに,adverb,adverb_phrase,eiken3,0
+670,safely,安全に,adverb,adverb,eiken3,0
+671,sincerely,心から,adverb,adverb,eiken3,0
+672,so much,とても,adverb,adverb_phrase,eiken3,0
+673,softly,優しく,adverb,adverb,eiken3,0
+674,sometime,いつか,adverb,time,eiken3,1
+675,somewhere,どこかに,adverb,adverb,eiken3,0
+676,straight,真っ直ぐに,adverb,adverb,eiken3,0
+677,suddenly,突然,adverb,adverb,eiken3,0
+678,than before,以前よりも,adverb,adverb_phrase,eiken3,0
+679,than usual,いつもより,adverb,adverb_phrase,eiken3,0
+680,this way,このように,adverb,adverb_phrase,eiken3,0
+681,twice a week,週に2回,adverb,adverb_phrase,eiken3,0
+682,upstairs,上の階へ,adverb,adverb,eiken3,0
+683,afraid,怖い,adjective,adj_emotion,eiken3,0
+684,be angry at,〜に怒っている,adjective,adj_emotion,eiken3,0
+685,be dressed,着ている,adjective,adj_emotion,eiken3,0
+686,bored,退屈している,adjective,adj_emotion,eiken3,0
+687,enjoyable,楽しい,adjective,adj_emotion,eiken3,1
+688,homesick,ホームシック,adjective,adj_emotion,eiken3,0
+689,interested,興味がある,adjective,adj_emotion,eiken3,0
+690,lonely,ひとりぼっちの,adjective,adj_emotion,eiken3,0
+691,nervous,緊張している,adjective,adj_emotion,eiken3,1
+692,proud,誇らしい,adjective,adj_emotion,eiken3,0
+693,scared,おびえた,adjective,adj_emotion,eiken3,0
+694,scary,こわい,adjective,adj_emotion,eiken3,0
+695,shocked,ショックを受けた,adjective,adj_emotion,eiken3,0
+696,shy,内気な,adjective,adj_emotion,eiken3,0
+697,upset,動揺した,adjective,adj_emotion,eiken3,0
+698,worried,心配している,adjective,adj_emotion,eiken3,0
+699,able,できる,adjective,adj_quality,eiken3,0
+700,all right,構わない,adjective,adj_quality,eiken3,0
+701,amazing,驚くべき,adjective,adj_quality,eiken3,0
+702,be sold out,売り切れている,adjective,adj_quality,eiken3,0
+703,bright,明るい,adjective,adj_quality,eiken3,1
+704,central,中央の,adjective,adj_quality,eiken3,1
+705,classical,古典音楽の,adjective,adj_quality,eiken3,0
+706,clear,澄んだ,adjective,adj_quality,eiken3,1
+707,clever,利口な,adjective,adj_quality,eiken3,1
+708,comfortable,快適な,adjective,adj_quality,eiken3,0
+709,common,よくある,adjective,adj_quality,eiken3,0
+710,convenient,便利な,adjective,adj_quality,eiken3,0
+711,correct,正しい,adjective,adj_quality,eiken3,0
+712,daily,毎日の,adjective,adj_quality,eiken3,0
+713,dangerous,危険な,adjective,adj_quality,eiken3,0
+714,enough for,〜に十分な,adjective,adj_quality,eiken3,0
+715,ethnic,民族の,adjective,adj_quality,eiken3,0
+716,excellent,優れた,adjective,adj_quality,eiken3,0
+717,familiar,よく知っている,adjective,adj_quality,eiken3,0
+718,famous for,〜で有名だ,adjective,adj_quality,eiken3,0
+719,final,最終的な,adjective,adj_quality,eiken3,1
+720,foreign,外国の,adjective,adj_quality,eiken3,1
+721,fresh,新鮮な,adjective,adj_quality,eiken3,1
+722,friendly,親しみやすい,adjective,adj_quality,eiken3,0
+723,helpful,役に立つ,adjective,adj_quality,eiken3,0
+724,human,人間の,adjective,adj_quality,eiken3,0
+725,important,重要な,adjective,adj_quality,eiken3,1
+726,local,地域の,adjective,adj_quality,eiken3,1
+727,lovely,美しい,adjective,adj_quality,eiken3,0
+728,main,主要な,adjective,adj_quality,eiken3,1
+729,mysterious,謎めいた,adjective,adj_quality,eiken3,0
+730,national,国民の,adjective,adj_quality,eiken3,1
+731,native,その土地固有の,adjective,adj_quality,eiken3,0
+732,natural,自然な,adjective,adj_quality,eiken3,0
+733,necessary,必要な,adjective,adj_quality,eiken3,0
+734,northern,北の,adjective,adj_quality,eiken3,0
+735,peaceful,穏やかな,adjective,adj_quality,eiken3,0
+736,polite,礼儀正しい,adjective,adj_quality,eiken3,0
+737,possible,可能な,adjective,adj_quality,eiken3,0
+738,powerful,強力な,adjective,adj_quality,eiken3,0
+739,public,公共の,adjective,adj_quality,eiken3,0
+740,real,本当の,adjective,adj_quality,eiken3,0
+741,serious,重大な,adjective,adj_quality,eiken3,0
+742,sharp,するどい,adjective,adj_quality,eiken3,0
+743,social,社会的な,adjective,adj_quality,eiken3,0
+744,solar,太陽の,adjective,adj_quality,eiken3,0
+745,such,そのような,adjective,adj_quality,eiken3,1
+746,such a,そんな,adjective,adj_quality,eiken3,0
+747,terrible,ひどい,adjective,adj_quality,eiken3,0
+748,traditional,伝統的な,adjective,adj_quality,eiken3,0
+749,true,本当の,adjective,adj_quality,eiken3,1
+750,unusual,珍しい,adjective,adj_quality,eiken3,0
+751,usual,いつもの,adjective,adj_quality,eiken3,1
+752,wild,野生の,adjective,adj_quality,eiken3,0
+753,a few,いくつかの,adjective,adj_quantity,eiken3,0
+754,enough,十分な,adjective,adj_quantity,eiken3,1
+755,less,より少ない,adjective,adj_quantity,eiken3,0
+756,several,数個の,adjective,adj_quantity,eiken3,1
+757,so many,とてもたくさんの〜,adjective,adj_quantity,eiken3,0
+758,total,合計の,adjective,adj_quantity,eiken3,0
+759,whole,全体の,adjective,adj_quantity,eiken3,1
+760,deep,深い,adjective,adj_size,eiken3,1
+761,flat,平らな,adjective,adj_size,eiken3,0
+762,huge,巨大な,adjective,adj_size,eiken3,0
+763,narrow,狭い,adjective,adj_size,eiken3,1
+764,plastic,プラスチックの,adjective,adj_size,eiken3,0
+765,round,丸い,adjective,adj_size,eiken3,0
+766,thick,厚い,adjective,adj_size,eiken3,0
+767,thin,薄い,adjective,adj_size,eiken3,0
+768,tight,きつい,adjective,adj_size,eiken3,1
+769,wide,広い,adjective,adj_size,eiken3,0
+770,absent,不在の,adjective,adj_state,eiken3,0
+771,alive,生きている,adjective,adj_state,eiken3,0
+772,asleep,眠っている,adjective,adj_state,eiken3,0
+773,blind,目の見えない,adjective,adj_state,eiken3,0
+774,broken,壊れた,adjective,adj_state,eiken3,0
+775,cheap,安い,adjective,adj_state,eiken3,1
+776,crowded,混雑した,adjective,adj_state,eiken3,1
+777,fat,太った,adjective,adj_state,eiken3,0
+778,female,雌の,adjective,adj_state,eiken3,0
+779,latest,最新の,adjective,adj_state,eiken3,0
+780,lost,道に迷った,adjective,adj_state,eiken3,0
+781,loud,（声や音が）大きい,adjective,adj_state,eiken3,1
+782,male,雄の,adjective,adj_state,eiken3,0
+783,noisy,騒がしい,adjective,adj_state,eiken3,0
+784,part time,パートタイム,adjective,adj_state,eiken3,1
+785,poor,貧しい,adjective,adj_state,eiken3,1
+786,spicy,辛い,adjective,adj_state,eiken3,0
+787,weak,弱い,adjective,adj_state,eiken3,0
+788,wet,濡れた,adjective,adj_state,eiken3,1
+789,worse,より悪い,adjective,adj_state,eiken3,0
+790,worst,最も悪い,adjective,adj_state,eiken3,0
+791,American,アメリカの,adjective,adj_nationality,eiken3,0
+792,British,イギリスの,adjective,adj_nationality,eiken3,0
+793,European,ヨーロッパの,adjective,adj_nationality,eiken3,0
+794,German,ドイツの,adjective,adj_nationality,eiken3,0
+795,Indian,インドの,adjective,adj_nationality,eiken3,0
+796,Korean,韓国の,adjective,adj_nationality,eiken3,0
+797,Mexican,メキシコの,adjective,adj_nationality,eiken3,0
+798,Portuguese,ポルトガルの,adjective,adj_nationality,eiken3,0
+799,Scottish,スコットランドの,adjective,adj_nationality,eiken3,0
+800,a bottle of,一瓶の〜,phrase,phrase,eiken3,0
+801,a group of,一群の〜,phrase,phrase,eiken3,0
+802,a pair of,一対の,phrase,phrase,eiken3,0
+803,a piece of,一つの,phrase,phrase,eiken3,0
+804,a sheet of,１枚の〜,phrase,phrase,eiken3,0
+805,a slice of,一切れの,phrase,phrase,eiken3,0
+806,a type of,～の一種,phrase,phrase,eiken3,0
+807,all kinds of,さまざまな〜,phrase,phrase,eiken3,0
+808,as old as,～と同じくらい古い,phrase,phrase,eiken3,0
+809,be glad to,喜んで〜する,phrase,phrase,eiken3,0
+810,be happy to,喜んで〜する,phrase,phrase,eiken3,0
+811,do my best,全力を尽くす,phrase,phrase,eiken3,0
+812,far from,〜とは程遠い,phrase,phrase,eiken3,0
+813,for fun,趣味で,phrase,phrase,eiken3,0
+814,for life,一生,phrase,phrase,eiken3,0
+815,get to do,〜する機会がある,phrase,phrase,eiken3,0
+816,give a hand,～に手を貸す,phrase,phrase,eiken3,0
+817,have time to,～する時間がある,phrase,phrase,eiken3,0
+818,in a way,ある意味では,phrase,phrase,eiken3,0
+819,in trouble,困っている,phrase,phrase,eiken3,0
+820,just in time,ぎりぎり間に合う,phrase,phrase,eiken3,0
+821,no more,これ以上〜ない,phrase,phrase,eiken3,0
+822,not any,少しも～ない,phrase,phrase,eiken3,0
+823,of all ages,年齢を問わず,phrase,phrase,eiken3,0
+824,of course,もちろん,phrase,phrase,eiken3,0
+825,out of bed,ベッドから出る,phrase,phrase,eiken3,0
+826,too tired to,疲れすぎて〜できない,phrase,phrase,eiken3,0
+827,try our best,全力を尽くす,phrase,phrase,eiken3,0
+828,where to do,どこで（〜を）するか,phrase,phrase,eiken3,0
+829,above,～の上に,preposition,preposition,eiken3,0
+830,across,〜の向こう側に,preposition,preposition,eiken3,1
+831,across from,〜の向かいに,preposition,preposition,eiken3,0
+832,all over,〜中,preposition,preposition,eiken3,0
+833,along,～に沿って,preposition,preposition,eiken3,0
+834,at one's desk,自席で,preposition,preposition,eiken3,0
+835,behind,〜の後ろに,preposition,preposition,eiken3,1
+836,by e-mail,電子メールで,preposition,preposition,eiken3,0
+837,by mail,郵便で,preposition,preposition,eiken3,0
+838,for a reason,何らかの理由で,preposition,preposition,eiken3,0
+839,instead of,〜の代わりに,preposition,preposition,eiken3,0
+840,less than,〜未満,preposition,preposition,eiken3,0
+841,more than,～を超える,preposition,preposition,eiken3,0
+842,near here,この近くに,preposition,preposition,eiken3,0
+843,on a farm,農場で,preposition,preposition,eiken3,0
+844,on a website,ウェブサイトで,preposition,preposition,eiken3,0
+845,on weekends,週末に,preposition,preposition,eiken3,0
+846,outside of,〜の外に,preposition,preposition,eiken3,0
+847,since,～から,preposition,preposition,eiken3,1
+848,such as,〜など,preposition,preposition,eiken3,0
+849,thanks to,～のおかげで,preposition,preposition,eiken3,0
+850,through,〜を通り抜けて,preposition,preposition,eiken3,1
+851,toward,～の方へ,preposition,preposition,eiken3,0
+852,without,〜なしで,preposition,preposition,eiken3,1
+853,both of,〜の両方,pronoun,pronoun,eiken3,0
+854,each of,〜それぞれ,pronoun,pronoun,eiken3,0
+855,everybody,みんな,pronoun,pronoun,eiken3,0
+856,herself,彼女自身,pronoun,pronoun,eiken3,1
+857,myself,自分で,pronoun,pronoun,eiken3,1
+858,neither,どちらも～ない,pronoun,pronoun,eiken3,0
+859,no one,誰も〜ない,pronoun,pronoun,eiken3,0
+860,no other,他にない,pronoun,pronoun,eiken3,0
+861,not anything,何も,pronoun,pronoun,eiken3,0
+862,nothing,何もない,pronoun,pronoun,eiken3,0
+863,ourselves,私たち自身,pronoun,pronoun,eiken3,0
+864,someone,誰か,pronoun,pronoun,eiken3,1
+865,although,～だけれども,conjunction,conjunction,eiken3,0
+866,as soon as,〜したらすぐに,conjunction,conjunction,eiken3,0
+867,either,どちらか,conjunction,conjunction,eiken3,1
+868,so that,〜するために,conjunction,conjunction,eiken3,0
+869,while,～している間に,conjunction,conjunction,eiken3,1
+870,thank you,ありがとう,interjection,interjection,eiken3,0
+871,wow,わあ,interjection,interjection,eiken3,0

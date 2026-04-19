@@ -1,22 +1,19 @@
 {
-    "version": "0.1.0",
-    "configurations": [
-        {
-            "name": "mono_games",
-            "request": "launch",
-            "type": "dart"
-        },
-        {
-            "name": "mono_games (profile mode)",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "profile"
-        },
-        {
-            "name": "mono_games (release mode)",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "release"
-        }
-    ]
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "block_puzzle",
+			"request": "launch",
+			"type": "dart",
+			"program": "lib/main_block_puzzle.dart",
+			"args": ["--flavor", "blockPuzzle"]
+		},
+		{
+			"name": "it_pass",
+			"request": "launch",
+			"type": "dart",
+			"program": "lib/main_it_pass.dart",
+			"args": ["--flavor", "it_pass"]
+		}
+	]
 }

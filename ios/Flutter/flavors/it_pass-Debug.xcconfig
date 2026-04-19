@@ -1,0 +1,3 @@
+#include "../Debug.xcconfig"
+BUNDLE_ID = jp.it.game
+APP_NAME = IT Pass

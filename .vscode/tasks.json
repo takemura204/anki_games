@@ -1,29 +1,44 @@
 {
-  "version": "2.0.0",
-  "tasks": [
-    {
-      "label": "Generate New Feature",
-      "type": "shell",
-      "command": "./script/generate_feature.sh",
-      "args": [
-        "${input:featureName}"
-      ],
-      "presentation": {
-        "reveal": "always",
-        "panel": "new"
-      },
-      "options": {
-        "cwd": "${workspaceFolder}"
-      },
-      "problemMatcher": []
-    }
-  ],
-  "inputs": [
-    {
-      "id": "featureName",
-      "description": "機能名を入力してください (例: home, user_profile)",
-      "default": "hoge",
-      "type": "promptString"
-    }
-  ]
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Generate New Feature",
+			"type": "shell",
+			"command": "./script/generate_feature.sh",
+			"args": ["${input:featureName}"],
+			"presentation": {
+				"reveal": "always",
+				"panel": "new"
+			},
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "bring-flutter-target-to-front",
+			"type": "shell",
+			"command": "${workspaceFolder}/script/bring_flutter_target_to_front.sh",
+			"windows": {
+				"command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"${workspaceFolder}\\script\\bring_flutter_target_to_front.ps1\""
+			},
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"presentation": {
+				"reveal": "silent",
+				"panel": "shared",
+				"showReuseMessage": false
+			},
+			"problemMatcher": []
+		}
+	],
+	"inputs": [
+		{
+			"id": "featureName",
+			"description": "機能名を入力してください (例: home, user_profile)",
+			"default": "hoge",
+			"type": "promptString"
+		}
+	]
 }

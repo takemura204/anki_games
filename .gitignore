@@ -54,5 +54,5 @@ app.*.map.json
 pubspec.lock
 
 # 単語生成ツールの大容量データファイル
-tools/data/
+tools/
 .env

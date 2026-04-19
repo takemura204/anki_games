@@ -1,0 +1,3 @@
+#include "../Release.xcconfig"
+BUNDLE_ID = jp.block.puzzle
+APP_NAME = Block.
