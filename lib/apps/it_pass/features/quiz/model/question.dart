@@ -49,6 +49,7 @@ class QuestionBody {
 
 class Question {
   const Question({
+    required this.eraId,
     required this.no,
     required this.title,
     required this.body,
@@ -65,12 +66,14 @@ class Question {
 
   factory Question.fromJson(
     Map<String, dynamic> json, {
+    required String eraId,
     String examDisplayName = '',
   }) {
     final choicesJson = json['choices'] as List<dynamic>;
     final explanation = json['explanation'] as Map<String, dynamic>? ?? {};
     final category = json['category'] as Map<String, dynamic>? ?? {};
     return Question(
+      eraId: eraId,
       no: json['no'] as int,
       title: json['title'] as String,
       body: QuestionBody.fromJson(json['body'] as Map<String, dynamic>),
@@ -88,6 +91,7 @@ class Question {
     );
   }
 
+  final String eraId;
   final int no;
   final String title;
   final QuestionBody body;

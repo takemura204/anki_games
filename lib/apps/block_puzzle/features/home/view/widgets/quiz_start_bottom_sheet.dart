@@ -113,8 +113,7 @@ class QuizStartSheet extends ConsumerWidget {
           TextButton(
             onPressed: canStart
                 ? () async {
-                    final hasSaved =
-                        ref
+                    final hasSaved = ref
                             .read(blockPuzzleViewModelProvider)
                             .levelHasSavedGame[level.name] ??
                         false;
@@ -122,7 +121,8 @@ class QuizStartSheet extends ConsumerWidget {
                     if (hasSaved) {
                       final shouldContinue = await showDialog<bool>(
                         context: context,
-                        builder: (_) => _ContinueDialog(colorScheme: colorScheme),
+                        builder: (_) =>
+                            _ContinueDialog(colorScheme: colorScheme),
                       );
                       if (shouldContinue == null) {
                         return;

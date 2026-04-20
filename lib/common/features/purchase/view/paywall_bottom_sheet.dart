@@ -6,8 +6,6 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-/// ペイウォールボトムシートウィジェット。
-/// [ModalSheetRouter] から呼び出す。
 class PaywallSheet extends HookConsumerWidget {
   const PaywallSheet({super.key});
 
@@ -203,9 +201,7 @@ class PaywallSheet extends HookConsumerWidget {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(
-              isPremium
-                  ? t.premium.restoreSuccess
-                  : t.premium.restoreNotFound,
+              isPremium ? t.premium.restoreSuccess : t.premium.restoreNotFound,
             ),
           ),
         );

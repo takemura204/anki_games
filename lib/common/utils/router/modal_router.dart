@@ -1,7 +1,7 @@
+import 'package:anki_games/common/i18n/translations.g.dart';
+import 'package:anki_games/common/utils/router/router_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:anki_games/common/i18n/translations.g.dart';
-import 'package:anki_games/common/until/router/router_constants.dart';
 
 /// ダイアログの表示を一元管理する Provider。
 /// ViewModel から context 不要で呼び出せる。

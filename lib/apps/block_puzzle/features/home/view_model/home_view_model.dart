@@ -2,8 +2,8 @@ import 'package:anki_games/apps/block_puzzle/features/block_puzzle/view_model/bl
 import 'package:anki_games/apps/block_puzzle/features/home/model/home_game_kind.dart';
 import 'package:anki_games/apps/block_puzzle/features/home/view_model/home_game_mode_provider.dart';
 import 'package:anki_games/common/features/quiz/view_model/quiz_view_model.dart';
-import 'package:anki_games/common/until/router/modal_sheet_router.dart';
-import 'package:anki_games/common/until/router/router_constants.dart';
+import 'package:anki_games/common/utils/router/modal_sheet_router.dart';
+import 'package:anki_games/common/utils/router/router_constants.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -27,7 +27,7 @@ class HomeViewModel extends AutoDisposeNotifier<HomeState> {
     final link = ref.keepAlive();
     Future<void>.microtask(() async {
       await _onLoad();
-      link;
+      link.close();
     });
     return const HomeState();
   }

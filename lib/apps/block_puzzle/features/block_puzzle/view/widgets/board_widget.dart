@@ -8,7 +8,7 @@ import 'package:anki_games/apps/block_puzzle/features/block_puzzle/model/piece.d
 import 'package:anki_games/apps/block_puzzle/features/block_puzzle/view/painters/cell_renderer.dart';
 import 'package:anki_games/apps/block_puzzle/features/block_puzzle/view_model/block_puzzle_view_model.dart';
 import 'package:anki_games/common/features/settings/view_model/settings_view_model.dart';
-import 'package:anki_games/common/until/service/audio_service.dart';
+import 'package:anki_games/common/utils/service/audio_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -402,10 +402,9 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
                   _quizFeedbackController,
                 ]),
                 builder: (context, _) {
-                  final shaderTime = DateTime.now()
-                          .difference(_clockStart)
-                          .inMilliseconds /
-                      1000;
+                  final shaderTime =
+                      DateTime.now().difference(_clockStart).inMilliseconds /
+                          1000;
                   // パルス強度（0.15 ~ 0.45）はシェーダークロックと同じ
                   // AnimatedBuilder 内で計算してフル再ビルドを避ける。
                   final pulseGlow = 0.15 + _pulseController.value * 0.3;
@@ -578,8 +577,8 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
                 }
                 final colors = theme.colorsFor(_brightness);
                 // _comboRow を -1..1 の Alignment に変換（中央寄り）
-                final alignY = ((_comboRow / Board.size) * 2 - 1)
-                    .clamp(-0.75, 0.75);
+                final alignY =
+                    ((_comboRow / Board.size) * 2 - 1).clamp(-0.75, 0.75);
                 return IgnorePointer(
                   child: SizedBox(
                     width: boardSize,
@@ -723,8 +722,7 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
     });
 
     // コントローラの長さを遅延分だけ延長（1.2 倍でテンポよく）
-    final scaledClearMs =
-        (anims.clearDuration.inMilliseconds * 1.2).round();
+    final scaledClearMs = (anims.clearDuration.inMilliseconds * 1.2).round();
     final totalDuration = Duration(milliseconds: scaledClearMs) +
         Duration(milliseconds: (maxDelay * 1000).round());
     _clearController.duration = totalDuration;
@@ -826,11 +824,9 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
     const asmrPitchOffset = -0.1;
     final comboBoost = (1.0 + (result.combo - 1) * 0.12).clamp(1.0, 1.8);
     final pitchMin =
-        (widget.theme.sounds.clearPitchMin + asmrPitchOffset)
-            .clamp(0.4, 2.0);
+        (widget.theme.sounds.clearPitchMin + asmrPitchOffset).clamp(0.4, 2.0);
     final pitchMax =
-        (widget.theme.sounds.clearPitchMax + asmrPitchOffset)
-            .clamp(0.4, 2.0);
+        (widget.theme.sounds.clearPitchMax + asmrPitchOffset).clamp(0.4, 2.0);
 
     for (final entry in soundGroups.entries) {
       final delayMs = entry.key;
@@ -847,8 +843,7 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
               .map((cell) => (cell.$1 + cell.$2) / ((Board.size - 1) * 2.0))
               .reduce((a, b) => a + b) /
           cells.length;
-      final rate =
-          (pitchMin + avgNormPos * (pitchMax - pitchMin)) * comboBoost;
+      final rate = (pitchMin + avgNormPos * (pitchMax - pitchMin)) * comboBoost;
 
       late final Timer soundTimer;
       soundTimer = Timer(
@@ -859,8 +854,7 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
             return;
           }
           if (_soundEnabled) {
-            AudioService.instance
-                .playWithPan(clearPath, pan: pan, rate: rate);
+            AudioService.instance.playWithPan(clearPath, pan: pan, rate: rate);
           }
           // 最後のグループで強い振動、それ以外は軽い振動。
           if (_vibrationEnabled) {

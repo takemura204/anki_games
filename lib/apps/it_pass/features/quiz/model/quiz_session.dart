@@ -41,8 +41,8 @@ class QuizSession {
   int get totalCount => questions.length;
   bool get isAnswered => answerState != AnswerState.unanswered;
 
-  /// 現在のセット内（0〜9）のインデックス
-  int get indexInSet => currentIndex % 10;
+  /// 現在のセッション内での位置（0 始まり）。1 セッションは最大10問。
+  int get indexInSet => currentIndex;
 
   /// セット内の経過時間（結果表示前）
   Duration get setElapsed => DateTime.now().difference(setStartTime);

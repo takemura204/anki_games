@@ -4,10 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 part 'app_database.g.dart';
 
-/// アプリ全体で共有するシングルトン DB インスタンス。
-///
-/// keepAlive な [Provider] として提供し、[QuizViewModel] が毎回
-/// `AppDatabase()` を呼び出して複数インスタンスが作られる警告を防ぐ。
 final appDatabaseProvider = Provider<AppDatabase>((ref) {
   final db = AppDatabase();
   ref.onDispose(db.close);
@@ -35,8 +31,7 @@ class WordRecords extends Table {
   IntColumn get stage => integer().withDefault(const Constant(0))();
 
   /// 連続正解数（正: 連続正解、負: 連続失敗）。ステージ昇降判定に使用。
-  IntColumn get consecutiveStreak =>
-      integer().withDefault(const Constant(0))();
+  IntColumn get consecutiveStreak => integer().withDefault(const Constant(0))();
 
   /// 次回レビュー予定日時（SRS）。null = 未出題 or 即出題可能。
   DateTimeColumn get nextReviewAt => dateTime().nullable()();
@@ -56,8 +51,7 @@ class WordRecords extends Table {
 @DriftDatabase(tables: [WordRecords])
 class AppDatabase extends _$AppDatabase {
   /// [AppDatabase] を作成する。
-  AppDatabase([QueryExecutor? executor])
-      : super(executor ?? _openConnection());
+  AppDatabase([QueryExecutor? executor]) : super(executor ?? _openConnection());
 
   @override
   int get schemaVersion => 4;

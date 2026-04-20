@@ -1,15 +1,20 @@
 import 'dart:math';
 import 'dart:ui';
 
+import 'package:anki_games/apps/it_pass/features/filter/view/filter_sheet.dart';
+import 'package:anki_games/apps/it_pass/features/learning/model/learning_level.dart';
+import 'package:anki_games/apps/it_pass/features/learning/providers/it_pass_learning_stats_provider.dart';
+import 'package:anki_games/apps/it_pass/features/learning/repository/local_learning_history_repository.dart';
 import 'package:anki_games/apps/it_pass/features/quiz/model/question.dart';
 import 'package:anki_games/apps/it_pass/features/quiz/model/quiz_session.dart';
-import 'package:anki_games/apps/it_pass/features/quiz/view/modals/filter_sheet.dart';
 import 'package:anki_games/apps/it_pass/features/quiz/view_model/quiz_view_model.dart';
+import 'package:anki_games/common/config/constants/app_urls.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 part 'widgets/header.dart';
 part 'widgets/quiz_page_item.dart';
@@ -44,19 +49,18 @@ final class _ResultEntry extends _PageEntry {
   final int setIndex;
 }
 
+final class _SessionEndEntry extends _PageEntry {
+  const _SessionEndEntry();
+}
+
 List<_PageEntry> _buildPages(int total) {
   final pages = <_PageEntry>[];
-  var setIndex = 0;
-  var q = 0;
-  while (q < total) {
-    final end = (q + 10).clamp(0, total);
-    for (var i = q; i < end; i++) {
-      pages.add(_QuestionEntry(questionIndex: i, setIndex: setIndex));
-    }
-    pages.add(_ResultEntry(setIndex: setIndex));
-    q = end;
-    setIndex++;
+  for (var i = 0; i < total; i++) {
+    pages.add(_QuestionEntry(questionIndex: i, setIndex: 0));
   }
+  pages
+    ..add(const _ResultEntry(setIndex: 0))
+    ..add(const _SessionEndEntry());
   return pages;
 }
 
@@ -222,11 +226,14 @@ class _QuizContentState extends ConsumerState<_QuizContent>
   // ---- helpers ----
 
   int _questionPageIndex(int questionIndex) {
-    return questionIndex + questionIndex ~/ 10;
+    return questionIndex;
   }
 
   bool get _isOnResultPage =>
       _pages.isNotEmpty && _pages[_currentViewPage] is _ResultEntry;
+
+  bool get _isOnSessionEndPage =>
+      _pages.isNotEmpty && _pages[_currentViewPage] is _SessionEndEntry;
 
   // ---- actions ----
 
@@ -267,14 +274,10 @@ class _QuizContentState extends ConsumerState<_QuizContent>
 
   void _onResultContinue() {
     if (_currentViewPage + 1 < _pages.length) {
-      // More pages exist → swipe to next (onPageChanged handles ViewModel call)
       _pageController.nextPage(
         duration: const Duration(milliseconds: 450),
         curve: Curves.easeInOutCubic,
       );
-    } else {
-      // Last result page → trigger reshuffle directly
-      ref.read(quizViewModelProvider.notifier).continueToNextSet();
     }
   }
 
@@ -283,10 +286,16 @@ class _QuizContentState extends ConsumerState<_QuizContent>
     final entry = _pages[pageIndex];
 
     if (entry is _ResultEntry) {
-      // Arrived at result page: capture elapsed time
       setState(() {
         _currentViewPage = pageIndex;
         _resultElapsesBySet[entry.setIndex] = widget.session.setElapsed;
+      });
+      return;
+    }
+
+    if (entry is _SessionEndEntry) {
+      setState(() {
+        _currentViewPage = pageIndex;
       });
       return;
     }
@@ -299,11 +308,7 @@ class _QuizContentState extends ConsumerState<_QuizContent>
     });
 
     if (pageIndex > prevPage) {
-      if (_pages[prevPage] is _ResultEntry) {
-        ref.read(quizViewModelProvider.notifier).continueToNextSet();
-      } else {
-        ref.read(quizViewModelProvider.notifier).nextQuestion();
-      }
+      ref.read(quizViewModelProvider.notifier).nextQuestion();
     }
   }
 
@@ -320,11 +325,20 @@ class _QuizContentState extends ConsumerState<_QuizContent>
     final isIncorrect = session.answerState == AnswerState.incorrect;
     final showActionBar = session.isAnswered &&
         !_isOnResultPage &&
+        !_isOnSessionEndPage &&
         (isIncorrect ? _actionBarReady : !_sheetMounted);
 
-    final physics = _isOnResultPage || (session.isAnswered && !_sheetMounted)
+    final physics = _isOnResultPage ||
+            _isOnSessionEndPage ||
+            (session.isAnswered && !_sheetMounted)
         ? const _ForwardOnlyPageScrollPhysics()
         : const NeverScrollableScrollPhysics();
+
+    final headerCenterLabel = _isOnResultPage
+        ? 'セット結果'
+        : _isOnSessionEndPage
+            ? '次のステップ'
+            : null;
 
     return Stack(
       children: [
@@ -345,6 +359,13 @@ class _QuizContentState extends ConsumerState<_QuizContent>
                 session: session,
                 elapsed: elapsed,
                 onContinue: _onResultContinue,
+              );
+            }
+
+            if (entry is _SessionEndEntry) {
+              return _SessionEndPage(
+                key: const ValueKey('session_end'),
+                onOpenFilter: () => showQuizFilterSheet(context, ref),
               );
             }
 
@@ -371,8 +392,9 @@ class _QuizContentState extends ConsumerState<_QuizContent>
           child: _Header(
             cardRadius: cardRadius,
             session: session,
+            centerLabel: headerCenterLabel,
             onUserPressed: () {},
-            onFilterPressed: () => showQuizFilterBottomSheet(context, ref),
+            onFilterPressed: () => showQuizFilterSheet(context, ref),
           ),
         ),
         Align(
@@ -384,7 +406,7 @@ class _QuizContentState extends ConsumerState<_QuizContent>
             onShowExplanation: _showSheet,
             onNext: _goNext,
             onUserPressed: () {},
-            onFilterPressed: () => showQuizFilterBottomSheet(context, ref),
+            onFilterPressed: () => showQuizFilterSheet(context, ref),
           ),
         ),
         Align(

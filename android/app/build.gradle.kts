@@ -58,10 +58,10 @@ android {
             applicationId = "jp.block.puzzle"
             resValue("string", "app_name", "Block.")
         }
-        create("project2") {
+        create("it_pass") {
             dimension = "app"
             applicationId = "jp.it.game"
-            resValue("string", "app_name", "Project 2")
+            resValue("string", "app_name", "IT Pass")
         }
     }
 

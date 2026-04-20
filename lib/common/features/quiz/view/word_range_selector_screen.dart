@@ -1,16 +1,16 @@
 import 'dart:math' as math;
 
-import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:anki_games/common/config/extensions/context_extension.dart';
 import 'package:anki_games/common/config/styles/app_text_style.dart';
 import 'package:anki_games/common/features/purchase/view_model/premium_view_model.dart';
 import 'package:anki_games/common/features/quiz/view_model/quiz_view_model.dart';
 import 'package:anki_games/common/features/quiz/view_model/word_range_view_model.dart';
 import 'package:anki_games/common/i18n/translations.g.dart';
-import 'package:anki_games/common/until/router/modal_sheet_router.dart';
-import 'package:anki_games/common/until/service/tts_service.dart';
+import 'package:anki_games/common/utils/router/modal_sheet_router.dart';
+import 'package:anki_games/common/utils/service/tts_service.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 /// 英単語 × パズルモード開始前の WordMode ハブ画面。
 class WordRangeSelectorScreen extends ConsumerStatefulWidget {
@@ -670,7 +670,8 @@ class _ThemeCard extends StatelessWidget {
                     label,
                     textAlign: TextAlign.center,
                     style: AppTextStyle.captionSmall.copyWith(
-                      fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
+                      fontWeight:
+                          isSelected ? FontWeight.w700 : FontWeight.w500,
                       color: isSelected
                           ? accent
                           : colorScheme.onSurface.withValues(alpha: 0.65),
@@ -861,7 +862,8 @@ class _WordListSheet extends HookConsumerWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: TextField(
                 controller: searchController,
-                style: AppTextStyle.bodySmall.copyWith(color: colorScheme.onSurface),
+                style: AppTextStyle.bodySmall
+                    .copyWith(color: colorScheme.onSurface),
                 decoration: InputDecoration(
                   hintText: t.quiz.searchHint,
                   hintStyle: AppTextStyle.bodySmall.copyWith(

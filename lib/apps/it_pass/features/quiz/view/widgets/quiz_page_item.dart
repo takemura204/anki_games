@@ -1,6 +1,6 @@
 part of '../quiz_screen.dart';
 
-class _QuizPageItem extends StatelessWidget {
+class _QuizPageItem extends ConsumerWidget {
   const _QuizPageItem({
     required this.session,
     required this.onAnswer,
@@ -19,8 +19,17 @@ class _QuizPageItem extends StatelessWidget {
   final bool isSheetOpen;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final question = session.currentQuestion;
+    final statsAsync = ref.watch(itPassLearningStatsProvider);
+    final key = LocalLearningHistoryRepository.storageKey(
+      question.eraId,
+      question.no,
+    );
+    final level = statsAsync.maybeWhen(
+      data: (map) => LearningLevel.fromStats(map[key]),
+      orElse: () => LearningLevel.unseen,
+    );
     final screenHeight = MediaQuery.of(context).size.height;
     final headerClearance = topPadding + 80.0;
     final sheetExtra = isSheetOpen ? screenHeight * 0.55 : 0.0;
@@ -32,7 +41,7 @@ class _QuizPageItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          _QuestionCard(question: question),
+          _QuestionCard(question: question, learningLevel: level),
           const Gap(12),
           ...question.choices.map(
             (choice) => Padding(

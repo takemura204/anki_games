@@ -1,16 +1,16 @@
-import 'package:flutter/foundation.dart' show kDebugMode;
-import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:anki_games/common/config/styles/app_text_style.dart';
-import 'package:anki_games/common/config/extensions/context_extension.dart';
 import 'package:anki_games/apps/block_puzzle/features/block_puzzle/view_model/block_puzzle_view_model.dart';
 import 'package:anki_games/apps/block_puzzle/features/block_puzzle/view_model/theme_view_model.dart';
+import 'package:anki_games/common/config/constants/app_urls.dart';
+import 'package:anki_games/common/config/extensions/context_extension.dart';
+import 'package:anki_games/common/config/styles/app_text_style.dart';
 import 'package:anki_games/common/features/purchase/view_model/premium_view_model.dart';
 import 'package:anki_games/common/features/quiz/view_model/quiz_view_model.dart';
 import 'package:anki_games/common/features/settings/view_model/settings_view_model.dart';
-import 'package:anki_games/common/until/router/modal_sheet_router.dart';
-import 'package:anki_games/common/config/constants/app_urls.dart';
 import 'package:anki_games/common/i18n/translations.g.dart';
+import 'package:anki_games/common/utils/router/modal_sheet_router.dart';
+import 'package:flutter/foundation.dart' show kDebugMode;
+import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SettingsSheet extends ConsumerWidget {
@@ -94,7 +94,7 @@ class SettingsSheet extends ConsumerWidget {
             _ActionRow(
               icon: Icons.home_rounded,
               label: t.settings.home,
-              onTap: () => notifier.goHome(),
+              onTap: notifier.goHome,
             ),
             _ActionRow(
               icon: Icons.refresh_rounded,
@@ -175,12 +175,14 @@ class _ToggleRow extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 2),
       child: Row(
         children: [
-          Icon(icon, size: 20, color: colorScheme.onSurface.withValues(alpha: 0.6)),
+          Icon(icon,
+              size: 20, color: colorScheme.onSurface.withValues(alpha: 0.6)),
           const SizedBox(width: 12),
           Expanded(
             child: Text(
               label,
-              style: AppTextStyle.bodyMedium.copyWith(color: colorScheme.onSurface),
+              style: AppTextStyle.bodyMedium
+                  .copyWith(color: colorScheme.onSurface),
             ),
           ),
           Switch.adaptive(
@@ -227,7 +229,8 @@ class _ActionRow extends StatelessWidget {
             Expanded(
               child: Text(
                 label,
-                style: AppTextStyle.bodyMedium.copyWith(color: colorScheme.onSurface),
+                style: AppTextStyle.bodyMedium
+                    .copyWith(color: colorScheme.onSurface),
               ),
             ),
             Icon(
@@ -275,7 +278,8 @@ class _LinkRow extends StatelessWidget {
             Expanded(
               child: Text(
                 label,
-                style: AppTextStyle.bodyMedium.copyWith(color: colorScheme.onSurface),
+                style: AppTextStyle.bodyMedium
+                    .copyWith(color: colorScheme.onSurface),
               ),
             ),
             Icon(
@@ -308,9 +312,8 @@ class _DeleteLearningDataRow extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return InkWell(
-      onTap: () => ref
-          .read(settingsViewModelProvider.notifier)
-          .onDeleteLearningData(),
+      onTap: () =>
+          ref.read(settingsViewModelProvider.notifier).onDeleteLearningData(),
       borderRadius: BorderRadius.circular(8),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 12),

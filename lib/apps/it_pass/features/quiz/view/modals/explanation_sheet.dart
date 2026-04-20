@@ -136,27 +136,38 @@ class _ExplanationSheetState extends State<_ExplanationSheet> {
                                     height: 1.75,
                                   ),
                                 ),
-                              if (widget
-                                  .question.explanationImages.isNotEmpty) ...[
-                                const SizedBox(height: 12),
-                                ...widget.question.explanationImages
-                                    .asMap()
-                                    .entries
-                                    .map(
-                                      (e) => Padding(
-                                        padding: const EdgeInsets.only(
-                                          bottom: 8,
-                                        ),
-                                        child: _QuizNetworkImage(
-                                          url: e.value,
-                                          heroTag: 'img_q'
-                                              '${widget.question.no}'
-                                              '_exp_${e.key}',
+                                if (widget
+                                    .question.explanationImages.isNotEmpty) ...[
+                                  const Gap(12),
+                                  ...widget.question.explanationImages
+                                      .asMap()
+                                      .entries
+                                      .map(
+                                        (e) => Padding(
+                                          padding: const EdgeInsets.only(
+                                            bottom: 8,
+                                          ),
+                                          child: _QuizNetworkImage(
+                                            url: e.value,
+                                            heroTag: 'img_q'
+                                                '${widget.question.no}'
+                                                '_exp_${e.key}',
+                                          ),
                                         ),
                                       ),
+                                ],
+                                const Gap(15),
+                                const Align(
+                                  alignment: Alignment.centerRight,
+                                  child: Text(
+                                    'Created by Gimini',
+                                    style: TextStyle(
+                                      color: Colors.white38,
+                                      fontSize: 9,
+                                      height: 1.5,
                                     ),
-                              ],
-                                const SizedBox(height: 8),
+                                  ),
+                                ),
                               ],
                             ),
                           ),
@@ -194,15 +205,15 @@ class _ExplanationSheetState extends State<_ExplanationSheet> {
   }
 
   Widget _buildHeader() {
-    return const Row(
+    return Row(
       children: [
-        Icon(
+        const Icon(
           Icons.lightbulb_outline_rounded,
           color: Colors.white,
           size: 18,
         ),
-        SizedBox(width: 8),
-        Text(
+        const SizedBox(width: 8),
+        const Text(
           '解説',
           style: TextStyle(
             color: Colors.white,
@@ -210,7 +221,32 @@ class _ExplanationSheetState extends State<_ExplanationSheet> {
             fontSize: 14,
           ),
         ),
-        Spacer(),
+        const Spacer(),
+        GestureDetector(
+          onTap: () => launchUrl(
+            Uri.parse(AppUrls.contact),
+            mode: LaunchMode.externalApplication,
+          ),
+          child: const Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(
+                Icons.flag_outlined,
+                color: Colors.white54,
+                size: 14,
+              ),
+              Gap(3),
+              Text(
+                '誤りを報告',
+                style: TextStyle(
+                  color: Colors.white54,
+                  fontSize: 10,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ],
+          ),
+        ),
       ],
     );
   }
@@ -233,7 +269,7 @@ class _ExplanationSheetState extends State<_ExplanationSheet> {
           children: [
             Text(
               '$label: ',
-              style: const TextStyle(color: Colors.white60, fontSize: 12),
+              style: const TextStyle(color: Colors.white70, fontSize: 12),
             ),
             Text(
               value,

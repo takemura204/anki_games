@@ -1,7 +1,5 @@
 import 'dart:math';
 
-import 'package:drift/drift.dart' show Value;
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:anki_games/common/features/purchase/view_model/premium_view_model.dart';
 import 'package:anki_games/common/features/quiz/datasource/csv_word_datasource.dart';
 import 'package:anki_games/common/features/quiz/db/app_database.dart';
@@ -9,6 +7,8 @@ import 'package:anki_games/common/features/quiz/model/quiz_result.dart';
 import 'package:anki_games/common/features/quiz/model/quiz_word.dart';
 import 'package:anki_games/common/features/quiz/repository/local_word_record_repository.dart';
 import 'package:anki_games/common/features/quiz/repository/word_record_repository.dart';
+import 'package:drift/drift.dart' show Value;
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -710,9 +710,8 @@ class QuizViewModel extends _$QuizViewModel {
     }
 
     for (final level in LevelFilter.values) {
-      final filtered = _allWords
-          .where((w) => w.level == _levelToString(level))
-          .toList();
+      final filtered =
+          _allWords.where((w) => w.level == _levelToString(level)).toList();
       breakdowns[level.name] = calcBreakdown(filtered);
     }
 
@@ -739,16 +738,12 @@ class QuizViewModel extends _$QuizViewModel {
             .toList();
 
     // 得意TOP5: stage >= 3、stage降順
-    final bestSorted = levelFiltered
-        .where((e) => e.stage >= 3)
-        .toList()
+    final bestSorted = levelFiltered.where((e) => e.stage >= 3).toList()
       ..sort((a, b) => b.stage.compareTo(a.stage));
     final topBest = bestSorted.take(5).toList();
 
     // 苦手TOP5: stage == 1、weight降順（重みが高い = 苦手度高）
-    final worstSorted = levelFiltered
-        .where((e) => e.stage == 1)
-        .toList()
+    final worstSorted = levelFiltered.where((e) => e.stage == 1).toList()
       ..sort((a, b) => b.weight.compareTo(a.weight));
     final topWorst = worstSorted.take(5).toList();
 
@@ -855,8 +850,7 @@ class QuizViewModel extends _$QuizViewModel {
     var filtered = _applyMasteryFilter(words, state.masteryFilter, stageMap);
     if (state.selectedLevels.isNotEmpty) {
       final levelStrings = state.selectedLevels.map(_levelToString).toSet();
-      filtered =
-          filtered.where((w) => levelStrings.contains(w.level)).toList();
+      filtered = filtered.where((w) => levelStrings.contains(w.level)).toList();
     }
     if (state.selectedPos != null) {
       const posGroupSize = 100;
@@ -870,8 +864,7 @@ class QuizViewModel extends _$QuizViewModel {
         final groupIds = posWords.sublist(start, end).map((w) => w.id).toSet();
         filtered = filtered.where((w) => groupIds.contains(w.id)).toList();
       } else {
-        filtered =
-            filtered.where((w) => w.pos == state.selectedPos).toList();
+        filtered = filtered.where((w) => w.pos == state.selectedPos).toList();
       }
     }
     final isPremium =
@@ -944,9 +937,8 @@ class QuizViewModel extends _$QuizViewModel {
     final filtered = _applyFilters(_allWords, weightMap, stageMap);
 
     // 正解済みは同セッション中に再出題しない
-    var pool = filtered
-        .where((w) => !_sessionCorrectIds.contains(w.id))
-        .toList();
+    var pool =
+        filtered.where((w) => !_sessionCorrectIds.contains(w.id)).toList();
     if (pool.length < 3) {
       // 正解済み語が多くpool不足: セッションをリセットして全語を再出題対象に
       _sessionCorrectIds.clear();
@@ -956,9 +948,8 @@ class QuizViewModel extends _$QuizViewModel {
       pool = filtered;
     }
 
-    final entries = pool
-        .map((w) => (word: w, record: recordMap[w.id]))
-        .toList();
+    final entries =
+        pool.map((w) => (word: w, record: recordMap[w.id])).toList();
     for (final e in entries) {
       _nextReviewAtCache[e.word.id] = e.record?.nextReviewAt;
     }
@@ -1020,10 +1011,9 @@ class QuizViewModel extends _$QuizViewModel {
 
     final histDiff = incorrect / (correct + incorrect + 1);
     final now = DateTime.now();
-    final overdueDays =
-        nextReviewAt != null && now.isAfter(nextReviewAt)
-            ? now.difference(nextReviewAt).inHours / 24.0
-            : 0.0;
+    final overdueDays = nextReviewAt != null && now.isAfter(nextReviewAt)
+        ? now.difference(nextReviewAt).inHours / 24.0
+        : 0.0;
     final missedBoost =
         _sessionIncorrectIds.contains(entry.word.id) ? _missedBoostFactor : 0.0;
 
@@ -1271,8 +1261,7 @@ class QuizViewModel extends _$QuizViewModel {
           _sessionShownNewIds
               .removeWhere((id) => allNew.any((e) => e.word.id == id));
         }
-        final newCandidates =
-            unshownNew.isNotEmpty ? unshownNew : allNew;
+        final newCandidates = unshownNew.isNotEmpty ? unshownNew : allNew;
         final pick = _weightedPick(newCandidates, (_) => 1.0);
         if (pick != null) {
           addPick(pick);
@@ -1526,21 +1515,19 @@ class QuizViewModel extends _$QuizViewModel {
     }
 
     // SRS インターバル計算（エビングハウス忘却曲線に基づくステージ別間隔）
-    final intervalMult = (1.0 / newWeight)
-        .clamp(_srsIntervalMultMin, _srsIntervalMultMax);
+    final intervalMult =
+        (1.0 / newWeight).clamp(_srsIntervalMultMin, _srsIntervalMultMax);
     final stageIdx = newStage.clamp(0, _srsBaseIntervalHours.length - 1);
     final baseInterval = _srsBaseIntervalHours[stageIdx];
     final nextIntervalHours = baseInterval * intervalMult;
-    final nextReviewAt = isCorrect
-        ? now.add(Duration(hours: nextIntervalHours.round()))
-        : now;
+    final nextReviewAt =
+        isCorrect ? now.add(Duration(hours: nextIntervalHours.round())) : now;
 
     await _repo.upsert(
       WordRecordsCompanion(
         id: Value(wordId),
         weight: Value(newWeight),
-        correctCount:
-            Value((record?.correctCount ?? 0) + (isCorrect ? 1 : 0)),
+        correctCount: Value((record?.correctCount ?? 0) + (isCorrect ? 1 : 0)),
         incorrectCount:
             Value((record?.incorrectCount ?? 0) + (isCorrect ? 0 : 1)),
         lastSeenAt: Value(now),

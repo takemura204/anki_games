@@ -6,12 +6,16 @@ class _Header extends StatelessWidget {
     required this.session,
     required this.onUserPressed,
     required this.onFilterPressed,
+    this.centerLabel,
   });
 
   final BorderRadius cardRadius;
   final QuizSession session;
   final VoidCallback onUserPressed;
   final VoidCallback onFilterPressed;
+
+  /// null のときは「現在/全問」の進捗を表示する
+  final String? centerLabel;
 
   @override
   Widget build(BuildContext context) {
@@ -43,42 +47,57 @@ class _Header extends StatelessWidget {
             cardRadius: cardRadius,
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
             width: 140,
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  '${session.indexInSet + 1}/10',
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-                const Gap(8),
-                Expanded(
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(4),
-                    child: TweenAnimationBuilder<double>(
-                      tween: Tween<double>(
-                        end: (session.indexInSet + 1) / 10,
+            child: centerLabel != null
+                ? Center(
+                    child: Text(
+                      centerLabel!,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600,
                       ),
-                      duration: const Duration(milliseconds: 500),
-                      curve: Curves.easeOutCubic,
-                      builder: (context, value, _) {
-                        return LinearProgressIndicator(
-                          value: value,
-                          backgroundColor: Colors.white12,
-                          valueColor: const AlwaysStoppedAnimation<Color>(
-                            Colors.white70,
-                          ),
-                          minHeight: 8,
-                        );
-                      },
+                      textAlign: TextAlign.center,
                     ),
+                  )
+                : Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        '${session.indexInSet + 1}/${session.totalCount}',
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      const Gap(8),
+                      Expanded(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(4),
+                          child: TweenAnimationBuilder<double>(
+                            tween: Tween<double>(
+                              end: session.totalCount > 0
+                                  ? (session.indexInSet + 1) /
+                                      session.totalCount
+                                  : 0,
+                            ),
+                            duration: const Duration(milliseconds: 500),
+                            curve: Curves.easeOutCubic,
+                            builder: (context, value, _) {
+                              return LinearProgressIndicator(
+                                value: value,
+                                backgroundColor: Colors.white12,
+                                valueColor: const AlwaysStoppedAnimation<Color>(
+                                  Colors.white70,
+                                ),
+                                minHeight: 8,
+                              );
+                            },
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-              ],
-            ),
           ),
           _GlassButton(
             cardRadius: cardRadius,

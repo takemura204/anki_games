@@ -1,9 +1,8 @@
+import 'package:anki_games/common/features/quiz/view_model/quiz_view_model.dart';
+import 'package:anki_games/common/utils/router/modal_router.dart';
+import 'package:anki_games/common/utils/router/router_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:anki_games/common/features/quiz/view_model/quiz_view_model.dart';
-import 'package:anki_games/common/until/router/modal_router.dart';
-import 'package:anki_games/common/until/router/router_constants.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -91,7 +90,9 @@ class SettingsViewModel extends _$SettingsViewModel {
   Future<void> onDeleteLearningData() async {
     final confirmed =
         await ref.read(modalRouterProvider).showDeleteLearningDataConfirm();
-    if (!confirmed) return;
+    if (!confirmed) {
+      return;
+    }
     await ref.read(quizViewModelProvider.notifier).deleteAllLearningData();
     rootNavigatorKey.currentContext?.pop();
   }
@@ -102,7 +103,9 @@ class SettingsViewModel extends _$SettingsViewModel {
     // 設定シートはモーダルルートなので Navigator.pop で閉じてから
     // GoRouter で game ルートを pop してホームに戻る。
     final ctx = rootNavigatorKey.currentContext;
-    if (ctx == null) return;
+    if (ctx == null) {
+      return;
+    }
     // popUntil でルートスタックの最初（HomeScreen）まで戻る
     Navigator.of(ctx).popUntil((Route<dynamic> route) => route.isFirst);
   }

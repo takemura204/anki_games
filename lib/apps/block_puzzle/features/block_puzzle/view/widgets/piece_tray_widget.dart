@@ -3,7 +3,7 @@ import 'package:anki_games/apps/block_puzzle/features/block_puzzle/model/piece.d
 import 'package:anki_games/apps/block_puzzle/features/block_puzzle/view/widgets/piece_widget.dart';
 import 'package:anki_games/apps/block_puzzle/features/block_puzzle/view_model/block_puzzle_view_model.dart';
 import 'package:anki_games/common/features/settings/view_model/settings_view_model.dart';
-import 'package:anki_games/common/until/service/audio_service.dart';
+import 'package:anki_games/common/utils/service/audio_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -69,9 +69,7 @@ class PieceTrayWidget extends ConsumerWidget {
                 choiceText: choiceTexts != null && i < choiceTexts!.length
                     ? choiceTexts![i]
                     : null,
-                onDragStart: onDragStart != null
-                    ? () => onDragStart!(i)
-                    : null,
+                onDragStart: onDragStart != null ? () => onDragStart!(i) : null,
               ),
             ),
         ],

@@ -7,8 +7,8 @@ import 'package:anki_games/common/features/quiz/view/widgets/quiz_session_stats_
 import 'package:anki_games/common/features/quiz/view_model/quiz_view_model.dart';
 import 'package:anki_games/common/features/settings/view_model/settings_view_model.dart';
 import 'package:anki_games/common/i18n/translations.g.dart';
-import 'package:anki_games/common/until/router/router_constants.dart';
-import 'package:anki_games/common/until/service/audio_service.dart';
+import 'package:anki_games/common/utils/router/router_constants.dart';
+import 'package:anki_games/common/utils/service/audio_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';

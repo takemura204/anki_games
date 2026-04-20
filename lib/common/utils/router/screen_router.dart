@@ -1,12 +1,12 @@
+import 'package:anki_games/apps/block_puzzle/features/home/view/home_screen.dart';
+import 'package:anki_games/common/features/quiz/view/word_range_selector_screen.dart';
+import 'package:anki_games/common/utils/router/play_session_screen.dart';
+import 'package:anki_games/common/utils/router/router_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:anki_games/apps/block_puzzle/features/home/view/home_screen.dart';
-import 'package:anki_games/common/features/quiz/view/word_range_selector_screen.dart';
-import 'package:anki_games/common/until/router/play_session_screen.dart';
-import 'package:anki_games/common/until/router/router_constants.dart';
 
-export 'package:anki_games/common/until/router/router_constants.dart';
+export 'package:anki_games/common/utils/router/router_constants.dart';
 
 final screenRouterProvider = Provider<GoRouter>((ref) {
   return GoRouter(

@@ -1,0 +1,87 @@
+---
+description: >-
+  AsyncNotifier / Notifier のエラーハンドリングパターン。
+  ViewModel・Repository を編集するときに参照する。
+globs: lib/apps/**/view_model/**,lib/apps/**/repository/**
+alwaysApply: false
+---
+
+# エラーハンドリング規約
+
+## 1. null ガード / Early Return
+
+```dart
+// ✅ state.valueOrNull で取得し、null なら即 return
+void toggleEra(String eraId) {
+  final current = state.valueOrNull;
+  if (current == null) return;
+  // current は non-null
+}
+
+// ✅ sealed class のパターンマッチ
+Future<void> answer(String label) async {
+  final current = state.valueOrNull;
+  if (current is! QuizReady) return;
+  // current は QuizReady
+}
+```
+
+## 2. build() 内のエラー
+
+`build()` 内の例外は自動で `AsyncError` になる → try/catch 不要。
+
+```dart
+// ✅
+@override
+Future<XxxxxState> build() async {
+  final data = await _repo.load(); // 失敗 → 自動 AsyncError
+  return XxxxxState(data: data);
+}
+
+// ❌ build() 内で state = AsyncError は不要
+```
+
+## 3. ユーザー向けエラーメッセージ
+
+```dart
+// ✅ 日本語文字列を State に格納
+state = AsyncData(current.copyWith(
+  errorMessage: '条件に合う問題がありません。絞り込み条件を見直してください。',
+));
+```
+
+- エラーメッセージは必ず日本語
+- 例外メッセージ（英語）をそのまま UI に渡さない
+
+## 4. 安全に無視するエラー
+
+```dart
+// ✅ on Object + 理由コメント（1行）
+try {
+  await _learningRepo.recordAnswer(...);
+} on Object {
+  // 履歴保存失敗でも解答表示は継続
+}
+
+// ❌ コメントなし
+} on Object {}
+
+// ❌ 使わない変数を捕捉
+} catch (e) { ... }
+```
+
+## 5. state = AsyncError の直接代入
+
+`build()` 以外のメソッドでのみ使用。StackTrace を必ず渡す。
+
+```dart
+// ✅
+Future<void> reload() async {
+  state = const AsyncLoading();
+  try {
+    state = AsyncData(await _repo.load());
+  } catch (e, st) {
+    state = AsyncError(e, st); // st 必須
+  }
+}
+```

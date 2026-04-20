@@ -230,7 +230,7 @@ class _SetResultPageState extends State<_SetResultPage>
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                '次の10問へ',
+                '次へ',
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
@@ -247,6 +247,92 @@ class _SetResultPageState extends State<_SetResultPage>
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class _SessionEndPage extends StatelessWidget {
+  const _SessionEndPage({
+    super.key,
+    required this.onOpenFilter,
+  });
+
+  final VoidCallback onOpenFilter;
+
+  @override
+  Widget build(BuildContext context) {
+    final top = MediaQuery.of(context).padding.top;
+    final bottom = MediaQuery.of(context).padding.bottom;
+
+    return SingleChildScrollView(
+      padding: EdgeInsets.fromLTRB(16, top + 80, 16, bottom + 24),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Icon(
+            Icons.filter_alt_outlined,
+            size: 56,
+            color: Colors.white.withValues(alpha: 0.85),
+          ),
+          const SizedBox(height: 20),
+          Text(
+            'このセットは完了しました',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.white.withValues(alpha: 0.95),
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 12),
+          Text(
+            '出題範囲を選び直すと、新しいセット（最大10問）で再開できます。',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.white.withValues(alpha: 0.65),
+              fontSize: 14,
+              height: 1.5,
+            ),
+          ),
+          const SizedBox(height: 36),
+          GestureDetector(
+            onTap: onOpenFilter,
+            child: Container(
+              width: double.infinity,
+              padding: const EdgeInsets.symmetric(vertical: 16),
+              decoration: BoxDecoration(
+                gradient: const LinearGradient(
+                  colors: [Color(0xFF7C3AED), Color(0xFF4F46E5)],
+                ),
+                borderRadius: BorderRadius.circular(16),
+                boxShadow: [
+                  BoxShadow(
+                    color: const Color(0xFF7C3AED).withValues(alpha: 0.4),
+                    blurRadius: 20,
+                    offset: const Offset(0, 6),
+                  ),
+                ],
+              ),
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.tune_rounded, color: Colors.white, size: 22),
+                  SizedBox(width: 10),
+                  Text(
+                    '出題範囲を選び直す',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      letterSpacing: 0.5,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

@@ -39,13 +39,11 @@ class HomeScreen extends ConsumerWidget {
                         const SizedBox(height: 8),
                         Text(
                           '過去問チャレンジ',
-                          style: Theme.of(context)
-                              .textTheme
-                              .titleMedium
-                              ?.copyWith(
-                                color: Colors.white70,
-                                letterSpacing: 1.5,
-                              ),
+                          style:
+                              Theme.of(context).textTheme.titleMedium?.copyWith(
+                                    color: Colors.white70,
+                                    letterSpacing: 1.5,
+                                  ),
                         ),
                         const SizedBox(height: 8),
                         Text(
@@ -127,7 +125,7 @@ class _GlassCard extends StatelessWidget {
       borderRadius: BorderRadius.circular(24),
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
-        child: Container(
+        child: DecoratedBox(
           decoration: BoxDecoration(
             color: Colors.white.withValues(alpha: 0.08),
             borderRadius: BorderRadius.circular(24),

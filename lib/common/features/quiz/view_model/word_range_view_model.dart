@@ -1,12 +1,13 @@
 import 'package:anki_games/apps/block_puzzle/features/block_puzzle/view_model/block_puzzle_view_model.dart';
 import 'package:anki_games/apps/block_puzzle/features/home/model/home_game_kind.dart';
 import 'package:anki_games/common/features/quiz/view_model/quiz_view_model.dart';
-import 'package:anki_games/common/until/router/router_constants.dart';
+import 'package:anki_games/common/utils/router/router_constants.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-final wordRangeViewModelProvider =
+final AutoDisposeNotifierProvider<WordRangeViewModel, void>
+    wordRangeViewModelProvider =
     NotifierProvider.autoDispose<WordRangeViewModel, void>(
   WordRangeViewModel.new,
 );
@@ -29,7 +30,9 @@ class WordRangeViewModel extends AutoDisposeNotifier<void> {
     ]);
 
     final ctx = rootNavigatorKey.currentContext;
-    if (ctx == null) return;
+    if (ctx == null) {
+      return;
+    }
     await ctx.push<void>(ScreenRoutes.game);
 
     await prefs.setBool('was_on_puzzle_screen', false);
