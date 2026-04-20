@@ -48,7 +48,7 @@
         "text": "労働者派遣契約は、派遣元企業の従業員が、派遣先企業の指揮命令の下で業務に従事できるようにした労働契約です。労働者派遣契約では、雇用関係は派遣元企業と派遣労働者の間に、指揮命令関係は派遣先企業と派遣労働者の間に成立します。本問では、A社が派遣元企業、B社が派遣先企業、Y氏が派遣労働者となります。これを踏まえて各記述の正誤を判断します。\n・A社とB社の間には労働者派遣契約関係が成立します。\n・A社(派遣元企業)とY氏の間には雇用関係が成立します。\n・B社(派遣先企業)とY氏の間には指揮命令関係が成立します。\n・正しい。Y氏は派遣先企業であるB社の指揮命令の下で業務に従事することとなります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/01.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q1/01.png"
         ]
       }
     },
@@ -60,7 +60,7 @@
         "text": "あるメーカーの当期損益の見込みは表のとおりであったが，その後広告宣伝費が5億円，保有株式の受取配当金が3億円増加した。このとき，最終的な営業利益と経常利益はそれぞれ何億円になるか。ここで，広告宣伝費，保有株式の受取配当金以外は全て見込みどおりであったものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/02.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q2/02.png"
         ]
       },
       "choices": [
@@ -68,28 +68,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_aki/img/02a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q2/02a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_aki/img/02a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q2/02a.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_aki/img/02a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q2/02a.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_aki/img/02a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q2/02a.png"
           ]
         }
       ],
@@ -104,8 +104,8 @@
         "text": "損益計算書の区分上、広告宣伝費は「販売費及び一般管理費」に、受取配当金は「営業外収益」に分類されます。設問の損益見込みの「販売費及び一般管理費」に広告宣伝費5億円を、「営業外収益」に受取配当金3億円をそれぞれ加えると、最終的な金額は以下のようになります。営業利益と経常利益はそれぞれ次の計算式で求めます。営業利益売上高－売上原価－販売費及び一般管理費経常利益営業利益＋営業外収益－営業外費用損益計算書の金額を当てはめて計算すると、\n\n　営業利益：1,000－780－135＝85億円\n　経常利益：85＋23－16＝92億円\n\nしたがって「ア」の組合せが適切です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/02_1.png",
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/02_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q2/02_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q2/02_2.png"
         ]
       }
     },
@@ -195,8 +195,8 @@
         "text": "QRコードは、現在普及している二次元コードです。バーコードは横方向にしか情報を持たないのに対し、QRコードは縦横に情報を持ちます。そのため、格納できる情報量が多く、数字だけでなく英字や漢字など多言語のデータも格納することができます。また、3隅の四角い位置検出パターンによって360度読み取り可能、汚れなどがあっても正確に読み取れるように誤り訂正語を含む、などの特徴があります。\n\n情報として埋め込んだURLをスマートフォン等のカメラ機能で読み込み、指定のURLに簡単にアクセスさせる手段や、販売店や工場における在庫管理用途として多く活用されています（下記QRコードを読み込むと当サイトトップページのURLが表示されます）。\n・ASCIIコードは、アルファベット、数字、特殊文字及び制御文字を含む文字コードです。文字と対応するビット列の対応を示したものであり、図形に情報を埋め込んだものではありません。\n・Gコードは、アナログテレビ放送において、チャンネルと放送時間を一意に指定するための最大8桁の文字列です。番組録画に使用されていましたが、テレビのデジタル化に伴い電子番組表から指定するように変わったので、現在ではほとんど使用されていません。\n・JANコードは、日本で最も普及している商品識別コードおよびバーコード規格で、13桁のタイプと8桁のタイプがあります。\n・正しい。QRコードは縦横2次元のパターンで情報を格納する2次元コードです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/04_1.png",
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/04_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q4/04_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q4/04_2.png"
         ]
       }
     },
@@ -330,7 +330,7 @@
         "text": "3C分析は、マーケティング分析に必要不可欠な3要素である、顧客(Customer)、自社(Company)、競合他社(Competitor)について自社の置かれている状況を分析する手法です。一般的には、「顧客」→「競合他社」→「自社」の順で分析を行います。\n・正しい。3C分析の説明です。\n・RFM分析の説明です。\n・コーホート分析の説明です。\n・ABC分析の説明です。ちなみに、3つのグループではなく10等分のグループに分割する方法を「デシル分析」といいます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/07.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q7/07.png"
         ]
       }
     },
@@ -424,7 +424,7 @@
         "text": "DFD(Data Flow Diagram)は、構造化分析手法の一つで、業務で扱うデータの流れに着目して分析対象となる業務のデータの流れと処理の関係をわかりやすく図式化する手法です。DFDに記述されるものは、「プロセス」「データの源泉や吸収先」「データフロー」「データストア」の4つです。a～cの中では、b.データの蓄積場所とc.データの発生源や出力先がそれに該当します。a.データの処理時間は記述されません。\n\n適切な組合せは「b，c」ですので「ウ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/09.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q9/09.png"
         ]
       }
     },
@@ -558,7 +558,7 @@
         "text": "経営理念は、事業遂行における基本的価値観と目的意識であり、「この組織または働く人々は何を目的として集まっているのか」という根本的な事業目的を端的に表した文章です。経営理念には具体的な計画や方針が記されることはありません。また外部環境や事業環境が変わろうとも基本的には不変です。\n経営理念を策定することにより、従業員や顧客に対して企業の存在意義や基本的価値観を明示できます。またブランドイメージや企業イメージの向上にも繋がります。\n・経営計画を策定する意義です。\n・経営戦略を策定する意義です。\n・正しい。経営理念を策定する意義です。\n・経営ビジョンを策定する意義です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/12.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q12/12.png"
         ]
       }
     },
@@ -604,7 +604,7 @@
         "text": "IoT(Internet of Things，モノのインターネット)は、情報端末ではない電子機器や機械類などの「モノ」にインターネット接続・通信機能やセンサー機能を持たせ、収集した情報を処理したり蓄積したりすることで、\"監視\"、\"制御\"、\"最適化\"、\"自律化\"などの新たな付加価値を得る仕組みです。IoTでは、情報機器以外のあらゆる「モノ」が直接インターネットに繋がるということがポイントとなります。\n\nしたがって正解は「イ」です。\n・機械学習の説明です。\n・正しい。IoTの説明です。\n・API(Application Program Interface)の説明です。\n・RPA(Robotic Process Automation)の説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/13.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q13/13.png"
         ]
       }
     },
@@ -1144,7 +1144,7 @@
         "text": "製品Aの生産計画量，部品Bの総所要量及び在庫量が表のとおりであるとき，第2週における部品Bの発注量aは何個か。\n\n〔条件〕\n・製品Aの生産リードタイム(着手から完成までの期間)は無視する。\n・製品Aを1個生産するためには部品Bが2個必要であり，部品Bは製品Aの生産以外には使われない。\n・部品Bの発注は，各週の生産終了後に行い，翌週の生産開始までに入荷する。\n・部品Bの安全在庫は，当該週の部品Bの総所要量の25%とする。\n・部品Bの第1週の生産開始前の在庫量を100個とする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/26.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q26/26.png"
         ]
       },
       "choices": [
@@ -1180,7 +1180,7 @@
         "text": "部品Bの発注量は、各週の生産終了後に残る部品Bの在庫量が安全在庫を下回らないようにしなければなりません。翌週の在庫量は、当週の在庫量に発注量を加えた数から、翌週の総所要量を差し引いた数になるので、以下の式を満たす発注量を求めることになります。\n\n　当週の在庫量＋発注量－翌週の総所要量＝安全在庫量\n\n第1週の発注量から順に考えていきます。第1週の在庫量は20個であり、発注量が入荷された後に第2週で80個を使用します。第2週の安全在庫は「80個×25%＝20個」ですから、第2週の生産終了後の在庫量が20個となるように発注をします。発注量をnとすると、\n\n　20＋n－80＝20\n　n－60＝20\n　n＝80\n\nよって、第1週の発注量は80個となります。\n\n同様に第2週の発注量[a]を考えます。第2週の在庫量は20個であり、発注量が入荷された後に第3週で40個を使用します。第3週の安全在庫は「40個×25%＝10個」ですから、第3週の生産終了後の在庫量が10個となるように発注をします。発注量をnとすると、\n\n　20＋n－40＝10\n　n－20＝10\n　n＝30\n\nよって、aには30個が入ります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/26a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q26/26a.png"
         ]
       }
     },
@@ -1410,7 +1410,7 @@
         "text": "RFID(Radio Frequency Identification)は、ID情報を埋め込んだRFタグ(ICタグ)と電磁界や電波を用いることで、数cm～数mの範囲で情報のやり取りを行う技術です。電子マネーやSuica／PASMOなどの乗車カードでの利用が普及していますが、その他にも様々な事例に展開可能です。RFIDのタグはシート状で安価なので、個々の商品に管理目的で貼り付けることも可能です。また、無線通信なのでタグと読取り装置を近づけるだけで自動的にタグ内の情報を取得できます。\n図書館において読取り装置と書籍ごとのタグを整備すれば、一度に複数の本をまとめて処理でき、従来のようにバーコードリーダーで個々に読み取るときと比較して貸出・返却業務の効率化が期待できます。タグ読取り機能を搭載した返却ポストを用意すれば返却業務の無人化も可能です。同様の原理で、商品に付いたタグを一度に読み取ることでレジ業務を効率化する仕組みも実用化されています。\n・GPSの活用事例です。\n・TLS(Transport Layer Security)やHTTPSの活用事例です。\n・バイオメトリクス認証の活用事例です。\n・正しい。RFIDの活用事例です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/31.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q31/31.png"
         ]
       }
     },
@@ -1456,7 +1456,7 @@
         "text": "本問では「マクロ環境」からの分析ということがポイントとなります。\n\nマクロ環境とは、組織の外部環境のうちコントロールできない業界外の環境のことをいいます。大まかに言えば、政治経済や社会情勢などの世の中全体の動きのことです。逆にミクロ環境とは、自社業界内や競合関係など一定のコントロールが可能な領域を示します。\n\n選択肢のうち、「我が国の高齢化率」は社会情勢であり組織によるコントロールが不可能なのでマクロ環境に分類されます。その他の競合企業や取引先はミクロ環境に分類されます。\n\nしたがって「エ」が正解です。\n\n本問の記述にあるようにマクロ環境を、政治(Politics)、経済(Economy)、社会(Society)、技術(Technology)の4側面から分析する手法をPEST分析といいます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/32.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q32/32.png"
         ]
       }
     },
@@ -1512,7 +1512,7 @@
         "text": "売上高，変動費，固定費，営業日数が表のようなレストランで，年間400万円以上の利益を上げるためには，1営業日当たり少なくとも何人の来店客が必要か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/34.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q34/34.png"
         ]
       },
       "choices": [
@@ -1592,7 +1592,7 @@
         "text": "SDGs(Sustainable Development Goals：持続可能な開発目標)は、持続可能で多様性と包摂性のある社会の実現のため、2030年を年限とする17の国際目標のことです。前身となるMDGs(ミレニアム開発目標)の後継として2015年9月の国連サミットで採択されました。持続可能な世界を実現するための17のゴール・169のターゲットから構成され、「地球上の誰一人として取り残さない」ことをスローガンにしています。SDGsは世界全体で取り組むべき課題であり、目標17「パートナーシップにより目標を達成しよう」で示されているように、目標達成に向けて、政府、民間企業、市民団体、国際機関等が力を合わせることが要請されています。民間企業においてもSDGsへの関与を積極的に掲げたり、パートナー企業にもSDGsへの取り組みを求めたりする動きが広がり始めています。また消費者の間にも、環境保護に積極的に取り組む企業の商品を優先的に購入したり、SDGsに反する活動を行う企業を忌避したりする「エシカル(倫理的)消費」の機運が高まってきています。身近な例で言うと、外食産業で世界的にプラスティック製のストローの提供をやめる動きが広がっているのにもSDGs的な意味合いがあります。\n\nしたがって「ア」が正解です。\n・正しい。\n・Software Development Kitの略でソフトウェア開発キットのこと。開発者が特定のシステムに対応したソフトウェアを作成できるように、プログラム群や技術文書などの開発ツールをワンセットにしたものです。\n・Selling and Generally Administrative expensesの略。損益計算において使用される販売費及び一般管理費の略称です。\n・Standard Generalized Markup Languageの略。文書を電子的に変換するための汎用マークアップ言語で、文書の中にタグを埋め込んで、書体や文字の大きさ、段落などを記述することができます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/35.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q35/35.png"
         ]
       }
     },
@@ -1902,7 +1902,7 @@
         "text": "アローダイアグラムは、プロジェクトの各作業間の関連性や順序関係を視覚的に表現する図です。作業の前後関係を分析することで時間的に余裕のない一連の作業(クリティカルパス)を洗い出すことができるため、プロジェクトのスケジュール管理に使用されます。矢印が作業を、○が作業の開始点または終了点を示しています。\n・DFD(Data Flow Diagram)の説明です。\n・正しい。アローダイアグラムの説明です。\n・ガントチャートの説明です。\n・UMLの説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/42.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q42/42.png"
         ]
       }
     },
@@ -2036,7 +2036,7 @@
         "text": "設問の事例で明確にしている「必要な決算書の種類」や「処理時間の目標値」は、完成後の情報システムに求められる機能や性能です。システムに求められる要件を明らかにするために、開発するシステムの具体的な利用方法について分析し、システムの機能や能力、安全性やセキュリティ、システムテストの項目などを決定する工程を「システム要件定義」といい、開発プロセスの最初に実施します。\n\nシステム要件定義では次のようなものを決定します。\n1. システム化目標、対象範囲\n2. システムの機能及び能力、ライフサイクル\n3. 業務、組織及び利用者の要件\n4. 信頼性、安全性、セキュリティ、人間工学、インタフェース、操作及び保守要件\n5. 設置条件及び適格性確認要件\n\n・システムテストは、開発したシステムが要件を満しているかどうかを検証するために行われるテストです。システム要件定義に定められた機能や能力がすべて備わっているかを確認します。\n・正しい。システム要件定義はシステムに要求される機能や性能などを明確にする工程です。\n・ソフトウェア詳細設計は、ソフトウェア部品についてコーディング、コンパイル及びテストを実施するレベルまでの詳細設計を行う工程です。\n・ソフトウェア方式設計は、ソフトウェア要件を実現するためのソフトウェア部品(モジュールともいう)の構成を決定する工程です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/45.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q45/45.png"
         ]
       }
     },
@@ -2098,28 +2098,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_aki/img/47.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q47/47.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_aki/img/47.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q47/47.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_aki/img/47.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q47/47.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_aki/img/47.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q47/47.png"
           ]
         }
       ],
@@ -2134,7 +2134,7 @@
         "text": "「開発規模×0.25」で下限値を、「開発規模×0.65」で上限値をそれぞれ算出して、AB各工程がこの範囲から逸脱していないかどうかを判断します。\n・開発規模が10KSなので、下限値は「10×0.25＝2.5件」、上限値は「10×0.65＝6.5件」となります。表を見ると両工程ともに不良件数が2.5以上6.5以下に収まっています。\n・開発規模が20KSなので、下限値は「20×0.25＝5件」、上限値は「20×0.65＝13件」となります。A工程の不良件数が上限値を上回っており、B工程の不良件数は範囲内に収まっています。\n・開発規模が50KSなので、下限値は「50×0.25＝12.5件」、上限値は「50×0.65＝32.5件」となります。A工程の不良件数が下限値を下回っており、B工程の不良件数は上限値を上回っています。\n・開発規模が80KSなので、下限値は「80×0.25＝20件」、上限値は「80×0.65＝52件」となります。A工程の不良件数は範囲内に収まっていますが、B工程の不良件数は下限値を下回っています。\n\n本問では、A工程で問題がなく、B工程で問題がある機能を選べば良いので「エ」が正解となります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/47a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q47/47a.png"
         ]
       }
     },
@@ -2488,7 +2488,7 @@
         "text": "DevOps(デブオプス)は、開発を意味する Development と運用を意味する Operations を組み合わせた造語で、開発担当チームと運用担当チームが緊密に協力・連携し、自動化ツールなどを活用して柔軟かつスピーディに開発を進めるソフトウェア開発手法です。\n\n自動でビルドとテストを行う「継続的インテグレーション」、常にリリース可能な状態を維持する「継続的デリバリ」、コードの変更を自動的に本番環境にリリースする「継続的デプロイメント」の3つのプラクティスを適用することにより、開発効率の向上、迅速なリリース、信頼性の向上、共同作業による文化の醸成などの効果が期待できます。\n・プロトタイプ開発の説明です。\n・正しい。\"開発側と運用側の連携\"・\"自動化ツール\"のキーワードより、DevOpsに関する記述であるとわかります。\n・ウォーターフォール開発の説明です。\n・アジャイル開発の説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/55.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q55/55.png"
         ]
       }
     },
@@ -2539,7 +2539,7 @@
         "text": "リスクアセスメントは、リスクの大きさを評価し、そのリスクが許容できるか否かを決定する全体的なプロセスです。JIS Q 27000で「リスク特定，リスク分析及びリスク評価のプロセス全体」と定義されているように、「リスク特定」「リスク分析」「リスク評価」までの一連の活動を含みます。したがって「a，b，c」の組合せとなる「イ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/56.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q56/56.png"
         ]
       }
     },
@@ -2585,7 +2585,7 @@
         "text": "ライブマイグレーション(Live Migration)は、ある物理サーバ上で稼働している仮想マシンを、OSやソフトウェアを停止させることなく別の物理サーバに移し替え、処理を継続させる技術です。切り替えによるダウンタイムはほとんどゼロで、移動前の処理やセッションが全て引き継がれるため可用性を損なうことがありません。\n\"Migration\"には「移動」や「移住」などの意味があり、\"live\"は「生で」「生の」と訳されるので、2つを繋げた\"Live Migration\"は、アプリケーションを実行状態のまま移動させる技術ということを表しています。\n・ストリーミングは、主に音声や動画などマルチメディアファイルについて、データをダウンロードをしながら順次再生をする方式です。\n・デジタルサイネージは、デジタル技術を活用して平面ディスプレイやプロジェクタなどに映像や情報を表示する広告媒体のことです。店舗や屋外に設置されているのをよく見ます。\n・プラグアンドプレイは、周辺機器を接続するのと同時に、自動的にPCがそれを認識しデバイスドライバのインストールと設定を行う機能です。\n・正しい。ライブマイグレーションは、仮想サーバを停止することなく別の物理サーバ上へ移動させ、処理を継続させる技術です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/57.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q57/57.png"
         ]
       }
     },
@@ -2675,7 +2675,7 @@
         "text": "ブロックチェーンは、\"ブロック\"と呼ばれる幾つかの取引データをまとめた単位をハッシュ関数で鎖のように繋ぐことによって、台帳を形成し、P2Pネットワークで管理する技術です。分散型台帳技術とも呼ばれます。暗号資産(仮想通貨)の基盤技術として有名ですが、その他の多くの分野に適用可能であり、金融分野や流通分野及びスマートコントラクト(自動契約)などへの応用が期待されています。\n\nブロックチェーンの強みとして以下の3点を覚えておくとよいと思います。\n・不正取引・改ざんができない\n・分散管理なので障害に強い\n・運用コストが安い\n\n・Low Power Wide Areaの略。省電力・広範囲を特徴とする無線通信規格で、IoTネットワークでの活用が期待されています。\n・Software-Defined Networkingの略。データ転送と経路制御の機能を論理的に分離し、ソフトウェア制御による動的で柔軟なネットワークを作り上げる技術全般を意味します。\n・エッジコンピューティングは、利用者や端末と物理的に近い場所に処理装置を分散配置して、ネットワークの端点でデータ処理を行う技術の総称です。\n・正しい。ブロックチェーンは、ハッシュ値によってブロック同士を関連付け、履歴の改ざんを難しくする技術です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/59.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q59/59.png"
         ]
       }
     },
@@ -2693,28 +2693,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_aki/img/60.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q60/60.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_aki/img/60.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q60/60.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_aki/img/60.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q60/60.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_aki/img/60.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q60/60.png"
           ]
         }
       ],
@@ -2729,7 +2729,7 @@
         "text": "下表はキャッシュメモリ、主記憶及び補助記憶を比較したものです。キャッシュメモリCPUと主記憶の速度差を埋めるために搭載される記憶装置で、SRAM(Static RAM)が用いられています。主記憶CPUが直接読み書きするために実行するプログラムやデータを記憶する装置で、DRAM(Dynamic RAM)が用いられています。補助記憶主記憶以外の記憶装置のうち、主にコンピュータに常時接続される大容量の記憶装置をいい、磁気ディスクのHDD(Hard Disk Drive)や半導体メモリのSSD(Solid State Drive)が用いられています。したがって、キャッシュメモリ＝SRAM、主記憶＝DRAM、補助記憶＝SSD となる「ウ」の組合せが適切です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/60a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q60/60a.png"
         ]
       }
     },
@@ -2793,7 +2793,7 @@
         "text": "下から上へ品物を積み上げて，上にある品物から順に取り出す装置がある。この装置に対する操作は，次の二つに限られる。\n　PUSH x：品物xを1個積み上げる。\n　POP：一番上の品物を1個取り出す。最初は何も積まれていない状態から開始して，a，b，cの順で三つの品物が到着する。一つの装置だけを使った場合，POP操作で取り出される品物の順番としてあり得ないものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/62.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q62/62.png"
         ]
       },
       "choices": [
@@ -2943,28 +2943,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_aki/img/65.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q65/65.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_aki/img/65.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q65/65.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_aki/img/65.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q65/65.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_aki/img/65.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q65/65.png"
           ]
         }
       ],
@@ -2979,7 +2979,7 @@
         "text": "NAT(Network Address Translation)は、企業や組織のネットワーク内で割り当てられている「プライベートIPアドレス」とインターネット上でのアドレスである「グローバルIPアドレス」を1対1で相互に変換する技術です。さらに、NATの考え方にポート番号を組み合わせ、複数の端末が同時にインターネットに接続できるようにした技術をNAPT(Network Address Port Translation)といいます。NATが相互変換するのは、プライベートIPアドレスとグローバルIPアドレスです。したがって「イ」の組合せが正解となります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/65a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q65/65a.png"
         ]
       }
     },
@@ -3025,7 +3025,7 @@
         "text": "主キー(Primary Key)とは、関係データベースのテーブル(表)ごとに設定され、テーブルの中のレコード(行)を一意に特定できる値を保持する属性(列)、または属性の組合せのことです。\n\n主キーとなる属性は、一意性制約 及び NOT NULL制約 という2つの特性を持っていなければなりません。一意性制約表内のレコードを一意に識別することができるNOT NULL制約値としてNULL値(空値)をもつことがない\n・そのような制約はないので誤りです。\n・主キーではない列でも検索対象とすることができるので誤りです。\n・主キーを設定した列は、別表の外部キーから参照される対象となるため誤りです。\n・正しい。主キーの値をもとに表中のレコードを一意に識別できます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/66.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q66/66.png"
         ]
       }
     },
@@ -3169,7 +3169,7 @@
         "text": "大文字の英字から成る文字列の暗号化を考える。暗号化の手順と例は次のとおりである。この手順で暗号化した結果が\"EGE\"であるとき，元の文字列はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/70.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q70/70.png"
         ]
       },
       "choices": [
@@ -3293,7 +3293,7 @@
         "text": "5人の中から委員長1名を選ぶ方法は5通り、5人の中から書記1名は5通りです。委員長と書記の兼任が許されているので、委員長の選び方のそれぞれについて書記の選び方が5通りあることになります。したがって選び方は「5通り×5通り＝25通り」です。\n\nちなみに、兼任を許さない場合は5人から1名委員長を選び、残った4人から書記1名を選ぶことになるので「5通り×4通り＝20通り」の選び方があります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/72.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q72/72.png"
         ]
       }
     },
@@ -3383,7 +3383,7 @@
         "text": "サーバ仮想化は、1台の物理サーバ上で複数のサーバOSを稼働させる技術です。\n\n一般に、仮想化技術によって複数のサーバの機能を1台の物理サーバに統合した場合、機能ごとに物理サーバを用意したときと比較して以下のようなメリット・デメリットがあります。\n・サーバの台数が少なくなるので物理的管理が簡易化できる\n・サーバの利用率が高くなり資源の有効利用ができる\n・負荷の度合いや処理量などに応じて、リソースの配分を柔軟に変更できる\n・1台のサーバに複数の機能を持たせるので、処理以外にかかるCPUのオーバーヘッドは高くなる\n・物理サーバに障害が発生した場合、その物理サーバで稼働している全ての仮想サーバに影響が出る\n\n・正しい。サーバ仮想化の説明です。\n・ブレードサーバの特長です。\n・スタンドアロンの特長です。\n・デュアルシステムの特長です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/74.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q74/74.png"
         ]
       }
     },
@@ -3439,7 +3439,7 @@
         "text": "ある商品の月別の販売数を基に売上に関する計算を行う。セルB1に商品の単価が，セルB3～B7に各月の商品の販売数が入力されている。セルC3に計算式\"B$1＊合計(B$3：B3)／個数(B$3：B3)\"を入力して，セルC4～C7に複写したとき，セルC5に表示される値は幾らか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/76.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q76/76.png"
         ]
       },
       "choices": [
@@ -3519,7 +3519,7 @@
         "text": "・正しい。無線の電波はアクセスポイントの周囲に発信されているため、例えば家庭内に設置しているアクセスポイントに屋外からアクセスされ、タダ乗りされてしまったり、同じ無線LAN内の端末にアクセスされてしまったりする危険性があります。被害を防止するためには、パスワードや適切な暗号方式の設定、ANY接続拒否、MACアドレスフィルタリング、ビーコン停止などのセキュリティ対策をアクセスポイントに施す必要があります。\n・WPA2の他にも、WEP、WPA、WPA3などの暗号化規格を利用できます。ただし、WEP、WPAについては脆弱性があり容易に解読されてしまうので利用してはいけません。\n・無線LANの通信可能範囲は直線距離で約100ｍ程度です。それ以上離れると端末とアクセスポイントは通信できません。\n・無線LANの規格であるIEEE802.11シリーズには、a、b、g、n、ac、axなどの規格がありますが、使用する周波数帯域が異なるので、以下のように全て相互に通信できるわけではありません。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/77.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q77/77.png"
         ]
       }
     },
@@ -3609,7 +3609,7 @@
         "text": "電子メールの送り先を指定するTo、Cc、Bccには以下の違いがあります。Toメールの宛先を指定する欄。複数のメールアドレスを「,(コンマ)」又は「;(セミコロン)」で区切って指定することで複数のメールアドレスを宛先とすることもできる。Cc（Carbon Copy）Toで指定した送信先以外に、メールのコピーを送信する相手を指定する欄。\nこの指定では、Toの相手及びCcで指定した相手に、すべての宛先メールアドレスが公開される。すなわち送信者、Toの相手、Ccの相手の3者間ではメールアドレスが全員に知られることになる。Bcc（Blind Carbon Copy）Toで指定した送信先以外に、メールのコピーを送信する相手を指定する欄。\nCcと異なり、ここで指定したメールアドレスは他の送信相手には通知されないため、To又はCcの相手に宛先メールアドレスを知られたくない場合に使用する。\"To\"で送られたPさんと\"Cc\"で送られたQさんには、\"To\"及び\"Cc\"のメールアドレスは伝わりますが、\"Bcc\"に指定したRさんのメールアドレスは伝わりません。Rさんだけは、\"To\"のPさん、\"Cc\"のQさん、そして自分自身の少なくとも3人にメールが送信されていることを確認できます。したがって「エ」が適切です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/79.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q79/79.png"
         ]
       }
     },
@@ -3709,7 +3709,7 @@
         "text": "次の体系をもつ電話番号において，80億個の番号を創出したい。番号の最低限必要な桁数は幾つか。ここで，桁数には\"020\"を含むこととする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/82.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q82/82.png"
         ]
       },
       "choices": [
@@ -3761,28 +3761,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_aki/img/83.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q83/83.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_aki/img/83.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q83/83.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_aki/img/83.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q83/83.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_aki/img/83.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q83/83.png"
           ]
         }
       ],
@@ -3841,7 +3841,7 @@
         "text": "情報セキュリティポリシーは下記のように、基本方針、対策基準、実施手順の3階層で構成されることが一般的ですが、本問では\"最上位の\"情報セキュリティポリシーとしているので、一番上の基本方針の記載事項について問うていると考えられます。情報セキュリティポリシーの最上位に位置する文書は、組織の経営者が最終的な責任者となり「情報セキュリティに本格的に取り組む」という姿勢を示し、情報セキュリティの目標と適用範囲、その目標を達成するために企業がとるべき行動を社内外に宣言するものです。\n\nしたがって「ア」の内容が適切です。\n・正しい。情報セキュリティポリシーに記載することです。\n・詳細な手順については個々の実施手順・運用規則・マニュアルなどに記載します。上記の3階層の中では実施手順に記載することです。\n・セキュリティ対策に掛ける費用はIT関連予算内に記載します。\n・守るべき個々の情報資産については情報資産管理台帳に記載します。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/84.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q84/84.png"
         ]
       }
     },
@@ -3975,9 +3975,9 @@
         "text": "正規化とは、関係データベースを構築する際にデータの重複や矛盾を排除する目的で、 データ同士の関連を保ったまま表を分離していく作業です。正規化を行う主な目的は以下の3点です。\n1. データの冗長性（じょうちょうせい）の排除\n2. データの一貫性の確保と効率的なアクセスの実現\n3. 更新時に起きる異常や不整合を防止\n\nしたがって「ウ」が正解です。\n・結合は、複数の表を共通する属性で結合して1つの表にする操作です。\n・射影は、表から指定された列を抽出する操作です。\n・正しい。正規化は、データの重複や不整合が発生しないように、一定の規則に基づいて表を分離していく作業です。\n・排他制御は、複数のトランザクションがデータベースを同時に参照・更新する際に、データの整合性を維持するための仕組みです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/87_1.png",
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/87_2.png",
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/87_3.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q87/87_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q87/87_2.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q87/87_3.png"
         ]
       }
     },
@@ -4067,7 +4067,7 @@
         "text": "1. 正しい。Apache HTTP Serverは、現在、世界中で最も使われているオープンソースのWebサーバソフトウェアです。\n2. 誤り。Internet Explorer(IE)はMicrosoft社が開発しているWebブラウザです。OSSではありません。\nOSSのWebブラウザとしては「Firefox」が有名です。\n3. 誤り。OpenOfficeやLibreOfficeなどがあります。\n\n適切な記述は①のみなので「ア」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/89.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q89/89.png"
         ]
       }
     },
@@ -4113,7 +4113,7 @@
         "text": "デジタルサイネージ(Digital Signage，電子看板)は、デジタル技術を活用して平面ディスプレイやプロジェクタなどに映像や情報を表示する広告媒体のことです。広告入替えの手間が掛からず、表示内容がリアルタイムで操作可能であったり、動画を表示することができるなど従来のポスターやロールスクリーン看板にはないメリットがあります。\n店内で商品紹介をするための小型のものから、屋外広告を表示するための大型ビジョンまで様々な規模や用途で使用されています。したがって正解は「ウ」です。\n・cookieは、WebサーバやWebページの指示によってユーザー情報などをWebブラウザに保存する仕組みです。ログイン状態の管理などの目的で使用されます。\n・RSSは、ニュースやブログなど各種のウェブサイトの更新情報を簡単にまとめ、配信するための文書フォーマットです。\n・正しい。デジタルサイネージは、ディスプレイに映像、文字などの情報を表示する電子看板です。\n・デジタルディバイドは、パソコンやインターネットなどの情報通信技術を使いこなせる者と使いこなせない者の間に生じる、待遇や貧富、機会の格差を指す言葉です。情報格差とも言います。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/90.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q90/90.png"
         ]
       }
     },
@@ -4159,7 +4159,7 @@
         "text": "TCP/IPを利用したネットワークでは、各ノードを識別するため一意のIPアドレスが割り当てられていますが、このIPアドレスは数字の羅列で人間にとって覚えにくいため、IPアドレスと対応する別名であるドメイン名が付けられています。DNS(Domain Name System)は、ドメイン名・ホスト名とIPアドレスを結びつけて相互変換する(名前解決する)仕組みです。\n・DHCP(Dynamic Host Configuration Protocol)の役割です。\n・ファイルサーバの役割です。\n・正しい。DNSの役割です。\n・POP(Post Office Protocol)の役割です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/91.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q91/91.png"
         ]
       }
     },
@@ -4205,8 +4205,8 @@
         "text": "DMZ(DeMilitarized Zone)は、組織のネットワークにおいて内部LANとインターネットの間に設けられる中間的なエリアのことです。組織が管理する情報資源には、WebサーバやDNSサーバ、メールサーバ、プロキシサーバのように外部との通信を前提としたものがあります。これらのサーバは、インターネット上の不特定多数の端末と通信を行う特性上、攻撃を受けるリスクが高いと言えます。外部から攻撃を受ける可能性の高いサーバを内部ネットワークに配置すると、不正アクセスを受けた際に外部に公開していない他のサーバや内部ネットワーク全体に被害が及ぶ恐れがあります。攻撃の糸口となり得るサーバ群をDMZに配置し、内部ネットワークと分離することによって、攻撃の被害が内部ネットワークに及ぶリスクを低減できます。\n・誤送信の防止には上長承認機能や第三者承認機能などを用います。\n・メールの暗号化にはS/MIMEやPGPなどを用います。\n・メーリングリストに登録されたメールアドレスを秘密にする方法としては、メール送信の際にBccで宛先を指定する方法があります。\n・正しい。メールサーバをDMZに設置すると、メールサーバを踏み台にした攻撃から内部ネットワークを守ることができます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/92_1.png",
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/92_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q92/92_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q92/92_2.png"
         ]
       }
     },
@@ -4224,28 +4224,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_aki/img/93.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q93/93.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_aki/img/93.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q93/93.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_aki/img/93.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q93/93.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_aki/img/93.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q93/93.png"
           ]
         }
       ],
@@ -4320,28 +4320,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_aki/img/95.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q95/95.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_aki/img/95.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q95/95.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_aki/img/95.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q95/95.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_aki/img/95.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q95/95.png"
           ]
         }
       ],
@@ -4356,7 +4356,7 @@
         "text": "GPU(Graphics Processing Unit)は、コンピュータにおいて画像処理を専門に担う演算装置です。数千個のコアにより大量のデータの並列計算に特化しており、動画再生や3DCGのレンダリングなどの高負荷な演算が要求される場面で、CPUを補完する役割を果たします。\n\n最近では、膨大な計算を必要とする科学シミュレーションや機械学習の分野でもGPUを利用すること（GPGPU）も増えてきています。GPUは画像処理用に開発されたプロセッサです。したがって「イ」の組合せが適切です。\n\nVGAは、640×480画素のディスプレイを表す名称、及びアナログRGBコネクタのことです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/95a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q95/95a.png"
         ]
       }
     },
@@ -4490,7 +4490,7 @@
         "text": "ランサムウェアは、身代金を意味する ransom とソフトウェアの語尾に付ける ware を合わせた造語で、PC内のデータファイルを勝手に暗号化したり、PCの操作ができないようにロックしたりして、データアクセスに制限をかけた後、元に戻すための復元プログラムの購入を迫るマルウェアです。コンピュータのデータを人質にとり、金銭を要求する動作から「身代金要求型ウイルス」とも呼ばれます。\n\n仮に要求された金銭を支払ったとしても暗号化が解除される保証はなく、また自力での回復は困難です。最悪の場合、OSのリカバリによって回復させるしかありません。データ保護のためには、セキュリティアップデートを速やかに適用してセキュリティホールを塞ぐことと併せて、ネットワークから切り離された別媒体への定期的なバックアップが基本的な対策となります。\n\nしたがって「イ」が正解です。\n・スパイウェアの目的です。\n・正しい。ランサムウェアの目的です。\n・キーロガーの目的です。\n・ボットの目的です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_aki/img/98.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q98/98.png"
         ]
       }
     },
@@ -4508,28 +4508,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_aki/img/99.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q99/99.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_aki/img/99.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q99/99.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_aki/img/99.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q99/99.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_aki/img/99.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_aki/q99/99.png"
           ]
         }
       ],

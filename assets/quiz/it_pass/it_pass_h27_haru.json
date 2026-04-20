@@ -413,7 +413,7 @@
         "text": "労働基準法では正社員・契約社員・パート・アルバイトなどの区別はありませんが、一応、それぞれの就業形態についての一般認識についてまとめておきます。アルバイト契約期間が有限であり、通常の労働者の1週間の所定労働時間に比べて短い労働者\n一般に学業や別会社の正社員などの本業がある人を指すことが多い契約社員正社員とは別の労働条件の下に、給与額や雇用期間など個別の労働契約を結んで働く常勤社員派遣社員就業先企業ではなく登録した人材派遣会社と雇用契約を結び、人材派遣会社から仕事の紹介を受け、企業に派遣され就業する社員パートタイマー1週間の所定労働時間が通常の労働者の1週間の所定労働時間に比べて短い労働者派遣社員だけは、就業先企業≠雇用契約先 の関係にあります。\n\nしたがって正解は「a，b，d 」の組合せです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_haru/img/09.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q9/09.png"
         ]
       }
     },
@@ -469,7 +469,7 @@
         "text": "次の条件で，製品Xを製造する。部品Y，部品Zの歩留りが表のとおりであるとき，製品Xを300個製造するために必要な部品Yの原材料投入量aは何kgか。ここで，製品Xの歩留りは100%で，部品は全て新規に製造するものとする。\n\n〔製品Xの製造条件〕\n・1個の組立て製品Xは，3個の部品Y及び1個の部品Zで構成されている。\n・部品Y及び部品Zは，それぞれの原材料から製造して用いる。\n・部品Y及び部品Zは，原材料1kgから1個製造することができる。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_haru/img/11.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q11/11.png"
         ]
       },
       "choices": [
@@ -554,7 +554,7 @@
         "text": "プロダクトポートフォリオマネジメント(PPM)は、縦軸に市場成長率，横軸に市場占有率をとったマトリックス図を4つの象限に区分し、市場における製品(または事業やサービス)の位置付けを2つの観点で分類して資源配分を検討する手法です。2つの軸には「市場成長率」と「市場占有率」が使用されるため適切な組合せは「エ」です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_haru/img/12.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q12/12.png"
         ]
       }
     },
@@ -952,7 +952,7 @@
         "text": "工業所有権(産業財産権)には、以下の4種類があります。特許権自然の法則や仕組みを利用した価値ある発明を保護する、存続期間は出願日から20年実用新案権物品の形状、構造または組み合わせに係る考案のうち発明以外のものを保護する、存続期間は出願日から10年意匠権製品の価値を高める形状やデザインを保護する、存続期間は出願日から25年商標権商品の名称やロゴマークなどを保護する、存続期間は設定登録日から10年このうち特許権、実用新案権、意匠権は一定期間の独占使用の後、その後は誰もが自由に利用できるようになりますが、商標権だけは異なり、最初の存続期間の終了後も更新手続きを経ることによって権利を存続させることが出来ます。これは、商標法の目的が他の3つの権利とは異なり「商標の使用者と需要者の利益を保護すること」であるという性格を持っているからです。\n\nさらに設問中の「事業者の信用維持や需要者の混同を回避するため」という記述から、商標権について説明した文であることがわかります。\n\nしたがって正解は「ウ」です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_haru/img/21.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q21/21.png"
         ]
       }
     },
@@ -1107,28 +1107,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/27_haru/img/25a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q25/25a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/27_haru/img/25i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q25/25i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/27_haru/img/25u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q25/25u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/27_haru/img/25e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q25/25e.png"
           ]
         }
       ],
@@ -1187,7 +1187,7 @@
         "text": "職能別組織は、製造，営業，経理，開発などのように職能ごとに構成された組織形態です。各部門で高い専門性や効率性を追求することができますが、その反面、職能部門間の隔たりが生じやすいという特徴があります。\n\n急激な外部変化が少ない場合には組織内部の効率性・専門性を高めることが成功する要因になり、かつ、職能別組織は意思決定権が組織の上位者に集中しやすいという特徴があるので事業形態が単純な場合に適しています。\n・プロジェクト組織の説明です。\n・正しい。職能別組織の説明です。\n・事業部制組織の説明です。\n・マトリックス組織の説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_haru/img/26.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q26/26.png"
         ]
       }
     },
@@ -1673,7 +1673,7 @@
         "text": "PDCA(Plan，Do，Check，Act)は、業務プロセスの管理手法の1つで、Plan(計画)→Do(実行)→Check(評価)→Act(見直し・改善)の4段階を繰り返すことによって、業務を継続的に改善していく手法です。PDCAは、各種のマネジメント手法に取り入れられています。Plan（計画）従来の実績や将来の予測などをもとにして計画を作成する。Do（実行）計画に沿って業務を行う。Check（点検・評価）業務の実施が計画に沿っているかどうかを確認する。Act（見直し・改善）計画どおりに実施されていない部分を調べて処置をする。A(Act)は、Checkの結果をうけて計画に対して継続や見直しなどの措置を行うフェーズなので、「エ」が該当します。\n・P(Plan)に該当します。\n・D(Do)に該当します。\n・C(Check)に該当します。\n・正しい。A(Act)に該当します。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_haru/img/37.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q37/37.png"
         ]
       }
     },
@@ -2037,7 +2037,7 @@
         "text": "WBS(Work Breakdown Structure)は、プロジェクトにおいて作成される成果物を基準に、全体の作業を各作業レベルまで細分化しトップダウン的に階層化して表した図です。\n分割された各作業ごとに内容・日程・目標を設定することでプロジェクト管理をしやすくする手法として用いられます。\n・Data Flow Diagramの略。データの流れに着目して、その対象となる業務のデータの流れと処理の関係をわかりやすく図式化して表す手法です。\n・正しい。\n・アローダイアグラムは、プロジェクトの各作業間の関連性や順序関係を視覚的に表現する図で、WBSで作業を分割した後に作成されます。\n・マイルストーンチャートは、プロジェクト管理において区切り時点やチェックポイントとなるマイルストーンを定義し、それが予定通りに達成されているかどうかで進捗を管理する図です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_haru/img/45.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q45/45.png"
         ]
       }
     },
@@ -2137,7 +2137,7 @@
         "text": "Webページにおいて，一般的にフィードアイコンと呼ばれる次のアイコンが表示されることがある。このアイコンが説明しているものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_haru/img/48.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q48/48.png"
         ]
       },
       "choices": [
@@ -2173,7 +2173,7 @@
         "text": "フィード(feed)は、英語で「与える」「供給する」の意味があり、ブログやWebサイトなどのコンテンツを配信するために加工した文書、または配信用のファイルフォーマットの総称です。\n\nフィードアイコンがWebサイトで設置されているときは、そのWebサイトでフィードが提供されていることを意味します。フィードをフィードリーダー(RSSリーダー)に登録すると、フィードリーダーがフィードの更新を定期的に確認するようになるので、利用者は複数のWebサイトの更新状況を素早く知ることができます。\nほとんどのブログサービスは、フィードに対応しているのでお気に入りのブログを購読したいときにはフィードリーダーに登録すると最新の投稿情報を得ることができ便利です。したがって「ア」が適切です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_haru/img/48a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q48/48a.png"
         ]
       }
     },
@@ -2439,7 +2439,7 @@
         "text": "虹彩認証とは、眼球の特徴で本人認証を行うバイオメトリクス認証技術です。\n虹彩とは、眼球の黒目部分、瞳孔の外側にある円状の部分のことで、その部分のしわのパターンが個人ごとに異なることを認証に利用します。\n\n設問の認証システムは、生体認証とパスワード認証を併用したもので、認証手続きを図で表すと以下のようになります。このシステムでは、生体認証で否認されてもパスワードを知っていれば(他人でも)ログイン可能なので、実質的な強度はパスワード認証単体のシステムと同等になります。\n・パスワードを知られた場合、第三者でもログイン可能なので定期的にパスワードを変更すべきです。\n・正しい。2つの認証方法のどちらかで認証を受ければログインができるので利便性が高い認証システムと言えます。\n・本人でなくともパスワードを知っていればログインが可能なので、強度はパスワード認証のみの場合と同じになります。\n・他人であっても虹彩認証で本人と識別された時点で無条件にログインされてしまいます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_haru/img/54.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q54/54.png"
         ]
       }
     },
@@ -2573,7 +2573,7 @@
         "text": "・Android(アンドロイド)は、主にスマートフォンやタブレットなどのモバイル端末向けにGoogle社が開発したオープンソースのOSです。\n・Firefox(ファイアフォックス)は、非営利企業のMozillaが開発するオープンソースのブラウザです。\n・MySQL(マイエスキューエル)は、現在はオラクル社が開発しているオープンソースの関係データベース管理システムです。\n・正しい。Thunderbird(サンダーバード)は、非営利企業のMozillaが開発するオープンソースのメールソフトです。(下のアイコンはThunderbirdのアプリケーションアイコンです)",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_haru/img/57.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q57/57.png"
         ]
       }
     },
@@ -2663,10 +2663,10 @@
         "text": "フローチャート(flowchart)は、プログラムの処理手順を記述する代表的な図です。\n処理やプロセスを四角い箱、分岐判断をひし形で表し、それらの間を実践や矢印でつないでアルゴリズムや処理の流れを表現します。\n\n下図は1～10までの数字を足し合わせて結果を s に格納する処理をフローチャートで記述したものです。\n・ガントチャートは、棒グラフの一種で予定と実績を2本の横棒で表した図です。進捗状況を視覚的に把握することができるのでスケジュール管理などに用いられます。\n・データフローダイアグラムは、データの流れに着目して、その対象となる業務のデータの流れと処理の関係をわかりやすく図式化する構造化分析の手法です。\n・正しい。\n・レーダーチャートは、複数項目の基準値に対する比率をプロットし、各点を線で結んだ形状によって、全体のバランスを比較するのに適した図法です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_haru/img/59u.png",
-          "https://www.itpassportsiken.com/kakomon/27_haru/img/59a.png",
-          "https://www.itpassportsiken.com/kakomon/27_haru/img/59i.png",
-          "https://www.itpassportsiken.com/kakomon/27_haru/img/59e.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q59/59u.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q59/59a.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q59/59i.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q59/59e.png"
         ]
       }
     },
@@ -2712,7 +2712,7 @@
         "text": "トップレベルドメイン(TLD)とは、ドメイン名全体を\".\"(ドット)で分割した際の最も右側の部分のことです。設問の\"http://example.co.jp/index.html\"の場合は、\"example.co.jp\" がドメイン名全体です。つまり、ドメイン名全体をドットで区切ったとき、最も右側に位置する「jp」がトップレベルドメインになります。\nまた当サイトのURLは\"http://www.itpassportsiken.com\"ですから、第3レベルドメインが\"www\"、第2レベルドメインが\"itpassportsiken\"、トップレベルドメインは「com」と解釈できます。\n\nトップレベルドメインは、「.jp」「.uk」「.fr」など各国に割り当てられている国コードトップレベルドメイン(ccTLD:country code TLD)と、「.com」「.net」「.org」など汎用目的の分野別トップレベルドメイン(gTLD:generic TLD)に分類されます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_haru/img/60.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q60/60.png"
         ]
       }
     },
@@ -2802,7 +2802,7 @@
         "text": "集合Aの全てに要素が集合Bに含まれるとき、AはBの一部分であるという意味で「AはBの部分集合である」といいます。\n\n(A∪B)と(A∩B)をベン図で表現すると以下のようになります。(A∩B)は(A∪B)の一部分になっているので「ウ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_haru/img/62.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q62/62.png"
         ]
       }
     },
@@ -3288,7 +3288,7 @@
         "text": "・デジタル署名は、公開鍵暗号の技術を応用した仕組みです。\n・共通鍵暗号方式と公開鍵暗号方式を比べると、共通鍵暗号方式のほうが暗号化・復号の計算量が少ないです。このため処理速度は共通鍵暗号方式のほうが速いです。\n・RSAは公開鍵暗号方式です。共通鍵暗号方式としてはDESやAESが代表的です。\n・正しい。共通鍵暗号方式では送信者と受信者で同じ鍵を使用するので、通信の組合せの数だけ鍵が必要です。相互に通信を行う人数が2人の場合は1個、3人の場合は3個、4人の場合は6個、5人の場合は10個というように増えていきます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_haru/img/73.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q73/73.png"
         ]
       }
     },
@@ -3334,7 +3334,7 @@
         "text": "無線LANでは、有線LANと異なり通信電波があちこちに飛散しているので、その電波が傍受されても内容を知られないようにする必要があります。\nこれを実現するには、アクセスポイントと端末のペアごとに異なる暗号化鍵を定め、同じ暗号化鍵をもつ機器同士だけが正しい通信を行えるように制御します。この暗号化に使用するアルゴリズムには、WEP、WPA、WPA2などがありますが、WEPとWPAには容易に解読を可能にしてしまう脆弱性があるため、WPA2の使用が推奨されます。\n・ANY接続とは、端末がアクセスポイントに接続する際に、接続先の名前(ESSID)を指定せずに電波が届く範囲に存在する全てのアクセスポイントに向けて接続を試みることです。\nこのような接続を拒否することで無線LANの不正使用を抑止できますが、無線LANの電波は周囲に飛散しているので盗聴の対策にはなりません。\n・ESSIDステルスは、無線LANアクセスポイントが自身が存在することを周囲に知らせるビーコンの発信を停止する機能です。\n無線LANネットワークの存在を秘匿にすることで不正使用を抑止できますが、無線LANの電波は周囲に飛散しているので盗聴の対策にはなりません。\n・MACアドレスフィルタリングは、無線LANのアクセスポイントに正当なユーザーのMACアドレスを登録しておくことで、正当なユーザー以外のアクセスを拒否する機能です。\n他の2つと同じく無線LANの電波は周囲に飛散しているので盗聴の対策にはなりません。\n・正しい。WPA2は、無線LANの通信を暗号化する仕組みです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_haru/img/74.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q74/74.png"
         ]
       }
     },
@@ -3512,7 +3512,7 @@
         "text": "デジタル署名は、公開鍵暗号技術を応用してデジタル文書の正当性を保証する技術です。この技術を利用すると「発信元が正当であるか」と「改ざんの有無」の2点を確認することが可能です。\n\nデジタル署名の生成と検証の手順は次のとおりです。\n1. 送信者は、送信するメッセージのハッシュ値（メッセージダイジェスト）を生成し、それに送信者の秘密鍵で署名して、署名データを作成する\n2. 送信者は、署名データをメッセージに付加して送信する\n3. 受信者は、署名データ付きのメッセージを受信する\n4. 受信者は、受信したメッセージのハッシュ値と送信者の公開鍵を使用して、署名データを検証する\n5. 検証は、送信されたメッセージと受信したメッセージが同じであり、鍵ペアが正しい場合に限り成功する。これにより、通信内容が改ざんされていないことと送信者の正当性が確認できる\n\n・圧縮は、データのサイズを小さくするための技術です。\n・正しい。デジタル署名は、受信したデータが改ざんされていないことを確認するために使用される技術です。\n・パスワード認証は、利用者が適切な権限を持っているかを確認するための手段です。\n・フィルタリングは、不適切なデータやアクセスを除外するための技術です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_haru/img/78.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q78/78.png"
         ]
       }
     },
@@ -3848,28 +3848,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/27_haru/img/86a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q86/86a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/27_haru/img/86i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q86/86i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/27_haru/img/86u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q86/86u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/27_haru/img/86e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q86/86e.png"
           ]
         }
       ],
@@ -3884,7 +3884,7 @@
         "text": "主キーは、その表の中で1つの行(レコード)を一意に特定できる属性、又はその組合せです。\n\n\"入退室許可表\"のレコードは、以下のように社員番号と区画番号の組合せの数だけ存在するので、1つのレコードを一意に特定するためには「社員番号」と「区画番号」の2つの情報が必要です。\n\nしたがって「イ」が適切です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_haru/img/86.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q86/86.png"
         ]
       }
     },
@@ -3902,28 +3902,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/27_haru/img/87.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q87/87.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/27_haru/img/87.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q87/87.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/27_haru/img/87.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q87/87.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/27_haru/img/87.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q87/87.png"
           ]
         }
       ],
@@ -4083,7 +4083,7 @@
         "text": "Aさんは〔Zプロジェクトの状況〕の(5)が，開発スケジュールの遅延の原因になると考え，回避策を実施しないときの遅延の予測回数，及び回避策の費用を次の表にまとめた。それぞれの遅延が発生する可能性があるとした場合，回避策を実施して，図1のソフトウェア開発の最短日数で予定どおりに完了させるために必要な最低限の費用は何万円か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_haru/img/91.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q91/91.png"
         ]
       },
       "choices": [
@@ -4393,7 +4393,7 @@
         "text": "性能，価格，デザインを重視する人の集合を，それぞれ，集合\"性能\"，集合\"価格\"，集合\"デザイン\"として，図2のベン図で表す。次の命令の条件に合致するベン図中の領域はどれか。\n\n　件数表示([[性能＝1] or [価格＝1]] and [デザイン＝1])",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_haru/img/98.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q98/98.png"
         ]
       },
       "choices": [
@@ -4429,7 +4429,7 @@
         "text": "通常の計算式の括弧\"( )\"と同じように、最も内側にある括弧内の演算から評価していきます。\n\nまず、\"[性能＝1] or [価格＝1]\"ですが、\"性能＝1\"は性能を\"はい\"と答えた人、\"価格＝1\"は価格を\"はい\"と答えた人を表します。この2つの条件をor演算子で結合しているので、価格と性能のどちらか(又は両方)を重視するモニターに合致します。\n\nさらに、上記の条件と\"[デザイン＝1]\"とのand演算なので、以下の3つの集合に合致します。\n・性能＝1，価格＝0，デザイン＝1 …ベン図中のC\n・性能＝0，価格＝1，デザイン＝1 …ベン図中のF\n・性能＝1，価格＝1，デザイン＝1 …ベン図中のD\n\nしたがって正しい組合せは「C，D，F」です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_haru/img/98a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q98/98a.png"
         ]
       }
     },
@@ -4475,7 +4475,7 @@
         "text": "表1の結果より、\n・条件 性能＝1 … 55件\n・条件 価格＝1 … 60件\n・条件 [性能＝1] and [価格＝1] … 30件\n\nなので、条件[性能＝1] or [価格＝1]の件数は、\n\n　55＋60－30＝85(件)",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_haru/img/99.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q99/99.png"
         ]
       }
     },
@@ -4521,8 +4521,8 @@
         "text": "w，x，y，zはベン図中で次の集合です。このうち z は x と y の部分集合になっていて、w から x と y を取り除くと z の部分(ベン図中のD)を二重に取り除くことになってしまいます。最後に z が足されているので、\"－x－y＋z\"は結果的にベン図中のB，D，Fを1回ずつ取り除く操作と同じになります。\n\nしたがって\"w－x－y＋z\"の結果は以下の集合になります。この集合は、「価格が1、かつ、性能が0、かつ、デザインが0」で言い表すことができるので、これを設問の条件式に直した、\n\n　[性能＝0] and [価格＝1] and [デザイン＝0]\n\nが正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_haru/img/100_1.png",
-          "https://www.itpassportsiken.com/kakomon/27_haru/img/100_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q100/100_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_haru/q100/100_2.png"
         ]
       }
     }

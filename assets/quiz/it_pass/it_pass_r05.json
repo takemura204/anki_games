@@ -336,28 +336,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/05_haru/img/08.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q8/08.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/05_haru/img/08.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q8/08.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/05_haru/img/08.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q8/08.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/05_haru/img/08.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q8/08.png"
           ]
         }
       ],
@@ -576,7 +576,7 @@
         "text": "ある製品の今月の売上高と費用は表のとおりであった。販売単価を1,000円から800円に変更するとき，赤字にならないためには少なくとも毎月何個を販売する必要があるか。ここで，固定費及び製品1個当たりの変動費は変化しないものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/13.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q13/13.png"
         ]
       },
       "choices": [
@@ -862,7 +862,7 @@
           "不適切。EU外に拠点がある事業者であっても、EU内に商品やサービスを提供している場合は適用されます（表の右上）。"
         ],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/18.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q18/18.png"
         ]
       }
     },
@@ -1084,7 +1084,7 @@
         "text": "・Business Analysis Body of Knowledgeの略。経営ニーズやステークホルダの課題を調査し、整理し、検証して取りまとめる\"ビジネス分析\"のノウハウやベストプラクティスを体系化したビジネスアナリシス知識体系ガイドという書籍のことです。\n・正しい。BPMN(ビジネスプロセスモデリング表記法)は、11個の基本要素を用いて、ビジネスプロセスをワークフローとして視覚的に表現するための手法です。統一的な表記法で記述することによりビジネスモデルが可視化され、共有しやすくなり、関係者の間のコミュニケーションを促進したり、ビジネスプロセスを改善したりするといったメリットがあります。\n・Business Process Outsourcingの略。自社のコアビジネス以外の業務の全部または一部を外部の業者に委託することです。\n・Business Process Reengineeringの略。既存の組織やビジネスルールを抜本的に見直し、職務、業務フロー、管理機構、情報システムを再設計する手法です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/23.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q23/23.png"
         ]
       }
     },
@@ -1130,8 +1130,8 @@
         "text": "定量発注方式は、商品や在庫の発注するときの考え方のひとつです。対となる定期発注方式と組み合わせて基本的な考え方を把握しておきましょう。定量発注方式発注時期は決まっておらず、在庫が一定数を下回った時点であらかじめ決まっている最適発注量を発注する方式。調達期間が短い品目や、消費量が安定している品目などに適している。定期発注方式あらかじめ決まった間隔で定期的に発注する方式で、発注の都度、在庫数、予想需要量、安全在庫などを考えて最適な量を発注する。需要量の変化が大きい品目や、細やかな管理を要する重要在庫を対象とすることが多い\n・正しい。1回当たりの発注量を少なくして発注回数を増やすと、発注コストが増加します。反対に1回当たりの発注量を多くして発注回数を減らすと、在庫スペースが多く必要となり在庫管理費用が増加します。この両者の総額が最少となる発注量が、定量発注方式における最適発注量となります。\n・発注回数が多い方が、在庫スペースは少なくて済みます。定量発注方式では、発注回数が少ないと1回当たりの発注量が多くなり、発注回数が多いと1回当たりの発注量が少なくなります。1回当たりの発注量が少ないほど在庫スペースは節約できるため、在庫スペースを広く確保しなければならないのは、発注回数が少ない場合です。\n・定期発注方式の説明です。定量発注方式では発注時期は決まっていません。\n・定期発注方式の説明です。定量発注方式は毎回同じだけ発注するので、需要予測に基づく発注は行いません。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/24_1.png",
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/24_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q24/24_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q24/24_2.png"
         ]
       }
     },
@@ -1273,7 +1273,7 @@
         "text": "3つの要素の関係を分析したいので、3つの変数を同時に可視化することのできる図表を用いる必要があります。選択肢の中で3要素の大小をひとつの図に表すことができるのは「バブルチャート」のみです。\n・ガントチャートは、棒グラフの一種で予定と実績を2本の横棒で表した図です。主にスケジュール管理に用いる図表であり、3つの量を表すことはできません。\n・正しい。バブルチャートは、2つの変数を縦横の軸に配置し、3つ目の変数を円の大きさや色で表現することで、3つのデータの関連性を視覚的に表すことができる図表です。\n・マインドマップは、アイデア・情報・思考などの流れを視覚的に表す図表です。中心となる要素から放射状に伸ばした線(ブランチ)に沿って言葉やイメージを記述していきます。要素ごとの量を表すことには向いていません。\n・ロードマップは、縦軸に対象の技術・製品・サービス・市場を、横軸には時間の経過をとり、それらの要素の将来的な展望や進展目標を時系列で表した図表のことです。要素ごとの量を表すことには向いていません。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/27.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q27/27.png"
         ]
       }
     },
@@ -1505,7 +1505,7 @@
         "text": "製品Aを1個生産するのに部品aが2個，部品bが1個必要である。部品aは1回の発注数量150個，調達期間1週間，部品bは1回の発注数量100個，調達期間2週間の購買部品である。製品Aの6週間の生産計画と，部品a，部品bの1週目の手持在庫が表のとおりであるとき，遅くとも何週目に部品を発注する必要があるか。ここで，部品の発注，納品はそれぞれ週の初めに行われるものとし，納品された部品はすぐに生産に利用できるものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/33.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q33/33.png"
         ]
       },
       "choices": [
@@ -1541,7 +1541,7 @@
         "text": "製品Aを40個生産するためには、部品aが80個、部品bが40個必要です。2週目から毎週製品Aを40個生産すると、各部品の在庫量は以下のように減っていくことになります。4週目の生産までは当初の在庫量でまかなえますが、部品a、部品bともに5週目に生産するための在庫が不足することがわかります。よって、5週目の初めに納品が行われるように部品を発注する必要があります。\n\n部品aの調達期間は1週間なので、5週目の初めに納品されるためには4週目の初めに注文する必要があります。部品bの調達期間は2週間なので、5週目の初めに納品されるためには3週目の初めに注文する必要があります。\n\nしたがって、遅くとも3週目には部品を発注しなければなりません。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/33a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q33/33a.png"
         ]
       }
     },
@@ -1699,28 +1699,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/05_haru/img/37.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q37/37.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/05_haru/img/37.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q37/37.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/05_haru/img/37.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q37/37.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/05_haru/img/37.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q37/37.png"
           ]
         }
       ],
@@ -1779,7 +1779,7 @@
         "text": "プログラムステップ数と不良件数という2つの要素の関連性を可視化できる図であることが求められます。選択肢のうち、2項目間の分布・相関関係を把握するのに使用されるのは「散布図」しかありません。\n\nしたがって「イ」が正解です。\n・管理図は、中央線および上限と下限を示す限界線を引いて、製品などの特性値を打点することで、工程の状態や品質を時系列に表した図で、工程が安定した状態にあるかどうかを判断するために用います。\n・正しい。散布図は、縦軸・横軸に2項目の量や大きさ等を対応させて分析対象のデータを打点した図で、2種類のデータの関係性を表すために使用されます。\n・特性要因図は、現れた特性（結果）とそれに影響を及ぼしたと思われる要因の関係を体系的に表わした図です。多くの要因が複雑に絡みあっているときに、直接的な原因と間接的な原因に分別したり、真の問題点を明らかにしたりすることができます。\n・パレート図は、値の大きい順に分析対象の項目を並べた棒グラフと、累積構成比を表す折れ線グラフを組み合わせた複合グラフで、主に複数の分析対象の中から重要である要素を識別するために使用します。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/38.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q38/38.png"
         ]
       }
     },
@@ -1869,7 +1869,7 @@
         "text": "DevOps(デブオプス)は、開発を意味する Development と運用を意味する Operations を組み合わせた造語で、開発担当チームと運用担当チームが緊密に協力・連携し、自動化ツールなどを活用して柔軟かつスピーディに開発を進めるソフトウェア開発手法です。\n\n自動でビルドとテストを行う「継続的インテグレーション」、常にリリース可能な状態を維持する「継続的デリバリ」、コードの変更を自動的に本番環境にリリースする「継続的デプロイメント」の3つのプラクティスを適用することにより、開発効率の向上、迅速なリリース、信頼性の向上、共同作業による文化の醸成などの効果が期待できます。\n・プロトタイプ開発に関する記述です。\n・ウォーターフォール開発に関する記述です。\n・正しい。\"開発側と運用側の連携\"・\"自動化ツール\"のキーワードより、DevOpsに関する記述であるとわかります。\n・ペアプログラミングに関する記述です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/40.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q40/40.png"
         ]
       }
     },
@@ -1881,7 +1881,7 @@
         "text": "次のアローダイアグラムに基づき作業を行った結果，作業Dが2日遅延し，作業Fが3日前倒しで完了した。作業全体の所要日数は予定と比べてどれくらい変化したか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/41.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q41/41.png"
         ]
       },
       "choices": [
@@ -1917,7 +1917,7 @@
         "text": "当初予定の所要日数は、以下の3つのパスのうち所要期間が最も多くなるパスの日数です。\n・A→C→F … 2＋4＋5＝11日\n・B→D→F … 3＋1＋5＝9日\n・B→E→G … 3＋1＋5＝9日\n\n当初は、11日間で作業全体が完了する予定だったことがわかります。\n\nこのスケジュールから作業Dが2日遅れ、作業Fが3日前倒しで完了すると、作業Dが「1＋2＝3日」、作業Fが「5－3＝2日」になるので、アローダイアグラムは次のように変化します。変化後のアローダイアグラムでクリティカルパスを再計算すると、\n・A→C→F … 2＋4＋2＝8日\n・B→D→F … 3＋3＋2＝8日\n・B→E→G … 3＋1＋5＝9日\n\n作業全体が終了するのは「B→E→G」が終了する9日目です。したがって、当初予定の所要日数11日と比較して「2日前倒し」となることがわかります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/41_1.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q41/41_1.png"
         ]
       }
     },
@@ -1939,28 +1939,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/05_haru/img/42.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q42/42.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/05_haru/img/42.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q42/42.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/05_haru/img/42.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q42/42.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/05_haru/img/42.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q42/42.png"
           ]
         }
       ],
@@ -2117,7 +2117,7 @@
         "text": "プロジェクトは、対象範囲(スコープ)、納期(スケジュール)、予算(コスト)の3つの制約の上に成り立っていて、この3つは相互に関連しています。このバランス関係は「プロジェクト管理の三角形」と呼ばれ、どれか1つに変更があった場合には、他の2つの要素のうち少なくとも1つは変更しなくてはならないことを示します。以下はその具体例です。\n・スケジュールを短縮する ⇒ スコープを狭める or 投入する要員や機器を増やす\n・予算を縮小する ⇒ スコープを狭める or 実施する作業を少なくする\n・スコープを広げる ⇒ 予算を増やしてプロジェクト期間を延長する\n\nプロジェクトマネジメントでは、三要素のうち変更できない(優先順位の高い)要素を把握し、プロジェクトの進行状況を見ながら最終的な品質が最も高くなるように三要素を最適化していくことが求められます。\n\n設問では、スケジュールの制約が厳しくなっていますから、プロジェクトを計画どおりに終わらせるためには、スコープの縮小または投入コストの増加が必要となります。したがって「ア」の対応が適切です。\n・正しい。スケジュールの制約が厳しくなったことに対して、追加の資源を投入する、すなわちコストの制約を緩めることで対応しています。\"プロジェクト管理の三角形\"を踏まえた適切な対応です。\n・提供するシステムの高機能化（スコープの拡大）をすると、余計にスケジュールを順守することが難しくなります。\n・提供するシステムの高機能化（スコープの拡大）をすると、余計にスケジュールを順守することが難しくなります。\n・投入する資源を少なくすると、余計にスケジュールを順守することが難しくなります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/45.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q45/45.png"
         ]
       }
     },
@@ -2183,28 +2183,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/05_haru/img/47.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q47/47.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/05_haru/img/47.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q47/47.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/05_haru/img/47.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q47/47.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/05_haru/img/47.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q47/47.png"
           ]
         }
       ],
@@ -2235,28 +2235,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/05_haru/img/48.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q48/48.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/05_haru/img/48.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q48/48.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/05_haru/img/48.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q48/48.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/05_haru/img/48.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q48/48.png"
           ]
         }
       ],
@@ -2729,7 +2729,7 @@
         "text": "・DDoS攻撃は、インターネット上の多数のコンピュータから同時に大量のパケットを送り付けることで、標的のサーバやネットワークを過負荷状態にする分散型のサービス停止攻撃です。\n・SQLインジェクションは、Webアプリケーションに対してデータベースへの命令文を構成する不正な入力データを与え、Webアプリケーションが想定していないSQL文を意図的に実行させることで、データベースを破壊したり情報を不正取得したりする攻撃です。\n・正しい。ドライブバイダウンロードは、Webサイトに悪意のあるプログラムを埋め込み、Webブラウザを通じて利用者が気付かないようにそのプログラムをダウンロードさせたり、自動的に実行させる攻撃です。脆弱性のある利用環境だとWebページを閲覧しただけでマルウェアの被害に遭うおそれがあります。ドライブバイダウンロードは、単独で攻撃に使用されることもありますし、また標的型攻撃や水飲み場攻撃などで補助的に使用されることもあります。\n・フィッシング攻撃は、実際の企業を装ったWebサイトやメールを使ってユーザーを誘い、偽サイトに誘導するなどして個人情報を不正に取得する行為です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/58.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q58/58.png"
         ]
       }
     },
@@ -2741,7 +2741,7 @@
         "text": "関係データベースで管理された\"会員管理\"表を正規化して，\"店舗\"表，\"会員種別\"表及び\"会員\"表に分割した。\"会員\"表として，適切なものはどれか。ここで，表中の下線は主キーを表し，一人の会員が複数の店舗に登録した場合は，会員番号を店舗ごとに付与するものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/59.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q59/59.png"
         ]
       },
       "choices": [
@@ -2749,28 +2749,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/05_haru/img/59a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q59/59a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/05_haru/img/59i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q59/59i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/05_haru/img/59u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q59/59u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/05_haru/img/59e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q59/59e.png"
           ]
         }
       ],
@@ -2785,8 +2785,8 @@
         "text": "データベースの正規化は、データベースを構築する際にデータの重複や矛盾を排除する目的で、データ同士の関連を保ったまま複数の表に分解していく作業です。正規化は次のように3段階の手順を踏んで行います。第１正規化属性値に含まれる繰り返し項目をなくす第２正規化主キーが複数の項目の組合せから成る複合主キーのときに、主キーの一部の項目によって一意に決まる項目を別表に移す第３正規化主キー以外の項目によって一意に決まる項目を別表に移す【第１正規化】\n会員管理表は、既にすべての項目の値が単一値なので第1正規形の条件を満たしています。\n\n【第２正規化】\n会員管理表の主キーは、\"店舗コード\"と\"会員番号\"の複合主キーです。会員管理表の項目を見ると、\"店舗コード\"が決まれば店舗名\"が一意に決まることがわかるので、この関係を別表に移すことができます。一方、\"会員番号\"は店舗ごとに付されるので、\"会員番号\"のみで会員を一意に識別することはできません。よって、こちらは別表に分けることはできません。【第３正規化】\n会員管理表の項目を見ると、非主キー列である\"会員種別コード\"が決まれば\"会員種別名\"が一意に決まることがわかるので、この関係を別表に移します。このように分離していくと、正規化後の会員表の項目は以下のようになります。\n\n　会員番号、店舗コード、会員名、会員種別コード\n\nしたがって「エ」が正解です。\n\n【別解】\n3つの表は互いに共通の項目により関連を持つ必要があるので、会員表には、店舗表の主キーである\"店舗コード\"を参照する\"店舗コード\"、会員種別表の主キーである\"会員種別コード\"を参照するための\"会員種別コード\"が必要となります。よって、この2つの項目がある「エ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/59_1.png",
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/59_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q59/59_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q59/59_2.png"
         ]
       }
     },
@@ -2798,7 +2798,7 @@
         "text": "手続 printArray は，配列 integerArray の要素を並べ替えて出力する。手続 printArray を呼び出したときの出力はどれか。ここで，配列の要素番号は1から始まる。\n\n〔プログラム〕",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/60.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q60/60.png"
         ]
       },
       "choices": [
@@ -2938,28 +2938,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/05_haru/img/63.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q63/63.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/05_haru/img/63.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q63/63.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/05_haru/img/63.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q63/63.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/05_haru/img/63.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q63/63.png"
           ]
         }
       ],
@@ -2974,8 +2974,8 @@
         "text": "RAID(Redundant Arrays of Inexpensive Disks，レイド)は、複数のディスクを組み合わせ、ひとつの仮想的なディスクとして扱うことで信頼性や性能を向上させる技術です。\n\nRAIDには6つのレベルがありますが、そのうちRAID0とRAID1は以下のような組合せです。RAID0（ストライピング）複数のディスクに分散してデータを書き込むことで、アクセス性能を向上させる。RAID1（ミラーリング）同じデータを2台のディスクに書き込むことで、信頼性を向上させる。実質記憶容量は50%となるので記憶効率は悪い。RAID0は冗長データを持たず、単に複数のディスクに振り分けて書込む方式なので、実用量そのままの「500Gバイト×2台＝1Tバイト」を使うことができます。一方、RAID1は同じデータを複数のディスクに書き込むので実際に使用できる容量は、実容量の半分の500Gバイトになります。\n\nしたがって「イ」の組合せが適切です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/63_1.png",
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/63_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q63/63_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q63/63_2.png"
         ]
       }
     },
@@ -2987,7 +2987,7 @@
         "text": "関数 sigma は，正の整数を引数 max で受け取り，1から max までの整数の総和を戻り値とする。プログラム中のaに入れる字句として，適切なものはどれか。\n\n〔プログラム〕",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/64.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q64/64.png"
         ]
       },
       "choices": [
@@ -3067,7 +3067,7 @@
         "text": "PSK(Pre-Shared Key：事前共有鍵)は、無線LANにアクセスするときに入力する8～63文字のパスフレーズです。アクセスポイントはSSIDとPSKの組合せにより接続してくる端末を認証します。Wi-Fi接続におけるパスワードのようなもので、市販の据え置き型無線ルータだと、暗号化キー、セキュリティキー、ネットワークキーなどの名称で本体の表面に記載してあります（必要に応じて変更は可能です）。\n・正しい。PSKは、アクセスポイントが端末を認証するための情報です。暗号化通信にはPSKと乱数などを基に生成した鍵を使用します。\n・プライベートIPアドレスの割り振りに使われる情報ではありません。\n・接続するアクセスポイントを識別するために用いる名前は、SSIDです。\n・接続するアクセスポイントを識別するために用いる名前は、SSIDです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/65.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q65/65.png"
         ]
       }
     },
@@ -3201,7 +3201,7 @@
         "text": "インターネットの基盤技術であるTCP/IPでは、異機種のコンピュータ同士の相互接続を容易にするため通信機能をいくつかの階層に分け、それぞれの階層に求められる機能を定義しています。主な通信プロトコルはそれぞれ以下のように分類されています。FTP、POP、SMTPはいずれもアプリケーション層のプロトコルです。アプリケーション層の下位に位置するのは、トランスポート層のTCPとインターネット層のIPです。したがって「エ」が正解となります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/68.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q68/68.png"
         ]
       }
     },
@@ -3247,7 +3247,7 @@
         "text": "探索アルゴリズムは、データ群の中から目的のデータを探し出すアルゴリズムです。代表的な探索アルゴリズムとして、線形探索法、2分探索法、ハッシュ法があります。線形探索法データ群の先頭から1つずつ順に値を比較していく方法。データ群が整列されていなくても探索できるが、平均比較回数はデータの総数の半分なので探索効率は悪い2分探索法要素が昇順または降順に整列されたデータ群に対して、探索範囲を2分の1に狭めることを繰り返して目的のデータを探索する方法。①探索範囲の中央に位置する値と目的のデータを比較する、②目的のデータの方が小さければ中央から探索範囲の最後までを、目的のデータの方が大きければ探索範囲の最初から中央まで探索範囲から除外して、探索範囲を2分の1にする、という操作を再帰的に繰り返して効率よく目的のデータを探すことができるハッシュ法目的のデータの探索キーをハッシュ関数にかけて、データの格納位置を直接計算する方法。基本的に1回の探索で目的の値にたどり着くことができる\n・配列の先頭の要素から順に探索するのは線形探索法です。2分探索法は、①探索範囲の中央に位置する値と比較する、②探索範囲を2分の1に狭める、ことを繰り返して探索する方法です。\n・正しい。要素がN個であるデータ群から線形探索法で探すとき、目的のデータが1番最初にあれば1回、最後にあればN回の比較が必要となります。どこに目的のデータがあるかはランダムなので、線形探索法の平均比較回数はN－12回となります（データ総数のおよそ半分）。データ群が多いほど平均比較回数も増える比例関係にあります。\n・線形探索法ではデータ群は整列されている必要はありません。データ群をあらかじめ整列しておく必要があるのは2分探索法です。\n・探索対象が同一である場合、2分探索法は線形探索法よりも平均比較回数が少なくなります。平均比較回数ですので、たまたま配列の先頭のほうに目的のデータが存在した場合など、探索する値によっては線形探索法のほうが少ない計算量で探索できることもあります。また、2分探索法では事前に整列をしておく必要があるので、その分の計算量が必要になる面で不利です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/69.gif"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q69/69.gif"
         ]
       }
     },
@@ -3469,7 +3469,7 @@
         "text": "ニューラルネットワークは、人間や動物の脳神経網の特性を計算機上のシミュレーションによって表現することを目指した数学モデルです。人工知能やディープラーニングなどの機械学習に用いられています。\n\n脳内は神経細胞であるニューロンのネットワークにより構成されていますが、ニューロンは他のニューロンから神経伝達物質を受け取り、その合計値がしきい値を超えた場合に「発火」して、次のニューロンに情報伝達を行うメカニズムになっています。ニューラルネットワークでは、個々のニューロンをパーセプトロンというアルゴリズムでモデル化し、ネットワーク化することで脳神経網をシミュレーションしています。ニューラルネットワークを多層化したものがディープラーニングネットワークです。\n\nしたがって「エ」が正解です。\n・ユビキタスネットワークの説明です。\n・学術情報ネットワーク(SINET)の説明です。\n・住民基本台帳ネットワークシステム(住基ネット)の説明です。\n・正しい。ニューラルネットワークの説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/74.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q74/74.png"
         ]
       }
     },
@@ -3481,7 +3481,7 @@
         "text": "表計算ソフトを用いて，二つの科目X，Yの点数を評価して合否を判定する。それぞれの点数はワークシートのセル A2，B2 に入力する。合格判定条件(1)又は(2)に該当するときはセル C2 に\"合格\"，それ以外のときは\"不合格\"を表示する。セル C2 に入力する式はどれか。\n\n〔合格判定条件〕\n・科目Xと科目Yの合計が120点以上である。\n・科目X又は科目Yのうち，少なくとも一つが100点である。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/75.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q75/75.png"
         ]
       },
       "choices": [
@@ -3527,7 +3527,7 @@
         "text": "品質管理担当者が行っている検査を自動化することを考えた。10,000枚の製品画像と，それに対する品質管理担当者による不良品かどうかの判定結果を学習データとして与えることによって，製品が不良品かどうかを判定する機械学習モデルを構築した。100枚の製品画像に対してテストを行った結果は表のとおりである。品質管理担当者が不良品と判定した製品画像数に占める，機械学習モデルの判定が不良品と判定した製品画像数の割合を再現率としたとき，このテストにおける再現率は幾らか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/76.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q76/76.png"
         ]
       },
       "choices": [
@@ -3563,7 +3563,7 @@
         "text": "設問の表は以下のように見ます。①品質管理担当者が不良品と判定した数は「5＋5＝10枚」です。そのうち②機械学習モデルも不良品と判定した数は5枚です。よって、再現率は、\n\n　5÷10＝0.50\n\nしたがって「ウ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/76a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q76/76a.png"
         ]
       }
     },
@@ -3575,7 +3575,7 @@
         "text": "受験者10,000人の4教科の試験結果は表のとおりであり，いずれの教科の得点分布も正規分布に従っていたとする。ある受験者の4教科の得点が全て71点であったときこの受験者が最も高い偏差値を得た教科はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/77.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q77/77.png"
         ]
       },
       "choices": [
@@ -3999,7 +3999,7 @@
         "text": "ハイブリッド暗号方式を用いてメッセージを送信したい。メッセージと復号用の鍵の暗号化手順を表した図において，メッセージの暗号化に使用する鍵を(1)とし，(1)の暗号化に使用する鍵を(2)としたとき，図のa，bに入れる字句の適切な組合せはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/86.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q86/86.png"
         ]
       },
       "choices": [
@@ -4007,28 +4007,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/05_haru/img/86a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q86/86a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/05_haru/img/86a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q86/86a.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/05_haru/img/86a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q86/86a.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/05_haru/img/86a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q86/86a.png"
           ]
         }
       ],
@@ -4043,7 +4043,7 @@
         "text": "ハイブリッド暗号方式は、共通鍵暗号方式と公開鍵暗号方式を組み合わせて暗号化通信を実現する方式です。TLSやS/MIMEで採用されています。\n\n現在一般的に利用されているのは、公開鍵暗号方式を使用して共通鍵を安全に共有し、実際の暗号化通信はその共通鍵を用いて行うというものです。両者を組み合わせることで、共通鍵暗号方式で課題となる鍵管理の安全性・共有の煩雑さを解消し、かつ、公開鍵暗号方式の問題である暗号化・復号の計算量の多さを克服しています。設問の図を見ると、メッセージを暗号化しているaが共通鍵、共通鍵を暗号化しているbが(受信者の)公開鍵であると判断できます。\n\nしたがって「ア」の組合せが正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/86_1.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q86/86_1.png"
         ]
       }
     },
@@ -4265,7 +4265,7 @@
         "text": "活性化関数は、ニューラルネットワークにおいて、ニューロン(パーセプトロン)が受け取る入力値の総和から、目的に応じた最終的な出力値を得るための関数を指します。ステップ関数、シグモイド関数、ソフトマックス関数、ReLU関数などさまざまな種類があります。ニューロンの発火(出力するかしないか)を調整する役割を持ちます。\n・評価関数の説明です。\n・ニューロンの数を決定する関数ではありません。\n・ニューロンの数を決定する関数ではありません。\n・正しい。活性化関数の説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/91.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q91/91.png"
         ]
       }
     },
@@ -4495,7 +4495,7 @@
         "text": "情報処理の世界では、非常に大きい数値や非常に小さい数値を扱うことが多いので、接頭語を付けて数値を表すことが多いです。以下の表は、主な接頭語の一覧です。大きい数の接頭語は\"k\"を除いて大文字、逆に小さい数は小文字が使用されます。大きい数を表す単位は k(キロ)⇒M(メガ)⇒G(ギガ)⇒T(テラ)⇒P(ペタ) の順に大きくなり、1つ単位が上がるごとにそれぞれ前の単位の103倍(＝1,000倍)です。\n・G(ギガ)の106倍はP(ペタ)です。T(テラ)はGの103倍です。\n・正しい。M(メガ)の103倍はG(ギガ)です。\n・M(メガ)の106倍はT(テラ)です。G(ギガ)はMの103倍です。\n・T(テラ)の103倍はP(ペタ)です。G(ギガ)はTの10-3倍です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/96.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q96/96.png"
         ]
       }
     },
@@ -4541,7 +4541,7 @@
         "text": "サブネットマスクは、IPアドレスをネットワークアドレスとホストアドレスに区分するために使用されるビット列です。ネットワークアドレス部には\"1\"を、ホストアドレス部には\"0\"が指定され、そのIPアドレスがどのネットワークに属するか、ホストアドレスは何番かを意味付けする役割を果たします。\n\n例えば、192.168.11.2 というIPv4アドレスがあったとして、先頭から24ビットがネットワークアドレスであるとき、サブネットマスクは 255.255.255.0 となります。\n・ARP(Address Resolution Protocol)の説明です。\n・正しい。サブネットマスクの説明です。\n・DHCP(Dynamic Host Configuration Protocol)の説明です。\n・DNS(Domain Name System)の説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/97.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q97/97.png"
         ]
       }
     },
@@ -4675,10 +4675,10 @@
         "text": "・選択操作の説明です。\n・射影操作の説明です。\n・共通演算の説明です。\n・正しい。結合操作の説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/100_1.png",
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/100_2.png",
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/100_3.png",
-          "https://www.itpassportsiken.com/kakomon/05_haru/img/100_4.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q100/100_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q100/100_2.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q100/100_3.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/05_haru/q100/100_4.png"
         ]
       }
     }

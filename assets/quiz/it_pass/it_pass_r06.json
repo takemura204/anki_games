@@ -322,7 +322,7 @@
         "text": "表はA社の期末の損益計算書から抜粋した資料である。当期純利益が800百万円であるとき，販売費及び一般管理費は何百万円か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/08.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q8/08.png"
         ]
       },
       "choices": [
@@ -358,8 +358,8 @@
         "text": "損益計算書において、売上高から当期純利益を求めるまでのプロセスは次のとおりです。\n・売上高－売上原価＝売上総利益\n・売上総利益－販売管理費＝営業利益\n・営業利益＋営業外収益－営業外費用＝経常利益\n・経常利益＋特別利益－特別損失＝税引前当期純利益\n・税引前当期純利益－法人税等＝当期純利益\n\n設問では○○利益が省略されているため、当期純利益の800からひとつずつ逆算して販売管理費を求めることになります。\n\n【当期純利益から営業利益まで】\n・当期純利益800＋法人税等350＝税引前当期純利益1,150\n・税引前当期純利益1,150＋特別損失10－特別利益60＝経常利益1,100\n・経常利益1,100＋営業外費用50－営業外収益150＝営業利益1,000\n\n【売上高から売上総利益まで】\n・売上高8,000－売上原価6,000＝売上総利益2,000\n\n「売上総利益－販売管理費＝営業利益」なので、売上総利益と営業利益より、\n\n　売上総利益2,000－販売管理費＝営業利益1,000\n　販売管理費＝1,000(百万円)\n\nしたがって「ウ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/08_2.png",
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/08_1.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q8/08_2.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q8/08_1.png"
         ]
       }
     },
@@ -757,7 +757,7 @@
         "text": "ロードマップとは、縦軸に対象の技術・製品・サービス・市場を、横軸には時間の経過をとり、それらの要素の将来的な展望や進展目標を時系列で表した図表です。\n\n時間軸に沿って目標やマイルストーンを段階的に示すことで、産学官の全ての関係者が方向性を共有すること、長期にわたるプロジェクトや研究開発の進行状況の評価を容易にすること、関連技術開発との整合性をチェックできるようにするなどの狙いがあります。例として技術戦略ロードマップや製品ロードマップなどがあります。\n・技術ポートフォリオの説明です。\n・技術のSカーブの説明です。\n・技術市場マトリックスの説明です。\n・正しい。ロードマップの説明です。横軸が時間であることがポイントです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/17.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q17/17.png"
         ]
       }
     },
@@ -1047,28 +1047,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/24.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q24/24.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/24.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q24/24.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/24.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q24/24.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/24.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q24/24.png"
           ]
         }
       ],
@@ -1083,9 +1083,9 @@
         "text": "定期発注方式は、あらかじめ決まった間隔で定期的に発注する方式で、発注の都度、在庫数、予想需要量、安全在庫などを考えて最適な量を発注します。定期発注方式では、原材料の納品直前に安全在庫数だけが残るように計算した発注量が、最適発注量となります。発注と納品のサイクルを単純化したモデルで表現してみると次のようになります。このモデルを見ると、納品日において確保すべき在庫量は、その次の納品日までに使用する量に安全在庫量を加えた数であることがわかります。次の納品日までに使用する量は「発注間隔×毎日の使用予定量」ですから、次式で表すことができます。\n\n　納品日における在庫量＝発注間隔×毎日の使用予定量＋安全在庫量 …①\n\n実際には予定どおりに在庫が使用されていくとは限らないので、上記の数から納品日に残ることが見込まれる在庫量を差し引いて発注します。納品日に残る在庫量は、現在の在庫量から調達期間における使用量を引いた数なので、次式で表すことができます。\n\n　納品日に残る在庫量＝現在の在庫量－調達期間×毎日の使用予定量 …②\n\n①から②を引くと、\n\n　発注間隔×毎日の使用予定量＋安全在庫量－(現在の在庫量－調達期間×毎日の使用予定量)\n＝発注間隔×毎日の使用予定量＋安全在庫量－現在の在庫量＋調達期間×毎日の使用予定量\n＝(発注間隔＋調達期間)×毎日の使用予定量＋安全在庫量－現在の在庫量\n\nとなり、設問の式と同じくなります。この式から発注残（発注済で未納品分）を差し引いた数が発注量となります。\n\naには発注間隔が、bには安全在庫量が、cには現在の発注残がそれぞれ当てはまるので「ウ」が適切な組合せです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/24_1.png",
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/24_2.png",
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/24_3.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q24/24_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q24/24_2.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q24/24_3.png"
         ]
       }
     },
@@ -1377,7 +1377,7 @@
           "不適切。自己資本利益率(ROE)は、自己資本に対する利益額の割合を示す指標です。自己資本は貸借対照表に記載されるので、損益計算書だけでは計算することはできません。"
         ],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/30.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q30/30.png"
         ]
       }
     },
@@ -1467,7 +1467,7 @@
         "text": "労働者派遣契約は、派遣元企業の従業員が、派遣先企業の指揮命令の下で業務に従事できるようにした労働契約です。労働者派遣契約では、雇用関係は派遣元企業と派遣労働者の間に、指揮命令関係は派遣先企業と派遣労働者の間に成立します。派遣労働者と雇用関係にあるのは派遣元企業のみです。したがって「イ」の記述が適切です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/32.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q32/32.png"
         ]
       }
     },
@@ -1861,7 +1861,7 @@
         "text": "あるプロジェクトの作業間の関係と所要時間がアローダイアグラムで示されている。このアローダイアグラムのBからEの四つの結合点のうち，工程全体の完了時間に影響を与えることなく，その結合点から始まる全ての作業の開始を最も遅らせることができるものはどれか。ここで，各結合点から始まる作業はその結合点に至る作業が全て完了するまで開始できず，作業から次の作業への段取り時間は考えないものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/41.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q41/41.png"
         ]
       },
       "choices": [
@@ -1897,7 +1897,7 @@
         "text": "まず設問のアローダイアグラムにおけるクリティカルパスを考えます。開始点から終了点に至るすべての矢印の流れを洗い出して、その中で最も期間を要するのがクリティカルパスです。A→B→D→F15＋10＋20＝45時間A→B→D→E→F15＋10＋10＋15＝50時間A→B→E→F15＋25＋15＝55時間A→C→E→F10＋15＋15＝40時間以上より、クリティカルパスは「A→B→E→F」、最短所要時間は55時間となります。\n\nクリティカルパスは、プロジェクトを最短で完了するために遅延することが許されない一連の工程のことですから、設問の条件である「工程全体の完了時間に影響を与えず、遅らせることができる」のは、クリティカルパス上にない工程でなければなりません。これを満たすのは結合点CとDの2つです。\n\n結合点Cから始まる作業は、クリティカルパスである結合点Eからの作業が開始するまでに終わっていれば良いので、最大で、A→B→E（40時間）とA→C→E（25時間）の差である15時間を遅らせることができます。これに対して、結合点Dから始まる作業は、A→B→E（40時間）とA→B→D→E（35時間）の差である5時間しか遅らせることができません。したがって、最も遅らせることができる結合点は「C」となります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/41_1.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q41/41_1.png"
         ]
       }
     },
@@ -2113,28 +2113,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/46.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q46/46.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/46.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q46/46.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/46.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q46/46.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/46.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q46/46.png"
           ]
         }
       ],
@@ -2193,7 +2193,7 @@
         "text": "DevOps(デブオプス)は、開発を意味する Development と運用を意味する Operations を組み合わせた造語で、開発担当チームと運用担当チームが緊密に協力・連携し、自動化ツールなどを活用して柔軟かつスピーディに開発を進めるソフトウェア開発手法です。\n\n自動でビルドとテストを行う「継続的インテグレーション」、常にリリース可能な状態を維持する「継続的デリバリ」、コードの変更を自動的に本番環境にリリースする「継続的デプロイメント」の3つのプラクティスを適用することにより、開発効率の向上、迅速なリリース、信頼性の向上、共同作業による文化の醸成などの効果が期待できます。\n・プロトタイピングモデルに関する記述です。\n・ウォーターフォールモデルに関する記述です。\n・正しい。\"開発側と運用側の連携\"・\"自動化ツール\"のキーワードより、DevOpsに関する記述であるとわかります。\n・アジャイル開発に関する記述です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/40.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q47/40.png"
         ]
       }
     },
@@ -2259,28 +2259,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/49.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q49/49.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/49.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q49/49.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/49.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q49/49.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/49.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q49/49.png"
           ]
         }
       ],
@@ -2339,7 +2339,7 @@
         "text": "ソフトウェア製品の品質特性は、システム／ソフトウェアの品質面での特徴を8つの特性とそれに付随する副特性として定義したものです。これらの定義された特性は、要件定義や受入れテストにおいてシステム／ソフトウェアの品質を仕様化し、測定し、評価するための一貫した用語として使うことができます。機能適合性システムがニーズを満足する機能を提供する度合い性能効率性使用する資源の量に関係する性能の度合い互換性他のシステムや構成要素の情報を交換することができる度合い使用性利用者が有効性、効率性、満足性をもってシステムを利用することができる度合い信頼性指定の時間・条件下でシステムが機能を実行する度合いセキュリティシステムが情報やデータを保護する度合い保守性システムを修正する際の有効性・効率性の度合い移植性他の環境にシステムを移す際の有効性・効率性の度合い選択肢の記述が、8つの品質特性のどれに当たるかを考えます。\n・他の環境でも動作する性質なので、移植性に関する記述です。\n・指定の時間・条件の下で明示された機能を実行できる性質なので、信頼性に関する記述です。\n・ソフトウェアの修正を簡単（低コスト＝効率的）に行うことができる性質なので、保守性に関する記述です。\n・正しい。ソフトウェアの使用を簡単（低コスト＝効率的）に行うことができる性質なので、使用性に関する記述です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/50.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q50/50.png"
         ]
       }
     },
@@ -2385,7 +2385,7 @@
         "text": "パレート図は、値の大きい順に分析対象の項目を並べた棒グラフと、累積構成比を表す折れ線グラフを組み合わせた複合グラフで、主に複数の分析対象の中から重要な要素を識別するために使用されます。\n\n棒グラフに折れ線グラフを重ねるという記述より、パレート図とわかります。\n・散布図は、縦軸・横軸に2項目の量や大きさ等を対応させて分析対象のデータを打点した図で、2種類のデータの関係性を表すために使用されます。\n・チェックシートは、確認すべき項目を一覧化したものです。ローテクな方法ですが、確認作業を仕組み化することができる優れた方法です。プロジェクト品質マネジメントでも品質の評価に用いることができます。\n・特性要因図は、現れた特性（結果）とそれに影響を及ぼしたと思われる要因の関係を体系的に表わした図です。多数の要素を直接的な原因と間接的な原因に分別したり、真の問題点を明確にしたりするために使用されます。\n・正しい。パレート図は、要素のうち重要なものを識別するために使用されます。プロジェクトの品質管理において使用されるツールのひとつです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/51.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q51/51.png"
         ]
       }
     },
@@ -2607,7 +2607,7 @@
         "text": "コンピュータの記憶装置の特性として揮発性・不揮発性というものがあります。揮発性とは電源供給が絶たれると記憶内容が消えてしまう性質を示し、不揮発性とは逆に電源供給がなくても記憶内容を保持していられる性質を示します。揮発性メモリは高速で一時的な情報の保存に適していますが、不揮発性メモリは永続的なデータの保存に適しています。\n\nコンピュータの記憶装置を揮発性・不揮発性で分類すると次のようになります。揮発性レジスタ、キャッシュメモリ(SRAM)、主記憶(DRAM)不揮発性ROM、補助記憶装置(HDD・SSD)、フラッシュメモリ、光ディスク(CD/DVDなど)、磁気テープ電力供給を断つと記憶内容が失われる、すなわち揮発性であるのは主記憶の記憶媒体である「DRAM」です。DRAMはコンデンサに蓄えた電荷の有無でビット情報を保持します。コンデンサの電荷は時間が経つと失われてしまうため、電源供給が途絶えると情報も失われてしまいます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/56.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q56/56.png"
         ]
       }
     },
@@ -2619,7 +2619,7 @@
         "text": "暗号化方式の特徴について記した表において，表中のa～dに入れる字句の適切な組合せはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/57_1.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q57/57_1.png"
         ]
       },
       "choices": [
@@ -2627,28 +2627,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/57_2.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q57/57_2.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/57_2.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q57/57_2.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/57_2.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q57/57_2.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/57_2.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q57/57_2.png"
           ]
         }
       ],
@@ -2663,7 +2663,7 @@
         "text": "共通鍵暗号方式と公開鍵暗号方式の特徴は次のとおりです。〔abについて〕\n\"鍵の特徴\"より、暗号化鍵と復号鍵が異なる空欄aが「公開鍵暗号方式」、暗号化鍵と復号鍵が同一である空欄bが「共通鍵暗号方式」とわかります。\n\n〔cdについて〕\n公開鍵暗号方式は、共通鍵暗号方式と比較して暗号化と復号に要する計算量が多いため、処理速度は遅くなります。よって、空欄cには「遅い」、空欄dには「速い」がそれぞれ当てはまります。\n\nしたがって適切な組合せは「ウ」となります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/57.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q57/57.png"
         ]
       }
     },
@@ -2763,7 +2763,7 @@
         "text": "関係データベースを構成する要素の関係を表す図において，図中のa～cに入れる字句の適切な組合せはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/60_1.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q60/60_1.png"
         ]
       },
       "choices": [
@@ -2771,28 +2771,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/60_2.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q60/60_2.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/60_2.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q60/60_2.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/60_2.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q60/60_2.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/60_2.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q60/60_2.png"
           ]
         }
       ],
@@ -2807,7 +2807,7 @@
         "text": "関係データベースは、二次元の表形式でデータを管理するデータベースで、現在最も一般的に使用されています。イメージとしては表計算ソフトのワークシートと同じです。\n\n関係データベースが管理する表のうち、1件ずつのデータに相当する\"行\"を「レコード」、データ項目に相当する\"列\"を「フィールド」と呼びます。関係データベースでは、データを複数の関連する表に分割して管理するので、互いに関連付けられた「表(テーブル)」が集まってひとつのデータベースを構成しています。\n\naが表、bがレコード、cがフィールドなので、適切な組合せは「イ」です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/60.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q60/60.png"
         ]
       }
     },
@@ -2853,7 +2853,7 @@
         "text": "cookie(クッキー)は、Webサイトが利用者のコンピュータに任意のデータを保存する仕組みです。Webページにアクセスした際に、WebサーバがWebブラウザに対してデータの保存を指示することで実現されています。保存されたデータは、次回以降同じWebサイトにアクセスする度に、HTTPのリクエストに載せてWebサーバに送信されます。cookieの代表的な使用目的は、会員制サイトにおけるログイン状態の管理、ショッピングサイトのカート、Webページのアクセス解析などにおける利用者の識別です。自動ログインもcookieを用いた仕組みです。他にも利用者ごとの設定情報を記録しておき、次回アクセス時に以前の状態を復元するなどの用途でも使用されます。\n・正しい。cookieは、Webサイトの指示で、利用者のWebブラウザ上にデータを記録する仕組みです。\n・キャッシュの説明です。\n・バナー画像の説明です。\n・トラックバックの説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/61.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q61/61.png"
         ]
       }
     },
@@ -2865,7 +2865,7 @@
         "text": "関数 convert は，整数型の配列を一定のルールで文字列に変換するプログラムである。関数 convert を convert(arrayInput) として呼び出したときの戻り値が\"AABAB\"になる引数 arrayInput の値はどれか。ここで，arrayInput の要素数は1以上とし，配列の要素番号は1から始まる。\n\n〔プログラム〕",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/62.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q62/62.png"
         ]
       },
       "choices": [
@@ -3005,28 +3005,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/65.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q65/65.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/65.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q65/65.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/65.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q65/65.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/65.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q65/65.png"
           ]
         }
       ],
@@ -3041,7 +3041,7 @@
         "text": "機械学習は、訓練データの性質によって「教師あり学習」「教師なし学習」「強化学習」の3つに大別できます（※強化学習を教師なし学習に含めることもあります）。教師あり学習訓練データとして、ラベル(正解)付きデータを使用する学習方法。入力に対する正しい出力の例を与えることで、入力と出力の関係を学習させる教師なし学習訓練データとして、ラベルなしデータを使用する学習方法。クラスタリングなどのためにデータ構造を学習させる強化学習正解データの代わりに、与えられた環境における個々の行動に対して得点や報酬を与える学習方法。一連の行動に対して評価値を与えることで、高い得点を取る、すなわち最良の行動を自律的に学習させる〔abについて〕\n教師あり学習では、正解付きの訓練データを学習させる方法です。分類や回帰分析を目的とする機械学習に向いています。\n\n分類は、分析したいデータが所属するクラス分けを予測することなので空欄aに当てはまります。回帰は、複数の変数間の傾向をもとに予測を行うことなので空欄bに当てはまります。\n\n〔cについて〕\n教師なし学習は、正解なしの訓練データを学習させる方法です。似ているデータ同士にグループ化するクラスタリングや、データ集団の中から一定の規則性を導く主成分分析を目的とする機械学習に向いています。\n\naは分類、bは回帰、cはクラスタリングとなるので、適切な組合せは「ウ」です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/65_1.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q65/65_1.png"
         ]
       }
     },
@@ -3097,7 +3097,7 @@
         "text": "図に示す2台のWebサーバと1台のデータベースサーバから成るWebシステムがある。Webサーバの稼働率はともに0.8とし，データベースサーバの稼働率は0.9とすると，このシステムの小数第3位を四捨五入した稼働率は幾らか。ここで，2台のWebサーバのうち少なくとも1台が稼働していて，かつ，データベースサーバが稼働していれば，システムとしては稼働しているとみなす。また，それぞれのサーバはランダムに故障が起こるものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/67.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q67/67.png"
         ]
       },
       "choices": [
@@ -3133,7 +3133,7 @@
         "text": "2台の機器がともに稼働していないとシステム全体として稼働しない構成を「直列接続」、2台の機器の少なくとも一方が稼働していればシステム全体として稼働する構成を「並列接続」と呼びます。2台の機器（稼働率はr1とr2とします）が直列接続と並列接続となっている場合の稼働率は、それぞれ以下の式で求めます。\n・直列接続　r1×r2\n・並列接続　1－(1－r1)(1－r2)\n※100%を表す1から2台がともに停止している確率を引くという計算です。\n\nこの設問においては2台のWebサーバは並列接続、Webサーバ系とデータベースサーバは直列接続に当たります。\n\nまずは2台のWebサーバを一体として考えたときの稼働率を求めます。個々のWebサーバの稼働率は0.8なので、\n\n　1－(1－0.8)(1－0.8)\n＝1－0.2×0.2\n＝1－0.04＝0.96\n\n2台のWebサーバは稼働率0.96である1台のWebサーバとみなすことができます。それが稼働率0.9のデータベースサーバと直列接続されているので、システム全体としての稼働率は、\n\n　0.96×0.9＝0.864\n（小数第3位四捨五入）0.86\n\nしたがって「ウ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/67_1.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q67/67_1.png"
         ]
       }
     },
@@ -3223,7 +3223,7 @@
         "text": "RAID(Redundant Arrays of Independent Disks：レイド)は、複数台の安価な磁気ディスクを組み合わせ、1つの仮想的なディスクとして扱うことで信頼性や性能を向上させる技術です。\n\nRAIDにはいくつかのレベルがありますが、このうちRAID5は、データ本体とともにパリティという誤り訂正符号を複数のディスクに分散して書き込む方式で、耐障害性、アクセスの高速化、大容量化のすべてを得ることができます。本問では、4台のHDDを使い、そのうち1台分の容量をパリティに使用するとあるため、実効データ容量は「HDD3台分」ということになります。HDD1台あたりの容量は1Tバイトなので、\n\n　1Tバイト×3台＝3Tバイト\n\nしたがって「イ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/69.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q69/69.png"
         ]
       }
     },
@@ -3313,7 +3313,7 @@
         "text": "ドメイン名は、インターネットにおいて、通信相手となるWebサイトやサーバを識別するための文字列です。実際の通信はIPアドレスによって行われますが、単なる数字の羅列であるIPアドレスは人間には覚えにくいため、人が理解しやすい文字列で表したものです。○○.comや■■.jpなどがドメイン名に当たります。したがって「イ」が正解です。\n・プロトコルの説明です。\n・正しい。ドメイン名の説明です。\n・ポート番号の説明です。\n・メールアドレスのユーザー名の説明です。メールアドレスは、@より前はユーザー名(アカウント名)、@より後ろはドメイン名という構成になっています。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/71.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q71/71.png"
         ]
       }
     },
@@ -3477,28 +3477,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/75.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q75/75.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/75.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q75/75.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/75.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q75/75.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/75.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q75/75.png"
           ]
         }
       ],
@@ -3693,7 +3693,7 @@
         "text": "・DNSサーバは、ドメイン名・ホスト名とIPアドレスを結びつけて相互変換するためのサーバです。\n・NTPサーバは、ネットワークに接続された端末のシステム時計を正しい時刻(協定世界時:UTC)に合わせるためのサーバです。\n・ストリーミングサーバは、インターネットを介して動画や音声などのメディアコンテンツをリアルタイムで配信するためのサーバです。\n・正しい。プロキシサーバは、内部ネットワーク内の端末からの要求に応じてインターネットへのアクセスを中継する装置です。プロキシ(proxy)には「代理」という意味があります。\nプロキシサーバを設置すると、キャッシュ機能によるレスポンス向上、認証によるセキュリティ、内部ネットワークの秘匿化などの効果を期待できます。単にプロキシと言ったり、リバースプロキシと区別するためフォワードプロキシとも呼ばれます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/79.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q79/79.png"
         ]
       }
     },
@@ -3757,7 +3757,7 @@
         "text": "一つの表で管理されていた受注データを，受注に関する情報と商品に関する情報に分割して，正規化を行った上で関係データベースの表で管理する。正規化を行った結果の表の組合せとして，最も適切なものはどれか。ここで，同一商品で単価が異なるときは商品番号も異なるものとする。また，発注者名には同姓同名はいないものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/81.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q81/81.png"
         ]
       },
       "choices": [
@@ -3765,28 +3765,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/81a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q81/81a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/81i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q81/81i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/81u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q81/81u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/81e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q81/81e.png"
           ]
         }
       ],
@@ -3801,7 +3801,7 @@
         "text": "データベースの正規化は、データベースを構築する際にデータの重複や矛盾を排除する目的で、データ同士の関連を保ったまま複数の表に分解していく作業です。正規化は次のように3段階の手順を踏んで行います。第１正規化属性値に含まれる繰り返し項目をなくす第２正規化主キーが複数の項目の組合せから成る複合主キーのときに、主キーの一部の項目によって一意に決まる項目を別表に移す第３正規化主キー以外の項目によって一意に決まる項目を別表に移す【第１正規化】\n受注データ表は、既にすべての項目の値が単一値なので第1正規形の条件を満たしています。\n\n【第２正規化】\n受注データの主キーは、各行を一意に特定できる属性である\"受注番号\"です。主キーが単一属性の場合、主キーの一部というものが存在しないため、すでに第2正規形になっています。\n\n【第３正規化】\n受注データ表の項目を見ると、非主キー列である\"商品番号\"により\"商品名\"が一意に決まります。また設問にある「同一商品で単価が異なるときは商品番号も異なる」を逆から考えれば、\"商品番号\"が同じ商品は\"単価\"が同じということです。このため、\"商品番号\"により\"単価\"が一意に決まることになります。したがって、この2つの関係を別表に移します。このように分離していくと、正規化後の会員表の項目は以下のようになります。\n\n　{受注番号、発注者名、商品番号、個数}\n　{商品番号、商品名、単価}\n\nしたがって「エ」が正解です。\n・\"個数\"を別表に移していること、2つの表に共通の属性がなく関連付けが行われていないことの2点で不適切です。\n・\"個数\"は商品番号によって一意に決まらないので、別表に移してはいけません。\n・\"単価\"を別表に移していないので不適切です。\n・正しい。適切な正規化をした表です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/81_1.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q81/81_1.png"
         ]
       }
     },
@@ -3945,7 +3945,7 @@
         "text": "関数 binaryToInteger は，1桁以上の符号なし2進数を文字列で表した値を引数 binaryStr で受け取り，その値を整数に変換した結果を戻り値とする。例えば，引数として\"100\"を受け取ると，4を返す。プログラム中のa，bに入れる字句の適切な組合せはどれか。\n\n〔プログラム〕",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/85_1.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q85/85_1.png"
         ]
       },
       "choices": [
@@ -3953,28 +3953,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/85_2.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q85/85_2.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/85_2.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q85/85_2.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/85_2.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q85/85_2.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/06_haru/img/85_2.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q85/85_2.png"
           ]
         }
       ],
@@ -3989,7 +3989,7 @@
         "text": "2進数の各桁と10進数は下図のように対応しています。関数のfor文内では、引数 binaryStr の末尾から1文字ずつ順番に処理を行っていくことがわかります。設問で例として挙げられている\"100\"であれば、\n・i=1　末尾からi番目は0 ⇒ 20×0＝0\n・i=2　末尾からi番目は0 ⇒ 21×0＝0\n・i=3　末尾からi番目は1 ⇒ 22×1＝4\n\n上記の合計である4を返すという流れになります。つまり、20×0＋21×0＋22×1 を行うプログラムになっていれば良いわけです。\n\n〔aについて〕\n引数の文字列を2進数とみたとき、末尾から1桁目は0（＝20)、同2桁目は2（＝21)、同3桁目は4（＝22）となります。末尾からの位置と指数には「末尾からの位置－1＝指数」の関係があるため、指数部は i-1 と表すことができます。よって、空欄aには2の(i－1)乗が当てはまります。\n\n〔bについて〕\n式中の×と＋の違いだけです。戻り値である integerNum は、各桁の10進表現を合計したものであるため＋が当てはまります。\n\nしたがって適切な組合せは「エ」です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/85.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q85/85.png"
         ]
       }
     },
@@ -4309,7 +4309,7 @@
         "text": "関係データベースで管理している\"従業員\"表から，氏名が'%葉_'に該当する従業員を抽出した。抽出された従業員は何名か。ここで，\"_\"は任意の1文字を表し，“%”は0文字以上の任意の文字列を表すものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/93.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q93/93.png"
         ]
       },
       "choices": [
@@ -4438,7 +4438,7 @@
         "text": "ニューラルネットワークは、人間や動物の脳神経網の特性を計算機上のシミュレーションによって表現することを目指した数学モデルです。人工知能やディープラーニングなどの機械学習に用いられています。\n\n脳内は神経細胞であるニューロンのネットワークにより構成されていますが、ニューロンは他のニューロンから神経伝達物質を受け取り、その合計値がしきい値を超えた場合に「発火」して、次のニューロンに情報伝達を行うメカニズムになっています。ニューラルネットワークでは、個々のニューロンをパーセプトロンというアルゴリズムでモデル化し、ネットワーク化することで脳神経網をシミュレーションしています。ニューラルネットワークを多層化したものがディープラーニングネットワークです。\n\nしたがって「イ」が正解です。\n・ソーシャルネットワークは、人間同士がつながることを目的としてコンピュータネットワーク上に構築された社会的ネットワークです。SNSやLINE、YouTube、広い意味ではQ&Aサイト、電子掲示板なども含まれます。\n・正しい。ニューラルネットワークは、人間や動物の脳神経をコンピュータ上でモデル化したものです。\n・フィージビリティスタディは、新規ビジネスの立上げ前に市場調査、技術面、資金面、動向調査などを実施し、そのビジネスの実現可能性を事前に調査・評価する作業です。\n・フォールトトレラントは、機器やシステムの一部に障害やエラーが発生しても、予備系への切替えやエラー補正などで必要な機能を提供し続けることができる能力です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/95.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q95/95.png"
         ]
       }
     },
@@ -4484,7 +4484,7 @@
         "text": "電子メールの送り先を指定するTo、Cc、Bccには以下の違いがあります。Toメールの宛先を指定する欄。複数のメールアドレスを「,(コンマ)」又は「;(セミコロン)」で区切って指定することで複数のメールアドレスを宛先とすることもできる。Cc（Carbon Copy）Toで指定した送信先以外に、メールのコピーを送信する相手を指定する欄。\nこの指定では、Toの相手及びCcで指定した相手に、すべての宛先メールアドレスが公開される。すなわち送信者、Toの相手、Ccの相手の3者間ではメールアドレスが全員に知られることになる。Bcc（Blind Carbon Copy）Toで指定した送信先以外に、メールのコピーを送信する相手を指定する欄。\nCcと異なり、ここで指定したメールアドレスは他の送信相手には通知されないため、To又はCcの相手に宛先メールアドレスを知られたくない場合に使用する。\"To\"で送られたBさんと\"Cc\"で送られたCさんには、\"To\"及び\"Cc\"のメールアドレスは伝わりますが、\"Bcc\"に指定したDさん・Eさんのメールアドレスは伝わりません。図解すると次のとおりです。\n・不適切。Dさんは\"Bcc\"に入っているので、Dさん以外の人にはメールアドレスは通知されません。\n・適切。Cさんは\"Cc\"に入っているので、メールアドレスは全員に通知されます。\n・不適切。Eさんは\"Bcc\"に入っているので、Eさん以外の人にはメールアドレスは通知されません。\n\n適切なものは「(2)」だけなので「ウ」が正解となります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/96.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q96/96.png"
         ]
       }
     },
@@ -4584,7 +4584,7 @@
         "text": "ランサムウェアは、身代金を意味する ransom とソフトウェアの語尾に付ける ware を合わせた造語で、PC内のデータファイルを勝手に暗号化したり、PCの操作ができないようにロックしたりして、データアクセスに制限をかけた後、元に戻すための復元プログラムの購入を迫るマルウェアです。コンピュータのデータを人質にとり、金銭を要求する動作から「身代金要求型ウイルス」とも呼ばれます。\n\n最近では、不正取得した機密データを漏えいさせると脅して、金銭を要求するランサムウェア（二重脅迫型）も出現してきています。\n\n暗号化・金銭要求などのキーワードより「イ」がランサムウェアに関する記述と判断できます。\n・ルートキットの説明です。\n・正しい。ランサムウェアの説明です。\n・MITB(Man-in-the-Browser)の説明です。\n・ワームの説明です。ランサムウェアの中にはワームのように自己拡散能力を有するタイプもありますが、最も適切という観点からは誤りとなります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/06_haru/img/98.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/06_haru/q98/98.png"
         ]
       }
     },

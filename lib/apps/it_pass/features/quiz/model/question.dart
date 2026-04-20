@@ -60,9 +60,13 @@ class Question {
     required this.system,
     required this.major,
     required this.minor,
+    this.examDisplayName = '',
   });
 
-  factory Question.fromJson(Map<String, dynamic> json) {
+  factory Question.fromJson(
+    Map<String, dynamic> json, {
+    String examDisplayName = '',
+  }) {
     final choicesJson = json['choices'] as List<dynamic>;
     final explanation = json['explanation'] as Map<String, dynamic>? ?? {};
     final category = json['category'] as Map<String, dynamic>? ?? {};
@@ -80,6 +84,7 @@ class Question {
       system: category['system'] as String? ?? '',
       major: category['major'] as String? ?? '',
       minor: category['minor'] as String? ?? '',
+      examDisplayName: examDisplayName,
     );
   }
 
@@ -94,4 +99,5 @@ class Question {
   final String system;
   final String major;
   final String minor;
+  final String examDisplayName;
 }

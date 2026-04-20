@@ -14,7 +14,7 @@
         "text": "表はコンピュータa～dのネットワーク接続(インターネットなどのオープンネットワークに接続，又はローカルエリアネットワークに接続)の有無及びアクセス制御機能の有無を示したものである。コンピュータa～dのうち，不正アクセス禁止法における不正アクセス行為の対象になり得るものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/01.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q1/01.png"
         ]
       },
       "choices": [
@@ -94,7 +94,7 @@
         "text": "ポジショニングは、市場における自社製品の位置付けを明確にし、どの立場で他社製品と競争するかを決定することです。顧客に対して独自性をアピールしたり、他社製品との差別化イメージを植え付けたりする活動などがあります。ポジショニングを決定する上で役に立つ手法として「ポジショニングマップ」があります。\n\nしたがって適切な用語は「ウ」です。\n\nなお、マーケティング戦略における、①セグメンテーション→②ターゲティング→③ポジショニングの一連の活動を、それぞれの頭文字をとってSTPといいます。\n・インストアプロモーションは、店頭で行う販売促進活動全般を指す言葉です。店内広告や特売、店内イベント、サンプル配布などのように売り場のセールス力を高める施策がこれに該当します。\n・ターゲティングとは、複数の候補の中から競争優位を得やすい自社が参入すべき市場セグメントを選定することです。\n・正しい。\n・リベートは、自社製品の販売を促進するために、商品の取引高に応じてメーカーから小売業者に支払われる代金の割戻しや販売手数料のことです。キックバックとも呼ばれます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/02.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q2/02.png"
         ]
       }
     },
@@ -192,7 +192,7 @@
           "正しい。フレックスタイム制では労働者ごとに勤務時間が異なるため勤怠管理が複雑になりがちです。上司や組織は、個々の労働者の総労働時間が適当量になるように管理する必要があります。"
         ],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/04.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q4/04.png"
         ]
       }
     },
@@ -204,7 +204,7 @@
         "text": "機械XとYを使用する作業A，B，Cがあり，いずれの作業も機械X，機械Yの順に使用する必要がある。各作業における機械XとYの使用時間が表のとおりであるとき，三つの作業を完了するための総所要時間が最小となる作業の順番はどれか。ここで，図のように機械XとYは並行して使用できるが，それぞれの機械は二つ以上の作業を同時に行うことはできないものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/05.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q5/05.png"
         ]
       },
       "choices": [
@@ -240,10 +240,10 @@
         "text": "設問の条件に沿って各順番ごとの総所要時間を求めます。\n・\n・\n・\n・\n\n総所要時間が最小となる作業の順番は「C→A→B」です。よって「ウ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/05a.png",
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/05i.png",
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/05u.png",
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/05e.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q5/05a.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q5/05i.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q5/05u.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q5/05e.png"
         ]
       }
     },
@@ -255,7 +255,7 @@
         "text": "ある商品の販売計画及び販売実績は表のとおりとなった。このとき，利益の計画に対する実績の比率は何%か。ここで，比率の小数点以下は切り捨てて求めるものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/06.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q6/06.png"
         ]
       },
       "choices": [
@@ -307,28 +307,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_aki/img/07.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q7/07.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_aki/img/07.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q7/07.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_aki/img/07.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q7/07.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_aki/img/07.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q7/07.png"
           ]
         }
       ],
@@ -431,7 +431,7 @@
         "text": "クラウドコンピューティングは、自社の資源を使う代わりに、インターネット上のコンピュータ資源やサービスを利用して目的のコンピュータ処理を行う形態です。従来のシステムは企業内でハードウェア・ソフトウェア・データを管理していたのに対し、クラウドコンピューティングではそれらがサービスを提供する側に設置されているため、システムの調達や維持管理に要するコストの軽減を図れる利点があります。\n\nしたがって「イ」が適切な記述です。\n・クラウドコンピューティングはプロトコルではありません。インターネット技術の基盤となっているプロトコルといえばTCP/IPになります。\n・正しい。クラウドコンピューティングの説明です。\n・アジャイル開発の説明です。\n・EDI(Electronic Data Interchange)の説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/09.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q9/09.png"
         ]
       }
     },
@@ -661,7 +661,7 @@
         "text": "ITパスポート試験で出題され得るISO規格としては次のようなものがあります。選択肢のうち、ISOによって規格化されているのは情報セキュリティマネジメントシステムのみです。したがって「イ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/14.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q14/14.png"
         ]
       }
     },
@@ -673,7 +673,7 @@
         "text": "RFPに基づいて提出された提案書を評価するための表を作成した。最も評価点が高い会社はどれか。ここで，◎は4点，○は3点，△は2点，×は1点の評価点を表す。また，評価点は，金額，内容，実績の各値に重み付けしたものを合算して算出するものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/15.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q15/15.png"
         ]
       },
       "choices": [
@@ -851,7 +851,7 @@
         "text": "複数の店舗をもつ小売業A社の業績推移を示す表から読み取れるものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/19.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q19/19.png"
         ]
       },
       "choices": [
@@ -887,7 +887,7 @@
         "text": "各年の1店舗当たりの売上高と営業利益率を算出したものが次の表です。\n※1店舗当たりの売上高＝売上高÷店舗数\n　営業利益率(%)＝営業利益÷売上高×100これを見ると、1店舗当たりの売上高、営業利益率ともに増加していることがわかります。したがって適切な記述は「ウ」です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/19a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q19/19a.png"
         ]
       }
     },
@@ -977,7 +977,7 @@
         "text": "リスクアセスメントは、業務や事業場に悪影響を与える潜在的な要因(リスク)を特定し、リスクを見積り、リスク基準との比較を行い評価する一連の手順です。JIS Q 31000(リスクマネジメント－原則及び指針)では、リスクアセスメントを「リスク特定，リスク分析及びリスク評価のプロセス全体」と定義しています。「新商品Yの発売が遅れ、業績に影響を与える可能性」は経営上のリスクに該当します。設問の事例では、リスクに対する分析と評価に取り組んでいるのでリスクアセスメントの活動になります。したがって「エ」が適切です。\n・ABC分析は、パレート図を使って分析する要素・項目群を大きい順に並べ、上位70%を占める要素群をA、70%～90%の要素群をB、それ以外の要素群をCとしてグルーピングすることで重点的に管理すべきグループを明らかにする手法です。\n・SWOT分析は、企業の置かれている経営環境を分析し、今後の戦略立案に活かす手法のひとつです。企業内外の要因を、S(Strength：強み)、W(Weakness：弱み・弱点)、O(Opportunity：機会)、T(Threat：脅威)の4つに分類して、経営環境を客観的に分析します。\n・環境アセスメント(環境影響評価)は、主として大規模開発事業等による環境への影響を事前に調査することによって、予測、評価を行う手続きのことです。\n・正しい。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/21.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q21/21.png"
         ]
       }
     },
@@ -1199,7 +1199,7 @@
         "text": "PPM(Products Portfolio Management)は、縦軸に市場成長率、横軸に市場占有率をとったマトリックス図を4つの象限に区分し、市場における製品(または事業やサービス)の位置付けを2つの観点で分類して経営資源の配分を検討する手法です。設問には「将来性と競争力によって製品をグループ分け」とあります。将来性は市場成長率、競争力は市場シェアと言い換えることができるのでPPM分析が適切であるとわかります。したがって「ウ」が正解です。\n・クラスタ分析は、観測データを類似性によって集団や群に分類し、その特徴となる要因を分析する手法です。複数の異なる性質のものが混ざり合っている対象の中から類似したものを集めてグルーピングし、個々の分析対象を群に分類します。\n・RFM分析は、顧客の購買行動のうち、Recency(最終購買日)、Frequency(購買頻度)、Monetary(累計購買金額)という3点に注目して顧客分析を行う手法です。顧客1人に対してそれぞれの要素を5～7段階でランク付けし、企業にとって価値の高い顧客層と見込みが無い顧客層というように顧客の性質ごとにグルーピングを行うことで、各グループに応じたマーケティング活動を展開することが可能になります。\n・正しい。\n・主成分分析は、複数の要因が相互に関連している場合に、その群の特性を決定づけている主な要因を合成変数として求める手法です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/26.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q26/26.png"
         ]
       }
     },
@@ -1211,7 +1211,7 @@
         "text": "ある商品を表の条件で販売したとき，損益分岐点売上高は何円か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/27.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q27/27.png"
         ]
       },
       "choices": [
@@ -1431,7 +1431,7 @@
           "誤り。技術の進展を時系列で予測したものなので、時間軸についても考慮されています。"
         ],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/31.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q31/31.png"
         ]
       }
     },
@@ -1793,9 +1793,9 @@
         "text": "リバースエンジニアリングは、既存ソフトウェアに対して、動作を解析するなどして製品の構造を分析し、そこから製造方法や動作原理、設計図、ソースコードなどの仕様を導き出す技術です。自社製品の保守及びセキュリティ強化などの目的で実施されるほか、他社製品の技術仕様を明らかにする目的でも行われます。\n\nしたがって「エ」が適切です。\n・ウォーターフォールモデルは、開発プロジェクトを時系列に、「要求定義」「外部設計（概要設計）」「内部設計」「プログラム設計」「開発（プログラミング）」「テスト」「運用」などの作業工程（局面、フェーズ）に分割して開発を進める開発モデルです。\n・スパイラルモデルは、開発の初期段階でシステムを複数の独立性の高いサブシステムに分割し、そのサブシステムごとに設計～テストまでの一連のサイクルを繰り返しながらシステムを構築していく開発モデルです。\n・プロトタイピングは、開発の初期段階から試作品（プロトタイプ）を作り、利用者の確認を得ながら開発を進めていく手法です。試作品を作ることでシステムについての認識の相違を早い段階で発見できるため、下流工程での手戻りの可能性を少なくできます。\n・正しい。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/39a.png",
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/39i.png",
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/39u.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q39/39a.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q39/39i.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q39/39u.png"
         ]
       }
     },
@@ -1857,28 +1857,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_aki/img/41.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q41/41.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_aki/img/41.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q41/41.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_aki/img/41.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q41/41.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_aki/img/41.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q41/41.png"
           ]
         }
       ],
@@ -1997,28 +1997,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_aki/img/44.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q44/44.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_aki/img/44.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q44/44.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_aki/img/44.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q44/44.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_aki/img/44.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q44/44.png"
           ]
         }
       ],
@@ -2253,7 +2253,7 @@
         "text": "インシデント管理は、システムの異常終了や構成機器の障害発生といったサービスの中断やサービス品質の低下につながるような事象が発生した時に、サービスの中断時間を最小限に抑えて速やかに回復することを目指すプロセスです。インシデントの解決とサービスの速やかな復旧を目的とします。\n\nしたがって「ウ」が適切です。\n・リリース及び展開管理の目的です。\n・変更管理の目的です。\n・正しい。インシデント管理の目的です。\n・構成管理の目的です。\n\nなお、JIS Q 20000-1(サービスマネジメントシステム要求事項)では、サービスマネジメントプロセスを次のように分類しています。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/49.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q49/49.png"
         ]
       }
     },
@@ -2299,9 +2299,9 @@
         "text": "ブレーンストーミングは、多様なアイディアを幅広く集めるために行われるグループ討議の方法で、問題の解決策や新しいアイディアの考案を試みる際に行われます。通常の討議とは少し変わっており、参加者が遠慮せずにいろいろな意見を発言できるように、批判の禁止・自由奔放・質より量・結合/便乗歓迎というルールに則って行われます。\n\nプロジェクトリスクマネジメントのリスク特定では発見・認識したリスクをリスク一覧表(リスク登録簿)として文書化しますが、この際、多くのリスクを見つけるための情報収集技法として、ブレーンストーミングが使用されることがあります(PMBOKにも記載されています)。\n\nしたがって「エ」が適切です。\n・リスクコントロールの方法である管理図の説明です。\n・リスク分析の方法です。デシジョンツリー分析は、意思決定の各段階の選択肢を樹木構造で示した図に基づいて、最適な結果を得るための経路を分析する手法です。数値をもとに最適な意思決定を探るため定量的リスク分析で用いられます。\n・リスク分析の方法です。発生確率・影響度マトリクスは、各リスクの発生確率と影響度の度合いをそれぞれ「高」「中」「低」などの定性的な言葉、または0.1～0.9までの一般的な尺度で表し、それらの組合せで表現されるマトリクス上に各リスクを分類してリスクレベルを判定する手法です。\n・正しい。リスク特定で使用される方法です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/50a.png",
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/50i.png",
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/50u.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q50/50a.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q50/50i.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q50/50u.png"
         ]
       }
     },
@@ -2479,7 +2479,7 @@
         "text": "WBS(Work Breakdown Structure)は、プロジェクト目標を達成し、必要な成果物を過不足なく作成するために、プロジェクトチームが実行すべき作業を、成果物を主体に階層的に要素分解したものです。\nWBSの作成には、作業の漏れや抜けを防ぎ、プロジェクトの範囲を明確にすると同時に、作業単位ごとに内容・日程・目標を設定することでコントロールをしやすくする目的があります。\n\nしたがって「エ」が正解です。\n・Customer Relationship Managementの略。顧客との長期的な良い関係を築くことを重視し、顧客の満足度と利便性を高めることで、それぞれの顧客の顧客生涯価値を最大化することを目標とする経営手法です。\n・Enterprise Resource Planningの略。企業資源計画とも呼ばれ、企業全体の経営資源を有効かつ統合的に計画・管理し、経営の効率化を図るための手法です。\n・Products Portfolio Managementの略。縦軸に市場成長率、横軸に市場占有率をとったマトリックス図を4つの象限に区分し、市場における製品(または事業やサービス)の位置付けを2つの観点で分類して資源配分を検討する手法です。\n・正しい。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/54.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q54/54.png"
         ]
       }
     },
@@ -2657,10 +2657,10 @@
         "text": "バスタブ曲線は、機械や装置の時間経過に伴う故障率の変化を表示した曲線のことです。故障率曲線とも呼ばれます。\n一般的な機械や装置は、初期故障期間では故障率は高くなり、その後の偶発故障期間での故障率は低く、製品寿命に近づく摩耗故障期間では故障率は高くなります。縦軸に故障率、横軸に時間をとってグラフにすると、曲線がバスタブ(浴槽)のようになることからこう呼ばれています。したがって「ウ」が正解です。\n・ガントチャートは、縦軸に作業項目・横軸に時間をとり、作業に必要な期間を横棒の長さで表記する図法です。作業項目同士の日程的な重なりがわかりやすいため日程計画の策定に使用されたり、計画と実績を並べて表記することで進捗度を管理する方法としても用いられます。\n・信頼度成長曲線は、横軸に時間の経過、縦軸に累積バグ発見数をとったグラフにおいて、グラフ上の点を繋いだときに現れる曲線のことです。ソフトウェア品質を図る際の尺度として使用されます。\n・正しい。\n・レーダーチャートは、複数項目の基準値に対する比率をプロットし、各点を線で結んだ形状によって全体のバランスを比較するのに適した図です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/58u.png",
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/58a.png",
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/58i.png",
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/58e.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q58/58u.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q58/58a.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q58/58i.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q58/58e.png"
         ]
       }
     },
@@ -2706,7 +2706,7 @@
         "text": "マルチスレッドとは、OSから見た実行単位であるプロセスを複数の処理単位(スレッド)に細分化し、並行処理を行う仕組みです。処理を複数のスレッドに分けることでアプリケーションの処理効率が上がります。したがって「ウ」が適切な説明です。\n・マルチコアプロセッサの説明です。\n・仮想記憶の説明です。\n・正しい。マルチスレッドの説明です。\n・ストライピングの説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/59.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q59/59.png"
         ]
       }
     },
@@ -2752,7 +2752,7 @@
         "text": "MITB(Man In The Browser)攻撃は、ユーザーPC内のマルウェアなどによりWebブラウザとWebサーバ間の送受信をブラウザベースで盗聴・改ざんする攻撃です。利用者とWebサーバの間のブラウザを乗っ取るのでMITB(Man In The Browser)と呼ばれます。\nMITBの被害としては、インターネットバンキングへのログインを検知して、セッションを乗っ取り、振込先口座番号を差し替えることで預金を不正送金するなどの例があります。同じく送受信を改ざんするMan-in-the-Middle攻撃(中間者攻撃)と異なりクライアント内で書換えが行われるため、Webサーバ側で不正処理を拒否することが難しいという特徴があります。\n・正しい。MITB(Man In The Browser)攻撃はブラウザを乗っ取り、通信データを書き換える攻撃です。\n・SQLインジェクションは、Webアプリケーションの入力データとしてデータベースへの命令文を構成する文字列を与えることで、Webアプリケーションが想定しないSQL文を意図的に実行させ、データベースを不正操作する攻撃です。\n・ソーシャルエンジニアリングは、情報通信技術の方法を用いるのではなく、人のミスや心理的な隙に付け込むことでパスワードなどの秘密情報を不正に取得する方法の総称です。\n・ブルートフォース攻撃は、特定の文字数および文字種で設定される可能性のある組合せのすべてを試すことで、不正ログインや暗号化鍵の特定を試みる攻撃手法です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/60.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q60/60.png"
         ]
       }
     },
@@ -2930,7 +2930,7 @@
         "text": "プロキシサーバは、内部ネットワーク内の端末からの要求に応じてインターネットへのアクセスを中継する装置です。単にプロキシともいいます。プロキシサーバを設置すると、キャッシュ機能によるレスポンス向上、認証によるセキュリティ、内部ネットワークの秘匿化などの効果を期待できます。\n\nしたがって「イ」が適切です。\n・DNS(Domain Name System)サーバの役割です。\n・正しい。プロキシサーバの役割です。\n・DHCP(Dynamic Host Configuration Protocol)サーバの役割です。\n・NAT(Network Address Translation)の役割です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/64.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q64/64.png"
         ]
       }
     },
@@ -3108,7 +3108,7 @@
         "text": "リスクアセスメントは、業務や事業場に悪影響を与える潜在的な要因(リスク)を特定し、リスクを見積り、リスク基準との比較を行い評価する一連の活動です。JIS Q 31000(リスクマネジメント－原則及び指針)では、リスクアセスメントを「リスク特定，リスク分析及びリスク評価のプロセス全体」と定義しています。\n\nしたがって「イ」が適切な説明です。\n・是正処置の説明です。\n・正しい。リスクアセスメントの説明です。\n・認証の説明です。\n・ITの導入効果測定法の説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/68.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q68/68.png"
         ]
       }
     },
@@ -3154,7 +3154,7 @@
         "text": "・シングルサインオンは、許可されている複数のサーバやアプリケーションなどを利用できる方式です。記述はワンタイムパスワードの説明です。\n・ワンタイムパスワードは、一度しか使えないパスワードを用いて認証する方式です。記述はシングルサインオンの説明です。\n・正しい。マトリクス認証は、認証ごとにランダムに生成されるマトリクス表と利用者の記憶している位置・順序情報をもとに生成されるワンタイムパスワードで認証を行う方式です。マトリクス表は認証ごとに異なるので、盗聴によりパスワードが漏えいしても再利用されることはありません。ただし、盗み見等の行為により位置・順序情報を知られてしまうと不正アクセスを受ける可能性があります。マトリクス認証は、多要素認証の1つとして他の認証方式と併用されることもあります。\n・チャレンジレスポンス方式は、通信経路上に固定パスワードを流さずに、チャレンジコードとレスポンスコードのやり取りによって認証を行う方式です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/69.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q69/69.png"
         ]
       }
     },
@@ -3332,7 +3332,7 @@
         "text": "外部キーは、関係データベースにおいて他の表を参照するために設定される列です。正規化の手順で表を分離する際に外部キーを設定し、表同士を関連付けます。これによりデータ更新時や結合演算の際の整合性を保ちます。\nなお、情報処理技術者試験では外部キー属性は破線の下線で表すことが多いです。\n・一意性制約とは、列や列のグループに格納される値が表内のすべての行で一意となることを課す制約で主キー(細かく言えば候補キー)がもつ特性です。外部キーと参照先の表の間に課される制約は参照制約です。\n・重複する値を設定することができます。解説の図の\"取引先\"列にも値\"111\"が重複して設定されています。\n・表内に複数の外部キーを設定することもできます。解説の図でも複数の外部キーが設定されています。\n・正しい。複合主キーを設定可能であるのと同様に、2つ以上の属性をまとめた複合外部キーも設定可能です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/73.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q73/73.png"
         ]
       }
     },
@@ -3378,7 +3378,7 @@
         "text": "オンラインストレージは、ユーザーが自由に読み書きできるサーバのディスクスペースをインターネット経由で貸し出すサービスです。フラッシュメモリ等のリムーバブルメディアの代替、バックアップ、グループ内での共有スペースなどの様々な目的で利用できます。無料・有料、個人向け・ビジネス向けなど多様なサービスがありますが、無料のものでも数百MBから数十GBが提供されるサービスもあります。\n2018年現在、利用者が多いオンラインストレージサービスとして\"Dropbox\"、\"Microsoft OneDrive\"、\"Googleドライブ\"などがあります。オンラインストレージ上にバックアップを保存するようにすれば災害対策にもなります。また、必要なデータに場所を問わずアクセスできるメリットもあります。\n・VPN(Virtual Private Network)の説明です。\n・正しい。オンラインストレージの説明です。\n・オンラインソフトの説明です。\n・オンラインゲームの説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/74.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q74/74.png"
         ]
       }
     },
@@ -3484,28 +3484,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_aki/img/77.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q77/77.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_aki/img/77.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q77/77.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_aki/img/77.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q77/77.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_aki/img/77.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q77/77.png"
           ]
         }
       ],
@@ -3618,8 +3618,8 @@
         "text": "論理積(AND)とは2つの入力に対して次のような出力を返す論理演算です。結果を検証するために、8進数のデータ X に仮値の\"10101010\"と\"11001100\"を設定して、\"00001111\"との論理積(AND)をとった結果を見てみます。2つの演算結果を見ると、上位4ビットが0になり、下位4ビットには X のビット列がそのまま残っていることがわかります。したがって「ウ」の説明が適切です。\n\n上記の例を見てもわかるように、あるビット列に対して論理積演算を行うと、マスクビット列(設問でいえば 00001111)の\"0\"の部分は必ず\"0\"になり、\"1\"の部分は元のビット列がそのまま出力されることになります。この特性を活かし、論理積演算はあるビット列から特定位置のビット列を取り出す際に使用されます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/79_1.png",
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/79_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q79/79_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q79/79_2.png"
         ]
       }
     },
@@ -3631,7 +3631,7 @@
         "text": "セル D2 と E2 に設定した2種類の税率で，商品Aと商品Bの税込み価格を計算する。セル D4 に入力する正しい計算式は $B4＊(1.0＋D$2) であるが，誤って $B4＊(1.0＋$D$2) と入力した。セル D4 に入力した計算式を，セル D5，E4 及び E5 に複写したとき，セル E5 に表示される数値はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/80.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q80/80.png"
         ]
       },
       "choices": [
@@ -3667,7 +3667,7 @@
         "text": "「$B4＊(1.0＋D$2)」と「$B4＊(1.0＋$D$2)」の違いはD列の参照方法($の有無)です。誤った計算式の方はD列が絶対参照になっています。絶対参照になっていると計算式を複写しても参照先が固定されるので、計算式の複写結果は次のようになります。複写後のセル E5 に入力されている計算式は「B5＊(1.0＋D2)」になります。セル B5 の値は600、セル D2 の値は0.05ですので、セル E5 に表示される数値は、\n\n　600×(1.0＋0.05)\n＝600×1.05\n＝630\n\nしたがって「ウ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/80a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q80/80a.png"
         ]
       }
     },
@@ -3757,7 +3757,7 @@
         "text": "機密性、完全性、可用性の3つは情報セキュリティマネジメントにおいて維持するべきとされている要素です。機密性（Confidentiality）許可された正規のユーザーだけが情報にアクセスできる特性を示す完全性（Integrity）情報が完全(正確性・一貫性・網羅性等がある状態)で、改ざんや破壊をされていない特性を示す可用性（Availability）ユーザーが必要な時に必要なだけシステムやサービスを利用可能である特性を示すそれぞれの取組みによって、どの要素が向上するかを考えます。\n・デュプレックスシステムとは、主系と待機系からなる2系列の処理システム構成です。主系の障害発生時には、主系で行っていた処理を待機系に引き継ぐため障害が発生してもシステムの稼働を続けられます。したがって可用性の向上策になります。\n・稼働率は可用性の評価指標です。稼働率が向上すると可用性も向上します。\n・認証やアクセス制御は機密性の向上策です。\n・正しい。改ざん防止なので完全性の向上策です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/82.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q82/82.png"
         ]
       }
     },
@@ -3803,9 +3803,9 @@
         "text": "SIMカードは、端末に割り当てられた電話番号を特定するためのID番号(IMSI)が記録された、携帯やスマートフォンが通信するために必要なICカードです。SIMカードを差し替えることで、電話番号を他の端末に移したり、別の通信キャリアのサービスを利用したりすることができます。SIMは、Subscriber Identity Moduleの略です。\n\nしたがって「イ」が正解です。\n・カード型トークンの説明です。\n・正しい。SIMカードの説明です。\n・SDカードの説明です。\n・B-CASカードの説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/83.png",
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/83u.png",
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/83e.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q83/83.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q83/83u.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q83/83e.png"
         ]
       }
     },
@@ -3861,7 +3861,7 @@
         "text": "関係データベースで管理している\"担当社員\"表，\"地区\"表及び\"顧客\"表を結合して，A表を得た。結合に用いた\"顧客\"表はどれか。ここで，下線のうち実線は主キーを，破線は外部キーを表す。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/85.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q85/85.png"
         ]
       },
       "choices": [
@@ -3869,28 +3869,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_aki/img/85a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q85/85a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_aki/img/85i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q85/85i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_aki/img/85u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q85/85u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_aki/img/85e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q85/85e.png"
           ]
         }
       ],
@@ -3905,7 +3905,7 @@
         "text": "A表には\"担当社員\"表の属性である\"社員名\"と\"地区\"表の属性である\"地区名\"が含まれています。選択肢の\"顧客\"表にはこれらの属性が含まれていませんので、A表を作成する際には\"顧客\"表、\"担当社員\"表及び\"地区\"表を結合する必要があります。\n\n関係データベースでは、表同士は主キーと外部キーで関連付けられます。結合操作を行う際には、外部キーと別表の主キーを結合キーに指定して結合するので、外部キーをもっていなければ別表を参照することはできません。このため結合操作を行い、値を取得するためには\"顧客\"表に\"社員コード\"と\"地区コード\"という2つの外部キーを持たせる必要があります。\n\nしたがって結合に用いた\"顧客\"表は「エ」になります。\n\n具体的には、3つの表を結合した後、顧客コード、顧客名、社員名、地区名、代表者氏名という4つの列を射影演算によって抽出することでA表となります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/85_1.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q85/85_1.png"
         ]
       }
     },
@@ -4215,7 +4215,7 @@
         "text": "・CPUのクロック周波数の単位には、ヘルツ(Hz)が用いられます。\n・HDDディスクの直径の単位には、インチ(inch)が用いられます。\n・正しい。SXGAやQVGAはディスプレイの縦横比率及び解像度を表す名称です。\n・メモリの容量の単位には、バイト(B)が用いられます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/92.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q92/92.png"
         ]
       }
     },
@@ -4227,7 +4227,7 @@
         "text": "公開鍵暗号方式を利用した処理と，その処理に使用する公開鍵の組合せa～cのうち，適切なものだけを全て挙げたものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/93.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q93/93.png"
         ]
       },
       "choices": [
@@ -4267,8 +4267,8 @@
           "正しい。暗号化通信では受信者の公開鍵を使用してデータを暗号化します。本肢の場合、送信者がクライアント(ブラウザ)、受信者が\"WebサーバなのでWebサーバの公開鍵で合っています。"
         ],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/93_1.png",
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/93_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q93/93_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q93/93_2.png"
         ]
       }
     },
@@ -4402,7 +4402,7 @@
         "text": "無線LAN(IEEE802.11シリーズ)では、規格に応じて2.4GHz帯または5GHz帯を使用します。\n・同じ室内で同時に使用できます。\n・正しい。2.4GHz帯は、壁や床などの障害物に強く、電波が遠くまで届きやすい特徴があります。\n・どちらもWPA2の暗号化通信に対応しています。\n・2.4GHz帯は無線免許不要で利用できるため、電子レンジやコードレス電話などの多くの機器で使用されています。したがって記述とは逆に、2.4GHz帯はその電波干渉を受けますが、5GHz帯は家電製品の電波干渉を受けません。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/96.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q96/96.png"
         ]
       }
     },
@@ -4448,7 +4448,7 @@
         "text": "サブネットマスクは、IPアドレスをネットワークアドレスとホストアドレスに分割するために使用されるビット列です。ネットワークアドレス部分には\"1\"を、ホストアドレス部分には\"0\"を指定することによってIPアドレスを区分します。\n\nしたがって適切な説明は「ア」です。\n・正しい。サブネットマスクの説明です。\n・NAT(Network Address Translation)の説明です。\n・ARP(Address Resolution Protocol)の説明です。\n・DHCP(Dynamic Host Configuration Protocol)の説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/97.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q97/97.png"
         ]
       }
     },
@@ -4590,7 +4590,7 @@
         "text": "関係データベースにおける表同士は、下図のように同じ属性である外部キーと主キーの繋がりによって関連付けられます。したがって「イ」が適切です。\n・関係データベースには行位置という概念はありません。\n・正しい。関係データベースにおける関連付け方法です。\n・階層型データベースにおける関連付け方法です。\n・ハッシュ関数での関連付けはしません。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_aki/img/100.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_aki/q100/100.png"
         ]
       }
     }

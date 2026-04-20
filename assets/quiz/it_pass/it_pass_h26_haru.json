@@ -180,10 +180,10 @@
         "text": "特性要因図は、現れた特性（結果）とそれに影響を及ぼしたと思われる要因の関係を体系的に表わした図です。この図法による分析を行うことで原因を直接的なものと間接的なものに分別したり、改善を行うべき真の問題点を明確にすることができます。この図は、完成した形が魚の骨格の姿に似ていることから「フィッシュボーンダイアグラム」とも呼ばれます。\n・アローダイアグラムは、プロジェクトの各作業間の関連性や順序関係を視覚的に表現し、クリティカルパスの洗い出しやプロジェクトのスケジュール管理に用いられる図法です。\n・正しい。\n・パレート図は、値の大きい順に分析対象の項目を並べた棒グラフと、累積構成比を表す折れ線グラフを組み合わせた複合グラフで、主に複数の分析対象の中から、重要である要素を識別するために使用されます。\n・マトリックス図は、表の縦軸と横軸にいくつかの項目を設定し、交点に各項目同士の関連性・関連度合いなどを◎，○，△などで表した分析図です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_haru/img/04i.png",
-          "https://www.itpassportsiken.com/kakomon/26_haru/img/04a.png",
-          "https://www.itpassportsiken.com/kakomon/26_haru/img/04u.png",
-          "https://www.itpassportsiken.com/kakomon/26_haru/img/04e.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q4/04i.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q4/04a.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q4/04u.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q4/04e.png"
         ]
       }
     },
@@ -289,28 +289,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_haru/img/07.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q7/07.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_haru/img/07.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q7/07.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_haru/img/07.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q7/07.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_haru/img/07.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q7/07.png"
           ]
         }
       ],
@@ -413,7 +413,7 @@
         "text": "PPM(Products Portfolio Management)は、縦軸と横軸に「市場成長率」と「市場占有率」を設定したマトリックス図を4つの象限に区分し，市場における製品(または事業やサービス)の位置付けを2つの観点で分類して資源配分を検討する手法です。\n\n4つの象限は、市場内の位置付けから以下のような名称で呼ばれています。花形(star) … [成長率：高、占有率：高]占有率・成長率ともに高く、資金の流入も大きいが、成長に伴い占有率の維持には多額の資金の投入を必要とする分野金のなる木(cash cow) … [成長率：低、占有率：高]市場の成長がないため追加の投資が必要ではなく、市場占有率の高さから安定した資金・利益の流入が見込める分野問題児(problem child) … [成長率：高、占有率：低]成長率は高いが占有率は低いので、花形製品とするためには多額の投資が必要になる。投資が失敗し、そのまま成長率が下がれば負け犬になってしまうため、慎重な対応を必要とする分野負け犬(dog) … [成長率：低、占有率：低]成長率・占有率がともに低く、新たな投資による利益の増加も見込めないため市場からの撤退を検討するべき分野\n・BPO(Business Process Outsourcing)の説明です。\n・正しい。PPMの説明です。\n・BPR(Business Process Reengineering)の説明です。\n・BCP(Business Continuity Plan)の説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_haru/img/09.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q9/09.png"
         ]
       }
     },
@@ -547,7 +547,7 @@
         "text": "QRコードは、1994年にデンソーウェーブが開発した2次元コードの規格で、携帯電話でのURLの読取りや、販売店や工場における在庫管理などにも利用されています。\n\nバーコードが横方向にしか情報を持たないのに対し、QRコードは縦横に情報を持っているため、格納できる情報量が多く、数字だけでなく英字や漢字など多言語のデータも格納することが可能です。また3隅の四角い位置検出パターンによって360度読み取り可能、汚れなどがあっても正確に読み取れるように、誤り訂正語を含むなどの特徴があります。\n・漢字も含めることができます。\n・JANコードでは、最大でも数字13けたしか表現できないのに対して、QRコードでは、大きいサイズになると漢字1,000文字以上を格納することができます。(格納できる情報量はセル数によって変わる)\n・正しい。位置検出パターンを備えていることはQRコードの特徴です。\n・QRコードはバーコードを層上に組合わせたものではありません。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_haru/img/12.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q12/12.png"
         ]
       }
     },
@@ -637,7 +637,7 @@
         "text": "ABC分析は、分析対象の項目をA・B・Cの3つのグループに分類することで、重要度や優先度の高い要素を明らかにする分析手法です。A・B・Cのグループ分けにはパレート図を用います。\n\nパレート図は、値の大きい順に分析対象の項目を並べた棒グラフと、累積構成比を表す折れ線グラフを組み合わせた複合グラフです。パレート図を使用して、分析する要素・項目群を大きい順に並べ、上位70%を占める要素群をA、70%～90%の要素群をB、それ以外の要素群をCとしてグルーピングします。\nしたがって「パレート図」が正解です。\n・管理図は、中央線および上限と下限を示す限界線を引いて、製品などの特性値を打点することで、工程の状態や品質を時系列に表した図で、工程が安定した状態にあるかどうかを判断するために用います。\n・散布図は、縦軸・横軸に2項目の量や大きさ等を対応させて、分析対象のデータを打点した図で、2項目間の分布・相関関係を把握するのに使用されます。\n・特性要因図は、特性(結果)とそれに影響を及ぼしたと思われる要因(原因)の関係を体系的に表す図法です。\n・正しい。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_haru/img/14.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q14/14.png"
         ]
       }
     },
@@ -683,7 +683,7 @@
         "text": "DFD(Data Flow Diagram)は、データの流れに着目して、そのモデリング対象となる業務のデータの流れと処理の関係をわかりやすく図式化する構造化分析の手法です。\n・正しい。\n・E-R図は、データベース化の対象となる実体(エンティティ)と実体の持つ属性(アトリビュート)、および実体間の関連(リレーションシップ)を表現する図で、関係データベースの設計によく利用されます。\n・UMLクラス図は、クラス、属性、クラス間の関係からシステムの構造を記述する静的な構造図です。\n・特性要因図は、特性(結果)とそれに影響を及ぼしたと思われる要因(原因)の関係を体系的に表す図です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_haru/img/15.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q15/15.png"
         ]
       }
     },
@@ -817,7 +817,7 @@
         "text": "ロングテールとは、「あまり売れない商品が、ネット店舗においては欠かせない収益源になる」とする考え方・概念です。\n\n実店舗と異なり、売り場面積を考慮する必要のないオンライン販売市場では、膨大な商品点数を扱うことができます。そのため売れ筋ではないが買う人がいる多数のニッチ商品の売り上げを積み重ねることによって、売れ筋商品の売上げに対して無視できない額になるという現象が発生します。ロングテールとは、下図のように縦軸に販売数をとったグラフを販売数の多い商品順に並べて描いたグラフで、販売数の少ない商品のグループが長い尻尾のように見えることから付けられた名前です。したがってロングテールの説明として適切なのは「ウ」になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_haru/img/18.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q18/18.png"
         ]
       }
     },
@@ -1259,7 +1259,7 @@
         "text": "コンカレントエンジニアリング(Concurrent Engineering)は、主に製造業において、設計から生産に至るまでの各プロセスを同時並行的に行うことで、開発期間や納期の短縮および生産コストの削減を図る手法です。コンカレント(concurrent)は、「並行」「同時に(発生)」などを意味する英単語です。\n\nしたがって「開発期間の短縮」が適切です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_haru/img/28.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q28/28.png"
         ]
       }
     },
@@ -1727,28 +1727,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_haru/img/39.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q39/39.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_haru/img/39.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q39/39.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_haru/img/39.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q39/39.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_haru/img/39.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q39/39.png"
           ]
         }
       ],
@@ -1895,7 +1895,7 @@
         "text": "WBS(Work Breakdown Structure)は、プロジェクト目標を達成し、必要な成果物を過不足なく作成するために、プロジェクトチームが実行すべき作業を、成果物を主体に階層的に要素分解したものです。\n・正しい。WBSで分解後、最下層に位置する作業単位はプロジェクト実行中のコントロール単位となるので、個々にコストや所要期間を設定できる程度まで分解する必要があります。\n・委託開発の場合は、委託先にWBSの提出を要求し、洗い出された作業をチェックしなくてはなりません。\n・進捗報告会議も行うべき作業なので要素分解の対象になります。\n・類似プロジェクトのWBSを参考にすることで作業の漏れを防止できる効果がありますが、全く同じであることはないためプロジェクトごとに要素分類を行わなくてはなりません。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_haru/img/42.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q42/42.png"
         ]
       }
     },
@@ -2533,7 +2533,7 @@
         "text": "図1のように二つの入力に対し，一つの出力を行うボックスがある。このボックスへの入力は\"賛成\"か\"反対\"のいずれかであり，入力が二つとも\"賛成\"のときだけ\"賛成\"と出力し，その他のときは\"反対\"と出力する。図2のように，三つの入力を二つのボックスに入力したときの出力に関する記述のうち，正しいものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_haru/img/57.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q57/57.png"
         ]
       },
       "choices": [
@@ -2569,7 +2569,7 @@
         "text": "設問のボックスは、両方の入力が\"賛成\"の時にだけ\"賛成\"を出力するので、図2で最終的な出力が\"賛成\"となるためには、右のボックスの入力値である\"左のボックスの出力\"と\"入力3\"の両方が\"賛成\"である必要があります。(図中の①)\n左のボックスで\"賛成\"が出力されるには、\"入力1\"と\"入力2\"の両方が\"賛成\"である必要があります。(図中の②)\nつまり、最終的に\"賛成\"が出力されるためには入力のすべてが\"賛成\"であることが必要条件で、それ以外の場合では\"反対\"を出力するのが図2の特徴です。したがって正しい記述は「エ」です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_haru/img/57a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q57/57a.png"
         ]
       }
     },
@@ -2669,7 +2669,7 @@
         "text": "ファイルで管理されていた受注データを，受注に関する情報と商品に関する情報に分割して，正規化を行った上で関係データベースの表で管理する。正規化を行った結果の表の組合せとして，最も適切なものはどれか。ここで，同一商品名で単価が異なるときは商品番号も異なるものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_haru/img/60.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q60/60.png"
         ]
       },
       "choices": [
@@ -2677,28 +2677,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_haru/img/60a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q60/60a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_haru/img/60i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q60/60i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_haru/img/60u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q60/60u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_haru/img/60e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q60/60e.png"
           ]
         }
       ],
@@ -2713,7 +2713,7 @@
         "text": "関係データベースの正規化は次のように3段階に分けて行います。第１正規化繰り返し項目をなくす第２正規化主キーの一部によって一意に決まる項目を別表に移す第３正規化主キー以外の項目によって一意に決まる項目を別表に移す。この手順どおりに正規化を進めていきます。\n\n設問の\"受注データ\"表は、繰り返し項目がないので既に第1正規形になっています。\n次に第2正規化です。この表において主キーは\"受注番号\"列で、下図のように主キーが決定すれば\"商品番号\"が一意に特定でき、さらに\"商品番号\"が決まれば\"商品名\"および\"単価\"が一意に特定できる関係をもちます。したがって第2正規化では、\"商品番号\"，\"商品名\"，\"単価\"を別表に分離します。第3正規化は、主キー以外の項目で一意に決定される関係を別表に移すのですが、上記の表にはそのような関係は存在しないのでこの段階で第3正規形を満たしています。\n\nつまり正規化後の正しい表の組合せは「ウ」になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_haru/img/60_1.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q60/60_1.png"
         ]
       }
     },
@@ -2735,28 +2735,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_haru/img/61.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q61/61.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_haru/img/61.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q61/61.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_haru/img/61.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q61/61.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_haru/img/61.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q61/61.png"
           ]
         }
       ],
@@ -3043,7 +3043,7 @@
           "正しい。"
         ],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_haru/img/67.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q67/67.png"
         ]
       }
     },
@@ -3055,7 +3055,7 @@
         "text": "図に示す階層構造において，カレントディレクトリが＊印のディレクトリであるとき，相対パス指定で ..¥..¥B¥B によって指定したディレクトリと同じディレクトリを絶対パス指定したものはどれか。〔ディレクトリ及びファイルの指定方法〕\n・ファイルは，\"ディレクトリ名¥ディレクトリ名¥ファイル名\"のように，経路上のディレクトリを順に\"¥\"で区切って並べた後に\"¥\"とファイル名を指定する。\n・カレントディレクトリは\".\"で表す。\n・1階層上のディレクトリは\"..\"で表す。\n・始まりが\"¥\"のときは，左端にルートディレクトリが省略されているものとする。\n・始まりが\"¥\"，\".\"，\"..\"のいずれでもないときは，左端にカレントディレクトリ配下であることを示す\".¥\"が省略されているものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_haru/img/68.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q68/68.png"
         ]
       },
       "choices": [
@@ -3091,8 +3091,8 @@
         "text": "まずカレントディレクトリから\"..¥..¥B¥B\"で指定されるディレクトリを確認します。\n\n\"..¥\"が1階層上を表すので、これが2つ連なった\"..¥..¥\"は2階層上を表しています。＊から見て2階層上は下図に示す\"¥B\"になります。相対パス指定は、\"..¥..¥\"に続き\"B¥B\"なので、このディレクトリ配下の\"B¥B\"は下図に示すディレクトリになります。このディレクトリをルートからの絶対パスで表記すると「¥B¥B¥B」になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_haru/img/68_1.png",
-          "https://www.itpassportsiken.com/kakomon/26_haru/img/68_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q68/68_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q68/68_2.png"
         ]
       }
     },
@@ -3182,7 +3182,7 @@
         "text": "クリップアートは、視覚的な表現効果を高めるために、ワープロ文書や表計算ワークシートなどに貼り付けられる挿絵・イラストのことです。\n・Cascading Style Sheetsの略。HTMLの要素をどのようにデザインして表示するかを定義するテキスト形式の文書です。\n・キャプチャとは、コンピュータのディスプレイに映る画像を静止画や動画として記録することです。\n・正しい。\n・テンプレートは、文書などを作成する際の定型的な部分があらかじめ記述されたデータで、似通ったデータを繰り返し作成する場合に雛形となる文書のことです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_haru/img/70.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q70/70.png"
         ]
       }
     },
@@ -3316,7 +3316,7 @@
         "text": "HDMI(High-Definition Multimedia Interface)は、PCとディスプレイの接続標準規格であるDVI(Digital Visual Interface)を基に音声伝送機能や著作権保護機能（デジタルコンテンツ等の不正コピー防止)、色差伝送機能を加えるなどAV家電向けに改良したデジタル家電向けのインタフェースです。\n非圧縮デジタル形式の音声と映像を伝達するため、音質、画質とも理論的には劣化しないという特徴があります。\n・正しい。HDMIの説明です。\n・IrDA(Infrared Data Association)の説明です。\n・SATAやUSBなどの説明です。\n・Bluetoothの説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_haru/img/73.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q73/73.png"
         ]
       }
     },
@@ -3362,7 +3362,7 @@
         "text": "RSSは、ブログやニュースサイト、電子掲示板などのWebサイトで、効率の良い情報収集や情報発信を行うために用いられている文書フォーマットの総称です。ページの見出しや要約、更新時刻などの記事に関するメタデータを、XMLベースの構造化データとして記述します。指定したWebサイトを定期的に巡回することでRSSを取得し、新着情報を見やすく一覧表示するソフトウェアが「RSSリーダー」です。\n\nしたがって「ア」が適切です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_haru/img/74.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q74/74.png"
         ]
       }
     },
@@ -3408,7 +3408,7 @@
         "text": "IPA「情報処理推進機構」が公開している「情報セキュリティポリシーの策定」に基づくと、情報セキュリティポリシーは、基本方針(ポリシー)，対策基準(スタンダード)，実施手順(プロシージャー)の3階層の文書構成をとるのが一般的であるとされています。以下の説明はIPAのサイトに掲載されている内容を引用したものです。基本方針組織の経営者が、「情報セキュリティに本格的に取り組む」という姿勢を示し、情報セキュリティの目標と、その目標を達成するために企業がとるべき行動を社内外に宣言するものです。「なぜセキュリティが必要か」という「Why」について規定し、何をどこまで守るのか（対象範囲)、誰が責任者かを明確にします。また、業界標準、該当する法令、政府規制への準拠を宣言する場合があります。対策基準基本方針で作成した目的を受けて、「何を実施しなければならないか」という「What」について記述します。組織的に情報セキュリティ対策を行うためのルール集で、人事規程や就業規程などの類の企業の構成員が守るべき「規程類」に相当します。実際に守るべき規程を具体的に記述し、適用範囲や対象者を明確にします。実施手順対策基準で定めた規程を実施する際に、「どのように実施するか」という「How」について記述します。マニュアル的な位置づけの文書であり、詳細な手順を記述します。各文書の特性を考慮すると、情報セキュリティポリシーに関する文書の適切な策定手順は、基本方針→対策基準→実施手順なので適切な記述は「ア」になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_haru/img/75.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q75/75.png"
         ]
       }
     },
@@ -3630,7 +3630,7 @@
         "text": "光の三原色は、コンピュータグラフィックスの世界で用いられる加法混色の手法で、RGBカラーモデルとも呼ばれます。黒を基本色としてレッド(Red)，グリーン(Green)，ブルー(Blue)を混ぜ合わせることで幅広い色を表現し、すべての色の強さが最大(原色)のときには白色となります。\n\n通常、RGBモデルでは各色の強さをそれぞれ1バイト(256段階)で表現し、R=0,G=0,B=0が黒，R=255,G=255,B=255が白というように各色を混ぜ合わせること様々な色情報を扱います。ちなみに各色を1バイトで表現する場合に表現できる色数は、2563≒1677万色です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_haru/img/80.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q80/80.png"
         ]
       }
     },
@@ -3876,7 +3876,7 @@
         "text": "Yさんは，電話受付センターにおける時間別の電話受付件数と時間別に必要なオペレーター数の関係について，現状から施策実施後の試算値を求めるために，図1のワークシートを作成した。セルI4～I15には〔受付状況〕を基に施策実施後の受付件数によってオペレーター数を求めるための計算式を入れてある。\n　図1のaに表示される値はどれか。ここで，オペレーター数は，電話を受け付けるのに必要な時間別の要員数である。\n\n〔受付状況〕\n・現状の時間別の受付件数は，過去1年間の平均である。\n・施策実施後の時間別の受付件数及びオペレーター数は，試算値である。\n・注文の受付に掛かる時間は1件当たり平均8分である。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_haru/img/86.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q86/86.png"
         ]
       },
       "choices": [
@@ -3922,7 +3922,7 @@
         "text": "電話受付センターのオペレーターの勤務形態は，図2に示すように勤務時間によって四つのパターンに分けられている。Yさんは，電話受付センターを集約することによって削減可能なオペレーターの人数を試算することにした。表1のように，電話受付センター集約後に時間帯A～Dの各時間帯で最低限必要な人数を設定したとき，オペレーターに掛かる費用を最小化するために考慮すべき条件として，適切でないものはどれか。\n\n〔前提〕\n・オペレーター1人に掛かる費用は，\"時間給×勤務時間\"で算出する。\n・オペレーターの時間給は，どの勤務パターンでも同じである。\n・どの勤務パターンでも最低1人はオペレーターがいるものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_haru/img/87.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q87/87.png"
         ]
       },
       "choices": [
@@ -3968,7 +3968,7 @@
         "text": "M社で計画している特売コーナでは，放送時間の中で紹介できる商品が2種類に限定されるので，商品A～Dの中から利益を最大化する組合せを選定する必要がある。そこでYさんは，各商品に関する1日当たりの販売可能な数量，1個当たりの利益及び1時間当たりの予想注文数を示す表2を，販売部門から入手した。\n　特売コーナで紹介した商品は，この番組の放送終了後から2時間以内に限り注文を受け付けることにしたとき，利益を最大化する商品の組合せはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_haru/img/88.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q88/88.png"
         ]
       },
       "choices": [
@@ -4064,28 +4064,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_haru/img/90a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q90/90a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_haru/img/90i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q90/90i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_haru/img/90u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q90/90u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_haru/img/90e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q90/90e.png"
           ]
         }
       ],
@@ -4232,7 +4232,7 @@
         "text": "\"種別\"は、「計画」「購買」「契約」「その他」の4項目の中から1つを選択する入力項目です。\n\nラジオボタンは、いくつかある項目の中から排他的に1つの項目を選択させたい場合に使用するGUI部品です。ラジオボタンには、次のようなメリットがあります。\n・利用者がテキストを入力する必要がないので入力ミスを防止できる\n・複数の項目のうち必ず1つのみを選択させることができる\n\n\"種別\"では4つのうち1つを選択させることを目的としているためラジオボタンの使用が適切です。\n・スクロールバーは、必要に応じてノブ部分をつまんでスライドさせることで、ウィンドウの表示領域を移動するためのGUI部品です。\n・チェックボックスは、いくつかある項目の中から複数の項目を選択可能な場合に使用するGUI部品です。\n・テキストボックスは、利用者が任意のテキストを自分で入力するためのGUI部品です。\n・正しい。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_haru/img/93.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q93/93.png"
         ]
       }
     },
@@ -4420,7 +4420,7 @@
         "text": "移行プロジェクトでは移行作業で考えられるリスクを洗い出し，発生確率の大きなリスクに対しては対策を講じることにした。Aさんは複数のリスクから発生確率が大きな四つのリスクW～Zを選び，発生確率，低減できる影響額及び影響額を低減するための対策に要するコストを表1にまとめ，その上で次に示す〔移行プロジェクトでまとめた優先順位付けの指針〕を基に，対策の優先順位を付けることにした。aに入れる適切な優先順位はどれか。ここで，優先順位には高いものから順に1～4を記入する。\n\n〔移行プロジェクトでまとめた優先順位付けの指針〕\n・低減できる影響額に発生確率を乗じた値から，対策に要するコストを減じた値の大きなものを優先する。\n・(1)で求めた値が閉じであれば，対策に要するコストが小さいものを優先する。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_haru/img/98.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q98/98.png"
         ]
       },
       "choices": [
@@ -4466,7 +4466,7 @@
         "text": "移行プロジェクトで作成した図1に示す移行作業のアローダイアグラムに対して，Aさんは次の指摘を受けた。\n\n〔Aさんが受けた指摘〕\n・M4の最後に移行作業の完了判定を行い，正しく完了しなかった場合，バックアップ媒体から移行作業前の状態に復旧して業務を継続する。この復旧作業には4.0時間を要する。\n・復旧作業を合わせて，当初の作業時間内に収める必要がある。\n\n　そこで，復旧作業の時間を確保するために，各作業の担当者にインタビューを実施し，対策案とその効果を検討した。表2に対策案1～4に対する作業時間短縮効果を示す。次の記述中のb，cに入れる適切な組合せはどれか。\n\n　復旧作業の時間を確保するための対策案の組合せは，bとcである。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_haru/img/99.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q99/99.png"
         ]
       },
       "choices": [
@@ -4474,28 +4474,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_haru/img/99a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q99/99a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_haru/img/99a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q99/99a.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_haru/img/99a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q99/99a.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_haru/img/99a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q99/99a.png"
           ]
         }
       ],
@@ -4510,10 +4510,10 @@
         "text": "復旧作業を当初の予定時間内に収めるためには、移行作業を4時間短縮する必要があります。\n\n4時間の短縮を可能にする対策の組合せがどれであるかを検証するために、それぞれの対策の組合せを適用した場合のアローダイアグラムで再び最短所要時間を計算します。\n・\n・[S1→S2→S4→M4]\n　0.5＋3＋2＋(M3の完了待ち)1.5＋5＝12\n・[M2→M3→M4]\n　2.5＋(M1の完了待ち)1.5＋3＋5＝12\n\n短縮可能時間は2時間です。\n・\n・[S1→S2→S4→M4]\n　0.5＋3＋2＋(M3の完了待ち)2＋2.5＝10\n・[S1→S2→S3→M3→M4]\n　0.5＋3＋2＋2＋2.5＝10\n・[M2→M3→M4]\n　2.5＋(M1,S3の完了待ち)3＋2＋2.5＝10\n\n4時間の短縮が可能なので適切な組合せです。\n・\n・[S1→S2→S4→M4]\n　2＋3＋2＋5＝12\n・[M2→M3→M4]\n　2.5＋3＋(S4の完了待ち)1.5＋5＝12\n\n短縮可能時間は2時間です。\n・\n・[S1→S2→S4→M4]\n　2＋3＋2＋(M3の完了待ち)2＋2.5＝11.5\n・[S1→S2→S3→M3→M4]\n　2＋3＋2＋2＋2.5＝11.5\n・[M2→M3→M4]\n　2.5＋(M3の完了待ち)4.5＋2＋2.5＝11.5\n\n短縮可能時間は2.5時間です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_haru/img/99_1.png",
-          "https://www.itpassportsiken.com/kakomon/26_haru/img/99_2.png",
-          "https://www.itpassportsiken.com/kakomon/26_haru/img/99_3.png",
-          "https://www.itpassportsiken.com/kakomon/26_haru/img/99_4.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q99/99_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q99/99_2.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q99/99_3.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_haru/q99/99_4.png"
         ]
       }
     },

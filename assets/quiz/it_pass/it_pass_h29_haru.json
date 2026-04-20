@@ -92,7 +92,7 @@
         "text": "マーケティングミックスとは、企業がマーケティング戦略において、目標とする市場から期待する反応を得るために、種類の異なるマーケティング要素を組み合わせることです。\n\nマーケティングミックスのフレームワークとしては、売り手側の視点である「4P理論」と、買い手側の視点である「4C理論」がよく知られていて、4Pと4Cの項目はそれぞれ以下のように対応しています。\n・4Cは、買い手側の視点から分類したフレームワークです。\n・正しい。4Pは、売り手側の視点から分類したフレームワークです。\n・Products Portfolio Managementの略。縦軸に市場成長率，横軸に市場占有率をとったマトリックス図を4つの象限に区分し、市場における製品(または事業やサービス)の位置付けを2つの観点から分析して、今後の資源配分を検討する手法です。\n・SWOTは、企業の置かれている経営環境を、強み・弱み・機会・脅威に分類して分析する手法です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/02.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q2/02.png"
         ]
       }
     },
@@ -192,7 +192,7 @@
         "text": "製品Aを1個生産するためには，外部から調達する部品Bを1個必要とする。部品Bは，毎月の第1営業日に発注し，その月の最終営業日に納品され，翌月以降の生産に使用される。製品Aの4月から3か月間の生産計画が表のとおりであるとき，5月の第1営業日に部品Bを最低何個発注する必要があるか。ここで，3月末の部品Bの在庫は6,000個であり，4月第1営業日に6,000個の発注を行っているものとする。また，仕掛残及び安全在庫は考えないものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/05.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q5/05.png"
         ]
       },
       "choices": [
@@ -228,7 +228,7 @@
         "text": "製品Aを生産するとその数だけ部品Bが少なくなります。そして月末には月初に発注した分の部品Bが納品されます。以上より、ある月の月末時点の部品Bの在庫量は以下の式で表せるとわかります。\n\n　先月末の部品B在庫量－当月の製品A生産量＋当月の部品B発注量\n\nまず、この式を使用して4月末時点の部品Bの在庫量を計算します。3月末時点の在庫が6,000個、4月の生産量が5,000個、4月の発注量が6,000個なので、4月末の部品Bの在庫量は次のように求められます。\n\n　6,000－5,000＋6,000＝7,000(個)\n\n6月に製品Aを7,000個生産するためには、5月末時点で部品Bの在庫が最低7,000個必要です。4月末の在庫量が5,000個、5月の生産量が6,000個とわかっているので、式に3つの値を代入して5月の発注量を逆算します。\n\n　7,000－6,000＋(5月の発注量)＝7,000\n　1,000＋(5月の発注量)＝7,000\n　(5月の発注量)＝6,000(個)\n\nしたがって「イ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/05a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q5/05a.png"
         ]
       }
     },
@@ -318,7 +318,7 @@
         "text": "エンタープライズアーキテクチャ(Enterprise Architecture、以下EAと言う)は、社会環境や情報技術の変化に素早く対応できるよう、「全体最適」の観点から業務とシステム全体を改革するためのフレームワークです。主に大企業や政府、地方公共団体といった巨大な組織（enterprise）の業務手順と情報システムの標準化、組織の最適化を図るための方法論として活用されます。\n\nEAにおける業務・システム最適化計画は、モデリングにより業務とシステムの現状（As-Is）とあるべき姿 （To-Be）を整理し、あるべき姿（To-Be）の実現を目指して業務とシステムの改善を進める、というのが基本的な流れです。\n・ディザスタリカバリ計画の説明です。\n・正しい。エンタープライズアーキテクチャの説明です。\n・BPR(Business Process Reengineering)の説明です。\n・SOA(Service Oriented Architecture)の説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/07.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q7/07.png"
         ]
       }
     },
@@ -643,7 +643,7 @@
         "text": "DFD(Data Flow Diagram)は、データの流れに着目して、その対象となる業務のデータの流れと処理の関係をわかりやすく図式化する構造化分析の手法です。「○」処理・プロセス，「□」データの吸収先，「→」データの流れ，「〓」データストアの4つの記号を用いて対象業務のモデリングを行います。したがって「エ」が正解です。\n・状態遷移図の説明です。\n・E-R図の説明です。\n・UMLのクラス図の説明です。\n・正しい。DFDの説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/14.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q14/14.png"
         ]
       }
     },
@@ -883,7 +883,7 @@
         "text": "本社の10部署に合計50台のPCがあり，表計算ソフトが50ライセンスと各部署に最低1冊，すなわち合計10冊以上のマニュアルを必要としている。表に示す条件の場合，最も安く購入できる組合せはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/20.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q20/20.png"
         ]
       },
       "choices": [
@@ -929,7 +929,7 @@
         "text": "財務諸表から求められる総資産営業利益率は何%か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/21.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q21/21.png"
         ]
       },
       "choices": [
@@ -965,7 +965,7 @@
         "text": "総資産営業利益率は、元手(資本)をどのくらい上手に使って企業の本業の利益を生み出したかを表す指標で、一定期間における営業利益を総資産(負債と純資産の合計)で割って算出します。\n\n営業利益は以下の式で求めます。\n\n　営業利益＝売上高－売上原価－販売費・一般管理費\n　又は、\n　営業利益＝売上総利益－販売費・一般管理費\n\n営業利益は損益計算書から読み取った値を上記の式に代入して、\n\n　営業利益＝3,000－2,000－700＝300(百万円)\n\nさらに、総資本(総資産)は負債と純資産の合計なので、貸借対照表より、\n\n　総資産＝1,000(百万円)\n\n2つの金額より総資産営業利益率は、\n\n　300÷1,000＝0.3＝30(%)\n\nしたがって「ウ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/21a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q21/21a.png"
         ]
       }
     },
@@ -1011,7 +1011,7 @@
         "text": "ICタグ(パッシブRFID)は、自身では電源を持たず、ICタグリーダーから発信される電波を電力に変えて動作する小さなICチップです。内部には簡単なマイクロコンピュータとメモリなどが含まれ、情報を記憶しておくことができます。受け取った電力を利用して処理を行い、その結果を電波として発信することでICタグリーダーと通信を行います。電波が届く範囲は数cm～2m程度です。\n・バーコードの読取りにはマークを識別してデジタルデータに変換するOMR(Optical Mark Reader)が使用されます。\n・医療情報システムの活用例です。\n・GPS(Global Positioning System)の活用例です。\n・正しい。ICタグの活用例です。\n施設側では、ICタグに貸出し中かどうかわかる情報を記録させておきます。そして施設の出入口に設置した防犯ゲートから微弱な電流を発信し、書籍に付けられたICタグを反応させることで、貸出し状態でないにもかかわらず施設外に持ちだされようとしている書籍を検出できます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/22.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q22/22.png"
         ]
       }
     },
@@ -1419,7 +1419,7 @@
         "text": "ある商品の4月の仕入と売上が表のとおりであるとき，移動平均法による4月末の商品の棚卸評価額は何円か。移動平均法とは，仕入の都度，在庫商品の平均単価を算出し，棚卸評価額の計算には直前の在庫商品の平均単価を用いる方法である。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/32.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q32/32.png"
         ]
       },
       "choices": [
@@ -1455,8 +1455,8 @@
         "text": "移動平均法を用いて各時点における在庫評価額を計算していきます。\n\n[4/18 売上150個]\n払出単価には、直前の在庫商品の平均単価を用いるので、4/8時点の平均単価である12円になります。したがって払出合計額、および在庫合計額は以下のように計算できます。\n\n・[払出合計額]　12円×150個＝1,800(円)\n・[在庫合計額]　12円×50個＝600(円)\n\n[4/29 仕入50個]\n仕入れ単価は16円、仕入合計額は800円なので、直前の在庫合計額にこの金額を加えます。\n\n・[在庫合計額]　600＋800＝1,400(円)\n・[在庫平均単価]　1,400円÷100個＝14(円)\n\n以後4月中の取引はないため、この時点での在庫合計額1,400円が4月末時点の在庫評価額になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/32_1.png",
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/32_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q32/32_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q32/32_2.png"
         ]
       }
     },
@@ -1502,7 +1502,7 @@
         "text": "JANコードは、バーコード規格のひとつで、製造した事業者と商品を識別するための共通商品コード体系です。13桁のタイプと8桁のタイプがあり、バーコードリーダーで読み取り可能です。アメリカ、カナダにおけるUPCと互換性があり、海外ではEANコードと呼ばれています。\n\nJANコードには、先頭から「国コードを含む事業者コード」「商品コード」「チェックディジット」の順番でデータが格納されています。\n・JANコードは、情報を「白い隙間と黒いバー」で表現します。ICタグと併用されることもありますが、単体でも利用可能です。\n・JANコードでは数字以外のデータを表現できません。\n・正しい。事業者コードと商品アイテムコードの組合せは一意になるように管理されているので、多数の企業の商品を同時に取り扱ってもコードが競合することはありません。\n・タイプごとに商品アイテムコードの長さは決まっています。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/33.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q33/33.png"
         ]
       }
     },
@@ -1548,7 +1548,7 @@
         "text": "PPM(Product Portfolio Management)は、縦軸に市場成長率、横軸に市場占有率をとったマトリックス図を4つの象限に区分し、市場における製品(または事業やサービス)の位置付けを2つの観点で分類して資源配分を検討する手法です。4つのカテゴリには、それぞれ「花形」「金のなる木」「問題児」「負け犬」の名称が付けられています。したがって「エ」が正解です。\n・SWOT分析の目的です。\n・コアコンピタンス経営の目的です。\n・プロダクトライフサイクルの目的です。\n・正しい。PPMの目的です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/34.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q34/34.png"
         ]
       }
     },
@@ -1682,7 +1682,7 @@
         "text": "ファンクションポイント法は、外部入出力や内部ファイルの数と開発難易度の高さから、ファンクションポイントという数値を算出し、それをもとに定量的に開発規模を見積もる手法です。画面や帳票の数などを基準に見積もるので、依頼者からのコンセンサス(合意)が得られやすいという長所があります。\n・積算法またはWBS法の説明です。\n・正しい。ファンクションポイント法の説明です。\n・プログラムステップ法(LOC法)の説明です\n・類推法の説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/37.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q37/37.png"
         ]
       }
     },
@@ -1772,7 +1772,7 @@
         "text": "WBS(Work Breakdown Structure)は、プロジェクト目標を達成し、必要な成果物を過不足なく作成するために、プロジェクトチームが実行すべき作業を、成果物を主体に階層的に要素分解したものです。作業の漏れや抜けを防ぎ、プロジェクトの範囲を明確にすると同時に、作業単位ごとに内容・所要時間・コストを設定することでコントロールをしやすくする目的があります。\n・CMMは能力成熟度モデルと呼ばれ、組織がより良いプロセス管理を行うために遵守すべき指針を体系化したものです。\n・ITILは、ITサービスマネジメントのベストプラクティスを集めたフレームワークです。\n・PERTは、プロジェクトの各作業間の関連性や順序関係を視覚的に表現する図です。\n・正しい。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/39.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q39/39.png"
         ]
       }
     },
@@ -1974,28 +1974,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_haru/img/44.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q44/44.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_haru/img/44.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q44/44.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_haru/img/44.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q44/44.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_haru/img/44.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q44/44.png"
           ]
         }
       ],
@@ -2158,28 +2158,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_haru/img/48.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q48/48.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_haru/img/48.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q48/48.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_haru/img/48.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q48/48.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_haru/img/48.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q48/48.png"
           ]
         }
       ],
@@ -2194,7 +2194,7 @@
         "text": "選択肢の4つの図法はそれぞれ次の特徴を持ちます。WBSプロジェクト目標を達成し、必要な成果物を過不足なく作成するために、プロジェクトチームが実行すべき作業を、成果物を主体に階層的に要素分解したもの。ガントチャート棒グラフの一種で予定と実績を2本の横棒で表した図。作業同士の前後関係や作業の優先度を表現できないが、計画と実績の差異を視覚的に把握することができるので進捗管理に用いられる。アローダイアグラム個々の作業を矢印で表し、作業間の関連性や順序関係を視覚的に表現する図。作業間の前後関係や重要作業の把握に適しており、プロジェクトの作業計画などに利用される。パレート図値の大きい順に分析対象の項目を並べた棒グラフと、累積構成比を表す折れ線グラフを組み合わせた複合グラフで、主に複数の分析対象の中から、重要である要素を識別するために使用される。aについては作業の要素分解という言葉でWBSとわかります。またbは作業の順序関係を表すという言葉でアローダイアグラムとわかります。したがって「ア」が正しい組合せです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/48a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q48/48a.png"
         ]
       }
     },
@@ -2468,7 +2468,7 @@
         "text": "ユースケース(Use Case)は、システムの振る舞いや利用方法をシステムの外部から記述したものです。システムの利用者を表す\"アクタ(actor)\"と併せて記述され、あるシナリオに基づいて特定の目的を達成しようとするアクタと、システムが提供するサービスの関係を記述します。UMLにはユースケースを記述するためのユースケース図が定義されています。\n・データ中心アプローチの説明です。\n・オブジェクト指向開発の説明です。\n・UML(Unified Modeling Language)の説明です。\n・正しい。ユースケースの説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/54.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q54/54.png"
         ]
       }
     },
@@ -2514,7 +2514,7 @@
         "text": "オンラインストレージは、利用者が自由に読み書きできるサーバのディスクスペースをインターネット経由で貸し出すサービスです。フラッシュメモリ等のリムーバブルメディアの代替、バックアップ目的、グループ内でのデータ共有など様々な用途で活用できます。\n人気のあるサービスに\"Dropbox\"、\"Microsoft OneDrive\"、\"Googleドライブ\"などがあり、業務で使用されることも多くなってきています。どのサービスも登録するだけの無料版であっても数GB程度のディスクスペースが提供されます。\n・cookieは、WebサーバやWebページの指示によってユーザー情報などをWebブラウザに保存する仕組みです。ログイン状態の管理などの目的で使用されます。\n・RAIDは、複数台の安価なディスク装置を組み合わせ、1つの仮想的なディスクとして扱うことで信頼性や性能を向上させる技術です。\n・正しい。\n・クローラは、Web上を自動巡回して文書や画像などの情報を取得・データベース化するプログラムです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/55.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q55/55.png"
         ]
       }
     },
@@ -2560,7 +2560,7 @@
         "text": "テンキーとは、一般的にキーボードの右側に配置され、電卓のように数字キーや演算子などがまとめられた部分を指します。数字や計算式の入力が多い業務で威力を発揮します。キーボードと一体になっているタイプの他にも、テンキー部分だけが独立した入力機器として販売されているタイプもあります。\n・エンター(Enter)キーの説明です。\n・正しい。テンキーの説明です。\n・ショートカットキーの説明です。\n・ファンクションキーの説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/56.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q56/56.png"
         ]
       }
     },
@@ -2826,7 +2826,7 @@
         "text": "情報セキュリティ方針は、組織の経営者が「情報セキュリティに本格的に取り組む」という姿勢を示し、情報セキュリティの目標とその目標を達成するために企業がとるべき行動を社内外に宣言する文書です。情報セキュリティの定義、目的、原則、管理の対象範囲、責任の割当て、組織体制などが記述されます。策定した情報セキュリティ方針は、有効性・妥当性を維持するために定期的な改善をすること、組織が一丸となって情報セキュリティに取り組むため全ての従業員に周知することが求められます。\n・情報セキュリティ監査基準は、情報セキュリティ監査業務の品質を確保し、有効かつ効率的に監査を実施することを目的とした監査人の行為規範です。\n・情報セキュリティ実施手順は、情報セキュリティ対策基準で定めた規定を実施する際に、実際にどのような方法で情報セキュリティを確保するかについてを示す文書です。詳細な管理手順が記述されます。\n・情報セキュリティ対策基準は、情報セキュリティ方針の目的を達成するために、組織が守るべきルールを示す文書です。企業の構成員が守るべき「規程類」に相当します。\n・正しい。情報セキュリティ方針は、情報セキュリティマネジメントに関する組織の基本原則を記述した文書です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/62.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q62/62.png"
         ]
       }
     },
@@ -2872,7 +2872,7 @@
         "text": "JIS Q 31000によれば、リスクマネジメントにおける4つのプロセスの役割は次の通りです。リスク特定リスクを発見、認識及び記述するプロセス。リスク分析リスクの特質を理解し、リスクレベルを決定するプロセス。リスク評価リスク及び／又は大きさが、受容可能か又は許容可能かを決定するために、リスク分析の結果をリスク基準と比較するプロセス。リスク対応リスクを修正するプロセス。リスク分析・リスク評価の結果明らかになったリスクに対して対応方法を講じる。各記述と4つのプロセスは、それぞれ以下のような対応します。\n・リスク特定に該当します。\n・リスク評価に該当します。\n・リスク分析に該当します。\n・正しい。リスク対応に該当します。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/63.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q63/63.png"
         ]
       }
     },
@@ -2962,8 +2962,8 @@
         "text": "電子証明書は、個人や企業が使用する公開鍵に対する電子式の証明書です。第三者機関である認証局(CA)に申請を行い、審査に合格すると発行されます。電子証明書には、認証を受けた公開鍵が含まれていて、真正性を保証するために認証局のデジタル署名が付されています。暗号化通信の開始に際し、電子証明書を提示された利用者は「認証局の公開鍵」を使用して、電子証明書に付された「認証局のデジタル署名」を検証します。デジタル署名の検証に成功したならば、同封されている公開鍵が正当であり、かつ、改ざんされていないことが保証されます。\n・デジタルサイネージは、デジタル技術を活用して平面ディスプレイやプロジェクタなどに映像や情報を表示する広告媒体のことです。\n・デジタルフォレンジックスは、インシデントの発生時に関連するデジタル機器上の電磁的記録を確実かつ正確に収集・取得し、保全するとともに、分析・解析を行い、法定紛争やトラブルにおける立証に役立てる活動です。\n・正しい。電子証明書は、鍵の所有者を認証局が保証するものです。\n・バイオメトリクス認証は、人間の身体的な特徴や行動の特性など、個人に固有の情報を用いて本人の認証を行う方式です。\n\n※電子証明書は、デジタル証明書、サーバ証明書、公開鍵証明書の名称でも呼ばれます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/65_1.png",
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/65_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q65/65_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q65/65_2.png"
         ]
       }
     },
@@ -3107,7 +3107,7 @@
         "text": "ある会社の社員の情報処理技術者試験の受験状況の一部を次に示す。この表を関係データベースで管理するために，二つの表に分割する方法として，適切なものはどれか。ここで，この会社には同姓同名の社員がいるものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/69.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q69/69.png"
         ]
       },
       "choices": [
@@ -3115,28 +3115,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_haru/img/69a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q69/69a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_haru/img/69i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q69/69i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_haru/img/69u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q69/69u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_haru/img/69e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q69/69e.png"
           ]
         }
       ],
@@ -3151,7 +3151,7 @@
         "text": "関係データベースにおいて、表の分解などによってデータベースの整合性および保守性を高める作業を正規化といいます。\n\n正規化は、表を分割した際に情報が損失してしまうことを防止するために、以下の定められた手順に沿って行います。(第3正規化より後もありますが割愛します)第1正規化繰り返し項目や集合値をもつ属性を排除し、全ての属性が単一値から成るようにする。第2正規化主キーの一部に関数従属※2する属性を別表に分離する。第3正規化非キー属性に関数従属する属性を別表に分離する。まず、この表の主キーについて考えます。主キーとは、表内の1つの行を特定可能な属性又は属性の組合せです。このケースでは、1人の社員が同じ日に複数の試験を受験することはありませんから、{社員ID，試験日}が主キー※1になります。\n第2正規化では、主キーの一部に関数従属する属性を別表に移します。\"試験日\"に関数従属する属性は存在しませんが、\"社員ID\"は社員ごとに固有の番号なので、\"社員ID\"が決まれば\"社員名\"と\"生年月日\"も決まります。つまり社員ID→{社員名，生年月日}の関係が第2正規化における分割対象となります。したがって設問の表は次のように分解されます。表の分解では、分離した表の主キー属性を元表に残して表同士を関連付けるので、\"社員ID\"は両方の表に存在することになります。\n\n以上より適切な分割になっているのは「ア」です。\n\n※1実際には随時開催されているITパスポートと別の試験を同日に受験するケースもあり得るので、{社員ID，試験種別，試験日}とした方が良いかもしれません。\n※2関数従属とは、ある属性の値が決定したとき他の属性の値が一意に決定される関係のことです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/69_1.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q69/69_1.png"
         ]
       }
     },
@@ -3197,7 +3197,7 @@
         "text": "機械語(マシン語)は、2進数の0と1のみで記述された、CPUが直接理解でき実行可能な命令の集まりです。どのプログラム言語で記述されたソースプログラムであっても、最終的には機械語に翻訳されて実行されます。プログラム言語のうち、ハードウェア寄りに位置するものを低水準言語(低級言語)、反対にハードウェアへの依存が少なく、記述の抽象性が高いものを高水準言語(高級言語)といいます。一般的に機械語とアセンブリ言語は低水準言語、それ以外は高水準言語に分類します。\n・正しい。高水準言語で記述されたプログラムは、コンパイラやインタプリタによって機械語に変換されてから実行されます。\n・0と1だけで記述される機械語は最も低水準な言語です。\n・機械語は0と1だけの2進数で記述されます。\n・ほとんどのアプリケーションソフトは高水準言語を使ってプログラミングされています。機械語が使われているのは一部の特殊用途だけです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/70.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q70/70.png"
         ]
       }
     },
@@ -3287,7 +3287,7 @@
         "text": "最も簡単なのは、10進数の足し算のように2進数同士の和を筆算で求める方法です。日常使っている10進数では10で一つ上の桁に繰り上がるように、2進数では2で繰り上がります（1＋1＝10）。別の方法としては、2進数を一度10進数に変換し、それを加算した後に再び2進数に戻すこともできます。1. 2つの2進数をそれぞれ10進数に変換する010110102＝26＋24＋23＋21\n＝64＋16＋8＋2＝9010\n\n011010112＝26＋25＋23＋21＋20\n＝64＋32＋8＋2＋1＝107102. 10進数同士を加算する90＋107＝1973. 2.の結果を2進数に戻す19710＝128＋64＋4＋1\n＝27＋26＋22＋20＝110001012どちらの方法でも答えは11000101になります。したがって「エ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/72.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q72/72.png"
         ]
       }
     },
@@ -3753,28 +3753,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_haru/img/83.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q83/83.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_haru/img/83.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q83/83.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_haru/img/83.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q83/83.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_haru/img/83.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q83/83.png"
           ]
         }
       ],
@@ -3921,8 +3921,8 @@
         "text": "公開鍵暗号方式による暗号化通信とデジタル署名では、使用する鍵の組合せが異なるため注意が必要です。\n\n【暗号化通信】\n送信者が\"受信者の公開鍵\"で暗号化、受信者は\"自身の秘密鍵\"で復号する\n【デジタル署名】\n送信者が\"自身の秘密鍵\"で署名を生成、受信者は\"送信者の公開鍵\"で署名を検証する\n・デジタル署名は送信者の秘密鍵で作成します。Aさんのデジタル署名の作成に必要なのは、\"Aさんの秘密鍵\"です。\n・メールの自動返信は、メールサーバやメールソフトに備わる機能であり、公開鍵暗号方式とは関係がありません。\n・正しい。Aさんは\"Bさんの公開鍵\"で暗号文を作成して送信します。そして、Bさんは\"自身の秘密鍵\"で復号します。秘密鍵を持つのはBさん本人だけなので、通信の秘匿が保証されます。\n・Bさんに送られた通信データが改ざんされたことを検知できるようにするためには、通信データに送信者であるAさんのデジタル署名を付加する必要があります。改ざんを検知可能なのは受信側であるBさん、検証に使用される鍵は\"Aさんの公開鍵\"なので記述は誤りです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/86_1.png",
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/86_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q86/86_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q86/86_2.png"
         ]
       }
     },
@@ -3968,7 +3968,7 @@
         "text": "E-R図(Entity Relationship Diagram)は、データベース化の対象となる実体(エンティティ)と実体の持つ属性(アトリビュート)、及び、実体間の関連(リレーションシップ)を表現する図です。任意のオブジェクトとその関連をデータモデル化できますが、関係モデルとの親和性が高いため、関係データベースの概念データモデルの分析に標準的に利用されています。\n・構造化チャートの説明です。\n・アローダイアグラムの説明です。\n・フローチャート(流れ図)の説明です。\n・正しい。E-R図の説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/87.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q87/87.png"
         ]
       }
     },
@@ -4068,9 +4068,9 @@
           "正しい。選択は、表から特定の行(タプル)を抜き出す操作です。"
         ],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/89a.png",
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/89i.png",
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/89e.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q89/89a.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q89/89i.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q89/89e.png"
         ]
       }
     },
@@ -4086,7 +4086,7 @@
           "商品名が 'うどん%' で選択される商品の数を求める。"
         ],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/90.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q90/90.png"
         ]
       },
       "choices": [
@@ -4136,7 +4136,7 @@
         "text": "表計算ソフトを用いて，天気に応じた売行きを予測する。表は，予測する日の天気(晴れ，曇り，雨)の確率，商品ごとの天気別の売上予測額を記入したワークシートである。セル E4 に商品Aの当日の売上予測額を計算する式を入力し，それをセル E5～E6 に複写して使う。このとき，セル E4 に入力する適切な式はどれか。ここで，各商品の当日の売上予測額は，天気の確率と天気別の売上予測額の積を求めた後，合算した値とする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/91.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q91/91.png"
         ]
       },
       "choices": [
@@ -4348,7 +4348,7 @@
         "text": "パスワードリスト攻撃は、あるサイトに対する攻撃などによって得られたIDとパスワードのリストを用いて、別のサイトへの不正ログインを試みる攻撃です。この攻撃は、複数のサイトで同様のID・パスワードの組みを設定している利用者が多いという傾向を悪用したものです。\nパスワードリスト攻撃では、漏えい事故が発生したのとは別の複数のサイトで被害が生じる可能性があります。このとき被害に遭うのは別々のサイトに同じID・パスワードの組みを使用していた利用者です。したがって「イ」が問題点になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/95.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q95/95.png"
         ]
       }
     },
@@ -4438,7 +4438,7 @@
         "text": "SIMカードは、端末に割り当てられた電話番号を特定するためのID番号(IMSI)が記録された、携帯やスマートフォンが通信するために必要なICカードです。SIMカードを差し替えることで、電話番号を他の端末に移したり、別の通信キャリアのサービスを利用したりすることができます。\n\n・B-CASカードは、デジタル放送受信機に同梱されているICカードで、デジタル放送における著作権保護対策として正規の機器を認証するために利用されています。\n・PCカードは、PCに挿して機能を拡張するためのカード型インタフェースです。\n・SDカードは、メモリカード規格の1つです。携帯電話やスマートフォン、デジタルカメラやゲーム機など、多方面で利用されています。\n・正しい。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_haru/img/97.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_haru/q97/97.png"
         ]
       }
     },

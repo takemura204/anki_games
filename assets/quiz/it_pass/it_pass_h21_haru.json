@@ -278,7 +278,7 @@
         "text": "いずれも時価100円の四つの株式があり，そのうちの一つに投資したい。経済の成長が高成長，中成長，低成長の場合，それぞれの株式の予想値上がり幅が表のとおりであるとき，値上がり幅の期待値が最も高い株式はどれか。ここで，高成長，中成長，低成長になる確率はそれぞれ0.4，0.4，0.2であり，経済が成長しない場合は考えないものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/07.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q7/07.png"
         ]
       },
       "choices": [
@@ -358,8 +358,8 @@
         "text": "POS(Point Of Sales：販売時点情報管理)は、小売店等の販売情報を販売して時点で情報システムに取り込む管理手法です。小売業やサービス業、レストラン、ホテルなどさまざまな業種で使用されていて、顧客が商品を購入した際に商品のバーコードをスキャンすることで、商品、日時、価格、支払方法、顧客属性などがリアルタイムにPOSシステムに取り込まれる仕組みになっています。一般的に、商品のバーコードには「JANコード」という商品識別バーコードが用いられています。\n・正しい。JANコードは、商品のバーコードとして使用されている規格です。\n・Japanese Agricultural Standardの略。日本農林規格のことです。\n・Japanese Industrial Standardsの略。日本産業規格のことです。\n・QRは、正方形状上に二次元コードを表現する規格で、従来のバーコードより多くの情報を含めることができたり、360度読み取り可能などの特徴があります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/08.png",
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/08a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q8/08.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q8/08a.png"
         ]
       }
     },
@@ -449,7 +449,7 @@
         "text": "プロダクトポートフォリオマネジメント(PPM)分析は、縦軸と横軸に「市場成長率」と「市場占有率」を設定したマトリックス図を4つの象限に区分し，製品の市場における位置付けを分析して資源配分を検討する手法です。\n\n4つの象限は、市場内の位置付けから以下のような名称で呼ばれています。花形(star) … [成長率：高、占有率：高]占有率・成長率ともに高く、資金の流入も大きいが、成長に伴い占有率の維持には多額の資金の投入を必要とする分野金のなる木(cash cow) … [成長率：低、占有率：高]市場の成長がないため追加の投資が必要ではなく、市場占有率の高さから安定した資金・利益の流入が見込める分野問題児(problem child) … [成長率：高、占有率：低]成長率は高いが占有率は低いので、花形製品とするためには多額の投資が必要になる。投資が失敗し、そのまま成長率が下がれば負け犬になってしまうため、慎重な対応を必要とする分野負け犬(dog) … [成長率：低、占有率：低]成長率・占有率がともに低く、新たな投資による利益の増加も見込めないため市場からの撤退を検討するべき分野つまり問題文で問われている「市場成長率は低いが市場占有率を高く保っている製品の位置付け」は、金のなる木が適切です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/10.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q10/10.png"
         ]
       }
     },
@@ -671,7 +671,7 @@
         "text": "知的財産権は、人間の知的活動によって創作された財産を保証する権利で、「著作権」と「産業財産権」に分類することができます。\n産業財産権は関係機関に申請をして認められれば権利として登録されるのに対して、著作権は特に申請を必要とせず創作物が創作された時点で著作物の創作者に対して発生する権利です。\n\n産業財産権には以下の4つの種類があり、権利設定を受けるにはいずれも省庁への申請・登録が必要です。特許権自然の法則や仕組みを利用した価値ある発明を保護する、存続期間は出願日から20年実用新案権物品の形状、構造または組み合わせに係る考案のうち発明以外のものを保護する、存続期間は出願日から10年意匠権製品の価値を高める形状やデザインを保護する、存続期間は出願日から25年商標権商品の名称やロゴマークなどを保護する、存続期間は設定登録日から10年",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/15.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q15/15.png"
         ]
       }
     },
@@ -717,7 +717,7 @@
         "text": "損益計算書は、一会計期間(通常は1年)における組織の経営成績を表示した財務諸表です。1年間の売上の金額と、それに対応する費用の金額、および企業活動によって得られた利益が記載され、株式会社では法律によって作成が義務付けられています。\n・正しい。損益計算書の説明です。\n・キャッシュフロー計算書の説明です。\n・貸借対照表の説明です。\n・株主資本等変動計算書の説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/16.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q16/16.png"
         ]
       }
     },
@@ -905,7 +905,7 @@
         "text": "図は，クレジットカードを利用した取引を表す。⑤に該当する行為はどれか。ここで，①～⑥は取引の順序を表している。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/21.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q21/21.png"
         ]
       },
       "choices": [
@@ -1171,7 +1171,7 @@
         "text": "翌月の製造量は，翌月の販売見込量－当月末の在庫量で算出される。翌月の販売見込量が，当月までの3か月の販売実績量の移動平均によって設定されるとき，9月の製造量の算出式を示したものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/27.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q27/27.png"
         ]
       },
       "choices": [
@@ -1295,7 +1295,7 @@
         "text": "事業部制組織は、トップマネジメントの下に製品別や商品別、地域別、市場別などの単位で分化し、分化した組織ごとに意思決定を行う組織形態です。各事業部ごとに営業・生産・総務・管理などの職能組織があり、独立採算が求められることが特徴です。\n・アメーバ組織の説明です。\n・職能別組織の説明です。専門領域が明確になり効率的ですが、組織間で壁が出来やすいというデメリットもあります。\n・正しい。事業部制組織の説明です。\n・マトリックス組織の説明です。機動的な行動が可能になりますが、責任や指示系統が曖昧になりやすいという特徴があります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/29.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q29/29.png"
         ]
       }
     },
@@ -1615,7 +1615,7 @@
         "text": "図の作業について，全体の作業終了までの日数は24日間であった。作業Cの日数を3日短縮できたので，全体の作業終了までの日数が1日減った。作業Dの所要日数は何日か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/37.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q37/37.png"
         ]
       },
       "choices": [
@@ -1651,7 +1651,7 @@
         "text": "アローダイアグラムからクリティカルパスを求める定番問題です。\n\n作業Cが短縮する前の状態では、全体の作業終了までの日数（最早結合時刻）は24日間とありますので、この状態でのクリティカルパスは、\n\n　A(5)→B(5)→D(x)→F(5)＝?(xは9以下)\n　A(5)→C(10)→E(4)→F(5)＝24\n\nで、「A→C→E→F」であることがわかります。\n\n次に作業Cが、3日短縮すると全体の作業終了までの日数(最早結合時刻)は1日短縮した(23日)とありますので、\n\n　A(5)→B(5)→D(x)→F(5)＝23(xは9以下)\n　A(5)→C(7)→E(4)→F(5)＝21\n\nとなり、最早結合時刻が21日ではない「A→B→D→F」の工程が最早結合時刻23日でクリティカルパスであることがわかります。\n\n23日からA, B, Fの各作業日数を引くと、Dの作業期間は8日になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/37a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q37/37a.png"
         ]
       }
     },
@@ -1697,7 +1697,7 @@
         "text": "ソフトウェアの開発モデルであるウォーターフォールモデルに関する問題です。\n各工程を区切り、上流工程から下流工程に向かって流れるように進行していくウォーターフォールモデルには、現在開発がどの段階まで進んでいるのかが把握し易いという利点があり、大規模なシステム開発において比較的よく採用されます。\n・成長モデルの長所です。\n・正しい。\n・ウォーターフォールモデルでは工程の後戻りが難しく、上流の小さな設計ミスが下流では大きな問題になることがあるため、上流工程でのレビューにより時間をかける必要があります。\n・プロトタイプモデルの長所です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/38.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q38/38.png"
         ]
       }
     },
@@ -1831,7 +1831,7 @@
         "text": "ファンクションポイント法は、外部入出力や内部ファイルの数と難易度の高さから、ファンクションポイントという数値を算出し、それを元に論理的に開発規模を見積もる手法です。画面や帳票の数などを基準に見積もるので、依頼者からのコンセンサス(合意)が得られやすいという長所があります。\n・正しい。ファンクションポイント法の説明です。\n・ステップ数見積もり法の説明です。\n・3点見積もり法の説明です。\n・COCOMOの説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/41.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q41/41.png"
         ]
       }
     },
@@ -2107,7 +2107,7 @@
         "text": "あるシステムの設計工程における設計書作成の予定所要工数，及び現在の各設計書の進捗率は表のとおりである。予定どおりの所要工数で完了まで進むものとして，すべての設計書の完了を100%としたとき，現在の全体の進捗率(%)は幾らか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/48.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q48/48.png"
         ]
       },
       "choices": [
@@ -2231,7 +2231,7 @@
         "text": "ガントチャートは、主に日程計画の策定や進捗度を管理するために使用される表です。縦軸に作業項目・横軸に時間をとり、作業に必要な期間を横棒の長さで表記します。\n・E-R図は、データを実体、関係、属性からモデル化する方法で、関係データベースの設計に利用します。\n・アローダイアグラムは、複数の作業が並列して行われるプロジェクトなどにおいて個々の作業同士の関係を分析するための図です。\n・正しい。\n・状態遷移図は、時間の経過や事象の発生に応じて状態が変わるようなシステムの振る舞いを記述するときに適した図式化手法です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/50.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q50/50.png"
         ]
       }
     },
@@ -2507,7 +2507,7 @@
         "text": "あるファイルシステムの一部が図のようなディレクトリ構造であるとき，*印のディレクトリ(カレントディレクトリ)D3から矢印が示すディレクトリD4の配下のファイルaを指定するものはどれか。ここで，ファイルの指定は，次の方法によるものとする。\n\n〔指定方法〕\n・ファイルは，\"ディレクトリ名¥…¥ディレクトリ名¥ファイル名\"のように，経路上のディレクトリを順に\"¥\"で区切って並べた後に\"¥\"とファイル名を指定する。\n・カレントディレクトリは\".\"で表す。\n・1階層上のディレクトリは\"..\"で表す。\n・始まりが\"¥\"のときは，左端にルートディレクトリが省略されているものとする。\n・始まりが\"¥\"，\".\"，\"..\"のいずれでもないときは，左端にカレントディレクトリ配下であることを示す\".¥\"が省略されているものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/57.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q57/57.png"
         ]
       },
       "choices": [
@@ -2631,7 +2631,7 @@
         "text": "DNS(Domain Name System)は、ドメイン名・ホスト名とIPアドレスを結びつけて変換する(名前解決する)仕組みです。TCP/IPを利用したネットワークでは、各機器を識別するため一意のIPアドレスが割り当てられていますが、このIPアドレスは数字の羅列で人間にとって覚えにくいため、IPアドレスと対応する別名であるドメイン名・ホスト名が付けられています。DNSは、IPアドレスと対応するドメイン名の関係を保持し、要求に応じて相互変換する機能をもちます。インターネット上でWebページを指定する場合は、数字の並びであるIPアドレス(xxx.xxx.xxx.xxx)ではなく、ドメイン名(http://xxx.xxx.co.jpなど)でアクセスします。この際、バックグラウンドでDNSによってホスト名とIPアドレスの変換が行われています。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/59.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q59/59.png"
         ]
       }
     },
@@ -2693,28 +2693,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_haru/img/61.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q61/61.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_haru/img/61.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q61/61.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_haru/img/61.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q61/61.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_haru/img/61.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q61/61.png"
           ]
         }
       ],
@@ -2745,28 +2745,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_haru/img/62.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q62/62.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_haru/img/62.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q62/62.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_haru/img/62.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q62/62.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_haru/img/62.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q62/62.png"
           ]
         }
       ],
@@ -2781,8 +2781,8 @@
         "text": "アクセス権限とビット位置は以下のように対応しています。4人のアクセス権限を表にまとめると次のようになります。個人の属性情報が登録されていないDさんには、人事部グループの属性情報である\"110\"が適用されます。したがって、参照可能人数は3名、更新可能人数は2名になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/62_1.png",
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/62_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q62/62_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q62/62_2.png"
         ]
       }
     },
@@ -2872,8 +2872,8 @@
         "text": "答えを導く方法としてはいくつかの方法がありますが、一度10進数に直して3倍した数値を2進数に戻す方法と、101102を左へ1ビット分シフトさせて101102を足すという方法を説明します。\n\n【一度10進数に直してから2進数に戻す方法】\nまず、2進数10110を10進数で表します。各桁の重みをつけて足し合わせるので、以下のように求めます。\n\n　24＋22＋21＝16＋4＋2＝22\n\n次に、この10進数22を3倍します。\n\n　22×3＝66\n\n最後に、10進数66を2で素因数分解して2進数に戻します。【101102を左へ1ビット分シフトさせて101102を足す方法】\n2進数にはビット列全体を1ビット左シフトするごとにその値が2倍になる性質がありますので、101102を左シフトさせて1011002とし、これに101102を足すことで3倍になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/64_1.png",
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/64_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q64/64_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q64/64_2.png"
         ]
       }
     },
@@ -2919,7 +2919,7 @@
         "text": "フェールセーフは、システムに不具合や故障が発生したときに、障害の影響範囲を最小限にとどめ、常に安全を最優先して制御を行う設計方針です。\n\n例えば、工場のロボットの動作範囲内に人間が入った場合、ロボットを制御するシステムはセンサーで危険を察知し機械を停止します。また、道路信号機は停電や故障したときに両方向とも赤点滅(または黄点滅との組合せ)になるように設計されています。これらがフェールセーフの考え方です。\n・正しい。フェールセーフの考え方です。\n・フェールソフトの考え方です。\n・ネットワークからの不正なアクセスを防ぐのはファイアウォールです。\n・人為的なミスによる障害を防ぐフールプルーフの考え方です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/65.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q65/65.png"
         ]
       }
     },
@@ -2937,28 +2937,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_haru/img/66.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q66/66.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_haru/img/66.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q66/66.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_haru/img/66.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q66/66.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_haru/img/66.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q66/66.png"
           ]
         }
       ],
@@ -3017,7 +3017,7 @@
         "text": "入力作業担当者は営業担当者から渡された伝票を営業担当者ごと都道府県別に入力していきます。\n都道府県別で入力していくので、次回入力するときに前画面で入力した都道府県が選択状態であれば選択作業を省略でき作業の効率化が望めます。\n\nその他の選択肢では現状の入力手順では項目選択回数が多くなってしまい、逆に非効率な作業となってしまいます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/67a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q67/67a.png"
         ]
       }
     },
@@ -3161,7 +3161,7 @@
         "text": "次のべン図の黒色で塗りつぶした部分の検索条件はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/71.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q71/71.png"
         ]
       },
       "choices": [
@@ -3197,10 +3197,10 @@
         "text": "検索条件をベン図で表してみるとよくわかります。\n・設問のベン図と一致するので、これが正解です。\n・\n・\n・",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/71a.png",
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/71i.png",
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/71u.png",
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/71e.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q71/71a.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q71/71i.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q71/71u.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q71/71e.png"
         ]
       }
     },
@@ -3212,7 +3212,7 @@
         "text": "図1のように二つの正の数値A1，A2を読み取り，二つの数値B1，B2を出力するボックスがある。B1にはA2と同じ数値を出力し，B2にはA1をA2で割った余りを出力する。図2のようにこのボックスを2個つないだ場合，A1=15，A2=6のとき後方のボックスのB1に出力される数値は幾らか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/72.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q72/72.png"
         ]
       },
       "choices": [
@@ -3248,7 +3248,7 @@
         "text": "問題の条件をもとに考えていくと、図のように数値が流れていくことになり、B1には「3」が出力されることがわかります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/72a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q72/72a.png"
         ]
       }
     },
@@ -3558,7 +3558,7 @@
         "text": "ブレードサーバは、抜き差し可能なサーバを複数搭載可能な筐体（ケース）内に搭載した形態のサーバコンピュータです。\nブレード（=刃）のように薄いサーバを挿し込むことで、ラックマウント型よりもさらに高密度に設置することを可能とするサーバとして開発され、電源ケーブルや冷却装置、外部インタフェース等を、ブレードサーバでは筐体側に搭載し、各ブレードが共有します。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/79.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q79/79.png"
         ]
       }
     },
@@ -3570,7 +3570,7 @@
         "text": "横軸を点数(0～10点)とし，縦軸を人数とする度数分布のグラフが，次の黒い棒グラフになった場合と，グレーの棒グラフになった場合を考える。二つの棒グラフを比較して言えることはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/80.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q80/80.png"
         ]
       },
       "choices": [
@@ -3660,7 +3660,7 @@
         "text": "データDを更新する二つの処理A，Bが，①→③→②→④のタイミングで実行された場合，Dの値は幾らになるか。ここで，Dの初期値は2とする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/82.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q82/82.png"
         ]
       },
       "choices": [
@@ -3740,7 +3740,7 @@
         "text": "HTML(Hyper Text Markup Launguage)は、タグ(\"<\",\">\")と呼ばれる特殊な記号で文字を囲むことで文書構造やテキストに意味をもたせます。このHTMLがブラウザソフトに解読されてWebページとして画面に表示されます。\n・HTTPプロトコルが使われます。FTPはファイル転送のためのプロトコルです。\n・HTMLはSGMLを元に開発されました。\n・正しい。HTMLの説明です。\n・XML(eXtended Markup Launguage)はSGMLを拡張して開発され、タグの名前を自由に定義することができます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/83.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q83/83.png"
         ]
       }
     },
@@ -3884,7 +3884,7 @@
         "text": "セルA1～A10に表のような数値が入力されており，セルB1～B10に計算式が入力されている。このときのセルB1～B10の計算結果とセルC1～C10の計算結果がそれぞれ同じ数値となるようにするために，最初にセルC10に計算式を入力し，次にセルC10をセルC1～C9に複写したい。セルC10に入力する計算式として，正しいものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/87.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q87/87.png"
         ]
       },
       "choices": [
@@ -4062,7 +4062,7 @@
         "text": "Mさんは，障害の原因を特定するための手順を，流れ図に書いて考えてみることにした。このとき，次の図のXに入る適切な字句はどれか。\n\n　なお，次の流れ図は，作成途中のものである。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/91.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q91/91.png"
         ]
       },
       "choices": [
@@ -4108,7 +4108,7 @@
         "text": "Mさんは，今回の障害の原因を特定するための手順を，流れ図として完成させようと考えた。このとき，次の図のYに入る適切な字句はどれか。\n\n　なお，次の流れ図は，作成途中のものである。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/92.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q92/92.png"
         ]
       },
       "choices": [
@@ -4242,7 +4242,7 @@
         "text": "表の性別年代別利用者の構成比が分かるようにグラフ化した。次の図の性別年代別構成比グラフのZに入る項目名として，適切なものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/95.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q95/95.png"
         ]
       },
       "choices": [
@@ -4288,7 +4288,7 @@
         "text": "女性会員について，年代別に各時間帯に入館した人数の推移が分かるようにグラフ化した。次の図の女性会員の年代別時間帯推移グラフの分析として，適切なものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/96.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q96/96.png"
         ]
       },
       "choices": [
@@ -4378,7 +4378,7 @@
         "text": "Aさん，Bさんがそれぞれ1人で通販業務を行う場合の作業時間と1週間の通販業務の進捗率の関係を図のようなグラフで表す。Aさんが1人で通販業務を行う場合の作業時間と進捗率の関係を線分a，Bさんが1人で通販業務を行う場合の作業時間と進捗率の関係を線分bで表す。\n\n　AさんとBさんの2人が一緒に通販業務を行うとき，作業時間と1週間の通販業務の進捗率の関係を表す線分はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_haru/img/98.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_haru/q98/98.png"
         ]
       },
       "choices": [

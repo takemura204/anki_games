@@ -58,7 +58,7 @@
         "text": "あるプロジェクト計画の作業リストを示す。これをアローダイアグラムで表したものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_sample/img/02.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_sample/q2/02.png"
         ]
       },
       "choices": [
@@ -66,28 +66,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_sample/img/02a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_sample/q2/02a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_sample/img/02i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_sample/q2/02i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_sample/img/02u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_sample/q2/02u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_sample/img/02e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_sample/q2/02e.png"
           ]
         }
       ],
@@ -102,9 +102,9 @@
         "text": "順を追ってアローダイアグラムを描いてみます。\n\n先行作業のない作業A，Bはプロジェクト開始直後から作業が可能なので、開始点から作業を表す２つの矢印を引きます。次に作業Cは、作業A終了時点で開始可能となるので結合点から矢印を引きます。\n作業Dは、作業A，Bの両方が先行作業となっているので、作業Aが完了しないと開始できないことを表すためのダミー作業の点線矢印を作業B終了の結合点に向けて描き入れます。最後に作業Dを表す矢印を引いて完成となります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_sample/img/02_1.png",
-          "https://www.itpassportsiken.com/kakomon/01_sample/img/02_3.png",
-          "https://www.itpassportsiken.com/kakomon/01_sample/img/02_4.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_sample/q2/02_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_sample/q2/02_3.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_sample/q2/02_4.png"
         ]
       }
     },
@@ -116,7 +116,7 @@
         "text": "損益計算書中のaに入るものはどれか。ここで，網掛けの部分は表示していない。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_sample/img/03.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_sample/q3/03.png"
         ]
       },
       "choices": [
@@ -152,7 +152,7 @@
         "text": "損益計算書(P/L)は、会計期間における収益と費用を明らかにして企業の経営成績を表示した財務諸表です。\n損益計算書には１年間の売上の金額と、それに対応する費用の内訳金額とそれにより得られた利益が記載され、利害関係者に企業の経営状況を伝えます。\n\n空欄は、網掛け部分も含めて上から「売上総利益」,「営業利益」,「経常利益」,「当期純利益」となります。\n\n売上高から売上原価を引くことで、売上総利益(粗利益)となり、原価のほかにかかった費用(販売費や、作業員の給料、建物の減価償却費)などを引くと営業利益となります。\nこの営業利益に、本業以外の収入と支出(受取利息や支払利息)などを加減することで、経常利益が算出されます。\n経常利益は、さらに特別損益(固定資産の売却益や災害損失)などを加減して、税引前当期純利益となります。\n税引前当期純利益の金額をもとに、納める税額（法人税・事業税・住民税など）が算出され、この税額を減じることでようやく企業が一会計期間内にあげることができた当期純利益が算出されます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_sample/img/03a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_sample/q3/03a.png"
         ]
       }
     },
@@ -340,7 +340,7 @@
         "text": "図のQRコードの特徴はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_sample/img/08.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_sample/q8/08.png"
         ]
       },
       "choices": [
@@ -694,7 +694,7 @@
         "text": "表から算出できる1か月当たりの利益を最大にした場合の，製品Bの1か月当たりの生産個数は幾つか。ここで，1か月当たりの工数は280人日とする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_sample/img/16.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_sample/q16/16.png"
         ]
       },
       "choices": [
@@ -1048,7 +1048,7 @@
         "text": "図のソフトウェアライフサイクルを，運用プロセス，開発プロセス，企画プロセス，保守プロセス，要件定義プロセスに分類したとき，aに当てはまるものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_sample/img/24.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_sample/q24/24.png"
         ]
       },
       "choices": [
@@ -1314,7 +1314,7 @@
         "text": "次のアローダイアグラムで作業Bを3日，作業Cを1日短縮した場合，全体の所要日数は何日短縮できるか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_sample/img/30.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_sample/q30/30.png"
         ]
       },
       "choices": [
@@ -1702,7 +1702,7 @@
         "text": "2進数の加算は10進数の加算と同様にけたをそろえて計算します。10進数では10になると桁が上がりますが(9+1=10)、2進数では2になると1つ桁が上がります。(1+1=10)\n\n筆算で計算してみると、次のようになります。したがって正解は10100です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_sample/img/38.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_sample/q38/38.png"
         ]
       }
     },
@@ -1802,7 +1802,7 @@
         "text": "下から上へ品物を積み上げ，上にある品物から順に取り出す装置がある。この装置に対する操作は，次の2種類である。\n　PUSH n :品物(番号n)を積み上げる。\n　POP　　:上にある品物を1個取り出す。　最初は何も積み上げていない状態から開始して，次の順序で操作を行った結果はどれか。\n\n　PUSH 1→PUSH 5→POP→PUSH 7→PUSH 6→PUSH 4→POP→POP→PUSH 3",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_sample/img/41.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_sample/q41/41.png"
         ]
       },
       "choices": [
@@ -1810,28 +1810,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_sample/img/41a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_sample/q41/41a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_sample/img/41i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_sample/q41/41i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_sample/img/41u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_sample/q41/41u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/01_sample/img/41e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_sample/q41/41e.png"
           ]
         }
       ],
@@ -2066,7 +2066,7 @@
         "text": "SDカードは、デジタルカメラ、携帯電話などの携帯機器やテレビなどの家電機器まで幅広く利用されているカード上の記憶媒体でフラッシュメモリに分類されます。\n・Compact Disc Read Only Memoryの略。読み出し専用のデータを記録するCDです。\n・Dynamic Random Access Memoryの略。コンデンサに電荷を蓄えることにより情報を記憶し、電源供給が無くなると記憶情報も失われる揮発性メモリです。集積度を上げることが比較的簡単にできるためコンピュータの主記憶装置のメモリとして使用されます。\n・Static Random Access Memoryの略。フリップフロップと呼ばれる回路を用いることで非常に高速に動作することが可能な半導体メモリ(DRAMと同様に揮発性)。DRAMと比べて記憶容量あたりの単価が高いため、容量が少ないキャッシュメモリなどに使用されます。\n・正しい。フラッシュメモリは書き換え可能であり、電源を切ってもデータが消えない半導体メモリです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_sample/img/46.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_sample/q46/46.png"
         ]
       }
     },
@@ -2254,7 +2254,7 @@
         "text": "図に示す階層構造で，複数個の同名のディレクトリ A，Bが配置されているとき，*印のディレクトリ(カレントディレクトリ)から矢印が示すディレクトリの配下のファイルfを指定するものはどれか。ここで，ファイルの指定方法は次のとおりである。\n\n〔指定方法〕\n・“ディレクトリ名¥ … ¥ディレクトリ名¥ファイル名”のように，経路上のディレクトリを順に“¥”で区切って並べた後に“¥”とファイル名を指定する。\n・カレントディレクトリは“.”で表す。\n・1 階層上のディレクトリは“..”で表す。\n・始まりが“¥”のときは，左端のルートディレクトリが省略されているものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_sample/img/51.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_sample/q51/51.png"
         ]
       },
       "choices": [
@@ -2290,7 +2290,7 @@
         "text": "ディレクトリとは、コンピュータに格納されているファイルを整理・管理するため、複数のファイルをひとまとめのグループにし、ディレクトリ同士の関係を階層構造(木構造)で取り扱う概念です。Windows環境では、ディレクトリのことをフォルダと言います。\n\n階層型ディレクトリのファイルシステムに関する用語には次のようなものがあります。ルートディレクトリ階層の最上位にあるディレクトリを意味する。カレントディレクトリ現在作業を行っているディレクトリを意味する。絶対パス階層の最上位のディレクトリを基点として，目的のファイルやディレクトリまで，全ての経路をディレクトリ構造に従って示す相対パス現在作業を行っているディレクトリを基点として，目的のファイルやディレクトリまで，全ての経路をディレクトリ構造に従って示す*印のBディレクトリがカレントディレクトリなので、相対パス指定だと、Bから１階層上のAディレクトリは「..¥」、さらに1階層上のルートディレクトリは「..¥..¥」となります。ルートディレクトリ配下のBディレクトリに格納されているファイルfを指定したいので、ルートディレクトリを指定する「..¥..¥」とBディレクトリ中のファイルfを指定する「B¥f」をつないだ「..¥..¥B¥f」が、適切となります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_sample/img/51a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_sample/q51/51a.png"
         ]
       }
     },
@@ -2512,7 +2512,7 @@
         "text": "・ある範囲の中で値を選択するためのコントロールです。\n・クリックすることで、ユーザーにアクションを起こさせるためのコントロールです。\n・コンピュータが時間のかかる処理を行っている場合に、操作の進行状況を表示するコントロールです。\n・正しい。複数の選択肢から排他的に一つを選ぶときに使うコントロールです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_sample/img/56.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_sample/q56/56.png"
         ]
       }
     },
@@ -2744,7 +2744,7 @@
         "text": "“会員録”表において，現住所も勤務地も東京都である女性の会員番号はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/01_sample/img/62.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/01_sample/q62/62.png"
         ]
       },
       "choices": [

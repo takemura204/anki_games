@@ -328,28 +328,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/08.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q8/08.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/08.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q8/08.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/08.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q8/08.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/08.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q8/08.png"
           ]
         }
       ],
@@ -628,7 +628,7 @@
         "text": "問題文を整理してみると、\n・製品P は、部品Aと部品Bが必要である。\n・部品Aの加工(1週間)には、部品Cが必要である。\n・部品B(2週間)と部品C(3週間)は購買品である。\n・製品P の組立に1週間かかる。\n\nかかる時間に着目して考えると、\n\nまず、部品Bと部品Cを発注します。3週間後部品Cが納入され、部品Aの加工にかかります。\n　ここまで3週間です。\n\n部品Aは1週間後に完成し、すぐにすでに到着済みの部品Ｂと共に製品Pに組み立てられます。\n　前の3週間に部品Aの加工時間1週間を足して、ここまで4週間です。\n\n製品Pが組立を終わり生産終了です。\n　前の4週間に部品Ｐの組立時間1週間を足して、5週間です。\n\n下の図を見てもらうと、イメージしやすいと思います。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/14.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q14/14.png"
         ]
       }
     },
@@ -646,28 +646,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/15.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q15/15.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/15.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q15/15.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/15.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q15/15.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/15.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q15/15.png"
           ]
         }
       ],
@@ -682,7 +682,7 @@
         "text": "JANコードは、黒の縦棒と白のスペースで数字を表現するバーコード規格です。日本では一般的な商品の識別コードとして商品に付けられてるので1回は目にしたことがあるはずです。JANコードのコード体系には、13桁の標準タイプと8桁の短縮タイプがあり、タイプごとに先頭(バーコードの左側)から以下の情報を表示することになっています。\n\n【13桁】\n国コード(2桁)、メーカーコード(5桁)、商品コード(5桁)、チェックディジット(1桁)\nまたは、国コード(2桁)、メーカーコード(7桁)、商品コード(3桁)、チェックディジット(1桁)\n【8桁】\n国コード(2桁)、メーカーコード(4桁)、商品コード(1桁)、チェックディジット(1桁)\n\n以上のように、JANコードには製造した企業（メーカー）とその商品の組合せの情報が含まれていて、最後の1桁は光学式読取機(OMR)の読み取り間違いを検出するためのチェックディジットとなっています。\n\nしたがって「エ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/15a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q15/15a.png"
         ]
       }
     },
@@ -782,7 +782,7 @@
         "text": "A社では前年度に実施したビジネス戦略の評価を進めている。表に示す条件の場合，総合評価の評点は何点か。[総合評価の方法]\n・戦略項目ごとの評価方法・基準によって評点を求める。\n・(1)の評点に重み付けしたものを合計して総合評価の評点を求める。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/18.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q18/18.png"
         ]
       },
       "choices": [
@@ -828,7 +828,7 @@
         "text": "損益計算書に記載される A～E の五つの利益のうち，Cに当てはまるものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/19.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q19/19.png"
         ]
       },
       "choices": [
@@ -864,7 +864,7 @@
         "text": "知っていれば簡単に解ける問題ですが、損益計算書という名前だけしか覚えていなかった人には厳しい問題かもしれません。\n\n空欄は、\n　A＝売上総利益\n　B＝営業利益\n　C＝経常利益\n　D＝税引前当期純利益\n　E＝当期純利益\nとなります。\n\n売上高から売上原価を引くことで、売上総利益(粗利益)となり、原価のほかにかかった費用(販売費や、作業員の給料、建物の減価償却費)などを引いて営業利益となります。\n\nこの営業利益に、本業以外の収入と支出(受取利息や支払利息)などを加減することで、経常利益が算出されます。\n\n経常利益は、さらに特別損益(固定資産の売却益や災害損失)などを加減して、税引前当期純利益となります。\n\n税引前当期純利益の金額をもとに、納める税額（法人税・事業税・住民税など）が算出され、この税額を減じることでようやく企業が一会計期間内にあげることができた当期純利益になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/19a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q19/19a.png"
         ]
       }
     },
@@ -954,7 +954,7 @@
         "text": "キャッシュフロー計算書は、企業会計について報告する財務諸表で、会計期間における資金（現金及び現金同等物）の増減、つまり収入と支出（キャッシュ・フロー）を営業活動・投資活動・財務活動ごとに区分して表示する書類です。\n・正しい。\n・損益計算書は、一会計期間(通常は1年)における収益と費用を明らかにして経営成績を表示した財務諸表です。\n・貸借対照表は、企業のある一定時点における資産、負債、純資産の状態を表す財務諸表です。\n・有価証券報告書は、金融商品取引法で規定されている、事業年度ごとに作成する企業内容の外部への開示資料です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/21.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q21/21.png"
         ]
       }
     },
@@ -1010,7 +1010,7 @@
         "text": "A作業, B作業, C作業からなる図のような業務プロセスがある。情報システムを導入することで改善が実現できるとき、製品を1個製造するために必要な作業工数は改善前に比べて何％削減されるか。ここで、図の矢印は作業順序を表し、作業工数は要員数×作業時間で計算する。〔改善前〕\n・各作業の要員数は10名\n・製品1個当たりの所要作業時間は、A作業は3時間、B作業は3時間、C作業は4時間である。\n\n〔改善後〕\n・A作業に必要な要員数が半分になる。\n・C作業の製品1個当たりの所要作業時間が半分になる。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/23.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q23/23.png"
         ]
       },
       "choices": [
@@ -1370,28 +1370,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/31.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q31/31.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/31.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q31/31.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/31.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q31/31.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/31.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q31/31.png"
           ]
         }
       ],
@@ -1998,28 +1998,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/45.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q45/45.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/45.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q45/45.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/45.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q45/45.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/45.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q45/45.png"
           ]
         }
       ],
@@ -2048,7 +2048,7 @@
         "text": "図のアローダイアグラムで示される日程のプロジェクトが開始されてから5週が経過した。各工程の進捗率が表に示すとおりの場合，プロジェクト完了の遅延につながる工程はどれか。ここで，今後の各工程の作業は，当初の予定どおり進むとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/46.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q46/46.png"
         ]
       },
       "choices": [
@@ -2138,7 +2138,7 @@
         "text": "システム開発プロセスを要件定義，外部設計，内部設計，プログラミングに分け，テストの種類を運用テスト，結合テスト，システムテスト，単体テストに分けたとき，図の a～cに入れる字句の適切な組合せはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/48.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q48/48.png"
         ]
       },
       "choices": [
@@ -2146,28 +2146,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/48a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q48/48a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/48a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q48/48a.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/48a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q48/48a.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/48a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q48/48a.png"
           ]
         }
       ],
@@ -2270,7 +2270,7 @@
         "text": "セキュリティワイヤーとは、ノートパソコンや液晶ディスプレイなどの機器を盗難から守るために使用する物理的なロープ状のセキュリティ器具です。容易な持ち運びが可能なノートPCが不特定多数の人が出入りする場所に置かされている場合、第三者に持ち出されてしまうリスクがあります。ワイヤーの一端を机や柱など固定された場所に取り付け、もう一端を機器の専用スロットに接続して施錠することで、簡単に持ち出されないようにします。情報漏えいや機器の紛失リスクを低減する基本的なセキュリティ対策の一つです。\n・火災から機器を守るには、消火設備や防火キャビネットなどの耐火設備の備付けが適切です。\n・正しい。セキュリティワイヤーは、ノートPCなどの持ち運び可能な機器を机や什器に固定し、盗難を抑止するために使用されます。\n・プライバシーフィルター（のぞき見防止フィルム）の用途です。セキュリティワイヤーは物理的盗難への対策であり、盗み見の防止効果はありません。\n・UPSや自家発電装置の用途です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/50.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q50/50.png"
         ]
       }
     },
@@ -2730,7 +2730,7 @@
         "text": "表計算ソフトを用いて社員コード中のチェックディジットを検算する。社員コードは3けたの整数値で，最下位の1けたをチェックディジットとして利用しており，上位2けたの各けたの数を加算した値の1の位と同じ値が設定されている。セルB2に社員コードからチェックディジットを算出する計算式を入力し，セルB2をセルB3～B5に複写するとき，セルB2に入力する計算式のうち，適切なものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/61.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q61/61.png"
         ]
       },
       "choices": [
@@ -2870,28 +2870,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/64a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q64/64a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/64i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q64/64i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/64u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q64/64u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/64e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q64/64e.png"
           ]
         }
       ],
@@ -2922,28 +2922,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/65.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q65/65.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/65.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q65/65.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/65.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q65/65.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/65.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q65/65.png"
           ]
         }
       ],
@@ -2968,7 +2968,7 @@
         "text": "ものとものとのつながりを抽象化してとらえるとき，XからYへのつながり(順序関係という)を(X，Y)と記し，と図示するものとする。3組の順序関係(A，B)，(A，C)，(B，D)を図で示したものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/66.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q66/66.png"
         ]
       },
       "choices": [
@@ -2976,28 +2976,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/66a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q66/66a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/66i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q66/66i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/66u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q66/66u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/66e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q66/66e.png"
           ]
         }
       ],
@@ -3066,7 +3066,7 @@
         "text": "任意の8ビットをデータXと，8ビットのデータ00001111をビットごとに排他的論理和をとった結果はどれか。ここで，各1ビットのデータAとデータBの排他的論理和をとった結果Cの値は次のように表される。また，データの左方を上位，右方を下位と呼ぶ。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/68.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q68/68.png"
         ]
       },
       "choices": [
@@ -3190,7 +3190,7 @@
         "text": "・A型、B型、ミニタイプなど様々なコネクタ形状があります。\n・USBには、4つの転送モードがありますが、PC利用者が設定するものではなくOS及びデバイスドライバによって自動で最適なモードが選択されます。4つの転送モードとは、コントロール転送、インタラプト転送、バルク転送、アイソクロナス転送です。\n・正しい。バスパワー方式の機能で接続されたコードを使って電源を供給することが可能です。\n・USBはシリアルインタフェースの規格です。(IEEE1394もシリアルです。)",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/70.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q70/70.png"
         ]
       }
     },
@@ -3246,7 +3246,7 @@
         "text": "図1のA1地点からC2地点へ行くとき，通過する地点が最も少なくて済む最短経路は，図2のように数えることによって3通りであることが分かる。A1地点から，C2地点を経由して，D4地点へ行く最短経路は何通りあるか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/72.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q72/72.png"
         ]
       },
       "choices": [
@@ -3282,7 +3282,7 @@
         "text": "A1地点からC2地点まで3通りの経路があります。A1地点からC2地点までと、C2地点からD4地点までは進む方向が変わっているだけですので、C2地点からD4地点までの最短経路数は、A1地点からC2地点までと同様に3通りであることがわかります。設問の右図のように数えれば以下のようになります。A1地点からC2地点までの3通りの経路をm1, m2, m3、C2地点からD4地点までの3通りの経路をn1, n2, n3 とすると、\n\nm1→C2→n1\nm1→C2→n2\nm1→C2→n3\nm2→C2→n1\n…\nm3→C2→n3\n\nというように、A1地点からC2地点までの3通りのそれぞれに対して、C2地点からD4地点までの3通りがあることになるので、A1地点から、C2地点を経由して、D4地点へ行く最短経路数は「3通り×3通り＝9通り」と計算できます。したがって「イ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/72_1.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q72/72_1.png"
         ]
       }
     },
@@ -3328,7 +3328,7 @@
         "text": "公開鍵基盤における認証局(CA)の役割は、取引当事者（ショッピングサイトや企業）とのデータ通信のときに使われる公開鍵が、正当な送信者のものであることを証明するデジタル証明書を発行することです。\n\nデジタル証明書を用いたデータ通信の手順は以下の通りです。\n1. 取引当事者は、認証局に公開鍵を提出して証明書の発行を申請する\n2. 認証局は、提出された申請情報に基づき、公開鍵所有者の正当性を審査し、デジタル証明書を発行する。デジタル証明書には、認証局のデジタル署名が付加されている\n3. 送信者（取引当事者）は、受信者に対してデジタル証明書を送信する\n4. 受信者は、証明書に付されたデジタル署名を認証局の公開鍵で検証し、その後、証明書に含まれる送信者の公開鍵を入手する",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/73.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q73/73.png"
         ]
       }
     },
@@ -3478,28 +3478,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/77.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q77/77.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/77.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q77/77.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/77.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q77/77.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/77.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q77/77.png"
           ]
         }
       ],
@@ -3578,7 +3578,7 @@
         "text": "関係データベースで管理された場合，表にデータを追加する順序のうち，適切なものはどれか。ここで，下線は主キーを示し，破線は外部キーを示す。解答群の→はデータを追加する表の順序を示す。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/79.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q79/79.png"
         ]
       },
       "choices": [
@@ -3634,28 +3634,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/80.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q80/80.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/80.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q80/80.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/80.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q80/80.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/80.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q80/80.png"
           ]
         }
       ],
@@ -3816,7 +3816,7 @@
         "text": "関係データベースで管理している\"商品\"表及び\"売上\"表を結合して商品の売上集計を行う。5月の売上合計金額が最も大きい商品はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/84.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q84/84.png"
         ]
       },
       "choices": [
@@ -3852,7 +3852,7 @@
         "text": "下の表は\"商品\"表及び\"売上\"表を結合した結果です。売上表に商品表への参照列である商品コードがあるので、売上表をベースにして結合します。商品ごとに5月の売上金額を比べると、(商品単価＋色付けされた行の5月の売上個数)\n・商品A 2,000×6＝12,000\n・商品B 4,000×4＝16,000\n・商品C 7,000×2＝14,000\n・商品D 10,000×0＝0\n\nしたがって5月の売上合計金額が最も大きいのは商品Bであることがわかります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/84a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q84/84a.png"
         ]
       }
     },
@@ -3864,7 +3864,7 @@
         "text": "図を画素で表す手法を考える。図1の場合，3×3個の画素を左上から1行ずつ右方向へ1画素ずつ読み取り，黒ならB，白ならWと書くと\"BWBBBBBWB\"(9文字)となる。次に，BやWが n個連続する場合を\"Bn\"，\"Wn\" と表す(nは2以上の整数)と，図1は\"BWB5WB\"(6文字)と表現でき，この時の圧縮率を6/9＝66.7%であると仮定する。図2の5×5の図形について同じ手法で表現すると圧縮率は何％か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/85.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q85/85.png"
         ]
       },
       "choices": [
@@ -3916,28 +3916,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/86.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q86/86.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/86.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q86/86.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/86.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q86/86.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/86.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q86/86.png"
           ]
         }
       ],
@@ -3962,7 +3962,7 @@
         "text": "\"部署\"表，\"都道府県\"表及び\"社員\"表を結合して，A表を作成した。結合した\"社員\"表はどれか。ここで，下線は主キーを示し，破線は外部キーを示す。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/87.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q87/87.png"
         ]
       },
       "choices": [
@@ -3970,28 +3970,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/87a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q87/87a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/87i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q87/87i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/87u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q87/87u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/87e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q87/87e.png"
           ]
         }
       ],
@@ -4138,7 +4138,7 @@
         "text": "出力結果表の a のケースは、\n　・地区 ＝A\n　・3辺計＝80cmまで\n　・重量 ＝20kgまで\nである荷物の発送料金ということになります。\n\n表1の料金表を見て条件が重なった部分が発送料金です。問題文に「サイズ区分は荷物の3辺計と重量を比較し、どちらか大きいほうの区分を適用する」という記述があります。3辺計がサイズ区分1、重量がサイズ区分3なのでサイズ区分は3が適用され、これと発送先地区Aが表で重なる2,000が a に入る答えとなります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/90.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q90/90.png"
         ]
       }
     },
@@ -4150,7 +4150,7 @@
         "text": "次の表は，テストデータ(地区，3辺計，重量)を用いて実際にテストを行った結果の一部である。この結果として適切なものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/91.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q91/91.png"
         ]
       },
       "choices": [
@@ -4186,7 +4186,7 @@
         "text": "各テストデータの条件が料金表のどこに当てはまるかを考えてみると一目瞭然です。当てはめてみると3番目のテストデータのときに出力結果に誤りが出ていることがわかります。(×2,350 →○1,800)\n・正しい。\n・2及び4の結果から、区分3のときの誤りはありません。\n・3番目のテストデータのときに誤りがあります。\n・1及び2の結果から、地区Cのケースでは誤りは出ていません。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/91a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q91/91a.png"
         ]
       }
     },
@@ -4204,28 +4204,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/92.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q92/92.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/92.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q92/92.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/92.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q92/92.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/92.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q92/92.png"
           ]
         }
       ],
@@ -4250,7 +4250,7 @@
         "text": "表の許可区分の設定について，ポリシーの許可区分をACCEPTにしたときの設定の記述は次の図になる。表の設定について，ポリシーの許可区分をDENYにしたときの設定の記述はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/93.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q93/93.png"
         ]
       },
       "choices": [
@@ -4258,28 +4258,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/93a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q93/93a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/93i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q93/93i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/93u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q93/93u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_aki/img/93e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q93/93e.png"
           ]
         }
       ],
@@ -4304,7 +4304,7 @@
         "text": "次の表に示す許可区分の設定について，ポリシーの許可区分をDENYにしたときの設定の記述は，形式1を記述する行を含めて，最低何行必要か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/94.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q94/94.png"
         ]
       },
       "choices": [
@@ -4340,8 +4340,8 @@
         "text": "ポリシーがDENYなので入室を許可したい区分がある施設数のだけ設定を記述すれば良いので、4行に加えてポリシーを記述する1行目を加えて計5行あれば表の設定を記述することができます。\n\n具体的に設定の記述は以下のようになります。ちなみにポリシーがACCEPTの場合は、応接室の記述を省くことができるので、計4行で設定を記述できます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/94_1.png",
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/94_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q94/94_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q94/94_2.png"
         ]
       }
     },
@@ -4353,7 +4353,7 @@
         "text": "次の表に示す許可区分の設定について，ポリシーの許可区分をACCEPTにしたときの設定の記述は図1である。新たに，課長に対して特別会議室の入室を許可することになり，\"課長\"という対象区分を設け，図2の設定の記述を追加することにした。図1に，図2の設定を追加する位置として，適切な位置は①～④のどれか。\n　なお，\"課長\"の対象区分には営業課長と技術課長が属しており，それぞれの課長はそれぞれの所属課員の対象区分にも属している。管理対象者が二つの対象区分に属する場合，設定の記述の評価において，施設と一方の対象区分との組合せと合致する行が見つかれば，その行の許可区分が適用される。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/95.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q95/95.png"
         ]
       },
       "choices": [
@@ -4477,11 +4477,11 @@
         "text": "この中問Cでは、「表 作業計画の一覧」をもとにアローダイアグラムをかけるかが問題を解くカギになります。初級シスアドのときには工程表からアローダイアグラムを考える問題は結構出題されましたが、ITパスポートで出題されたのは初めてではないでしょうか。\n\n問97を解く前に手順を確認しながら、アローダイアグラムを描いてみます。\n1. まず先行作業のない作業①の矢印を描きます。\n\n2. ①が完了すると開始できるようになる②及び③の矢印を、①の終了点から出るように描きます。\n\n3. 次の作業である④は、開始条件が②と③の終了なので、先行作業を結合点で結びそこから作業④の矢印を描き入れます。\n\n4. 作業④が完了すると、⑤・⑥・⑦が開始できるので、作業④の終了点から3本の矢印を描きます。\n\n5. 最終作業\"動作確認\"の開始には、⑤・⑥・⑦が完了していることが条件ですので、先行作業を結合点で結びそこから作業⑧の矢印を描き入れます。(完成)\n\nアローダイアグラムはこのような手順で作図します。残りの問はこの図を使って説明していきます。\n\n問97に戻りまして、「並行して実施可能な作業はどれか」ということですが、作業①が完了した後同時に開始できるの②と③、および作業④が完了すると同時に開始できる⑤・⑥・⑦が並行して可能な作業であることが図から把握できると思います。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/97_1.png",
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/97_2.png",
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/97_3.png",
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/97_4.png",
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/97_5.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q97/97_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q97/97_2.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q97/97_3.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q97/97_4.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q98/97_5.png"
         ]
       }
     },
@@ -4527,7 +4527,7 @@
         "text": "問97で作成したアローダイアグラムをもとにクリティカルパスを考えます。クリティカルパスは\"選択肢にある作業順序の中で、最も時間がかかる作業順になります。\n・①→②→④→⑤→⑧＝0.5＋2.0＋3.0＋2.0＋2.0＝9.5\n・①→②→④→⑥→⑧＝0.5＋2.0＋3.0＋3.0＋2.0＝10.5\n・①→③→④→⑥→⑧＝0.5＋1.0＋3.0＋3.0＋2.0＝9.5\n・①→③→④→⑦→⑧＝0.5＋1.0＋3.0＋1.5＋2.0＝8.0\n\nしたがってこの作業計画の中で遅延が許されない作業順序を示すクリティカルパスは「イ」であることがわかります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/97_5.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q98/97_5.png"
         ]
       }
     },
@@ -4617,11 +4617,11 @@
         "text": "この問題のように作業時間の一部を変更する場合、クリティカルパスの作業時間が変更されるとクリティカルパスが変わることがあるので注意が必要です。下の図をもとに、選択肢の各方策ごとクリティカルパスの変化と、短縮できる時間を考えていきます。\n・クリティカルパス上の作業②を1.5時間短縮すると、クリティカルパスが、①→③→④→⑥→⑧に変わります。\n①→③→④→⑥→⑧の作業順序は、9.5時間が最短終了時間なので、以前より1.0時間の短縮が可能です。\n\n・クリティカルパス上の作業④を1.5時間短縮すると、作業④は他に並行作業がないので、最短終了時間は以前の10.5時間からそのまま1.5時間短縮され9時間になります。\n\n・クリティカルパス上でない作業⑤を1.5時間短縮しても、クリティカルパスは変化しません。\n最短終了時間は以前と変わらず10.5時間です。\n\n・クリティカルパス上の作業⑥を2時間短縮すると、クリティカルパスが、①→③→④→⑤→⑧に変わります。\n①→③→④→⑤→⑧の作業順序は、9.5時間が最短終了時間なので、以前より1.0時間の短縮が可能です。\n\nしたがってこの作業全体を最も短縮できる方策は「イ」の「作業④を1.5時間短縮する」になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/97_5.png",
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/100_1.png",
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/100_2.png",
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/100_3.png",
-          "https://www.itpassportsiken.com/kakomon/22_aki/img/100_4.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q98/97_5.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q100/100_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q100/100_2.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q100/100_3.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_aki/q100/100_4.png"
         ]
       }
     }

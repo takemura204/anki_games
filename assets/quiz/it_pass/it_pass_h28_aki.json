@@ -48,7 +48,7 @@
         "text": "請負企業の社員が契約先の指揮命令で働くことができるように組織間で結ぶ契約を「労働者派遣契約」といいます。労働者派遣契約では、労働者と雇用関係にあるのは派遣元企業、指揮命令関係があるのは派遣先企業と労働者になります。\n・派遣期間制度には「個人単位での制限」と「事業所単位での制限」という2つの基準があり、一部の例外を除き、派遣期間は最長で3年に制限されています。個人単位での制限派遣先の同一の組織単位(課・部門)における同一の派遣労働者の受け入れは3年を上限とする。\n※従事する組織単位を変更し、新たに3年間受け入れることは可能事業所単位での制限派遣先の同一の事業所における継続した労働者派遣の受け入れは3年を上限とする。\n※過半数労働組合等の意見聴取手続きを経ることで3年ずつ延長可能これらの期間制限に違反して派遣労働者を受け入れている場合、派遣先企業がその労働者に対して直接雇用の申し込みをしたと見なされます。\n・紹介予定派遣を除き、受け入れる派遣労働者を派遣先が選任することはできません。\n・派遣労働者の給与は雇用主である派遣元から支給されます。\n・正しい。派遣契約期間の満了後、派遣先は継続して就業することを希望する者を自社の社員として雇用することが可能です。また派遣元が、その雇用を阻止する旨の契約を結ぶことは禁止されています。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/01.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q1/01.png"
         ]
       }
     },
@@ -798,7 +798,7 @@
         "text": "POS(Point Of Sales)は、販売した情報をリアルタイムで情報システムに取り込む販売店の管理方法です。これを実現するシステムをPOSシステムといい、主にスーパーマーケットやコンビニエンスストアなどの中～大規模なチェーン店舗で導入されています。POSの特徴を踏まえると「エ」が正解とわかります。\n・SFA(Sales Force Automation)システムの導入効果です。\n・MRP(Material Requirements Planning)システムの導入効果です。\n・SCM(Supply Chain Management)システムの導入効果です。\n・正しい。POSシステムの導入効果です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/18.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q18/18.png"
         ]
       }
     },
@@ -854,7 +854,7 @@
         "text": "A社は競合する他社とのポジショニングの分析を行った。3社の中でA社が最高の評価を得るには，A社のブランドの評価項目は，最低何ポイントが必要か。\n　なお，各評価項目の最低値は1ポイント，最高値は10ポイントとし，それぞれの評価項目の重み付けをした合計値で各社の評価を行うものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/20.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q20/20.png"
         ]
       },
       "choices": [
@@ -906,28 +906,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_aki/img/21.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q21/21.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_aki/img/21.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q21/21.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_aki/img/21.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q21/21.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_aki/img/21.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q21/21.png"
           ]
         }
       ],
@@ -1074,7 +1074,7 @@
         "text": "ロードマップとは、縦軸に対象の技術・製品・サービス・市場を、横軸には時間の経過をとり、それらの要素の将来的な展望や進展目標を時系列で表した図表です。例として技術戦略ロードマップや製品ロードマップなどがあります。ロードマップには未来像を明確に示すことで、それを実現するための計画的な協働を促すという役割があります。\n・技術ポートフォリオの説明です。\n・技術のSカーブや技術のライフサイクルの説明です。\n・技術ポートフォリオの説明です。\n・正しい。ロードマップの説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/24.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q24/24.png"
         ]
       }
     },
@@ -1086,7 +1086,7 @@
         "text": "図によって表される企業の組織形態はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/25.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q25/25.png"
         ]
       },
       "choices": [
@@ -1220,7 +1220,7 @@
         "text": "倉庫A，Bにある在庫の全量を店舗C，Dに輸送する。倉庫A，Bの在庫量がそれぞれ35個，15個，店舗C，Dの必要量がそれぞれ20個，30個であり，各倉庫から各店舗への1個当たりの輸送費が表のとおりであるとき，最小となる総輸送費は何万円か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/28.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q28/28.png"
         ]
       },
       "choices": [
@@ -1256,7 +1256,7 @@
         "text": "A，Bどちらの倉庫からも店舗Cよりも店舗Dへの輸送コストの方が安くなっています。設問の条件を踏まえつつ、店舗Dへの輸送にどちらの倉庫の在庫を優先させるかという観点から考えると次の2つの案が存在することが分かります。\n・店舗Dへは倉庫Aの30個、店舗Cへは倉庫Aの5個と倉庫Bの15個を輸送する。\n・店舗Dへは倉庫Bの15個と倉庫Aの15個、店舗Cへは倉庫Aの20個を輸送する。\n\n各案の輸送コストを計算します。\n\n[案1]\n　(4×5)＋(2×15)＋(2×30)＝110(万円)\n[案2]\n　(4×20)＋(2×15)＋(1×15)＝125(万円)\n\nしたがって最小輸送コストは110万円になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/28a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q28/28a.png"
         ]
       }
     },
@@ -1522,7 +1522,7 @@
         "text": "PPM(プロダクトポートフォリオマネジメント)は、縦軸と横軸に「市場成長率」と「市場占有率」を設定したマトリックス図を4つの象限に区分し、市場における製品(または事業やサービス)の位置付けを2つの観点で分類して資源配分を検討する手法です。4つの象限は、市場内の位置付けから以下のような名称で呼ばれています。花形(star) … [成長率：高、占有率：高]占有率・成長率ともに高く、資金の流入も大きいが、成長に伴い占有率の維持には多額の資金の投入を必要とする分野金のなる木(cash cow) … [成長率：低、占有率：高]市場の成長がないため追加の投資が必要ではなく、市場占有率の高さから安定した資金・利益の流入が見込める分野問題児(problem child) … [成長率：高、占有率：低]成長率は高いが占有率は低いので、花形製品とするためには多額の投資が必要になる。投資が失敗し、そのまま成長率が下がれば負け犬になってしまうため、慎重な対応を必要とする分野負け犬(dog) … [成長率：低、占有率：低]成長率・占有率がともに低く、新たな投資による利益の増加も見込めないため市場からの撤退を検討するべき分野\"金のなる木\"は、市場成長率が低く、マーケットシェア(市場占有率)が高い製品・事業を表す言葉であるため「エ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/34.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q34/34.png"
         ]
       }
     },
@@ -1765,28 +1765,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_aki/img/40.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q40/40.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_aki/img/40.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q40/40.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_aki/img/40.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q40/40.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_aki/img/40.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q40/40.png"
           ]
         }
       ],
@@ -1816,7 +1816,7 @@
         "text": "三つのサブシステムA，B，Cのテスト期間と要員数が次のとおりであるとき，テスト期間中に要員数の合計が最大となる月の要員は何名か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/41.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q41/41.png"
         ]
       },
       "choices": [
@@ -1852,7 +1852,7 @@
         "text": "三つのサブシステムのテスト期間と各月の要員数の関係を整理すると、次の表のようになります。最も要員数が多くなるのはサブシステムBとサブシステムCのテストが重なる7月で、その人数は5人です。したがって「ウ」が正解となります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/41a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q41/41a.png"
         ]
       }
     },
@@ -1908,7 +1908,7 @@
         "text": "10か月で完成予定のソフトウェア開発プロジェクトにおいて，投入人数及び月末時点での進捗は表のとおりである。プロジェクトの立ち上がりで効率が悪かったことから，5月末時点の進捗が計画の50%に対して40%であった。4月以降の生産性が維持できるとすると，開発期限厳守のためには6月以降に必要な追加人員は最低何人か。ここで，追加人員の生産性は，既に投入済みの人員の4月以降の生産性と同じとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/43.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q43/43.png"
         ]
       },
       "choices": [
@@ -2076,7 +2076,7 @@
         "text": "ウォーターフォールモデルは、開発プロジェクトを時系列に「要求定義」「外部設計(概要設計)」「内部設計(詳細設計)」「開発(プログラミング)」「テスト」「運用」などの作業工程(局面、フェーズ)に分割し、開発を上流から下流に一方向に進める開発モデルです。\n原則として前工程が完了しないと次工程に進まない(設計中にプログラミングを開始するなどの並行作業は行わない)ことで、前工程の成果物の品質を確保し、システム開発の一貫性を保証しています。工程管理がしやすく大規模なシステム開発に向いている反面、工程の後戻りが生じると大幅な時間のロスが生じるといった欠点もあります。ウォーターフォールモデル以外の3つの開発モデルの特徴は以下の通りです。スパイラルモデル対象システムを機能単位に分割し、設計～プログラミング・テストという一連の開発工程を何度も繰り返しながら開発工程の規模を徐々に拡大(機能の改良・追加)していく開発モデルプロトタイピングモデルシステム開発の早い段階で目的とするシステムの試作品をつくり、利用者にそのイメージを理解させ、要件の確認と承認を得たうえで本格的な開発プロセスに進む開発モデルRAD(Rapid Application Development)統合開発環境によるプログラミングの半自動化や、視覚的な方法を用いたユーザーインタフェースの設計、モジュール開発などの機能を備える開発ツールを使い、短期間に目的プログラムを作成することを重視した開発モデル\n・正しい。ウォーターフォールモデルの特徴です。\n・RADの特徴です。\n・プロトタイピングモデルの特徴です。\n・スパイラルモデルの特徴です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/46.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q46/46.png"
         ]
       }
     },
@@ -2226,28 +2226,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_aki/img/50a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q50/50a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_aki/img/50i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q50/50i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_aki/img/50u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q50/50u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_aki/img/50e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q50/50e.png"
           ]
         }
       ],
@@ -2262,7 +2262,7 @@
         "text": "パレート図は、値の大きい順に分析対象の項目を並べた棒グラフと、累積構成比を表す折れ線グラフを組み合わせた複合グラフで、主に複数の分析対象の中から管理対象とすべき重要な要素を識別するために使用されます。設問中の「重点的に解消すべき課題を明らかにするため」および「原因別に不良の発生件数を調べ」からパレート図の使用が適切と判断できます。したがって「イ」が正解です。\n・図は特性要因図です。この図は、現れた特性（結果）とそれに影響を及ぼしたと思われる要因の関係を体系的に表わした図です。多くの要因が複雑に絡みあっているときに、直接的な原因と間接的な原因に分別したり、真の問題点を明らかにしたりすることができます。\n・正しい。\n・図は散布図です。この図は、縦軸・横軸に2項目の量や大きさ等を対応させて、分析対象のデータを打点した図で、2項目間の分布・相関関係を把握するのに使用されます。\n・図は流れ図(フローチャート)です。この図は、作業や処理の手順、思考の流れや情報の伝達などを図式化して表現するために使用されます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/50.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q50/50.png"
         ]
       }
     },
@@ -2396,7 +2396,7 @@
         "text": "システム方式設計は、要求されるシステムを実現するために必要とされるハードウェア構成品目、ソフトウェア構成品目及び手作業を明確にする工程です。定義されたシステム要件はこれらの項目に割り振らなけらばなりません。したがって「イ」が正解です。\n・運用テストは、システムの運用部門が業務の流れに沿ってシステムのテストを行い、実際の稼働状況において不具合が発生しないかを検証する工程です。\n・正しい。\n・ソフトウェア導入は、開発されたソフトウェアを実環境に導入するための計画を作成し、その導入計画に従い、利用者を支援しながらソフトウェアを実環境に導入する工程です。\n・ソフトウェア要件定義は、システムを構成するソフトウェアごとに必要な機能や能力などを明らかにする工程です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/53.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q53/53.png"
         ]
       }
     },
@@ -2626,7 +2626,7 @@
         "text": "GPU(Graphics Processing Unit)は、コンピュータにおいて画像処理を専門に担う演算装置です。数千個のコアにより大量のデータの並列計算に特化しており、動画再生や3DCGのレンダリングなどの高負荷な演算が要求される場面で、CPUを補完する役割を果たします。\n\n最近では、膨大な計算を必要とする科学シミュレーションや機械学習の分野でもGPUを利用すること（GPGPU）も増えています。したがって「エ」が適切な記述です。\n・GFLOPS(ギガフロップス)の説明です。\n・クロックの説明です。\n・キャッシュメモリの説明です。\n・正しい。GPUの説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/58.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q58/58.png"
         ]
       }
     },
@@ -2682,7 +2682,7 @@
         "text": "PCの製品カタログに表のような項目の記載がある。これらの項目に関する記述のうち，適切なものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/60.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q60/60.png"
         ]
       },
       "choices": [
@@ -2894,7 +2894,7 @@
         "text": "デフォルトゲートウェイは、プライベートネットワークに存在しない機器と通信を行うときに、外部ネットワークとの接続点となる機器のことです。プライベートネットワークにある端末が外部ネットワークの端末と通信を行う場合には、一旦デフォルトゲートウェイにデータを送信して経路選択と中継を依頼します。\n\n一般的にはプライベートネットワークとインターネットの境界にあるルータがデフォルトゲートウェイの役割を担います。\n・スプリッタは、データ用の高周波の信号と音声用の低周波の信号を分離したり、合成したりする装置です。\n・正しい。\n・ハブは、スター型ネットワークトポロジLANの中心に位置する集線装置で複数のポート(接続口)を装備し、コンピュータの接続台数を増やすことができる機能を持ちます。\n・リピータは、データ伝送中に弱くなった電気信号を増幅し、データの伝送可能距離を延長するLAN間接続装置です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/64.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q64/64.png"
         ]
       }
     },
@@ -2940,7 +2940,7 @@
         "text": "通信プロトコルは、通信規約ともいい、データ通信を行う際に必要となる取り決めです。\n通信経路として使う伝送路についての物理的な規約から、通信に使うメッセージの内容、通信手順、誤りが生じたときの制御方法などの論理的な規約まで様々なプロトコルが策定されています。\n異なるOSやアーキテクチャのコンピュータ同士が通信を行うことができるのは、その通信に関するプロトコルが定められ、双方のコンピュータがそれに従って送信・受信処理を行っているからです。\n・ハブの説明です。\n・URL(Uniform Resource Locator)の説明です。\n・IPアドレスの説明です。\n・正しい。通信プロトコルの説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/65.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q65/65.png"
         ]
       }
     },
@@ -3162,7 +3162,7 @@
         "text": "テザリング(Tethering)とは、スマートフォンなどのモバイル端末がもつ携帯回線などのインターネット接続機能を活用して、他のコンピュータや情報端末をインターネットに繋ぐことです。モバイル端末をアクセスポイント(親機)のように利用し、3G・4G回線を経由してインターネットに接続するので、Wi-Fiのない外出先でもノートPCやタブレット及びゲーム機などを手軽にインターネットに繋ぐことが可能です。また、PC用のインターネット接続環境を別途契約しなくてもよいという点もメリットです。\n・スマートフォンとの接続は有線(USBケーブル)でも問題ありません。\n・通常のインターネットアクセスと同様の危険性があるためウイルス対策が必要です。\n・正しい。PCからインターネット接続を行う際は、スマートフォンがデフォルトゲートウェイとして機能するためルータを用意する必要はありません。\n・PC側では特にテザリング対応である必要はなく、USB接続、Bluetooth、無線LANのいずれかのインタフェースがあれば足ります。ただし、スマートフォンはテザリング対応の機種を使用しなければなりません。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/70.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q70/70.png"
         ]
       }
     },
@@ -3252,7 +3252,7 @@
         "text": "IPアドレスは、インターネットやLANなどのIPネットワークに接続されたコンピューターなどを識別するために割り振られる番号で、IPネットワーク上の住所のようなイメージです。端末に設定されるIPアドレスは、プライベートIPアドレスとグローバルIPアドレスに分類されます。プライベートIPアドレスインターネットに接続されていない組織内LANのような閉じたネットワークで振り当てられるIPアドレス。定められたアドレス範囲の中からネットワーク管理者の裁量で自由に設定できる。プライベートIPアドレスではインターネットに接続できない。グローバルIPアドレスインターネットに接続する際に必要となるIPアドレス。ICANNによって世界中で重複がないように管理されていて、ISPと契約することで使用許可を受けられる。インターネットへのアクセスにはグローバルIPアドレスが必要です。組織内LANのコンピュータが送信したデータは、送信元がプライベートIPアドレスになっているため、そのままではインターネットに接続することができません。この問題を解決するのがルータやファイアウォールに備えられている「NAT機能」です。\nNAT(Network Address Translation)は、企業や組織のネットワーク内で自由に割り当てられているプライベートIPアドレスとインターネット上で固有のアドレスであるグローバルIPアドレスを1対1で相互に変換する技術です。通常はインターネットとの境界に位置するルータやファイアウォールによってIPアドレスの変換が行われています。\n・プライベートIPアドレスはネットワーク管理者が自由に設定できます。ICANNから割り当てられるのはグローバルIPアドレスです。\n・サーバにもプライベートIPアドレスを割り当てます。\n・正しい。NAT機能でアドレスの相互変換が行われることによってインターネットアクセスが可能になっています。\n・プライベートIPアドレスは既定の範囲内でネットワーク管理者が自由に設定できます。ISPに申請を行うのはグローバルIPアドレスです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/72.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q72/72.png"
         ]
       }
     },
@@ -3298,7 +3298,7 @@
         "text": "ペネトレーションテストは、ネットワークに接続されているシステムに対して、実際に様々な方法で侵入を試みることで脆弱性の有無を検査するテストです。\n大別すればOSやサーバソフトウェアに対して実施されるものと、Webアプリケーションに対して実施されるものがあり、それぞれ以下の項目が代表的な検査対象となります。この設問のテストはインターネットを経由して行われているので、外部の攻撃者から不正アクセスを受ける可能性のある脆弱性を発見することが目的と考えられます。したがって「ア」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/73.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q73/73.png"
         ]
       }
     },
@@ -3310,7 +3310,7 @@
         "text": "\"気温\"表の2011年の7月1日から8月31日までの間で，最高気温が35度以上のレコードを全て抽出したい。抽出条件として，適切なものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/74.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q74/74.png"
         ]
       },
       "choices": [
@@ -3356,7 +3356,7 @@
         "text": "図に示すような階層構造をもつファイルシステムにおいて，＊印のディレクトリ(カレントディレクトリ)から \"..¥..¥DIRB¥Fn.txt\" で指定したときに参照されるファイルはどれか。ここで，図中の　ディレクトリ名を表し，ファイルの指定方法は次のとおりである。\n\n〔指定方法〕\n・ファイルは \"ディレクトリ名¥…¥ディレクトリ名¥ファイル名\" のように，経路上のディレクトリを順に \"¥\" で区切って並べた後に \"¥\" とファイル名を指定する。\n・カレントディレクトリは \".\" で表す。\n・1階層上のディレクトリは \"..\" で表す。\n・始まりが \"¥\" のときは，左端のルートディレクトリが省略されているものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/75.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q75/75.png"
         ]
       },
       "choices": [
@@ -3392,8 +3392,8 @@
         "text": "設問の〔指定方法〕に則ると、指定されたファイルパスは次のように解釈できます。つまり＊印のディレクトリから見て、2階層上のディレクトリは\"ルート¥DIRB\"ですから、その中に存在する\"DIRB¥Fn.txt\"は\"ルート¥DIRB¥DIRB¥Fn.txt\"の位置に存在する④のファイルになります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/75_1.png",
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/75_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q75/75_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q75/75_2.png"
         ]
       }
     },
@@ -3547,7 +3547,7 @@
         "text": "WPA2による暗号化を設定したアクセスポイントがある。このアクセスポイントを経由して，図のようにPCをインターネット上のWebサーバに接続するとき，WPA2による暗号化の効果が及ぶ範囲として，適切なものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/79.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q79/79.png"
         ]
       },
       "choices": [
@@ -3583,7 +3583,7 @@
         "text": "WPA2(Wi-Fi Protected Access 2)は、無線LANにおいて利用者を認証し、端末とアクセスポイントの間の通信を暗号化する規格です。暗号化アルゴリズムにNIST標準のAESを採用し、解読攻撃に対する耐性が高められています。\n\nWPA2により暗号化されるのは「無線LANにおける端末とアクセスポイントの間」ですから、無線区間であるPCからアクセスポイントの間の「ア」が適切です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/79a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q79/79a.png"
         ]
       }
     },
@@ -3683,7 +3683,7 @@
         "text": "セル B2～C8 に学生の成績が科目ごとに入力されている。セル D2 に計算式 \"IF(B2≧50，'合格'，IF(C2≧50，'合格'，'不合格'))\" を入力し，それをセル D3～D8 に複写した。セル D2～D8 において\"合格\"と表示されたセルの数は幾つか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/82.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q82/82.png"
         ]
       },
       "choices": [
@@ -3719,10 +3719,10 @@
         "text": "表計算ソフトでは、複写元のセル中にセル番地を含む式が入力されているとき、複写元と複写先のセル番地の差を維持するように、式中のセル番地が自動的に変化します。これを相対参照といいます。\n\n[例]セル A6 に式 A1＋5が入力されているとき、このセルをセル B8 に複写すると、セル B8 には式 B3＋5 が入る。セル D2 に入力された式をその下のセルにコピーしていくと、複写先の行に応じて式の行番号が変化します。また条件式に記述されているIF文の各引数は次のように定義されています。IF(論理式，式1，式2)論理式の値がtrueのとき式1の値を，falseのとき式2の値を返すしたがって、まずB列(数学)が50点以上かどうかを検査し、50点以上であれば\"合格\"を返します。そうでなければさらにC列(英語)が50点以上かを検査して50点以上であれば\"合格\"、それ以外は\"不合格\"を返すようになっています。要するに数学又は英語が50点以上であれば\"合格\"、両方とも50点未満であれば\"不合格\"が表示されます。したがって\"合格\"と表示されるのは50点以上の科目がある「山田太郎」「佐藤次郎」「田中梅子」「山本克也」「小林潤也」の5名です。以上より「エ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/82_1.png",
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/82_2.png",
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/82_3.png",
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/82_4.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q82/82_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q82/82_2.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q82/82_3.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q82/82_4.png"
         ]
       }
     },
@@ -3812,8 +3812,8 @@
         "text": "・PCカードスロットは、ノートPCに拡張機能を加えるためのPCカードの差込み口です。\n・フラッシュメモリは、電気的に書き換え可能な半導体メモリであり、差込み口ではありません。\n・メモリインターリーブは、物理上はひとつである主記憶領域を、同時アクセス可能な複数の論理的な領域（バンク）に分け、それぞれのバンクに対してデータの読み書きを並列で行うことにより、メモリアクセスの高速化を図る技術です。\n・正しい。メモリスロットは、マザーボート上にあるメモリ(主記憶)の差込み口です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/84_1.png",
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/84_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q84/84_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q84/84_2.png"
         ]
       }
     },
@@ -3947,7 +3947,7 @@
         "text": "「機密性」「完全性」「可用性」は情報セキュリティの3要素と呼ばれ、情報セキュリティマネジメントにおいて維持管理すべき性質として位置づけられています。機密性許可された正規のユーザーだけが情報にアクセスできる特性を示す。\nJIS Q 27000では「認可されていない個人，エンティティ又はプロセスに対して，情報を使用させず，また，開示しない特性」と定義されている。完全性情報が完全で、改ざん・破壊されていない特性を示す。\nJIS Q 27000では「正確さ及び完全さの特性」と定義されている。可用性障害が発生しても安定したサービスを提供でき、ユーザーが必要な時にシステムを利用可能である特性を示す。\nJIS Q 27000では「認可されたエンティティが要求したときに，アクセスおよび使用が可能である特性」と定義されている。これを踏まえて選択肢のセキュリティインシデントによって低下した要素がどれであるかを考えます。\n・情報漏えいなので機密性に該当します。\n・正しい。整合性の欠如なので完全性に該当します。\n・システム停止なので可用性に該当します。\n・情報漏えいなので機密性に該当します。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/87.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q87/87.png"
         ]
       }
     },
@@ -4135,7 +4135,7 @@
         "text": "後に入れたデータが先に取り出されるデータ構造(以下，スタックという)がある。これを用いて，図に示すような，右側から入力されたデータの順番を変化させて，左側に出力する装置を考える。この装置に対する操作は次の3通りである。\n1. 右側から入力されたデータをそのまま左側に出力する。\n2. 右側から入力されたデータをスタックの1番上に積み上げる。\n3. スタックの1番上にあるデータを取り出して左側に出力する。\n\n　この装置の右側から順番にデータ A，B，C，D を入力した場合に，この①～③の操作を組み合わせても，左側に出力できない順番はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/92.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q92/92.png"
         ]
       },
       "choices": [
@@ -4171,10 +4171,10 @@
         "text": "スタックは後入れ先出しのデータ構造で、データを積むプッシュ操作と、一番上のデータを取り出すポップ操作を用いて操作します。\n\nA，B，C，Dの順で入力されるデータに対して、①入力されたデータをそのまま出力、②データをスタックに積む、③スタックからデータ取り出して出力、の3つを組み合わせることでデータの出力順序を変えることができます。この問題では、3つの操作を用いて各選択肢の順序で出力可能かどうかを検証します。\n・以下の操作で出力可能です。\n・以下の操作で出力可能です。\n・以下の操作で出力可能です。\n・正しい。どのように操作しても\"A\"の出力が\"B\"の後になってしまうので出力できません。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/92a.png",
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/92i.png",
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/92u.png",
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/92e.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q92/92a.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q92/92i.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q92/92u.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q92/92e.png"
         ]
       }
     },
@@ -4192,28 +4192,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_aki/img/93.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q93/93.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_aki/img/93.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q93/93.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_aki/img/93.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q93/93.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_aki/img/93.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q93/93.png"
           ]
         }
       ],
@@ -4316,7 +4316,7 @@
         "text": "関係データベースでは、１つの行(レコード)を一意に識別できるようになっている必要があります。このレコードを一意に識別できる列(属性)、又は列の組合せを主キー(primary key)といいます。\n主キーとなる属性には2つの制約を満たすことが要求されます。UNIQUE制約(一意性制約)列や列の組合せの値が表内のすべての行で一意であることNOT NULL制約値としてNULL値※を許さない\n・主キー属性にはNULL値を設定できません。\n・更新後の値が表内で一意になるのであれば更新可能です。\n・主キーは他の表の外部キーから参照される立場にあります。関係データベースでは複数の表を関連付けるために別表の主キー属性を外部キーとして設定します。\n・正しい。主キーには単一列だけではなく、2つ以上の列の組合せを設定することも可能です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/95.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q95/95.png"
         ]
       }
     },
@@ -4334,28 +4334,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_aki/img/96.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q96/96.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_aki/img/96.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q96/96.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_aki/img/96.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q96/96.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_aki/img/96.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q96/96.png"
           ]
         }
       ],
@@ -4414,7 +4414,7 @@
         "text": "共通鍵暗号方式は、秘密鍵暗号方式とも呼ばれ、暗号化と復号に同一の鍵を用いる方式です。代表的なアルゴリズムに、DESやAESがあります。\n暗号化通信を始めるには通信当事者同士が事前に鍵を共有しておく必要があるため、鍵の配送に手間が掛かります。\n\n共通鍵暗号方式と公開鍵暗号方式の主な違いは次の表のとおりです。\n・共通鍵暗号方式では暗号化と復号に同じ鍵を使用します。\n・正しい。共通鍵暗号方式は公開鍵暗号方式と比較して暗号化・復号に要する計算量が少ないため高速に処理できます。\n・暗号化通信に先だって通信相手に安全に鍵を配送する手間が生じます。\n・共通鍵暗号方式では通信相手が多くなると相手の数だけ鍵ペアが必要になります。これに対して公開鍵暗号方式ではたとえ通信相手が増えたとしても1対Nであれば必要となる鍵ペアは1組だけです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/97.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q97/97.png"
         ]
       }
     },
@@ -4476,28 +4476,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_aki/img/99.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q99/99.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_aki/img/99.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q99/99.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_aki/img/99.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q99/99.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_aki/img/99.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q99/99.png"
           ]
         }
       ],
@@ -4512,7 +4512,7 @@
         "text": "4人のアクセス権を表にすると以下のようになります。(未設定であるDには人事部グループの属性情報\"100\"が設定されます)表より参照権限をもつメンバーが4人、更新権限をもつメンバーが2人とわかります。したがって「エ」が正しい組合せです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_aki/img/99a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_aki/q99/99a.png"
         ]
       }
     },

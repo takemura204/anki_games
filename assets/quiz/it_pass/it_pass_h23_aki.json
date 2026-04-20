@@ -136,7 +136,7 @@
         "text": "DFD(Data Flow Diagram)は、業務やシステムの機能について対象となるデータの流れに着目し、データフロー，プロセス，データストア，源泉の組合せでその内容を視覚的に表現する図法です。したがってDFDを用いて検討するのに適しているのは「業務の流れの改善点」になります。\n・アローダイアグラムが適しています。\n・標準原価計算やABC(活動基準原価管理)などの会計的手法を用いることが適当です。\n・ガントチャートやアローダイアグラムが適しています。\n・正しい。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/23_aki/img/03.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q3/03.png"
         ]
       }
     },
@@ -202,28 +202,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/23_aki/img/05.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q5/05.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/23_aki/img/05.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q5/05.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/23_aki/img/05.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q5/05.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/23_aki/img/05.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q5/05.png"
           ]
         }
       ],
@@ -292,7 +292,7 @@
         "text": "電子証明書の申請から電子入札までの手続が図の①～⑥の手順で行われるとき，④で行う手続として，適切なものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/23_aki/img/07.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q7/07.png"
         ]
       },
       "choices": [
@@ -416,7 +416,7 @@
         "text": "損益計算書に記載される各利益額の算出方法は以下のようになっています。\n\n　売上総利益＝売上高－売上原価\n　営業利益＝売上総利益－販売費及び一般管理費\n　経常利益＝営業利益＋営業外収益－営業外費用\n　税引前当期純利益＝経常利益＋特別利益－特別損失\n　当期純利益＝税引前当期純利益－法人税等\nつまり、営業利益の算出に関係する費用は「販売費及び一般管理費」だけとなります。選択肢の中で、損益計算書記載時に販売費及び一般管理費に分類されるのは「広告宣伝費」だけですので、これが正解となります。\n・正しい。広告宣伝費は販売費に分類されます。\n・固定資産売却損は特別損失に分類されるので、営業利益額の算出とは関係ありません。\n・支払利息は営業外費用に分類されるので、営業利益額の算出とは関係ありません。\n・法人税等の税額は、税引前当期純利益の金額を基準に算出されるので、営業利益額の算出とは関係ありません。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/23_aki/img/09.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q9/09.png"
         ]
       }
     },
@@ -516,7 +516,7 @@
         "text": "システム開発に関する投資プロジェクトA～Dのうち，最も早く投資を回収できるものはどれか。ここで，毎年の維持管理費用として，初期投資の10%が発生するものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/23_aki/img/12.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q12/12.png"
         ]
       },
       "choices": [
@@ -640,7 +640,7 @@
         "text": "パレート図は、値の大きい順に分析対象の項目を並べた棒グラフと、累積構成比を表す折れ線グラフを組み合わせた複合グラフで、主に複数の分析対象の中から、重要である要素を識別するために使用します。\n・アローダイアグラム(PERT)の説明です。\n・散布図の説明です。\n・正しい。\n・レーダーチャートの説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/23_aki/img/14.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q14/14.png"
         ]
       }
     },
@@ -658,28 +658,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/23_aki/img/15.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q15/15.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/23_aki/img/15.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q15/15.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/23_aki/img/15.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q15/15.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/23_aki/img/15.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q15/15.png"
           ]
         }
       ],
@@ -1056,7 +1056,7 @@
         "text": "A社と競合B社の相互の意思決定において， A社先手で相互に3手目までの打つ手を次の表のとおり作成した。表の数値は3手目の局面におけるA社の期待値である。\nA社は自社の期待値を大きくするように打つ手を選択し， B社は， 3手目の結果を予測してA社の期待値を小さくするように打つ手を選択するとき， 3手目の局面におけるA社の期待値は何億円か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/23_aki/img/24.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q24/24.png"
         ]
       },
       "choices": [
@@ -1146,7 +1146,7 @@
         "text": "ある商店で販売している商品Aの1週間の売上個数の分布は表のとおりである。商品Aの発注から納入までのリードタイムが1週間のとき，品切れになる確率を10%未満にするため，発注時に最低限必要な在庫は幾つか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/23_aki/img/26.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q26/26.png"
         ]
       },
       "choices": [
@@ -1416,7 +1416,7 @@
         "text": "昨年1月1日に本番稼働を開始したソフトウェアの保守作業の件数を1月から12月まで月別に集計したところ，図のようなグラフになった。このグラフにおける要因Aに該当する保守作業のうち，最も適切なものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/23_aki/img/32.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q32/32.png"
         ]
       },
       "choices": [
@@ -1866,7 +1866,7 @@
         "text": "新営業店システム開発プロジェクトの作業を，図のように階層的に表現する手法はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/23_aki/img/42.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q42/42.png"
         ]
       },
       "choices": [
@@ -2000,7 +2000,7 @@
         "text": "社内でのシステム監査実施部門の位置付けとして，適切なものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/23_aki/img/45.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q45/45.png"
         ]
       },
       "choices": [
@@ -2540,7 +2540,7 @@
         "text": "社員数が50人で，部署が10ある会社が，関係データベースで社員や部署の情報を管理している。\"社員\"表と\"部署\"表の関係を示したE-R図はどれか。ここで， 1人の社員が複数部署に所属することはない。下線のうち実線は主キーを，破線は外部キーを表す。E-R図の表記は次のとおりとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/23_aki/img/57.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q57/57.png"
         ]
       },
       "choices": [
@@ -2548,28 +2548,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/23_aki/img/57a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q57/57a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/23_aki/img/57i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q57/57i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/23_aki/img/57u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q57/57u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/23_aki/img/57e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q57/57e.png"
           ]
         }
       ],
@@ -2876,7 +2876,7 @@
         "text": "1～4の番号をもつ四つの状態がある。四つの状態は図のようにつながれており，時計回りや反時計回りに状態を選移することができる。現在，状態1にいて，次の手順を2回実施した後はどの状態にいるか。\n\n〔手順〕\n今いる状態の番号を11倍し，それを3で割った余りによって次の処理を行う。\n・余りが0の場合：時計回りに一つ次の状態に遷移する。\n・余りが1の場合：反時計回りに一つ次の状態に選移する。\n・余りが2の場合：時計回りに二つ次の状態に選移する。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/23_aki/img/64.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q64/64.png"
         ]
       },
       "choices": [
@@ -2922,7 +2922,7 @@
         "text": "関係データベースのA表，B表がある。A表，B表に対して(A∪B)，(A∩B)を行った結果は，それぞれP表，Q表及びR表のどれになるか。ここで，∪は和集合演算，∩は共通集合演算を表す。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/23_aki/img/65.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q65/65.png"
         ]
       },
       "choices": [
@@ -2930,28 +2930,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/23_aki/img/65a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q65/65a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/23_aki/img/65a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q65/65a.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/23_aki/img/65a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q65/65a.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/23_aki/img/65a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q65/65a.png"
           ]
         }
       ],
@@ -3020,7 +3020,7 @@
         "text": "あるコンピュータシステムを1,200時間稼働させたとき，正常稼働と故障修理の状況は表のとおりであった。このシステムの平均修復時間は何時間か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/23_aki/img/67.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q67/67.png"
         ]
       },
       "choices": [
@@ -3110,7 +3110,7 @@
         "text": "セルB2～D100に学生の成績が科目ごとに入力されている。セルB102～D105に成績ごとの学生数を科目別に表示したい。セルB102に計算式を入力し，それをセルB102～D105に複写する。セルB102に入力する計算式はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/23_aki/img/69.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q69/69.png"
         ]
       },
       "choices": [
@@ -3146,7 +3146,7 @@
         "text": "B102～D105の各セルに表示したいデータをまとまると下図のようになります。ここでセルB102の式が複写されるセルD105に入る適切な式を考えてみると、\n\n　D2～D100の不可の数＝条件付個数(D2～D100,=A105)\n\nであることになります。セルB102に入力される絶対参照指定($)のない計算式「条件付個数(B2～B100,=A102)」と先ほどの「条件付個数(D2～D100,=A105)」と比較してみると、範囲を指定する部分の行番号(2～100)、および集計する成績を指定する部分の列番号(A)が固定になっていることがわかります。つまりこの部分を絶対参照にすることになります。\n\n　条件付個数(B2～B100,=A102)\n　条件付個数(D2～D100,=A105)\n\nしたがってセルD105に適切に複写するためにはセルB102に、計算式「条件付個数(B$2～B$100,=$A102) 」を入力します。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/23_aki/img/69a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q69/69a.png"
         ]
       }
     },
@@ -3345,28 +3345,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/23_aki/img/74.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q74/74.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/23_aki/img/74.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q74/74.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/23_aki/img/74.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q74/74.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/23_aki/img/74.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q74/74.png"
           ]
         }
       ],
@@ -3792,7 +3792,7 @@
         "text": "情報セキュリティの基本方針(情報セキュリティポリシー)には、明確な基準となる構成や法の定義があるわけではありませんが、情報処理技術者試験では、IPA：情報処理推進機構が公開している「情報セキュリティポリシーの策定」に基づいて出題されています。\n\nこの中で情報セキュリティポリシーは、基本方針(ポリシー)、対策基準(スタンダード)、実施手順(プロシージャー)の３階層の文書構成をとるのが一般的であるとされています。以下の説明はIPAのサイトに掲載されている内容を引用したものです。基本方針組織の経営者が、「情報セキュリティに本格的に取り組む」という姿勢を示し、情報セキュリティの目標と、その目標を達成するために企業がとるべき行動を社内外に宣言するものです。「なぜセキュリティが必要か」という「Why」について規定し、何をどこまで守るのか（対象範囲)、誰が責任者かを明確にします。また、業界標準、該当する法令、政府規制への準拠を宣言する場合があります。対策基準基本方針で作成した目的を受けて、「何を実施しなければならないか」という「What」について記述します。組織的に情報セキュリティ対策を行うためのルール集で、人事規程や就業規程などの類の企業の構成員が守るべき「規程類」に相当します。実際に守るべき規程を具体的に記述し、適用範囲や対象者を明確にします。実施手順対策基準で定めた規程を実施する際に、「どのように実施するか」という「How」について記述します。マニュアル的な位置づけの文書であり、詳細な手順を記述します。基本方針や対策基準は組織の最終的な意思決定者である経営者レベルが関与し、情報セキュリティの全社的な組織であるセキュリティ委員会などで策定、承認及び見直しも行います。\n・環境の変化に合わせて定期的な見直しが必要になります。\n・正しい。\n・情報セキュリティマネジメントを確立するために取り組む姿勢を、社内外に宣言するものです。\n・情報セキュリティ実施手順の説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/23_aki/img/83.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q83/83.png"
         ]
       }
     },
@@ -4022,7 +4022,7 @@
         "text": "Bluetooth(ブルートゥース)は、免許申請や使用登録の不要な2.4GHz帯の電波を用いて、数mから100m程度の距離の情報機器間で最大24Mbpsの無線通信を行う規格です。用途ごとに様々なプロファイルが策定されていて、PCや携帯電話と周辺機器を無線接続する用途のほか、カーナビのハンズフリー通話、FAX、AV機器のリモコン機能などの多くの無線通信にも活用されています。IrDAと比較して通信間にある障害物に強いという特徴があります。\n・正しい。\n・パソコンと周辺機器を接続するためのシリアルインタフェースの規格で、FireWireとも呼ばれます。無線の接続方法はなくケーブルで接続します。\n・Peripheral Component Interconnectの略。コンピュータのプロセッサと周辺機器との間の通信を行うためのバスアーキテクチャの一つです。\n・Universal Serial Bus version 2.0の略。現在最も普及している周辺機器接続のためのシリアルインタフェース規格です。USBにもWirelessUSBという無線のインタフェースが存在します。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/23_aki/img/88.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q88/88.png"
         ]
       }
     },
@@ -4040,28 +4040,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/23_aki/img/89a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q89/89a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/23_aki/img/89i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q89/89i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/23_aki/img/89u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q89/89u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/23_aki/img/89e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q89/89e.png"
           ]
         }
       ],
@@ -4076,7 +4076,7 @@
         "text": "まず29文字目から41文字目が画像データのどこの部分にあたるかを考えます。\n1行分の文字数は、コンマを含め(7×2＝)14文字になるので、29文字目は、\n\n　29÷14＝2あまり1\n\nの計算で3行目の1列目の画像データであることがわかります。同様に41文字目は、\n\n　41÷14＝2…13\n\nの計算で3行目の7列目のデータに対応していることがわかります。\n\n\"w,b,w,w,w,b,w\"のデータを色名で表すと、\"白黒白白白黒白\"になります。選択肢のうち3行目の色データが\"白黒白白白黒白\"となっているのは、「エ」のデジタル画像だけなのでこれが正解となります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/23_aki/img/89.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q89/89.png"
         ]
       }
     },
@@ -4088,7 +4088,7 @@
         "text": "図2で示すデジタル画像の画素データを圧縮した結果の文字数は，コンマを含めて何文字か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/23_aki/img/90.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q90/90.png"
         ]
       },
       "choices": [
@@ -4124,7 +4124,7 @@
         "text": "図②の画像を各行を前の行の後ろにつなぎ、一つの行だと考えると次のような画像データであるということになります。この画像データを〔画素データを圧縮する処理の概要〕に従い、先頭から圧縮すると、\n\n　w3,b,w5,b2,w6,b,w6,b,w6,b,w6,b,w5,b3,w2\n\nとなり、出力される文字数は39文字であることがわかります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/23_aki/img/90a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q90/90a.png"
         ]
       }
     },
@@ -4136,7 +4136,7 @@
         "text": "デジタル画像を右に90度回転させる処理を流れ図で表すとき，図3のaに入れる適切な字句はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/23_aki/img/91.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q91/91.png"
         ]
       },
       "choices": [
@@ -4172,7 +4172,7 @@
         "text": "このアルゴリズムでは行番号を変数i，列番号を変数jに対応させて画像中のすべての画素について同様の処理を順番に行う流れ図になっています。肝心なのはaを含むその処理内容ですが、変換前のデジタル画像のデータが、変換後のどの位置に移動しているかを、画像中の適当な場所でサンプルを取ってみるとわかりやすいかと思います。\n\n例として、次の図中の赤で印を付けた一点についてを考えてみます。図中に記述してあるように、この画素の位置を行・列を使って表すと、変換前が6行5列，変換後が5行2列となります。\n\n選択肢を見ると、変換前の行i, 列jを変換後のどこに移動するかを問われているので、i=6,j=5の場合に、変換後の位置がi=5,j=2となる選択肢を探せばよいとわかります。\n\n選択肢の式に、i=6,j=5を代入してみると、\n・(8－i)行j列→(8－6)行5列＝2行5列となるので誤りです。\n・(8－j)行i列→(8－5)行6列＝3行6列となるので誤りです。\n・i行(8－j)列→6行(8－5)列＝6行3列となるので誤りです。\n・j行(8－i)列→5行(8－6)列＝5行2列となり、適切な位置に画素を移動することができます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/23_aki/img/91a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q91/91a.png"
         ]
       }
     },
@@ -4184,7 +4184,7 @@
         "text": "図4の三つのデジタル画像をそれぞれ右に90度回転させたとき，回転前の画素データを圧縮した結果の文字数から，回転後の画素データを圧縮した結果の文字数を引いた値が大きい順に並べたものはどれか。ここで，文字数にはコンマを含める。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/23_aki/img/92.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q92/92.png"
         ]
       },
       "choices": [
@@ -4220,7 +4220,7 @@
         "text": "まずそれぞれの画像について問90と同様の方法で圧縮後の文字列数を求めます。\n\n[画像①]\n・1行目 \"w,b,w,b,w,b,w,\"…14文字\n・2行目 \"b,w,b,w,b,w,b,\"…14文字\n・3行目 \"w,b2,w,b2,w,\"…12文字\n・4行目 2行目と同じパターンなので14文字\n・5行目 3行目と同じパターンなので12文字\n・6行目 2行目と同じパターンなので14文字\n・7行目 1行目のパターンから最後のコンマ1文字分を引いた13文字\n\n出力結果は、各行の文字数を合計した93文字になります。\n\n[画像②]\n・1行目 \"w,b,w,b,w,b,w,\"…14文字\n・2行目 \"b,w,b,w,b,w,b,\"…14文字\n・3行目 \"w,b5,w,\"…7文字\n・4行目 \"b,w5,b,\"…7文字\n・5行目 3行目と同じパターンなので7文字\n・6行目 2行目と同じパターンなので14文字\n・7行目 1行目のパターンから最後のコンマ1文字分を引いた13文字\n\n出力結果は、各行の文字数を合計した76文字になります。\n\n[画像③]\n・1行目 \"w,b,w,b,w,b,w,\"…14文字\n・2行目 \"b,w,b,w,b,w,b,\"…14文字\n・3行目 \"w,b,w3,b,w,\"…11文字\n・4行目 \"b,w5,b,\"…7文字\n・5行目 3行目と同じパターンなので11文字\n・6行目 2行目と同じパターンなので14文字\n・7行目 1行目のパターンから最後のコンマ1文字分を引いた13文字\n\n出力結果は、各行の文字数を合計した84文字になります。\n\n次に3つの画像を右へ90度回転させ、下図のようにします。よく見ると画像①を右90度回転させると画像②になり、画像②を右90度回転させると画像①になっていることがわかります。また画像③は回転させても元の画像と変わりません。したがって回転前の文字数からそれぞれの画像について、回転前の文字数から回転後の文字数を引いた値は、\n\n　画像①　93文字－76文字＝ 17文字\n　画像②　76文字－93文字＝-17文字\n　画像③　84文字－84文字＝ 0文字\n\n算出された値を大きい順に並べると「画像①，画像③，画像②」になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/23_aki/img/92a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q92/92a.png"
         ]
       }
     },
@@ -4232,7 +4232,7 @@
         "text": "〔Aさんが書き出したメモ〕の(1)～(5)を実施する順番に並べたとき， aに入れる適切なものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/23_aki/img/93.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q93/93.png"
         ]
       },
       "choices": [
@@ -4322,7 +4322,7 @@
         "text": "Aさんは，〔Aさんが書き出したメモ〕の(4)の作業を，テスト1～4とテスト報告書作成という小作業項目に分解し，それぞれの日数と依存関係を表1にまとめた。この作業のクリティカルパスに掛かる日数は何日か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/23_aki/img/95.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q95/95.png"
         ]
       },
       "choices": [
@@ -4358,10 +4358,10 @@
         "text": "「クリティカルパスを求める」とくれば「アローダイアグラム」です。この問題では与えられた条件から正しいアローダイアグラムを描くことができるかがポイントになります。\n\nまず開始点となる○を描き、そこから先行作業のない(開始時に作業をスタートできる)テスト1およびテスト3の矢印を描きます。次にテスト1が終了すると、作業を開始できるテスト2の矢印をテスト2開始の結合点(○)の後に書き入れます。続いてテス4ですが、先行作業がテスト1および3なので、テスト4開始の結合点にテスト1の完了を待つダミー作業の矢印を描き、さらにテスト4の矢印も書き入れます。最後の作業であるテスト報告書作成ですが、先行作業がテスト2および4なので、この2つの作業をテスト報告書作成開始結合点に結び、最後の作業を描き入れて完成です。クリティカルパスですが、作業全体が完了するまでには、\n・テスト1→テスト2→テスト報告書作成\n・テスト3→テスト4→テスト報告書作成\n\nの2通りがあることがわかります。\nそれぞれの最短終了日数は、\n・3＋4＋2＝9日\n・2＋(作業1の終了待ち1日)＋5＋2＝10日\n\nしたがってクリティカルパスは「テスト3→テスト4→テスト報告書作成」で最短終了日数は10日になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/23_aki/img/95_1.png",
-          "https://www.itpassportsiken.com/kakomon/23_aki/img/95_2.png",
-          "https://www.itpassportsiken.com/kakomon/23_aki/img/95_3.png",
-          "https://www.itpassportsiken.com/kakomon/23_aki/img/95_4.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q95/95_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q95/95_2.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q95/95_3.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q95/95_4.png"
         ]
       }
     },
@@ -4373,7 +4373,7 @@
         "text": "M社では，通販システムを稼働させる前に，〔Aさんが書き出したメモ〕の(5)で，稼働の可否を判断する稼働判定会議を実施することにしている。そこで，Aさんはこの会議に必要な文書を用意することにした。次の記述中のb, cに入れる適切な文書記号の組合せはどれか。\n　なお，〔Aさんが書き出したメモ〕の(1)～(4)では，既に表2に示す文書が作成されている。\n　通販システムの稼働判定は，bの結果を基に実施する。また，bに記載された内容の過不足の確認は，cを参照し，判定する。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/23_aki/img/96.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q96/96.png"
         ]
       },
       "choices": [
@@ -4381,28 +4381,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/23_aki/img/96a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q96/96a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/23_aki/img/96a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q96/96a.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/23_aki/img/96a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q96/96a.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/23_aki/img/96a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q96/96a.png"
           ]
         }
       ],
@@ -4559,7 +4559,7 @@
         "text": "Aさんは，会員顧客を対象にした販促活動を行うことを検討している。そこで，表1に示す四つの販売促進策を考え，それぞれの費用と効果の金額を見込んだ。効果に関しては，期待できる効果が大の場合，中の場合，小の場合に分け，それぞれの場合が発生する確率を0.2，0.5，0.3と推測した。この推測に従って実施すると予想利益が最大になる販売促進策はどれか。ここで，予想利益は効果の金額の期待値から費用を差し引いたものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/23_aki/img/100.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/23_aki/q100/100.png"
         ]
       },
       "choices": [

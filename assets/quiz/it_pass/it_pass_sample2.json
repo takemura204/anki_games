@@ -14,7 +14,7 @@
         "text": "図は，電子部品の不良品について，不良項目を個数の多い順に並べた棒グラフと，それらの累積比率を折れ線グラフで表したものである。この図の名称は何か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/02_sample/img/01.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q1/01.png"
         ]
       },
       "choices": [
@@ -50,9 +50,9 @@
         "text": "パレート図は、分析対象の項目を値の大きい順に並べた棒グラフと、対象全体に対する累積構成比を表す折れ線グラフを組み合わせた複合グラフで、主に複数の分析対象の中から、重要である要素を識別するために使用します。\n・現れた特性（結果）とそれに影響を及ぼしたと思われる要因の関係を体系的に表わした図です。\n・正しい。\n・複数の集合の関係や、集合の範囲を視覚的に図式化したものです。各集合の表現に円などの閉じた図形を使い、集合同士の関連性をその図形同士の交わり方によって表します。\n・表の縦軸と横軸にいくつかの項目を設定し、交点に各項目同士の関連性・関連度合いなどを◎，○，△などで表した分析図です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/02_sample/img/01_1.png",
-          "https://www.itpassportsiken.com/kakomon/02_sample/img/01_2.png",
-          "https://www.itpassportsiken.com/kakomon/02_sample/img/01_3.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q1/01_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q1/01_2.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q1/01_3.png"
         ]
       }
     },
@@ -108,7 +108,7 @@
         "text": "ある会社は四つの製品を販売している。その年のそれぞれの売上高，市場占有率，市場成長率を調べた結果，表のようになった。これに当てはまるプロダクトポートフォリオマトリックスはどれか。ここで，円の大きさ(面積)は売上高を表す。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/02_sample/img/03.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q3/03.png"
         ]
       },
       "choices": [
@@ -116,28 +116,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/02_sample/img/03a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q3/03a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/02_sample/img/03i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q3/03i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/02_sample/img/03u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q3/03u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/02_sample/img/03e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q3/03e.png"
           ]
         }
       ],
@@ -152,7 +152,7 @@
         "text": "図中の円の大きさは「売上高」を表しています。\n\n各製品の売上高が記述してある表中で最も売上高が高いのは製品Dで、これを示す図中の一番大きな円に注目するとすべての図中で異なる位置に配置されていることがわかります。この製品Dの位置が横軸の「市場占有率」と縦軸の「市場成長率」ともに正しく配置されている図が表を表すプロダクトポートフォリオマトリックスであることになります。\n\n表より製品Dの市場占有率は8%、市場成長率は4%ということがわかるので、正解は「ア」であることがわかります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/02_sample/img/03_1.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q3/03_1.png"
         ]
       }
     },
@@ -252,7 +252,7 @@
         "text": "販売流通業の注文受付から納品までの業務遂行の流れを示している。図中のaはどれか。ここで，網掛けの部分は表示していない。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/02_sample/img/06.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q6/06.png"
         ]
       },
       "choices": [
@@ -524,28 +524,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/02_sample/img/12a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q12/12a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/02_sample/img/12i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q12/12i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/02_sample/img/12u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q12/12u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/02_sample/img/12e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q12/12e.png"
           ]
         }
       ],
@@ -560,9 +560,9 @@
         "text": "ベン図(Venn diagram)とは、複数の集合の関係や、集合の範囲を視覚的に図式化したものです。各集合の表現に円などの閉じた図形を使い、集合同士の関連性をその図形同士の交わり方によって表します。\n\n\"AかつB\"の範囲が、\"Cではない\"範囲が、なので、この2つの集合の共通部分である\"AかつBであり，Cではない\"範囲は、「イ」のベン図となることがわかります。\n\nちなみに4つのベン図は論理式で次のように表すことができます。\n・A AND B AND C\n・A AND B AND (NOT C)\n・A AND B\n・NOT C",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/02_sample/img/12u.png",
-          "https://www.itpassportsiken.com/kakomon/02_sample/img/12e.png",
-          "https://www.itpassportsiken.com/kakomon/02_sample/img/12i.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q12/12u.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q12/12e.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q12/12i.png"
         ]
       }
     },
@@ -574,7 +574,7 @@
         "text": "図に示す連絡網で，B～LのうちAからの連絡が届かないものは幾つあるか。ここで，矢印線は連絡がとれる方向を表すものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/02_sample/img/13.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q13/13.png"
         ]
       },
       "choices": [
@@ -620,7 +620,7 @@
         "text": "PCの基本構成を表す図中のa～cに相当する機能の組合せはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/02_sample/img/14.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q14/14.png"
         ]
       },
       "choices": [
@@ -628,28 +628,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/02_sample/img/14a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q14/14a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/02_sample/img/14a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q14/14a.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/02_sample/img/14a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q14/14a.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/02_sample/img/14a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q14/14a.png"
           ]
         }
       ],
@@ -762,7 +762,7 @@
         "text": "円周上に1～6の番号を順番に時計回りに記した円盤がある。この円盤は6秒の周期で時計回りに回転している。この円盤は暗室に置かれており，スポットライトで，設定された点滅の時間間隔で，円盤の最上部の点線で囲った部分だけを一瞬間照らすようになっている。点滅の時間間隔を5秒に設定したときに観察される番号は，どのように繰り返されるか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/02_sample/img/17.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q17/17.png"
         ]
       },
       "choices": [
@@ -798,7 +798,7 @@
         "text": "円盤は、時計回りに1周6秒で回転しているので、スタートを1とすると円盤の最上部は次のように移り変わっていきます。\n・開始時点 … 1\n・1秒後 … 6\n・2秒後 … 5\n・3秒後 … 4\n・4秒後 … 3\n・5秒後 … 2\n・6秒後 … 1\n・7秒後 … 6\n・8秒後 … 5\n・9秒後 … 4\n・10秒後 … 3\n・11秒後 … 2\n・以後は番号の繰り返し\n\nスポットライトで照らす時間間隔は5秒、1周が6秒なので、観察される番号は一つ前に観察された番号から時計回りで次の番号になります。\n\nつまり、5秒毎に 1→2→3→4→5→6→1→2→…　という順番で繰返されることになります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/02_sample/img/17a.gif"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q17/17a.gif"
         ]
       }
     },
@@ -888,7 +888,7 @@
         "text": "キャプチャカード(キャプチャボード)は、コンピュータに取りつける拡張カードのひとつで、表示される映像情報を静止画または動画ファイルとして取り込み保存するための機能を提供するハードウェアです。\n・紙媒体などの静止画像情報をデジタルデータに変換しコンピュータにを取り込む装置です。\n・正しい。\n・コンピュータに音響信号の入出力機能を付加または強化する拡張用の回路基板です。\n・薄型の筐体にタッチパネルとなる表示装置とポインティングデバイスを備えたコンピュータ製品のことです。(iPadやGALAXY Tabなど)\n\n問題にもあるビデオテープのダビングですが、USB接続でPCにダビングが可能であるビデオキャプチャコードの利用が簡便でおすすめです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/02_sample/img/19.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q19/19.png"
         ]
       }
     },
@@ -900,7 +900,7 @@
         "text": "“商品在庫”表の検索において，販売価格50,000円以上で在庫が10台未満の条件で検索される商品名はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/02_sample/img/20.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q20/20.png"
         ]
       },
       "choices": [
@@ -936,7 +936,7 @@
         "text": "「販売価格50,000円以上」と「在庫が10台未満」それぞれをマークすると次のようになります。両方の条件を満たしているのは、中型冷蔵庫，小型冷蔵庫，エアコンの3つになります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/02_sample/img/20a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q20/20a.png"
         ]
       }
     },

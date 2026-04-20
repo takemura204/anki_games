@@ -328,7 +328,7 @@
         "text": "・BI(Business Intelligence)は、業務システムに蓄積された膨大なデータを分析・加工・見える化することで必要な情報を引き出し、ビジネスの意思決定に役立てる手法や技術です。\n・正しい。EA(Enterprise Architecture)は、社会環境や情報技術の変化に素早く対応できるよう、全体最適の観点から業務とシステムを同時に改善していくためのフレームワークです。理想像とするTo-Beモデルを作成し、現状のシステムであるAs-Isモデルと比較することで、目標とする次期モデルを作成していきます。業務とシステム構造を、ビジネス、データ、アプリケーション、テクノロジの4つの体系で表すことが特徴です。\n・MOT(Management of Technology)は、技術経営とも呼ばれ、技術開発の成果によって事業利益を獲得することを目的とした経営手法です。イノベーションの創出を推進し、技術資産を豊富に蓄えることで市場競争力を強化します。\n・SOA(Service Oriented Architecture)は、利用者から見た各業務システムの機能をいくつかの独立した部品に分けてサービスとして定義し、業務プロセスとの対応付けや他のソフトウェアとの連携を容易にする手法です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/07.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q7/07.png"
         ]
       }
     },
@@ -480,7 +480,7 @@
         "text": "与信限度額が3,000万円に設定されている取引先の5月31日業務終了時までの全取引が表のとおりであるとき，その時点での取引先の与信の余力は何万円か。ここで，受注分も与信に含めるものとし，満期日前の手形回収は回収とはみなさないものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/11.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q11/11.png"
         ]
       },
       "choices": [
@@ -658,7 +658,7 @@
         "text": "業務プロセスを，例示するUMLのアクティビティ図を使ってモデリングしたとき，表現できるものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/15.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q15/15.png"
         ]
       },
       "choices": [
@@ -826,7 +826,7 @@
         "text": "インダストリー4.0（第4次産業革命）は、主に製造業において、IoTやAIの利活用により飛躍的に産業構造が変革し、生産性の向上や効率化が図られることです。水力・蒸気機関による機械製造設備が導入された第1次産業革命、石油と電力による大量生産が始まった第2次産業革命、IT技術による第3次産業革命に続く歴史的な変化として位置付けられています（参考：平成30年情報通信白書）。\n・正しい。インダストリー4.0(第4次産業革命)で可能になる取組として、大量生産並みの生産性を保ちながらオーダーメイドの製品作りを行うマス・カスタマイゼーションがあります。\n・第1次産業革命の特徴です。\n・第3次産業革命の特徴です。\n・第2次産業革命の特徴です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/18.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q18/18.png"
         ]
       }
     },
@@ -916,8 +916,8 @@
         "text": "JANコードとQRコードの違いは以下の通りです。JANコード市販商品に付いていることでお馴染みの黒の縦棒と白のスペースで数字を表現するバーコード規格です。最大13桁（チェックデジットを含む）の数字で製造業者と商品を識別できるようになっています。QRコード情報を縦横の2次元で表すコード規格です。格納できるデータ量が多く、またバーコードのように数字だけではなく英字、漢字、ひらがな、カタカナなどの多言語データも格納することができるので、携帯電話でのURLの読取りや、スマホ決済、販売店や工場における在庫管理など多方面で利用されています。隅の四角い位置検出パターンによって360度読み取り可能、汚れなどがあっても正確に読み取れるように誤り訂正語を含むなどの特徴もあります。JANコードは数字のみで最大13字なのに対して、QRコードは数字だけであれば7,089字を格納できるほど表現できる最大データ量には差があります。したがって、QRコードを採用することになります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/20_1.png",
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/20_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q20/20_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q20/20_2.png"
         ]
       }
     },
@@ -1100,7 +1100,7 @@
         "text": "AIに学習をさせる方法は、訓練データの性質によって教師あり学習、教師なし学習、強化学習に大別できます。教師あり学習訓練データとして、ラベル(正解)付きデータを使用する学習方法。入力に対する正しい出力の例を与えることで、入力と出力の関係を学習させる。教師なし学習訓練データとして、ラベルなしデータを使用する学習方法。クラスタリングなどのためにデータ構造を学習させる。強化学習正解データの代わりに、与えられた環境における個々の行動に対して得点や報酬を与える学習方法。一連の行動に対して評価値を与えることで高い得点を取るための行動、すなわち最良の行動を自律的に学習させる。\n・与えられたデータの特徴点をもとに類似するグループに分けるのは、教師なし学習の事例です。\n・ルールベースAIの事例です。あらかじめ人が与えたルールに基づき判断するため、システムは学習を行いません。\n・多くの試行を繰り返すことで最終的に最適な行動に行き着いているため、強化学習の事例です。\n・正しい。泣き声に対するその原因という、テストデータと正解の組が教師データとして与えられているため、教師あり学習に該当します。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/24.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q24/24.png"
         ]
       }
     },
@@ -1156,10 +1156,10 @@
           "誤り。レーダーチャートは、中心から正多角形状に配置される各項目の軸に、値や基準値に対する比率をプロットし、各点を線で結んだ形状で表す図です。量の大小を把握しつつ、項目同士のバランスを比較するのに適しています。"
         ],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/25_1.png",
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/25_2.png",
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/25_3.png",
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/25_4.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q25/25_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q25/25_2.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q25/25_3.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q25/25_4.png"
         ]
       }
     },
@@ -1259,7 +1259,7 @@
         "text": "A社のある期の資産，負債及び純資産が次のとおりであるとき，経営の安全性指標の一つで，短期の支払能力を示す流動比率は何%か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/28.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q28/28.png"
         ]
       },
       "choices": [
@@ -1383,7 +1383,7 @@
         "text": "企業会計における○○利益という言葉には「売上総利益」「営業利益」「経常利益」「税引前当期純利益」「当期純利益」があります。営業利益は、売上総利益(粗利益)から販売費及び一般管理費を差し引いて求める、企業の本業における利益です。したがって「イ」が正解です。\n・売上総利益(粗利益)を求める計算式です。\n・正しい。営業利益を求める計算式です。\n・税引前当期純利益を求める計算式です。\n・当期純利益を求める計算式です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/30.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q30/30.png"
         ]
       }
     },
@@ -1429,10 +1429,10 @@
         "text": "・PERT図は、別名をアローダイアグラムといい、プロジェクトの各作業を矢印で、作業の結合点を\"〇\"で示すことで、作業間の関連性や順序関係を視覚的に表現する図です。\n・管理図は、中央線および上限と下限を示す限界線を引いて、製品などの特性値を打点することで、工程の状態や品質を時系列に表した図で、工程が安定した状態にあるかどうかを判断するために用います。\n・特性要因図は、特性（結果）とそれに影響を及ぼしたと思われる要因（原因）の関係を体系的に表した図です。直接的な原因と間接的な原因に分別したり、主要または根本原因を明確にするために用いられます。\n・正しい。パレート図は、値の大きい順に分析対象の項目を並べた縦棒グラフと、累積構成比を表す折れ線グラフを組み合わせた複合グラフで、主に複数の分析対象の中から重要な要素を識別するために使用されます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/31_1.png",
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/31_2.png",
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/31_3.png",
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/31_4.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q31/31_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q31/31_2.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q31/31_3.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q31/31_4.png"
         ]
       }
     },
@@ -1450,28 +1450,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/32a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q32/32a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/32i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q32/32i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/32u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q32/32u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/32e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q32/32e.png"
           ]
         }
       ],
@@ -1486,7 +1486,7 @@
         "text": "コンカレントエンジニアリングは、主に製造業において、設計から生産に至るまでの各プロセスを同時並行的に行うことで、開発期間や納期の短縮および生産コストの削減を図る手法です。コンカレント(concurrent)は、「並行」「同時に(発生)」などを意味する英単語です。選択肢の各図を見ると、複数の工程を同時並行的に行っているのは「エ」だけです。したがって、「エ」がコンカレントエンジニアリングを適用した後の流れであることがわかります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/32.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q32/32.png"
         ]
       }
     },
@@ -1664,7 +1664,7 @@
         "text": "WBS(Work Breakdown Structure)は、プロジェクト目標を達成し、必要な成果物を過不足なく作成するために、プロジェクトチームが実行すべき作業を、成果物を主体に階層的に要素分解したものです。各作業ごとに内容・スケジュール・目標を設定することでプロジェクト管理をしやすくする目的で用いられます。\n・正しい。WBSでは成果物や作業が細かく定義されるので、それぞれの作業工数やスケジュールの予測を立てやすくなります。分割した成果物や作業ごとに作業工数を割り当て、それを積み上げて全体の作業工数を見積もる手法があります。\n・スコープとはプロジェクトの実施範囲です。プロジェクトで実施しない作業はWBSに記述しません。\n・プロジェクト、工程および成果物によって、どの階層まで詳細化すべきかは異なります。\n・WBSにはスコープ内の作業を過不足なく含めますから、他の作業の類似作業であっても記載しなければなりません。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/36.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q36/36.png"
         ]
       }
     },
@@ -1754,7 +1754,7 @@
         "text": "エクストリームプログラミング(XP:eXtreme Programming)は、1990年代後半、ケント・ベック氏らによって提唱されたソフトウェア開発手法で、アジャイルソフトウェア開発と称される一連の手法の先駆けとなったものです。『プログラマーは人間である』という思想のもと、叩き台となるプログラムを早期に開発し、短いサイクルで頻繁にテストとリリースを繰り返すことで、顧客の要求への対応力と生産性を高め、リスクを軽減することを目的としています。\n\nXPでは、ソフトウェア開発に有益である要素を4つのカテゴリ、19のプラクティスとして定義しています。\n・プロダクトコードと並行してテストコードを書き、小まめに実行して結果を見ながら開発するというテストファーストで進めることをテスト駆動開発(TDD)といいます。テスト駆動開発は、XPのプラクティスの1つです。\n・ペアプログラミングは、二人一組で実装を行い、1人が実際のコードをコンピュータに打ち込み、もう1人はそれをチェックしながら補佐するという役割を随時交代しながら作業を進めることです。ペアプログラミングは、XPのプラクティスの1つです。\n・外部から見た時の振る舞いを変えずに、ソフトウェアの内部構造を改善することをリファクタリングといいます。リファクタリングは、XPのプラクティスの1つです。\n・正しい。XP(エクストリームプログラミング)は、アジャイル開発の方法論の一つです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/38.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q38/38.png"
         ]
       }
     },
@@ -1942,7 +1942,7 @@
         "text": "図のアローダイアグラムにおいて，作業Bが2日遅れて完了した。そこで，予定どおりの期間で全ての作業を完了させるために，作業Dに要員を追加することにした。作業Dに当初20名が割り当てられているとき，作業Dに追加する要員は最少で何名必要か。ここで，要員の作業効率は一律である。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/43.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q43/43.png"
         ]
       },
       "choices": [
@@ -2262,7 +2262,7 @@
         "text": "120kステップのソフトウェアを開発した。開発の各工程における生産性の実績が表のとおりであるとき，開発全体の工数は何人月か。ここで，生産性は1人月当たりのkステップとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/50.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q50/50.png"
         ]
       },
       "choices": [
@@ -2314,28 +2314,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/51.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q51/51.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/51.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q51/51.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/51.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q51/51.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/51.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q51/51.png"
           ]
         }
       ],
@@ -2588,7 +2588,7 @@
         "text": "ランサムウェアは、身代金を意味する ransom とソフトウェアの語尾に付ける ware を合わせた造語で、PC内のデータファイルを勝手に暗号化したり、PCの操作ができないようにロックしたりして、データアクセスに制限をかけた後、元に戻すための復元プログラムの購入を迫るマルウェアです。コンピュータのデータを人質にとり、金銭を要求する動作から「身代金要求型ウイルス」とも呼ばれます。仮に要求された金銭を支払ったとしても暗号化が解除される保証はなく、また自力での回復は困難です。そのため、ランサムウェアの感染に備えて日頃から別の媒体にバックアップを取っておき、もし被害を受けてしまった場合には、バックアップからのリストアで回復を図るのが基本的な対処法となります。\n\nしたがって「ア」が有効な対策となります。\n\nIPA「ランサムウェアの脅威と対策」では、ランサムウェアへの対策として以下の4点を挙げています。\n1. 定期的にバックアップを取得する（最重要）\n2. OSおよびソフトウェアを常に最新の状態に保つ\n3. セキュリティソフトを導入し、定義ファイルを常に最新の状態に保つ\n4. メールやSNSの添付ファイルや本文中のURLに注意する\n\n・正しい。ランサムウェアへの対策です。\n・パスワードリスト攻撃への対策です。\n・事前に検査をしてもその時点でランサムウェアが入り込んでいないことがわかるだけで、その後の被害を防ぐことはできません。\n・通信内容の盗聴への対策です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/56.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q56/56.png"
         ]
       }
     },
@@ -2606,28 +2606,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/57.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q57/57.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/57.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q57/57.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/57.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q57/57.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/57.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q57/57.png"
           ]
         }
       ],
@@ -2702,28 +2702,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/59.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q59/59.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/59.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q59/59.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/59.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q59/59.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/59.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q59/59.png"
           ]
         }
       ],
@@ -2754,28 +2754,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/60.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q60/60.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/60.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q60/60.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/60.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q60/60.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/60.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q60/60.png"
           ]
         }
       ],
@@ -2790,7 +2790,7 @@
         "text": "公開鍵暗号方式は、暗号化と復号に異なる鍵を使用する暗号方式です。暗号化鍵と復号鍵は一対のペアとして生成され、ある暗号化鍵で暗号化されたデータは、その鍵のペアである復号鍵でしか元のデータに戻せません。暗号化鍵は広く公開し、復号鍵は漏えいしないように厳重に管理します。\n\n公開鍵暗号方式で暗号化通信を行うときには、送信者は受信者の公開鍵で送信データを暗号化し送信します。受信者は自身の秘密鍵で暗号化された送信データを復号します。暗号化は誰でも行えますが、復号を行えるのは正規の受信者に限られるため、通信内容の秘匿性が保たれます。設問では、A社がB社に情報を送信するので、暗号化に使うのは受信者である「B社の公開鍵」、B社が復号に使うのは受信者である「B社の秘密鍵」です。したがって「エ」の組合せが適切です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/60a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q60/60a.png"
         ]
       }
     },
@@ -2978,7 +2978,7 @@
           "不適切。ファイアウォールには負荷分散の機能はありません。負荷分散を行う機器はロードバランサーです。"
         ],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/64.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q64/64.png"
         ]
       }
     },
@@ -2990,7 +2990,7 @@
         "text": "条件①～⑤によって，関係データベースで管理する\"従業員\"表と\"部門\"表を作成した。\"従業員\"表の主キーとして，最も適切なものはどれか。\n\n〔条件〕\n1. 各従業員は重複のない従業員番号を一つもつ。\n2. 同姓同名の従業員がいてもよい。\n3. 各部門は重複のない部門コードを一つもつ。\n4. 一つの部門には複数名の従業員が所属する。\n5. 1人の従業員が所属する部門は一つだけである。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/65.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q65/65.png"
         ]
       },
       "choices": [
@@ -3310,28 +3310,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/72.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q72/72.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/72.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q72/72.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/72.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q72/72.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/72.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q72/72.png"
           ]
         }
       ],
@@ -3390,8 +3390,8 @@
         "text": "現在使われているIP(Internet Protocol)は、アドレス長が32ビットのIPv4と、アドレス長が128ビットのIPv6です。IPv4は約43億個のIPアドレスしか表現できずアドレス空間の不足が現実化したため、徐々にIPv6への移行が行われています。\n\nIPアドレスの長さが128ビットのインターネットプロトコルはIPv6なので「ウ」が正解です。\n\nなお、IPv5とIPv8は、IPの新しいバージョンとして開発されていましたが実用化されずに終わっています。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/73_1.png",
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/73_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q73/73_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q73/73_2.png"
         ]
       }
     },
@@ -3579,7 +3579,7 @@
         "text": "関数 checkDigit は，10進9桁の整数の各桁の数字が上位の桁から順に格納された整数型の配列 originalDigit を引数として，次の手順で計算したチェックデジットを戻り値とする。プログラム中のaに入れる字句として，適切なものはどれか。ここで，配列の要素番号は1から始まる。\n\n〔手順〕\n・配列 originalDigit の要素番号1～9の要素の値を合計する。\n・合計した値が9より大きい場合は，合計した値を10進の整数で表現したときの各桁の数字を合計する。この操作を，合計した値が9以下になるまで繰り返す。\n・(2)で得られた値をチェックデジットとする。\n\n〔プログラム〕",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/78.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q78/78.png"
         ]
       },
       "choices": [
@@ -3625,7 +3625,7 @@
         "text": "流れ図で示す処理を終了したとき，xの値はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/79.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q79/79.png"
         ]
       },
       "choices": [
@@ -3933,7 +3933,7 @@
         "text": "情報セキュリティポリシーとは、組織が保有する情報資産の情報セキュリティ対策について総合的・体系的かつ具体的にとりまとめたものです。一般的にセキュリティポリシー群は、組織のセキュリティの目標と目標を達成するために組織の構成員がとるべき行動等を宣言するポリシー（基本方針)、基本方針に従い何を実施しなければならないのかを規定するスタンダード（対策基準)、対策基準を詳細化し、手順を示すプロシージャ（実施手順）で構成されます（参考：IPAサイバーセキュリティ経営ガイドライン解説書Ver.1.0 P18）。基本方針組織の経営者が、「情報セキュリティに本格的に取り組む」という姿勢を示し、情報セキュリティの目標と、その目標を達成するために企業がとるべき行動を社内外に宣言するものです。「なぜセキュリティが必要か」という「Why」について規定し、何をどこまで守るのか（対象範囲)、誰が責任者かを明確にします。また、業界標準、該当する法令、政府規制への準拠を宣言する場合があります。対策基準基本方針で作成した目的を受けて、「何を実施しなければならないか」という「What」について記述します。組織的に情報セキュリティ対策を行うためのルール集で、人事規程や就業規程などの類の企業の構成員が守るべき「規程類」に相当します。実際に守るべき規程を具体的に記述し、適用範囲や対象者を明確にします。実施手順対策基準で定めた規程を実施する際に、「どのように実施するか」という「How」について記述します。マニュアル的な位置づけの文書であり、詳細な手順を記述します。\n・正しい。基本方針は、経営者が「情報セキュリティに本格的に取り組む」という姿勢を示し、情報セキュリティの目標と、その目標を達成するために企業がとるべき行動を社内外に宣言するものです。情報セキュリティポリシー群の最上位に位置します。\n・実施手順は、基本方針と対策基準を確実に実行するための個々の業務手順・運用規則・マニュアルに相当します。基本方針と対策基準を作成するための作業手順ではありません。\n・対策基準は、基本方針で定めた目的を達成するために組織として実施すべき全体的なルールを記述するものです。\n・実施手順には、対策基準を実施する際の詳細な手順が定められます。したがって、対策基準よりも実施手順のほうが詳しく記述されます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/85.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q85/85.png"
         ]
       }
     },
@@ -3979,7 +3979,7 @@
         "text": "リスクアセスメントは、対象組織に存在するリスクを認識し、リスクの大きさを評価し、そのリスクが許容できるか否かを決定する一連のプロセスです。JIS Q 27000で「リスク特定，リスク分析及びリスク評価のプロセス全体」と定義されているように、リスク特定、リスク分析、リスク評価までの活動を含みます。リスク特定リスクを発見し、認識する\nリスク所有者を特定するリスク分析リスクの特質を理解し、リスクレベルを決定する\nリスクが実際に生じた場合の損害の大きさ及び起こりやすさを算定するリスク評価リスク分析の結果と事前に定めておいたリスク基準とを比較する\nリスク対応のために、分析したリスクの優先順位付けを行う\n・正しい。特定されたリスクを分析し、リスクのレベルを決定するのはリスク分析の活動です。\n・リスク分析が対象とするのはリスク特定で認識されたリスクです。リスクが認識されなかった情報資産についてはリスク分析の対象外です。\n・リスク分析には、ベースラインアプローチ、詳細リスク分析、非公式アプローチなどいくつかの手法があります。1つの手法を用いることもできますが、分析にかかる時間とコストを最適化するため、組織や情報資産の重要度に応じて複数の手法を組み合わせることもできます。\n・リスクが受容可能かどうかを決定するのはリスク対応のプロセスです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/86.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q86/86.png"
         ]
       }
     },
@@ -4041,28 +4041,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/88.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q88/88.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/88.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q88/88.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/88.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q88/88.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/88.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q88/88.png"
           ]
         }
       ],
@@ -4131,7 +4131,7 @@
         "text": "ディレクトリ又はファイルがノードに対応する木構造で表現できるファイルシステムがある。ルートディレクトリを根として図のように表現したとき，中間ノードである節及び末端ノードである葉に対応するものの組合せとして，最も適切なものはどれか。ここで，空のディレクトリを許すものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/90.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q90/90.png"
         ]
       },
       "choices": [
@@ -4139,28 +4139,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/90a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q90/90a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/90a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q90/90a.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/90a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q90/90a.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/90a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q90/90a.png"
           ]
         }
       ],
@@ -4307,8 +4307,8 @@
         "text": "用紙サイズ同士は相似形であり、用紙サイズが1つ小さくなるごとに用紙の面積が半分になる関係があります。辺の長さを見てみると、A4判の長辺はA3判の短辺と同じ、A4判の短辺はA3の長辺の半分の長さになっています。A4判の長辺を\"1\"、A3判の長辺を\"x\"とすると、各辺の長さは以下のように表すことができます。A3判とA4判で短辺：長辺の比率は変わらないので、2組の辺の長さの比率を比例式にすると、\n\n　x：1＝1：x/2\n　x2/2＝1\n　x2＝2\n　x＝2≒1.41\n\n以上より、A3判の長辺はA4判の長辺の約1.41倍になることがわかります。したがって「ア」が正解です。\n\n【別解】\nA3判の長辺はA5判の長辺の2倍の長さになっています。A5→A4、A4→A3で長辺の倍率は同じはずなので、用紙サイズが1つ大きくなるときの長辺の倍率を\"n\"とすると、A4判の長辺はA5判の長辺のn倍、A3判の長辺はA5判の長辺のn2倍になります。この関係を式に表すと、\n\n　1×n×n＝2\n　n2＝2\n　n＝2≒1.41",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/93_1.png",
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/93_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q93/93_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q93/93_2.png"
         ]
       }
     },
@@ -4408,7 +4408,7 @@
         "text": "関数 calcX と関数 calcY は，引数 inData を用いて計算を行い，その結果を戻り値とする。関数 calcX を calcX(1) として呼び出すと，関数 calcX の変数 num の値が，1→3→7→13と変化し，戻り値は13となった。関数 calcY を calcY(1) として呼び出すと，関数 calcY の変数 num の値が，1→5→13→25と変化し，戻り値は25となった。プログラム中のa，bに入れる字句の適切な組合せはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/96.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q96/96.png"
         ]
       },
       "choices": [
@@ -4416,28 +4416,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/96a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q96/96a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/96a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q96/96a.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/96a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q96/96a.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/96a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q96/96a.png"
           ]
         }
       ],
@@ -4462,7 +4462,7 @@
         "text": "水田の水位を計測することによって，水田の水門を自動的に開閉するIoTシステムがある。図中のa，bに入れる字句の適切な組合せはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/97.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q97/97.png"
         ]
       },
       "choices": [
@@ -4470,28 +4470,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/97a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q97/97a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/97a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q97/97a.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/97a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q97/97a.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/04_haru/img/97a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q97/97a.png"
           ]
         }
       ],
@@ -4516,7 +4516,7 @@
         "text": "関係データベースで管理している\"従業員\"表から，氏名の列だけを取り出す操作を何というか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/98.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q98/98.png"
         ]
       },
       "choices": [
@@ -4552,10 +4552,10 @@
         "text": "データベースの操作のうち「結合」「射影」「選択」「和」は次のような操作です。\n結合2つ以上の表の列を組み合わせて1つの新しい表を作りだす操作射影表から選択した列を取り出す操作選択表から選択した行を取り出す操作和2つの表の和集合の関係を得る操作表から特定の列を取り出す操作は射影です。したがって「イ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/98_1.png",
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/98_2.png",
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/98_3.png",
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/98_4.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q98/98_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q98/98_2.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q98/98_3.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q98/98_4.png"
         ]
       }
     },
@@ -4609,7 +4609,7 @@
           "不適切。仮想化では物理的なコンピュータの容量・能力を仮想サーバに分割するので、全ての仮想サーバが記録できるデータ量の合計は、物理的なコンピュータのHDD容量に制限されます。仮想サーバごとに物理的なコンピュータと同じ容量のデータを記録できるわけではありません。"
         ],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/04_haru/img/99.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/04_haru/q99/99.png"
         ]
       }
     },

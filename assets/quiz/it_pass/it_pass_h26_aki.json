@@ -14,7 +14,7 @@
         "text": "商品の販売数が500個のときの営業利益は表のとおりである。販売単価を10%値下げしたとき，損益分岐点の売上高は何円か。ここで，商品1個当たりの変動費及び販売数は，販売単価の値下げの前後で変わらないものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/01.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q1/01.png"
         ]
       },
       "choices": [
@@ -154,28 +154,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_aki/img/04.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q4/04.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_aki/img/04.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q4/04.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_aki/img/04.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q4/04.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_aki/img/04.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q4/04.png"
           ]
         }
       ],
@@ -278,7 +278,7 @@
         "text": "著作権は、思想や感情を表現した文化的な創作物に対して創作者が有する権利です。\n著作物には文芸，学術，音楽，美術の創作物のほかにコンピュータ関連ではプログラムやデータベースも保護対象に含まれます。以下は代表的な著作物の種類です。ただし、次に挙げるものは著作物であっても、著作権の対象となりません。\n1. 憲法そのほかの法令（地方公共団体の条例、規則も含む）\n2. 国や地方公共団体又は独立行政法人の告示、訓令、通達など\n3. 裁判所の判決、決定、命令など\n4. 1から3の翻訳物や編集物で国や地方公共団体又は独立行政法人の作成するもの\n\n設問の「取扱説明書」は、文書や図版が組み合わさったものなので、上記のうち「言語の著作物」に分類され、著作権法で保護されます。\n・意匠権は、物の形状や模様、色彩などで表した商品のデザインなどのように、工業上の利用性があり、製品の価値や魅力を高める形状・デザインに認められる権利です。\n・商標権は、文字や図形、記号、立体的形状などで表した商品のマークなどを独占的に使用できる権利です。\n・正しい。取扱説明書は、著作権で保護されます。\n・特許権は、発明をした者がその発明を独占して使用できる権利です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/06.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q6/06.png"
         ]
       }
     },
@@ -466,7 +466,7 @@
         "text": "ある企業の損益計算書が表のとおりであるとき，この会計期間の経常利益は何百万円か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/11.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q11/11.png"
         ]
       },
       "choices": [
@@ -502,7 +502,7 @@
         "text": "経常利益(けいじょうりえき)は、営業利益に営業外損益を加減して計算される企業の普段の利益を表す指標です。\n\n　経常利益＝営業利益＋営業外収益－営業外費用\n\n設問の損益計算書では、\n・利益A＝売上総利益(粗利益)\n・利益B＝営業利益\n・利益C＝経常利益\n・利益D＝税引前当期純利益\n\nになるので、利益Aから順に計算していきます。\n\n[利益A:売上総利益]\n売上総利益は「売上高－売上原価」で計算するので、\n\n　10,000－5,000＝5,000\n\n5,000百万円です。\n\n[利益B:営業利益]\n営業利益は「売上総利益－販売費及び一般管理費」で計算するので、\n\n　5,000－4,600＝400\n\n400百万円です。\n\n[利益C:経常利益]\n経常利益は「営業利益＋営業外収益－営業外費用」で計算するので、\n\n　400＋1,200－1,000＝600\n\nしたがって適切な答えは600百万円です。\n\n経常利益は計算できましたが、最後の利益Dの計算手順も掲載しておきます。\n\n[利益D:税引前当期純利益]\n税引前当期純利益は「経常利益＋特別利益－特別損失」で計算するので、\n\n　600＋30－50＝580\n\n580百万円です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/11a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q11/11a.png"
         ]
       }
     },
@@ -861,7 +861,7 @@
         "text": "PPM(プロダクトポートフォリオマネジメント)は、縦軸と横軸に「市場成長率」と「市場占有率」を設定したマトリックス図を4つの象限に区分し、市場における製品(または事業やサービス)の位置付けを2つの観点で分類して資源配分を検討する手法です。4つの象限は、市場内の位置付けから以下のような名称で呼ばれています。花形(star) … [成長率：高、占有率：高]占有率・成長率ともに高く、資金の流入も大きいが、成長に伴い占有率の維持には多額の資金の投入を必要とする分野金のなる木(cash cow) … [成長率：低、占有率：高]市場の成長がないため追加の投資が必要ではなく、市場占有率の高さから安定した資金・利益の流入が見込める分野問題児(problem child) … [成長率：高、占有率：低]成長率は高いが占有率は低いので、花形製品とするためには多額の投資が必要になる。投資が失敗し、そのまま成長率が下がれば負け犬になってしまうため、慎重な対応を必要とする分野負け犬(dog) … [成長率：低、占有率：低]成長率・占有率がともに低く、新たな投資による利益の増加も見込めないため市場からの撤退を検討するべき分野それぞれの記述は、次の領域の特徴を説明したものです。\n・金のなる木の説明です。\n・花形の説明です。\n・負け犬の説明です。\n・正しい。問題児の説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/19.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q19/19.png"
         ]
       }
     },
@@ -1372,7 +1372,7 @@
         "text": "サービスレベル管理において，サービス提供者と利用者の間で合意した応答時間について，図に示す工程で継続的に改善活動を行う。モニタリングで実施するものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/31.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q31/31.png"
         ]
       },
       "choices": [
@@ -1418,7 +1418,7 @@
         "text": "あるITサービスでは，システムの変更の優先度を即時，高，中，低の四段階に定めている。提案された変更のうち，即時と判断されるべき変更はどれか。ここで，変更の定期的なリリースは毎月末に実施されているものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/32.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q32/32.png"
         ]
       },
       "choices": [
@@ -1870,7 +1870,7 @@
         "text": "図のように，改良及び機能追加を繰り返すことによって利用者の要求の変動に柔軟に対処したシステム開発を行う開発モデルはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/42.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q42/42.png"
         ]
       },
       "choices": [
@@ -2054,28 +2054,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_aki/img/46a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q46/46a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_aki/img/46i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q46/46i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_aki/img/46u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q46/46u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_aki/img/46e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q46/46e.png"
           ]
         }
       ],
@@ -2134,7 +2134,7 @@
         "text": "リスクマネジメントは、リスクについて組織を指揮・統制するための調整された活動です。\n\n選択肢の各手順は、JIS Q 27000では次のように定義されています。リスクの特定リスクを発見、認識及び記述するプロセスリスク分析リスクの特質を理解し、リスクレベルを決定するプロセス（リスクの算定を含む）リスク評価リスク及び／又はその大きさが、受容可能か又は許容可能かを決定するために、リスク分析の結果をリスク基準と比較するプロセスリスク対応リスクを修正するプロセス設問には「算定されたリスクを与えられた基準と比較する」という記述があるので、適切なプロセスはリスク評価になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/47.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q47/47.png"
         ]
       }
     },
@@ -2146,7 +2146,7 @@
         "text": "情報処理システムの処理方式を図のように分類したとき，水平負荷分散システムを説明したものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/48.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q48/48.png"
         ]
       },
       "choices": [
@@ -2182,7 +2182,7 @@
         "text": "システムの構成は、集中処理システムと分散処理システムに大別することができます。集中処理システムデータ管理と処理機能を1台のホストコンピュータで行う構成。\n1か所に集中しているため管理がしやすいが、障害発生時の影響が大きい。分散処理システムデータと処理機能を複数のコンピュータに分散した構成。\n障害発生時の影響を局所化できるが、管理が煩雑になる。また分散処理システムは、システム構成に視点を置いた「水平分散」と「垂直分散」、機能面に視点を置いた「機能分散」と「負荷分散」に分類することができ、それぞれの組合せによって「水平機能分散システム」「水平負荷分散システム」「垂直機能分散システム」「垂直負荷分散システム」を考えることができます。水平機能分散システム外部サービス用と企業内部用、業務用サーバとプリントサーバなどのように業務別や用途別によって処理するコンピュータを分ける形態。業務ごとの管理が容易になるメリットがある。水平負荷分散システム同様の処理能力を持つ複数のコンピュータで同じアプリケーションを稼働させ処理要求を振り分けることで、1台のコンピュータにかかる負荷を分散させる形態。障害の発生したコンピュータを切り離して正常なコンピュータのみで処理を続けることができる。垂直機能分散システム一連の処理を階層的に分離し、上下関係を持つ複数のコンピュータが役割を分担して処理を行う形態。クライアントとサーバで処理内容を分担するクライアントサーバシステムが代表例。(垂直負荷分散システム)基本的にコンピュータ同士の垂直関係は異なる処理をする目的で設けられることが多いため「垂直負荷分散システム」は一般的には存在しません。上記の特徴から考えると、各選択肢の記述は次のシステムに該当します。\n・クライアントサーバシステムは、垂直機能分散システムに該当します。\n・水平機能分散システムに該当します。\n・垂直機能分散システムに該当します。\n・正しい。水平負荷分散システムに該当します。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/48a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q48/48a.png"
         ]
       }
     },
@@ -2282,7 +2282,7 @@
         "text": "次の認証方式の特徴に関する記述として，適切なものはどれか。\n・利用者にはあらかじめ乱数表が渡されている。\n・乱数表に印刷された数字は利用者ごとに異なる。\n・システムが要求する乱数表の座標位置に記載された数字をパスワードとして入力する。(座標位置は毎回異なる。)\n・正しいパスワードの入力が確認できた場合に認証が成功する。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/51.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q51/51.png"
         ]
       },
       "choices": [
@@ -2696,28 +2696,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_aki/img/60.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q60/60.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_aki/img/60.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q60/60.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_aki/img/60.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q60/60.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_aki/img/60.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q60/60.png"
           ]
         }
       ],
@@ -3182,7 +3182,7 @@
         "text": "図は処理1，処理2の順でデータベースを更新するトランザクションの処理フローを示している。図中のa～cのうち，コミット処理(処理1，処理2の更新結果を確定させる処理)に該当する箇所だけを全て挙げたものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/71.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q71/71.png"
         ]
       },
       "choices": [
@@ -3222,7 +3222,7 @@
           "処理1が異常終了した場合"
         ],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/71a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q71/71a.png"
         ]
       }
     },
@@ -3312,7 +3312,7 @@
         "text": "減法混色は、印刷の過程で用いられる色表現の手法で白を基本色としそれにシアン(Cyan)，マゼンタ(Magenta)，イエロー(Yellow)を加えていくことで幅広い色を表現するカラ―モデルで、CMY色空間とも呼ばれます。\n全ての要素が最小の場合には基本色である白になるので、逆にすべての色の要素が最大のときには黒色となります。プリンターではCMY色空間を使用しているのでインクにはシアン(Cyan)，マゼンタ(Magenta)，イエロー(Yellow)の色名が付いています。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/73.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q73/73.png"
         ]
       }
     },
@@ -3368,7 +3368,7 @@
         "text": "あるWebサーバにおいて，五つのディレクトリが図のような階層構造になっている。このとき，ディレクトリBに格納されているHTML文書からディレクトリEに格納されているファイルimg.jpgを指定するものはどれか。ここで，ディレクトリ及びファイルの指定は，次の方法によるものとする。\n\n〔ディレクトリ及びファイルの指定方法〕\n・ファイルは，\"ディレクトリ名/…/ディレクトリ名/ファイル名\"のように，経路上のディレクトリを順に\"/\"で区切って並べた後に\"/\"とファイル名を指定する。\n・カレントディレクトリは\".\"で表す。\n・1階層上のディレクトリは\"..\"で表す。\n・始まりが\"/\"のときは，左端にルートディレクトリが省略されているものとする。\n・始まりが\"/\"，\".\"，\"..\"のいずれでもないときは，左端にカレントディレク卜リ配下であることを示す\"./\"が省略されているものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/75.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q75/75.png"
         ]
       },
       "choices": [
@@ -3404,8 +3404,8 @@
         "text": "ファイルパスを記述するHTMLファイルがあるディレクトリBと、ファイル\"img.jpg\"があるディレクトリEの位置関係は次のようになっています。ディレクトリEに移動するには「B→A→D→E」とたどることになるので、順番に沿ってパスを指定していきます。\n1. ディレクトリAはBの1階層上にあるので、BからAを指定するパスは\"../\"になります。\n2. ディレクトリDはAの配下にあるので、BからDを指定するパスは上記の\"../\"と\"D/\"と合わせた\"../D/\"になります。\n3. ディレクトリEはDの配下にあるので、BからEを指定するパスは上記の\"../D\"と\"E/\"と合わせた\"../D/E/\"になります。\n4. ファイル\"img/jpg\"はEに格納されているので、Bから\"img.jpg\"を指定するパスは上記のパスにファイル名を加えて\"../D/E/img.jpg\"になります。\n\nよって「イ」が適切なファイルパスです。※このページのHTMLソースを見てもらえばわかるように、通常HTMLでは相対パスでファイルやディレクトリを指定します。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/75_1.png",
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/75_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q75/75_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q75/75_2.png"
         ]
       }
     },
@@ -3679,7 +3679,7 @@
         "text": "cookie(クッキー)とは、HTTPの仕様のひとつで、Webサーバの指示によってユーザー情報などをクライアント端末（Webブラウザ）に保存しておく仕組みです。利用者のログイン情報やセッションIDを保存するためや、フォームの自動入力、ショッピングカートの管理、広告のターゲティングなどの場面で使われています。\n\nWebサーバとWebブラウザは、次のような手順で情報を共有します。\n1. Webサーバは保存したい情報を、HTTPのレスポンスヘッダーに含めて送信する\n2. HTTPレスポンスを受信したWebブラウザは、cookieの情報をWebブラウザの記憶領域に保存する\n3. Webブラウザは、同じWebサイトに再アクセスするとき、そのWebサイトから受信したcookieの情報をHTTPリクエストヘッダーに含めて送信する\n4. Webサーバは、HTTPリクエストに含まれるcookieの情報を参照する\n\n・メールマガジンの説明です。\n・検索連動型広告の説明です。\n・ブログなどが持つトラックバック機能の説明です。\n・正しい。cookieにユーザーを識別する情報を記録しておき、Webページに再アクセスした際にcookieの情報を取得し、個人設定を反映した動的なページを生成することで実現できます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/81.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q81/81.png"
         ]
       }
     },
@@ -3779,7 +3779,7 @@
         "text": "図のような構成の二つのシステムがある。システムXとYの稼働率を同じにするためには，装置Cの稼働率を幾らにすればよいか。ここで，システムYは並列に接続した装置Bと装置Cのどちらか一つでも稼働していれば正常に稼働しているものとし，装置Aの稼働率を0.8，装置Bの稼働率を0.6とする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/84.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q84/84.png"
         ]
       },
       "choices": [
@@ -3875,28 +3875,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_aki/img/86a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q86/86a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_aki/img/86i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q86/86i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_aki/img/86u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q86/86u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_aki/img/86e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q86/86e.png"
           ]
         }
       ],
@@ -3911,7 +3911,7 @@
         "text": "説明文に「各作業に掛かった費用は，各作業完了時に計上する」という記述があります。開発作業の流れを1日ごとに確認しながら費用の増加を検証していきます。1日目作業Aが開始される。2日目作業Aが完了し費用5が計上される。3日目作業B，D，Fが開始される。4日目作業Fが完了し費用5が計上される。\nここまでの累計費用は10。5日目作業Bが完了し費用7が計上される。(作業Fは作業Dの完了待ち)\nここまでの累計費用は17。6日目作業Cが開始、作業Dが完了し費用5が計上される。作業Fは作業Dの完了待ち)\nここまでの累計費用は22。7日目作業E，Gが開始される。8日目9日目作業Cが完了し費用4が計上される。\nここまでの累計費用は26。10日目まとめると累計費用は以下のように推移していくことになります。\n\n・2日目→5\n・4日目→15\n・5日目→17\n・6日目→22\n・9日目→26\n\nこの変化を適切に表しているグラフは「イ」です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/86.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q86/86.png"
         ]
       }
     },
@@ -3923,7 +3923,7 @@
         "text": "作業Hは，他の作業に比べて日数が多い。作業Hの内容を確認したところ，費用を現在の12よりも多く負担することで，作業をH1～H3の三つに分割できることが分かった。分割後のそれぞれの作業の回数，費用及び前作業は表2のとおりである。このときの費用と効果に関する記述として，適切なものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/87.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q87/87.png"
         ]
       },
       "choices": [
@@ -3959,7 +3959,7 @@
         "text": "H1～H3をアローダイアグラムで表すと次のようになります。分割前と比較すると、H1とH2が並行作業になり作業H全体は5日で完了させることができるので短縮日数は、(7－5=)2日間になります。\n\n追加費用ですが、従来の作業Hの費用と分割後の各作業の費用の合計と差を計算して求めます。(従来の作業Hは費用12)\n\n　5＋6＋4－12＝3\n\nしたがって追加費用は3です。\n\nまとめると「3の追加費用で2日間の短縮が可能」が適切な説明となります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/87a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q87/87a.png"
         ]
       }
     },
@@ -4021,28 +4021,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_aki/img/89.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q89/89.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_aki/img/89.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q89/89.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_aki/img/89.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q89/89.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_aki/img/89.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q89/89.png"
           ]
         }
       ],
@@ -4155,7 +4155,7 @@
         "text": "Sさんは，現PCに保管した画像ファイルに色調補正などの加工をすることにした。加工作業のミスなどに備えて，バックアップツールを利用して，毎年4月1日に完全バックアップを実施し，毎月の1日に差分バックアップを実施する。差分バックアップは3回分を保管している。\n　ある年において，画像ファイルXに対して表2のとおりに加工作業を行ったとき，加工後の各画像ファイルXのうち，この年の6月3日に，バックアップから復旧できないものは，どの作業で加工したものか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/92.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q92/92.png"
         ]
       },
       "choices": [
@@ -4201,7 +4201,7 @@
         "text": "図2のテストの採点結果入力のワークシートに，組別の得点分布表を作成するために，セル B40 に計算式を入力してセル B40～G50 に複写する。セル B40 に入れる適切な式はどれか。\n\n〔ワークシートの説明〕\n・セル A40～A50 には，得点を示す数値として，それぞれの0～10を入力する。\n・セル B40～B50 には，P組の0～10点の人数を，それぞれ表示する式を入力する。\n・同様にセル C40～C50 にはQ組，セル D40～D50 にはR組，セル E40～E50 にはS組，セル F40～F50 にはT組，セル G40～G50 にはU組の得点別人数を表示する式を入力する。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/93.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q93/93.png"
         ]
       },
       "choices": [
@@ -4237,7 +4237,7 @@
         "text": "条件付き個数は、セル範囲に含まれるセルのうち、検索条件の記述で指定された条件を満たすセルの個数を返す関数で以下の書式です。\n\n　条件付個数(セル範囲，検索条件の記述)\n\n選択肢の各式は検索条件の部分は同じなので、セル範囲が適当であるかどうかだけに着目して考えていきます。\n\nワークシートの各セルに範囲を示す式を書き入れてみると次のようになります。これを見ると、絶対参照($付き)にするべき行・列が見えてきます。どのセルも行の範囲は\"2～36\"で固定されていて列指定だけが変化していくので、行指定だけを絶対参照とした\"B$2～B$36\"をセル B40 に入力して、B40～G50にコピーすれば上記のような計算式を入力した場合と同じ結果を得ることができます。\n\nしたがって「イ」が適切な計算式です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/93a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q93/93a.png"
         ]
       }
     },
@@ -4249,7 +4249,7 @@
         "text": "図3のテストの採点結果入力のワークシートのセル H53 に，全受講生のテストの平均点を表示したい。正しく平均点を求めることができないものはどれか。\n\n〔ワークシートの説明〕\n・セル B52～G52 に，P～U組の受講生数をそれぞれ入力する。\n・セル H52 に，式 \"合計(B52～G52)\" を入力する。\n・セル B53 に，式 \"平均(B2～B36)\" を入力し，セル C53～G53 に複写する。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/94.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q94/94.png"
         ]
       },
       "choices": [
@@ -4285,7 +4285,7 @@
         "text": "(1)から(3)の計算式の入力後のワークシートのセルには次の情報が入力されていることになります。\n・セル B54～G54 に計算される式\"B52＊B53\"は平均点×その組人数なので、その組のテストの点の合計と等しくなります。セルH54に、式\"合計(B54～G54)\"で各組ごとのテスト合計点の総和を算出し、それを全体人数(H52)で割っているので正しい計算ができます。\n・合計(B2～G36)で全員分のテストの点を合計し、全体人数(H52)で割っているので正しい計算ができます。\n・平均()はセル範囲に含まれる数値の平均を返す関数です。セル B2～G36 には全員分のテストの点数が入力されているので、この式で正しい計算ができます。\n・正しい。セル B53～G53 の平均値から全体平均を計算しても、それぞれの組の人数が異なるために正しく計算できません。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/94a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q94/94a.png"
         ]
       }
     },
@@ -4297,7 +4297,7 @@
         "text": "T組とU組の得点分布は，図4のとおりであった。この二つの組の平均点と標準偏差に関する記述として，適切なものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/95.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q95/95.png"
         ]
       },
       "choices": [
@@ -4333,7 +4333,7 @@
         "text": "先に平均点から計算していきます。\n\n[T組]\nまず全員の点数の合計を計算します。\n\n　3×2＋4×3＋5×9＋6×7＋7×5＋8×3＋9×1\n＝6＋12＋45＋42＋35＋24＋9\n＝173\n\nT組の人数は30名なので、平均点は、\n\n　173÷30＝5.7666…\n\nになります。\n\n[U組]\n　1×1＋3×2＋3×5＋4×7＋5×9＋6×3＋7×2\n＝1＋6＋15＋28＋45＋18＋14\n＝127\n\nU組も30名なので、平均点は、\n\n　127÷30＝4.2333…\n\nになります。\n\nしたがって平均点は異なります。\n\n標準偏差ですが、特典のばらつき度合いを表す指標です。2つのグラフをよく見ると、以下のように人数の並びが全くであることに気付きます。\n\n[T組] 左から数えて 2，3，9，7，5，3，1人\n[U組] 右から数えて 2，3，9，7，5，3，1人\n\n実際に片方のグラフを水平方向に反転させてみると2つのグラフの形状が一致します。したがって得点のばらつき(標準偏差)は全く同じ値になると考えることができます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/95a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q95/95a.png"
         ]
       }
     },
@@ -4345,7 +4345,7 @@
         "text": "P～S組の平均点と標準偏差は，表2のとおりであった。この四つの組の中で，他の組に比べて成績が良くも悪くもなく，また，多くの受講生がその組の平均点に近い得点をとった組があった。その組では，得点が4～6点だった受講生の割合が他の組に比べて最も多かった。その組はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/96.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q96/96.png"
         ]
       },
       "choices": [
@@ -4391,7 +4391,7 @@
         "text": "交通費精算業務の流れを示す図を作成した。流れ図中のa～cに入れる字句の適切な組合せはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/97.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q97/97.png"
         ]
       },
       "choices": [
@@ -4399,28 +4399,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_aki/img/97a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q97/97a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_aki/img/97a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q97/97a.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_aki/img/97a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q97/97a.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/26_aki/img/97a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q97/97a.png"
           ]
         }
       ],
@@ -4439,7 +4439,7 @@
           "承認者から承認済み伝票を受け取った事務担当者が行う業務なので「採番」が適切です。〔現在の交通費精算業務の流れ〕の(5)に対応"
         ],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/97_1.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q97/97_1.png"
         ]
       }
     },
@@ -4495,7 +4495,7 @@
         "text": "精算システムのデータベースを使って，図1に示す顧客別社員別交通費実績表(以下，実績表という)を作成することにした。実績表を作成する手順として，dに入れる適切なものはどれか。ここで，実績表に出力する伝票は，申請日が前月であり，かつ，承認区分が\"承認\"のものとする。\n　また，精算システムで利用される表は図2のとおりである。\n\n〔実績表の作成手順〕\n\n・(1) 精算表から，申請日が前月かつ承認区分が\"承認\"のデータを抽出する。\n・d\n・(4) (3)の表と社員表と顧客表を結合して，顧客名と社員名を取得する。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/99.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q99/99.png"
         ]
       },
       "choices": [
@@ -4531,7 +4531,7 @@
         "text": "図1「顧客別社員別交通費実績表の例」には、\"顧客番号\"列、\"社員番号\"列、\"金額\"列が含まれているので、精算表の伝票番号をもとに(2)，(3)の作業でこれらの情報を含む表を作成しなければなりません。\n\nまず精算表には伝票番号に対応する顧客番号の情報がないので、明細表と結合して伝票番号と顧客番号を関連つけます。\nその後、\"社員番号\"、\"顧客番号\"、社員別\"、\"顧客別で集計した合計金額\"から成る表を作成します。\n・正しい。\n・(3)で作成される表に\"社員番号\"列が含まれていないので、例の表とは一致しません。\n・(3)で作成される表に\"顧客番号\"列が含まれていないので、例の表とは一致しません。\n・精算表には、\"顧客番号\"列、および\"金額\"列がないため、顧客番号を含む操作を行うには、まず先に明細表と結合し伝票番号と伝票明細の関連付けを行う必要があります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/26_aki/img/99a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/26_aki/q99/99a.png"
         ]
       }
     },

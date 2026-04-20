@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:anki_games/apps/it_pass/features/quiz/model/quiz_session.dart';
 import 'package:anki_games/apps/it_pass/features/quiz/repository/filter_repository.dart';
 import 'package:anki_games/apps/it_pass/features/quiz/repository/quiz_repository.dart';
@@ -6,10 +8,6 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 sealed class QuizState {
   const QuizState();
-}
-
-class QuizLoading extends QuizState {
-  const QuizLoading();
 }
 
 class QuizReady extends QuizState {
@@ -42,7 +40,10 @@ class QuizViewModel extends AutoDisposeAsyncNotifier<QuizState> {
     if (questions.isEmpty) {
       return const QuizError('条件に合う問題がありません');
     }
-    return QuizReady(QuizSession(questions: questions));
+    return QuizReady(QuizSession(
+      questions: questions,
+      setStartTime: DateTime.now(),
+    ));
   }
 
   void answer(String label) {
@@ -58,12 +59,19 @@ class QuizViewModel extends AutoDisposeAsyncNotifier<QuizState> {
     final isCorrect = label == session.currentQuestion.answer;
     HapticFeedback.mediumImpact();
 
+    final result = QuestionResult(
+      question: session.currentQuestion,
+      isCorrect: isCorrect,
+      selectedLabel: label,
+    );
+
     state = AsyncData(
       QuizReady(
         session.copyWith(
           selectedLabel: label,
           answerState: isCorrect ? AnswerState.correct : AnswerState.incorrect,
           showExplanation: true,
+          currentSetAnswers: [...session.currentSetAnswers, result],
         ),
       ),
     );
@@ -77,8 +85,18 @@ class QuizViewModel extends AutoDisposeAsyncNotifier<QuizState> {
     final session = current.session;
     final nextIndex = session.currentIndex + 1;
 
-    if (nextIndex >= session.totalCount) {
-      state = AsyncData(QuizReady(session.copyWith(isFinished: true)));
+    final isSetBoundary = nextIndex % 10 == 0;
+    final isEndOfQuestions = nextIndex >= session.totalCount;
+
+    if (isSetBoundary || isEndOfQuestions) {
+      state = AsyncData(
+        QuizReady(
+          session.copyWith(
+            showSetResult: true,
+            setElapsedAtResult: session.setElapsed,
+          ),
+        ),
+      );
       return;
     }
 
@@ -87,6 +105,40 @@ class QuizViewModel extends AutoDisposeAsyncNotifier<QuizState> {
         QuizSession(
           questions: session.questions,
           currentIndex: nextIndex,
+          currentSetAnswers: session.currentSetAnswers,
+          setStartTime: session.setStartTime,
+        ),
+      ),
+    );
+  }
+
+  void continueToNextSet() {
+    final current = state.valueOrNull;
+    if (current is! QuizReady) {
+      return;
+    }
+    final session = current.session;
+    final nextIndex = session.currentIndex + 1;
+
+    if (nextIndex >= session.totalCount) {
+      final reshuffled = [...session.questions]..shuffle(Random());
+      state = AsyncData(
+        QuizReady(
+          QuizSession(
+            questions: reshuffled,
+            setStartTime: DateTime.now(),
+          ),
+        ),
+      );
+      return;
+    }
+
+    state = AsyncData(
+      QuizReady(
+        QuizSession(
+          questions: session.questions,
+          currentIndex: nextIndex,
+          setStartTime: DateTime.now(),
         ),
       ),
     );

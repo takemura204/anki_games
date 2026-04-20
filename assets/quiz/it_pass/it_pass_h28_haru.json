@@ -14,7 +14,7 @@
         "text": "連結会計システムの開発に当たり，機能要件と非機能要件を次の表のように分類した。aに入る要件として，適切なものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/01.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q1/01.png"
         ]
       },
       "choices": [
@@ -50,7 +50,7 @@
         "text": "「機能要件」と「非機能要件」はどちらもシステムに求められる要件ですが、以下のような違いがあります。機能要件システムやソフトウェア開発に際して定義される要件のうち、業務要件を実現するための機能に関するもの。業務をシステム化する際に必ず満たすべき要件のことを指す。そのシステムが扱うデータの種類や構造、処理内容、ユーザーインタフェース、帳票などの出力の形式などが含まれる。非機能要件機能要件以外の要件のこと。性能や可用性、及び運用・保守性などの「品質要件」のほか、「技術要件」「セキュリティ」「運用・操作要件」「移行要件」「環境対策」などが非機能要件として定義される項目となる。これを踏まえて考えると選択肢のうち「ア」は可用性に関する要件であるため非機能要件、それ以外は機能要件に分類されます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/01a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q1/01a.png"
         ]
       }
     },
@@ -424,7 +424,7 @@
         "text": "図のソフトウェアライフサイクルを，運用プロセス，開発プロセス，企画プロセス，保守プロセス，要件定義プロセスに分類したとき，aに当てはまるものはどれか。ここで，aと網掛けの部分には，開発，企画，保守，要件定義のいずれかが入るものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/10.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q10/10.png"
         ]
       },
       "choices": [
@@ -460,7 +460,7 @@
         "text": "ソフトウェアライフサイクルは、システム・ソフトウェアの企画から開発・運用・保守及び廃棄に至るまでの一連の活動のことです。ソフトウェア産業界の「共通の物差し」として用いられる共通フレームでは、システムを新規に開発するときは企画プロセスから開始され、要件定義→開発→運用→保守の順で遷移していくと定義されています。\n\nしたがって最初の工程であるaは、企画プロセスが適切です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/10a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q10/10a.png"
         ]
       }
     },
@@ -516,7 +516,7 @@
         "text": "A社の子会社であるB社では，A社の製品も販売している。A社とB社の当期の売上高，売上原価，売上総利益が表のとおりであり，当期のA社の売上高におけるB社への販売分が2,000百万円である。このとき，連結損益計算書における当期仕入高は何百万円か。ここで，A社はB社からの仕入はないものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/12.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q12/12.png"
         ]
       },
       "choices": [
@@ -552,7 +552,7 @@
         "text": "連結損益計算書は、大企業が決算書を作成するときに、株式を保有する子会社や関連会社などのグループ会社の業績を足し合わせて作成する連結財務諸表です。\n\n連結決算は、全てのグループ会社をまとめて単一の組織として考えた場合の財政状態・経営成績を明らかにすることが目的であるため、連結損益計算に計上される数値は親会社と子会社間、又は子会社同士でのグループ間取引(売上と仕入、売上と売掛金など)を相殺・消去したものになります。\n\n設問ではA社の売上のうちB社の分が2,000百万円と記述されているため、この2,000百万円が内部取引に該当します。したがって連結損益計算書を作成する過程で、\n・A社の売上から2,000百万円を差し引く → 18,000百万円\n・B社の当期仕入高から2,000百万円を差し引く → 1,000百万円\n\nという相殺仕訳を行うことになります。\n\n相殺後のA社、B社の損益計算書の金額は以下のようになり、それぞれを足し合わせて連結損益計算書が作成されます。よって連結損益計算書における当期仕入高は、\n\n　13,000＋1,000＝14,000(百万円)\n\nしたがって「ウ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/12a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q12/12a.png"
         ]
       }
     },
@@ -686,7 +686,7 @@
         "text": "技術ポートフォリオは、分析対象の技術を縦軸・横軸の指標をもとに4つの象限に分類することで、その技術が置かれている状況を分析をする手法です。それぞれの軸には、保有技術水準と技術重要度の組合せなどが用いられます。製品に対するPPM分析と同様に、分析の結果をもとに技術ごとに適切な資源配分を検討します。\n\nしたがって正解は「ア」です。\n・正しい。技術ポートフォリオの説明です。\n・技術投資計画の説明です。\n・製品応用ロードマップの説明です。\n・技術ツリーの説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/15.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q15/15.png"
         ]
       }
     },
@@ -786,7 +786,7 @@
         "text": "組立生産される製品W，X，Y，Zの1個当たりの利益，1個当たりの組立作業時間，組立作業1分当たりの利益，1週間の最大生産可能数は表のとおりである。1週間の利益を最大にするように生産計画を立てるとき，製品Zの生産個数は幾つか。ここで，1週間の総組立作業時間は40時間であり，製品W，X，Y，Zの全てを生産する必要はなく，同時には一つの製品しか組立生産できないものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/18.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q18/18.png"
         ]
       },
       "choices": [
@@ -876,7 +876,7 @@
         "text": "次の損益計算資料から求められる経常利益は何百万円か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/20.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q20/20.png"
         ]
       },
       "choices": [
@@ -912,7 +912,7 @@
         "text": "経常利益は、営業利益に営業外損益を加減して計算される企業の普段の利益を表す指標です。\n\n損益計算書から各利益が計算される過程は次のようになっています。まず売上高から売上原価を引くことで、売上総利益(粗利益)が算出され、売上原価のほかにかかった費用(販売費や、作業員の給料、建物の減価償却費など)である販売費および一般管理費を引いて営業利益となります。\n\n　売上総利益＝売上高－売上原価\n　営業利益＝売上総利益－販売費および一般管理費\n\nこの営業利益に、本業以外の収入と支出(受取利息や支払利息)などを加減した金額が経常利益です。\n\n　経常利益＝営業利益＋営業外収益－営業外費用\n\n設問の損益計算資料より、\n\n　売上総利益＝2,000－1,500＝500(百万円)\n　営業利益＝500－300＝200(百万円)\n　経常利益＝200＋30－20＝210(百万円)\n\nしたがって「エ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/20a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q20/20a.png"
         ]
       }
     },
@@ -968,7 +968,7 @@
         "text": "導入予定のシステムについて，3種類の実現方式を検討している。各実現方式で見込まれる費用の内訳が表のとおりであるとき，導入後の運用期間を10年とした場合の開発・導入，運用，保守の総費用の大小関係を表したものはどれか。ここで，利用者は毎年4,000人で一定とする。また，記載のない条件(10年後の除却費，更改費用など)は考慮しない。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/22.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q22/22.png"
         ]
       },
       "choices": [
@@ -1048,7 +1048,7 @@
         "text": "産業財産権は、知的財産権のうち、特許庁への申請・登録を行うことで独占的に使用できる権利が発生するものです。特許権、実用新案権、意匠権、商標権の4つがあります。著作権は産業財産権には含まれません。特許権自然の法則や仕組みを利用した価値ある発明を保護する。存続期間は出願日から20年実用新案権物品の形状、構造または組み合わせに係る考案のうち発明以外のものを保護する。存続期間は出願日から10年意匠権製品の価値を高める形状やデザインを保護する。存続期間は出願日から25年商標権商品・サービスの名称やロゴマークなどを保護する。存続期間は設定登録日から10年(更新可能)したがって「イ」の組合せが適切です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/23.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q23/23.png"
         ]
       }
     },
@@ -1226,7 +1226,7 @@
         "text": "EA(エンタープライズアーキテクチャ)は、社会環境や情報技術の変化に素早く対応できるよう「全体最適」の観点から業務やシステムを改善するフレームワークであり、組織全体として業務プロセスや情報システムの構造、利用する技術などを、整理・体系化したものです。\nEAでは、「政策・業務体系」「データ体系」「適用処理体系」「技術体系」の４つの体系で、それぞれ、最初に現状を分析した現状モデル(As-Is)を整理し、目標とする理想モデル(To-Be)を描き、最後に現状と理想目標を比較した現実的な次期モデルを作成します。設問中の「現状を把握し，目標とするあるべき姿を設定」「全体最適を図りたい」という記述より「EA」が適切とわかります。\n・DOA(データ中心アプローチ)は、様々な要因により変更される可能性のある業務プロセスと比較して、データが安定した資源であることに注目し、データを中心としてシステム／ソフトウェアの設計を行う手法です。\n・正しい。\n・OOA(オブジェクト指向分析設計)は、オブジェクト指向の考え方に基づいてシステムの設計を行う技法です。\n・SOAは、業務上の一処理に相当するソフトウェアで実現されている機能や部品を独立したサービスとし、それらを組み合わせ連携させることで言語やプラットフォームに依存せずにシステムを構築する手法です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/27.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q27/27.png"
         ]
       }
     },
@@ -1326,7 +1326,7 @@
         "text": "自動車メーカーA社では，近い将来の戦略を検討するため自社の強みと弱み，そして，外部環境の機会と脅威を整理した。この結果を基に，強みを活用して脅威を克服する対策案として，適切なものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/30.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q30/30.png"
         ]
       },
       "choices": [
@@ -1450,10 +1450,10 @@
         "text": "・管理図は、中央線および上限と下限を示す限界線を引いて、製品などの特性値を打点することで、工程の状態や品質を時系列に表した図で、工程が安定した状態にあるかどうかを判断するために使用されます。\n・特性要因図は、現れた特性（結果）とそれに影響を及ぼしたと思われる要因の関係を体系的に表わした図です。多くの要因が複雑に絡みあっているときに、直接的な原因と間接的な原因に分別したり、真の問題点を明らかにしたりすることができます。\n・パレート図は、値の大きい順に分析対象の項目を並べた棒グラフと、累積構成比を表す折れ線グラフを組み合わせた複合グラフで、主に複数の分析対象の中から重要である要素を識別するために使用されます。\n・正しい。ヒストグラムは、収集したデータをいくつかの区間に分け、区間ごとに該当するデータの出現回数を棒グラフで示した図で、データの分布状況を分析するのに使用されます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/32a.png",
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/32i.png",
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/32u.png",
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/32e.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q32/32a.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q32/32i.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q32/32u.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q32/32e.png"
         ]
       }
     },
@@ -1465,7 +1465,7 @@
         "text": "地点Xから出発してA，B，Cの3地点の全てを経由して地点Yまで行きたい。各地点間の経路と所要時間が図及び表のとおりであるとき，地点Xから地点Yまで行く最短の時間は何分か。ここで，3地点A，B，Cはどのような順番で経由してもよいものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/33.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q33/33.png"
         ]
       },
       "choices": [
@@ -1501,7 +1501,7 @@
         "text": "地点Xから出発して3地点を経由し、地点Yに到達する道順は以下の4通りあります。\n・X→A→B→C→Y\n・X→A→C→B→Y\n・X→B→A→C→Y\n・X→C→A→B→Y\n\nそれぞれについて所要時間を計算します。\n\n[X→A→B→C→Y]\n　20＋40＋20＋60＝140(分)\n\n[X→A→C→B→Y]\n　20＋30＋20＋60＝130(分)\n\n[X→B→A→C→Y]\n　20＋40＋30＋60＝150(分)\n\n[X→C→A→B→Y]\n　40＋30＋40＋60＝170(分)\n\nしたがって所要時間が最短となる道順は「X→A→C→B→Y」、その時の所要時間は130分です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/33a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q33/33a.png"
         ]
       }
     },
@@ -2320,7 +2320,7 @@
         "text": "次の表に示す作業全体の最短の所要日数を増やすことなく作業Eの所要日数を増やしたい。最大何日増やすことができるか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/52.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q52/52.png"
         ]
       },
       "choices": [
@@ -2356,10 +2356,10 @@
         "text": "まず表の作業一覧に基づいてアローダイアグラムを作図するところから始めます。\n\n最初に作業開始とともに前提作業のないA，B，Cが開始されます。次に前提作業が作業Cになっている作業Dの矢印を、作業Cの後ろに書き入れます。残る作業Eは前提作業として作業B，Dの2つが指定されているためB，Dを1つの結合点に繋げ、そこから作業Eの矢印を書き入れます。最後に作業Eと作業Aを終了点に繋げば完成です。この図を見れば一目瞭然で、Aの作業を行っている間にその他の全ての作業は完了することができ、作業全体の最短完了日数は作業Aの所要日数と同じ7日間とわかります。\n\n現在「B→E」の流れで5日間を要していることに注目します。これをクリティカルパスである作業Aの作業日数の7日間に合わせるように作業Eの日数を増やすことを考えると、最大で2日間増やすことが可能です。(所要日数1日→3日)\n\nしたがって正解は「ウ」です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/52_1.png",
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/52_2.png",
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/52_3.png",
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/52_4.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q52/52_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q52/52_2.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q52/52_3.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q52/52_4.png"
         ]
       }
     },
@@ -2581,7 +2581,7 @@
         "text": "公開鍵暗号の仕様は広く公開されていて、誰でも鍵ペアを作成し暗号通信に使用することができます。しかし誰でも作成できることを悪用され、鍵の持ち主を偽る\"なりすまし\"などの不正行為によって通信の真正性が脅かされる可能性があります。インターネットでは通信相手を直接確認することができないので、通信当事者以外の第三者によって公開鍵の正当性を証明する仕組みが必要になります。この仕組みがPKI(Public Key Infrastructure，公開鍵基盤)であり、申請者とその公開鍵を審査し、身分証明書の意味を持つデジタル証明書を発行する役割を持つ機関が認証局(CA:Certification Authority)です。認証局は、デジタル証明書の発行以外にも「CRL(証明書失効リスト)の配布」や「鍵の有効性に関する問い合わせに対する応答」といった機能を持ちます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/57.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q57/57.png"
         ]
       }
     },
@@ -2671,10 +2671,10 @@
         "text": "OSS(Open Source Software)は、ソフトウェア作者の著作権を守ったままソースコードを無償公開することを意味するライセンス形態、またはそのライセンス形態によって提供されるソフトウェアのことです。\n\nそれぞれのソフトウェアの特徴は以下の通りです。Internet Explorer(インターネット・エクスプローラ)Microsoftが開発するWebブラウザ。同社が開発するOS\"Windows\"に標準でバンドルされている。ソースコードは公開されていないFirefox(ファイアフォックス)非営利企業のMozilla Foundationが開発するオープンソースのWebブラウザLinux(リナックス)世界中のプログラマや企業により改良され、発展し、世界的に利用されているオープンソースのOS。スマートフォン用OSの「Android」もLinuxがベースとなっているWindows(ウィンドウズ)Microsoftが開発し販売するOS。ソースコードは公開されていない。PostgreSQL(ポストグレ・エスキューエル，ポスグレ)カリフォルニア大学バークレー校で開発されたものをベースに世界中のプログラマによって開発がすすめられているオープンソースのデータベース管理システムThunderbird(サンダーバード)非営利企業のMozilla Foundationが開発するオープンソースのメールソフトしたがってOSSのみの組合せは「ウ」になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/59_1.png",
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/59_2.png",
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/59_3.png",
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/59_4.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q59/59_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q59/59_2.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q59/59_3.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q59/59_4.png"
         ]
       }
     },
@@ -2686,8 +2686,8 @@
         "text": "同じ装置が複数接続されているシステム構成a～cについて，稼働率が高い順に並べたものはどれか。ここで，は装置を表し，並列に接続されている場合はいずれか一つの装置が動作していればよく，直列に接続されている場合は全ての装置が動作していなければならない。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/60_1.png",
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/60_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q60/60_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q60/60_2.png"
         ]
       },
       "choices": [
@@ -2727,9 +2727,9 @@
           "1－(1－0.9)(1－0.99) ＝1－0.1×0.01 ＝1－0.001 ＝0.999"
         ],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/60_3.png",
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/60_4.png",
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/60_4.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q60/60_3.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q60/60_4.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q60/60_4.png"
         ]
       }
     },
@@ -3181,7 +3181,7 @@
         "text": "サブネットマスクは、IPアドレスをネットワークアドレスとホストアドレスに分割するために使用されるビット列です。ネットワークアドレス部分には\"1\"を、ホストアドレス部分には\"0\"を指定することによってIPアドレスを区分します。したがって適切な説明は「イ」です。\n・ARP(Address Resolution Protocol)の役割です。\n・正しい。サブネットマスクの役割です。\n・NAT(Network Address Translation)の役割です。\n・DNS(Domain Name System)の役割です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/70.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q70/70.png"
         ]
       }
     },
@@ -3227,7 +3227,7 @@
         "text": "ネットワークの交換方式とは、2台のコンピュータがネットワークを介して通信を行う方法で、「回線交換方式」と「パケット交換方式」の2種類があります。回線交換方式電話などのように通信を行う二者間で独占的に使用する伝送路を確保して通信を行う方式。網内が混雑しても遅延が発生する可能性が低いが、少量の通信が断続的に行われる場合には回線の使用効率が低下する。リアルタイム性や高い品質が要求される通信に向く。パケット交換方式送信データをパケットと呼ばれる単位に分割し、それぞれのパケットに宛先などの情報を付加して送信する方式。伝送路を複数の機器が共有して使うので網内の混雑により遅延が発生する可能性があるが、回線を効率良く使用できる。インターネット通信で採用されている。\n・正しい。\n・メタリック線※はアナログとデジタルのどちらも扱うことができます。ADSLやISDNのデジタルデータ通信はメタル回線網で行われています。\n・パケット交換方式は複数の利用者が通信回線を共有できるので，通信回線を効率良く使用することができます。\n・どちらの方式も有線・無線で使用できます。携帯電話では音声通信は回線交換網、データ通信はパケット交換網で処理されています。\n\n※メタリック線芯線に銅線などの金属を使用した通信ケーブル。主に電話回線網のことを指す。芯線にガラスやプラスチックを使用する光ファイバケーブルと区別する意味で使われる。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/71.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q71/71.png"
         ]
       }
     },
@@ -3405,7 +3405,7 @@
         "text": "デュアルシステム(Dual System)は、信頼化設計の一つであり、同じ処理を2組のコンピュータシステムで行い、その結果を照合機でチェックしながら処理を進行していくシステム構成です。障害発生時には、問題のある側のシステムをメイン処理から切り離し、残された側のシステムのみで処理を続行しつつ、障害からの回復を図ります。\nデュアルシステムの構築には、電源からデータベースに至るまで全ての装置が2系統分必要なので相当なコストが掛かります。それでも信頼性や耐障害性に特に優れているため、システムの停止や誤りが人の命や財産、あるいは企業活動に重大な影響を与え得るようなシステムを構築する場合などに採用されます。\n・正しい。デュアルシステムの特徴です。\n・デュアルシステムでは1つの処理を2系統のシステムで同時に行うため、処理性能は1系統のシンプレックスシステムと変わりません。\n・デュプレックスシステムの特徴です。\n・タンデムシステムの特徴です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/75.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q75/75.png"
         ]
       }
     },
@@ -3505,7 +3505,7 @@
         "text": "ハブとルータを使用してPC1～4が相互に通信できるように構成したTCP/IPネットワークがある。ルータの各ポートに設定したIPアドレスが図のとおりであるとき，PC1に設定するデフォルトゲートウェイのIPアドレスとして，適切なものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/78.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q78/78.png"
         ]
       },
       "choices": [
@@ -3595,7 +3595,7 @@
         "text": "表計算ソフトを用いて，買い物金額に応じたポイント数を計算する。買い物金額が1,000円以下では買い物金額の1%，買い物金額が1,000円を超え3,000円以下では買い物金額の2%，買い物金額が3,000円を超える場合は買い物金額の3%のポイントを付与する。ワークシートのセル A2 に買い物金額が入力されるとき，ポイント数が表示されるセル B2 に入る数式はどれか。ここで，ポイント数の小数点以下は切捨てとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/80.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q80/80.png"
         ]
       },
       "choices": [
@@ -3603,28 +3603,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_haru/img/80a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q80/80a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_haru/img/80i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q80/80i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_haru/img/80u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q80/80u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_haru/img/80e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q80/80e.png"
           ]
         }
       ],
@@ -3639,11 +3639,11 @@
         "text": "IF関数は、指定した条件が満たすかどうかによって返す値を変える場合に使用される表計算ソフトの関数です。以下は、IF関数の書式とその機能です。IF(論理式，式1，式2)論理式の値がtrueのとき式1の値を， falseのとき式2の値を返す。設問の条件をもとに買い物金額とポイント付加率の関係を表形式で整理すると以下のようになります。\n・計算式は、買い物金額が3000円以上で3%、それ以外については1000円以上であれば1%、そうでなければ2%を返します。したがって不適切です。\n・計算式は、買い物金額が3000円超で3%、それ以外については1000円超であれば1%、そうでなければ2%を返します。したがって不適切です。\n・計算式は、買い物金額が1000円以下で1%、それ以外については3000円以下であれば2%、そうでなければ3%を返します。したがって正しい計算式です。\n・計算式は、買い物金額が1000円未満で1%、それ以外については3000円未満であれば2%、そうでなければ3%を返します。したがって不適切です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/80_1.png",
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/80_2.png",
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/80_3.png",
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/80_4.png",
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/80_5.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q80/80_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q80/80_2.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q80/80_3.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q80/80_4.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q80/80_5.png"
         ]
       }
     },
@@ -3777,7 +3777,7 @@
         "text": "可用性(Availability)は、情報セキュリティマネジメントの概念の一要素で、障害が発生しても安定したサービスを提供でき、ユーザーが必要な時にシステムを利用可能である特性を示します。稼働率やMTBFなどの指標で表され、ハードウェアやソフトウェアの故障を防ぐ施策の実施や、修理時間の短縮、機器の冗長化などで向上させることができます。\n\n可用性に、機密性と完全性を加えた3要素は情報セキュリティマネジメントで確保すべき特性とされています。機密性（Confidentiality）許可された正規のユーザーだけが情報にアクセスできる特性を示す完全性（Integrity）情報が完全で、改ざん・破壊されていない特性を示す選択肢の事象が、どの特性を損なうものであるかを考えると以下のように分類できます。\n・機密性を損なう事象です。\n・完全性を損なう事象です。\n・機密性を損なう事象です。\n・正しい。可用性を損なう事象です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/83.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q83/83.png"
         ]
       }
     },
@@ -3823,9 +3823,9 @@
         "text": "E-R図(Entity Relationship Diagram)は、データベース化の対象となる実体(エンティティ)と実体の持つ属性(アトリビュート)、及び、実体間の関連(リレーションシップ)を表現する図です。任意のオブジェクトとその関連をデータモデル化することができますが、特に関係データベースの設計に利用されています。したがって「ア」が正解です。\n・正しい。\n・アローダイアグラムは、プロジェクトの各作業間の関連性や順序関係を視覚的に表現する図です。\n・ガントチャートは、棒グラフの一種で予定と実績を2本の横棒で表した図です。計画に対する進捗状況を視覚的に把握することができるのでスケジュール管理などに用いられます。\n・フローチャートは、作業や処理の手順、思考の流れや情報のプロセスなどを表現するための図法である流れ図の1つで、プログラムの流れを記述する代表的な方法です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/84a.png",
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/84i.png",
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/84u.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q84/84a.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q84/84i.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q84/84u.png"
         ]
       }
     },
@@ -3931,28 +3931,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_haru/img/87.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q87/87.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_haru/img/87.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q87/87.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_haru/img/87.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q87/87.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_haru/img/87.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q87/87.png"
           ]
         }
       ],
@@ -3967,7 +3967,7 @@
         "text": "公開鍵暗号方式は、暗号化と復号に異なる鍵を使用する暗号方式です。暗号化鍵は誰もが使用できるように公開しておき(公開鍵)、復号鍵は受信者が厳重に管理します(秘密鍵)。\n\n公開鍵暗号方式を用いて暗号化通信を行う手順は次の通りです。\n1. 送信者は、受信者の公開鍵を使ってデータを暗号化し、相手に送信する\n2. 受信者は、自分の秘密鍵を使って受信したデータを復号する\n\nこの暗号通信は「暗号化は誰でもできるが、復号できるのは正規の秘密鍵を持つ受信者だけ」という性質を持ちます。データが途中で傍受されても、秘密鍵を持たない者には復号を行うことができないため安全性が確保されます。\n\naは暗号化に用いる鍵なので公開鍵、bは復号に用いる鍵なので秘密鍵が適切です。したがって適切な組合せは「イ」になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/87a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q87/87a.png"
         ]
       }
     },
@@ -4125,28 +4125,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_haru/img/91.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q91/91.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_haru/img/91.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q91/91.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_haru/img/91.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q91/91.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/28_haru/img/91.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q91/91.png"
           ]
         }
       ],
@@ -4249,7 +4249,7 @@
         "text": "シングルサインオン(SSO:Single Sign On)は、ユーザー認証を一度受けるだけで許可された複数のサーバやアプリケーションへのアクセスについても認証する仕組みです。利用するアプリケーションごとに設定されているID・パスワードなどを覚えたり、その都度入力を行う手間がなくなるため、エンドユーザーの利便性の向上が期待できます。\n実装方式にはCookieを使うエージェント型やリバースプロキシ型など複数のタイプがあります。\n・排他制御の説明です。\n・正しい。シングルサインオンの説明です。\n・電子証明書方式ログインの説明です。\n・ワンタイムパスワードの説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/93.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q93/93.png"
         ]
       }
     },
@@ -4261,7 +4261,7 @@
         "text": "商品の仕入状況を管理している関係データベースの\"仕入一覧\"表を正規化して，\"仕入\"表と\"商品\"表に分割したい。分割後の二つの表に共通して必要なフィールドとして，最も適切なものはどれか。ここで，仕入れは一度に一つの商品だけを仕入れることとし，仕入番号で一意に識別できる。また，商品は商品番号で一意に識別できる。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/94.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q94/94.png"
         ]
       },
       "choices": [
@@ -4297,7 +4297,7 @@
         "text": "データベースの正規化は、データベースを構築する際にデータの重複や矛盾を排除して、整合性や一貫性を確保するための最適化処理です。\n\n\"仕入\"表と\"商品\"表に分離したいので、\"商品番号\"列の値によって一意に決定される\"商品名\"、\"単価\"を、\"商品番号\"を主キーとする別表に移します。このとき\"仕入\"表と\"商品\"表のリレーションシップを残すための外部キーとして\"仕入\"表には\"商品番号\"列を残したままにしておきます。つまり、\"商品番号\"列は\"商品\"表の主キー、\"仕入\"表の外部キーとして二つの表に存在することになります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/94a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q94/94a.png"
         ]
       }
     },
@@ -4309,7 +4309,7 @@
         "text": "表1と表2に，ある操作を行って表3が得られた。行った操作だけを全て挙げたものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/95.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q95/95.png"
         ]
       },
       "choices": [
@@ -4345,7 +4345,7 @@
         "text": "それぞれの操作は関係データベースに対して以下の機能を持ちます。結合複数の表を共通する属性で結合して1つの表にする操作射影指定された列を抽出する操作選択指定された行を抽出する操作表3には表1から\"品名\"と\"価格\"、表2からは\"棚番号\"が使用されているため、表を結合した後、必要な列だけを抽出したと考えることができます。したがって行った操作は「結合，射影」です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/95a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q95/95a.png"
         ]
       }
     },
@@ -4357,7 +4357,7 @@
         "text": "関係データベースの\"成績\"表から学生を抽出するとき，選択される学生数が最も多い抽出条件はどれか。ここで，\"%\"は0文字以上の任意の文字列を表すものとする。また，数学及び国語は，それぞれ60点以上であれば合格とする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/96.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q96/96.png"
         ]
       },
       "choices": [
@@ -4437,7 +4437,7 @@
         "text": "AVI(Audio Video Interleave)ファイルは、様々な種類のコーデック※で作成された音声や動画を組み合わせて格納することできる動画用ファイル形式で、マイクロソフト社によって開発されました。\n\nしたがって「ウ」が正解です。動画ファイルの拡張子としては.aviの他にも以下のように様々な種類があります。\n・.mp4…MPEG4形式の動画ファイル\n・.mov…QuickTimeムービーファイル\n・.mpg…MPEG1／2形式の動画ファイル\n・.wmv…Windows Media形式の動画ファイル\n・.flv…Flash Videoファイル\n\n※コーデック(Codec)とは、エンコード(符号化)とデコード(復号)を行う符号化方式のことです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/28_haru/img/97.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/28_haru/q97/97.png"
         ]
       }
     },

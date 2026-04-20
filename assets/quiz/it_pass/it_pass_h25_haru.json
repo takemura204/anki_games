@@ -286,7 +286,7 @@
         "text": "ある部品の生産ラインは二つの工程A，Bの順で構成されており，各工程の機械台数，部品1個の生産に要する作業時間，不良率は表のとおりである。1日の稼働時間を10時間とするとき，この生産ラインの1日の生産能力(良品が生産される数)は何個か。ここで，工程Aでの不良品は工程Bには送らないものとする。また，機械の故障時間や段取り時間，工程間の仕掛品在庫は考えないものとし，仕掛中のものは終了時間が来ても最後まで仕上げるものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_haru/img/07.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q7/07.png"
         ]
       },
       "choices": [
@@ -778,28 +778,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/25_haru/img/18.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q18/18.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/25_haru/img/18.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q18/18.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/25_haru/img/18.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q18/18.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/25_haru/img/18.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q18/18.png"
           ]
         }
       ],
@@ -824,7 +824,7 @@
         "text": "技術開発戦略立案の作業を①～⑤の順で行う場合，aに当てはまるものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_haru/img/19.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q19/19.png"
         ]
       },
       "choices": [
@@ -992,7 +992,7 @@
         "text": "事業部制組織を含む代表的な経営組織形態についてまとめておきます。事業部制組織製品別や商品別、地域別、市場別に分化した組織形態のことで、事業部ごとに独立採算が求められるのも特徴の1つ。職能別組織製造，営業，経理，開発などのように職能ごとに構成された組織形態。各部門で高い専門性や効率性を追求することができるが、その反面、職能部門間の隔たりが生じやすくなる。プロジェクト組織ある目的のために各部門から専門性の高い人材を集めて構成される組織形態。一時的な組織なので、目的が達成されればその時点で解散することになる。マトリックス組織網の目型の組織形態で、従来の職能別組織にそれら各機能を横断するプロジェクトまたは製品別事業などを交差させたもの。業務の担当者は複数の管理者から指示を受けることになるため、指揮命令系統に困難が生じる可能性も残るが、部門間の壁がなく業務を行うことができるという特徴がある。\n・マトリックス組織の説明です。\n・職能別組織の説明です。\n・プロジェクト組織の説明です。\n・正しい。事業部制組織の説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_haru/img/22.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q22/22.png"
         ]
       }
     },
@@ -1237,7 +1237,7 @@
         "text": "表に示すA社の損益の変化に関する記述のうち，適切なものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_haru/img/28.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q28/28.png"
         ]
       },
       "choices": [
@@ -1625,7 +1625,7 @@
         "text": "メンバーが2～5人の場合の伝達経路を図で表すと次のようになります。必要となる経路数はx人のメンバーから2人を選択する組み合わせ数と同じになるので、\n\n　xC2＝(x×(x-1))／2\n\nの式で表すことができます。\n・正しい。xが増えた場合の増分を見てみると参加メンバーが多いほど増分が多くなっていることがわかります。\n・増える経路の数は1以上となります。\n・xに4を代入すると、\n　y＝4×3×2×1＝24\nとなってしまうため、式y＝x!は関係を表していません。\n・xに4を代入すると、\n　y＝42＝16\nとなってしまうため、式y＝x2は関係を表していません。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_haru/img/36.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q36/36.png"
         ]
       }
     },
@@ -1835,28 +1835,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/25_haru/img/41.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q41/41.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/25_haru/img/41.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q41/41.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/25_haru/img/41.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q41/41.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/25_haru/img/41.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q41/41.png"
           ]
         }
       ],
@@ -1915,7 +1915,7 @@
         "text": "システム開発プロセスの流れは次の図のようになっています。ソフトウェア詳細設計の次工程はプログラミングとなっていて、この工程でソフトウェア仕様書に基づいたソフトウェアコード(ソースコード)の作成を担当するのがプログラマです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_haru/img/42.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q42/42.png"
         ]
       }
     },
@@ -1927,7 +1927,7 @@
         "text": "翌年度であるX年4月から開始されるプロジェクトのリスク対応計画を検討している。表に示される四つのリスクが想定されている場合に，対応への優先順位が最も高いと考えられるものはどれか。ここで，優先順位についてはリスクの発生確率と影響度を考慮し，また同じ優先度であるならば対応期限が迫っているリスクをできるだけ早急に対応する，という評価を行うこととする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_haru/img/43.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q43/43.png"
         ]
       },
       "choices": [
@@ -2007,7 +2007,7 @@
         "text": "アローダイアグラムは、プロジェクトの各作業間の関連性や順序関係を視覚的に表現する図です。作業関係を分析することで時間的に余裕のない一連の作業(クリティカルパス)を洗い出すことができるためプロジェクトのスケジュール管理に使用されます。\n・正しい。\n・管理図は、工程の状態や品質を時系列に表した図で、工程が安定した状態にあるかどうかを判断するために用いられます。\n・特性要因図は、現れた特性（結果）とそれに影響を及ぼしたと思われる要因の関係を体系的に表わした図で、直接的な原因と間接的な原因に分別したり、真の問題点を明確にする効果があります。\n・パレート図は、値の大きい順に分析対象の項目を並べた棒グラフと、累積構成比を表す折れ線グラフを組み合わせた複合グラフで、主に複数の分析対象の中から、重要である要素を識別するために使用されます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_haru/img/44.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q44/44.png"
         ]
       }
     },
@@ -2459,7 +2459,7 @@
         "text": "関係データベースを使い\"社員\"表と\"部署\"表を作成して社員情報を管理する。\"社員\"表と\"部署\"表に，必要に応じて設定する主キーと外部キーの適切な組合せはどれか。ここで，社員は必ず\"部署\"表に存在する部署に所属するものとし，社員データの追加や更新をするときには，参照制約を利用して整合性を確保するものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_haru/img/55.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q55/55.png"
         ]
       },
       "choices": [
@@ -2467,28 +2467,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/25_haru/img/55a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q55/55a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/25_haru/img/55a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q55/55a.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/25_haru/img/55a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q55/55a.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/25_haru/img/55a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q55/55a.png"
           ]
         }
       ],
@@ -2557,7 +2557,7 @@
         "text": "1台のCPUと1台の出力装置で構成されているシステムで，表の三つのジョブを処理する。三つのジョブはシステムの動作開始時点ではいずれも処理可能状態になっている。CPUと出力装置のそれぞれにおいて，ジョブ1，ジョブ2，ジョブ3の順に処理する。CPUと出力装置は独立して動作するが，出力処理はそれぞれのジョブのCPU処理が終了してから実施可能になる。ジョブ3の出力が完了するのは，ジョブ1の処理開始時点から何秒後か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_haru/img/57.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q57/57.png"
         ]
       },
       "choices": [
@@ -2593,7 +2593,7 @@
         "text": "問題文の条件を整理します。\n・CPUと出力装置は1台ずつで独立して動作する\n・3つのジョブは最初から処理可能状態である\n・ジョブ1，ジョブ2，ジョブ3の順に処理する\n・出力処理はそれぞれのジョブのCPU処理が終了してから実施可能になる\n\nそれぞれのジョブはまずCPU処理を行い、その後に出力処理を実施します。ジョブを処理する順番は1→2→3なので、CPUでは最初にジョブ1を処理し、それが終わったらジョブ2、ジョブ3というように処理していきます。また、CPU処理を終えたジョブは出力処理に移ります。このシステムにおけるCPUと出力装置の使用状況を図にすると、次のようになります。0秒ジョブ1のCPU処理が開始35秒ジョブ1のCPU処理が終了、CPUはジョブ2の処理を開始\n出力装置はジョブ1の処理を開始45秒ジョブ1の出力処理が終了55秒ジョブ2のCPU処理が終了、CPUはジョブ3の処理を開始\n出力装置はジョブ2の処理を開始60秒ジョブ3のCPU処理が終了、出力装置が使用中なのでジョブ3は待ち状態になる75秒ジョブ2の出力処理が終了、出力装置はジョブ3の処理を開始100秒ジョブ3の出力処理が終了したがって、ジョブ3の出力が完了するのはジョブ1が開始されてから100秒後になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_haru/img/57a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q57/57a.png"
         ]
       }
     },
@@ -2737,7 +2737,7 @@
         "text": "関係データベースの\"売上\"表と\"顧客\"表を顧客コードで結合し，顧客コードでグループ化して顧客ごとの売上金額の合計を求め，売上金額の合計を降順に整列した。得られた結果の先頭レコードの顧客名はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_haru/img/61.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q61/61.png"
         ]
       },
       "choices": [
@@ -2773,9 +2773,9 @@
         "text": "\"売上\"表と\"顧客\"表を顧客コードで結合した結果は次のようになります。次に顧客コードでグループ化すると売上額が顧客ごとに集計され次のようになります。最後に売上金額の合計を降順(値の大きい順)に整列すると、先頭のレコードの顧客名は「佐藤太郎」になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_haru/img/61_1.png",
-          "https://www.itpassportsiken.com/kakomon/25_haru/img/61_2.png",
-          "https://www.itpassportsiken.com/kakomon/25_haru/img/61_3.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q61/61_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q61/61_2.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q61/61_3.png"
         ]
       }
     },
@@ -2953,7 +2953,7 @@
         "text": "プルダウンメニューは、アプリケーションウィンドウの上部にあるメニュー項目をクリックすると、そのメニューに属する詳細な操作がすだれのように下に表示される形式をもつ操作部品です。\n・ダイアログボックスの説明です。\n・リストボックスの説明です。\n・エディットコントロールの説明です。\n・正しい。プルダウンメニューの説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_haru/img/65.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q65/65.png"
         ]
       }
     },
@@ -3009,7 +3009,7 @@
         "text": "関係データベースの\"商品\"表から価格が100円以上の商品の行(レコード)だけを全て抽出する操作を何というか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_haru/img/67.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q67/67.png"
         ]
       },
       "choices": [
@@ -3061,28 +3061,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/25_haru/img/68a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q68/68a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/25_haru/img/68i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q68/68i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/25_haru/img/68u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q68/68u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/25_haru/img/68e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q68/68e.png"
           ]
         }
       ],
@@ -3097,10 +3097,10 @@
         "text": "PC3台とテレビがファイアウォールの内側になっている配線を探します。図中でファイアウォールによってインターネットから守られている領域を色で分けると次のようになります。\n・正しい。ファイアウォールによってすべての機器がインターネットから守られています。\n・PC3台がインターネットと同じ側のネットワークになっているので不適切です。\n・PC1台とテレビがインターネットと同じ側のネットワークになっているので不適切です。\n・PC3台がインターネットと同じ側のネットワークになっているので不適切です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_haru/img/68_1.png",
-          "https://www.itpassportsiken.com/kakomon/25_haru/img/68_2.png",
-          "https://www.itpassportsiken.com/kakomon/25_haru/img/68_3.png",
-          "https://www.itpassportsiken.com/kakomon/25_haru/img/68_4.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q68/68_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q68/68_2.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q68/68_3.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q68/68_4.png"
         ]
       }
     },
@@ -3146,7 +3146,7 @@
         "text": "マークアップ言語とは、文書とともにその文書構造や体裁・見栄えをテキストファイル内に記述するタイプのコンピュータ言語です。文書に対してそれらを記述することをマークアップといい、マークアップをするために用いられる文字列をタグといいます。\nマークアップ言語には、Webページを記述するためのHTML(HyperText Markup Language)、ユーザー独自のタグが使用可能で汎用的なデータ交換に用いられるXML(eXtensible Markup Language)、文書を電子的に変換するための汎用マークアップ言語であるSGML(Standard Generalized Markup Language)などがあります。\n・CASLは、情報処理技術者試験におけるプログラミング能力試験のために仕様策定されたアセンブリ言語で、マークアップ言語ではありません。\n・正しい。HTMLはマークアップ言語に分類されます。\n・SQLは、関係データベース管理システム(RDBMS)において、データの操作や定義を行うための問い合わせ言語で、マークアップ言語ではありません。\n・Uniform Resource Locatorの略。WebページやWeb上のリソース(画像やファイル)のアドレス(住所)のを指定する文字列で、マークアップ言語ではありません。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_haru/img/69.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q69/69.png"
         ]
       }
     },
@@ -3334,7 +3334,7 @@
         "text": "図の構成で，HTTPSプロトコルを用いてブラウザとWebサーバで通信を行うとき，通信内容が暗号化される区間はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_haru/img/74.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q74/74.png"
         ]
       },
       "choices": [
@@ -3424,7 +3424,7 @@
         "text": "共通鍵暗号方式では通信の組合せごとに鍵が1個必要となる。例えばA－Dの4人が相互に通信を行う場合は，AB，AC，AD，BC，BD，CDの組合せの6個の鍵が必要である。8人が相互に通信を行うためには何個の鍵が必要か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_haru/img/76.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q76/76.png"
         ]
       },
       "choices": [
@@ -3690,7 +3690,7 @@
         "text": "排他的論理和を表す論理式はどれか。ここで，論理変数AとBに対する排他的論理和の真理値表は次のように表される。また，ANDは論理積，ORは論理和，NOTは否定を表す。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_haru/img/82.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q82/82.png"
         ]
       },
       "choices": [
@@ -3726,11 +3726,11 @@
         "text": "論理式をベン図で表して比較する方法で解きます。\n排他的論理和の真理値表をベン図で表すと次のようになります。同様に他の論理式についてもベン図で表してみて、排他的論理和と一致するものを探します。\n・一致しません。\n・一致するので、この論理式が正解となります。\n・一致しません。\n・一致しません。\n\nもうひとつの解法として選択肢のA，Bに0または1の入力値を与えて、真理値表と同じ結果になるかを検証していく方法でも解いてみます。\nまずA＝0，B＝0で結果が0になるかを検証します。\n\n・「ア」(0 OR 0) AND (0 OR (NOT 0))＝0 AND 1＝0\n・「イ」(0 OR 0) AND ((NOT 0) OR (NOT 0))＝0 AND 1＝0\n・「ウ」((NOT 0) OR 0) AND (0 OR (NOT 0))＝1 AND 1＝1\n・「エ」((NOT 0) OR 0) AND ((NOT 0) OR (NOT 0))＝1 AND 1＝1\n\n結果が排他的論理和の真理値表と同じ0となるのは「ア」と「イ」です。\n続いてこの2つの論理式にA＝1，B＝1を与えて結果が0になるかを検証します。\n\n・「ア」(1 OR 1) AND (1 OR (NOT 1))＝1 AND 1＝1\n・「イ」(1 OR 1) AND ((NOT 1) OR (NOT 1))＝1 AND 0＝0\n\nこの時点で結果が同じになるのは「イ」だけなので消去法で正解とわかります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_haru/img/82_1.png",
-          "https://www.itpassportsiken.com/kakomon/25_haru/img/82a.png",
-          "https://www.itpassportsiken.com/kakomon/25_haru/img/82i.png",
-          "https://www.itpassportsiken.com/kakomon/25_haru/img/82u.png",
-          "https://www.itpassportsiken.com/kakomon/25_haru/img/82e.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q82/82_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q82/82a.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q82/82i.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q82/82u.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q82/82e.png"
         ]
       }
     },
@@ -4260,7 +4260,7 @@
         "text": "図2のグラフはZグラフと呼ばれ、主に売上の推移などを見るのに使われる「月々の売上」「売上累計」「移動年計」の3つの折れ線グラフを1つのグラフで表した折れ線グラフの一種です。3つの折れ線グラフを、結んだ形状がアルファベットの「Z」に見えることからZグラフと呼ばれています。\n・今年の売上高の累計を表しているのは(b)の折れ線になります。\n・昨年の同期と比較した今年の売上高の伸び率を表しているのは(c)の折れ線と(d)の折れ線の差です。\n・正しい。移動合計は長期間での数値の推移を表すもので、右上がりであれば前年と比較して増加傾向、水平であれば横ばい、右下がりであれば減少傾向にあると売上の推移を判断することができます。\n・月や季節などによる売上の変動の傾向を表しているのは、(c)(d)の折れ線でできる山の「稜線（りょうせん）」です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_haru/img/94.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q94/94.png"
         ]
       }
     },
@@ -4316,7 +4316,7 @@
         "text": "Aさんは売上傾向の分析と経済状況の動向から，製品Nの来年の年間売上高を今年の10%増と見込んだ。また，月ごとに売上目標を定めて目標達成を管理するため，次の図のように，各月の売上傾向から目標売上高を計算する次のワークシートを作成した。ワークシートの各セルを次のように設定するとき，セルF14に入力する計算式として，適切なものはどれか。\n\n〔各セルの設定〕\n・セルD2に計算式\"(B2＋C2)／2\"を入力し，セルD3～D13に複写する。\n・セルD14に計算式\"合計(D2～D13)\"を入力する。\n・セルE2に計算式\"D2／D$14\" を入力し，セルE3～E14に複写する。\n・セルF2に計算式\"F$14*E2\" を入力し，セルF3～F13に複写する。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_haru/img/96.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q96/96.png"
         ]
       },
       "choices": [
@@ -4396,7 +4396,7 @@
         "text": "利用者がトップページから購入手続き完了に至るまでにたどる経路は次の3通りが存在します。\n・トップページ→商品紹介→購入手続き→購入手続き完了\n・トップページ→キャンペーン情報→商品紹介→購入手続き→購入手続き完了\n・トップページ→キャンペーン情報→購入手続き→購入手続き完了\n\nそれぞれの経路でのコンバージョン率を表す式は、\n・a×c×f\n・b×d×c×f\n・b×e×f\n\nなので、全体のコンバージョン率を表す式は上記3つの式の総和である\n\n　a×c×f＋b×d×c×f＋b×e×f\n\nになります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_haru/img/97.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q97/97.png"
         ]
       }
     },
@@ -4452,7 +4452,7 @@
         "text": "N社では，先月，サッカー用品の特典付き販売キャンペーンを広告するために，C社のサッカーニュースサイトにバナー広告を掲載した。先月は，当該バナー広告からN社トップページへのアクセスが3,000件あったことが報告された。また，その3,000件のサイト内での動きを追跡したところ，図2のとおりであった。この結果から，考えられる問題点として正しいものはどれか。ここで，件数は，元のページから次のページへリンクされた数であり，各ページへリンクされた件数と，そのページからN社サイト内の別のページへリンクした数の差を，N社のサイトからの離脱と考える。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_haru/img/99.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_haru/q99/99.png"
         ]
       },
       "choices": [

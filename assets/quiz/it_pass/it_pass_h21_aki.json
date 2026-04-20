@@ -92,7 +92,7 @@
         "text": "パレート図とは、項目別に集計したデータを量が多い順に並べた棒グラフと、構成比率を表す折れ線グラフを組み合わせた複合グラフです。\n\n品質不良の要因ごとの構成比率をパレート図でグラフ化することで、全体の中で多い不良の要因の分析や、改善対象として最も効果が高い要因を発見できるなどの利点があります。\n・パレート図では生産工程の信頼性は分析できません。\n・管理図が適しています。\n・正しい。パレート図が適しています。\n・散布図が適しています。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/02.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q2/02.png"
         ]
       }
     },
@@ -314,7 +314,7 @@
         "text": "定期発注方式は、在庫を補充するときの方法のひとつで、在庫数にかかわらず一定期間ごとにその都度適切な量の発注を行う方式です。本問では発注サイクル10日とあるので、10日ごとに発注を行うことになります。\n\n発注間隔＝納入間隔が10日、1日の平均消費量が50個なので、納入してから次の納入までの1サイクルで平均して「50個×10日＝500個」の購買品が消費されることになります。これに安全在庫の30個を足した530個が、納入された時点で必要な在庫数ということになります。\n\n今回の発注時点での在庫数は300個であり、納入までには「50個×納入リードタイム5日＝250個」が消費されるため、納入日には「300個－250個＝50個」の在庫しか残っていないことになります。したがって、納入日に530個の在庫を確保するための最適発注量は、\n\n　530個－50個＝480個\n\nしたがって「ウ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/07.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q7/07.png"
         ]
       }
     },
@@ -404,7 +404,7 @@
         "text": "マトリックス組織は、1人の社員が従来の職能別組織に加えて、それら各部門を横断するプロジェクトまたは製品別事業などにも属する組織形態です。設問では、社員がプロジェクトの目的管理と職能部門の二つの部門にまたがる仕事をしていることがわかります。このように社員が二つ以上の組織に属する組織形態が「マトリックス組織」です。\n・事業部制組織は、トップマネジメントの下に製品別や商品別、地域別、市場別などの単位で分化し、分化した組織ごとに意思決定を行う組織形態です。\n・社内ベンチャー組織は、新事業の開発を目的として社内に自由にベンチャーをつくらせ、それを小さな独立企業のごとく運営させる組織形態です。\n・職能別組織は、製造、営業、総務、経理、研究開発などのように職能ごとに構成された組織形態です。\n・正しい。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/09.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q9/09.png"
         ]
       }
     },
@@ -504,7 +504,7 @@
         "text": "A社では企業理念に基づいてビジネス戦略を策定し実行するための手順を考えた。重要成功要因の抽出，ビジネス環境の分析，ビジネス戦略の立案，ビジョンの設定を図のように順序付けて行うとき，図の④でおこなうものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/12.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q12/12.png"
         ]
       },
       "choices": [
@@ -550,7 +550,7 @@
         "text": "損益計算資料から求められる損益分岐点となる売上高は何百万円か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/13.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q13/13.png"
         ]
       },
       "choices": [
@@ -728,7 +728,7 @@
         "text": "情報システムのサービスを行っているA社は，B社に対して表に示す分担で施設や機器などを提供する契約を締結した。A社が提供するサービスの内容として，適切なものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/17.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q17/17.png"
         ]
       },
       "choices": [
@@ -896,7 +896,7 @@
         "text": "ICカードは、カード表面に薄いICチップを埋め込み、情報を格納できるようにしたカードです。\n磁気カードと比べると1000倍のデータを記録できデータの暗号化も可能なので、電子マネーなどに利用されています。安全性が求められるクレジットカードや銀行のカードは、順次ICカードへの切り替えが行われています。\n・正しい。\n・ICカードは、情報の記録に半導体集積回路(ICチップ)を使います。\n・磁気カードは、磁気で記録しているため、外部の強い磁気に影響を受けカードが使えなくなってしまうことがあります。\n・磁気カードは、スキミングによって容易に情報を盗まれてしまいます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/20.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q20/20.png"
         ]
       }
     },
@@ -942,7 +942,7 @@
         "text": "知的財産権は、大きく分けて産業財産権と著作権に分類されます。問題の選択肢のうち、著作権法による保護の対象となるものは、「機能を実現するために必要なソフトウェアとして作成されたプログラム」になります。その他の創作物は産業財産権の法律で保護されます。\n・特許法の保護対象です。\n・正しい。著作権法による保護対象です。\n・意匠法の保護対象です。\n・商標法の保護対象です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/21.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q21/21.png"
         ]
       }
     },
@@ -988,7 +988,7 @@
         "text": "マーケティングミックスにおける4Pとは、売り手側の企業が顧客に対してとり得る4つのマーケティング手段を表します。\n・Product(製品)　･･･製品、サービス、品質\n・Price(価格)　･･･価格、割引\n・Place(流通)　･･･輸送、立地、流通範囲、品揃え\n・Promotion(販売促進)　･･･宣伝活動、広告\n\n選択肢の記述と4Pに当てはめて考えると、\n・新商品の開発は、製品を表す「Product」に当たります。\n・検索連動型広告の活用は、販売促進を表す「Promotion」にあたります。\n・正しい。販売ルートの拡大は、流通を表す「Place」に当たります。\n・価格を押さえているので「Price」に当たります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/22.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q22/22.png"
         ]
       }
     },
@@ -1518,7 +1518,7 @@
         "text": "一般にプロジェクトは、対象範囲(スコープ)、納期(スケジュール)、予算(コスト)の3つの制約の上に成り立っています。このバランス関係は「プロジェクト管理の三角形」と呼ばれ、どれか1つに変更があった場合には、他の2つの要素のうち少なくとも1つは変更しなくてはならないことを示します。以下はその具体例です。\n・スケジュールを短縮する → スコープを狭める、または人員や機器を増やす\n・予算を縮小する → スコープを狭める、または実施する作業を少なくする\n・スコープを広げる → 予算を増やしてプロジェクト期間を延長する\n\nプロジェクトマネジメントにおいてはリスク管理も考慮すべき事項ですが、制約条件ではありません。したがって「ア」の組合せが適切です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/34.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q34/34.png"
         ]
       }
     },
@@ -1574,7 +1574,7 @@
         "text": "図は，リスクシミュレーションを基に，あるプロジェクトの見積りコストに対して最終的にその額に収まる確率を示したものである。現在，プロジェクトの予算として4,000万円を用意している。実際のコストが見積りコストを上回ってしまう確率を20%まで引き下げるためには，予備として，あとおよそ何万円用意することが妥当か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/36.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q36/36.png"
         ]
       },
       "choices": [
@@ -1708,7 +1708,7 @@
         "text": "プログラムの開発作業で担当者A～Dの4人の工程ごとの生産性が表のとおりのとき，4人同時に見積りステップ数が12kステップのプログラム開発を開始した場合に，最初に開発を完了するのはだれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/39.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q39/39.png"
         ]
       },
       "choices": [
@@ -1930,7 +1930,7 @@
         "text": "ソフトウェア開発における仕様変更の手順の要素を\"変更内容の評価\"，\"変更の指示\"，\"変更の反映\"，\"変更要求の受付\"としたとき，手順のAに該当するものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/44.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q44/44.png"
         ]
       },
       "choices": [
@@ -2114,28 +2114,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_aki/img/48a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q48/48a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_aki/img/48i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q48/48i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_aki/img/48u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q48/48u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_aki/img/48e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q48/48e.png"
           ]
         }
       ],
@@ -2238,7 +2238,7 @@
         "text": "システム開発は要件定義から始まり、外部設計→内部設計→プログラム設計と徐々に小さい単位になっていきます。テストでは逆に単体テスト→結合テスト→システムテスト→運用テストと段階的に規模を大きくして行います。\nシステムテストは外部設計と関連つけられるため、外部設計の担当者が仕様書を満たしているかを検証可能なテストケースを作成します。\n・正しい。システムテストのテストケース作成を担当します。\n・結合テストのテストケース作成を担当します。\n・単体テストのテストケース作成を担当します。\n・運用テストのテストケース作成を担当します。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/50.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q50/50.png"
         ]
       }
     },
@@ -2382,7 +2382,7 @@
         "text": "数字が書かれた箱を図のように積み上げてある。表に示す操作を，操作1，操作2，操作3，操作4の順に行った場合，操作4が終わったときの箱の状態はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/54.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q54/54.png"
         ]
       },
       "choices": [
@@ -2390,28 +2390,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_aki/img/54a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q54/54a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_aki/img/54i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q54/54i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_aki/img/54u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q54/54u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_aki/img/54e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q54/54e.png"
           ]
         }
       ],
@@ -2426,10 +2426,10 @@
         "text": "順を追って考えていきましょう。\n\n[操作1]\nまず上から2つの箱\"4\"と\"3\"を取り出し、2つの箱の値を足した\"7\"の箱を積み上げます。[操作2]\n数字\"3\"の箱を積み上げます。[操作3]\n箱を上から3つ取り出し3つの値の平均値を求めます。\n(3＋7＋2)÷3＝4となるので\"4\"の箱を上に積み上げます。[操作4]\n上から2つの箱(\"2\"と\"4\")を取り出し絶対値の差を求めます。\n4－2＝2で絶対値の差は\"2\"なので、\"2\"の箱を積み上げると選択肢の「イ」の状態になることがわかります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/54_1.png",
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/54_2.png",
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/54_3.png",
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/54_4.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q54/54_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q54/54_2.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q54/54_3.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q54/54_4.png"
         ]
       }
     },
@@ -2563,7 +2563,7 @@
         "text": "SSD(Solid State Drive)は、HDD(ハードディスクドライブ)にとってかわるかもしれない最新の大容量記憶装置です。\nSSDは記憶媒体としてフラッシュメモリを使用します。そのためHDDで必要だったシークタイム・回転待ち時間等の機械動作時間がなくやHDDにくらべてデータの読み書きが早いのが特徴です。\n\n主な利点としては、\n1. シーク動作や回転待ちがないのでランダム読み出しが速い\n2. 対衝撃性が高く、読み書き中の衝撃にもある程度は耐えられる\n3. 低消費電力・低発熱・低騒音である\n4. 小型で軽量である\n5. 故障率が低い\n\nなどがあります。ただし、素材の特性上書き換え可能回数に上限（一般に10,000回程度）があるので長期間に渡っての使用には注意が必要です※。\nしたがって「ア」が正解です。\n\nまたOSのサポートがまだ弱いことも問題です。SSDではデフラグは必要ありませんが、OSによってはHDDと同様に不要なデフラグを行い、かえってSSDの寿命を縮めてしまうことにもなりかねません。余談ですがMicrosoftのOS Windows7以降では、SSDを認識し自動的にデフラグを実行しないように改善が行われています。\n※HDDにも書き込み回数には上限があり、SSD特有の問題ではありません。また、SSD発売当初は書き込み上限回数について問題視されておりましたが、2017年現在においては、市販されているSSDにおいて、HDDと比較した際の書き込み上限回数による寿命の問題は、ほぼ完全に解決されております。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/57.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q57/57.png"
         ]
       }
     },
@@ -2669,28 +2669,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_aki/img/60.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q60/60.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_aki/img/60.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q60/60.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_aki/img/60.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q60/60.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_aki/img/60.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q60/60.png"
           ]
         }
       ],
@@ -2759,7 +2759,7 @@
         "text": "小文字の英字からなる文字列の暗号化を考える。次表で英字を文字番号に変換し，変換後の文字番号について1文字目分には1を，2文字目分には2を，…，n文字目分にはnを加える。それぞれの数を26で割った余りを新たに文字番号とみなし，表から対応する英字に変換する。\n\n　例　fax→6，1，24→6＋1，1＋2，24＋3→7，3，27→7，3，1→gca\n\nこの手続で暗号化した結果が“tmb”であるとき，元の文字列はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/62.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q62/62.png"
         ]
       },
       "choices": [
@@ -2883,9 +2883,9 @@
         "text": "8進数は、ある数値を表現するのに\"0\"～\"7\"の8種類の数字だけを使う方法です。10進数が10で、2進数が2で桁上がりすると同じで8進数では8で桁上がりします。8進数から16進数への変換では、8進数を一旦10進数に戻してから16で割って16進数に求める方法、8進数を2進数（0と1）に直した後、2進数4桁ごとに16進数に変換する方法などがあります。\n\n【8進数→10進数→16進数の方法】\n8進数 55 を10進数に直すと「8×5＋5＝45」です（81×5＋80×5）。\nこれを16進数に変換するため（10進数の）16で割ると「45÷16＝2余り13」なので、16の位は2、1の位は13になります。16進数と10進数は以下のように対応するので、16進数だと「2D」という表記になります。\n【8進数→2進数→16進数の方法】\n8進数 55 を2進数に直すと「101101」になります。2進数4桁が16進数1桁に対応するので、「101101」を下位桁から4桁ごとに区切ると「10 1101」となります。2進数と16進数は以下のように対応するので、この2進数を16進数に変換していくと、「10 1101」→「2D」になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/64_1.png",
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/64_2.png",
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/64_3.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q64/64_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q64/64_2.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q64/64_3.png"
         ]
       }
     },
@@ -3073,7 +3073,7 @@
         "text": "図のメールの送受信で利用されるプロトコルの組合せとして，適切なものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/69.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q69/69.png"
         ]
       },
       "choices": [
@@ -3081,28 +3081,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_aki/img/69a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q69/69a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_aki/img/69a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q69/69a.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_aki/img/69a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q69/69a.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_aki/img/69a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q69/69a.png"
           ]
         }
       ],
@@ -3337,7 +3337,7 @@
         "text": "「公開鍵」と「秘密鍵」という対になった2種類の鍵を用いるのは公開鍵暗号方式です。公開鍵暗号方式による暗号化通信では、送信者が受信者の公開鍵を使用して平文を暗号化し、受信者は自身の秘密鍵を使用して暗号文を復号します。公開鍵は不特定多数の第三者が利用できる状態になっているので、暗号化と送信は誰でもできますが、暗号化されたメッセージを正しく復号できるのは秘密鍵を持つ受信者という仕組みになっています。もし暗号文を通信経路上で盗聴されても、秘密鍵がなければ復号できないのでデータ（平文）を見られることはありません。このため通信経路上での安全性が確保されます。\n\nしたがって、暗号化通信を行うことによって実現できる対策は「通信経路上でのデータの盗聴防止」です。\n・送信者のなりすましは、この方法では見破れません。同じ公開鍵暗号方式を応用したデジタル署名を利用すれば可能になります。\n・正しい。\n・公開鍵暗号方式で暗号化しても伝送エラーを回避できるわけではありません。\n・改ざんされた部分の復元はできません。一部でも改ざんされると復号処理が正しく行われません。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/74.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q74/74.png"
         ]
       }
     },
@@ -3559,7 +3559,7 @@
         "text": "DMZ(DeMilitarized Zone，非武装地帯)とは、従来のファイアウォールの内側と外側という二つの領域に対して追加される第三の領域で、外部と内部の中間的に位置します。外部からアクセスされるDNSサーバ、メールサーバ、プロキシサーバ、WebサーバなどをDMZに設置することで、攻撃の被害が内部ネットワークに及ぶことを防止する目的があります。\n・Dynamic Host Configuration Protocolの略。インターネットアクセス時に、ノードへのIPアドレスの割り当てを動的に行うプロトコルです。\n・正しい。\n・Domain Name Systemの略。IPアドレスとドメイン名を関連つけるプロトコルです。\n・Denial of Serviceの略。サーバの処理能力を超えるデータを送り込み、サービスを停止させる攻撃方法です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/79.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q79/79.png"
         ]
       }
     },
@@ -3869,7 +3869,7 @@
         "text": "デュアルシステムは、フォールトトレラントシステムの実現方法のひとつで完全2系統（電源からデータを保存するハードディスクまで）のシステムで同じ処理を行い、結果を照合しながら実行していく構成をもつシステムです。障害発生時には、問題のある側のシステムをメイン処理から切り離し、残された側のシステムのみで処理を続行するので、少しの時間も業務に影響を与えることなくシステムを継続稼働させられます。高い信頼性が得られる半面、高コストなので特に信頼性が重要とされる用途に使用されます。\n・マルチプロセッサの説明です。\n・正しい。デュアルシステムの説明です。\n・システム内に主系・予備系の2つがあるデュプレックスシステムの説明です。\n・タンデムシステムの説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/86.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q86/86.png"
         ]
       }
     },
@@ -3969,7 +3969,7 @@
         "text": "S社の販売管理業務をDFDで表すとき，次の図のa，bに入る適切な字句の組合せはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/89.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q89/89.png"
         ]
       },
       "choices": [
@@ -3977,28 +3977,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_aki/img/89_1.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q89/89_1.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_aki/img/89_1.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q89/89_1.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_aki/img/89_1.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q89/89_1.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_aki/img/89_1.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q89/89_1.png"
           ]
         }
       ],
@@ -4013,8 +4013,8 @@
         "text": "DFD(Data Flow Diagram)は、構造化分析手法の一つでデータの流れに着目して、その対象となる業務のデータの流れと処理の関係をわかりやすく図式化する手法です。つまり、aには、データストアのファイル、bにはプロセス名が入ることがわかります。\n\naは、顧客から受け取った注文依頼がプロセス(受注プロセス)を経て登録先となるデータストアなので、受注管理ファイルになります。\nbは、aの受注管理ファイルからデータを取り出し、違うデータストアに入力をしているので問題文から推定すると出荷処理だとわかります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/89_2.png",
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/89a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q89/89_2.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q89/89a.png"
         ]
       }
     },
@@ -4026,7 +4026,7 @@
         "text": "出荷処理において，引当数の求め方を流れ図で表すとき，次の図のc，dに入る適切な字句の組合せはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/90.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q90/90.png"
         ]
       },
       "choices": [
@@ -4034,28 +4034,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_aki/img/90_1.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q90/90_1.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_aki/img/90_1.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q90/90_1.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_aki/img/90_1.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q90/90_1.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_aki/img/90_1.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q90/90_1.png"
           ]
         }
       ],
@@ -4080,7 +4080,7 @@
         "text": "ある日の商品Tの注文状況が次の表のとおりであったとき，11:00の注文に対して引当可能な数量は幾つか。ここで，この日の仕入はなく，前日の業務終了時の在庫数は100とする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/91.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q91/91.png"
         ]
       },
       "choices": [
@@ -4126,7 +4126,7 @@
         "text": "請求処理において，顧客P社との取引が次の表のとおりであったとき，eに入る請求金額は幾らか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/92.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q92/92.png"
         ]
       },
       "choices": [
@@ -4216,7 +4216,7 @@
         "text": "売上の分析に当たっては，売上総利益率と商品回転率がともに高い商品が，販売効率が良く利益の上がる良い商品と判断される。そこで，販売効率を示す指標と売上高を視覚的に確認するために，各商品の売上高，売上総利益率及び商品回転率の関係を次の図のようなバブルチャートにして表した。この図を分析した内容として，適切なものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/94.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q94/94.png"
         ]
       },
       "choices": [
@@ -4262,7 +4262,7 @@
         "text": "N社では，売上構成比率を基準に商品をランク分けし，ランクに応じた仕入，販売管理の重点化を図っている。次の条件に従い，図の商品別販売分析ワークシートを用いて商品のランクを求めるとき，セルJ2に入力する計算式はどれか。\n\n〔条件〕\n・セルA2～H11の範囲を，列Bをキーとして降順に整列する。\n・セルI2に，セルH2の値を複写する計算式を入力する。\n・セルI3に，計算式I2+H3を入力し，セルI4～I11に複写する。\n・ランク分けの基準は，表のとおりである。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/95.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q95/95.png"
         ]
       },
       "choices": [
@@ -4490,28 +4490,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_aki/img/100a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q100/100a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_aki/img/100i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q100/100i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_aki/img/100u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q100/100u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/21_aki/img/100e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q100/100e.png"
           ]
         }
       ],
@@ -4526,9 +4526,9 @@
         "text": "まず請求書をそのまま表にします。一つの請求書につき複数の商品が記載される様式になっているので以下のように繰り返し項目を含む表になります。これを正規化していくのですが手順は次のように3段階に分けて行います。第1正規化繰り返し項目をなくす第2正規化主キーの一部によって一意に決まる項目を別表に移す第3正規化主キー以外の項目によって一意に決まる項目を別表に移す。上記の表には繰り返し項目が存在しているので、第1正規化によって繰り返し項目をなくして以下のようにします。次に主キーの一部によって一意に決まる項目を別表に移す第2正規化を行います。繰り返し項目を排除した表の中で一つのレコードを特定するには\"伝票番号\"および\"商品コード\"の組合せを主キーとするの適切です。\n\"日付\"、\"取引先コード\"、\"部署名\"の3項目は一つの請求書につき一つが対応するので\"伝票番号\"によって一意に特定が可能です。したがってこの3項目および外部キーとなる\"伝票番号\"を別表に移します。販売数量および販売単価は販売毎に異なるため、\"商品コード\"から一意に特定することはできません。\n\nこの段階で主キー以外の項目によって一意に特定できる項目はありませんので、すでに第3正規形であり表の正規化は終了です。\n\nしたがって答えは「ウ」になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/100_1.png",
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/100a.png",
-          "https://www.itpassportsiken.com/kakomon/21_aki/img/100_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q100/100_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q100/100a.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/21_aki/q100/100_2.png"
         ]
       }
     }

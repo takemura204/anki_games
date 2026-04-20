@@ -14,7 +14,7 @@
         "text": "表は，技術者A，B，Cがそれぞれ製品X，Y，Zを製造する場合の1日の生産額を示している。各技術者は1日に1製品しか担当できないとき，1日の最大生産額は何万円か。ここで，どの製品も必ず生産するものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/01.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q1/01.png"
         ]
       },
       "choices": [
@@ -50,7 +50,7 @@
         "text": "各技術者にそれぞれの製品をさせたときに生産額が最大になる組合せを考えます。技術者と製品の組合せは全部で6通り考えられます。\n\n・[A→X，B→Y，C→Z]　6＋6＋8＝20(万円)\n・[A→X，B→Z，C→Y]　6＋7＋8＝21(万円)\n・[A→Y，B→X，C→Z]　7＋6＋8＝21(万円)\n・[A→Z，B→X，C→Y]　8＋6＋8＝22(万円)\n・[A→Y，B→Z，C→X]　7＋7＋5＝19(万円)\n・[A→Z，B→Y，C→X]　8＋6＋5＝19(万円)\n\nしたがって、最大生産額を産出可能な組合せは「A→Z，B→X，C→Y」、その額は22万円になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/01a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q1/01a.png"
         ]
       }
     },
@@ -96,7 +96,7 @@
         "text": "ロングテールは、膨大な商品を低コストで扱うことができるインターネットを使った商品販売において、実店舗では陳列されにくい販売機会の少ない商品でも、それらを数多く取りそろえることによって十分な売上を確保できることを説明した経済理論です。\n\n一般に商品の売上は「全商品の上位2割が8割の売上を占める」というパレートの法則に従うため、実店舗では売場面積や物流などの問題から上位20%(ヘッド部分)の商品を優先的に販売しています。しかし、インターネット販売では従来の小売店販売面積の制約に縛られず、商品をデータベースに登録するだけで膨大な商品点数を揃えられる利点があります。この商品点数の多さを活かし、小さいけれども確かにある販売機会を大量に集めることで、実店舗では取扱えない商品群から大きな売上が生じるという現象が起こります。\n・オークション方式の販売形態です。\n・オムニチャネルの考え方に基づく販売形態です。\n・パレートの法則(80：20の法則)の考え方に基づく販売形態です。\n・正しい。ロングテールの考え方に基づく販売形態です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/02.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q2/02.png"
         ]
       }
     },
@@ -114,28 +114,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_aki/img/03a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q3/03a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_aki/img/03i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q3/03i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_aki/img/03u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q3/03u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_aki/img/03e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q3/03e.png"
           ]
         }
       ],
@@ -150,7 +150,7 @@
         "text": "貸借対照表(たいしゃくたいしょうひょう)は、一定時点における組織の資産、負債および純資産が記載され、企業の財政状態を明らかにするものです。バランスシート(B/S)とも呼ばれます。貸借対照表の形式は以下のように、左側(借方)に資産、右側(貸方)の上に負債、右側下に純資産となっています。したがって「ア」が適切です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/03.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q3/03.png"
         ]
       }
     },
@@ -196,7 +196,7 @@
         "text": "エスクローは、電子商取引において支払いや商品の発送などについての安全性を保証する仲介サービスです。\nネットオークションやネットフリーマーケットは便利な反面、個人同士の取引によるトラブルが発生し得ます。エスクローはこのような場面において、売主・買主の双方が取引の安全性を高めるために利用されます。個人間取引を扱うサービスでは決済方法としてエスクローが利用できることがあります。\n\n仲介業務の依頼を受けたエスクローサービス業者は、次の手順で買主・売主のどちらにも安全な取引を保証します。\n・買主から商品代金および手数料を受け取る\n・売主の商品配送、および買主の商品受領を確認する\n・商品代金を売主に送金する\n\n・アフィリエイトは、個人(企業)の所有するWebサイトに企業の広告を掲載し、そのリンクをたどって企業の商品やサービスが売れた場合に、広告を載せているWebサイトの主に広告掲載の対価となる報酬を支払うという仕組みです。\n・正しい。エスクローは、電子商取引において売主と買主を仲介し安全性を高めるサービスです。\n・逆オークションは、買い手が購入希望の商品の条件や金額を提示し、複数の売り手が提供できる価格を示すことで、最も安い価格を提示した売り手と取引ができる取引形態です。行政によって行われる競争入札がこの仕組みに該当します。\n・ソーシャルネットワーキングサービスは、インターネット上で社会的ネットワークを構築するサービスの総称です。代表的なものにFacebookやTwitterがあります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/04.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q4/04.png"
         ]
       }
     },
@@ -382,10 +382,10 @@
         "text": "・管理図は、中央線および上限と下限を示す限界線を引いて、製品などの特性値を打点することで、工程の状態や品質を時系列に表した図で、工程が安定した状態にあるかどうかを判断するために使用されます。\n・系統図は、目的を達成する手段を見つけるときに、「目的－手段」の連鎖を段階的に下位に掘り下げていくことにより最適な手段を見いだす図法です。\n・正しい。パレート図は、分析対象の項目を値の大きい順に並べた棒グラフと、累積構成比を表す折れ線グラフを組み合わせた複合グラフです。主に複数の分析対象の中から重要である要素を識別するために使用されます。\n・マトリックス図は、2次元の表の縦軸と横軸にいくつかの項目を設定し、交点に各項目同士の関連性・関連度合いを◎，○，△などの定性的な値で表した図です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/08a.png",
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/08i.png",
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/08u.png",
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/08e.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q8/08a.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q8/08i.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q8/08u.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q8/08e.png"
         ]
       }
     },
@@ -563,7 +563,7 @@
         "text": "個人情報保護法では、個人情報を取り扱う事業者に対して、個人情報の漏えい、滅失、棄損などを防止するための安全管理措置の実施を義務付けています。メールアドレスの中には文字列から個人の特定が可能なものがあるので、個人情報を含むという認識のもとに慎重かつ適正な取扱いが求められます。\n\n一度に複数の相手に電子メールを送信するとき、宛先メールアドレスを記載できる欄には「TO」「CC」「BCC」の3つがありますが、この指定を間違えた結果、メールからの情報漏えいに繋がるケースが増えています。\n\nTO、CC、BCCには以下の違いがあります。TO（宛先）メールの宛先を指定する欄。複数のメールアドレスを「,(コンマ)」又は「;(セミコロン)」で区切って指定することで複数のメールアドレスを宛先にできる。\n受信側ではTOの指定が見えるため、複数人を指定した場合、TOの相手が互いのメールアドレスを知ることになる。CC（Carbon Copy）TOで指定した送信先以外に、メールのコピーを送信する相手を指定する欄。\nこの指定では、TOの相手及びCCで指定した相手に、すべての宛先メールアドレスが公開される。すなわち送信者、TOの相手、CCの相手の3者間ではメールアドレスが全員に知られることになる。BCC（Blind Carbon Copy）TOで指定した送信先以外に、メールのコピーを送信する相手を指定する欄。\nCCと異なり、ここで指定したメールアドレスは他の送信相手には通知されないため、TO又はCCの相手に宛先メールアドレスを知られたくない場合に使用する。この性質を踏まえて、個人情報保護の観点で不適切なメール送信がどれであるかを考えます。\n・正しい。CCに指定した複数の顧客間でメールアドレスが知られてしまうため不適切です。\n・一通ずつTOに宛先を指定して送信しているため問題ありません。\n・同窓生全員の間で相互にメールアドレスが知られることになりますが、同窓会名簿に記載されたメールアドレスは、名簿の作成時に利用目的と第三者に渡すことについての同意の上で収集されたものであるため問題ありません。\n・BCC欄に記載したメールアドレスは他の送信相手には通知されません。したがって会員メールアドレスの漏えいには繋がりません。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/12.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q12/12.png"
         ]
       }
     },
@@ -673,28 +673,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_aki/img/15.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q15/15.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_aki/img/15.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q15/15.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_aki/img/15.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q15/15.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_aki/img/15.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q15/15.png"
           ]
         }
       ],
@@ -801,7 +801,7 @@
         "text": "コンカレントエンジニアリング(CE)は、設計から生産に至るまでの各プロセス(工程)を同時並行的に行うことで、情報共有や共同作業を進め、開発期間の短縮や生産の効率化および業務プロセスの革新を図る手法です。したがって「エ」が適切な記述です。\n・リバースエンジニアリングの説明です。\n・BPR(Business Process Reengineering)の説明です。\n・実験計画法の説明です。\n・正しい。コンカレントエンジニアリングの説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/17.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q17/17.png"
         ]
       }
     },
@@ -813,7 +813,7 @@
         "text": "技術開発の推進において，進捗を評価したり，関連技術との整合性をチェックしたりする際に，例示したような図が用いられる。このような，研究開発への取組みによる要素技術や，求められる機能などの進展の道筋を時間軸上に記載した図を何というか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/18.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q18/18.png"
         ]
       },
       "choices": [
@@ -903,7 +903,7 @@
         "text": "売上高営業利益率が最も高い会社はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/20.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q20/20.png"
         ]
       },
       "choices": [
@@ -939,7 +939,7 @@
         "text": "まず設問の損益計算書で網掛けになっている部分　に入る3つの利益について確認します。売上総利益(粗利益)売上高から売上原価を引いた金額営業利益売上総利益から販売費および一般管理費を引いた金額経常利益営業利益に本業以外の収支(営業外損益)を加減した金額つまりこの設問の計算に係る営業利益は上から2つ目の利益です。売上高営業利益率は、売上高に対する営業利益の割合を示す指標で、以下の式で算出されます。\n\n　売上高営業利益率＝営業利益÷売上高\n\n各社の売上高営業利益率を計算し、最も高い会社を導きます。\n\n・[A社] 30÷100＝0.3\n・[B社] 50÷200＝0.25\n・[C社] 0÷100＝0\n・[D社] 40÷400＝0.1\n\nしたがってA社が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/20a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q20/20a.png"
         ]
       }
     },
@@ -1275,28 +1275,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_aki/img/28.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q28/28.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_aki/img/28.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q28/28.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_aki/img/28.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q28/28.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_aki/img/28.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q28/28.png"
           ]
         }
       ],
@@ -1355,7 +1355,7 @@
         "text": "PPM(Product Portfolio Management)は、縦軸に市場成長率、横軸に市場占有率をとったマトリックス図を4つの象限に区分し、市場における製品(または事業やサービス)の位置付けを2つの観点から分類して資源配分を検討する手法です。4つのカテゴリには、それぞれ「花形」「金のなる木」「問題児」「負け犬」の名称が付けられています。\n・技術資源分析の評価軸です。\n・正しい。PPM分析の評価軸です。\n・アンゾフの成長マトリクスの評価軸です。\n・SWOT分析の評価軸です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/29.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q29/29.png"
         ]
       }
     },
@@ -1367,7 +1367,7 @@
         "text": "次に挙げるソフトウェアライフサイクルの主なプロセスのうち，開発するシステムの機能に関して利害関係者の合意が必要なプロセスはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/30.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q30/30.png"
         ]
       },
       "choices": [
@@ -1403,7 +1403,7 @@
         "text": "・企画プロセスは、経営事業の目的・目標を達成するために必要とされるシステムに対する基本方針をまとめ、実施計画を得るプロセスです。\n・正しい。要件定義プロセスは、利害関係者ニーズの識別と制約事項の定義を行い、新たに構築する業務、システムの仕様、及びIT化の範囲と機能を明確にし、それらをシステム取得者側の利害関係者間で合意するプロセスです。\n・開発プロセスは、顧客のニーズに合ったシステム／ソフトウェア製品またはサービスを開発するプロセスです。\n・保守プロセスは、運用中のシステム／ソフトウェアに対する変更や機能改善への対応、プログラムの欠陥への対応のためにプログラムの修正を実施するプロセスです。\n運用プロセスは、当初の目的の環境で、システム／ソフトウェア製品を運用するプロセスです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/30a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q30/30a.png"
         ]
       }
     },
@@ -1449,10 +1449,10 @@
         "text": "労働者派遣契約は、派遣元企業の従業員が派遣先の指揮命令で働けるように組織間で結ばれる労働契約です。労働者派遣契約では、労働者と雇用関係にあるのは派遣元企業、指揮命令関係があるのは派遣先企業と労働者になります。\n1. 派遣契約はB社とC社間で結ばれており、C社の従業員が派遣先のB社の指揮命令に従って働いているので問題ありません。\n2. 派遣契約はB社とC社間で結ばれており、D社納品物のチェックはB社の指揮命令に従って行われているので問題ありません。\n3. 労働者派遣法において派遣可能な労働者は「自己の雇用する労働者」と明確に規定されています。これに反し派遣元から派遣された労働者を、さらに派遣することを二重派遣と言い、労働者派遣法で禁止されています。\nこの事例ではC社から派遣された労働者をD社に再派遣しているため二重派遣行為に該当します。\n\n3つの事例のうち違法行為は「③」のみです。したがって「エ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/31.png",
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/31_1.png",
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/31_2.png",
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/31_3.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q31/31.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q31/31_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q31/31_2.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q31/31_3.png"
         ]
       }
     },
@@ -1498,7 +1498,7 @@
         "text": "マーケティングミックスとは、企業がマーケティング戦略において目標とする市場から期待する反応を得るために組み合わせる、複数のマーケティング要素のことです。\n\nマーケティングミックスには幾つかの組合せが考えられますが、このうち4Pは売り手側の企業が顧客に対してとり得る4つのマーケティング手段を表します。\n・Product（製品）\n・Price（価格）\n・Place（流通）\n・Promotion（販売促進）\n\n4Pを買い手側の視点（顧客価値、顧客負担、利便性、対話）に置き換えた考え方を4Cといいます。4Pと4Cの各要素は以下のように対応しています。\n・正しい。4Cは、4Pを買い手側から見た要素に置き換えたものです。\n・4Sは、現場の環境を整備し職場改善に繋げるための基本活動である4つの要素(整理、整頓、清潔、清掃)を合わせた言葉です。\n・AIDMA(アイドマ)は、消費者の購買決定プロセスを説明するモデルで、購入に至るまでには、注意(Attention)→関心(Interest)→欲求(Desire)→記憶(Memory)→行動(Action)の段階があることを示しています。\n・SWOTは、強み(Strength)、弱み(Weakness)、機会(Opportunity)、脅威(Threat)、の各視点から自社環境を考察して戦略を立てる考え方です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/32.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q32/32.png"
         ]
       }
     },
@@ -1612,28 +1612,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_aki/img/35.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q35/35.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_aki/img/35.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q35/35.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_aki/img/35.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q35/35.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_aki/img/35.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q35/35.png"
           ]
         }
       ],
@@ -2132,7 +2132,7 @@
         "text": "WBS(Work Breakdown Structure)は、プロジェクト目標を達成し、必要な成果物を過不足なく作成するために、プロジェクトチームが実行すべき作業を、成果物を主体に階層的に要素分解したものです。WBSの作成目的は、作業の漏れや抜けを防ぎ、プロジェクトの範囲を明確にすると同時に、作業単位ごとに内容・日程・目標を設定することでプロジェクトをコントロールをしやすくすることです。\n・Earned Value Managementの略。プロジェクトにおける作業を金銭の価値に置き換えて、コストとスケジュールの双方を定量的に管理する手法です。\n・Request for Proposalの略。情報システムの調達を予定している組織が、発注先候補のITベンダーに対して具体的なシステム提案をするように求める文書です。\n・Service Level Agreementの略。サービス提供者と利用者間で結ばれるサービスの品質に関する合意です。\n・正しい。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/46.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q46/46.png"
         ]
       }
     },
@@ -2618,7 +2618,7 @@
         "text": "ISMSで定義されている\"リスク及び機会に対処する活動\"は以下のような枠組みおよび手順になっています。1.リスク基準を確立するリスク受容基準とリスクアセスメントの実施基準を定める2.リスクを特定するリスクの存在とリスクの所有者を特定する3.リスクを分析するリスクが実際に起こった場合の結果、またその起こりやすさを分析する\nリスクレベルを決定する4.リスクを評価するリスク分析の結果とリスク基準を比較する\nリスク対応のために分析したリスクに優先順位を付ける5.リスク対応リスク対応の選択肢を選定し、リスク対応計画を策定する\nリスク対応計画と残留リスクおよび受容リスクについてリスク所有者の承認を得るしたがって「エ」の順序が適切です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/57.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q57/57.png"
         ]
       }
     },
@@ -2664,7 +2664,7 @@
         "text": "オートコンプリートは、先頭の数文字を入力すると入力履歴から候補を探し出し自動的に表示する機能です。上手く活用すれば素早い入力が可能になるためユーザビリティが向上します。ブラウザやワープロソフトなどに搭載されています。\n・インデントは、ワープロソフト等において行頭位置を調整するために、行の先頭に指定サイズの余白を挿入する機能です。\n・正しい。\n・オートフィルターは、特定の条件に合ったデータを絞り込む表計算ソフトの機能です。\n・ハイパーリンクは、文字列をクリックすることで、その文字列に関連付けられた文書や画像などのオブジェクトを呼び出す仕組みです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/58.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q58/58.png"
         ]
       }
     },
@@ -2720,7 +2720,7 @@
         "text": "関係データベースで管理している\"販売明細\"表と\"商品\"表がある。ノートの売上数量の合計は幾らか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/60.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q60/60.png"
         ]
       },
       "choices": [
@@ -2756,7 +2756,7 @@
         "text": "\"販売明細\"表の商品コードに\"商品\"表の商品名を紐付けると以下のようになります。したがってノートの売上数量合計は120です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/60a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q60/60a.png"
         ]
       }
     },
@@ -2802,7 +2802,7 @@
         "text": "ブレードサーバは、ブレード（＝刃）のように薄い形状をもつコンピュータを、1つの筐体（ケース）内に複数台搭載したタイプのサーバコンピュータです。電源ケーブルや冷却装置、外部インタフェース等は、筐体側に搭載され、各ブレードが共有します。ラックマウント型よりもさらに高密度に設置することを可能とするサーバとして開発されました。\n・正しい。ブレードサーバの説明です。\n・SaaSの説明です。\n・組込みシステムの説明です。\n・タブレット端末の説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/61.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q61/61.png"
         ]
       }
     },
@@ -2848,7 +2848,7 @@
         "text": "正規化とは、関係データベースを構築する際にデータの重複や矛盾を排除する目的で、 データ同士の関連を保ったまま表を分離していく作業です。正規化を行う主な目的は以下の3点です。\n1. データの冗長性（じょうちょうせい）の排除\n2. データの一貫性の確保と効率的なアクセスの実現\n3. 更新時に起きる異常や不整合を防止\n\nしたがって「ウ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/62.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q62/62.png"
         ]
       }
     },
@@ -2894,7 +2894,7 @@
         "text": "NAT(Network Address Translation)とは、組織内部LANの端末がインターネットに接続する際に、インターネットとの境界でプライベートIPアドレスとグローバルIPアドレスを1対1で相互に変換する技術です。NAT機能はインターネットとの境界に位置するルータやファイアウォールによって提供されます。\n・ARP(Address Resolution Protocol)の説明です。\n・DHCP(Dynamic Host Configuration Protocol)の説明です。\n・正しい。NATの説明です。\n・DNS(Domain Name System)の説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/63.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q63/63.png"
         ]
       }
     },
@@ -3028,7 +3028,7 @@
         "text": "公開鍵暗号方式と共通鍵暗号方式はそれぞれ次の特徴をもちます。公開鍵暗号方式暗号化と復号に異なる鍵を使用する暗号方式。代表的なアルゴリズムにRSAや楕円曲線暗号がある。暗号化鍵は誰もが使用できるように公開しておき(公開鍵)、復号鍵は受信者が厳重に管理する(秘密鍵)。共通鍵暗号方式と異なり事前の鍵配布は不要である。共通鍵暗号方式秘密鍵暗号方式とも呼ばれ、暗号化と復号に同一の鍵を用いる方式。代表的なアルゴリズムにAESがある。暗号化通信の開始に先立って通信当事者同士が鍵を共有しておく必要がある。また通信相手ごとに固有の鍵ペアが必要になる。下表は2つの方式の性質を対比させたものです。\n・公開鍵暗号方式だけがもつ特徴です。\n共通鍵暗号方式は暗号化と復号に同じ鍵を使用するので、暗号化鍵が漏えいすると安全性が担保されなくなります。これに対し、公開鍵暗号方式では暗号化鍵を最初から公開にしているので、第三者に知られたとしても安全性に問題はありません。\n・公開鍵暗号方式だけがもつ特徴です。\n共通鍵暗号方式では、通信相手ごとに鍵ペアを用意する必要があります。例えば1人の受信者が5人の相手と暗号化通信を行うケースでは5つの鍵ペアが必要になります。これに対し、公開鍵暗号方式では1対Nの通信であれば、Nがどれだけ大きくなろうとも1つの鍵ペアだけで済みます。\n・公開鍵暗号方式だけがもつ特徴です。\n電子証明書は公開鍵暗号を利用した技術です。\n・正しい。共通鍵暗号方式だけがもつ特徴です。\n共通鍵暗号方式は暗号化と復号に同じ鍵を使用する暗号方式です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/66.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q66/66.png"
         ]
       }
     },
@@ -3074,7 +3074,7 @@
         "text": "フラッシュメモリ(Flash Memory)は、電気的に書き換え可能であり、電源を切ってもデータが消えない(不揮発性の)半導体メモリです。USBメモリやSDカードおよびSSD(Solid State Drive)の記憶媒体として使用されています。\n・UV-EPROMの説明です。フラッシュメモリではデータの書換えや消去を電気的に行います。\n・SRAM(Static Random Access Memory)の説明です。フラッシュメモリのアクセス速度はキャッシュメモリとして使用できるほど速くはありません。\n・正しい。\n・DRAM(Dynamic Random Access Memory)の説明です。フラッシュメモリはアクセス速度や寿命の面から主記憶には使用されていません。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/67.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q67/67.png"
         ]
       }
     },
@@ -3444,28 +3444,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_aki/img/76.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q76/76.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_aki/img/76.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q76/76.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_aki/img/76.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q76/76.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_aki/img/76.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q76/76.png"
           ]
         }
       ],
@@ -3612,7 +3612,7 @@
         "text": "電子メールの宛先メールアドレスを指定する、To、Cc、Bccには以下の違いがあります。To（宛先）メールの宛先を指定する欄。複数のメールアドレスを「,(コンマ)」又は「;(セミコロン)」で区切って指定することで複数のメールアドレスを宛先にできる。\n受信側ではToの指定が見えるため、複数人を指定した場合、Toの相手が互いのメールアドレスを知ることになる。Cc（Carbon Copy）Toで指定した送信先以外に、メールのコピーを送信する相手を指定する欄。\nこの指定では、Toの相手及びCcで指定した相手に、すべての宛先メールアドレスが公開される。すなわち送信者、Toの相手、Ccの相手の3者間ではメールアドレスが全員に知られることになる。Bcc（Blind Carbon Copy）Toで指定した送信先以外に、メールのコピーを送信する相手を指定する欄。\nCcと異なり、ここで指定したメールアドレスは他の送信相手には通知されないため、To又はCcの相手に宛先メールアドレスを知られたくない場合に使用する。Aさんからのメールを受信した各人のメールには以下の宛先情報が記載されています。\n・Bcc欄に書かれたEさんの情報はBさんには伝わりません。\n・正しい。Cさんは、To欄およびCc欄を見ることで、同じメールがBさんとDさんにも送信されたことが分かります。\n・Bcc欄に書かれたEさんの情報はDさんには伝わりません。\n・Bcc欄に書かれたFさんの情報はEさんには伝わりません。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/79.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q79/79.png"
         ]
       }
     },
@@ -3750,7 +3750,7 @@
         "text": "・USBには4種類の転送モード※がありますが用途に応じて自動的に選択され、利用者が選ぶことはできません。\n・バスパワーの給電能力は限られているため、機器によっては電源が別に用意されていることもあります。\n・正しい。2017年現在、USB-A、USB-B、USB-Cの3種類があり、さらにAとBにはMINIとMICROタイプが存在します。なおTypeCは、上下左右が対称なのでどちらの向きでも接続できます。\n・USBはシリアルインタフェース規格です。\n\n※アイソクロナス、インタラプト、コントロール、バルクの4つ",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/82.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q82/82.png"
         ]
       }
     },
@@ -3972,8 +3972,8 @@
         "text": "デュプレックスシステムは、主系と待機系からなる2系列の処理システム構成です。通常時は主系でオンライン処理、待機系でバッチ処理を行いますが、主系の障害発生時には、主系で行っていたオンライン処理を待機系に引き継ぐことで処理を継続します。\n・クライアントサーバシステムは、システムの機能を、サービスを要求するクライアントと、サービスを処理するサーバに垂直機能分散させた形態です。\n・デュアルシステムは、同じ処理を2組のコンピュータシステムで行い、その結果を照合機でチェックしながら処理を進行していくシステム構成です。\n・正しい。\n・ピアツーピアシステムは、クライアントサーバシステムのようにサービスを要求する側・提供する側という端末ごとの区別がなく、どの端末もサーバにもなればクライアントにもなるという特徴を持つシステムの形態です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/87_1.png",
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/87_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q87/87_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q87/87_2.png"
         ]
       }
     },
@@ -4019,8 +4019,8 @@
         "text": "外部キー(Foreign Key)は、関係データベースにおいて他の表を参照するために設定される列です。外部キーは参照する表の主キー列と同じ項目になります。\n外部キーを設定された列は、参照先の列に存在しない値を設定できなくなります。また参照先の列は、外部の表から参照されている値がある場合、その値を含む行を更新したり削除したりできなくなります。この表間の整合性を保つための2つの制約を合わせて参照制約といいます。\n・外部キー属性が持つ特性は\"参照制約\"です。一意性制約は主キーがもつ属性です。\n・外部キー属性には同じ値を設定できます。\n・正しい。下図に示すように、外部キーそれぞれが別表のある属性を参照する関係も許されます。\n・主キーと同様に外部キーも複数の属性から構成させることがあります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/88_1.png",
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/88_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q88/88_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q88/88_2.png"
         ]
       }
     },
@@ -4154,7 +4154,7 @@
         "text": "クロスサイトスクリプティング(XSS)は、動的にWebページを生成するアプリケーションに対して、セキュリティ上の不備を突いた悪意のあるスクリプトを混入させることで、攻撃者が仕込んだ操作を実行させたり、別のサイトを介してユーザーのクッキーや個人情報を盗んだりする攻撃です。\n\nクッキーは、WebサーバやWebページの指示によってユーザー情報などをWebブラウザに保存する情報で、利用者の識別やログイン状態の維持に使用されています。本来セッション維持に使用されるクッキーはJavaScriptからアクセスできないように設定されているべきですが、設定に不備があった場合、攻撃者が混入したスクリプトからクッキー情報にアクセスすることが可能となります。攻撃者によってクッキー情報が外部に送信されるとセッションクッキーが漏えいし、アカウントに自動ログインされてしまうなどの被害が生じます。したがって被害例としては「ウ」が適切です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/91.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q91/91.png"
         ]
       }
     },
@@ -4172,28 +4172,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_aki/img/92.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q92/92.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_aki/img/92.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q92/92.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_aki/img/92.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q92/92.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/29_aki/img/92.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q92/92.png"
           ]
         }
       ],
@@ -4208,9 +4208,9 @@
         "text": "設問のファイルシステムでは、所有者、所有者と同じグループの利用者、その他の利用者という3グループごとに、「読出し」「書込み」「実行」の権限を個別に設定できるということです。〇が付いている箇所はアクセス権限を与えるという意味です。\n\n〔ファイルAへのアクセス制御の条件〕の通りに表を埋めていくと次のようになります。\n\n[全ての利用者が実行できる]\n実行権限は\"X\"なので、\"X\"の欄にはすべて○が付きます。[所有者，及び所有者と同じグループの利用者だけが読出しができる。]\n読出し権限は\"R\"なので、\"R\"の欄のうち\"所有者\"および\"所有者と同じグループの利用者\"に○が付きます。[所有者だけが書込みができる。]\n書込み権限は\"W\"なので、\"W\"の欄は\"所有者\"だけに○が付きます。したがって「エ」の設定内容が適切です。\n・\"所有者と同じグループの利用者\"も書込み(W)できるので、「所有者だけが書込みができる」という条件に反します。\n・\"その他の利用者\"が読出し(R)できるので、「所有者，及び所有者と同じグループの利用者だけが読出しができる」という条件に反します。\n・\"その他の利用者\"も書込み(W)できるので、「所有者だけが書込みができる」という条件に反します。\n・正しい。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/92_1.png",
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/92_2.png",
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/92_3.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q92/92_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q92/92_2.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q92/92_3.png"
         ]
       }
     },
@@ -4398,7 +4398,7 @@
         "text": "次のような認証方式の特徴に関する記述として，適切なものはどれか。\n・利用者は認証用のマトリクス表における位置，順序情報だけを記憶する。\n・マトリクス表には認証の都度ランダムに数字が割り当てられる。\n・利用者は記憶した位置に表示されている数値を順にパスワードとして入力する。\n・正しい位置に表示されている数値の入力が確認できた場合に認証が成功する。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/97.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q97/97.png"
         ]
       },
       "choices": [
@@ -4444,7 +4444,7 @@
         "text": "次のベン図の網掛けした部分の検索条件はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/98.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q98/98.png"
         ]
       },
       "choices": [
@@ -4480,7 +4480,7 @@
         "text": "ベン図の網掛け領域を言葉で表すと、BまたはCであり、かつ、Aでない部分 となります。\n\"BまたはC\"を論理式で表すと\"B or C\"、Aでない部分は\"not A\"です。さらに図の領域は2つの条件を共に満たす部分であるので、2つの論理式を and で繋ぎます。つまり答えは(not A) and (B or C)になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/29_aki/img/98a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/29_aki/q98/98a.png"
         ]
       }
     },

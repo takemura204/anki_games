@@ -14,7 +14,7 @@
         "text": "販売価格10万円の製品1,000個を製造し，販売する予定である。A案とB案に関する記述のうち，適切なものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_haru/img/01.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q1/01.png"
         ]
       },
       "choices": [
@@ -138,7 +138,7 @@
         "text": "コンカレントエンジニアリング(Concurrent Engineering)は、主に製造業において、設計から生産に至るまでの各プロセスを同時並行的に行うことで、開発期間や納期の短縮および生産コストの削減を図る手法です。コンカレント(concurrent)は、「並行」「同時に(発生)」などを意味する英単語です。\n逆に各工程を順番に行っていく手法はシーケンスエンジニアリングと呼ばれます。\n・インダストリアルエンジニアリングとは生産工学のことで、分析や統計など科学的な方法を用いることで生産現場やサービスにおいて最も効率的なシステムを考える手法です。\n・正しい。\n・バリューエンジニアリングは、製品やサービスの「価値」を、それが果たすべき「機能」とそのためにかける「コスト」との関係で把握し、システム化された手順によって「価値」の向上をはかる手法です。\n・リバースエンジニアリングは、ソフトウェアの動作を解析するなどして製品の構造を分析し、そこから製造方法や動作原理、設計図、ソースコードなどを調査する技法です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_haru/img/03.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q3/03.png"
         ]
       }
     },
@@ -194,7 +194,7 @@
         "text": "次の損益計算資料を基に算出した損益分岐点の売上高は何百万円か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_haru/img/05.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q5/05.png"
         ]
       },
       "choices": [
@@ -274,7 +274,7 @@
         "text": "DFD(Data Flow Diagram)は、データの流れに着目して、その対象となる業務のデータの流れと処理の関係をわかりやすく図式化する構造化分析手法です。\n「○」処理・プロセス，「□」データの吸収先，「→」データの流れ，「〓」データストアの4つの記号を用いて対象業務のモデル化を行います。\n・Business Process Reengineeringの略。既存の組織やビジネスルールを抜本的に見直し，職務，業務フロー，管理機構，情報システムを再設計するという考え方です。\n・正しい。\n・Materials Requirements Planningの略。部品表と生産計画をもとに必要な資材の所要量を求め、これを基準に在庫，発注，納入の管理を支援するシステムです。\n・Work Breakdown Structureの略。プロジェクトにおいて作成される成果物を基準に、全体の作業をトップダウン的に階層化して、各作業ごとに内容・日程・目標を設定することで管理をしやすくする手法です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_haru/img/06.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q6/06.png"
         ]
       }
     },
@@ -638,7 +638,7 @@
         "text": "A工場では，製品Xを生産している。今週金曜日に受注した大口注文に対応するために，翌週できるだけ多く生産することにした。次の条件で生産するとき，翌週金曜日の終業時に出荷可能となる製品Xは何台か。ここで，各自の部品在庫数，製品Xの製造台数及び出荷可能台数は表のとおりである。\n\n〔条件〕\n・製品Xの生産台数は，1日に最大12台である。\n・今週金曜日に製品Xの60台分の部品を発注し，発注した部品は，翌週金曜日の始業時に納品される。\n・他の注文に対する出荷は無いものとする。\n・製造上の不良品は発生しない。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_haru/img/15.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q15/15.png"
         ]
       },
       "choices": [
@@ -674,7 +674,7 @@
         "text": "部品が納入されるのは翌週金曜日なので、毎日12台の製品Xを生産していくと、表に示すように翌週木曜日の始業時には部品在庫が9台分しかなくなってしまいます。このため木曜日に生産可能な台数は9台になります。翌週金曜日には60台分の部品が納入されるので最大生産台数の12台を生産することが可能です。\n\nまとめると、月曜日の就業時点で出荷可能台数が27台，火曜日=12台，水曜日=12台，木曜日=9台，金曜日=12台 を生産できることになるので、\n\n　27＋12＋12＋9＋12＝72\n\n翌週金曜日終業時点での出荷可能な製品Xの台数は72台になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_haru/img/15_1.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q15/15_1.png"
         ]
       }
     },
@@ -852,7 +852,7 @@
         "text": "PPM(Products Portfolio Management)は、縦軸と横軸に「市場成長率」と「市場占有率」を設定したマトリックス図を4つの象限に区分し、製品の市場における位置付けを分析して資源配分を検討する手法です。\n\n4つの象限は、市場内の位置付けから以下のような名称で呼ばれています。花形(star) … [成長率：高、占有率：高]占有率・成長率ともに高く、資金の流入も大きいが、成長に伴い占有率の維持には多額の資金の投入を必要とする分野金のなる木(cash cow) … [成長率：低、占有率：高]市場の成長がないため追加の投資が必要ではなく、市場占有率の高さから安定した資金・利益の流入が見込める分野問題児(problem child) … [成長率：高、占有率：低]成長率は高いが占有率は低いので、花形製品とするためには多額の投資が必要になる。投資が失敗し、そのまま成長率が下がれば負け犬になってしまうため、慎重な対応を必要とする分野負け犬(dog) … [成長率：低、占有率：低]成長率・占有率がともに低く、新たな投資による利益の増加も見込めないため市場からの撤退を検討するべき分野\n・Business Process Reengineeringの略。既存の組織やビジネスルールを抜本的に見直し，職務，業務フロー，管理機構，情報システムを再設計する手法です。\n・Balanced Score Cardの略。企業のビジョンと戦略を実現するために、「財務」「顧客」「内部ビジネスプロセス」「学習と成長」という4つの視点から業績を評価・分析する手法です。\n・Critical Success Factorの略。経営戦略やITガバナンスなどを計画的に実施する際、その目標・目的を達成する上で決定的な影響を与える要因のことです。\n・正しい。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_haru/img/19.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q19/19.png"
         ]
       }
     },
@@ -1294,7 +1294,7 @@
         "text": "知的財産権は、人間の知的活動によって創作された財産を保証する権利で、産業財産権と著作権に分類されます。\nこのうち産業財産権は、主として企業活動に関する創作物を保護する権利で、権利として認められるには関係機関に申請をして登録を受ける必要があります。一方、著作権は主に文化芸術に関する創作物を保護する権利で、申請しなくとも創作された時点で発生する権利です。\n産業財産権は、特許権、実用新案権、意匠権、商標権の4種類であり、著作権は産業財産権に属しません。したがって正解は「ウ」です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_haru/img/29.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q29/29.png"
         ]
       }
     },
@@ -1384,7 +1384,7 @@
         "text": "ガントチャート(Gantt chart)は、縦軸に作業項目・横軸に時間をとり、作業に必要な期間を横棒の長さで表記する図法です。作業項目同士の日程的な重なりがわかりやすいため日程計画の策定に使用されたり、計画と実績を並べて表記することで進捗度を管理する方法としても用いられます。\n・Work Breakdown Structureの略。プロジェクトにおいて作成される成果物を基準に、全体の作業をトップダウン的に階層化して、各作業ごとに内容・日程・目標を設定することでプロジェクト管理をしやすくする手法です。\n・正しい。\n・特性要因図は、特性(結果)とそれに影響を及ぼしたと思われる要因(原因)の関係を体系的に表す図法です。\n・パレート図は、主に複数の分析対象の中から、重要である要素を識別するために使用される図法で、値の大きい順に分析対象の項目を並べた棒グラフと、累積構成比を表す折れ線グラフを組み合わせた複合グラフです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_haru/img/31.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q31/31.png"
         ]
       }
     },
@@ -1826,7 +1826,7 @@
         "text": "WBS(Work Breakdown Structure)は、プロジェクトにおいて作成される成果物を基準に、全体の作業をトップダウン的に階層化して、各作業ごとに所要時間・コストを設定する手法です。WBSにおいて最下層に位置する作業単位は「ワークパッケージ」と呼ばれ、プロジェクト実行中のコントロール単位となります。スケジュールマネジメント計画やコストマネジメント計画はWBSを基準に策定されるので、プロジェクトの基盤になるものといえます。\n・Data Flow Diagramの略。データの流れに着目して、その対象となる業務のデータの流れと処理の関係をわかりやすく図式化する構造化分析の手法です。\n・正しい。\n・状態遷移図は、時間の経過や事象の発生に応じて状態が変わるようなシステムの振る舞いを記述するときに適した図式化手法です。\n・リスク分析シートは、リスク分析・評価の結果明らかになった「リスク項目」「リスクの大きさ」「脆弱性レベル」などをワークシート上に一覧化した文書です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_haru/img/41.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q41/41.png"
         ]
       }
     },
@@ -2048,7 +2048,7 @@
         "text": "サーバラックは、薄型のサーバコンピュータを上に積み重ねて設置するための専用の棚です。コンピュータを設置することを目的に設計されているため、ラック内の冷却性・耐震性が高く、電源供給とネットワーク接続も完備されています。\nデータセンター等に設置される一般的なサーバは幅約19インチ×奥行き約540mmとJISやEIAで規格化されていて、このサイズのサーバはラックマウント型サーバと呼ばれています。\n・正しい。\n・ハブは、接続した機器同士を通信できるようにする集線装置です。\n・ファイアウォールは、ネットワーク同士の境界線に設置し、不正なデータの通過を阻止するためのものです。\n・ルータは、通過するパケットのIPアドレスを見てパケットを最適な経路に中継するLAN間接続装置です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_haru/img/46.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q46/46.png"
         ]
       }
     },
@@ -2544,7 +2544,7 @@
         "text": "次の“商品”表から，仕入先が“A社”で価格が140円以上の商品，及び仕入先が“B社”で価格が170円以下の商品を抽出した。得られた商品名だけを全て挙げたものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_haru/img/58.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q58/58.png"
         ]
       },
       "choices": [
@@ -2580,8 +2580,8 @@
         "text": "1つ目の検索条件である「仕入先がA社で価格が140円以上の商品」は、次の通りチョコレート，リンゴの2点です。2つ目の検索条件である「仕入先がB社で価格が170円以下の商品」は、次の通りコーヒーのみです。抽出する条件は第一条件及び第二条件(第一条件 OR 第二条件)なので、操作の結果得られる商品名は両方の抽出結果を合わせた「チョコレート，リンゴ，コーヒー」になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_haru/img/58_1.png",
-          "https://www.itpassportsiken.com/kakomon/24_haru/img/58_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q58/58_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q58/58_2.png"
         ]
       }
     },
@@ -2759,7 +2759,7 @@
         "text": "ISMS(Information Security Management System)は、情報セキュリティマネジメントシステムの管理・運用に関する仕組みでJIS Q 27001 (ISO/IEC 27001)の基となった規格です。\n\nPDCAは、Plan・Do・Check・Actの各フェーズの略で、この一連の流れを繰り返すことでシステムの維持・改善に努める活動をいいます。\nISMSのPDCAサイクルで行うことは、\n・Plan(計画)： 情報セキュリティ対策の具体的計画・目標を策定する。\n・Do(実行)： 計画に基づいて対策の導入・運用を行う。\n・Check(点検)： 実施した結果の監視・見直しを行う。\n・Act(処置)： 経営陣による改善・処置を行う。\n\nとされています。これを問題に当てはめると次のようになります。\n・Act(処置)フェーズで実施します。\n・Plan(計画)フェーズで実施します。\n・正しい。Check(点検)フェーズで実施します。\n・Do(実行)フェーズで実施します。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_haru/img/62.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q62/62.png"
         ]
       }
     },
@@ -3005,28 +3005,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_haru/img/68.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q68/68.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_haru/img/68.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q68/68.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_haru/img/68.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q68/68.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_haru/img/68.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q68/68.png"
           ]
         }
       ],
@@ -3217,8 +3217,8 @@
         "text": "光の三原色は、コンピュータグラフィックスの世界で用いられる加法混色の手法で、RGBカラーモデルとも呼ばれます。黒を基本色としてレッド(Red)，グリーン(Green)，ブルー(Blue)を混ぜ合わせることで幅広い色を表現し、すべての色の要素が最大のときには白色となります。\nブラウン管や液晶ディスプレイの画面表示、デジカメなどにおけるデジタル画像データの記録などに使われています。\n・色の三原色であるCMYの説明です。印刷の過程で用いられる減法混色の手法で、白を基本色としそれにシアン(Cyan)，マゼンタ(Magenta)，イエロー(Yellow)を加えていくことで幅広い色を表現します。すべての色の要素が最大のときには黒色となります。プリンターのインクなどはシアン(Cyan)，マゼンタ(Magenta)，イエロー(Yellow)の色名が付いています。\n・HSVモデルの説明です。\n・正しい組合せは、赤(R)，緑(G)，青(B)です。\n・正しい。光の三原色の説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_haru/img/72_1.png",
-          "https://www.itpassportsiken.com/kakomon/24_haru/img/72_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q72/72_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q72/72_2.png"
         ]
       }
     },
@@ -3588,28 +3588,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_haru/img/81.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q81/81.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_haru/img/81.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q81/81.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_haru/img/81.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q81/81.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_haru/img/81.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q81/81.png"
           ]
         }
       ],
@@ -3678,7 +3678,7 @@
         "text": "ファイルaaaは表のとおりにアクセス権が設定されている。ユーザーBがファイルaaaをコピーしてファイルbbbを作成できるようにするとき，ファイルaaaへのアクセス権に関する記述のうち，適切なものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_haru/img/83.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q83/83.png"
         ]
       },
       "choices": [
@@ -3768,7 +3768,7 @@
         "text": "Fさんは，上司から，評価項目の重みは，価格と性能を同じとし，サービスよりも性能を重視して付けるように指示を受けた。Fさんは，この指示を受け，評価項目の重みを相対的に比較するために，次の表2を作成した。この表2の条件を満たす評価項目の重みの付け方として，適切なものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_haru/img/85.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q85/85.png"
         ]
       },
       "choices": [
@@ -3776,28 +3776,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_haru/img/85a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q85/85a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_haru/img/85a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q85/85a.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_haru/img/85a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q85/85a.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_haru/img/85a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q85/85a.png"
           ]
         }
       ],
@@ -3822,7 +3822,7 @@
         "text": "上司から評価値を付けるように指示を受けたFさんは，評価値の決定に先立って，価格，性能，サービスのそれぞれについて，機種A～Dの2機種ごとに，全ての組合せで優劣を比較した。その結果を次の表3に示す。表の1行は1回の比較を行った結果を示している。表を完成させるために必要な比較回数は何回か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_haru/img/86.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q86/86.png"
         ]
       },
       "choices": [
@@ -3868,7 +3868,7 @@
         "text": "Fさんは，価格，性能，サービスのそれぞれについて，機種A～Dの2機種ごとに，全ての組合せで優劣を比較し，表4の相対比較表を作成した。Fさんは，完成した相対比較表を基に，評価表の評価値を検討することにした。機種Aと他の機種の性能に関する比較結果が表4の相対比較表のようになったとき，表5の評価表案のaに入る評価値が取り得る値の並びとして，適切なものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_haru/img/87.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q87/87.png"
         ]
       },
       "choices": [
@@ -3914,7 +3914,7 @@
         "text": "Fさんは，作成した評価表案の評価値を上司に見直してもらい，最終的に次の表6の評価表を使って検討資料を作成した。このとき，選定要件に従って選定される機種はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_haru/img/88.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q88/88.png"
         ]
       },
       "choices": [
@@ -3960,7 +3960,7 @@
         "text": "Bさんは，割引適用の機能に関するテストデータを準備するために，表2に示す割引適用表を作成して整理することにした。割引適用表のaに入れる適切な記述はどれか。ここで，割引適用表の上の2行は割引適用の条件であり，真のとき“Y”，偽のとき“N”と記述する。同じ列にあるこつの条件の真偽の組合せとなった場合の受講料の割引率を同じ列の3行目に記述する。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_haru/img/89.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q89/89.png"
         ]
       },
       "choices": [
@@ -3968,28 +3968,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_haru/img/89a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q89/89a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_haru/img/89i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q89/89i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_haru/img/89u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q89/89u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_haru/img/89e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q89/89e.png"
           ]
         }
       ],
@@ -4058,7 +4058,7 @@
         "text": "Bさんは，請求明細書が正しく作成されるかどうかを確認するために，表3に示すNo.1～4のテストデータを用意した。このテストデータを使って確認できることとして，次の記述(1)，(2)中のb，cに入れる適切な字句の組合せはどれか。\n・No.1とNo.bのデータを使うと，会員の申込者が同一月に複数受講した場合に，受講料の割引が適用されたことを確認できる。\n・No.cのデー夕使うと，欠席の場合にテキスト代が請求されないことを確認できる。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_haru/img/91.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q91/91.png"
         ]
       },
       "choices": [
@@ -4066,28 +4066,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_haru/img/91a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q91/91a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_haru/img/91a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q91/91a.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_haru/img/91a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q91/91a.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_haru/img/91a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q91/91a.png"
           ]
         }
       ],
@@ -4112,7 +4112,7 @@
         "text": "Bさんは，申込みの取消しと欠席の場合の請求額についてテストすることにした。次の受入れテストケースについて，申込者に対する請求額として，適切なものはどれか。ここで， A社は，休日以外は営業日となっており，コースは営業日に開講される。9月のカレンダは図1のとおりである。\n・文京花子さんと東京三郎さんは会員であり，大阪幸子さんは一般である。\n・3名ともに9月に開講されるコースを1コースずつ受講申込みしている。\n・文京花子さんは，コースQを申し込んでいたが， 9月12日に取り消した。\n・大阪幸子さんは，コースRを申し込んでいたが， 9月19日に取り消した。\n・東京三郎さんは，コースQを申し込んでいたが，当日欠席した。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_haru/img/92.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q92/92.png"
         ]
       },
       "choices": [
@@ -4120,28 +4120,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_haru/img/92a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q92/92a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_haru/img/92a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q92/92a.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_haru/img/92a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q92/92a.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_haru/img/92a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q92/92a.png"
           ]
         }
       ],
@@ -4342,7 +4342,7 @@
         "text": "ISBNコードの1桁目から12桁目が次の数字の場合，13桁目に付加されるチェック数字Xはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_haru/img/97.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q97/97.png"
         ]
       },
       "choices": [
@@ -4432,7 +4432,7 @@
         "text": "表計算ソフトを使ってチェック数字を求めることにした。チェック数字を求めるワークシートを，次の手順で作成するとき，aに入れる適切な式はどれか。\n・セルB1～N1に，ISBNコードの桁数を表す数値を入力する。\n・セルB2～M2に，ISBNコードの1～12桁を，各セルに1桁ずつ入力する。\n・セルB3～M3に，ISBNコードの各桁に対応した重みを入力する。\n・セルB4に，式aを入力し，セルC4～M4に複写する。\n・セルB5に，セルB4～M4の合計を求める式を入力する。\n・セルB6に，セルB5の値を10で割った余りを求める式を入力する。\n・セルN2に，チェック数字を求める式を入力する。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_haru/img/99.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q99/99.png"
         ]
       },
       "choices": [
@@ -4478,7 +4478,7 @@
         "text": "表計算ソフトを使ってチェック数字を求めることにした。チェック数字を求める次のワークシート中のセルN2に入れる適切な式はどれか。このワークシートは，セルB2～M2に数字を入力することで，繰り返し使うものとする。\n・セルB1～Nlに，ISBNコードの桁数を表す数値を入力する。\n・セルB2～M2に，ISBNコードの1～12桁を，各セルに1桁ずつ入力する。\n・セルB3～M3に，ISBNコードの各桁に対応した重みを入力する。\n・セルB5に，ISBNコードに各桁の重みを掛けたものの合計を求める。\n・セルB6に，剰余関数を使った次の式を入力する。\n　　剰余(B5，10)\n・セルN2に，チェック数字を求める式を入力する。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_haru/img/100.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_haru/q100/100.png"
         ]
       },
       "choices": [

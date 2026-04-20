@@ -64,28 +64,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_aki/img/02a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q2/02a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_aki/img/02i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q2/02i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_aki/img/02u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q2/02u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_aki/img/02e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q2/02e.png"
           ]
         }
       ],
@@ -100,7 +100,7 @@
         "text": "DFD(Data Flow Diagram)は、データの流れに着目して、その対象となる業務のデータの流れと処理の関係をわかりやすく図式化する構造化分析の手法です。「○」処理・プロセス，「□」データの吸収先，「→」データの流れ，「〓」データストアの4つの記号を用いて対象業務のモデル化を行います。\n・プロジェクトの作業関係やクリティカルパスを分析するときに用いられるアローダイアグラムの記述例です。\n・正しい。DFDの記述例です。\n・プロジェクトの作業をトップダウン的に階層化するときに用いられるWBS(Work Breakdown Structure)の記述例です。\n・原因と結果の関係を分析するときに用いられる特性要因図の記述例です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/02.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q2/02.png"
         ]
       }
     },
@@ -366,10 +366,10 @@
         "text": "・決定表は、ある事象について条件や選択肢を表に記述し、記述された条件・選択肢をたどった場合にどのような結果になるかをわかりやすく表現した図です。\n・正しい。散布図は、縦軸・横軸に2項目の量や大きさ等を対応させて、分析対象のデータを打点した図で、2項目間の分布・相関関係を把握するのに使用されます。\n・特性要因図は、現れた特性（結果）とそれに影響を及ぼしたと思われる要因の関係を体系的に表わした図です。多くの要因が複雑に絡みあっているときに、直接的な原因と間接的な原因に分別したり、真の問題点を明らかにしたりすることができます。\n・パレート図は、値の大きい順に分析対象の項目を並べた棒グラフと、累積構成比を表す折れ線グラフを組み合わせた複合グラフで、主に複数の分析対象の中から重要である要素を識別するために使用されます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/08a.png",
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/08i.png",
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/08u.png",
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/08e.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q8/08a.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q8/08i.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q8/08u.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q49/08e.png"
         ]
       }
     },
@@ -475,28 +475,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_aki/img/11.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q11/11.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_aki/img/11.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q11/11.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_aki/img/11.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q11/11.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_aki/img/11.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q11/11.png"
           ]
         }
       ],
@@ -511,7 +511,7 @@
         "text": "PPM(Products Portfolio Management)は、縦軸と横軸に「市場成長率」と「市場占有率」を設定したマトリックス図を4つの象限に区分し，製品の市場における位置付けを分析して資源配分を検討する手法です。4つの象限は、市場内の位置付けから以下のような名称で呼ばれています。花形(star) … [成長率：高、占有率：高]占有率・成長率ともに高く、資金の流入も大きいが、成長に伴い占有率の維持には多額の資金の投入を必要とする分野金のなる木(cash cow) … [成長率：低、占有率：高]市場の成長がないため追加の投資が必要ではなく、市場占有率の高さから安定した資金・利益の流入が見込める分野問題児(problem child) … [成長率：高、占有率：低]成長率は高いが占有率は低いので、花形製品とするためには多額の投資が必要になる。投資が失敗し、そのまま成長率が下がれば負け犬になってしまうため、慎重な対応を必要とする分野負け犬(dog) … [成長率：低、占有率：低]成長率・占有率がともに低く、新たな投資による利益の増加も見込めないため市場からの撤退を検討するべき分野したがってaが「金のなる木」、bが「問題児」になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/11a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q11/11a.png"
         ]
       }
     },
@@ -919,7 +919,7 @@
         "text": "図によって表される企業の組織形態はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/21.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q21/21.png"
         ]
       },
       "choices": [
@@ -1015,28 +1015,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_aki/img/23.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q23/23.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_aki/img/23.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q23/23.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_aki/img/23.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q23/23.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_aki/img/23.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q23/23.png"
           ]
         }
       ],
@@ -1105,7 +1105,7 @@
         "text": "X社の販売部門における期末時点の売掛金の回収状況が表のとおりであるとき，回収期限を過ぎた売掛金に対する長期債権額の比率は何%か。ここで，入金遅延が61日以上のものを長期債権とする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/25.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q25/25.png"
         ]
       },
       "choices": [
@@ -1141,8 +1141,8 @@
         "text": "売掛金(うりかけきん)とは、商品やサービスを販売したときに、会社間の信用取引によって後からその代金が支払われることになっている営業収益の未収金のことです。\n\n表の中で「回収期限を過ぎた売掛金」は次に示す部分で、その合計額は80百万円です。また長期債券(入金遅延が61日以上のもの)は、次に示す部分でその合計額は20百万円です。したがって回収期限を過ぎた売掛金に対する長期債権額の比率は、\n\n　20÷80＝0.25＝25%\n\n上記の計算から25%であることになります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/25_1.png",
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/25_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q25/25_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q25/25_2.png"
         ]
       }
     },
@@ -1232,7 +1232,7 @@
         "text": "JANコードは、バーコード規格のひとつで、製造した事業者と商品を識別するための共通商品コード体系です。アメリカ、カナダにおけるUPCと互換性があり、海外ではEANコードと呼ばれています。\nコード体系には、13桁の標準タイプと8桁の短縮タイプがありタイプごとに以下の構成になっています。13桁タイプ・国コード（2桁）\n・メーカーコード（5桁）\n・商品コード（5桁）\n・チェックディジット（1桁）\nまたは、\n・国コード（2桁）\n・メーカーコード（7桁）\n・商品コード（3桁）\n・チェックディジット（1桁)\n8桁タイプ・国コード（2桁）\n・メーカーコード（4桁）\n・商品コード（1桁）\n・チェックディジット（1桁）このようにJANコードには、製造した企業（メーカー）とその商品の組合せの情報が含まれていて、最後の1桁は光学式読取機の読み取りエラーを検出するためのチェックディジットとなっています。\n・American standard code for information interchangeの略。7ビットで表現できるビット列に英字や記号・制御文字などを割り当てた文字コードです。\n・Extended Unix Codeの略。UNIX上での多言語対応として制定された文字コードです。\n・正しい。JANコードは、「どの事業者の、どの商品か」を表す国際的な商品識別番号です。\n・JISコードは、日本語を表現するための文字コードの1つです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/27.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q27/27.png"
         ]
       }
     },
@@ -1278,7 +1278,7 @@
         "text": "コンカレントエンジニアリング(Concurrent Engineering)は、主に製造業において、設計から生産に至るまでの各プロセスを同時並行的に行うことで、開発期間や納期の短縮および生産コストの削減を図る手法です。コンカレント(concurrent)は、「並行」「同時に(発生)」などを意味する英単語です。\n\nしたがって「開発期間の短縮」が適切です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/28.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q28/28.png"
         ]
       }
     },
@@ -1290,7 +1290,7 @@
         "text": "製造業A社では，翌月の製造量を次の計算式で算出している。\n\n　翌月の製造量＝翌月の販売見込量－当月末の在庫量＋20\n\n翌月の販売見込量が当月までの3か月の販売実績量の移動平均法によって算出されるとき，9月の製造量は幾らか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/29.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q29/29.png"
         ]
       },
       "choices": [
@@ -1424,7 +1424,7 @@
         "text": "図のプロセスでシステム開発を進める場合，システム方式設計に含める作業として，適切なものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/32.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q32/32.png"
         ]
       },
       "choices": [
@@ -2244,9 +2244,9 @@
         "text": "アローダイアグラム(Arrow Diagram)は、PERT図とも呼ばれ、プロジェクトの各作業間の関連性や順序関係を視覚的に表現する図です。作業関係を分析することで時間的に余裕のない一連の作業(クリティカルパス)を洗い出すことができるため工程のスケジュール管理に使用されます。\n・正しい。\n・パレート図は、値の大きい順に分析対象の項目を並べた棒グラフと、累積構成比を表す折れ線グラフを組み合わせた複合グラフで、主に複数の分析対象の中から、重要である要素を識別するために使用されます。\n・ヒストグラムは、収集したデータをいくつかの区間に分け、区間ごとに該当するデータの出現回数を棒グラフで示した図です。データの分布状況を分析するのに使用されます。\n・マイルストーンチャートは、主要な要素成果物に関する予定開始日あるいは終了日などプロジェクト上の重要ポイントをマイルストーンとして図にプロットし、ある時点においてこれが完了しているかどうかで進捗を管理する手法です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/49a.png",
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/08e.png",
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/49u.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q49/49a.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q49/08e.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q49/49u.png"
         ]
       }
     },
@@ -2424,7 +2424,7 @@
         "text": "E-R図(Entity-Relationship Diagram)は、データベース化の対象となる実体(エンティティ)と実体の持つ属性（アトリビュート)、および実体間の関連（リレーションシップ）を表現する図です。任意のオブジェクトとその関連をデータモデル化することができますが、特に関係データベースの設計によく利用されます。\n・状態遷移図が表現するものです。\n・流れ図(フローチャート)が表現するものです。\n・正しい。E-R図が表現するものです。\n・DFD(Data Flow Diagram)が表現するものです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/53.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q53/53.png"
         ]
       }
     },
@@ -2442,28 +2442,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_aki/img/54.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q54/54.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_aki/img/54.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q54/54.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_aki/img/54.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q54/54.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_aki/img/54.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q54/54.png"
           ]
         }
       ],
@@ -2786,7 +2786,7 @@
         "text": "USBメモリは、コンピュータのUSB端子に接続して使用できる補助記憶装置で、記録素子として半導体メモリ(フラッシュメモリ)が使われています。\n「対応しているOSであれデバイスドライバのインストールなしで使える」「光学ディスクやフロッピーディスクなどのように、読み書きするための専用のドライブを必要としない」などの理由で利便性が高く、最大で256GBの製品も登場していて、2012年現在、持ち歩ける大容量記憶装置の主力となっています。\n・CD-ROMは、光学ディスクを用いてデジタル情報を記録するためのメディアです。\n・DVD-RAMは、CDと同じサイズの光学ディスクで、およそ6倍の容量を記録できるメディアで、長時間動画の記録などに使用されます。\n・MD(MiniDisc)は、直径64mm(2.5インチ)の光学ディスクを使用してデジタルオーディオを記録するメディアです。\n・正しい。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/61.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q61/61.png"
         ]
       }
     },
@@ -2842,8 +2842,8 @@
         "text": "図に示す階層構造で，複数個の同名のディレクトリA，Bが配置されており，ユーザーIDごとにログインしたときのカレントディレクトリが異なる。U0002がログインした直後に，矢印が示すディレクトリBに存在するファイルfを指定するものはどれか。ここで，ファイルの指定方法とユーザーID別のカレントディレクトリは次のとおりである。\n\n〔ファイルの指定方法〕\n・\"ディレクトリ名¥ … ¥ディレクトリ名¥ファイル名\"のように，経路上のディレクトリを順に\"¥\"で区切って並べた後に\"¥\"とファイル名を指定する。\n・カレントディレクトリは\".\"で表す。\n・1階層上のディレクトリは\"..\"で表す。\n・始まりが\"¥\"のときは，左端のルートディレクトリが省略されているものとする。\n\n〔ユーザーID別カレントディレクトリ〕",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/63_1.png",
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/63_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q63/63_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q63/63_2.png"
         ]
       },
       "choices": [
@@ -2879,9 +2879,9 @@
         "text": "まず\"U0002\"がログインしたときのカレントディレクトリである\"¥A¥B¥A\"は、ルートからA→B→Aの順にディレクトリを移動した次に示すディレクトリになります。このカレントディレクトリからファイルfが存在するディレクトリBはルートディレクトリの配下にあるので、まずカレントディレクトリからルートディレクトリを指定する方法を考えます。カレントディレクトリから見てルートディレクトリは木構造の3階層上にありますので、「..¥..¥..¥」というように1階層上のディレクトリを指定する「..」を3つ使って指定します。あとはルートディレクトリ配下のディレクトリBに存在するファイルfを指定したいので「..¥..¥..¥」に「B¥f」をつなげた「..¥..¥..¥B¥f」が正解となります。\n\n次の図でカレントディレクトリ\"¥A¥B¥A\"から見た各ディレクトリの指定方法を確認してみてください。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/63_3.png",
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/63_4.png",
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/63_5.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q63/63_3.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q63/63_4.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q63/63_5.png"
         ]
       }
     },
@@ -2937,7 +2937,7 @@
         "text": "\"商品値引き\"表に示すとおり，値引き率が異なる商品群がある。30個買ったときに最も合計価格が安いのは，どのIDの商品か。ここで，値引き数量以上の個数を購入した場合に，合計価格に対して値引率で示す値引きが適用されるものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/65.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q65/65.png"
         ]
       },
       "choices": [
@@ -3061,7 +3061,7 @@
         "text": "デッドロックは、共有資源を使用する2つ以上のプロセスが、互いに相手プロセスが必要とする資源を排他的に使用していて、互いのプロセスが相手が使用している資源の解放を待っている状態のことです。\nデッドロックが発生すると両方のプロセスが永遠に待ち状態になり処理の続行ができなくなってしまうため、複数のプロセスで資源の使用順序を同じにする必要があります。\n・アクセス制御の説明です。\n・ロックアウト状態の説明です。\n・正しい。デッドロックの説明です。\n・デッドロックとは関係のない記述です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/67.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q67/67.png"
         ]
       }
     },
@@ -3239,7 +3239,7 @@
         "text": "URL(Uniform Resource Locator)は、一般にWebサイトのアドレス(住所)のことです。通常では、通信に使用するスキーム名と、リソースの位置情報(サーバのホスト名(ドメイン)、ディレクトリ名、ファイル名)だけを指定しますが、用途に応じてポート番号やURLパラメータなどの項目も記述・指定できるようになっています。\n・HyperText Markup Languageの略。Webページを記述するために、タグを使って文書構造を表現するマークアップ言語です。\n・IPアドレスは、IPネットワーク上の機器を識別するために付けられている論理アドレスです。\n・MACアドレスは、ネットワーク上の機器を識別するために、各機器に一意に割り当てられた6バイト(48ビット)の番号のことです。\n・正しい。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/71.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q71/71.png"
         ]
       }
     },
@@ -3251,7 +3251,7 @@
         "text": "図に示すように，文字列の各文字を置換表に従って置き換える処理を考える。このような置換えを行った結果が\"0110001010\"であったとき，置換え前の文字列はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/72.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q72/72.png"
         ]
       },
       "choices": [
@@ -3435,28 +3435,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_aki/img/76.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q76/76.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_aki/img/76.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q76/76.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_aki/img/76.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q76/76.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_aki/img/76.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q76/76.png"
           ]
         }
       ],
@@ -3603,8 +3603,8 @@
         "text": "10進数は1桁に0～9の数字を使い10になると桁上がりしますが、16進数は1桁に0～9、A～Fの16個の英数字を使い16になると桁上がりする数値の表現方法です。10進数の 53 が「10×5＋1×3＝53」であるように、16進数 A3 のAは16の桁、3は1の桁です。上表のとおり16進数のAは10進数の10に対応するので、16の桁が10つ、1の桁が3つということになります。\n\nしたがって16進数のA3を10進数に変換した数値は、\n\n　16×10＋1×3＝163\n\nしたがって「ウ」が正解です。\n\n【別解】\n16進数を10進数に変換する場合は、16進数→2進数→10進数というように2進数を経由して解くこともできます。\n\nまず16進数のA3を2進数で表すと、\"A\"が2進数で1010、\"3\"は2進数で0011なので、\n\n　A3(16) → 1010 0011(2)\n\nとなります。2進数の各桁と10進数は下図のように対応しているので、\n\n　27＋25＋21＋20＝128＋32＋2＋1＝163\n\nこちらでも163になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/79_1.png",
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/79_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q79/79_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q79/79_2.png"
         ]
       }
     },
@@ -3616,7 +3616,7 @@
         "text": "ある在庫管理システムは，複数の入力を同時並行して処理し，在庫数を更新しているが，排他制御は行っていない。ある時点での在庫数が100であったとき，入力された二つの入力A，Bに応じて，図に示す処理が①→②→③→④の順序で実行された場合，処理④が終了した時点の在庫数は幾つになるか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/80.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q80/80.png"
         ]
       },
       "choices": [
@@ -3706,7 +3706,7 @@
         "text": "真理値表に対応する論理演算はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/82.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q82/82.png"
         ]
       },
       "choices": [
@@ -3742,7 +3742,7 @@
         "text": "真理値表を見ると2つの入力A，Bが両方とも1の場合に出力が1、その他は0が出力されます。このような入力と出力の関係をもつ論理演算はAND(論理積)演算と呼ばれます。\n\nAND以外のその他の演算(ORとXOR)についても真理値表を掲載しておくので参考にしてみてください。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/82a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q82/82a.png"
         ]
       }
     },
@@ -3764,28 +3764,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_aki/img/83.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q83/83.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_aki/img/83.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q83/83.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_aki/img/83.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q83/83.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_aki/img/83.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q83/83.png"
           ]
         }
       ],
@@ -3892,7 +3892,7 @@
         "text": "図1「売上分析を行うためのワークシート」から売上と粗利益の列を取り出し、粗利益率(粗利益／売上高)の列を追加したのが次の表です。\n・正しい。\n・カツ丼の売上高は最も高いですが、粗利益の最も高い商品は牛丼です。\n・粗利益率が2番目に高い商品は牛丼です。\n・牛丼の粗利益は最も高いですが、粗利益率が最も高い商品はカレーです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/85.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q85/85.png"
         ]
       }
     },
@@ -3904,7 +3904,7 @@
         "text": "粗利益合計に対するメニュー別粗利益の占める比率(以下，粗利益比率という)を求めるために，次のワークシートのセルG2に計算式を入力して，セルG3～G5に複写する。セルG2に入力する計算式はどれか。\n　なお，粗利益比率を求めているセルの表示形式はパーセント表示である。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/86.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q86/86.png"
         ]
       },
       "choices": [
@@ -3994,7 +3994,7 @@
         "text": "Aさんは，親子丼を廃止して，新たにサラダと玉子をメニューに加えることを検討するように社長から指示を受けた。サラダと玉子の売上数量のどのような組合せで，親子丼の粗利益を上回ることができるかを調べるために次のワークシートを作成した。\n　サラダの単価はセルB8に，原価はセルC8に入力する。玉子の単価はセルB9に，原価はセルC9に入力する。サラダの売上数量をセルC12～H12に，王子の売上数量をセルB13～B18に，それぞれ1,000刻みで入力する。サラダと玉子の粗利益の合計が，親子丼の粗利益以上の場合は\"○\"，親子丼の粗利益未満の場合は\" x\"を，セルC13～H18に表示する。セルC13に入力する計算式はどれか。ここで，セルC13の計算式は，セルC13～H18に複写する。\n　なお，粗利益比率を求めているセルの表示形式はパーセント表示である。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/88.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q88/88.png"
         ]
       },
       "choices": [
@@ -4294,7 +4294,7 @@
         "text": "画像データをビット列で表現すると次のようになります。[問題文中の図2]同じく問題文中より上記のビット列は「0が10個続き、次に1が34個続き、その次に0が20個続いている」ことも分かっているので、ランレングスは、\n\n　10 34 20\n\nとなります。ランレングスは最大15の範囲で区切り、その間にランレングス0を補います。\n\n　34→15 0 15 0 4\n　20→15 0 5\n\nこれをすべてつなぎ合わせ、さらにビット列が白と黒の8ビットの組みの連続になるように末尾にもランレングス0を補うと次のようになります。\n\n　10 15 0 15 0 4 15 0 5 0\n\nこのビット列は白と黒の組合せ(8ビット)が「10 15」「0 15」「0 4」「15 0」「5 0」の5つあるので、\n\n　8ビット×5＝40ビット\n\nこの方法では画像データを40ビットで表現できることになります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/94.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q94/94.png"
         ]
       }
     },
@@ -4350,7 +4350,7 @@
         "text": "次に示す画像データの表現方法は，画像データの情報量を圧縮することを目的とする変換である。図2に示す画像データは，何ビットで表現されるか。\n\n〔データの表現方法〕\n・画像データをランレングスで表現し，それらの値を2進数で表現する。\n・ランレングスの値を2進数で表現したときの値nに対して，そのnの桁数がmのとき，次の形式で，一つのランレングスを表現する。\n1. 桁数の情報：(m－2)ビットの連続する1で表現。なお，mが0～2の場合は，\"0\" と表現\n2. 区切りの情報：区切りは\"0\"で表現\n3. ランレングスの情報：n\n\n例えば，ランレングスの値が20のとき，それを2進数で表現したときの値nは\"10100\" となり，その桁数mは5となる。したがって，mが5のとき，①は(5－2)ビットの連続する1なので\"111\"となり，これに区切りの\"0\"とnをつなげ，結果は\"111010100\" となる。\n・(2)で求めた形式の値をつなげていく。このとき，画像データは必ず白から始まるものとし，もし，画像データが黒から始まる場合は，ランレングス0の白があるとして先頭に\"000\" を補う。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/24_aki/img/96.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q96/96.png"
         ]
       },
       "choices": [
@@ -4446,28 +4446,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_aki/img/98.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q98/98.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_aki/img/98.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q98/98.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_aki/img/98.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q98/98.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/24_aki/img/98.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/24_aki/q98/98.png"
           ]
         }
       ],

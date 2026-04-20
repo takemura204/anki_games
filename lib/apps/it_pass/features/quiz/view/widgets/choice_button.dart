@@ -1,7 +1,7 @@
 part of '../quiz_screen.dart';
 
-class _ChoiceButtonWidget extends StatefulWidget {
-  const _ChoiceButtonWidget({
+class _ChoiceButton extends StatefulWidget {
+  const _ChoiceButton({
     required this.choice,
     required this.session,
     required this.onTap,
@@ -12,10 +12,10 @@ class _ChoiceButtonWidget extends StatefulWidget {
   final VoidCallback onTap;
 
   @override
-  State<_ChoiceButtonWidget> createState() => _ChoiceButtonWidgetState();
+  State<_ChoiceButton> createState() => _ChoiceButtonState();
 }
 
-class _ChoiceButtonWidgetState extends State<_ChoiceButtonWidget>
+class _ChoiceButtonState extends State<_ChoiceButton>
     with SingleTickerProviderStateMixin {
   late final AnimationController _pulseController;
   late final Animation<double> _scaleAnimation;
@@ -49,8 +49,7 @@ class _ChoiceButtonWidgetState extends State<_ChoiceButtonWidget>
 
   @override
   Widget build(BuildContext context) {
-    final isSelected =
-        widget.session.selectedLabel == widget.choice.label;
+    final isSelected = widget.session.selectedLabel == widget.choice.label;
     final isCorrect =
         widget.choice.label == widget.session.currentQuestion.answer;
     final isAnswered = widget.session.isAnswered;
@@ -70,7 +69,7 @@ class _ChoiceButtonWidgetState extends State<_ChoiceButtonWidget>
     } else if (isCorrect) {
       borderColor = const Color(0xFF10B981);
       bgColor = const Color(0xFF10B981).withValues(alpha: 0.18);
-      textColor = const Color(0xFF10B981);
+      textColor = Colors.white;
       glowShadows = [
         BoxShadow(
           color: const Color(0xFF10B981).withValues(alpha: 0.55),
@@ -81,7 +80,7 @@ class _ChoiceButtonWidgetState extends State<_ChoiceButtonWidget>
     } else if (isSelected) {
       borderColor = const Color(0xFFEF4444);
       bgColor = const Color(0xFFEF4444).withValues(alpha: 0.18);
-      textColor = const Color(0xFFEF4444);
+      textColor = Colors.white;
       glowShadows = [
         BoxShadow(
           color: const Color(0xFFEF4444).withValues(alpha: 0.4),
@@ -113,18 +112,13 @@ class _ChoiceButtonWidgetState extends State<_ChoiceButtonWidget>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   AnimatedContainer(
                     duration: const Duration(milliseconds: 320),
                     width: 32,
                     height: 32,
                     decoration: BoxDecoration(
-                      color: isAnswered && isCorrect
-                          ? const Color(0xFF10B981).withValues(alpha: 0.35)
-                          : isAnswered && isSelected && !isCorrect
-                              ? const Color(0xFFEF4444).withValues(alpha: 0.25)
-                              : Colors.white.withValues(alpha: 0.08),
+                      color: Colors.white.withValues(alpha: 0.08),
                       shape: BoxShape.circle,
                     ),
                     child: Center(
@@ -168,12 +162,15 @@ class _ChoiceButtonWidgetState extends State<_ChoiceButtonWidget>
               ),
               if (hasImage) ...[
                 const SizedBox(height: 8),
-                ...widget.choice.images.map(
-                  (url) => Padding(
+                ...widget.choice.images.asMap().entries.map(
+                  (e) => Padding(
                     padding: const EdgeInsets.only(top: 4),
                     child: _QuizNetworkImage(
-                      url: url,
+                      url: e.value,
+                      heroTag: 'img_q${widget.session.currentQuestion.no}'
+                          '_choice_${widget.choice.label}_${e.key}',
                       borderRadius: BorderRadius.circular(8),
+                      tapToView: false,
                     ),
                   ),
                 ),

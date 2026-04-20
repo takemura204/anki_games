@@ -3,17 +3,89 @@ import 'dart:ui';
 
 import 'package:anki_games/apps/it_pass/features/quiz/model/question.dart';
 import 'package:anki_games/apps/it_pass/features/quiz/model/quiz_session.dart';
-import 'package:anki_games/apps/it_pass/features/quiz/view/filter_bottom_sheet.dart';
+import 'package:anki_games/apps/it_pass/features/quiz/view/modals/filter_sheet.dart';
 import 'package:anki_games/apps/it_pass/features/quiz/view_model/quiz_view_model.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-part 'widgets/question_card_widget.dart';
-part 'widgets/choice_button_widget.dart';
-part 'widgets/explanation_panel_widget.dart';
+part 'widgets/header.dart';
+part 'widgets/quiz_page_item.dart';
+part 'widgets/quiz_network_image.dart';
+part 'widgets/question_cardt.dart';
+part 'widgets/choice_button.dart';
+part 'modals/explanation_sheet.dart';
 part 'widgets/session_finished_widget.dart';
+part 'widgets/footer.dart';
+
+// ---------------------------------------------------------------------------
+// Page entry model
+// ---------------------------------------------------------------------------
+
+sealed class _PageEntry {
+  const _PageEntry();
+}
+
+final class _QuestionEntry extends _PageEntry {
+  const _QuestionEntry({
+    required this.questionIndex,
+    required this.setIndex,
+  });
+
+  final int questionIndex;
+  final int setIndex;
+}
+
+final class _ResultEntry extends _PageEntry {
+  const _ResultEntry({required this.setIndex});
+
+  final int setIndex;
+}
+
+List<_PageEntry> _buildPages(int total) {
+  final pages = <_PageEntry>[];
+  var setIndex = 0;
+  var q = 0;
+  while (q < total) {
+    final end = (q + 10).clamp(0, total);
+    for (var i = q; i < end; i++) {
+      pages.add(_QuestionEntry(questionIndex: i, setIndex: setIndex));
+    }
+    pages.add(_ResultEntry(setIndex: setIndex));
+    q = end;
+    setIndex++;
+  }
+  return pages;
+}
+
+// ---------------------------------------------------------------------------
+// Forward-only scroll physics (prevents backward page swipe)
+// ---------------------------------------------------------------------------
+
+class _ForwardOnlyPageScrollPhysics extends PageScrollPhysics {
+  const _ForwardOnlyPageScrollPhysics({super.parent});
+
+  @override
+  _ForwardOnlyPageScrollPhysics applyTo(ScrollPhysics? ancestor) {
+    return _ForwardOnlyPageScrollPhysics(parent: buildParent(ancestor));
+  }
+
+  /// 後退方向（下スワイプ: offset > 0）のみブロックする。
+  /// バリスティックアニメーション（ページスナップ）は妨げない。
+  @override
+  double applyPhysicsToUserOffset(ScrollMetrics position, double offset) {
+    if (offset > 0) {
+      return 0;
+    }
+    return super.applyPhysicsToUserOffset(position, offset);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Root widget
+// ---------------------------------------------------------------------------
 
 class QuizScreen extends ConsumerWidget {
   const QuizScreen({super.key});
@@ -42,13 +114,7 @@ class QuizScreen extends ConsumerWidget {
               if (quizState is! QuizReady) {
                 return const SizedBox.shrink();
               }
-              final session = quizState.session;
-              if (session.isFinished) {
-                return _SessionFinishedWidget(
-                  onRestart: () => ref.invalidate(quizViewModelProvider),
-                );
-              }
-              return _QuizContent(session: session);
+              return _QuizContent(session: quizState.session);
             },
           ),
         ],
@@ -56,6 +122,10 @@ class QuizScreen extends ConsumerWidget {
     );
   }
 }
+
+// ---------------------------------------------------------------------------
+// Content (stateful)
+// ---------------------------------------------------------------------------
 
 class _QuizContent extends ConsumerStatefulWidget {
   const _QuizContent({required this.session});
@@ -72,15 +142,25 @@ class _QuizContentState extends ConsumerState<_QuizContent>
   late final ConfettiController _confettiController;
   late final AnimationController _sheetController;
   late final Animation<Offset> _sheetSlide;
+
+  late List<_PageEntry> _pages;
+  var _currentViewPage = 0;
+  final _resultElapsesBySet = <int, Duration>{};
+
   var _sheetMounted = false;
+
+  /// シートアニメーション完了後に true になり、_AnsweredActionBar を表示する
+  var _actionBarReady = false;
 
   static const _inlineBannerDelay = Duration(milliseconds: 500);
 
   @override
   void initState() {
     super.initState();
+    _pages = _buildPages(widget.session.totalCount);
+
     _pageController = PageController(
-      initialPage: widget.session.currentIndex,
+      initialPage: _questionPageIndex(widget.session.currentIndex),
     );
     _confettiController = ConfettiController(
       duration: const Duration(milliseconds: 1200),
@@ -88,7 +168,7 @@ class _QuizContentState extends ConsumerState<_QuizContent>
     _sheetController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 380),
-    );
+    )..addStatusListener(_onSheetStatus);
     _sheetSlide = Tween<Offset>(
       begin: const Offset(0, 1),
       end: Offset.zero,
@@ -107,17 +187,26 @@ class _QuizContentState extends ConsumerState<_QuizContent>
       _confettiController.play();
     }
 
-    if (!oldWidget.session.showExplanation && widget.session.showExplanation) {
+    if (!oldWidget.session.showExplanation &&
+        widget.session.showExplanation &&
+        widget.session.answerState == AnswerState.incorrect) {
       Future.delayed(_inlineBannerDelay, () {
-        if (mounted) {
-          setState(() => _sheetMounted = true);
-          _sheetController.forward();
+        if (!mounted) {
+          return;
         }
+        setState(() => _sheetMounted = true);
+        _sheetController.forward(from: 0);
       });
     }
 
-    if (oldWidget.session.currentIndex != 0 &&
-        widget.session.currentIndex == 0) {
+    // Questions reshuffled (all done → loop)
+    if (widget.session.currentIndex == 0 &&
+        oldWidget.session.currentIndex != 0) {
+      setState(() {
+        _pages = _buildPages(widget.session.totalCount);
+        _currentViewPage = 0;
+        _resultElapsesBySet.clear();
+      });
       _pageController.jumpToPage(0);
     }
   }
@@ -128,6 +217,26 @@ class _QuizContentState extends ConsumerState<_QuizContent>
     _confettiController.dispose();
     _sheetController.dispose();
     super.dispose();
+  }
+
+  // ---- helpers ----
+
+  int _questionPageIndex(int questionIndex) {
+    return questionIndex + questionIndex ~/ 10;
+  }
+
+  bool get _isOnResultPage =>
+      _pages.isNotEmpty && _pages[_currentViewPage] is _ResultEntry;
+
+  // ---- actions ----
+
+  /// シートアニメーションが完了した瞬間に一度だけ true にセットする。
+  /// false へのリセットは _onPageChanged のみが行う。
+  void _onSheetStatus(AnimationStatus status) {
+    if (!mounted || status != AnimationStatus.completed) {
+      return;
+    }
+    setState(() => _actionBarReady = true);
   }
 
   void _goNext() {
@@ -146,94 +255,136 @@ class _QuizContentState extends ConsumerState<_QuizContent>
     });
   }
 
+  void _showSheet() {
+    if (!_sheetMounted && widget.session.showExplanation) {
+      setState(() {
+        _sheetMounted = true;
+        _actionBarReady = false;
+      });
+      _sheetController.forward(from: 0);
+    }
+  }
+
+  void _onResultContinue() {
+    if (_currentViewPage + 1 < _pages.length) {
+      // More pages exist → swipe to next (onPageChanged handles ViewModel call)
+      _pageController.nextPage(
+        duration: const Duration(milliseconds: 450),
+        curve: Curves.easeInOutCubic,
+      );
+    } else {
+      // Last result page → trigger reshuffle directly
+      ref.read(quizViewModelProvider.notifier).continueToNextSet();
+    }
+  }
+
+  void _onPageChanged(int pageIndex) {
+    final prevPage = _currentViewPage;
+    final entry = _pages[pageIndex];
+
+    if (entry is _ResultEntry) {
+      // Arrived at result page: capture elapsed time
+      setState(() {
+        _currentViewPage = pageIndex;
+        _resultElapsesBySet[entry.setIndex] = widget.session.setElapsed;
+      });
+      return;
+    }
+
+    // Arrived at a question page
+    setState(() {
+      _currentViewPage = pageIndex;
+      _sheetMounted = false;
+      _actionBarReady = false;
+    });
+
+    if (pageIndex > prevPage) {
+      if (_pages[prevPage] is _ResultEntry) {
+        ref.read(quizViewModelProvider.notifier).continueToNextSet();
+      } else {
+        ref.read(quizViewModelProvider.notifier).nextQuestion();
+      }
+    }
+  }
+
+  // ---- build ----
+
   @override
   Widget build(BuildContext context) {
     final session = widget.session;
+    final cardRadius = BorderRadius.circular(90);
+    final top = MediaQuery.of(context).padding.top;
+    final bottom = MediaQuery.of(context).padding.bottom;
+
+    // 正解: シートなしで即表示 / 不正解: シートアニメーション完了後のみ表示
+    final isIncorrect = session.answerState == AnswerState.incorrect;
+    final showActionBar = session.isAnswered &&
+        !_isOnResultPage &&
+        (isIncorrect ? _actionBarReady : !_sheetMounted);
+
+    final physics = _isOnResultPage || (session.isAnswered && !_sheetMounted)
+        ? const _ForwardOnlyPageScrollPhysics()
+        : const NeverScrollableScrollPhysics();
 
     return Stack(
       children: [
-        SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(4, 12, 8, 0),
-                child: Row(
-                  children: [
-                    IconButton(
-                      icon: const Icon(Icons.close, color: Colors.white70),
-                      onPressed: () => Navigator.of(context).pop(),
-                    ),
-                    const Spacer(),
-                    Text(
-                      '${session.currentIndex + 1} / ${session.totalCount}',
-                      style: const TextStyle(
-                        color: Colors.white60,
-                        fontSize: 14,
-                      ),
-                    ),
-                    const SizedBox(width: 4),
-                    IconButton(
-                      icon: const Icon(
-                        Icons.tune_rounded,
-                        color: Colors.white54,
-                        size: 22,
-                      ),
-                      onPressed: () =>
-                          showQuizFilterBottomSheet(context, ref),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 6),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(4),
-                  child: LinearProgressIndicator(
-                    value: (session.currentIndex + 1) / session.totalCount,
-                    backgroundColor: Colors.white12,
-                    valueColor: const AlwaysStoppedAnimation<Color>(
-                      Color(0xFF7C3AED),
-                    ),
-                    minHeight: 4,
-                  ),
-                ),
-              ),
-              Expanded(
-                child: PageView.builder(
-                  controller: _pageController,
-                  scrollDirection: Axis.vertical,
-                  physics: (session.isAnswered && !_sheetMounted)
-                      ? const ClampingScrollPhysics()
-                      : const NeverScrollableScrollPhysics(),
-                  itemCount: session.totalCount,
-                  onPageChanged: (index) {
-                    if (index > session.currentIndex) {
-                      setState(() => _sheetMounted = false);
-                      ref
-                          .read(quizViewModelProvider.notifier)
-                          .nextQuestion();
-                    }
-                  },
-                  itemBuilder: (context, index) {
-                    final isCurrentPage = index == session.currentIndex;
-                    final pageSession = isCurrentPage
-                        ? session
-                        : QuizSession(
-                            questions: session.questions,
-                            currentIndex: index,
-                          );
-                    return _QuizPageItem(
-                      session: pageSession,
-                      onAnswer: (label) => ref
-                          .read(quizViewModelProvider.notifier)
-                          .answer(label),
-                    );
-                  },
-                ),
-              ),
-            ],
+        PageView.builder(
+          controller: _pageController,
+          scrollDirection: Axis.vertical,
+          physics: physics,
+          itemCount: _pages.length,
+          onPageChanged: _onPageChanged,
+          itemBuilder: (context, index) {
+            final entry = _pages[index];
+
+            if (entry is _ResultEntry) {
+              final elapsed =
+                  _resultElapsesBySet[entry.setIndex] ?? Duration.zero;
+              return _SetResultPage(
+                key: ValueKey('result_${entry.setIndex}'),
+                session: session,
+                elapsed: elapsed,
+                onContinue: _onResultContinue,
+              );
+            }
+
+            final e = entry as _QuestionEntry;
+            final isCurrentPage = e.questionIndex == session.currentIndex;
+            final pageSession = isCurrentPage
+                ? session
+                : QuizSession(
+                    questions: session.questions,
+                    currentIndex: e.questionIndex,
+                  );
+            return _QuizPageItem(
+              session: pageSession,
+              topPadding: top,
+              bottomPadding: bottom,
+              isSheetOpen: _sheetMounted && isCurrentPage,
+              onAnswer: (label) =>
+                  ref.read(quizViewModelProvider.notifier).answer(label),
+            );
+          },
+        ),
+        Align(
+          alignment: Alignment.topCenter,
+          child: _Header(
+            cardRadius: cardRadius,
+            session: session,
+            onUserPressed: () {},
+            onFilterPressed: () => showQuizFilterBottomSheet(context, ref),
+          ),
+        ),
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: _Footer(
+            cardRadius: cardRadius,
+            session: session,
+            showActionBar: showActionBar,
+            onShowExplanation: _showSheet,
+            onNext: _goNext,
+            onUserPressed: () {},
+            onFilterPressed: () => showQuizFilterBottomSheet(context, ref),
           ),
         ),
         Align(
@@ -255,11 +406,12 @@ class _QuizContentState extends ConsumerState<_QuizContent>
           ),
         ),
         if (_sheetMounted)
-          _ExplanationBottomSheet(
+          _ExplanationSheet(
             sheetController: _sheetController,
             slideAnimation: _sheetSlide,
             question: session.currentQuestion,
-            isLast: session.currentIndex == session.totalCount - 1,
+            selectedLabel: session.selectedLabel ?? '',
+            isLast: false,
             onNext: _goNext,
             onDismiss: _closeSheet,
           ),
@@ -268,225 +420,72 @@ class _QuizContentState extends ConsumerState<_QuizContent>
   }
 }
 
-class _QuizPageItem extends StatelessWidget {
-  const _QuizPageItem({
-    required this.session,
-    required this.onAnswer,
+// ---------------------------------------------------------------------------
+// Answered action bar
+// ---------------------------------------------------------------------------
+
+class _AnsweredActionBar extends StatelessWidget {
+  const _AnsweredActionBar({
+    required this.onShowExplanation,
+    required this.onNext,
   });
 
-  final QuizSession session;
-  final ValueChanged<String> onAnswer;
-
-  @override
-  Widget build(BuildContext context) {
-    final question = session.currentQuestion;
-
-    return SingleChildScrollView(
-      padding: const EdgeInsets.fromLTRB(20, 8, 20, 32),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          _QuestionCardWidget(question: question),
-          const SizedBox(height: 12),
-          _InlineFeedbackBanner(
-            isAnswered: session.isAnswered,
-            isCorrect: session.answerState == AnswerState.correct,
-            correctLabel: question.answer,
-          ),
-          ...question.choices.map(
-            (choice) => Padding(
-              padding: const EdgeInsets.only(bottom: 10),
-              child: _ChoiceButtonWidget(
-                choice: choice,
-                session: session,
-                onTap: () => onAnswer(choice.label),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _InlineFeedbackBanner extends StatefulWidget {
-  const _InlineFeedbackBanner({
-    required this.isAnswered,
-    required this.isCorrect,
-    required this.correctLabel,
-  });
-
-  final bool isAnswered;
-  final bool isCorrect;
-  final String correctLabel;
-
-  @override
-  State<_InlineFeedbackBanner> createState() => _InlineFeedbackBannerState();
-}
-
-class _InlineFeedbackBannerState extends State<_InlineFeedbackBanner>
-    with SingleTickerProviderStateMixin {
-  late final AnimationController _controller;
-  late final Animation<double> _fade;
-  late final Animation<double> _slide;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 380),
-    );
-    _fade = CurvedAnimation(parent: _controller, curve: Curves.easeOut);
-    _slide = Tween<double>(begin: -16, end: 0).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeOutCubic),
-    );
-    if (widget.isAnswered) {
-      _controller.value = 1;
-    }
-  }
-
-  @override
-  void didUpdateWidget(_InlineFeedbackBanner oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    if (!oldWidget.isAnswered && widget.isAnswered) {
-      _controller.forward();
-    }
-    if (oldWidget.isAnswered && !widget.isAnswered) {
-      _controller.reset();
-    }
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedSize(
-      duration: const Duration(milliseconds: 380),
-      curve: Curves.easeOutCubic,
-      child: widget.isAnswered
-          ? Padding(
-              padding: const EdgeInsets.only(bottom: 12),
-              child: FadeTransition(
-                opacity: _fade,
-                child: AnimatedBuilder(
-                  animation: _slide,
-                  builder: (context, child) => Transform.translate(
-                    offset: Offset(0, _slide.value),
-                    child: child,
-                  ),
-                  child: widget.isCorrect
-                      ? _CorrectBanner()
-                      : _IncorrectBanner(correctLabel: widget.correctLabel),
-                ),
-              ),
-            )
-          : const SizedBox.shrink(),
-    );
-  }
-}
-
-class _CorrectBanner extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(14),
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
-        child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-          decoration: BoxDecoration(
-            color: const Color(0xFF10B981).withValues(alpha: 0.18),
-            borderRadius: BorderRadius.circular(14),
-            border: Border.all(
-              color: const Color(0xFF10B981).withValues(alpha: 0.5),
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: const Color(0xFF10B981).withValues(alpha: 0.25),
-                blurRadius: 18,
-                spreadRadius: 1,
-              ),
-            ],
-          ),
-          child: const Row(
-            children: [
-              Icon(
-                Icons.check_circle_rounded,
-                color: Color(0xFF10B981),
-                size: 22,
-              ),
-              SizedBox(width: 10),
-              Text(
-                'CORRECT!',
-                style: TextStyle(
-                  color: Color(0xFF10B981),
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1.5,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _IncorrectBanner extends StatelessWidget {
-  const _IncorrectBanner({required this.correctLabel});
-
-  final String correctLabel;
+  final VoidCallback onShowExplanation;
+  final VoidCallback onNext;
 
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(14),
+      borderRadius: BorderRadius.circular(20),
       child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
-        child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
+        child: DecoratedBox(
           decoration: BoxDecoration(
-            color: const Color(0xFFEF4444).withValues(alpha: 0.14),
-            borderRadius: BorderRadius.circular(14),
+            color: Colors.white.withValues(alpha: 0.08),
+            borderRadius: BorderRadius.circular(20),
             border: Border.all(
-              color: const Color(0xFFEF4444).withValues(alpha: 0.45),
+              color: Colors.white.withValues(alpha: 0.15),
             ),
           ),
           child: Row(
             children: [
-              const Icon(
-                Icons.cancel_rounded,
-                color: Color(0xFFEF4444),
-                size: 22,
-              ),
-              const SizedBox(width: 10),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'INCORRECT',
+              Expanded(
+                child: TextButton.icon(
+                  onPressed: onShowExplanation,
+                  icon: const Icon(
+                    Icons.lightbulb_outline_rounded,
+                    color: Color(0xFF10B981),
+                    size: 18,
+                  ),
+                  label: const Text(
+                    '解説を見る',
                     style: TextStyle(
-                      color: Color(0xFFEF4444),
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 1.5,
-                    ),
-                  ),
-                  Text(
-                    '正解: $correctLabel',
-                    style: const TextStyle(
                       color: Color(0xFF10B981),
-                      fontSize: 12,
                       fontWeight: FontWeight.w600,
+                      fontSize: 13,
                     ),
                   ),
-                ],
+                ),
+              ),
+              Container(width: 1, height: 28, color: Colors.white12),
+              Expanded(
+                child: TextButton.icon(
+                  onPressed: onNext,
+                  iconAlignment: IconAlignment.end,
+                  icon: const Icon(
+                    Icons.keyboard_arrow_up_rounded,
+                    color: Colors.white70,
+                    size: 20,
+                  ),
+                  label: const Text(
+                    '次の問題へ',
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 13,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
@@ -496,64 +495,9 @@ class _IncorrectBanner extends StatelessWidget {
   }
 }
 
-class _QuizNetworkImage extends StatelessWidget {
-  const _QuizNetworkImage({required this.url, this.borderRadius});
-
-  final String url;
-  final BorderRadiusGeometry? borderRadius;
-
-  @override
-  Widget build(BuildContext context) {
-    final radius = borderRadius ?? BorderRadius.circular(10);
-    final dpr = MediaQuery.devicePixelRatioOf(context);
-    final screenWidth = MediaQuery.sizeOf(context).width;
-    // キャッシュ解像度をデバイス実ピクセル幅に合わせて鮮明に表示
-    final cacheWidth = (screenWidth * dpr).round();
-
-    return ClipRRect(
-      borderRadius: radius,
-      child: CachedNetworkImage(
-        imageUrl: url,
-        width: double.infinity,
-        fit: BoxFit.contain,
-        memCacheWidth: cacheWidth,
-        placeholder: (context, url) => const SizedBox(
-          height: 100,
-          child: Center(
-            child: SizedBox(
-              width: 20,
-              height: 20,
-              child: CircularProgressIndicator(
-                strokeWidth: 2,
-                color: Colors.white30,
-              ),
-            ),
-          ),
-        ),
-        errorWidget: (context, url, error) => Container(
-          height: 60,
-          decoration: BoxDecoration(
-            color: Colors.white.withValues(alpha: 0.04),
-            borderRadius: radius,
-          ),
-          child: const Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(Icons.broken_image_outlined, color: Colors.white24),
-                SizedBox(height: 4),
-                Text(
-                  '画像を読み込めませんでした',
-                  style: TextStyle(color: Colors.white24, fontSize: 11),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
+// ---------------------------------------------------------------------------
+// Gradient background
+// ---------------------------------------------------------------------------
 
 class _QuizGradientBackground extends StatelessWidget {
   const _QuizGradientBackground();

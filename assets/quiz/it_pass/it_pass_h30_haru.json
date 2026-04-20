@@ -48,7 +48,7 @@
         "text": "説問の分析フレームワークは「アンゾフの成長マトリクス」と呼ばれます。\n\nアンゾフの成長マトリクスは、経営学者のH・イゴール・アンゾフ（H. Igor Ansoff）が提唱したもので、縦横の2軸に「市場」と「製品」を設定し、それぞれに「既存」「新規」の2区分を設けたマトリクスを使用します。ある事業領域がマトリクス上のどこに位置づけられるのかを明確にし、分類された象限ごとに適した4つの経営戦略(市場浸透，製品開発，市場開拓，多角化)を示したものです。事業成長の方向性を検討するために適したフレームワークとして知られています。それぞれの象限に分類された場合の経営戦略は次のようになっています。市場浸透(既存製品・既存市場)広告・宣伝を強化するなどして、他社のマーケットシェアを奪ったり、自社の優良顧客を増やしたりすることで成長を図る戦略製品開発(新規製品・既存市場)現在の顧客や市場に対して、新機能をつけた製品や新規開発製品を提案することで成長を図る戦略市場開拓(既存製品・新規市場)現在の製品を、今までとは異なる顧客や市場に販売することで成長を図る戦略多角化(新規製品・新規市場)技術開発、業務提携、M&Aなどで、現在の事業と関係のない新しい分野に進出することで成長を図る戦略以上を踏まえると、選択肢の4つの事例はそれぞれ以下のように分類できます。\n・新規市場、新規製品の組合せなので\"多角化\"です。\n・既存市場、新規製品の組合せなので\"新製品開発\"です。\n・新規市場、既存製品の組合せなので\"市場開拓\"です。\n・正しい。既存市場、既存製品の組合せなので\"市場浸透\"です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/01.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q1/01.png"
         ]
       }
     },
@@ -138,7 +138,7 @@
         "text": "システムのライフサイクルを構成する各プロセスでは、それぞれ次の作業を行います。企画プロセス経営事業の目的・目標を達成するために必要とされるシステムに対する基本方針をまとめ、実施計画を得る。要件定義プロセス利害関係者ニーズの識別と制約事項の定義を行い、新たに構築する業務、システムの仕様、及びIT化の範囲と機能を明確にし、それらをシステム取得者側の利害関係者間で合意する。開発プロセス要求事項をもとに、顧客のニーズに合ったシステム／ソフトウェアを開発する。運用プロセス当初の目的の環境で、システム／ソフトウェア製品を運用する。保守プロセス運用中のシステム／ソフトウェアに対する変更や機能改善への対応、プログラムの欠陥への対応のためにプログラムの修正を実施する。システム化計画およびプロジェクト計画を具体化し、利害関係者からの承認を得るのは企画プロセスです。したがって「イ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/03.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q3/03.png"
         ]
       }
     },
@@ -200,28 +200,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_haru/img/05a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q5/05a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_haru/img/05i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q5/05i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_haru/img/05u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q5/05u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_haru/img/05e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q5/05e.png"
           ]
         }
       ],
@@ -236,7 +236,7 @@
         "text": "DFD(Data Flow Diagram)は、分析対象となる業務の「データの流れ」を中心に、その業務のデータおよび処理の関係を可視化する構造化分析の手法です。「○」処理・プロセス、「□」データの吸収先，「→」データの流れ，「〓」データストアの4つの記号を用いて対象業務のモデル化を行います。\n・状態遷移図の記述例です。\n・正しい。DFDの記述例です。システムの振舞いを記述するのに用いられます。\n・E-R図（実体関連図）の記述例です。関係データベースの設計に用いられます。\n・流れ図（フローチャート）の記述例です。プログラム構造の可視化に用いられます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/05.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q5/05.png"
         ]
       }
     },
@@ -484,7 +484,7 @@
         "text": "貸借対照表から求められる，自己資本比率は何%か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/11.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q11/11.png"
         ]
       },
       "choices": [
@@ -520,7 +520,7 @@
         "text": "自己資本比率(じこしほんひりつ)は、企業が運用している資金全体に対する自己資本の割合を示す数値で、経営の健全性を示す指標として用いられます。\n\n　自己資本比率(%)＝自己資本／総資本×100\n\n自己資本は貸借対照表のうち純資産の部の金額※であり、総資本は負債の部（他人資本）と純資産の部（自己資本）を合わせた金額ですので、設問の貸借対照表における自己資本と総資本は以下の通りです。\n\n　自己資本＝240(百万円)\n　総資本＝160＋200＋240＝600(百万円)\n\nつまり、自己資本比率は、\n\n　240÷600×100＝40(％)\n\nよって「ア」が正解です。※厳密に言えば純資産の金額と株主資本の金額は異なります。情報処理技術者試験では、この違いが問題で解く上での支障となることはないので便宜上このように説明しています。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/11a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q11/11a.png"
         ]
       }
     },
@@ -566,7 +566,7 @@
         "text": "バリューチェーンとは、製品の付加価値がどの部分（機能）で生み出されているかを分析し、価値の連鎖の最適化を図ろうとする考え方です。業務を「購買物流」「製造」「出荷物流」「販売・マーケティング」「サービス」という5つの主活動と、「調達」「技術開発」「人事・労務管理」「全般管理」の4つの支援活動に分類して、主活動の効率を上げることで他企業との競争優位を確立しようとします。したがって「ア」が適切な記述です。\n・正しい。バリューチェーンの説明です。\n・コアコンピタンスの説明です。\n・プロダクトライフサイクルの説明です。\n・プロダクトポートフォリオマネジメントの説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/12.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q12/12.png"
         ]
       }
     },
@@ -710,7 +710,7 @@
         "text": "問題の条件を整理します。\n・製品P … 2個の部品Qが必要\n・部品Q … 4個の部品Rが必要\n・部品Qの在庫が1個、部品Rの在庫が3個\n\nまず、製品Pを6個製造することを考えます。1個の製品Pにつき部品Qが2個必要となるので部品Qは(6×2=)12個必要です。12個のうち1個は在庫があるので部品Qの必要所要量は11個です。\n次に部品Qを11個製造することを考えます。1個の部品Qにつき部品Rが4個必要となるので部品Rは(11×4=)44個必要です。44個のうち3個は在庫があるので部品Rの必要所要量は41個です。\n\nしたがって「ア」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/15.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q15/15.png"
         ]
       }
     },
@@ -800,7 +800,7 @@
         "text": "SWOT分析とは、企業を取り巻く内外の経営環境を分析し、今後の戦略立案に活かす手法のひとつです。S・W・O・Tの4つは以下のように経営環境を分類する要素の頭文字をとったものです。\n・S ･･･ Strength（強み)\n・W ･･･ Weakness（弱み・弱点）\n・O ･･･ Opportunity（機会）\n・T ･･･ Threat（脅威）\n\nこのうち強みと弱みは企業の内部要因、機会と脅威は外部環境要因に分類されるので、4つの分類基準を可視化すると次のようになります。\n・内部環境のプラス要因なので強み(S)に分類されます。\n・正しい。外部環境のプラス要因なので機会(O)に分類されます。\n・内部環境のプラス要因なので強み(S)に分類されます。\n・内部環境のプラス要因なので強み(S)に分類されます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/17.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q17/17.png"
         ]
       }
     },
@@ -856,7 +856,7 @@
         "text": "前期と当期の損益計算書を比較したとき，前期から当期における変化の説明として，適切なものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/19.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q19/19.png"
         ]
       },
       "choices": [
@@ -952,28 +952,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_haru/img/21.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q21/21.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_haru/img/21.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q21/21.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_haru/img/21.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q21/21.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_haru/img/21.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q21/21.png"
           ]
         }
       ],
@@ -1236,7 +1236,7 @@
         "text": "ある商品の前期，当期2期分の売上高と総費用は表のとおりである。この商品の1期間の固定費は何千円か。ここで，総費用は固定費と変動費の合計であり，固定費，及び売上高に対する変動費の割合は，前期，当期ともに変わらないものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/27.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q27/27.png"
         ]
       },
       "choices": [
@@ -1326,7 +1326,7 @@
         "text": "航空会社A社では，経営戦略を実現するために，バランススコアカードの四つの視点ごとに戦略目標を設定した。bに該当するものはどれか。ここで，a～dはア～エのどれかに対応するものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/29.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q29/29.png"
         ]
       },
       "choices": [
@@ -1362,7 +1362,7 @@
         "text": "企業のビジョンと戦略を実現するために、「財務」「顧客」「業務プロセス」「学習と成長」という4つの視点から業績を評価・分析する手法です。財務の視点株主や従業員などの利害関係者の期待に応えて良い業績を出すために、財務的にどのように行動すべきかの指標を設定する。顧客の視点企業のビジョンを達成するために、顧客に対してどのように行動すべきかの指標を設定する。業務プロセス(内部ビジネスプロセス)の視点財務的目標の達成や顧客満足度を向上させるために、優れた業務プロセスを構築するための指標を設定する。学習と成長の視点企業のビジョンを達成するために、組織や個人としてどのように変化（改善）し能力向上を図るかの指標を設定する。つまり、図中のaが財務、bが顧客、cが業務プロセス、dが学習と成長に相当します。よって「ウ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/29a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q29/29a.png"
         ]
       }
     },
@@ -1584,7 +1584,7 @@
         "text": "PDCA(Plan Do Check Act)は、Plan(計画)→Do(実行)→Check(評価)→Act(見直し・改善)のサイクルを繰り返すことによって、業務を継続的に改善する手法です。ISMSやITサービスマネジメントなどの各種のマネジメント手法に組み入れられています。Plan（計画）従来の実績や将来の予測などをもとにして計画を作成する。Do（実行）計画に沿って業務を行う。Check（点検・評価）業務の実施が計画に沿っているかどうかを確認する。Act（見直し・改善）計画どおりに実施されていない部分を調べて処置をする。つまり、設問の「業務の実行状況をKPIに基づいて測定，評価する」は、C(Check)で実施する作業です。よって「ウ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/34.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q34/34.png"
         ]
       }
     },
@@ -1948,7 +1948,7 @@
         "text": "システム開発を示した図のアローダイアグラムにおいて，工程AとDが合わせて3日遅れると，全体では何日遅れるか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/43.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q43/43.png"
         ]
       },
       "choices": [
@@ -1984,7 +1984,7 @@
         "text": "アローダイアグラムの問題では、まず最初にクリティカルパスを明確にするのが鉄則です。\n\n設問のアローダイアグラムには、開始から完了に至る以下の3つの工程の流れがあります。\n・A(2日) → D(4日)＝6日\n・B(4日) → E(3日)＝7日\n・C(7日) → F(1日)＝8日\n\nこのうち、所要日数が最も長い「C→F」がクリティカルパス、8日がプロジェクトの最短所要日数になります。\n\nA→Dの工程が合わせて3日遅れると「A→D」の所要日数が9日になるので、クリティカルパスが「A→D」に、最短所要日数が9日に変わります。もとの最短所要日数は8日だったので、工程A、Dの遅れにより生じる全体の遅れは(9-8=)1日です。よって「ア」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/43a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q43/43a.png"
         ]
       }
     },
@@ -2162,7 +2162,7 @@
         "text": "プロジェクトにおけるリスクとは、利益と損失のどちらかが生じる可能性のある不確実性のことをいい、発生すると利益となる「プラスのリスク（好機）」と発生すると損害となる「マイナスのリスク（脅威）」があります。プロジェクトリスクマネジメントでは、プラスのリスクに対しては事象の発生確率と影響を増大させ、マイナスのリスクに対しては発生確率と影響度を減少させるようにコントロールします。\n・「インフルエンザで要員が勤務できなくなる」ことはマイナスの影響です。事例は、マイナスのリスクの発生確率を減少させるためのリスク低減策に分類されます。\n・正しい。「全体のコストを下げられる」ことはプラスの影響です。事例はプラスの影響に対して、その好機の発生確率を高める活動なので、リスク強化策に分類されます。\n・「突発的な要員の離脱」はマイナスの影響です。事例は、マイナスのリスクの影響度を減少させるためのリスク低減策に分類されます。\n・「納期遅延の違約金の支払」はマイナスの影響です。事例は、マイナスのリスクを他者に移転するためのリスク転嫁策に分類されます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/47.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q47/47.png"
         ]
       }
     },
@@ -2208,7 +2208,7 @@
         "text": "WBS(Work Breakdown Structure)は、プロジェクト目標を達成し、必要な成果物を過不足なく作成するために、プロジェクトチームが実行すべき作業を、成果物を主体に階層的に要素分解したものです。WBSの作成には、作業の漏れや抜けを防ぎ、プロジェクトの範囲を明確にすると同時に、作業単位ごとに内容・日程・目標を設定することでコントロールをしやすくする目的があります。\n・最下位の要素は、管理やコントロールがしやすい単位とします。1人が1日で行う単位まで分解してしまうと管理が煩雑になるため不適切です。\n・WBSの作成では、上位の成果物を基準に、その成果物を得るために必要な構成要素及び作業に分解することを繰り返します。つまり記述とは逆で上位から下位に向かって行います。\n・正しい。トップダウン的に、成果物を作成するために必要な作業に分解することを繰り返して作成します。\n・階層の深さはWBS内で異なっていても問題ありません。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/48.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q48/48.png"
         ]
       }
     },
@@ -2440,7 +2440,7 @@
         "text": "一般的なウォーターフォールモデルで開発を行うプロジェクトにおいて，プロジェクトの経過とともに必要となる要員の数と，変更や間違いが発生したときに訂正作業に掛かる1件当たりのコストについて図にしたもののうち，適切な組合せはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/54.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q54/54.png"
         ]
       },
       "choices": [
@@ -2448,28 +2448,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_haru/img/54a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q54/54a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_haru/img/54a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q54/54a.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_haru/img/54a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q54/54a.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_haru/img/54a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q54/54a.png"
           ]
         }
       ],
@@ -2484,7 +2484,7 @@
         "text": "ウォーターフォールモデルは、開発プロジェクトを時系列に「要求定義」「外部設計(概要設計)」「内部設計(詳細設計)」「開発(プログラミング)」「テスト」「運用」などの作業工程(局面、フェーズ)に分割し、開発を上流から下流に一方向に進める開発モデルです。〔要員の数について〕\n一般的に、要員数は開発作業実施中(プロジェクト実行中)が最も多く、プロジェクト開始時と終結時はそれより少なくなります。よって「a」のグラフが適切です。\n\n〔訂正作業に掛かるコストについて〕\nウォーターフォールモデルでは、基本的に「前工程に問題がないこと」を前提とし、工程の後戻りを想定していない開発モデルであるため、上流工程での誤りを発見する手順が組み込まれていません。変更やエラー訂正にかかるコストは、後戻り工数や見直し作業が多くなるプロジェクトの終盤が最も高くなる傾向にあります。よって「b」のグラフが適切です。\n\nしたがって正しい組合せは「ア」です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/54_1.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q54/54_1.png"
         ]
       }
     },
@@ -2574,7 +2574,7 @@
         "text": "ファンクションキーは、パソコンのキーボード上で、特定の機能を簡単に実行するために使われる[F1][F2]などのキーのことです。OSやアプリケーションごとに特定の機能が割り当てられています。\n・正しい。ファンクションキーの説明です。\n・スクリーンキーボードの説明です。\n・暗号化鍵／復号鍵の説明です。\n・主キーの説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/56.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q56/56.png"
         ]
       }
     },
@@ -2620,7 +2620,7 @@
         "text": "SSL/TLSでは、暗号化通信の開始に先立ち、サーバとクライアント間で公開鍵暗号方式を用いた暗号化鍵の交換を行います。サーバ証明書は、この手順内で暗号化鍵を安全に共有するために使用されます。\n\nSSL/TLSの通信手順では、クライアントから接続要求を受けたサーバは、クライアントにサーバ証明書（サーバの公開鍵証明書）を提示します。サーバ証明書を受信したクライアントは、サーバ証明書に同封されているサーバの公開鍵を取り出し、同時に認証局のデジタル署名を検証して公開鍵の正当性を確認します。そして、その後のメインの暗号化通信に使用する鍵のもと（乱数）を生成し、サーバの公開鍵を用いた暗号化通信でサーバに送信します。\n\n・ESSIDは、無線LANの通信において通信を行う無線ネットワークを識別するために、アクセスポイントと端末に設定する最大32文字の識別子です。\n・WPA2(Wi-Fi Protected Access 2)は、無線LANで暗号化通信を行うための規格です。\n・正しい。SSL/TLSの暗号化通信にはサーバ証明書が必要です。\n・ファイアウォールは、ネットワーク同士の境界線に設定し通過するパケットを常時監視することで、不正なデータの通過を阻止するため仕組みです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/57.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q57/57.png"
         ]
       }
     },
@@ -2666,7 +2666,7 @@
         "text": "それぞれのLANの接続形態(トポロジ)には次のような形です。ハブを中心とした放射状の接続形態をとるのはスター型です。よって「ア」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/58.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q58/58.png"
         ]
       }
     },
@@ -2720,7 +2720,7 @@
           "正しい。メール転送は、自分の管理するメールアドレス宛に送られてきたメールを、そっくりそのまま別のメールアドレス宛に送ることです。自動転送の設定をすることで、複数のメールアドレスで受信したメールを1つのメールボックス（メールアカウント）に集約できます。"
         ],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/59.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q59/59.png"
         ]
       }
     },
@@ -2732,7 +2732,7 @@
         "text": "支店ごとの月別の売上データを評価する。各月の各支店の\"評価\"欄に，該当支店の売上額がA～C支店の該当月の売上額の平均値を下回る場合に文字\"×\" を，平均値以上であれば文字\"○\"を表示したい。セル C3 に入力する式として，適切なものはどれか。ここで，セル C3 に入力した式は，セル D3，セル E3，セル C5～E5，セル C7～E7 に複写して利用するものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/60.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q60/60.png"
         ]
       },
       "choices": [
@@ -2768,8 +2768,8 @@
         "text": "まず複写することを考えないで C3 に入る式を検討します。設問の説明では、各支店の売上が3支店の平均値以上であれば\"○\"を、そうでなければ\"×\"を表示するとあります。普通に考えば、IF関数の条件式は「C2≧平均値」となるのですが、選択肢の条件式では比較演算子として\"＜\"が使われているので、条件文もそれに合わせて「各支店の売上が3支店の平均値未満(＜)であれば\"×\"を、そうでなければ\"○\"を表示する」と変えなければなりません。\n\n7月の3支店の平均値は「平均(C2:E2)」なので、C3 には以下の式が入ります。\nIF(C2＜平均(C2:E2)，'×'，'○')つまり、trueで\"×\"、falseで\"○\"になっている「イ」「エ」が正解の候補になります。\n\n次に C3 の式中で指定するセル番地の相対参照・絶対参照について考えます。これについてはC2とは行も列も異なる D5 にセル入る条件式をもとに考えます。\n\n8月の平均値は「平均(C4:E4)」なので、D5 に入る式としては以下が適切です。\nIF(D4＜平均(C4:E4)，'×'，'○')C3 の条件式と D5 の条件式を比較すると、変化している部分と変化していない部分があることが分かります。この変化していない部分が絶対参照にすべき行・列です。つまり、関数\"平均\"が参照するセル番地の列番号を絶対参照にした（「$」を付けた）式を C3 に入力し、それを他のセルに複写すれば期待通りの動作になるはずです。したがって「IF(C2＜平均($C2:$E2)，'×'，'○')」が適切な式です。\n\n※補足　相対参照・絶対参照について\n式が記述されたセルを別のセルに複写すると、式中のセル番地が複写元と複写先の相対的な位置関係により自動調節されます。例えば、セルA3に「A1＋A2」が入力されているとき、A3 を B3 にコピーするとコピーされた B3 の式は1列分だけずれて「B1＋B2」になります。このように式中の参照先セルが自動で調整される方式を相対参照といいます。\n相対参照に対して、参照番地を固定する指定方法を絶対参照といいます。絶対参照は、参照先を固定したい各々の行または列の前に「$」を付けます（例:「$A$1＋$A$2」）。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/60_1.png",
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/60_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q60/60_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q60/60_2.png"
         ]
       }
     },
@@ -2859,7 +2859,7 @@
         "text": "仮想化は、ソフトウェア制御により、サーバなどのコンピュータ内におけるプロセッサ(CPU)、メモリ、ディスクなどの各資源を、その物理的な構成にかかわらず、柔軟に分割・統合する技術の総称です。仮想化技術を使うと、1台のサーバマシンで複数のOSやアプリケーションを動作させたり、複数の物理的装置を単一の論理的装置に見せかけたりすることができるようになります。\n・Network Attached Storageの略。TCP/IPのコンピュータネットワークに直接接続して使用するファイルサーバのことです。\n・拡張現実(AR)は、現実世界の情報にデジタル合成などによって作られた情報を重ねて、人間から見た現実世界を拡張する技術です。\n・正しい。\n・マルチブートとは、1つのコンピュータに複数のOSをインストールし、OSを選択して起動できる環境のことです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/62.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q62/62.png"
         ]
       }
     },
@@ -2949,7 +2949,7 @@
         "text": "URLを構成要素に分解すると下図のようになります。つまり、設問のURLは次のように分解されます。\n・スキーム名 ＝ http\n・ホスト名 ＝ srv01\n・ドメイン名 ＝ ipa.go.jp\n・ファイル名 ＝ abc.html\n\nこのうちホスト名はドメイン内のコンピュータに付けられた名前です。よくあるホスト名にWebサーバを意味する\"www\"(World Wide Web)、FTPサーバを意味する\"ftp\"、ネームサーバを意味する\"ns\"などがあります。\n\nしたがって「エ」が適切な説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/64.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q64/64.png"
         ]
       }
     },
@@ -2971,28 +2971,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_haru/img/65.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q65/65.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_haru/img/65.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q65/65.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_haru/img/65.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q65/65.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_haru/img/65.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q65/65.png"
           ]
         }
       ],
@@ -3007,9 +3007,9 @@
         "text": "関係データベースの操作に使われる特有の操作を関係演算といい、「射影」「選択」「結合」「商」があります。射影表から特定の列を取り出す操作選択表から特定の行だけを取り出す操作結合2つの表が共通して持つ属性(列)を基準に結合を行い、新しい表をつくりだす操作商表Aのうち表Bの全ての項目を含む行の集合を得る操作上記の説明と、設問の操作を組み合わせると、a＝射影、b＝選択、c＝結合 となります。よって「ウ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/65_1.png",
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/65_2.png",
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/65_3.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q65/65_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q65/65_2.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q65/65_3.png"
         ]
       }
     },
@@ -3021,7 +3021,7 @@
         "text": "PCで電子メールの本文に記載されていたURLにアクセスしたところ，画面に図のメッセージが表示され，PCがロックされてしまった。これは，何による攻撃か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/66.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q66/66.png"
         ]
       },
       "choices": [
@@ -3145,7 +3145,7 @@
         "text": "DMZ(DeMilitarized Zone)は、組織のネットワークにおいてファイアウォールの中でも外でもない隔離された中間的なエリアを示します。\n組織が管理する情報資源には、WebサーバやDNSサーバ、メールサーバ、プロキシサーバのように外部との通信を前提としたものがあります。これらを内部ネットワークに配置すると不正アクセスを受けた際に、外部に公開していない他のサーバや内部ネットワーク全体に被害が及ぶ恐れがあります。攻撃の糸口となり得るサーバ群をDMZに配置し、内部ネットワークと分離することによって、攻撃の被害が内部ネットワークに及ぶことを防止する効果を期待できます。DMZに設置するのは外部との通信を行う必要のあるサーバであり、それ以外のサーバはセキュリティ面から内部ネットワークに設置すべきです。これを踏まえて各機器の配置場所を判断します。\n・社外からのSMTP通信を受け付けるためにDMZに設置すべきです。\n・社外からの名前解決要求を受け付けるためにDMZに設置すべきです。\n・正しい。外部との通信を行わないため企業内LANに設置すべきです。\n・社外からのHTTPリクエストを処理するためにDMZに設置すべきです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/68.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q68/68.png"
         ]
       }
     },
@@ -3279,10 +3279,10 @@
         "text": "・PS/2ポートは、キーボードとマウスをPCと接続するのに使用されるポートです。複数種類の接続端子は持ちません。\n・USBハブは、複数のUSBスロットを備え、接続できるUSB機器を増やすための機器です。USB以外の接続端子は持ちません。\n・拡張スロットは、 コンピュータのバスに拡張用ボードを接続するための差込口です。主流はPCI形式のスロットです。\n・正しい。ポートリプリケータは、複数種類のポートを備え、接続可能な機器を増やすための拡張機器です。ドッキングステーションと呼ばれる大型なものからポートアダプタのような小型のものまで様々な種類があります。一般的にはポートが限られるモバイル機器と一緒に使用されます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/71a.png",
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/71i.png",
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/71u.png",
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/71e.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q71/71a.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q71/71i.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q71/71u.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q71/71e.png"
         ]
       }
     },
@@ -3556,7 +3556,7 @@
         "text": "RAID(Redundant Arrays of Inexpensive Disks)は、複数台のディスク装置を組み合わせ、1つの仮想的なディスクとして扱うことで信頼性や性能を向上させる技術です。\n\nRAIDにはいくつかのレベルがありますが、このうちRAID5は、データ本体とともにパリティという誤り訂正符号を複数のディスクに分散して書き込む方式で、耐障害性、アクセスの高速化、大容量化のすべてを得ることができます。本問では、4台のHDDを使い、そのうち1台分の容量をパリティに使用するとあるため、実効データ容量は「HDD3台分」ということになります。HDD1台あたりの容量は500Gバイトですので、\n\n　500Gバイト×3台＝1,500Gバイト＝1.5Tバイト\n\nしたがって「ウ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/77.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q77/77.png"
         ]
       }
     },
@@ -3602,7 +3602,7 @@
         "text": "・Apache(アパッチ)は、現在、世界中で最も使われているオープンソースのWebサーバソフトウェアです。\n・正しい。Firefox(ファイアフォックス)は、非営利企業のMozillaが開発するオープンソースのWebブラウザです。\n・Linux(リナックス)は、世界中のプログラマや企業により改良され、発展し、世界的に利用されているオープンソースのOSです。スマートフォン用OSのAndroidもLinuxがベースになっています。\n・Thunderbird(サンダーバード)は、非営利企業のMozillaが開発するオープンソースのメールソフトです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/78.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q78/78.png"
         ]
       }
     },
@@ -3697,8 +3697,8 @@
         "text": "稼働率Rの機器2台が直列に接続されているときに、そのシステム全体の稼働率は「R2」で表せます。本問ではRが0.9なので2台を直列接続した場合の稼働率は、下図のように0.81です。そして、3台の場合も同じ考え方が使えます。3台直列のシステムの稼働率は「0.93」で求められ、これを計算すると0.729になります。つまり3台の時の稼働率は、2台の時の稼働率に0.9を乗じた数値になっています。稼働率は2台→3台で0.9倍（=90%）になるので、その低下率は（1-0.9=0.1=）10%です。よって「ウ」が正解です。\n\n当然ですが、2つの稼働率の差を元の数値で割っても10%になります。\n\n　0.81－0.729＝0.081\n　0.081÷0.81＝0.1＝10%",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/80_1.png",
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/80_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q80/80_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q80/80_2.png"
         ]
       }
     },
@@ -3716,28 +3716,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_haru/img/81a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q81/81a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_haru/img/81i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q81/81i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_haru/img/81u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q81/81u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/30_haru/img/81e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q81/81e.png"
           ]
         }
       ],
@@ -4060,7 +4060,7 @@
         "text": "・Mobile Virtual Network Operatorの略で、仮想移動体通信事業者のこと。自身では無線通信回線設備を保有せず、ドコモやau、ソフトバンクといった電気通信事業者の回線を間借りして、移動通信サービスを提供する事業者です。UQ mobile、OCNモバイル、mineo、IIJmioなどの事業者がMVNOに該当します。\n・Near Field Communicationの略。非接触型ICカードの技術をベースに、数センチ～20cm以内といった極近距離で無線通信を行う技術の総称です。おサイフケータイ機能やSuica、WAON、楽天Edy、nanacoなどの電子マネーICカードで使用されている通信規格「FeliCa(フェリカ)」もNFC規格の1つです。\n・正しい。Wi-Fi(ワイファイ)は、無線LANにおける機器間の相互接続性を認定するブランド名で、業界団体であるWi-Fi Allianceが策定しています。Wi-Fiのマークが付いた機器同士は接続性が保証されています。\n・Wi-Fi Protected Access 2の略。無線LANにおいて利用者を認証し、端末とアクセスポイントの間の通信を暗号化する規格です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/88.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q88/88.png"
         ]
       }
     },
@@ -4334,7 +4334,7 @@
         "text": "・ストライピングは、複数のディスクに分散してデータを書き込むことで、アクセス性能を向上させる方法です。\n・データマイニングは、データウェアハウスに蓄積されている大量の生データから、統計学的手法や数学的手法を用いて、今まで知られていなかったデータの規則や因果関係を見つけ出す手法です。\n・テザリング(Tethering)は、スマートフォンなどのモバイル端末がもつ携帯回線などのインターネット接続機能を用いて、他のコンピュータや情報端末をインターネットに接続する機能です。\n・正しい。ミラーリングは、複数のハードディスクに同じ内容を書き込むことで信頼性を向上させる方法です。同じ内容を2台に書き込むので実効データ容量は半分になりますが、片方が故障しても運用を続けられます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/94.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q94/94.png"
         ]
       }
     },
@@ -4566,7 +4566,7 @@
         "text": "仮想的に二つのESSIDをもつ無線LANアクセスポイントを使用して，PC，タブレット，ゲーム機などの機器をインターネットに接続している。それぞれのESSIDを次の設定で使用する場合，WEPの暗号化方式の脆弱性によって，外部から無線LANに不正アクセスされたときに発生しやすい被害はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/30_haru/img/100.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/30_haru/q100/100.png"
         ]
       },
       "choices": [

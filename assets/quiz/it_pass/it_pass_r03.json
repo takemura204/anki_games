@@ -48,7 +48,7 @@
         "text": "E-R図は、データベース化の対象となる実体(エンティティ)と実体の持つ属性(アトリビュート)および実体間の関連(リレーションシップ)を表現する図です。任意のオブジェクトとその関連をデータモデル化することが可能ですが、関係データベースとの親和性が特に高いため、関係データベースの概念設計に使用されます。下図は本来のE-R図ですが、実際にはE-R図のUML版であるクラス図を使ってモデリングすることが一般的です。\n・E-R図は、実体同士の静的な関連を表現したものであり、データの流れは表現できません。ワークフローを把握するには業務フロー図やアクティビティ図、BPMN(Business Process Model and Notation)の使用が適しています。\n・「ア」と同様の理由で誤りです。データを中心に業務の流れを把握するにはDFD(Data Flow Diagram)の使用が適しています。\n・正しい。E-R図は、現実世界にどのようなデータが存在し、どのように関連し合って機能しているのかを可視化することで、管理対象の業務上の位置付けを明らかにします。\n・データベースの実装方法とは、E-R図等でモデリングされた概念モデルを、具体的にどのデータベースモデル（関係モデル、階層モデル、ネットワークモデル、NoSQLなど）を使って実現するかということです。E-R図は特定のデータベースモデルに依存していないので、どの実装方法を用いるかまでを決定するわけではありません。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/03_haru/img/01.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q1/01.png"
         ]
       }
     },
@@ -138,7 +138,7 @@
         "text": "ニューラルネットワークは、人間や動物の脳神経網の特性を計算機上のシミュレーションによって表現することを目指した数学モデルです。人工知能やディープラーニングなどの機械学習に用いられています。\n\n脳内は神経細胞であるニューロンのネットワークにより構成されていますが、ニューロンは他のニューロンから神経伝達物質を受け取り、その合計値がしきい値を超えた場合に「発火」して、次のニューロンに情報伝達を行うメカニズムになっています。ニューラルネットワークでは、個々のニューロンをパーセプトロンというアルゴリズムでモデル化し、ネットワーク化することで脳神経網をシミュレーションしています。ニューラルネットワークを多層化したものがディープラーニングネットワークです。\n\nしたがって「ウ」が正解です。\n・ソーシャルネットワークは、人間同士がつながることを目的としてコンピュータネットワーク上に構築された社会的ネットワークです。SNSやLINE、YouTube、広い意味ではQ&Aサイト、電子掲示板なども含まれます。\n・デジタルトランスフォーメーションは、クラウド、モバイル、AI、IoTなどの新たなデジタル技術を駆使して、私達の生活を格段に便利にしたり、既存のビジネス構造に破壊的な変革をもたらしたりするなどの、新しい価値を生み出すイノベーションのことです。\n・正しい。ニューラルネットワークは、人間や動物の脳神経をコンピュータ上でモデル化したものです。\n・ブレーンストーミングは、参加者から様々なアイディアを幅広く集めるために、批判の禁止・自由奔放・質より量・結合/便乗歓迎というルールに則って行われる討議方法です。「ブレスト」と略すこともあります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/03_haru/img/03.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q3/03.png"
         ]
       }
     },
@@ -461,7 +461,7 @@
         "text": "技術ロードマップは、縦軸に対象の技術・製品・サービス・市場を、横軸には時間の経過をとり、それらの要素の将来的な展望や進展目標を時系列で表した図表のことです。技術開発に携わる人々が、技術の将来像について科学的な裏付けのもとに集約した意見をもとに策定され、研究者・技術者にとって、研究開発の指針となる重要な役割を果たします。\n技術ロードマップには、企業内の目標管理目的で作成するものから政府が国としてのビジョンを示すために作成するものまで様々あります。\n\nしたがって「エ」が適切です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/03_haru/img/10.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q10/10.png"
         ]
       }
     },
@@ -963,7 +963,7 @@
         "text": "ABC分析は、パレート図を使って分析する要素・項目群を大きい順に並べ、上位70%を占める要素群をA、70%～90%の要素群をB、それ以外の要素群をCとしてグルーピングする分析手法です（グループ分けの割合は変わる場合もあります）。全体の中で重点的に管理すべき要素がどれであるかを明らかにすることができます。\n・コーホート分析の事例です。\n・正しい。ABC分析の事例です。\n・3C分析の事例です。\n・RFM分析の事例です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/03_haru/img/21.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q21/21.png"
         ]
       }
     },
@@ -1009,7 +1009,7 @@
         "text": "各プロセスで実施する作業の概要は以下のとおりです。システム化計画プロセスシステム化の基本的な方針や前提条件を確認し、システム化の目的、システム化のスケジュール、プロジェクト推進体制などを取りまとめる要件定義プロセス開発するシステムに必要な機能や性能および制約条件を洗い出し、利害関係者と合意する開発プロセス要件定義プロセスで合意した要件を満たすシステムを設計し、開発し、テストする保守プロセスリリース後のシステムを修正したり改善したりする業務パッケージの導入に際しては、現行の業務モデルとパッケージが前提とする業務モデルの適合度を測るフィット＆ギャップ分析が必要不可欠です。適合しない要件や仕様については、カスタマイズ等で実現の方針を検討したり、業務をパッケージに合わせたりすることになるので、システム化に踏み切る前に候補となるパッケージ製品を評価し、自社で採用できるかどうかを検討しなければなりません。これはシステムの企画段階で行うべき作業であり、設問のプロセスの中だと「システム化計画プロセス」で実施すべき作業となります。\n・正しい。システム化計画プロセスで実施する作業です。\n・要件定義プロセスで実施する作業です。\n・保守プロセスで実施する作業です。\n・開発プロセスで実施する作業です。\n\nなお、共通フレーム2013ではシステム化計画プロセスで実施する作業を次のように定義しています。「機能，性能，価格などの観点から業務パッケージを評価する」は、\"適用情報技術の調査\"に該当します。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/03_haru/img/22.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q22/22.png"
         ]
       }
     },
@@ -1055,7 +1055,7 @@
         "text": "プロダクトポートフォリオマネジメント(PPM)は、縦軸と横軸に「市場成長率」と「市場占有率」を設定したマトリックス図を4つの象限に区分し、製品の市場における位置付けを分析して資源配分を検討する手法です。4つの象限は、市場内の位置付けから以下のような名称で呼ばれています。花形(star) … [成長率：高、占有率：高]占有率・成長率ともに高く、資金の流入も大きいが、成長に伴い占有率の維持には多額の資金の投入を必要とする分野金のなる木(cash cow) … [成長率：低、占有率：高]市場の成長がないため追加の投資が必要ではなく、市場占有率の高さから安定した資金・利益の流入が見込める分野問題児(problem child) … [成長率：高、占有率：低]成長率は高いが占有率は低いので、花形製品とするためには多額の投資が必要になる。投資が失敗し、そのまま成長率が下がれば負け犬になってしまうため、慎重な対応を必要とする分野負け犬(dog) … [成長率：低、占有率：低]成長率・占有率がともに低く、新たな投資による利益の増加も見込めないため市場からの撤退を検討するべき分野市場シェア(占有率)が低く、市場成長率が高い領域は「問題児」です。したがって「エ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/03_haru/img/23.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q23/23.png"
         ]
       }
     },
@@ -1243,7 +1243,7 @@
         "text": "次の当期末損益計算資料から求められる経常利益は何百万円か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/03_haru/img/28.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q28/28.png"
         ]
       },
       "choices": [
@@ -1323,7 +1323,7 @@
         "text": "企業会計における○○利益という言葉には「売上総利益」「営業利益」「経常利益」「税引前当期純利益」「当期純利益」があります。粗利益は売上総利益とも呼ばれ、売上高から売上原価を差し引いた金額のことです。例えば、1,000円で仕入れたものが1,500円で売れれば、粗利益は「1,500円－1,000円＝500円」というイメージです。したがって、粗利益を求める計算式は「(売上高)－(売上原価)」が適切です。\n・正しい。粗利益(売上総利益)を求める計算式です。\n・経常利益を求める計算式です。\n・税引前当期純利益を求める計算式です。\n・(税引後)当期純利益を求める計算式です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/03_haru/img/29.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q29/29.png"
         ]
       }
     },
@@ -1473,7 +1473,7 @@
           "正しい。サイバーセキュリティに対する脅威に対して、国、地方公共団体、重要社会基盤事業者等の多用な主体の連携により対応する等、6つの基本理念が規定されています（3条）。"
         ],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/03_haru/img/32.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q32/32.png"
         ]
       }
     },
@@ -1519,7 +1519,7 @@
         "text": "システムを外部開発する際の基本的な流れは次のとおりです。設問では、請負契約を締結した後ですので、契約締結前に発行される提案書と見積書は対象外です。\n\n請負契約が成立すると、受注側はシステム完成に向けて作業を開始します。その後、受注側は完成したシステムを発注側に納品します。このときに発行されるのが納品書です。\n\n発注側は納品されたシステムを検収し、検収でOKが出れば受注側に検収書を発行します。検収とは、システム開発を発注した側（ユーザー）が、要求した機能や性能を満たしているかを検証し、納品の可否を判断する工程です。\n\n検収にてOKをもらった受注側は、システム開発の請負代金を発注側に請求します。このときに発行されるのが請求書です。\n\nしたがって「納品書，検収書，請求書」の組合せが適切です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/03_haru/img/33.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q33/33.png"
         ]
       }
     },
@@ -1609,7 +1609,7 @@
         "text": "かんばん方式は、工程間の中間在庫の最少化を目的として\"かんばん\"と呼ばれる生産指示票を使う生産システムで、ジャストインタイム生産方式を実現するために重要な役割を果たす要素です。前工程がムダに部品を多く造り、後工程に貯めてしまうという、それまでの非効率な生産性を改善するために、かんばん方式では後工程の部品数が一定数以下になった時点で後工程が前工程から必要分を引き取り、前工程は引き取られた分だけを補充するという「後工程引き取り方式」で生産を行います。このとき後工程から前工程に渡される生産指示票を\"かんばん\"と呼ぶことから、このような生産方式を\"かんばん方式\"といいます（現在ではITを利用した\"eかんばん\"に進化しています）。\n\nしたがって「ア」が正解です。\n・正しい。かんばん方式は、ジャストインタイム生産方式の重要な構成要素です。\n・クラフト生産方式は、熟練した職人が手間をかけて全部または一部の工程を手工業で生産する方式です。高級時計の製造過程をイメージするといいと思います。\n・セル生産方式は、1人または少数の作業者チームで製品の全組立て工程（および製品検査）を行う形態です。多品種少量の生産に適しています。\n・見込み生産方式は、生産開始時の需要予測に基づき、見込み数量を生産する方式です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/03_haru/img/35.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q35/35.png"
         ]
       }
     },
@@ -1655,7 +1655,7 @@
         "text": "まず設問の状況を図で確認します。当初の計画では100%完成させるのに1,000万円の人件費を見込んでいました。つまり、1%当たり10万円です。しかし、実際には40%完成させるのに600万円掛かってしまっており、1%当たりの人件費は「600万円÷40＝15万円」となっています。このままの生産性だと、残りの60%を完成させるのに「15万円×60＝900万円」の人件費が必要な計算になります。\n\nこれに既に消化済の実績値を加えると、プロジェクト全体の人件費は「600万円＋900万円＝1,500万円」になると見込まれますから、当初予算と比較して500万円の超過となります。\n\nしたがって「エ」が正解です。\n\n【別解】\n進捗率40%で600万円かかっているので、そのまま100%まで進んだときの人件費は「600万円÷0.4＝1,500万円」、超過額は「1,500万円－1,000万円＝500万円」",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/03_haru/img/36.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q36/36.png"
         ]
       }
     },
@@ -1717,28 +1717,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/03_haru/img/38.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q38/38.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/03_haru/img/38.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q38/38.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/03_haru/img/38.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q38/38.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/03_haru/img/38.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q38/38.png"
           ]
         }
       ],
@@ -1841,7 +1841,7 @@
         "text": "・正しい。管理図とは、工程の状態や品質を時系列に表した図のことで、工程が安定した状態にあるかどうかを判断するために用います。例えば日ごとに不良品の個数を記録し、統計的に求めた上方管理限界と下方管理限界を超えた位置に値が記録された場合には、その日に何らかの異常が発生していることがわかります。\n設問の「上限・下限の限界線を超えるものを…検出したい」という記述から管理図の使用が適切であると判断できます。\n・特性要因図は、現れた特性（結果）とそれに影響を及ぼしたと思われる要因の関係を体系的に表わした図です。多くの要因が複雑に絡みあっているときに、直接的な原因と間接的な原因に分別したり、真の問題点を明らかにしたりすることができます。\n・パレート図は、値の大きい順に分析対象の項目を並べた棒グラフと、累積構成比を表す折れ線グラフを組み合わせた複合グラフで、主に複数の分析対象の中から、重要な要素を識別するために使用されます。\n・レーダーチャートは、複数項目の基準値に対する比率をプロットし、各点を線で結んだ形状によって、全体のバランスを比較するのに適した図です。各項目は円状または正多角形状に配置されるので、その形状から「クモの巣グラフ」とも呼ばれます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/03_haru/img/40.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q40/40.png"
         ]
       }
     },
@@ -2249,7 +2249,7 @@
         "text": "自分のデスクにあるPCと共有スペースにあるプリンターの起動を1人で行う。PCとプリンターの起動は図の条件で行い，それぞれの作業・処理は逐次実行する必要がある。自動処理の間は，移動やもう片方の作業を並行して行うことができる。自分のデスクにいる状態でPCの起動を開始し，移動してプリンターを起動した上で自分のデスクに戻り，PCの起動を終了するまでに必要な時間は，最短で何秒か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/03_haru/img/50.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q50/50.png"
         ]
       },
       "choices": [
@@ -2285,7 +2285,7 @@
         "text": "2つの起動を最短時間で行うには、ログイン画面起動処理中(作業B：150秒)の自動処理のタイミングでプリンターの起動を行います。具体的には以下の手順で作業を行います。\n1. PCの電源を入れる（作業A：3秒）\n2. ログイン画面起動処理を開始する（作業B：150秒）\n自動処理150秒の待ち時間に以下の4つを行う\n・プリンター側に移動する（60秒）\n・プリンターの電源を入れる（作業E：3秒）\n・プリンターの起動処理（作業F）をして、PC側に戻る（60秒）\n\n3. ログイン操作（作業C：10秒）\n4. ログイン後のアプリケーション起動処理（作業D：60秒）\n\nプリンターの起動は150秒の自動処理中に行うことができるため、実質的に要する時間はPC単体の起動をするときと同じ「3秒＋150秒＋10秒＋60秒＝223秒」となります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/03_haru/img/50_1.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q50/50_1.png"
         ]
       }
     },
@@ -2605,7 +2605,7 @@
         "text": "ブレードサーバは、ブレード（＝刃）のように薄い形状をもつコンピュータを、1つの筐体（ケース）内に複数台搭載した省スペース型のサーバコンピュータです。電源ケーブルや冷却装置、外部インタフェース等は、筐体側に搭載され、各ブレードが共有します。ラックマウント型よりもさらに高密度に設置することを可能とするサーバとして開発されました。必要な数だけ筐体に差し込んでサーバを構成するので、柔軟に台数を増減することができます。\n・DNSサーバは、ドメイン名・ホスト名とIPアドレスを結びつけて変換するサーバです。\n・FTPサーバは、ファイルの送受信を行うサーバです。\n・Webサーバは、Webページ等の配信を行うサーバです。\n・正しい。ブレードサーバは、CPUやメモリを搭載したボード型のコンピュータを、専用の筐体に複数収納して使う形態です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/03_haru/img/57.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q57/57.png"
         ]
       }
     },
@@ -2651,7 +2651,7 @@
         "text": "共連れとは、入退室管理において認証を受けた人と共に入退室を行うことで認証を不正にすり抜ける行為です。また、共連れとは少し違いますが、入室(退室)する人とすれ違いざまに不正退室(入室)するすれ違い侵入行為も問題となります。\"共連れ\"や\"すれ違い侵入\"の防止には以下の対策があります。\n・1人ずつが通過できるゲートを設置する\n・監視カメラを設置する\n・常駐警備員を配置する\n・矛盾のある入退室行動を制限するアンチパスバック方式を導入する\n\nサークル型のセキュリティゲートとは、サークルの中で1人ずつ認証を行い、認証を受けたときには入った側とは別のドアが開く仕組みのゲートです。サークル内では認証を行うとともに入退室者の身体の大きさや体重をシステムがチェックするので、2人以上の同時入退室を防ぐことができます。これが\"1人ずつ通過できるゲート\"に該当するので「ア」が正解です。\n・正しい。共連れの防止対策として、確実に1人ずつ入退室するゲートを設置する方法があります。\n・サーバの盗難を防ぐための物理的対策であり、入退室管理とは関係ありません。\n・入室証を着用しない者がいれば、他の入室者が気が付くことができるので一定の抑止効果はありそうですが、サーバルームに常に人がいるとも限らず、共連れ入室した2人だけになってしまう場合には効果がありません。\n・悪意を持って不正入室しようとする人が、入退室管理簿に記載するはずがないので有効ではありません。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/03_haru/img/58.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q58/58.png"
         ]
       }
     },
@@ -2697,7 +2697,7 @@
         "text": "電子メールの送り先を指定するTo、Cc、Bccには以下の違いがあります。Toメールの宛先を指定する欄。複数のメールアドレスを「,(コンマ)」又は「;(セミコロン)」で区切って指定することで複数のメールアドレスを宛先とすることもできる。Cc（Carbon Copy）Toで指定した送信先以外に、メールのコピーを送信する相手を指定する欄。\nこの指定では、Toの相手及びCcで指定した相手に、すべての宛先メールアドレスが公開される。すなわち送信者、Toの相手、Ccの相手の3者間ではメールアドレスが全員に知られることになる。Bcc（Blind Carbon Copy）Toで指定した送信先以外に、メールのコピーを送信する相手を指定する欄。\nCcと異なり、ここで指定したメールアドレスは他の送信相手には通知されないため、To又はCcの相手に宛先メールアドレスを知られたくない場合に使用する。\"To\"で送られたPさんと\"Cc\"で送られたQさんには、\"To\"及び\"Cc\"のメールアドレスは伝わりますが、\"Bcc\"に指定したRさんのメールアドレスは伝わりません。Rさんだけは、\"To\"のPさん、\"Cc\"のQさん、そして自分自身の少なくとも3人にメールが送信されていることを確認できます。\n・PさんとQさんに届くメールには、送信先としてRさんの名前が記載されていません。よって、Rさんに同じメールが送信されたことを知ることはできません。\n・Pさんは、届いたメールの\"Cc\"欄からQさんにも同じメールが送信されたことを知ることができます。\n・正しい。Qさんは、届いたメールの\"To\"欄からPさんにも同じメールが送信されたことを知ることができます。\n・Rさんは、届いたメールの\"To\"欄および\"Cc\"欄から、PさんとQさんに同じメールが送信されたことを知ることができます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/03_haru/img/59.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q59/59.png"
         ]
       }
     },
@@ -2875,7 +2875,7 @@
         "text": "SSL/TLSはブラウザとWebサーバの間のHTTP通信を暗号化するプロトコル、WPA2は無線LANにおいて端末とアクセスポイントの間の通信を暗号化するプロトコルです。端末からインターネット上のWebサーバにアクセスするには、端末(ブラウザ)、無線LANアクセスポイント、ルータ、インターネット、Webサーバの順でアクセスしますが、このうちWPA2が暗号化するのは、端末と無線LANアクセスポイント間の通信だけです。ブラウザとWebサーバ間の通信を暗号化するためには、PC、スマートフォンにかかわらずSSL/TLS（HTTPS通信）を利用しなければなりません。\n\nしたがって「イ」が適切な記述です。\n・WPA2ではブラウザとWebサーバ間の通信を暗号化できません。\n・正しい。\n・PC、スマートフォンどちらもSSL/TLSを利用します。\n・PC、スマートフォンどちらもSSL/TLSを利用します。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/03_haru/img/63.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q63/63.png"
         ]
       }
     },
@@ -3025,28 +3025,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/03_haru/img/67.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q67/67.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/03_haru/img/67.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q67/67.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/03_haru/img/67.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q67/67.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/03_haru/img/67.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q67/67.png"
           ]
         }
       ],
@@ -3121,28 +3121,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/03_haru/img/69.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q69/69.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/03_haru/img/69.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q69/69.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/03_haru/img/69.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q69/69.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/03_haru/img/69.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q69/69.png"
           ]
         }
       ],
@@ -3173,28 +3173,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/03_haru/img/70a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q70/70a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/03_haru/img/70i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q70/70i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/03_haru/img/70u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q70/70u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/03_haru/img/70e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q70/70e.png"
           ]
         }
       ],
@@ -3209,7 +3209,7 @@
         "text": "〔条件〕の関係を設問の表記法で表していくと次のようになります。\n1. 1つの出版社に対して複数の著者が関連します。よって、出版社からみた著者の数は\"多\"です。\n2. 1人の著者は1つの出版社だけと関連します。よって、著者からみた出版社の数は\"1\"です。\n3. 1人の著者に対して複数の本が関連します。よって、著者からみた本の数は\"多\"です。\n4. 1冊の本は1人の著者だけと関連します。よって、本からみた著者の数は\"1\"です。\n\n①と②より、出版社→著者という関係を導くことができ、③と④より著者→本という関係が導けます。出版社と著者と本の関係を示すE-R図には、出版社から著者に向けた矢印と、著者から本に向けた矢印の2つが必要なので、「ア」が適切となります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/03_haru/img/70a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q70/70a.png"
         ]
       }
     },
@@ -3353,7 +3353,7 @@
         "text": "流れ図Xで示す処理では，変数 i の値が，1→3→7→13と変化し，流れ図Yで示す処理では，変数 i の値が，1→5→13→25と変化した。図中のa，bに入れる字句の適切な組合せはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/03_haru/img/74.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q74/74.png"
         ]
       },
       "choices": [
@@ -3361,28 +3361,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/03_haru/img/74a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q74/74a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/03_haru/img/74a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q74/74a.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/03_haru/img/74a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q74/74a.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/03_haru/img/74a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q74/74a.png"
           ]
         }
       ],
@@ -3490,7 +3490,7 @@
         "text": "公開鍵暗号方式は、暗号化と復号に異なる鍵を使用する暗号方式です。暗号化鍵は誰もが使用できるように公開しておき（公開鍵)、復号鍵は受信者が厳重に管理します（秘密鍵）。本問のように不特定多数の送信者からメッセージを受ける際でも、鍵ペアが1つだけあればいいので効率的です。公開鍵暗号方式では「暗号化は誰でもできるが復号できるのは正当な受信者だけ」という特徴を押さえておきましょう。\n・共通鍵暗号方式では、暗号化と復号に同じ鍵を使用します。\n・正しい。公開鍵暗号方式では、暗号化と復号に異なる鍵を使用します。\n・ハッシュ関数は、任意の長さのデータを入力すると固定長のビット列（ハッシュ値、メッセージダイジェスト）を返す関数です。\n・ブロックチェーンは分散型台帳技術であり、暗号化の仕組みではありません。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/03_haru/img/76.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q76/76.png"
         ]
       }
     },
@@ -3624,7 +3624,7 @@
         "text": "SECURITY ACTION(セキュリティアクション)は、IPAが推進する制度で、中小企業自らが情報セキュリティ対策に取組むことを自己宣言するものです（※認定・取得制度ではありません）。\n取組み目標に応じて「★一つ星」と「★★二つ星」のロゴマークがあり、使用申込を行うことで、ロゴマークをポスター、パンフレット、名刺、封筒、会社案内、ウェブサイト等に表示して、自らの取組みをアピールすることができます。\n・\"SECURITY ACTION\"は補助金の制度ではありません。ちなみに、地方自治体によってはISMS認証について費用の一部に補助を受けられるところもあります。\n・個人事業者、中小企業、各種団体等を対象としています。団体等には特定非営利活動法人、財団法人、社団法人、学校法人、有限責任事業組合、社会福祉法人、医療法人なども含みます。\n・正しい。情報セキュリティ対策に取組むことを自己宣言する制度です。\n・取り組みをIPAが認定するものではありません。「取得しました」「認定を受けました」等の誤解を招く表示は禁止です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/03_haru/img/79.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q79/79.png"
         ]
       }
     },
@@ -3714,7 +3714,7 @@
         "text": "サイバーレスキュー隊(J-CRAT)は、「標的型サイバー攻撃特別相談窓口」にて受け付けた相談や情報に対して調査分析を実施し、JPCERT/CCやセキュリティベンダー等と連携して助言や支援および情報共有を行うことで被害の低減と攻撃の拡大防止を図るIPAの取り組みです。標的型サイバー攻撃の被害低減と拡大防止を活動目的としています。\n\nしたがって「エ」が適切です。\n・SOC(Security Operation Center)の説明です。\n・CSIRT(Computer Security Incident Response Team)の説明です。\n・J-CSIP(サイバー情報共有イニシアティブ、ジェイシップ)の説明です。\n・正しい。J-CRATの説明です。\n\n参考URL: サイバーレスキュー隊J-CRAT（ジェイ・クラート）\nhttps://www.ipa.go.jp/security/J-CRAT/index.html",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/03_haru/img/81.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q81/81.png"
         ]
       }
     },
@@ -3848,7 +3848,7 @@
         "text": "メールソフトをインストールした際は、使用するそのメールアドレスについてメールを送信する際に接続するメールサーバと、メールを受信する際に接続するメールサーバを設定しなければなりません。送信メールサーバに設定するプロトコルがSMTP(Simple Mail Transfer Protocol)、受信メールサーバを指定するプロトコルがPOPまたはIMAP(Internet Message Access Protocol)です。\n・Domain Name Systemの略。ドメイン名・ホスト名とIPアドレスを結びつけて変換する仕組みです。\n・File Transfer Protocolの略。ネットワーク上でファイルの転送を行うためのプロトコルです。\n・Multipurpose Internet Mail Extensionの略。ASCII文字しか使用できないSMTPを利用したメールで、日本語などの2バイトコードや画像・動画・音声データを送信するための仕組みです。\n・正しい。Post Office Protocol version 3の略。メールソフトがメールサーバから自身のメールを取り出す処理において使用するメール受信用プロトコルです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/03_haru/img/84.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q84/84.png"
         ]
       }
     },
@@ -3982,7 +3982,7 @@
         "text": "・アウトラインフォントは、文字を基準となる座標とそれらを結ぶ線の輪郭線情報として表現するフォントで、現在一般的に使用されている方式です。拡大しても輪郭線がギザギザにならないため、どのような解像度でも対応できるのが強みです。\n・等幅フォントは、文字の幅がどの文字も同じであるフォントのことです（半角文字は2つで全角文字1つ分）。\n・ビットマップフォントは、文字をドット(点)の集合で表現したフォント形式です。描画速度は速いのですが、拡大・縮小を行った際に輪郭がギザギザに見える「ジャギー」という現象が発生します。\n・正しい。プロポーショナルフォントは、見た目の美しさや読みやすさを考慮して、文字ごとに異なった幅で表示するフォントです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/03_haru/img/87.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q87/87.png"
         ]
       }
     },
@@ -4028,7 +4028,7 @@
         "text": "ISMSのリスクアセスメントは、リスクの大きさを評価し、そのリスクが許容できるか否かを決定する全体的なプロセスです。JIS Q 27000で「リスク特定，リスク分析及びリスク評価のプロセス全体」と定義されているように、「リスク特定」「リスク分析」「リスク評価」までの一連の活動を含みます。リスク特定リスクを発見し、認識する\nリスク所有者を特定するリスク分析リスクの特質を理解し、リスクレベルを決定する\nリスクが実際に生じた場合の損害の大きさ及び起こりやすさを算定するリスク評価リスク分析の結果と事前に定めておいたリスク基準とを比較する\nリスク対応のために、分析したリスクの優先順位付けを行うしたがって、リスクアセスメントで最初に行う活動は「リスク特定」となります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/03_haru/img/88.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q88/88.png"
         ]
       }
     },
@@ -4046,28 +4046,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/03_haru/img/89.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q89/89.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/03_haru/img/89.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q89/89.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/03_haru/img/89.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q89/89.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/03_haru/img/89.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q89/89.png"
           ]
         }
       ],
@@ -4180,7 +4180,7 @@
           "含まれる。リスク評価で行う作業です。"
         ],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/03_haru/img/91.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q91/91.png"
         ]
       }
     },
@@ -4270,7 +4270,7 @@
         "text": "RSSは、ブログやニュースサイト、電子掲示板などのWebサイトで、効率の良い情報収集や情報発信を行うために用いられている文書フォーマットの総称です。ページの見出しや要約、更新時刻などの記事に関するメタデータを、XMLベースの構造化データとして記述します。指定したWebサイトを定期的に巡回することでRSSを取得し、新着情報を見やすく一覧表示するソフトウェアが「RSSリーダー」です。\n\nしたがって「ア」が適切です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/03_haru/img/93.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q93/93.png"
         ]
       }
     },
@@ -4326,7 +4326,7 @@
         "text": "関係データベースで管理された\"商品\"表，\"売上\"表から売上日が5月中で，かつ，商品ごとの合計額が20,000円以上になっている商品だけを全て挙げたものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/03_haru/img/95.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q95/95.png"
         ]
       },
       "choices": [
@@ -4362,8 +4362,8 @@
         "text": "\"売上\"表の売上日が5月中であるレコード(行)について、レコードごとの合計金額を計算すると以下のようになります。商品ごとの合計額が知りたいので、この表の合計金額を商品ごとに集計します。したがって、5月中の売上合計額が20,000円以上である商品は「商品B，商品C」の2つです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/03_haru/img/95_1.png",
-          "https://www.itpassportsiken.com/kakomon/03_haru/img/95_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q95/95_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/03_haru/q95/95_2.png"
         ]
       }
     },

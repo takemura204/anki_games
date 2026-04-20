@@ -268,8 +268,8 @@
         "text": "企業会計における○○利益という言葉には「売上総利益」「営業利益」「経常利益」「税引前当期純利益」「当期純利益」があります。売上高から売上原価を減じたものが売上総利益(粗利益)で、さらに売上原価のほかに発生した費用(販売費・一般管理費)などを減じたものが営業利益です。\nこの営業利益に、本業以外の収入と支出(受取利息や支払利息などの営業外損益)などを加減することで、経常利益が算出されます。\n経常利益は、さらに特別損益(固定資産の売却益や災害損失)などを加減して税引前当期純利益となります。\n税引前当期純利益の金額をもとに、納める税額(法人税・事業税・住民税など)が算出され、この税額を減じることでようやく企業が一会計期間内にあげることができた当期純利益が算出されます。\n\n以下のように損益計算書では売上総利益～当期純利益までが計算される流れを示しています。\n・営業利益を求める計算式です。\n・売上総利益を求める計算式です。\n・経常利益を求める計算式です。\n・正しい。当期純利益を求める計算式です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_aki/img/06_1.png",
-          "https://www.itpassportsiken.com/kakomon/25_aki/img/06_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q6/06_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q6/06_2.png"
         ]
       }
     },
@@ -501,7 +501,7 @@
         "text": "ある資材を三つの工場A，B，Cに配分して，製品を生産している。資材の配分個数に応じた工場の利益は表のとおりである。合計4個の資材を工場に配分することによって得られる最大の利益は，何百万円か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_aki/img/12.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q12/12.png"
         ]
       },
       "choices": [
@@ -537,7 +537,7 @@
         "text": "資材4個の配分の仕方には以下の4つの組合せが考えられます。\n・1つの工場に4つの資材を配分する\n・1つの工場に3つの資材を配分し、別の工場に残り1つを配分する\n・1つの工場に2つの資材を配分し、別の工場に残り2つを配分する\n・1つの工場に2つの資材を配分し、別の2つの工場に1つずつを配分する\n\n3つの工場についてこれらの全組合せを考えれば良いことになりますが、結構な数を検証しなければなりません。そこで少し計算を簡略化できないかという目線で設問の図を見ると、B工場は、A工場およびC工場と比較してどの配分個数の場合でも利益が劣っていることがわかります。このため利益の最大化を図るためには、B工場に配分してはいけないということが自ずと判断できます。したがって、B工場への配分数は0とし、4つの資材をA工場とCの工場に配分する場合の組合せを考えていきます。\n・A工場に4個 … 8百万円\n・C工場に4個 … 8百万円\n・A工場に3個、C工場に1個 … 10百万円\n・A工場に1個、C工場に3個 … 8百万円\n・A工場に2個、C工場に2個 … 9百万円\n\nしたがって最大利益は、A工場に3個、C工場に1個を配分したときに得られる10百万円となります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_aki/img/12a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q12/12a.png"
         ]
       }
     },
@@ -671,7 +671,7 @@
         "text": "・円グラフは、円を扇形に分割することで分析対象の構成比率を表すグラフです。\n・散布図は、縦軸・横軸に2項目の量や大きさ等を対応させて、分析対象のデータを打点した図で、2項目間の分布・相関関係を把握するのに使用されます。\n・パレート図は、値の大きい順に分析対象の項目を並べた棒グラフと、累積構成比を表す折れ線グラフを組み合わせた複合グラフで、主に複数の分析対象の中から重要な要素を識別するために使用されます。\n・正しい。レーダーチャートは、複数項目の基準値に対する比率をプロットし、各点を線で結んだ形状によって、全体のバランスを比較するのに適した図です。各項目は円状または正多角形状に配置されるので、その形状から「クモの巣グラフ」とも呼ばれます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_aki/img/15.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q15/15.png"
         ]
       }
     },
@@ -722,7 +722,7 @@
         "text": "組込みシステムは、特定の機能を実現するために家電製品や機械に組み込まれる制御用のコンピュータシステムで、主にPC上で起動するソフトウェアと対比して使われる言葉です。上の表のとおりすべての選択肢の機器には組込みシステムが使われているため正解は「a，b，c，d」になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_aki/img/16.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q16/16.png"
         ]
       }
     },
@@ -944,7 +944,7 @@
         "text": "Bluetoothは、免許申請や使用登録の不要な2.4GHz帯の電波を用いて、数mから100m程度の距離の情報機器間で、電波を使い最大24Mbpsの無線通信を行う規格です。パソコンと周辺機器の接続、ゲーム機、ハンズフリー通話、ワイヤレスヘッドフォンなどの用途で幅広く普及してきています。\nBluetoothでは、最大で1対7の同時接続が可能な「ピコネット機能」があるため、1台の「マスター機器」に複数の「スレーブ」(周辺機器)を接続した構成が可能です。\n・正しい。Bluetoothの活用事例です。\n・GPS(Global Positioning System, 全地球測位網)の活用事例です。\n・携帯電話のカメラ機能の活用例です。\n・RFID(Radio Frequency IDentification)の活用事例です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_aki/img/21.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q21/21.png"
         ]
       }
     },
@@ -1254,7 +1254,7 @@
         "text": "\"財務報告に係る内部統制の評価及び監査の基準\"では、内部統制の構成要素としてITへの対応が挙げられています。ITへの対応は「IT環境への対応」と「ITの利用及び統制」からなっています。\nさらにITの利用及び統制はIT業務処理統制とIT全般統制に分類されます。IT業務処理統制業務を管理するシステムにおいて、承認された業務がすべて正確に処理、記録されることを担保するために業務プロセスに組み込まれたコントロールをいう\n・入力情報の完全性、正確性、正当性の確保\n・例外処理（エラー）の修正と再処理\n・マスタ・データの維持管理\n・システム利用に関する認証、アクセス管理\n\nなどIT全般統制業務処理統制が有効に機能する環境を保証するための統制活動をいう\n・ITの開発、保守に係る管理\n・システムの運用、管理\n・内外からのアクセス管理\n・外部委託に関する契約の管理\n\nなど\n・「外部委託に関する契約の管理」なので全般統制に該当します。\n・「システムの運用、管理」なので全般統制に該当します。\n・正しい。「システム利用に関する認証、アクセス管理」なので業務処理統制に該当します。\n・「ITの開発、保守に係る管理」なので全般統制に該当します。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_aki/img/28.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q28/28.png"
         ]
       }
     },
@@ -1344,7 +1344,7 @@
         "text": "PDCAは、Plan・Do・Check・Actの各フェーズの略で、この一連の流れを繰り返すことでシステムの維持・改善に努める活動をいいます。\n\nITサービス提供者が構築するサービスマネジメントシステム(以下、SMS)への要求事項を示したJIS Q 20000-1:2012では、SMSにおけるPDCAサイクルを次のように規定してます。Plan（計画）SMSを確立し、文書化し、合意する。SMSには、サービスの要求事項を満たすための方針、目的、計画及びプロセスが含まれる。Do（実行）サービスの設計、移行、提供及び改善のためにSMSを導入し、運用する。Check（点検・評価）方針、目的、計画及びサービスの要求事項について、SMS及びサービスを監視、測定及びレビューし、それらの結果を報告するAct（見直し・改善）SMS及びサービスのパフォーマンスを継続的に改善するための処置を実施する。\n・InformationTechnologyInfrastructureLibraryの略。ITサービスマネジメントにおけるベストプラクティス(成功事例)をまとめた書籍群です。\n・正しい。\n・ServiceLevelAgreementの略。提供者と顧客の間でサービスの品質に関して結ぶサービスレベル合意書のことです。\n・SoftwareLifeCycleProcessの略。共通フレームとも呼ばれソフトウェア取引において取得者と供給者、双方の目安とするためにソフトウェアのライフサイクルや用語、および工程ごとの作業内容を標準化したものです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_aki/img/30.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q30/30.png"
         ]
       }
     },
@@ -1626,28 +1626,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/25_aki/img/37.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q37/37.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/25_aki/img/37.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q37/37.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/25_aki/img/37.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q37/37.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/25_aki/img/37.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q37/37.png"
           ]
         }
       ],
@@ -2288,7 +2288,7 @@
         "text": "図1のように稼働率0.9の装置Aを2台並列に接続し，稼働率0.8の装置Bをその後に直列に接続したシステムがある。このシステムを図2のように装置Aを1台にした場合，システムの稼働率は図1に比べて幾ら低下するか。ここで，図1の装置Aはどちらか一方が稼働していれば正常稼働とみなす。\n　なお，稼働率は小数第3位を四捨五入した値とする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_aki/img/52.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q52/52.png"
         ]
       },
       "choices": [
@@ -2422,7 +2422,7 @@
         "text": "プログラムの実行方式としてインタプリ夕方式とコンパイラ方式がある。図は，データを入力して結果を出力するプログラムの，それぞれの方式でのプログラムの実行の様子を示したものである。a，bに入れる字句の適切な組合せはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_aki/img/55.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q55/55.png"
         ]
       },
       "choices": [
@@ -2430,28 +2430,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/25_aki/img/55a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q55/55a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/25_aki/img/55a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q55/55a.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/25_aki/img/55a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q55/55a.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/25_aki/img/55a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q55/55a.png"
           ]
         }
       ],
@@ -2828,7 +2828,7 @@
         "text": "次の真理値表で示される入力x，yに対する出力zが得られる論理演算式はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_aki/img/64.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q64/64.png"
         ]
       },
       "choices": [
@@ -2864,8 +2864,8 @@
         "text": "AND演算は2つの入力が共に1の場合にだけ1を出力する論理演算、OR演算は2つの入力のどちらかが1であれば1を出力する論理演算です。またNOT演算は入力値の逆(1であれば0，0であれば1)を出力する論理演算なので、それぞれNOT(x AND y)はAND演算を、NOT(x OR y)はOR演算の結果を反転した真理値表になります。したがって設問の真理値表と一致する結果を出力する演算は「NOT(x OR y)」になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_aki/img/64_1.png",
-          "https://www.itpassportsiken.com/kakomon/25_aki/img/64_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q64/64_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q64/64_2.png"
         ]
       }
     },
@@ -2965,7 +2965,7 @@
         "text": "あるトランザクション処理は，①共有領域から値を読み取り，②読み取った値に数値を加算し，③結果を共有領域に書き込む手順からなっている。複数のトランザクションを並列に矛盾なく処理するためには，トランザクション処理のどの時点で共有領域をロックし，どの時点でロックを解除するのが適切か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_aki/img/67.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q67/67.png"
         ]
       },
       "choices": [
@@ -2973,28 +2973,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/25_aki/img/67a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q67/67a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/25_aki/img/67a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q67/67a.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/25_aki/img/67a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q67/67a.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/25_aki/img/67a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q67/67a.png"
           ]
         }
       ],
@@ -3423,7 +3423,7 @@
         "text": "1バイト＝8ビットなので、2バイトは16ビットになります。\n\n1ビットでは\"0\"と\"1\"の「21＝2種類」のビットパターン、2ビットでは\"00\"、\"01\"、\"10\"、\"11\"の「22＝4種類」のビットパターンを表現できるように、16ビットでは「216＝65,536種類」のビットパターンを表現できます。一つのビットパターンに1文字を対応させれば65,536種類の文字を表現することができます。\n\nしたがって「エ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_aki/img/76.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q76/76.png"
         ]
       }
     },
@@ -3557,7 +3557,7 @@
         "text": "・正しい。DMZ(DeMilitarized Zone：非武装地帯)は、公開サーバなどの外部からアクセスされる可能性のある情報資源を設置するためのファイアウォールの中でも外でもない中間的なエリアです。外部からの接続が社内ネットワークに直接つながらないようになるのでセキュリティが高まります。\n・Domain Name Systemの略。ドメイン名・ホスト名とIPアドレスを結びつけて相互変換する(名前解決する)仕組みです。\n・Denial of Serviceの略。通常ではありえない数のリクエストをサーバに送信することによってサーバやネットワーク回線を過負荷状態にし、システムダウンや応答停止などのサービス障害を意図的に引き起こす攻撃です。\n・Secure Sockets Layerの略。通信の暗号化，デジタル証明書を利用した改ざん検知，ノード認証を含む統合セキュアプロトコルです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_aki/img/79.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q79/79.png"
         ]
       }
     },
@@ -3823,7 +3823,7 @@
         "text": "Aさんが参加し6月以降のプロジェクト構成員は5人になったため、それぞれが相互に情報の伝達を行うためには下図のように10の経路が必要になります。ちなみにこの経路数は5人の中から2人を選ぶ組合せ数と一致するため、\n\n　5C2＝(5×4)／2＝10\n\nと計算で求めることもできます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_aki/img/85.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q85/85.png"
         ]
       }
     },
@@ -3957,7 +3957,7 @@
         "text": "図1「N社のガントチャート」で変更計画前後を比較しながら記述を検証します。\n・これだけでは流通計画・プロモーション業務が0.5カ月短縮で9月中旬の完了予定となるので1か月の期間短縮とはなりません。\n・正しい。ソフトウェア開発作業を短縮することで受入試験・検収の完了が9月末になります。さらに完了が10月末であった流通計画・プロモーション業務をソフトウェア開発作業を並行させ(0.5+0.5=)1か月の納期短縮を行うことで9月末の完了予定を達成しています。\n・図1をみるとソフトウェア開発作業の短縮期間は0.5カ月になっています。\n・図1をみるとソフトウェア開発作業と流通計画・プロモーション業務の並行作業期間は0.5カ月になっています。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_aki/img/88.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q88/88.png"
         ]
       }
     },
@@ -4101,7 +4101,7 @@
         "text": "Mさんは複数のアイデアを，評価軸ごとに5点満点で評価した。関係者間で検討を重ねた最終評価結果が表1のとき，〔業務改善の企画書作成に関する上司からの指示〕の(3)に基づいて最も高い評価を得る案はどれか。〔評価基準〕\n効果(効果の大きさ):5(大きい)～1(小さい)\n費用(費用の小ささ):5(小さい)～1(大きい)\n実行(実行のしやすさ):5(容易)～1(困難)",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/25_aki/img/92.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q92/92.png"
         ]
       },
       "choices": [
@@ -4381,28 +4381,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/25_aki/img/98.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q98/98.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/25_aki/img/98.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q98/98.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/25_aki/img/98.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q98/98.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/25_aki/img/98.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/25_aki/q98/98.png"
           ]
         }
       ],

@@ -43,7 +43,8 @@ android {
     }
 
     defaultConfig {
-        minSdk = flutter.minSdkVersion
+        // Firebase は minSdk 21 以上（Flutter 既定と併せて下限を明示）
+        minSdk = maxOf(flutter.minSdkVersion, 21)
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName

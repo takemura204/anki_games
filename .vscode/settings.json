@@ -1,5 +1,5 @@
 {
-	// ユーザー keybindings.json（Cmd+S HR / Cmd+Shift+S リスタート→接続先を前面）の when 句と連動
+	// ユーザー keybindings.json: Cmd+S=保存(整形)→HR→前面 / Shift+Cmd+S=全保存→再起動→前面（when 句と連動）
 	"workspaceKeybindings.ankiGamesFlutterEmuFocus.enabled": true,
 	"dart.flutterSdkPath": "~/.asdf/installs/flutter/3.38.4-stable",
 	"dart.lineLength": 80,

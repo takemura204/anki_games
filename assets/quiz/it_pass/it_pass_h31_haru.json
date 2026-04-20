@@ -48,7 +48,7 @@
         "text": "リスクアセスメントとは、対象組織に存在するリスクを認識し、リスクの大きさを評価し、そのリスクが許容できるか否かを決定する全体的なプロセスのことです。\n\nリスクマネジメントの規格であるJIS 31000:2019において、「リスクアセスメントとは，リスク特定，リスク分析及びリスク評価を網羅するプロセス全体を指す」と定義されているように、一般的にはリスクマネジメント活動のうち、「リスク特定」から「リスク評価」までのプロセスを指します。したがって、残る1つは「リスクの分析」です。リスク移転、リスク回避、リスク低減は、いずれもリスク対応の選択肢であり、リスクアセスメントには含まれません。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/01.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q1/01.png"
         ]
       }
     },
@@ -196,7 +196,7 @@
         "text": "既存市場と新市場，既存製品と新製品でできるマトリックスの四つのセルに企業の成長戦略を表す市場開発戦略，市場浸透戦略，製品開発戦略，多角化戦略を位置付けるとき，市場浸透戦略が位置付けられるのはどのセルか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/05.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q5/05.png"
         ]
       },
       "choices": [
@@ -232,7 +232,7 @@
         "text": "設問の分析手法は「アンゾフの成長マトリクス」と呼ばれるものです。\n\nアンゾフの成長マトリクスは、経営学者のH・イゴール・アンゾフ（H. Igor Ansoff）が示したもので、縦軸に「市場」、横軸に「製品」を取り、それぞれ「既存」「新規」の2区分を設け、4象限(市場浸透，新製品開発，新市場開拓，多角化)のマトリクスとしたものです。どんな市場にどんな製品・サービスを投入していけば、事業が成長・発展できるのかを検討するのに有効なフレームワークとなっています。市場浸透戦略は、広告・宣伝を強化するなどして、他社のマーケットシェアを奪ったり、自社の優良顧客を増やしたりすることで成長を図る戦略であり、既存製品を既存市場に投入する際に選択すべきものです。したがって「A」のセルに位置付けられます。\n\nなお、他の3つの戦略の概要は以下の通りです。製品開発(新規製品・既存市場)現在の顧客や市場に対して、新機能をつけた製品や新規開発製品を提案することで成長を図る戦略市場開拓(既存製品・新規市場)現在の製品を、今までとは異なる顧客や市場に販売することで成長を図る戦略多角化(新規製品・新規市場)技術開発、業務提携、M&Aなどで、現在の事業と関係のない新しい分野に進出することで成長を図る戦略",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/05a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q5/05a.png"
         ]
       }
     },
@@ -278,7 +278,7 @@
         "text": "システム開発プロセスは、システム化構想、システム化計画、要件定義、システム開発の順で進んでいきます。各工程では、大まかに次の作業を実施します。システム化構想プロセス経営上のニーズ、課題を確認し、新たな業務の全体像とそれを実現するためのシステム化構想を作成するシステム化計画プロセスシステム化構想を具体化するために、運用や効果等の実現性を考慮したシステム化計画及びプロジェクト計画を作成し、利害関係者の合意を得る要件定義プロセスこれから実現しようとする組織や業務を明確にし、その業務に使用されるシステムの機能等の条件、現行業務／システムからの移行、必要な環境等を定義することで、開発対象のシステムや制約条件等を明示する\n業務要件、機能要件、非機能要件の定義が含まれるシステム開発プロセス要件定義プロセスで合意された要件をシステムの技術的な要件に変換し、システム、ソフトウェア又はサービスを開発するシステム化計画プロセスで実施する作業は次の通りです。\n・\"画面の詳細を定義\"する作業は、システム開発プロセスの\"システム要件定義\"で実施されます。\n・\"システム機能の実現範囲の定義\"は、要件定義プロセスの作業です。業務要件を実現するために必要なシステムの機能を明らかにし、システム機能の実現範囲を定義する作業は、機能要件の定義と呼ばれます。\n・正しい。\"対象業務のシステム課題の定義\"は、システム化計画プロセスの作業です。このタスクでは、対象業務の具体的な業務上の問題点を分析し、解決の方向性を明確化するとともにシステムを用いて解決すべき課題を定義します。\n・\"経営上のニーズ・課題の確認\"は、システム化構想プロセスの作業です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/06.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q6/06.png"
         ]
       }
     },
@@ -510,7 +510,7 @@
         "text": "表は，シュウマイ弁当の原材料表の一部である。100個のシュウマイ弁当を製造するために必要な豚肉の量は何グラムか。ここで，このシュウマイ弁当にはシュウマイ以外に豚肉を使う料理は入っていないものとし，製造過程での原材料のロスはないものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/12.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q12/12.png"
         ]
       },
       "choices": [
@@ -546,7 +546,7 @@
         "text": "シュウマイ弁当1個を作るために必要な豚肉の量を順を追って考えます。設問の表の情報を整理すると次のことがわかります。シュウマイ弁当1個シュウマイが5個必要シュウマイ1個シュウマイの具が20グラム必要シュウマイの具100グラム単位で製造され、100グラム当たり豚肉が60グラム必要シュウマイ5個を作るには、シュウマイの具がちょうど100グラム必要なので、シュウマイ弁当1個を作るために必要な豚肉の量は60グラムになります。したがって、シュウマイ弁当を100個製造するために必要な豚肉の量は、\n\n　60グラム×100個＝6,000グラム\n\nしたがって「ウ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/12a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q12/12a.png"
         ]
       }
     },
@@ -696,28 +696,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/16.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q16/16.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/16.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q16/16.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/16.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q16/16.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/16.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q16/16.png"
           ]
         }
       ],
@@ -820,7 +820,7 @@
         "text": "貸借対照表は、企業のある一定時点における資産、負債、純資産の額とそれらの比率を表す財務諸表で、バランスシート(B/S)とも呼ばれます。財政状況を客観的に把握できるので、企業評価に用いられたり経営の改善に役立てられたりします。\n\nしたがって「エ」の記述が適切です。\n・キャッシュフロー計算書の説明です。\n・損益計算書の説明です。\n・株主資本等変動計算書の説明です。\n・正しい。貸借対照表の説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/18.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q18/18.png"
         ]
       }
     },
@@ -998,7 +998,7 @@
         "text": "バリューチェーン分析は、業務を「購買物流」「製造」「出荷物流」「販売・マーケティング」「サービス」という5つの主活動と、「調達」「技術開発」「人事・労務管理」「全般管理」の4つの支援活動に分類し、製品の付加価値がどの部分（機能）で生み出されているかを分析する手法です。\n・CAD/CAMは、CADで作成された設計データをCAM(コンピュータ支援製造)に取り込み、CAMから工作機械に製造情報を送ることで生産ラインの制御が行われる仕組みです。\nA社の主活動の1つである「機器の設計と製造」に利用されるものです。\n・CRMは、顧客に関するあらゆる情報を統合管理し、顧客との長期的で良好な関係を企業活動に役立てる経営手法です。\nA社の主活動の1つである「アフターサービス」に利用されるものです。\n・正しい。HRMは、従業員を経営上の重要な資源と位置付け、長期的な計画に基づき、戦略的に育成や活用を図る人事資源管理の手法です。\nA社の主活動にHRMを利用する業務はありません。したがって、支援活動(上記の部類で言えば人事・労務管理)に利用されるものになります。\n・SFAは、営業活動にモバイル技術やインターネット技術といったITを活用して、営業の質と効率を高め売上や利益の増加につなげようとする仕組みです。\nA社の主活動の1つである「販売とマーケティング」に利用されるものです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/22.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q22/22.png"
         ]
       }
     },
@@ -1132,7 +1132,7 @@
         "text": "まず、3つの指標の計算式を整理しましょう。\n・資本利益率＝利益÷資本\n・売上高利益率＝利益÷売上高\n・資本回転率＝売上高÷資本\n\n設問中に、「資本利益率は，売上高利益率と資本回転率に分解して求め」とあるので、資本利益率は「売上高利益率　資本回転率」という式で求められることがわかります（　には＋－×÷のいずれかが入る）。売上高利益率と資本回転率には共通要素として\"売上高\"があるので、　に\"×\"を入れると次のような等式が成り立ちます（約分することで「利益÷資本」となる）。ここまでわかれば、後は条件として与えられた値を代入することで売上高利益率を求めることができます。\n\n　売上高利益率×資本回転率＝資本利益率\n　売上高利益率×2.0回＝4%\n　売上高利益率＝4÷2＝2%\n\nしたがって「ウ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/25.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q25/25.png"
         ]
       }
     },
@@ -1144,7 +1144,7 @@
         "text": "自社の商品についてPPMを作図した。\"金のなる木\"に該当するものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/26.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q26/26.png"
         ]
       },
       "choices": [
@@ -1180,7 +1180,7 @@
         "text": "PPM(Product Portfolio Management)は、縦軸と横軸に「市場成長率」と「市場占有率」を設定したマトリックス図を4つの象限に区分し、市場における製品(または事業やサービス)の位置付けを2つの観点から分類して経営資源の配分を検討する手法です。4つのカテゴリには、それぞれ「花形」「金のなる木」「問題児」「負け犬」の名称が付けられています。\n※下図は、設問の図とは縦軸・横軸が逆になっているので注意してください。4つの象限は、市場内の位置付けから以下のような名称で呼ばれています。花形(star) … [成長率：高、占有率：高]占有率・成長率ともに高く、資金の流入も大きいが、成長に伴い占有率の維持には多額の資金の投入を必要とする分野金のなる木(cash cow) … [成長率：低、占有率：高]市場の成長がないため追加の投資が必要ではなく、市場占有率の高さから安定した資金・利益の流入が見込める分野問題児(problem child) … [成長率：高、占有率：低]成長率は高いが占有率は低いので、花形製品とするためには多額の投資が必要になる。投資が失敗し、そのまま成長率が下がれば負け犬になってしまうため、慎重な対応を必要とする分野負け犬(dog) … [成長率：低、占有率：低]成長率・占有率がともに低く、新たな投資による利益の増加も見込めないため市場からの撤退を検討するべき分野\"金のなる木\"は、市場成長率が低く、市場占有率が高い領域です。したがって「A商品」が該当します。\n・正しい。\"金のなる木\"に該当します。\n・\"花形\"に該当します。\n・\"負け犬\"に該当します。\n・\"問題児\"に該当します。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/26a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q26/26a.png"
         ]
       }
     },
@@ -1513,7 +1513,7 @@
         "text": "商品の販売数が700個のときの営業利益は表のとおりである。拡販のために販売単価を20%値下げしたところ，販売数が20%増加した。このときの営業利益は何円か。ここで，商品1個当たりの変動費は変わらないものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/34.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q34/34.png"
         ]
       },
       "choices": [
@@ -1593,7 +1593,7 @@
         "text": "ロングテールは、膨大な商品を低コストで扱うことができるインターネットを使った商品販売において、実店舗では陳列されにくい販売機会の少ない商品でも、それらを数多く取りそろえることによって十分な売上を確保できることを説明した経済理論です。\n\nインターネット販売では従来の小売店販売面積の制約に縛られず、商品をデータベースに登録するだけで膨大な商品点数を揃えることが可能です。この商品点数の多さを活かし、小さいけれども確かにある販売機会を大量に集めることで、実店舗では実現不可能部分で大きな売上が生じるという現象が起こります。\n\nこのようなビジネスモデルを説明するときに使われるのがロングテール理論です。\n\n名前の由来ですが、販売数を縦軸にとり商品を横軸にして、売上額が多い商品順に並べたパレート図を作成すると、販売機会の少ない商品群が低く状態で右に延びた形状になります。この右に延びた部分が、恐竜の尻尾(tail)のような見た目であることから「ロングテール」と呼ばれています。\n・パレートの法則に基づく販売戦略です。\n・バンドワゴン効果を利用した販売戦略です。\n・インフルエンサーマーケティングの説明です。\n・正しい。ロングテールに基づいた販売戦略です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/35.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q35/35.png"
         ]
       }
     },
@@ -1683,7 +1683,7 @@
         "text": "・プロジェクトにおけるリスクには、リスク分析で特定した\"既知のリスク\"と、事前に把握できない\"未知のリスク\"があるので、プロジェクト開始時点で全てのリスクを特定することはできません。プロジェクトの進行に伴い、新たなリスクが発生したり判明したりするので、リスク特定のプロセスはプロジェクトの実施中に繰り返し実行します。\n・特定したマイナスのリスクには、リスク分析の結果に基づき、回避・転嫁・低減・受容のいずれかの対応を選択します。リスク対応策の選択は、対応策を選択したときのメリット、実施の費用、労力又は不利益を勘案して決定するので、全てのリスクを回避するのが適切とは言えません。\n・正しい。(定性的)リスク分析では、特定した各リスクの発生確率と影響度の組合せによって、その後の分析や処置のために優先順位付け(低・中・高など)を行います。リスク対応では、優先順位の高い順に対処していくことになります。\n・リスク対応策は、プロジェクト開始時に計画し、その後は新たなリスクを特定した都度、既知のリスクのリスクレベルが変化した都度見直します。リスク対応計画は、リスク発生時の被害を抑える目的で策定されるため、発生後に対応策を計画するのでは費用を抑えるどころか逆に対応費用の増加を招きます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/37.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q37/37.png"
         ]
       }
     },
@@ -1861,10 +1861,10 @@
         "text": "パレート図は、分析対象の項目を値の大きい順に並べた棒グラフに、累積構成比を表す折れ線グラフを組み合わせた複合グラフで、主に複数の分析対象の中から管理対象とすべき重要な要素を識別するために使用されます。システム開発のテストにおいては、原因別のバグ件数を分析し、優先して取り組みべき問題点を明確にするために利用できます。したがって「ウ」が正解です。\n・散布図は、縦軸・横軸に2項目の量や大きさ等を対応させて、分析対象のデータを打点した図で、2項目間の分布・相関関係を把握するのに使用されます。\n・特性要因図は、現れた特性（結果）とそれに影響を及ぼしたと思われる要因の関係を体系的に表わした図です。多くの要因が複雑に絡みあっているときに、直接的な原因と間接的な原因に分別したり、真の問題点を明らかにしたりすることができます。\n・正しい。\n・ヒストグラムは、収集したデータをいくつかの区間に分け、区間ごとに該当するデータの出現回数を棒グラフで示した図です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/41u.png",
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/41a.png",
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/41i.png",
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/41e.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q41/41u.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q41/41a.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q41/41i.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q41/41e.png"
         ]
       }
     },
@@ -2340,28 +2340,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/52.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q52/52.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/52.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q52/52.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/52.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q52/52.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/52.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q52/52.png"
           ]
         }
       ],
@@ -2396,28 +2396,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/53.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q53/53.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/53.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q53/53.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/53.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q53/53.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/53.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q53/53.png"
           ]
         }
       ],
@@ -2608,7 +2608,7 @@
         "text": "DNS(Domain Name System)は、ドメイン名／ホスト名とIPアドレスを結びつけて変換する(名前解決する)仕組みです。\n\nTCP/IPを利用したネットワークでは、各ノードを識別するため一意のIPアドレスが割り当てられていますが、このIPアドレスは数字の羅列で人間にとって覚えにくいため、IPアドレスと対応する別名であるドメイン名／ホスト名が付けられています。DNSは、IPアドレスと対応するドメイン名の関係を保持し、要求に応じて相互変換する機能をもちます。\n・ARP(Address Resolution Protocol)の機能です。\n・正しい。DNSの機能です。\n・ルータの機能です。\n・A/Dコンバータの機能です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/57.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q57/57.png"
         ]
       }
     },
@@ -2620,7 +2620,7 @@
         "text": "PC1をインターネットに接続するための設定を行いたい。PC1のネットワーク設定項目の一つである\"デフォルトゲートウェイ\"に設定するIPアドレスは，どの機器のものか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/58.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q58/58.png"
         ]
       },
       "choices": [
@@ -2672,28 +2672,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/59.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q59/59.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/59.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q59/59.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/59.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q59/59.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/59.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q59/59.png"
           ]
         }
       ],
@@ -2708,7 +2708,7 @@
         "text": "[パスワードの盗聴]\n盗聴とは、通信経路上のデータを何らかの方法で傍受し、データに含まれるパスワード等の秘密情報を不正に取得する行為です。\n\n暗号化されたパスワードは通信当事者同士のみが復号できます。よって、パスワードが暗号化されていれば、通信経路上で第三者に盗聴されたとしても元のパスワードを知られることはありません。\n推測が難しい文字列をパスワードに設定しても盗聴には効果がありません。\n\n[総当たり攻撃]\n総当たり攻撃は、特定の文字数および文字種で設定可能なすべての組合せを試すことで不正ログインを試みる攻撃手法です。\n\nこの攻撃は、何万回の試行を繰り返すことが前提になっているので、対策としてはログインの試行回数に制限を設ける方法が一般的です。一定回数連続して認証に失敗した場合に一定時間アカウントを停止する措置をロックアウトといいます。\nなお、シングルサインオンはユーザー認証を一度受けるだけで許可された複数のサーバへのアクセスについても認証する技術ですので、総当たり攻撃の対策とはなりません。\n\nしたがって適切な組合せは「イ」です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/59a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q59/59a.png"
         ]
       }
     },
@@ -2770,28 +2770,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/61.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q61/61.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/61.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q61/61.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/61.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q61/61.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/61.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q61/61.png"
           ]
         }
       ],
@@ -2850,9 +2850,9 @@
         "text": "3つの方式は、複数台のディスク装置を組み合わせ1つの仮想的なディスクとして扱うことで信頼性や性能を向上させる技術です。RAID5情報データとともにパリティビットも各ディスクに分散して書き込む方式。1台が故障しても、パリティビットを用いてデータを復旧できる。信頼性、アクセス性能の両方が向上する。ストライピング(RAID0)複数のディスクに分散してデータを書き込むことで、アクセス性能を向上させる方式。ミラーリング(RAID1)同じデータを2台以上のディスクに書き込むことで、信頼性を向上させる方式。\n1. 復旧できる。RAID5は、1台が故障しても他のディスクに残ったパリティビットを用いて、故障したディスクのデータを復旧できるようになっています。\n2. 復旧できない。ストライピングは、分散して書き込むだけでデータの冗長化をしないので、故障時にデータ復旧できません。\n3. 復旧できる。ミラーリングでは同じデータが複数のディスクに保存されているので、1台が故障しても正常なディスクのデータを用いて復旧できます。\n\nデータ復旧が可能な方式は「①，③」ですので、正解は「ウ」になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/62_1.png",
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/62_2.png",
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/62_3.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q62/62_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q62/62_2.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q62/62_3.png"
         ]
       }
     },
@@ -2986,7 +2986,7 @@
         "text": "不正のトライアングルとは、不正行動は「動機・プレッシャー」「機会」「正当化」の3要素がすべて揃ったときに起こると説明する理論です。1950年代に米国の組織犯罪研究者であるドナルド・R・クレッシーにより提唱されました。不正発生の要因とされるのは以下の3要素です。動機・プレッシャー（不正を欲する心情）自分の欲求を満たしたり、問題を解決したりするためには、不正をするしかないと考えてしまう心理のこと。具体的には、「過大なノルマが課されている」「個人的に金銭的な問題を抱えている」という心情がこれに該当する機会（不正が実行できる環境）不正をしようと思えば、いつでも実行できてしまう環境のこと。具体的には、「悪用可能なシステム上の不備がある」「チェック体制が存在しない」「やってもばれない」という環境がこれに該当する正当化（不正を是認する心理）自分にとって都合のよい理由をつけることで、不正を行う際の罪悪感「良心の呵責（かしゃく）」を乗り越えてしまう心理のこと。具体的には、「組織のためだから問題ない」「自分ではなく制度に問題がある」「職場で不当に扱われている」等の身勝手な言い訳（罪悪感からの逃避や責任転嫁）がこれに該当するしたがって適切な組合せは「ウ」になります。\"情報\"は不正のトライアングルの3要素に含まれません。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/65.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q65/65.png"
         ]
       }
     },
@@ -3032,7 +3032,7 @@
         "text": "情報処理の世界では、非常に大きい数値や非常に小さい数値を扱うことが多いので、接頭語について理解しておく必要があります。以下の表は、主な接頭語の一覧です。大きい数の接頭語は\"k\"を除いて大文字、逆に小さい数は小文字が使用されます。10-9(1／109)を表すのに用いられるのは\"n(ナノ)\"、109を表すのに用いられるのは\"G(ギガ)\"です。したがって「ア」の組合せが正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/66.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q66/66.png"
         ]
       }
     },
@@ -3078,7 +3078,7 @@
         "text": "MySQL(マイ・エスキューエル)は、世界中で最も使用されているオープンソースの関係データベース管理システムです。個人用・商用、小規模・大規模を問わず、様々な環境で利用されています。WordPressなどのCMSのデータベースとしても有名です。2019年現在、オラクル社によって所有・管理されています。\n・Android(アンドロイド)は、OSSのOSソフトです。\n・Firefox(ファイアフォックス)は、OSSのWebブラウザです。\n・正しい。MySQLは、OSSのDBMSです。\n・Thunderbird(サンダーバード)は、OSSのメールクライアントソフトです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/67.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q67/67.png"
         ]
       }
     },
@@ -3090,7 +3090,7 @@
         "text": "資産A～Dの資産価値，脅威及び脆弱性の評価値が表のとおりであるとき，最優先でリスク対応するべきと評価される資産はどれか。ここで，リスク値は，表の各項目を重み付けせずに掛け合わせることによって算出した値とする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/68.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q68/68.png"
         ]
       },
       "choices": [
@@ -3170,7 +3170,7 @@
         "text": "ドライブバイダウンロードは、Webサイトに悪意のあるプログラムを埋め込み、Webブラウザを通じて利用者が気付かないようにそのプログラムをダウンロードさせたり、自動的に実行させる攻撃です。脆弱性のある利用環境だとWebページを閲覧しただけでマルウェアの被害に遭うおそれがあります。ドライブバイダウンロードは、単独で攻撃に使用されることもありますし、また標的型攻撃や水飲み場攻撃などで補助的に使用されることもあります。したがって正解は「ウ」です。\n・DoS攻撃は、通常では想定できない数のリクエストやパケットを標的に送り付けることで、標的とするサーバやネットワーク回線を過負荷状態にし、システムダウンや応答停止などの障害を意図的に引き起こす攻撃です。\n・ソーシャルエンジニアリングは、情報通信技術の方法を用いるのではなく、人のミスや心理的な隙に付け込むことでパスワードなどの秘密情報を不正に取得する方法の総称です。\n・正しい。ドライブバイダウンロードは、利用者が公開Webサイトを閲覧したときに、その利用者の意図にかかわらず、PCにマルウェアをダウンロードさせて感染させる攻撃です。\n・バックドアは、一度不正侵入に成功したコンピュータやネットワークにいつでも再侵入できるように、攻撃者によって技術的に設置された侵入口のことを指します。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/69.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q69/69.png"
         ]
       }
     },
@@ -3226,7 +3226,7 @@
         "text": "図1のように二つの正の整数A1，A2を入力すると，二つの数値B1，B2を出力するボックスがある。B1はA2と同じ値であり，B2はA1をA2で割った余りである。図2のように，このボックスを2個つないだ構成において，左側のボックスのA1として49，A2として11を入力したとき，右側のボックスから出力されるB2の値は幾らか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/71.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q71/71.png"
         ]
       },
       "choices": [
@@ -3262,8 +3262,8 @@
         "text": "ボックスごとに順を追って考えていきます。\n\n[左側のボックス]\n入力値は、A1＝49、A2＝11です。上の出力からはA2の値である11、下の出力からは49÷11の余りである5が出力されます。[右側のボックス]\n左側のボックスの出力値がそのまま入力値となるので、A1＝11、A2＝5です。上の出力(B1)からはA2の値である5、下の出力からは11÷5の余りである1が出力されます。したがって右側のボックスのB2から出力される値は1になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/71_1.png",
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/71_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q71/71_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q71/71_2.png"
         ]
       }
     },
@@ -3281,28 +3281,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/72.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q72/72.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/72.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q72/72.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/72.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q72/72.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/72.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q72/72.png"
           ]
         }
       ],
@@ -3449,7 +3449,7 @@
         "text": "公開鍵暗号方式を使用した暗号化通信は、以下の手順で行います。\n1. 送信者は、受信者の公開鍵を使ってデータを暗号化し、相手に送信する\n2. 受信者は、自分の秘密鍵を使って受信したデータを復号する\n\nこの暗号化通信は「暗号化は誰でもできるが、復号できるのは正規の秘密鍵を持つ受信者だけ」という性質を持ちます。データが途中で傍受されても、秘密鍵を持たない者には復号を行うことができないため安全性が確保されます。\n\n送信者はAさん、受信者はBさんですから、電子メールの復号に使う鍵は「Bさんの秘密鍵」になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/75.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q75/75.png"
         ]
       }
     },
@@ -3505,7 +3505,7 @@
         "text": "次の条件で，インターネットに接続されたサーバから5MバイトのファイルをPCにダウンロードするときに掛かる時間は何秒か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/77.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q77/77.png"
         ]
       },
       "choices": [
@@ -3551,7 +3551,7 @@
         "text": "関係データベースの\"社員\"表と\"部署\"表がある。\"社員\"表と\"部署\"表を結合し，社員の住所と所属する部署の所在地が異なる社員を抽出する。抽出される社員は何人か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/78.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q78/78.png"
         ]
       },
       "choices": [
@@ -3587,9 +3587,9 @@
         "text": "関係データベースにおける結合は、2つの表を共通する列の値で結びつける操作です。\"社員\"表と\"部署\"表は、どちらも\"部署コード\"列を持つので\"部署コード\"列の値で結合することになります。\n\n2つの表を結合すると以下のようになります。この表のうち、社員の住所と所属する部署の所在地が異なるデータは以下の2行です。したがって、設問の操作によって抽出される社員は以下の2名になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/78_1.png",
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/78_2.png",
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/78_3.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q78/78_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q78/78_2.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q78/78_3.png"
         ]
       }
     },
@@ -3731,7 +3731,7 @@
         "text": "スタイルシートとは、Webページの装飾・レイアウトなどの見栄えを記述したファイルです。スタイルシートの記述言語として一般的に使用されるのがCSS(Cascading Style Sheets)です。\n\n一般的なWeb制作では、HTML文書内で外部スタイルシートへのリンクを記述することで、1つのスタイルシートを複数のHTML文書で共有します。これにより、Webサイト全体でデザインを統一できる、デザインと文書構造を分離できる、デザインを集中管理できるといった利点があります。\n・HTTPを用いる理由です。\n・RSSを用いる理由です。\n・Cookieを用いる理由です。\n・正しい。スタイルシートを用いる理由です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/81.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q81/81.png"
         ]
       }
     },
@@ -3743,7 +3743,7 @@
         "text": "PC1のメールクライアントからPC2のメールクライアントの利用者宛ての電子メールを送信するとき，①～③で使われているプロトコルの組合せとして，適切なものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/82.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q82/82.png"
         ]
       },
       "choices": [
@@ -3751,28 +3751,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/82a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q82/82a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/82a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q82/82a.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/82a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q82/82a.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/82a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q82/82a.png"
           ]
         }
       ],
@@ -3919,7 +3919,7 @@
         "text": "IPA「情報処理推進機構」が公開している「情報セキュリティポリシーの策定」に基づくと、情報セキュリティポリシーは、基本方針(ポリシー)，対策基準(スタンダード)，実施手順(プロシージャー)の3階層の文書構成をとるのが一般的であるとされています。基本方針組織の経営者が、「情報セキュリティに本格的に取り組む」という姿勢を示し、情報セキュリティの目標と、その目標を達成するために企業がとるべき行動を社内外に宣言するもの。対策基準基本方針で作成した目的を受けて、「何を実施しなければならないか」という「What」について記述したもの。組織的に情報セキュリティ対策を行うためのルール集で、人事規程や就業規程などの類の企業の構成員が守るべき「規程類」に相当する。実施手順対策基準で定めた規程を実施する際に、「どのように実施するか」という「How」について記述したもの。マニュアル的な位置づけの文書であり、詳細な手順を記述する。情報セキュリティポリシーは「基本方針→対策基準→実施手順」の順で策定します。\n・基本方針は、情報セキュリティポリシーの根幹となる文書で経営者が初めに策定します。\n・詳細な対処手順は実施手順に定めます。\n・正しい。実施基準には、対策基準で定めたことを実現するために必要な個々の手順を定めます。\n・関係者に周知すべき文書は基本方針のみです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/85.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q85/85.png"
         ]
       }
     },
@@ -3937,28 +3937,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/86.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q86/86.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/86.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q86/86.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/86.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q86/86.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/86.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q86/86.png"
           ]
         }
       ],
@@ -4193,7 +4193,7 @@
         "text": "E-R図は、データベース化の対象となる実体(エンティティ)と、実体の持つ属性(アトリビュート)、及び実体間の関連(リレーションシップ)を表現する図です。関係データベースの概念モデル設計によく利用されますが、記法自体は関係モデルに限らず任意のオブジェクトとその関連の記述が可能になっています。\n・HDD内のデータの物理的な配置を表す図はありません。\n・正しい。E-R図で表現するものです。\n・流れ図(フローチャート)で表現するものです。\n・DFD(Data Flow Diagram)で表現するものです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/91.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q91/91.png"
         ]
       }
     },
@@ -4381,7 +4381,7 @@
         "text": "Webサーバ上において，図のようにディレクトリd1及びd2が配置されているとき，ディレクトリd1(カレントディレクトリ)にあるWebページファイル f1.html の中から，別のディレクトリd2にあるWebページファイル f2.html の参照を指定する記述はどれか。ここで，ファイルの指定方法は次のとおりである。\n\n〔指定方法〕\n・ファイルは，\"ディレクトリ名/…/ディレクトリ名/ファイル名\"のように，経路上のディレクトリを順に\"/\"で区切って並べた後に\"/\"とファイル名を指定する。\n・カレントディレクトリは\".\"で表す。\n・1階層上のディレクトリは\"..\"で表す。\n・始まりが\"/\"のときは，左端のルートディレクトリが省略されているものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/96.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q96/96.png"
         ]
       },
       "choices": [
@@ -4417,7 +4417,7 @@
         "text": "階層型ディレクトリでファイルパスを指定する方法には以下の2つがあります。絶対パス階層の最上位のディレクトリを基点として、目的のファイルやディレクトリまで、全ての経路をディレクトリ構造に従って示す相対パス現在作業を行っているディレクトリを基点として、目的のファイルやディレクトリまで、全ての経路をディレクトリ構造に従って示す本問では、相対パスによるファイル指定が問われています。\n\nファイル\"f1.html\"は、d1の配下にあるので、d1→ルート→d2 という経路でディレクトリをたどる必要があります。この順に沿ってパスを考えます。\n1. d1から見るとルートは1階層上に位置するので、d1からルートを指定するパスは「../」になります。\n2. d2はルートの配下にあるので、d1からd2を指定するパスは、1.の「../」に\"d2\"を加えた「../d2」になります。\n3. ファイル\"f2.html\"は、d2の配下にあるので、\"f1.html\"の文書内で\"f2.html\"を参照するために記述すべきパスは「../d2/f2.html」になります。\n\nしたがって「ウ」が適切です。なお、ルートからの絶対パスで記述した「/d2/f2.html」でも問題ありませんが、選択肢にはありません。\n・d1配下のd2に存在するf2.htmlを参照するパスです。※図中には存在しません。\n・d1配下のf2.htmlを参照するパスです。※図中には存在しません。\n・正しい。\n・このパスでは、どのファイルも参照できません。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/96a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q96/96a.png"
         ]
       }
     },
@@ -4473,7 +4473,7 @@
         "text": "表計算ソフトを用いて，二つの科目X，Yの成績を評価して合否を判定する。それぞれの点数はワークシートのセル A2，B2 に入力する。合計点が120点以上であり，かつ，2科目とも50点以上であればセル C2 に\"合格\"，それ以外は\"不合格\"と表示する。セル C2 に入れる適切な計算式はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/31_haru/img/98.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q98/98.png"
         ]
       },
       "choices": [
@@ -4481,28 +4481,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/98a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q98/98a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/98i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q98/98i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/98u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q98/98u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/31_haru/img/98e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/31_haru/q98/98e.png"
           ]
         }
       ],

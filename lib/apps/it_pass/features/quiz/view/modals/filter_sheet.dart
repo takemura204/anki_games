@@ -5,6 +5,7 @@ import 'package:anki_games/apps/it_pass/features/quiz/model/quiz_filter.dart';
 import 'package:anki_games/apps/it_pass/features/quiz/repository/filter_repository.dart';
 import 'package:anki_games/apps/it_pass/features/quiz/view_model/quiz_view_model.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 Future<void> showQuizFilterBottomSheet(
@@ -148,19 +149,19 @@ class _QuizFilterSheetState extends State<_QuizFilterSheet> {
                 child: ListView(
                   padding: const EdgeInsets.fromLTRB(20, 0, 20, 32),
                   children: [
-                    _buildSectionLabel('試験回'),
-                    _buildEraSection(),
-                    const SizedBox(height: 24),
                     _buildSectionLabel('分野（系統）'),
                     _buildSystemSection(),
-                    const SizedBox(height: 24),
+                    const Gap(24),
                     _buildSectionLabel('中分類'),
                     _buildMajorSection(),
-                    const SizedBox(height: 32),
-                    _buildApplyButton(),
+                    const Gap(24),
+                    _buildSectionLabel('試験回'),
+                    _buildEraSection(),
+                    const Gap(32),
                   ],
                 ),
               ),
+              _buildApplyButton(),
             ],
           ),
         ),
@@ -243,8 +244,8 @@ class _QuizFilterSheetState extends State<_QuizFilterSheet> {
         const SizedBox(height: 12),
         ...groups.entries.map((entry) {
           final groupLabel = switch (entry.key) {
-            ExamGroup.heisei => '平成',
             ExamGroup.reiwa => '令和',
+            ExamGroup.heisei => '平成',
             ExamGroup.sample => 'サンプル',
           };
           return Column(
@@ -312,8 +313,7 @@ class _QuizFilterSheetState extends State<_QuizFilterSheet> {
           onTap: () => _toggleSystem(system),
           child: AnimatedContainer(
             duration: const Duration(milliseconds: 200),
-            padding:
-                const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
             decoration: BoxDecoration(
               color: explicit
                   ? const Color(0xFF7C3AED).withValues(alpha: 0.3)
@@ -330,8 +330,7 @@ class _QuizFilterSheetState extends State<_QuizFilterSheet> {
               style: TextStyle(
                 color: explicit ? Colors.white : Colors.white54,
                 fontSize: 13,
-                fontWeight:
-                    explicit ? FontWeight.bold : FontWeight.normal,
+                fontWeight: explicit ? FontWeight.bold : FontWeight.normal,
               ),
             ),
           ),
@@ -381,17 +380,15 @@ class _QuizFilterSheetState extends State<_QuizFilterSheet> {
                     borderRadius: BorderRadius.circular(8),
                     border: Border.all(
                       color: selected
-                          ? const Color(0xFF10B981)
-                              .withValues(alpha: 0.6)
+                          ? const Color(0xFF10B981).withValues(alpha: 0.6)
                           : Colors.white.withValues(alpha: 0.1),
                     ),
                   ),
                   child: Text(
                     major,
                     style: TextStyle(
-                      color: selected
-                          ? const Color(0xFF10B981)
-                          : Colors.white54,
+                      color:
+                          selected ? const Color(0xFF10B981) : Colors.white54,
                       fontSize: 12,
                     ),
                   ),
@@ -405,39 +402,47 @@ class _QuizFilterSheetState extends State<_QuizFilterSheet> {
   }
 
   Widget _buildApplyButton() {
-    return GestureDetector(
-      onTap: (_canApply && !_isApplying) ? _apply : null,
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 200),
-        height: 52,
-        decoration: BoxDecoration(
-          gradient: _canApply
-              ? const LinearGradient(
-                  colors: [Color(0xFF7C3AED), Color(0xFF4F46E5)],
-                )
-              : null,
-          color: _canApply ? null : Colors.white12,
-          borderRadius: BorderRadius.circular(16),
-        ),
-        child: Center(
-          child: _isApplying
-              ? const SizedBox(
-                  width: 20,
-                  height: 20,
-                  child: CircularProgressIndicator(
-                    strokeWidth: 2,
-                    color: Colors.white,
+    return Container(
+      padding: EdgeInsets.only(
+        top: 10,
+        left: 10,
+        right: 10,
+        bottom: MediaQuery.of(context).padding.bottom,
+      ),
+      child: GestureDetector(
+        onTap: (_canApply && !_isApplying) ? _apply : null,
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          height: 52,
+          decoration: BoxDecoration(
+            gradient: _canApply
+                ? const LinearGradient(
+                    colors: [Color(0xFF7C3AED), Color(0xFF4F46E5)],
+                  )
+                : null,
+            color: _canApply ? null : Colors.white12,
+            borderRadius: BorderRadius.circular(16),
+          ),
+          child: Center(
+            child: _isApplying
+                ? const SizedBox(
+                    width: 20,
+                    height: 20,
+                    child: CircularProgressIndicator(
+                      strokeWidth: 2,
+                      color: Colors.white,
+                    ),
+                  )
+                : Text(
+                    _canApply ? 'この設定で出題する' : '試験回を選択してください',
+                    style: TextStyle(
+                      color: _canApply ? Colors.white : Colors.white38,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                      letterSpacing: 0.5,
+                    ),
                   ),
-                )
-              : Text(
-                  _canApply ? 'この設定で出題する' : '試験回を選択してください',
-                  style: TextStyle(
-                    color: _canApply ? Colors.white : Colors.white38,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 15,
-                    letterSpacing: 0.5,
-                  ),
-                ),
+          ),
         ),
       ),
     );
@@ -509,8 +514,7 @@ class _EraChip extends StatelessWidget {
           style: TextStyle(
             color: selected ? Colors.white : Colors.white38,
             fontSize: 11,
-            fontWeight:
-                selected ? FontWeight.w600 : FontWeight.normal,
+            fontWeight: selected ? FontWeight.w600 : FontWeight.normal,
           ),
         ),
       ),

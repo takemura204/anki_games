@@ -58,7 +58,7 @@
         "text": "A社，B社の売上高および営業利益のグラフの説明として，適切なものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/02.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q2/02.png"
         ]
       },
       "choices": [
@@ -148,7 +148,7 @@
         "text": "B社は図のような流れで情報システムを調達した。aに当てはまるものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/04.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q4/04.png"
         ]
       },
       "choices": [
@@ -194,7 +194,7 @@
         "text": "次の損益計算書から求められる営業利益は何百万円か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/05.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q5/05.png"
         ]
       },
       "choices": [
@@ -230,7 +230,7 @@
         "text": "営業利益は、企業の営業活動から得られた損益です。図の損益計算書でいうと、売上高から売上原価と販売費及び一般管理費を差し引いた金額がそれに相当します。\n\nしたがって、\n\n　7500－6000－1000＝500\n\nで、営業利益は500百万円と計算できます。\n\nちなみに営業外損益や特別損失にどのようなものがあるかというと、保有株式の売買による損益、自然災害による損益等が含まれます。\nこれらをすべて含めた当期の損益から法人税を差し引いた最終的な利益を当期純利益といいます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/05a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q5/05a.png"
         ]
       }
     },
@@ -408,7 +408,7 @@
         "text": "バリューチェーンとは、製品の付加価値がどの部分（機能）で生み出されているかを分析し、価値の連鎖の最適化を図ろうとする考え方です。業務を「購買物流」「製造」「出荷物流」「販売・マーケティング」「サービス」という5つの主活動と、「調達」「技術開発」「人事・労務管理」「全般管理」の4つの支援活動に分類して、主活動の効率を上げることで他企業との競争優位を確立しようとします。\n・コアコンピタンスは、長年の企業活動により蓄積された他社と差別化できる企業独自のノウハウや技術のことです。\n・正しい。\n・プロダクトポートフォリオは、製品の市場における位置付けを分析して資源配分を検討する手法です。\n・プロダクトライフサイクルは、製品を市場に投入してから販売活動によって普及、成熟しやがて落ち込んでその寿命が終わるまでの過程を表します。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/09.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q9/09.png"
         ]
       }
     },
@@ -464,7 +464,7 @@
         "text": "ある市場が今後，拡大，現状維持，縮小する場合の商品A，B，Cの販売利益が表のとおり見込まれており，拡大，現状維持，縮小する確率がそれぞれ0.2，0.5，0.3であるとき，どの商品を販売すると予想利益が最高となるか。ここで，商品の予想利益は販売利益の期待値から開発コストを差し引いたものとし，各商品A，B，Cの開発コストは，それぞれ20億円，10億円，15億円とする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/11.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q11/11.png"
         ]
       },
       "choices": [
@@ -906,7 +906,7 @@
         "text": "システム開発案件A，B，Cのうち，採算性があるものはどれか。ここで，採算検討の対象期間はシステムのサービス開始後の5年目までとし，サービス開始後は，毎年，システムのメンテナンス費用が初期投資額の10％発生するものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/21.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q21/21.png"
         ]
       },
       "choices": [
@@ -1030,7 +1030,7 @@
         "text": "ABC分析は、パレート図を使い分析対象の要素・項目群を大きい順に並べ、A･B･Cのグループに分けます。一般にAは上位70%を占める要素群、Bは70%～90%の要素群、Cはそれ以外の要素群です。ABC分析を行うことで、重要度や優先度の高い要素・項目を明らかにすることができます。\n・特性要因図の説明です。魚の骨のような記述法からフィッシュボーンダイアグラムとも呼ばれます。\n・散布図の説明です。\n・管理図の説明です。\n・正しい。ABC分析の説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/23.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q23/23.png"
         ]
       }
     },
@@ -1130,7 +1130,7 @@
         "text": "インターネット上での通信販売が図の手順で行われるとき，特段の取り決めがない場合，取引が成立する時点はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/26.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q26/26.png"
         ]
       },
       "choices": [
@@ -1528,7 +1528,7 @@
         "text": "図のアローダイアグラムで，AからGに至る全体の作業日数に影響を与えないことを条件に，C→Fの作業の遅れは最大何日間まで許容できるか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/35.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q35/35.png"
         ]
       },
       "choices": [
@@ -2190,7 +2190,7 @@
         "text": "図は開発するソフトウェアの動作ロジックを検討し，その結果を文書化した流れ図の一部である。このような作業を実施するのはソフトウェア開発のどの段階か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/50.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q50/50.png"
         ]
       },
       "choices": [
@@ -2314,7 +2314,7 @@
         "text": "2進の各桁と10進数は以下のように対応します。2進数1.101は、(1＋0.1＋0.001)(2)なので、各桁を10進数に変換したものを足し合わせることで10進数に変換します。\n\n　1.101(2)\n＝(1＋1／2＋1／8)(10)\n＝(1＋0.5＋0.125)(10)\n＝1.625(10)\n\nしたがって、2進数1.101は10進数で1.625となります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/52.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q52/52.png"
         ]
       }
     },
@@ -2332,28 +2332,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_haru/img/53a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q53/53a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_haru/img/53i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q53/53i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_haru/img/53u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q53/53u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_haru/img/53e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q53/53e.png"
           ]
         }
       ],
@@ -2412,7 +2412,7 @@
         "text": "公開鍵暗号方式は、受信者の公開鍵と秘密鍵の鍵ペアを使用して暗号化／復号を行う暗号化方式です。送信者は、受信者の公開鍵を使って暗号化したデータを送信し、受信者は自分の秘密鍵を使ってデータを復号します。公開鍵暗号方式では「暗号化は誰でもできるが、正しく復号できるのは正当な受信者だけ」です。もしデータが途中で傍受されても、第三者には復号できないので機密性が確保されます。また、通信相手が複数いても必要となる鍵の組合せが1つでいいので、共通鍵暗号方式の短所である鍵共有の手間および鍵数の多さという点が改善されています。\n\n設問のケースでは、Xさんが送信者、Yさんが受信者に当たるので、暗号化に使用する鍵は受信者であるYさんの公開鍵になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/54.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q54/54.png"
         ]
       }
     },
@@ -2424,7 +2424,7 @@
         "text": "セルD2とE2に設定した2種類の仮の消費税でセルA4とA5の商品の税込み価格を計算するために，セルD4に入れるべき計算式はどれか。ここで，セルD4に入力する計算式は，セルD5，E4及びE5に複写して使うものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/55.png?537897745"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q55/55.png%3F537897745"
         ]
       },
       "choices": [
@@ -2460,10 +2460,10 @@
         "text": "表計算ソフトでは、計算式が入力されたセルを別のセルに複写（コピー＆ペースト）すると、式内で参照しているセル番地は、貼り付け先との位置関係に応じて自動的に変化します。これが既定の動作です。貼り付け先でも元のセル番地を変えたくない場合は、行番号や列番号の前に$を付けて絶対参照にします。\n\n適切な税込み価格を計算するために、D4～E5に入れるべき式はそれぞれ次のとおりです。\n・D4： B4＊(1＋D2)\n・D5： B4＊(1＋E2)\n・E4： B5＊(1＋D2)\n・E5： B5＊(1＋E2)\n\nこの4つの式を見ると、商品価格を指すセル番地の列番号B、消費税率を指すセル番地の行番号2は固定とする必要があります。したがって、D4に入力する式中でこの2つを絶対参照とした$B4＊(1.0＋D$2)の式が適切です。\n・両方が固定されていないため、複写元のセルD4しか正しく計算されません。\n・商品価格の列番号が固定されていないことから、E列では商品価格としてC列の空文字を参照してしまいます。\n・正しい。複写先でも正しい計算が行われます。\n・消費税率の行番号が固定されていないことから、E列では消費税率として3行目（税込み価格1・税込み価格2）の文字列を参照してしまいます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/55a.png?537897745",
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/55i.png?537897745",
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/55u.png?537897745",
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/55e.png?537897745"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q55/55a.png%3F537897745",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q55/55i.png%3F537897745",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q55/55u.png%3F537897745",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q55/55e.png%3F537897745"
         ]
       }
     },
@@ -2519,7 +2519,7 @@
         "text": "図に示すあるシステムの運転状況において，区間Aにおける平均故障間隔(MTBF)は何時間か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/57.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q57/57.png"
         ]
       },
       "choices": [
@@ -2697,7 +2697,7 @@
         "text": "情報セキュリティの文書を詳細化の順に上から並べた場合，①～③に当てはまる用語の組合せとして，適切なものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/61.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q61/61.png"
         ]
       },
       "choices": [
@@ -2705,28 +2705,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_haru/img/61a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q61/61a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_haru/img/61a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q61/61a.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_haru/img/61a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q61/61a.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_haru/img/61a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q61/61a.png"
           ]
         }
       ],
@@ -2741,7 +2741,7 @@
         "text": "IPA「情報処理推進機構」が公開している「情報セキュリティポリシーの策定」では、情報セキュリティポリシーは、基本方針(ポリシー)，対策基準(スタンダード)，実施手順(プロシージャー)の3階層の文書構成をとるのが一般的であるとされています。したがって①＝基本方針，②＝対策基準，③＝実施手順が適切な組合せになります。\n\n以下の説明はIPAのサイトに掲載されている内容を引用したものです。基本方針組織の経営者が、「情報セキュリティに本格的に取り組む」という姿勢を示し、情報セキュリティの目標と、その目標を達成するために企業がとるべき行動を社内外に宣言するものです。「なぜセキュリティが必要か」という「Why」について規定し、何をどこまで守るのか（対象範囲)、誰が責任者かを明確にします。また、業界標準、該当する法令、政府規制への準拠を宣言する場合があります。対策基準基本方針で作成した目的を受けて、「何を実施しなければならないか」という「What」について記述します。組織的に情報セキュリティ対策を行うためのルール集で、人事規程や就業規程などの類の企業の構成員が守るべき「規程類」に相当します。実際に守るべき規程を具体的に記述し、適用範囲や対象者を明確にします。実施手順対策基準で定めた規程を実施する際に、「どのように実施するか」という「How」について記述します。マニュアル的な位置づけの文書であり、詳細な手順を記述します。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/61_1.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q61/61_1.png"
         ]
       }
     },
@@ -2831,7 +2831,7 @@
         "text": "XML(eXtensible Markup Language)は、ユーザーが独自に定義したタグを用いて文書構造を記述するマークアップ言語です。\n\n記述方法については説明するよりも実際のXML文書を見るほうがわかりやすいと思います。下の文書は、XML形式で記述されたサイトマップと呼ばれるデータです。これはWebページの情報を検索エンジンに伝えるための文書ですが、<url>と</url>に囲まれた部分が一つのページの情報を表わしています。<loc>はページのURL、<lastmod>は最終更新日、<priority>は重要度をそれぞれ表しています。見てのとおり開始タグ<○○>と終了タグ</○○>で囲まれたテキストを単位として階層構造(木構造)が成り立っています。\n\nしたがって「ウ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/63a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q63/63a.png"
         ]
       }
     },
@@ -2975,7 +2975,7 @@
         "text": "表のA列とB列に0から9までの数字のすべての組合せが入っており，全部で100行ある。表からA列の値がB列の値以下である行をすべて取り除く。残りは何行あるか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/67.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q67/67.png"
         ]
       },
       "choices": [
@@ -3011,7 +3011,7 @@
         "text": "A列が、1である行と2である行について考えてみると法則がわかります。\n\n[A列が、1の行]\nA, B列で表される数値が\"10\"～\"19\"において、削除されるのは、\"11\"～\"19\"で残る行は\"10\"の一行だけです。\n\n[A列が、2の行]\nA, B列で表される数値が\"20\"～\"29\"において、削除されるのは、\"22\"～\"29\"で残る行は\"20\",\"21\"の二行です。\n\nこれをA列が、9である行まで続けていった場合に残る行数の合計は、\n\n　1＋2＋3＋4＋5＋6＋7＋8＋9＝45\n\nで45行であることがわかります。\n\n※A列が、0の行…A, B列で表される数値が\"00\"～\"09\"においては、すべての行でA列の値がB列の値以下になるので一行も残りません。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/67a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q67/67a.png"
         ]
       }
     },
@@ -3101,7 +3101,7 @@
         "text": "次のベン図は(A∩B)と(A∪B)を視覚化したものです。\n・(A∩B)は、Aの部分集合です。\n・正しい。\n・(A∪B)は(A∩B) より広い集合なので、選択肢の文とは逆で、(A∩B) は(A∪B) の部分集合ということになります。\n・(A∪B)は、Bの部分集合を含んでいるので、Aの部分集合とはいえません。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/69.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q69/69.png"
         ]
       }
     },
@@ -3113,7 +3113,7 @@
         "text": "共通鍵暗号方式では通信の組合せごとに鍵が1個必要になる。例えばA～Dの4人が相互に通信を行う場合は，AB，AC，AD，BC，BD，CDの組合せの6個の鍵が必要である。10人が相互に通信を行うためには何個の鍵が必要か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/70.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q70/70.png"
         ]
       },
       "choices": [
@@ -3281,8 +3281,8 @@
         "text": "ディスプレイの解像度とは、画面をいくつのピクセルに分割して表示するかをいうことを表わす値です。解像度が高いほうがい画面上の総ピクセル数が多くなるので鮮明な表示ができます。\n・解像度と動画の再生速度は関係ありません。\n・正しい。下の画像参照。\n・逆で今まで原寸表示できていたJPEG画像が画像によっては縮小しないと表示できなくなります。\n・解像度と画面の色数は関係ありません。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/73a1.png",
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/73a2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q73/73a1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q73/73a2.png"
         ]
       }
     },
@@ -3338,7 +3338,7 @@
         "text": "電子掲示板やブログに投稿するとき，図のようなゆがんだ文字の画像が表示され，それを読み取って入力するように求められることがある。その目的はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/75.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q75/75.png"
         ]
       },
       "choices": [
@@ -3384,7 +3384,7 @@
         "text": "OSが，ジョブを到着順に，前のジョブが終わってから次のジョブを処理する場合について考える。ジョブの到着時刻を処理時間が表のとおりであるとき，ジョブ４は，到着してからその処理が終了するまでに何秒を要するか。ここで四つのジョブ以外の処理に要する時間は無視できるものとする。表の到着時刻は，ジョブ１が到着した時刻を開始時刻とする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/76.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q76/76.png"
         ]
       },
       "choices": [
@@ -3420,7 +3420,7 @@
         "text": "ジョブの進行図を描いてみるとわかりやすいと思います。図からジョブ4は到着から処理終了までに9秒間を要することがわかると思います。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/76a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q76/76a.png"
         ]
       }
     },
@@ -3438,28 +3438,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_haru/img/77a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q77/77a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_haru/img/77i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q77/77i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_haru/img/77u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q77/77u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_haru/img/77e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q77/77e.png"
           ]
         }
       ],
@@ -3528,7 +3528,7 @@
         "text": "業務の改善提案に対する報奨を次の表に基づいて決めるとき，改善額が200万円で，かつ，期間短縮が3日の改善提案に対する報奨は何円になるか。ここで表は，条件が成立の場合は Y を，不成立の場合は N を記入し，これらの条件に対応した時の報奨を○で表してある。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/79.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q79/79.png"
         ]
       },
       "choices": [
@@ -3564,8 +3564,8 @@
         "text": "決定表は、ある事象について条件や選択肢を表に記述し、記述された条件・選択肢をたどった場合にどのような結果になるかをわかりやすく表現した表です。設問のケースでは、改善額が200万円なので\"改善額100万円未満\"の条件部は\"N\"(成立しない)、期間短縮が3日なので\"期間短縮1週間未満\"の条件部は\"Y\"(成立する)となります。この条件に当てはまるのは左から3番目の列で、報奨欄の10,000円の行に\"〇\"が付いているので、改善提案の報奨は10,000円となります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/79_1.png",
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/79_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q79/79_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q79/79_2.png"
         ]
       }
     },
@@ -3665,7 +3665,7 @@
         "text": "2台のPCから一つのファイルを並行して更新した。ファイル中の同一のデータ（データ1）に対する処理が①～④の順で行われたとき，データ1はどの値になるか。ここで，データ1の初期値は5であった。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/82.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q82/82.png"
         ]
       },
       "choices": [
@@ -3799,7 +3799,7 @@
         "text": "下から上へデータを積み上げ，上にあるデータから順に取り出すデータ構造（以下，スタックという）がある。これを用いて，図に示すような，右側から入力されたデータの順番を変化させて，左側に出力する装置を考える。この装置に対する操作は次の3通りである。\n1. 右側から入力されたデータをそのまま左側に出力する。\n2. 右側から入力されたデータをスタックに積み上げる。\n3. スタックの一番上にあるデータを取り出して左側に出力する。\n\nこの装置の右側から順番にX, Y, Z を入力した場合に，この①～③の操作を組み合わせても左側に出力できない順番はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/85.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q85/85.png"
         ]
       },
       "choices": [
@@ -3879,7 +3879,7 @@
         "text": "サーバの仮想化技術は、1台のサーバのリソースを論理的に区画化することで従来は1台のサーバに1つであったサービスの機能を、2つ以上持たせる技術です。これによって、物理サーバの台数が少なくできるので物的管理は簡単になりますが、1つのサーバに複数のサーバの機能をもたせているので処理に対するオーバーヘッドの割合は高くなります。\n・正しい。サーバの仮想化技術の説明です。\n・VPN(Virtual Private Network)の説明です。\n・バーチャルリアリティの説明です。\n・仮想記憶の説明です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/86.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q86/86.png"
         ]
       }
     },
@@ -3935,7 +3935,7 @@
         "text": "音声信号をデジタル化する。図の時刻1から時刻5のタイミングで標本化を行い，4段階に量子化（標本点が最も近い段階を選択）を行った。その後2ビットで符号化を行った。結果は \"11 01 00 10 11\"であった。図の手法でデジタル化を行うと \"01 00 10 11 01\"となる音声信号を示す図はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/88.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q88/88.png"
         ]
       },
       "choices": [
@@ -3943,28 +3943,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_haru/img/88a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q88/88a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_haru/img/88i.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q88/88i.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_haru/img/88u.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q88/88u.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_haru/img/88e.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q88/88e.png"
           ]
         }
       ],
@@ -3979,8 +3979,8 @@
         "text": "デジタル化を行った結果の \"01 00 10 11 01\"を問題文と同じ表形式で表すと次のようになります。次に標本化を行う時刻1～時刻5のとき、すべての選択肢の音声信号がどの点に量子化されるのかを見てみます。上図をみるとデジタル化を行った結果が \"01 00 10 11 01\"になるのは、「イ」の音声信号だということがわかります。\n・\"01 01 00 10 11\"になります。\n・正しい。\n・\"01 00 10 11 10\"になります。\n・\"01 00 10 10 01\"になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/88_2.png",
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/88_3.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q88/88_2.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q88/88_3.png"
         ]
       }
     },
@@ -4080,7 +4080,7 @@
         "text": "作業内容定義では，作業分割で作成したWBSを基に，担当，工数を加えた表を作成した。次の表はその一部を示したものである。画面設計での作業5の作業間には次の図に示す順序関係があるとき，画面設計のクリティカルパスの作業日数はどれか。図では，作業の流れを矢印で，作業名を矢印の上又は下に示している。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/91.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q91/91.png"
         ]
       },
       "choices": [
@@ -4126,7 +4126,7 @@
         "text": "Sさんは，作業期間見積りを行い，作業期間を基に作業の開始日と終了日を決定し，スケジュール作成を行った。次の表はスケジュールの一部を示したものである。スケジュールを見た先輩から誤りを指摘された。Sさんが受けた指摘として，適切なものはどれか。次の図は6月のカレンダであり，土日は作業を行わないものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/92.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q92/92.png"
         ]
       },
       "choices": [
@@ -4216,7 +4216,7 @@
         "text": "文献システムの〔貸出システム〕と〔返却処理〕に基づき，次の図の示すDFDを作成した。DFDの a～c に入る適切な字句の組合せはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/94.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q94/94.png"
         ]
       },
       "choices": [
@@ -4224,28 +4224,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_haru/img/94a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q94/94a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_haru/img/94a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q94/94a.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_haru/img/94a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q94/94a.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_haru/img/94a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q94/94a.png"
           ]
         }
       ],
@@ -4270,7 +4270,7 @@
         "text": "担当者には，社員からの文献の問合せが多い。担当者は，社員から電話で文献名を聞き，貸出可能かどうかを調べている。そこで，文献検索機能を文献システムに追加し，社員に利用させることにした。文献検索機能の概要は次のとおりである。\n　追加する文献検索機能について，その処理の流れを次の図のとおりのまとめた。\n図の d～f に入る適切な字句の組合せはどれか。\n\n〔文献検索機能の概要〕\n・問い合わせる文献名で，文献表をあいまい検索して結果を表示する。\n・該当する文献があるかを確認し，該当するものがある場合は，貸出可能かどうかを調べる。\n・貸出中であるか，貸出可能であるかを表示する。\n1. \"貸出可能\"と表示する\n2. \"貸出中\"と表示する\n3. 文献番号で貸出表を検索し，返却日が空白地の貸出レコードを抽出する\n4. 文献番号で貸出表を検索し，最も古い貸出日の貸出レコードを抽出する",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/95.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q95/95.png"
         ]
       },
       "choices": [
@@ -4278,28 +4278,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_haru/img/95a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q95/95a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_haru/img/95a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q95/95a.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_haru/img/95a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q95/95a.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_haru/img/95a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q95/95a.png"
           ]
         }
       ],
@@ -4368,7 +4368,7 @@
         "text": "〔S社の状況〕を次の図のようなマトリックスで整理する。〔S社の状況〕の(1)と(2)を図の a～d に分類するとき、適切な組合せはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/97.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q97/97.png"
         ]
       },
       "choices": [
@@ -4376,28 +4376,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_haru/img/97a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q97/97a.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_haru/img/97a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q97/97a.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_haru/img/97a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q97/97a.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/22_haru/img/97a.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q97/97a.png"
           ]
         }
       ],
@@ -4510,7 +4510,7 @@
         "text": "方針案2を進めた場合，〔S社の状況〕も(1)と(5)に対処することができ，T社が占めていた市場シェアをほぼ確保できる見込みである。市場シェアに基づいて次のような戦略を採った場合，買い取り後のS社の戦略に関する記述として，適切なものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/22_haru/img/100.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/22_haru/q100/100.png"
         ]
       },
       "choices": [

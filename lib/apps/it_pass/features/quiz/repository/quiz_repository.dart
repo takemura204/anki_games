@@ -7,8 +7,6 @@ import 'package:anki_games/apps/it_pass/features/quiz/model/quiz_filter.dart';
 import 'package:flutter/services.dart';
 
 class QuizRepository {
-  static const _sessionSize = 10;
-
   Future<List<Question>> loadSession(QuizFilter filter) async {
     final all = <Question>[];
 
@@ -19,7 +17,12 @@ class QuizRepository {
       final raw = await rootBundle.loadString(meta.assetPath);
       final json = jsonDecode(raw) as Map<String, dynamic>;
       final questions = (json['questions'] as List<dynamic>)
-          .map((e) => Question.fromJson(e as Map<String, dynamic>))
+          .map(
+            (e) => Question.fromJson(
+              e as Map<String, dynamic>,
+              examDisplayName: meta.displayName,
+            ),
+          )
           .toList();
       all.addAll(questions);
     }
@@ -37,6 +40,6 @@ class QuizRepository {
     }).toList()
       ..shuffle(Random());
 
-    return filtered.take(_sessionSize).toList();
+    return filtered;
   }
 }

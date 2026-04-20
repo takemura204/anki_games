@@ -136,7 +136,7 @@
         "text": "請負契約とは、委託された業者が発注側から求められた製品を期限までに納品することを決めた契約です。\n請負元と請負先のどちらがどっちとなってしまいますが、実務上は請負元＝発注側業者、請負先＝受託業者という意味で用いられています。この契約形態では請負元と請負先の間に指揮監督関係はなく、請負先は独立した事業者として契約に定められた成果物の完成を目指すことになります。\n・請負先は独立した事業者として仕事を完成させるので、その手段は問題になりません。例えば、請負先が他の事業者に再委託して成果物を完成させることも認められます。\n・請負元と合意の上で、客先に常駐して作業することも可能です。\n・請負元と合意の上であれば、必要な範囲で仕事の進捗を確認することは可能です。\n・正しい。請負元と請負先の間に指揮監督関係はありません。請負契約であるにもかかわらず、請負元が請負先の従業員に直接指示を出して業務に当たらせることは「偽装請負行為」であり禁止されます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/03.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q3/03.png"
         ]
       }
     },
@@ -289,28 +289,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/27_aki/img/07.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q7/07.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/27_aki/img/07.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q7/07.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/27_aki/img/07.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q7/07.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/27_aki/img/07.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q7/07.png"
           ]
         }
       ],
@@ -335,7 +335,7 @@
         "text": "図のDFDで示された業務Aに関する，次の記述中のaに入れる字句として，適切なものはどれか。ここで，データストアBの具体的な名称は記載していない。\n\n業務Aでは，出荷の指示を行うとともに，aなどを行う。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/08.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q8/08.png"
         ]
       },
       "choices": [
@@ -371,7 +371,7 @@
         "text": "DFD(Data Flow Diagram)は、データの流れに着目して、その対象となる業務のデータの流れと処理の関係をわかりやすく図式化する構造化分析の手法。「○」処理・プロセス，「□」データの吸収先，「→」データの流れ，「〓」データストアの4つの記号を用いて対象業務のモデル化を行います。設問のDFDは、顧客から流れてきた注文情報とデータストアBから得た情報を元に、業務Aが出荷指示と売上報告を行っている業務を表しています。\n\naは、出荷指示と共に行われることなので、売上報告に関連する業務ということがわかります。業務Aでは管理部に報告を行う売上データを作成するために、注文個数×製品単価 の計算を行います。この計算に必要となる注文個数は顧客から得られた注文情報から得られますが、価格情報は組織内のデータストア※から取得することになります。\n\nしたがって「ウ」が適切です。\n\n※データストア…ファイルシステムやデータベースなどのようにデータが記憶されている場所。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/08a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q8/08a.png"
         ]
       }
     },
@@ -383,7 +383,7 @@
         "text": "表は，ベンダー4社の提案書を管理面，技術面，価格面のそれぞれについて評価した値である。管理面，技術面，価格面の各値に重み付けをし，その合計が最高点のベンダーを調達先に選定するとき，選定されるベンダーはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/09.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q9/09.png"
         ]
       },
       "choices": [
@@ -903,7 +903,7 @@
         "text": "ISBN(International Standard Book Number)は、世界共通で書籍を一意に特定するために付けられている番号です。日本語では国際標準図書番号と訳されます。\n\n現行のISBNコードは13桁(ISBN-13)で※「出版された国・言語圏」「出版者」「書籍名」を表す記号が含まれています。※2006年までは10桁のISBN-10が使用されていました。\n・正しい。\n・ITF(Interleaved Two of Five)は物流商品を識別するため使用されるバーコード体系で、ダンボールなどの印刷条件が悪いものに対しても印刷が容易で、ある程度離れた場所からも読取りが可能という特徴があります。\n・JANコードは、日本で最も普及している商品識別コードおよびバーコード規格で、13桁のタイプと8桁のタイプがあります。\n・QRコードは縦横の情報をもち格納できるデータ量が多い2次元コードです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/20.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q20/20.png"
         ]
       }
     },
@@ -993,7 +993,7 @@
         "text": "PPM(Products Portfolio Management)は、市場における製品(または事業やサービス)の位置付けを4つの象限から成る2次元の表上に分類し、その製品に対する資源配分を検討する手法です。\n製品の位置付けを分析するための2次元の表の縦軸には市場成長率、横軸には市場シェアが使用されるので、設問の調査情報を用いた分析手法として適切です。\n・Customer Relationship Managementの略。顧客に関するあらゆる情報を統合管理し、企業活動に役立てる経営手法です。\n・Enterprise Resource Planningの略。企業全体の経営資源を有効かつ総合的に計画・管理し、経営の効率化を図るための手法です。\n・正しい。\n・SWOTは、企業の置かれている経営環境を「強み」「弱み」「機会」「脅威」に分類し、今後の戦略立案に活かす手法です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/22.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q22/22.png"
         ]
       }
     },
@@ -1137,7 +1137,7 @@
         "text": "有形固定資産の減価償却を表に示した条件で行うとき，当年度の減価償却費は何円か。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/26.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q26/26.png"
         ]
       },
       "choices": [
@@ -1173,7 +1173,7 @@
         "text": "減価償却(げんかしょうきゃく)は、企業会計において主に固定資産に対して行われる計算方法の一つです。\n固定資産は、購入してから長期にわたり業務に使用されます。会計には費用収益対応の原則というものがあるので、固定資産の取得費用全部を取得年の費用として計上してしまうのではなく、使用期間にわたって少しずつ費用として分配することになります。この会計上の手続きを「減価償却」といいます。減価償却額の算出には幾つかの計算方法が認められていますが、一般的である「定額法」と「定率法」について理解しておくといいと思います。定額法毎年、同じ金額を減価償却費として計上する方法。償却額は「取得価額×償却率」で計算する。\n例）100万円の固定資産を10年で償却(＝耐用年数10年)する場合、償却率は「1÷10＝0.100」になり、毎年「100万円×0.100＝10万円」ずつ減価償却費を計上する。定率法取得後の初めの年ほど償却額が多く、年とともに償却額が減少していく計算方法。償却額は「未償却残高×償却率」で計算する。\n例）100万円の固定資産を10年で償却(＝耐用年数10年)する場合、税法の償却率表より償却率は0.200になるため、各年の減価償却額は以上のように算出される。\n[1年目]\n100,000円×0.200＝20,000円\n[2年目]\n(100,000円－20,000円)×0.200＝16,000円\n[3年目]\n(100,000円－36,000円)×0.200＝12,800円設問は定率法で減価償却額を算出するため、\n\n　(取得価額－償却済額)×償却率\n\nの式に各値を当てはめて計算を行います。\n\n　(480,000円－300,000円)×0.625＝112,500円\n\nしたがって正解は「ア」です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/26_1.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q26/26_1.png"
         ]
       }
     },
@@ -2109,7 +2109,7 @@
         "text": "表に示す構成のデータを，流れ図の手順で処理する場合について考える。流れ図中のx，y，zをそれぞれデータ区分A，B，Cと適切に対応させれば，比較(\"xか?\"，\"yか?\"，\"zか?\")の回数の合計は，最低何回で済むか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/48.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q48/48.png"
         ]
       },
       "choices": [
@@ -2145,7 +2145,7 @@
         "text": "設問の流れ図では1件ごとに以下の処理が行われています。\n1. まず「xか?」の比較を行い、データ区分が x であれば x の処理を行う。\n2. データ区分が x でなければ「yか?」の比較を行い、データ区分が y であれば y の処理を行う。\n3. データ区分が x, y のどちらでもなければ「zか?」の比較を行い、データ区分が z であれば z の処理を行う。\n4. どれにも該当しなかったデータに関してはその他の処理を行う。\n\n処理の流れを見ると、どのデータ区分に属するかによって比較回数が異なり、x は1回、y は2回、z とその他は3回の比較が行われることに気が付きます。これをもとにデータ区分とx, y, zの対応を考えると、件数が多いデータ区分を比較回数の少ないものに、件数の少ないデータ区分には何回も比較するものを対応させることで総比較回数を最少化できることがわかります。\n\nつまりデータ件数が50件と最も多い C を x に、続いて30件である B を y に、最も少ない10件の A を z に対応させると比較回数を最も少なくできることになります。\nこのケースでは、比較回数1回の x のデータ区分が50件、比較回数2回の y のデータ区分が30件、比較回数3回の zとその他 のデータ区分が(10＋10=)20件となるので、\n\n　50×1＋30×2＋20×3＝170\n\n最も少ない比較回数は170回です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/48a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q48/48a.png"
         ]
       }
     },
@@ -2399,28 +2399,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/27_aki/img/54.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q54/54.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/27_aki/img/54.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q54/54.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/27_aki/img/54.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q54/54.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/27_aki/img/54.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q54/54.png"
           ]
         }
       ],
@@ -2435,7 +2435,7 @@
         "text": "E-R図は、データベース化の対象となる実体(エンティティ)と実体の持つ属性(アトリビュート)、及び、実体間の関連(リレーションシップ)を表現する図です。\n任意のオブジェクトとその関連をデータモデル化することができますが、主に関係データベースの設計に利用されています。\n\n設問はデータベースの設計に関する文章のためbはE-R図が適切です。またaはE-R図で表現されるものなので(実体間の)関連、E-Rを基に作成されるのは関係データベースのテーブルです。\n\nしたがって、\na＝関連\nb＝E-R図\nc＝テーブル\nの「ウ」が正しい組合せです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/54a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q54/54a.png"
         ]
       }
     },
@@ -2453,28 +2453,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/27_aki/img/55.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q55/55.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/27_aki/img/55.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q55/55.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/27_aki/img/55.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q55/55.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/27_aki/img/55.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q55/55.png"
           ]
         }
       ],
@@ -2577,7 +2577,7 @@
         "text": "RSSは、ブログやニュースサイト、電子掲示板などのWebサイトで、効率の良い情報収集や情報発信を行うために用いる文書フォーマットの総称です。ページの見出しや要約、更新時刻などの記事に関するメタデータが、XMLベースの記述形式で構造化されて記録されています。\nまた、指定したWebサイトを巡回し、Webサイトの見出しや要約などを小さくまとめた「フィード」と呼ばれるRSS形式の更新情報を取得してリンク一覧を作成するソフトウェアを「RSSリーダー」といいます。\n・Cascading Style Sheetsの略。Webページの要素をどのように修飾して表示させるかを定義するテキスト形式の文書です。\n・Dynamic Host Configuration Protocolの略。TCP/IPネットワークで、ネットワークに接続するノードへのIPアドレスの割り当てをアドレスプールから自動的に行うプロトコルです。\n・Information Security Management Systemの略。情報セキュリティマネジメントシステムの管理・運用に関する仕組みです。\n・正しい。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/57.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q57/57.png"
         ]
       }
     },
@@ -2623,7 +2623,7 @@
         "text": "可用性とは、情報セキュリティマネジメントの概念の一要素で、障害が発生しても安定したサービスを提供でき、ユーザーが必要な時にシステムを利用可能である特性を示します。\nハードウェアやソフトウェアの故障を防ぐ施策の実施や、修理時間の短縮、機器の冗長化を行うことで高めることができます。\n\n情報セキュリティマネジメントで維持すべき要素には可用性の他に「機密性」と「完全性」があり、3つを合わせて情報セキュリティマネジメント3大要素と言います。機密性許可された正規のユーザーだけが情報にアクセスできる特性を示す完全性情報が完全で、改ざん・破壊されていない特性を示す選択肢の施策がどの要素を高めるものであるかに注目すると、\n・機密性を高める施策です。\n・完全性を高める施策です。\n・機密性を高める施策です。\n・正しい。ハードウェアの二重化は、障害発生時の停止時間を短くするために行うので可用性を高める施策になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/58.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q58/58.png"
         ]
       }
     },
@@ -2713,7 +2713,7 @@
         "text": "マルチキャスト(Multicast)とは、IPネットワークにおける通信方式の1つで、1つの送信元からあらかじめ決められた複数の宛先に配信することをいいます。\n\n送信されるデータは1つですが、通信経路上のルータにより適切に複製されて複数の宛先に届く仕組みになっています。1回の通信で複数の宛先に届けることができるため、回線への負荷を小さくできる利点があります。\n\nまた、2つのコンピュータが「1対1」で通信する場合をユニキャスト、ルータを超えない範囲の同一ネットワークに属するすべてのコンピュータに同時通信することをブロードキャストといいます。\n・Domain Name Systemの略。ドメイン名・ホスト名とIPアドレスを結びつけて変換する(名前解決する)仕組みです。\n・Uniform Resource Locatorの略。WebサイトやWeb上のリソース(画像やファイル)のアドレス(住所)のことです。\n・正しい。マルチキャストは、TCP/IPネットワークで1対多の通信を行うときに使用する方式です。\n・マルチリンクは、複数の通信回線を束ねることで通信速度を高める技術です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/60.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q60/60.png"
         ]
       }
     },
@@ -2857,7 +2857,7 @@
         "text": "関係データベースで管理している\"入館履歴\"表と\"建物\"表から，建物名'東館'を条件に抽出した結果を日付の降順でソートしたとき，2番目のレコードの社員番号はどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/64.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q64/64.png"
         ]
       },
       "choices": [
@@ -2893,8 +2893,8 @@
         "text": "問題文中に示されている\"建物\"表を参照すると、建物名'東館'の\"建物コード\"は'B002'であるとわかります。つまり\"入館履歴\"表から'東館'を条件に抽出した結果は、\"建物コード\"が'B002'である4つのレコードを含む表になります。さらに抽出されたレコードを日付の降順でソートします。降順とは、値が大きいものほど先頭になるように整列することです。日付の整列では日時が昔に遡るほど小さい値、未来に進むほど大きい値として扱われるので、抽出したレコードを降順で整列した結果は以下の表になります。したがって先頭から2番目のレコードの社員番号は「S0004」になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/64_1.png",
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/64_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q64/64_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q64/64_2.png"
         ]
       }
     },
@@ -2950,7 +2950,7 @@
         "text": "図のように，ADSLモデムを介してPCからインターネット上のWebサーバを利用するため，機器の接続作業を行っている。PC1に接続されたLANケーブルをハブの空きポートに接続したところ，そのポートのリンクランプが点灯した。このことだけで判断できることとして，適切なものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/66.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q66/66.png"
         ]
       },
       "choices": [
@@ -2986,7 +2986,7 @@
         "text": "ハブのリンクランプは、以下のことが全て確認できた場合に点灯します。\n・そのポートが正常である\n・LANケーブルが正常である\n・LANケーブルの先の機器と正常に接続されている\n\nつまり、ハブとPC1がLANケーブルを介して物理的に正しく接続されていることを知らせています。\n\nリンクランプによって確認できるのは、そのポートと接続先の機器間の状態だけなので「エ」以外の記述は誤りです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/66a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q66/66a.png"
         ]
       }
     },
@@ -3032,7 +3032,7 @@
         "text": "NAT(Network Address Translation)は、企業や組織のネットワーク内で割り当てられているプライベートIPアドレスとインターネット上でのアドレスであるグローバルIPアドレスを1対1で相互に変換する技術です。\n\n通常はルータに備わっている機能で、組織内のコンピュータがプライベートIPアドレスでインターネット上のWebサーバなどにアクセスしようとしたときに、ルータは送信データの送信元アドレスを保持しているグローバルIPアドレスに付け替えてリクエストを送信するとともに、その対応を記録しておきます。そしてWebサーバから返ってきたレスポンスをルータが受け取ると、宛先アドレスをグローバルIPアドレスからプライベートIPアドレスに付け替えてコンピュータに返します。ただし、「1対1」の対応のため複数の端末が同時にインターネットに接続する場合には、それに対応する数のグローバルIPアドレスが必要になります。この制限を回避するためにポート番号とIPアドレスを組合わせて変換することで、1つのグローバルIPアドレスで複数の端末が同時にインターネットに接続することができるNAPT(Network Address Port Translation)を使用するのが一般的です。\n・ARP(Address Resolution Protocol)の機能です。\n・DNS(Domain Name System)の機能です。\n・DNSの機能です。\n・正しい。NATの機能です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/67.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q67/67.png"
         ]
       }
     },
@@ -3078,7 +3078,7 @@
         "text": "2つの交換方式には次のような特徴があります。回線交換方式電話などのように通信を行う2者間で独占的に使用する通信路を確保して通信を行う方式。\n網内が混雑しても遅延が発生する可能性が低いが、少量の通信が断続的に行われる場合には回線の使用効率が低下する。パケット交換方式送信データをパケットと呼ばれる単位に分割し、それぞれのパケットに宛先などの情報を付加して送信する方式。\n1つの通信路を複数の機器が共有して使うので網内の混雑により遅延が発生する可能性があるが、回線の使用効率が高い。\n・パケット交換方式に関する記述です。\n・回線交換方式はアナログ・デジタルのどちらも扱うことができます。携帯電話やISDNでの音声通信はデジタル信号での回線交換方式です。\n・正しい。\n・どちらの方式も有線・無線で使用できます。携帯電話では音声通信は回線交換網、データ通信はパケット交換網で処理されています。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/68.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q68/68.png"
         ]
       }
     },
@@ -3178,7 +3178,7 @@
         "text": "処理一覧に示す実行順に，トランザクション1～4を実行する。あるトランザクションが途中で異常終了し，トランザクションを中断してロールバックした結果，データAとデータBが残った。異常終了したトランザクションはどれか。ここで，トランザクションが正常終了したときにコミットを行い，次のトランザクションがあれば，それを実行する。異常終了したときは，当該トランザクション以降のトランザクションを実行しないものとする。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/71.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q71/71.png"
         ]
       },
       "choices": [
@@ -3214,7 +3214,7 @@
         "text": "それぞれのトランザクションの処理が正常に行われた場合、生成されているデータは以下のようになります。トランザクションには、トランザクション内の処理がすべて実行されるか、または全く実行されないかのどちらかで完了しなければならないので、処理途中で障害が発生した場合には「データをトランザクション開始直前の状態に戻す」ロールバック処理が行われます。\nロールバックが行われた結果、データAとデータBが残ったということは「あるトランザクションで障害が発生したために、そのトランザクションの開始直前の状態(データAとデータBがある状態)に戻った」と考えることができます。トランザクションの開始時点でデータAとデータBの両方が存在するのはトランザクション4だけのため、「トランザクション3までは正常にコミットされたが、トランザクション4の途中で障害が発生したためにトランザクション4の開始直前の状態(トランザクション3のコミット時点)に戻った」ことがわかります。\n\nしたがって正解は「エ」です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/71a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q71/71a.png"
         ]
       }
     },
@@ -3230,7 +3230,7 @@
           "直近1か月の商品別売上額ランキング"
         ],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/72.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q72/72.png"
         ]
       },
       "choices": [
@@ -3374,28 +3374,28 @@
           "label": "ア",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/27_aki/img/75.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q75/75.png"
           ]
         },
         {
           "label": "イ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/27_aki/img/75.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q75/75.png"
           ]
         },
         {
           "label": "ウ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/27_aki/img/75.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q75/75.png"
           ]
         },
         {
           "label": "エ",
           "text": "",
           "images": [
-            "https://www.itpassportsiken.com/kakomon/27_aki/img/75.png"
+            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q75/75.png"
           ]
         }
       ],
@@ -3730,7 +3730,7 @@
         "text": "それぞれのシステム構成は機器を二重化して障害発生に備えるものです。デュアルシステム同じ処理を2組のコンピュータシステムで行い、その結果を照合機でチェックしながら処理を進行していくシステム構成。障害発生時には、問題のある側のシステムをメイン処理から切り離し、残された側のシステムのみで処理を続行しつつ、障害からの回復を図る。\n障害発生に切れ目なく処理を続けることが可能。デュプレックスシステム現用系と予備系からなる2系列の処理システム構成。通常時は現用系でオンライン処理、予備系でバッチ処理を行うが、現用系の障害発生時には、現用系で行っていたオンライン処理を予備系に引き継ぎ処理を継続する。\n予備系の待機状態によって「ホットスタンバイ」と「コールドスタンバイ」に大別される。\n[ホットスタンバイ]\nあらかじめ現用系と同様のシステムを予備系に起動しておき、障害発生時には自動的に処理を引き継ぎ業務を継続する方式。\n\n[コールドスタンバイ]\n平常時には予備系で別の処理を行わせておく方式，または予備系の電源を切った状態で待機させておく方式。障害発生時はシステムを再起動し、業務システムを立ち上げて処理の引き継ぎを行う。3つの方式の特徴から障害発生時の停止時間には以下の関係があります。したがって停止時間の短い順に並べると「a，c，b」になります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/82.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q82/82.png"
         ]
       }
     },
@@ -3874,7 +3874,7 @@
         "text": "「条件付個数」は、ExcelのCOUNTIF関数に相当するもので、ITパスポート試験用では以下のように定義されています。条件付個数(セル範囲，検索条件の記述)セル範囲に含まれるセルのうち、検索条件の記述で指定された条件を満たすセルの個数を返す。まず他のセルに複写しない場合に入力される計算式を考えていきます。\n\nセル B208には「B3～B202までのうち値が5であるセルの数をカウントする」計算式が入ります。カウントを行う条件である5はセル A208 にあるので、入力されるべき計算式は以下のようになります。\n\n　条件付き個数(B3:B202，＝A208)\n\n次にセル B208 の1つ下の B209 には「B3～B202までのうち値が4であるセルの数をカウントする」が入ります。条件となる4はセル A209 にあるので、入力されるべき計算式は以下のようになります。\n\n　条件付き個数(B3:B202，＝A209)\n\n同様にセル B208 の1つ右の C208 には「C3～C202までのうち値が5であるセルの数をカウントする」が入ります。条件である5はセル A208 にあるので、入力されるべき計算式は以下のようになります。\n\n　条件付き個数(C3:C202，＝A208)\n\nこの3つの計算式を比較すると、セルの行列指定が移動しているものと固定になっているものがあることがわかります。\n\n　条件付き個数(B3:B202，＝A208)\n　条件付き個数(B3:B202，＝A209)\n　条件付き個数(C3:C202，＝A208)\n\n入力されるセルが変化しても行列指定が固定なのは「カウント対象となるセル範囲の行指定」、及び「条件となる値を指定するセルの列指定」とわかります(赤字の部分)。したがって複写元となるセル B208 の計算式の該当する箇所に「$」を付与した\n\n　条件付き個数(B$3:B$202，＝$A208)\n\nが適切な計算式となります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/85.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q85/85.png"
         ]
       }
     },
@@ -3886,7 +3886,7 @@
         "text": "特定の質問項目の評価が低い顧客のアンケートを基にどのような傾向があるかを分析するために，図1のワークシートに，指定した質問項目の評価が2以下のアンケートだけを抽出するアンケート抽出表を追加して，図2のワークシートを作成した。\n　セル K204 に質問項目の項目番号を入力すると，その質問項目の評価が2以下だったアンケートの内容をアンケート集計表から抽出し，アンケート抽出表中の同じ行に複写する。アンケート抽出表中への抽出対象とならなかったアンケートに該当する行のセルには，空値を格納する。セル J3 には，セル B3～G3 の評価のうち，セル K204 に入力された項目番号に該当する質問項目の評価が2以下であれば，アンケート集計表のセル B3 の評価を返し，そうでなければ空値を返す式が入力されている。セル J3 に入力されている式はどれか。ここで，セル J3 の式はセル J3～O202 に複写する。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/86.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q86/86.png"
         ]
       },
       "choices": [
@@ -3922,7 +3922,7 @@
         "text": "「表引き」は、ExcelのINDEX関数に相当するもので、ITパスポート試験用では以下のように定義されています。表引き(セル範囲，行の位置，列の位置)セル範囲の左上端から行と列をそれぞれ1，2，…と数え，セル範囲に含まれる行の位置と列の位置で指定した場所にあるセルの値を返す。「セル B3～G3 の評価のうち，セル K204 に入力された項目番号に該当する質問項目の評価が2以下であれば，アンケート集計表のセル B3 の評価を返し，そうでなければ空値を返す」という記述から、IF関数の評価式が2以下(≦2)となる真の場合の引数に「B3」、偽の場合の引数には「null」を指定すればよいことがわかります。\n\n　IF(評価式≦2，B3，null)\n\n次に評価式です。表引きの対象となるセル範囲 B3～G3 の中は、1列目が店舗、2列目が接客・サービス、…、6列目が総合評価となっているため、セル K204 の項目番号がそのままセル範囲の中での列の位置に対応しています。またセル範囲 B3～G3 は下図のように1行を対象としているため行指定は「1」しか選択できません。したがって表引き関数の引数は、\n\n　表引き($B3：$G3，1，$K$204)\n\nが適切です。したがってIF関数の評価式の部分に表引き関数を挿入した\n\n　IF(表引き($B3：$G3，1，$K$204)≦2，B3，null)\n\nがセル J3 に入力されるべき計算式です。\n\n※J3の式はJ3～O202に複写されるためセルの相対指定・絶対指定を適切に設定する必要がありますが、この設問ではすべての選択肢で同じになっているためその部分の解説を割愛しています。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/86a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q86/86a.png"
         ]
       }
     },
@@ -3968,8 +3968,8 @@
         "text": "図1の評価集計表の度数のうち評価が2以下の部分に注目します。表から店舗の評価が2以下の人数は「77人」、案内・パンフレットの評価が2以下の人数は「87人」とわかります。追加アンケートの対象者は2つ集合の人数の和から両方に該当する人数を引いた数になるので、\n\n　77＋87－38＝126(人)\n\nなお、2つの集合の関係をベン図で表すと以下のようになります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/87_1.png",
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/87_2.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q87/87_1.png",
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q87/87_2.png"
         ]
       }
     },
@@ -3981,7 +3981,7 @@
         "text": "相関係数は，一方が高くなれば他方も高くなるといった関連性がある場合には1以下の正の数で示され，1に近いほど関連性が強い。したがって，図1のアンケート集計表の相関係数が大きい質問項目ほど，総合評価に与える影響が強いと考えられる。また，アンケート集計表の評価平均では，各質問項目に対する顧客の現在の満足度を判断できる。そこで，相関係数と評価平均を判断材料として，顧客の総合的な満足度を向上させるために改善すべき点を検討することを目的に，図3のグラフを作成した。\n　図3のグラフでは，相関係数を横軸，評価平均を縦軸とする座標で，アンケート集計表の質問項目1～5の位置を示している。また，相関係数は0.5を，評価平均は3.0を基準値とする線で四つの領域に区分し，質問項目1～5が位置する領域によって改善の優先度を判断することにした。図3を分析した内容として適切なものはどれか。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/88.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q88/88.png"
         ]
       },
       "choices": [
@@ -4017,7 +4017,7 @@
         "text": "図1の表の値から図3にプロットされた各点は以下の評価項目に該当していることがわかります。\n・案内・パンフレットは評価点が低いものの、総合評価との相関性は低いため、総合評価を高めるために最優先すべきとはいえません。\n・技術・仕上がりは評価点：高、相関性：弱の領域にあるため記述は誤りです。\n・接客・サービスは評価点：高、相関性：強の領域にあるため記述は誤りです。\n・正しい。店舗は、総合評価との相関性が強いにも関わらず評価が低くなっているので、総合評価を高めるために最優先で改善すべき項目といえます。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/88a.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q88/88a.png"
         ]
       }
     },
@@ -4063,7 +4063,7 @@
         "text": "売上高を求めるには「単価×売上数量」の計算式を入力する必要があります。したがってこの時点で式が「単価÷売上数量」になっている「ウ」「エ」は誤りとわかります。\n\nセル E2～E5 に正しく売上高を表示するためには、それぞれのセルに次の計算式が入力されている必要があります。上記の計算式を比較すると、セル E2 の計算式が適切に複写されるためには行指定が相対参照でなければいけないことがわかります。\n\nしたがって「ア」「イ」のうち行指定が相対参照になっている「ア」が適切です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/89.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q89/89.png"
         ]
       }
     },
@@ -4109,7 +4109,7 @@
         "text": "粗利益は「売上高－売上原価」で求められます。売上高と売上原価は、\n・売上高＝単価×売上数量\n・売上原価＝原価×売上数量\n\nという式で計算できるので、粗利益を求める式は、\n\n　粗利益＝単価×売上数量－原価×売上数量\n　　　　＝(単価－原価)×売上数量\n\nとなります。\n\nセル F2～F5 に正しく売上高を表示するためには、それぞれのセルに次の計算式が入力されている必要があります。上記の計算式を比較すると、セル F2 の計算式が適切に複写されるためには行指定が相対参照でなければいけないことがわかります。\n\nしたがって粗利益を求める式が適切、かつ、行指定が相対参照となっている「イ」が正解です。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/90.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q90/90.png"
         ]
       }
     },
@@ -4155,7 +4155,7 @@
         "text": "図1の数値を基に考えていきます。\n・売上比率は味玉ラーメンが勝っていますが、粗利率はチャーシューメンの方が高いので記述は誤りです。\n・粗利と売上比率はみそラーメンが最も低くなっていますが、粗利率が最も低いのはしょう油ラーメンのため記述は誤りです。\n・正しい記述です。\n・粗利が最も多いのはしょう油ラーメンなので記述は誤りです。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/b1.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q91/b1.png"
         ]
       }
     },
@@ -4289,7 +4289,7 @@
         "text": "結合点A→結合点D、結合点E→結合点Hの2つの区間に分けて考えていきます。\n\n結合点Aから結合点Dに至る経路は以下の3つです。\n・工程1(1日)→工程2(4日)＝5日\n・工程3(3日)＝3日\n・工程4(2日)→工程5(5日)＝7日\n\nしたがって結合点Aから結合点Dまでのクリティカルパスは「工程4→工程5」、最短完了日数は7日とわかります。\n\nまた、結合点Eから結合点Hに至る経路は以下の3つです。\n・工程7(4日)→工程8(2日)＝6日\n・工程9(6日)＝6日\n・工程10(4日)→工程11(4日)＝8日\n\nしたがって結合点Eから結合点Hまでのクリティカルパスは「工程10→工程11」、最短完了日数は8日とわかります。\n\nこれらのことから組立て作業全体としてのクリティカルパスは「工程4→工程5→工程6→工程10→工程11」、最短完了日数は、\n\n　2＋5＋1＋4＋4＝16(日)\n\nになります。",
         "choice_comments": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/94.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q94/94.png"
         ]
       }
     },
@@ -4521,7 +4521,7 @@
         "text": "Aさんが処分するPCにおいて，専用ソフトの説明書によって，そのソフトウェアの処理速度が次のとおりであることが分かった。Aさんが処分するPCに内蔵されている全てのHDDの処理に掛かる時間は合わせて何分か。ここで，専用ソフトの処理以外に掛かる時間は無視する。",
         "sub_items": [],
         "images": [
-          "https://www.itpassportsiken.com/kakomon/27_aki/img/100.png"
+          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/27_aki/q100/100.png"
         ]
       },
       "choices": [
