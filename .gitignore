@@ -56,3 +56,6 @@ pubspec.lock
 # 単語生成ツールの大容量データファイル
 tools/
 .env
+
+# Firebase / GCP service account keys (never commit)
+*-firebase-adminsdk-*.json
