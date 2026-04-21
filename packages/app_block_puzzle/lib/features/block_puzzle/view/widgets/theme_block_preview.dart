@@ -7,14 +7,13 @@ import '../painters/cell_renderer.dart';
 
 // CellRenderMode ごとのシェーダーアセットパス（null = Canvas フォールバック）。
 const _kShaderPaths = <CellRenderMode, String>{
-  CellRenderMode.glassmorphism:
-      'packages/core/shaders/block_puzzle/glassmorphism.frag',
-  CellRenderMode.wireframe: 'packages/core/shaders/block_puzzle/wireframe.frag',
-  CellRenderMode.matte: 'packages/core/shaders/block_puzzle/matte.frag',
-  CellRenderMode.bubble: 'packages/core/shaders/block_puzzle/bubble.frag',
-  CellRenderMode.ice: 'packages/core/shaders/block_puzzle/ice.frag',
-  CellRenderMode.slate: 'packages/core/shaders/block_puzzle/slate.frag',
-  CellRenderMode.slime: 'packages/core/shaders/block_puzzle/slime.frag',
+  CellRenderMode.glassmorphism: 'shaders/block_puzzle/glassmorphism.frag',
+  CellRenderMode.wireframe: 'shaders/block_puzzle/wireframe.frag',
+  CellRenderMode.matte: 'shaders/block_puzzle/matte.frag',
+  CellRenderMode.bubble: 'shaders/block_puzzle/bubble.frag',
+  CellRenderMode.ice: 'shaders/block_puzzle/ice.frag',
+  CellRenderMode.slate: 'shaders/block_puzzle/slate.frag',
+  CellRenderMode.slime: 'shaders/block_puzzle/slime.frag',
 };
 
 Future<FragmentShader?> _loadCellShader(CellRenderMode mode) async {

@@ -181,7 +181,7 @@ class _AnimatedPieceSlotState extends ConsumerState<_AnimatedPieceSlot>
           }
           if (settings.soundEnabled) {
             AudioService.instance.playWithPan(
-              'packages/core/assets/sounds/block_puzzle/block_select.mp3',
+              'assets/sounds/block_puzzle/block_select.mp3',
               rate: 0.85,
             );
           }

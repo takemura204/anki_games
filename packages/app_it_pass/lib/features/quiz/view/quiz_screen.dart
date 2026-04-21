@@ -17,6 +17,8 @@ import '../model/question.dart';
 import '../model/quiz_session.dart';
 import '../view_model/quiz_view_model.dart';
 
+part 'quiz_paging.dart';
+part 'quiz_shell_widgets.dart';
 part 'modals/explanation_sheet.dart';
 part 'widgets/choice_button.dart';
 part 'widgets/footer.dart';
@@ -25,68 +27,6 @@ part 'widgets/question_cardt.dart';
 part 'widgets/quiz_network_image.dart';
 part 'widgets/quiz_page_item.dart';
 part 'widgets/session_finished_widget.dart';
-
-// ---------------------------------------------------------------------------
-// Page entry model
-// ---------------------------------------------------------------------------
-
-sealed class _PageEntry {
-  const _PageEntry();
-}
-
-final class _QuestionEntry extends _PageEntry {
-  const _QuestionEntry({
-    required this.questionIndex,
-    required this.setIndex,
-  });
-
-  final int questionIndex;
-  final int setIndex;
-}
-
-final class _ResultEntry extends _PageEntry {
-  const _ResultEntry({required this.setIndex});
-
-  final int setIndex;
-}
-
-final class _SessionEndEntry extends _PageEntry {
-  const _SessionEndEntry();
-}
-
-List<_PageEntry> _buildPages(int total) {
-  final pages = <_PageEntry>[];
-  for (var i = 0; i < total; i++) {
-    pages.add(_QuestionEntry(questionIndex: i, setIndex: 0));
-  }
-  pages
-    ..add(const _ResultEntry(setIndex: 0))
-    ..add(const _SessionEndEntry());
-  return pages;
-}
-
-// ---------------------------------------------------------------------------
-// Forward-only scroll physics (prevents backward page swipe)
-// ---------------------------------------------------------------------------
-
-class _ForwardOnlyPageScrollPhysics extends PageScrollPhysics {
-  const _ForwardOnlyPageScrollPhysics({super.parent});
-
-  @override
-  _ForwardOnlyPageScrollPhysics applyTo(ScrollPhysics? ancestor) {
-    return _ForwardOnlyPageScrollPhysics(parent: buildParent(ancestor));
-  }
-
-  /// 後退方向（下スワイプ: offset > 0）のみブロックする。
-  /// バリスティックアニメーション（ページスナップ）は妨げない。
-  @override
-  double applyPhysicsToUserOffset(ScrollMetrics position, double offset) {
-    if (offset > 0) {
-      return 0;
-    }
-    return super.applyPhysicsToUserOffset(position, offset);
-  }
-}
 
 // ---------------------------------------------------------------------------
 // Root widget
@@ -439,106 +379,6 @@ class _QuizContentState extends ConsumerState<_QuizContent>
             onDismiss: _closeSheet,
           ),
       ],
-    );
-  }
-}
-
-// ---------------------------------------------------------------------------
-// Answered action bar
-// ---------------------------------------------------------------------------
-
-class _AnsweredActionBar extends StatelessWidget {
-  const _AnsweredActionBar({
-    required this.onShowExplanation,
-    required this.onNext,
-  });
-
-  final VoidCallback onShowExplanation;
-  final VoidCallback onNext;
-
-  @override
-  Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(20),
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
-        child: DecoratedBox(
-          decoration: BoxDecoration(
-            color: Colors.white.withValues(alpha: 0.08),
-            borderRadius: BorderRadius.circular(20),
-            border: Border.all(
-              color: Colors.white.withValues(alpha: 0.15),
-            ),
-          ),
-          child: Row(
-            children: [
-              Expanded(
-                child: TextButton.icon(
-                  onPressed: onShowExplanation,
-                  icon: const Icon(
-                    Icons.lightbulb_outline_rounded,
-                    color: Color(0xFF10B981),
-                    size: 18,
-                  ),
-                  label: const Text(
-                    '解説を見る',
-                    style: TextStyle(
-                      color: Color(0xFF10B981),
-                      fontWeight: FontWeight.w600,
-                      fontSize: 13,
-                    ),
-                  ),
-                ),
-              ),
-              Container(width: 1, height: 28, color: Colors.white12),
-              Expanded(
-                child: TextButton.icon(
-                  onPressed: onNext,
-                  iconAlignment: IconAlignment.end,
-                  icon: const Icon(
-                    Icons.keyboard_arrow_up_rounded,
-                    color: Colors.white70,
-                    size: 20,
-                  ),
-                  label: const Text(
-                    '次の問題へ',
-                    style: TextStyle(
-                      color: Colors.white70,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 13,
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-// ---------------------------------------------------------------------------
-// Gradient background
-// ---------------------------------------------------------------------------
-
-class _QuizGradientBackground extends StatelessWidget {
-  const _QuizGradientBackground();
-
-  @override
-  Widget build(BuildContext context) {
-    return const DecoratedBox(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            Color(0xFF0D0B2B),
-            Color(0xFF1A0A3C),
-            Color(0xFF2D1B69),
-          ],
-        ),
-      ),
     );
   }
 }

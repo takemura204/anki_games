@@ -1,4 +1,6 @@
 import 'package:app_it_pass/features/quiz/view/quiz_screen.dart';
+import 'package:core/config/styles/app_colors.dart';
+import 'package:core/config/theme/app_theme.dart' show buildAppTheme;
 import 'package:core/i18n/translations.g.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -22,13 +24,7 @@ class ItPassApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'IT Pass',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF7C3AED),
-          brightness: Brightness.dark,
-        ),
-        useMaterial3: true,
-      ),
+      theme: buildAppTheme(seedColor: AppColors.itPassSeed, dark: true),
       home: const QuizScreen(),
     );
   }

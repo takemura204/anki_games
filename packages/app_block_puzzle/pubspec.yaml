@@ -62,6 +62,20 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
+  assets:
+    - assets/sounds/block_puzzle/
+
+  shaders:
+    - shaders/block_puzzle/glassmorphism.frag
+    - shaders/block_puzzle/wireframe.frag
+    - shaders/block_puzzle/matte.frag
+    - shaders/block_puzzle/bubble.frag
+    - shaders/block_puzzle/ice.frag
+    - shaders/block_puzzle/slate.frag
+    - shaders/block_puzzle/slime.frag
+    - shaders/block_puzzle/glossy.frag
+    - shaders/block_puzzle/sand.frag
+
 flutter_launcher_icons:
   android: true
   image_path_android: "../core/assets/logo/logo_light.png"

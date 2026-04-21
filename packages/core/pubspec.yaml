@@ -62,15 +62,6 @@ flutter:
 
   assets:
     - assets/
-  shaders:
-    - shaders/block_puzzle/glassmorphism.frag
-    - shaders/block_puzzle/wireframe.frag
-    - shaders/block_puzzle/matte.frag
-    - shaders/block_puzzle/bubble.frag
-    - shaders/block_puzzle/ice.frag
-    - shaders/block_puzzle/slate.frag
-    - shaders/block_puzzle/slime.frag
-
 
   fonts:
     - family: Poppins

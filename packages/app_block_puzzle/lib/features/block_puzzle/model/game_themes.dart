@@ -54,8 +54,8 @@ const monotoneTheme = GameTheme(
     cellDelay: 0.08,
   ),
   sounds: GameThemeSounds(
-    placePath: 'packages/core/assets/sounds/block_puzzle/put.mp3',
-    clearPath: 'packages/core/assets/sounds/block_puzzle/stone_cut.mp3',
+    placePath: 'assets/sounds/block_puzzle/put.mp3',
+    clearPath: 'assets/sounds/block_puzzle/stone_cut.mp3',
   ),
 );
 
@@ -113,8 +113,8 @@ const cyberNeonTheme = GameTheme(
     cellDelay: 0.08,
   ),
   sounds: GameThemeSounds(
-    placePath: 'packages/core/assets/sounds/block_puzzle/put.mp3',
-    clearPath: 'packages/core/assets/sounds/block_puzzle/neon_cut.mp3',
+    placePath: 'assets/sounds/block_puzzle/put.mp3',
+    clearPath: 'assets/sounds/block_puzzle/neon_cut.mp3',
     clearPitchMax: 1.2,
   ),
 );
@@ -171,8 +171,8 @@ const slimeTheme = GameTheme(
     cellDelay: 0.06, // 次々とポップ
   ),
   sounds: GameThemeSounds(
-    placePath: 'packages/core/assets/sounds/block_puzzle/put.mp3',
-    clearPath: 'packages/core/assets/sounds/block_puzzle/slime_cut.mp3',
+    placePath: 'assets/sounds/block_puzzle/put.mp3',
+    clearPath: 'assets/sounds/block_puzzle/slime_cut.mp3',
     clearPitchMin: 0.85,
     clearPitchMax: 1.2,
   ),
@@ -228,8 +228,8 @@ const soapCutTheme = GameTheme(
     cellDelay: 0.10,
   ),
   sounds: GameThemeSounds(
-    placePath: 'packages/core/assets/sounds/block_puzzle/put.mp3',
-    clearPath: 'packages/core/assets/sounds/block_puzzle/soap_cut.mp3',
+    placePath: 'assets/sounds/block_puzzle/put.mp3',
+    clearPath: 'assets/sounds/block_puzzle/soap_cut.mp3',
     clearPitchMin: 0.85,
   ),
 );
@@ -284,8 +284,8 @@ const bubbleWrapTheme = GameTheme(
     cellDelay: 0.045, // 高速連続ポップ
   ),
   sounds: GameThemeSounds(
-    placePath: 'packages/core/assets/sounds/block_puzzle/put.mp3',
-    clearPath: 'packages/core/assets/sounds/block_puzzle/bubble_cut.mp3',
+    placePath: 'assets/sounds/block_puzzle/put.mp3',
+    clearPath: 'assets/sounds/block_puzzle/bubble_cut.mp3',
     clearPitchMin: 0.95,
     clearPitchMax: 1.3,
   ),
@@ -338,8 +338,8 @@ const iceGlassTheme = GameTheme(
     cellDelay: 0.06, // 鋭いカスケード
   ),
   sounds: GameThemeSounds(
-    placePath: 'packages/core/assets/sounds/block_puzzle/put.mp3',
-    clearPath: 'packages/core/assets/sounds/block_puzzle/ice_cut.mp3',
+    placePath: 'assets/sounds/block_puzzle/put.mp3',
+    clearPath: 'assets/sounds/block_puzzle/ice_cut.mp3',
     clearPitchMin: 0.75,
     clearPitchMax: 1.05,
   ),

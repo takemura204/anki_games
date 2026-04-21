@@ -114,13 +114,13 @@ class _BoardWidgetState extends ConsumerState<BoardWidget>
 
   Future<void> _loadShaders() async {
     final programs = await Future.wait([
-      FragmentProgram.fromAsset('packages/core/shaders/block_puzzle/glassmorphism.frag'),
-      FragmentProgram.fromAsset('packages/core/shaders/block_puzzle/wireframe.frag'),
-      FragmentProgram.fromAsset('packages/core/shaders/block_puzzle/matte.frag'),
-      FragmentProgram.fromAsset('packages/core/shaders/block_puzzle/bubble.frag'),
-      FragmentProgram.fromAsset('packages/core/shaders/block_puzzle/ice.frag'),
-      FragmentProgram.fromAsset('packages/core/shaders/block_puzzle/slate.frag'),
-      FragmentProgram.fromAsset('packages/core/shaders/block_puzzle/slime.frag'),
+      FragmentProgram.fromAsset('shaders/block_puzzle/glassmorphism.frag'),
+      FragmentProgram.fromAsset('shaders/block_puzzle/wireframe.frag'),
+      FragmentProgram.fromAsset('shaders/block_puzzle/matte.frag'),
+      FragmentProgram.fromAsset('shaders/block_puzzle/bubble.frag'),
+      FragmentProgram.fromAsset('shaders/block_puzzle/ice.frag'),
+      FragmentProgram.fromAsset('shaders/block_puzzle/slate.frag'),
+      FragmentProgram.fromAsset('shaders/block_puzzle/slime.frag'),
     ]);
     if (!mounted) {
       return;

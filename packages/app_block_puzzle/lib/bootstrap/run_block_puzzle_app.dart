@@ -1,5 +1,5 @@
 import 'package:app_block_puzzle/router/screen_router.dart';
-import 'package:core/config/styles/app_text_style.dart';
+import 'package:core/config/theme/app_theme.dart' show buildAppTheme;
 import 'package:core/features/purchase/service/i_purchase_service.dart';
 import 'package:core/features/purchase/service/mock_purchase_service.dart';
 import 'package:core/features/purchase/service/real_purchase_service.dart';
@@ -8,7 +8,6 @@ import 'package:core/firebase_options.dart';
 import 'package:core/i18n/translations.g.dart';
 import 'package:core/utils/service/audio_service.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -34,7 +33,7 @@ Future<void> runBlockPuzzleApp({required bool initializeFirebase}) async {
   final initialLevelKey =
       wasOnPuzzle ? prefs.getString('last_level_key') : null;
   await AudioService.instance.preload([
-    'packages/core/assets/sounds/block_puzzle/block_select.mp3',
+    'assets/sounds/block_puzzle/block_select.mp3',
   ]);
 
   final purchaseService = kDebugMode
@@ -80,26 +79,12 @@ class _MaterialApp extends HookConsumerWidget {
   const _MaterialApp();
 
   ThemeData _buildTheme(GameThemeColors colors, {bool dark = false}) {
-    final base = dark
-        ? FlexThemeData.dark(
-            scheme: FlexScheme.blackWhite,
-            textTheme: AppTextStyle.textTheme,
-          )
-        : FlexThemeData.light(
-            scheme: FlexScheme.blackWhite,
-            textTheme: AppTextStyle.textTheme,
-          );
-    return base.copyWith(
-      scaffoldBackgroundColor: colors.surface,
-      colorScheme: ColorScheme.fromSeed(
-        seedColor: colors.accent,
-        brightness: dark ? Brightness.dark : Brightness.light,
-      ).copyWith(
-        surface: colors.surface,
-        onSurface: colors.onSurface,
-        primary: colors.accent,
-        onPrimary: colors.surface,
-      ),
+    return buildAppTheme(
+      seedColor: colors.accent,
+      dark: dark,
+      surfaceColor: colors.surface,
+      onSurfaceColor: colors.onSurface,
+      primaryColor: colors.accent,
     );
   }
 
