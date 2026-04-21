@@ -12,10 +12,17 @@ Flutter モノレポ。現在2アプリを収録。
 - `lib/apps/block_puzzle/` — ブロックパズルゲーム
 
 ## よく使うコマンド
-- `flutter run` — 実行
+- `flutter run` — 既定エントリ [lib/main.dart](lib/main.dart)（Block Puzzle + Firebase）
+- `flutter run -t lib/main_block_puzzle.dart --flavor blockPuzzle` — Block Puzzle（Firebase なし）
+- `flutter run -t lib/main_it_pass.dart --flavor it_pass` — IT Pass
+- `dart run melos run analyze` / `dart run melos run test` — ルート [melos.yaml](melos.yaml) 経由の一括タスク
 - `flutter analyze` — 静的解析（実装後は必ず実行）
 - `flutter test` — テスト実行
 - `dart run build_runner build --delete-conflicting-outputs` — コード生成（freezed / riverpod_generator / json_serializable）
+
+## Android / iOS フレーバー
+- Android: `blockPuzzle`（`jp.block.puzzle`）、`it_pass`（`jp.it.game`）— [android/app/build.gradle.kts](android/app/build.gradle.kts)
+- iOS: Xcode の `Debug-it_pass` / `Debug-blockPuzzle` 等（[ios/Flutter/flavors/](ios/Flutter/flavors/) の `APP_NAME` / `BUNDLE_ID`）
 
 ## アーキテクチャ（全アプリ共通）
 各 feature を以下の層で分離:

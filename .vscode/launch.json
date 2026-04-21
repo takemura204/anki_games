@@ -5,6 +5,7 @@
 			"name": "block_puzzle",
 			"request": "launch",
 			"type": "dart",
+			"cwd": "packages/app_block_puzzle",
 			"program": "lib/main_block_puzzle.dart",
 			"args": ["--flavor", "blockPuzzle"]
 		},
@@ -12,8 +13,8 @@
 			"name": "it_pass",
 			"request": "launch",
 			"type": "dart",
-			"program": "lib/main_it_pass.dart",
-			"args": ["--flavor", "it_pass"]
+			"cwd": "packages/app_it_pass",
+			"program": "lib/main_it_pass.dart"
 		}
 	]
 }

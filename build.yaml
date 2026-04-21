@@ -1,11 +1,5 @@
+# コード生成は各パッケージで実行する（例: packages/core で slang / riverpod）。
+# ルートの lib は空のため、ここでは slang を設定しない。
 targets:
   $default:
     builders:
-      slang_build_runner:
-        options:
-          input_directory: lib/common/i18n
-          input_file_pattern: .i18n.json
-          output_directory: lib/common/i18n
-          output_file_name: translations.g.dart
-          base_locale: ja
-          fallback_strategy: base_locale

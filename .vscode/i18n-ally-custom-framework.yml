@@ -3,7 +3,7 @@ languageIds:
 
 # slang: lib/i18n/{locale}.i18n.json のネスト JSON（settings.deleteLearningData 等）
 localesPaths:
-  - lib/i18n
+  - packages/core/lib/i18n
 pathMatcher: '{locale}.i18n.json'
 keyStyle: nested
 
