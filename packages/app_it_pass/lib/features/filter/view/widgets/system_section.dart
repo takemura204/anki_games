@@ -12,6 +12,7 @@ class _SystemSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final systems = ExamMeta.categoryTree.keys.toList();
+    final c = context.appColors;
     return Wrap(
       spacing: 10,
       runSpacing: 10,
@@ -20,25 +21,23 @@ class _SystemSection extends StatelessWidget {
         return GestureDetector(
           onTap: () => onToggle(system),
           child: AnimatedContainer(
-            duration: const Duration(milliseconds: 200),
+            duration: AppAnimation.fast,
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
             decoration: BoxDecoration(
               color: selected
-                  ? const Color(0xFF7C3AED).withValues(alpha: 0.3)
-                  : Colors.white.withValues(alpha: 0.05),
-              borderRadius: BorderRadius.circular(12),
+                  ? AppColors.itPassSeed.withValues(alpha: 0.3)
+                  : c.surface1,
+              borderRadius: AppBorderRadius.md,
               border: Border.all(
-                color: selected
-                    ? const Color(0xFF7C3AED)
-                    : Colors.white.withValues(alpha: 0.15),
+                color: selected ? AppColors.itPassSeed : c.border1,
               ),
             ),
             child: Text(
               system,
-              style: TextStyle(
-                color: selected ? Colors.white : Colors.white54,
-                fontSize: 12,
+              style: AppTextStyle.labelLarge.copyWith(
+                color: selected ? c.fg : c.fgShade300,
                 fontWeight: selected ? FontWeight.bold : FontWeight.normal,
+                letterSpacing: 0,
               ),
             ),
           ),

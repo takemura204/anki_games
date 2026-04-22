@@ -7,8 +7,8 @@ class _Footer extends StatelessWidget {
     required this.session,
     required this.onShowExplanation,
     required this.onNext,
-    required this.onUserPressed,
-    required this.onFilterPressed,
+    required this.onTapNote,
+    required this.onTapReport,
   });
   final bool showActionBar;
   final BorderRadius cardRadius;
@@ -16,8 +16,8 @@ class _Footer extends StatelessWidget {
   final VoidCallback onShowExplanation;
   final VoidCallback onNext;
 
-  final VoidCallback onUserPressed;
-  final VoidCallback onFilterPressed;
+  final VoidCallback onTapNote;
+  final VoidCallback onTapReport;
 
   @override
   Widget build(BuildContext context) {
@@ -33,16 +33,16 @@ class _Footer extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          _GlassButton(
+          GlassButton(
             cardRadius: cardRadius,
             child: IconButton(
               padding: EdgeInsets.zero,
-              icon: const Icon(
+              icon: Icon(
                 Icons.grid_view_outlined,
-                color: Colors.white70,
+                color: context.appColors.fgShade400,
                 size: 22,
               ),
-              onPressed: onUserPressed,
+              onPressed: onTapNote,
             ),
           ),
           const Gap(15),
@@ -65,14 +65,14 @@ class _Footer extends StatelessWidget {
             ),
           ),
           const Gap(15),
-          _GlassButton(
+          GlassButton(
             cardRadius: cardRadius,
             child: IconButton(
               iconSize: 22,
               padding: EdgeInsets.zero,
-              color: Colors.white70,
+              color: context.appColors.fgShade400,
               icon: const Icon(Icons.insert_chart_outlined),
-              onPressed: onFilterPressed,
+              onPressed: onTapReport,
             ),
           ),
         ],

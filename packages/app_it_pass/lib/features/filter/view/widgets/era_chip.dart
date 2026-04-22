@@ -13,28 +13,29 @@ class _EraChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final c = context.appColors;
     return GestureDetector(
       onTap: onTap,
       child: AnimatedContainer(
-        duration: const Duration(milliseconds: 180),
+        duration: AppAnimation.fast,
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
         decoration: BoxDecoration(
           color: selected
-              ? const Color(0xFF4F46E5).withValues(alpha: 0.25)
-              : Colors.white.withValues(alpha: 0.04),
-          borderRadius: BorderRadius.circular(8),
+              ? AppColors.itPassAccent.withValues(alpha: 0.25)
+              : c.surface1,
+          borderRadius: AppBorderRadius.sm,
           border: Border.all(
             color: selected
-                ? const Color(0xFF7C3AED).withValues(alpha: 0.7)
-                : Colors.white.withValues(alpha: 0.1),
+                ? AppColors.itPassSeed.withValues(alpha: 0.7)
+                : c.border1,
           ),
         ),
         child: Text(
           label,
-          style: TextStyle(
-            color: selected ? Colors.white : Colors.white38,
-            fontSize: 11,
+          style: AppTextStyle.labelMedium.copyWith(
+            color: selected ? c.fg : c.fgShade200,
             fontWeight: selected ? FontWeight.w600 : FontWeight.normal,
+            letterSpacing: 0,
           ),
         ),
       ),

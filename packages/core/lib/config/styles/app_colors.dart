@@ -6,11 +6,32 @@ import 'package:flutter/material.dart';
 /// テーマに依存するカラーは [Theme.of(context).colorScheme] を使うこと。
 abstract final class AppColors {
   // ── Brand seeds ───────────────────────────────────────────────────
-  /// IT Pass アプリのブランドカラー（紫）。
+  /// IT Pass アプリのブランドカラー（紫）。seed にも使う。
   static const itPassSeed = Color(0xFF7C3AED);
+
+  /// IT Pass ボタン等グラデーションの末端色（濃紺紫）。
+  static const itPassAccent = Color(0xFF4F46E5);
+
+  // ── IT Pass 背景グラデーション ────────────────────────────────────
+  /// IT Pass 背景グラデーション最暗部。
+  static const itPassBgStart = Color(0xFF0D0B2B);
+
+  /// IT Pass 背景グラデーション中間。
+  static const itPassBgMid = Color(0xFF1A0A3C);
+
+  /// IT Pass 背景グラデーション最明部。
+  static const itPassBgEnd = Color(0xFF2D1B69);
 
   // ── Semantic ──────────────────────────────────────────────────────
   static const success = Color(0xFF22C55E);
   static const warning = Color(0xFFF59E0B);
   static const error = Color(0xFFEF4444);
+
+  static const skin1 = MaterialColor(0xFF52C2CD, {
+    50: Color(0xFFEFFAFA),
+    100: Color(0xFFDAF2F4),
+    200: Color(0xFF9FDEE3),
+    300: Color(0xFF52C2CD),
+    400: Color(0xFF3F959D),
+  });
 }

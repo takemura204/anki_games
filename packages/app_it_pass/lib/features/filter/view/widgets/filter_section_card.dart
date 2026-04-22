@@ -7,13 +7,12 @@ class _FilterSectionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final c = context.appColors;
     return DecoratedBox(
       decoration: BoxDecoration(
-        color: Colors.white.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(
-          color: Colors.white.withValues(alpha: 0.1),
-        ),
+        color: c.surface1,
+        borderRadius: AppBorderRadius.lg,
+        border: Border.all(color: c.border1),
       ),
       child: Padding(
         padding: const EdgeInsets.all(12),

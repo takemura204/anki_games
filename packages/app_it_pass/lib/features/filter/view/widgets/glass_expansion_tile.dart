@@ -15,15 +15,16 @@ class _GlassExpansionTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final c = context.appColors;
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(14),
+        borderRadius: const BorderRadius.all(Radius.circular(14)),
         child: DecoratedBox(
           decoration: BoxDecoration(
-            color: Colors.white.withValues(alpha: 0.04),
-            borderRadius: BorderRadius.circular(14),
-            border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
+            color: c.surface1,
+            borderRadius: const BorderRadius.all(Radius.circular(14)),
+            border: Border.all(color: c.border1),
           ),
           child: Column(
             children: [
@@ -31,27 +32,26 @@ class _GlassExpansionTile extends StatelessWidget {
                 onTap: onToggle,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
-                    horizontal: 16,
+                    horizontal: AppSpacing.md,
                     vertical: 12,
                   ),
                   child: Row(
                     children: [
                       Text(
                         title,
-                        style: const TextStyle(
-                          color: Colors.white70,
-                          fontSize: 13,
+                        style: AppTextStyle.bodySmall.copyWith(
+                          color: c.fgShade400,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
                       const Spacer(),
                       AnimatedRotation(
                         turns: isExpanded ? 0.5 : 0,
-                        duration: const Duration(milliseconds: 200),
-                        child: const Icon(
+                        duration: AppAnimation.fast,
+                        child: Icon(
                           Icons.keyboard_arrow_down_rounded,
-                          color: Colors.white38,
-                          size: 20,
+                          color: c.fgShade200,
+                          size: AppSpacing.md + 4,
                         ),
                       ),
                     ],
@@ -60,7 +60,12 @@ class _GlassExpansionTile extends StatelessWidget {
               ),
               if (isExpanded)
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+                  padding: const EdgeInsets.fromLTRB(
+                    AppSpacing.md,
+                    0,
+                    AppSpacing.md,
+                    AppSpacing.md,
+                  ),
                   child: child,
                 ),
             ],

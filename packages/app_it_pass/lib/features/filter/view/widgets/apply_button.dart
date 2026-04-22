@@ -13,26 +13,27 @@ class _ApplyButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final c = context.appColors;
     return Container(
       padding: EdgeInsets.only(
         top: 10,
-        left: 16,
-        right: 16,
+        left: AppSpacing.md,
+        right: AppSpacing.md,
         bottom: MediaQuery.of(context).padding.bottom + 10,
       ),
       child: GestureDetector(
         onTap: (canApply && !isApplying) ? onTap : null,
         child: AnimatedContainer(
-          duration: const Duration(milliseconds: 200),
+          duration: AppAnimation.fast,
           height: 52,
           decoration: BoxDecoration(
             gradient: canApply
                 ? const LinearGradient(
-                    colors: [Color(0xFF7C3AED), Color(0xFF4F46E5)],
+                    colors: [AppColors.itPassSeed, AppColors.itPassAccent],
                   )
                 : null,
-            color: canApply ? null : Colors.white12,
-            borderRadius: BorderRadius.circular(16),
+            color: canApply ? null : c.surface2,
+            borderRadius: AppBorderRadius.lg,
           ),
           child: Center(
             child: isApplying
@@ -46,10 +47,8 @@ class _ApplyButton extends StatelessWidget {
                   )
                 : Text(
                     canApply ? 'この設定で出題する' : '試験回を選択してください',
-                    style: TextStyle(
-                      color: canApply ? Colors.white : Colors.white38,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 15,
+                    style: AppTextStyle.titleMedium.copyWith(
+                      color: canApply ? Colors.white : c.fgShade200,
                       letterSpacing: 0.5,
                     ),
                   ),

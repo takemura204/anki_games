@@ -42,6 +42,7 @@ dependencies:
   riverpod_annotation:
   sensors_plus:
   shared_preferences:
+  shimmer: ^3.0.0
   slang:
   slang_flutter:
   url_launcher:

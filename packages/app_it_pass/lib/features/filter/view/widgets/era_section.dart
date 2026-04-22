@@ -55,7 +55,7 @@ class _EraSection extends StatelessWidget {
                 onTap: onSelectAll,
                 active: selectedEraIds.length == ExamMeta.all.length,
               ),
-              const SizedBox(width: 4),
+              const Gap(AppSpacing.xs),
               _TextLinkButton(label: 'すべて解除', onTap: onClearAll),
             ],
           ),
@@ -70,20 +70,21 @@ class _EraSection extends StatelessWidget {
         ),
         if (!canApply)
           Padding(
-            padding: const EdgeInsets.only(top: 4),
+            padding: const EdgeInsets.only(top: AppSpacing.xs),
             child: Row(
               children: [
                 const Icon(
                   Icons.warning_amber_rounded,
-                  color: Color(0xFFFBBF24),
+                  color: AppColors.warning,
                   size: 14,
                 ),
-                const SizedBox(width: 6),
+                const Gap(AppSpacing.xs + 2),
                 Text(
                   '試験回を1つ以上選択してください',
-                  style: TextStyle(
-                    color: const Color(0xFFFBBF24).withValues(alpha: 0.8),
-                    fontSize: 12,
+                  style: AppTextStyle.labelLarge.copyWith(
+                    color: AppColors.warning.withValues(alpha: 0.8),
+                    letterSpacing: 0,
+                    fontWeight: FontWeight.normal,
                   ),
                 ),
               ],
@@ -109,22 +110,24 @@ class _EraGroupSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final c = context.appColors;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.only(bottom: 8),
+          padding: const EdgeInsets.only(bottom: AppSpacing.sm),
           child: Text(
             groupLabel,
-            style: TextStyle(
-              color: Colors.white.withValues(alpha: 0.4),
-              fontSize: 11,
+            style: AppTextStyle.labelMedium.copyWith(
+              color: c.fgShade200,
+              letterSpacing: 0,
+              fontWeight: FontWeight.normal,
             ),
           ),
         ),
         Wrap(
-          spacing: 8,
-          runSpacing: 8,
+          spacing: AppSpacing.sm,
+          runSpacing: AppSpacing.sm,
           children: metas.map((meta) {
             return _EraChip(
               label: meta.displayName,
@@ -133,7 +136,7 @@ class _EraGroupSection extends StatelessWidget {
             );
           }).toList(),
         ),
-        const SizedBox(height: 16),
+        const Gap(AppSpacing.md),
       ],
     );
   }
@@ -152,20 +155,16 @@ class _TextLinkButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final color = active ? AppColors.itPassSeed : context.appColors.fgShade300;
     return GestureDetector(
       onTap: onTap,
       child: Text(
         label,
-        style: TextStyle(
-          color: active
-              ? const Color(0xFF7C3AED)
-              : Colors.white.withValues(alpha: 0.45),
-          fontSize: 11,
-          fontWeight: FontWeight.w600,
+        style: AppTextStyle.labelMedium.copyWith(
+          color: color,
+          letterSpacing: 0,
           decoration: TextDecoration.underline,
-          decorationColor: active
-              ? const Color(0xFF7C3AED)
-              : Colors.white.withValues(alpha: 0.45),
+          decorationColor: color,
         ),
       ),
     );

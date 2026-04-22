@@ -15,17 +15,16 @@ class _AnsweredActionBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final c = context.appColors;
     return ClipRRect(
-      borderRadius: BorderRadius.circular(20),
+      borderRadius: const BorderRadius.all(Radius.circular(20)),
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
         child: DecoratedBox(
           decoration: BoxDecoration(
-            color: Colors.white.withValues(alpha: 0.08),
-            borderRadius: BorderRadius.circular(20),
-            border: Border.all(
-              color: Colors.white.withValues(alpha: 0.15),
-            ),
+            color: c.surface2,
+            borderRadius: const BorderRadius.all(Radius.circular(20)),
+            border: Border.all(color: c.border1),
           ),
           child: Row(
             children: [
@@ -34,35 +33,33 @@ class _AnsweredActionBar extends StatelessWidget {
                   onPressed: onShowExplanation,
                   icon: const Icon(
                     Icons.lightbulb_outline_rounded,
-                    color: Color(0xFF10B981),
+                    color: AppColors.success,
                     size: 18,
                   ),
-                  label: const Text(
+                  label: Text(
                     '解説を見る',
-                    style: TextStyle(
-                      color: Color(0xFF10B981),
-                      fontWeight: FontWeight.w600,
-                      fontSize: 13,
+                    style: AppTextStyle.labelLarge.copyWith(
+                      color: AppColors.success,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
               ),
-              Container(width: 1, height: 28, color: Colors.white12),
+              Container(width: 1, height: 28, color: c.fgShade50),
               Expanded(
                 child: TextButton.icon(
                   onPressed: onNext,
                   iconAlignment: IconAlignment.end,
-                  icon: const Icon(
+                  icon: Icon(
                     Icons.keyboard_arrow_up_rounded,
-                    color: Colors.white70,
+                    color: c.fgShade400,
                     size: 20,
                   ),
-                  label: const Text(
+                  label: Text(
                     '次の問題へ',
-                    style: TextStyle(
-                      color: Colors.white70,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 13,
+                    style: AppTextStyle.labelLarge.copyWith(
+                      color: c.fgShade400,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
@@ -84,18 +81,8 @@ class _QuizGradientBackground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const DecoratedBox(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            Color(0xFF0D0B2B),
-            Color(0xFF1A0A3C),
-            Color(0xFF2D1B69),
-          ],
-        ),
-      ),
+    return DecoratedBox(
+      decoration: BoxDecoration(gradient: context.appColors.bgGradient),
     );
   }
 }

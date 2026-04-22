@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -35,19 +36,31 @@ class QuizViewModel extends AsyncNotifier<QuizState> {
 
   @override
   Future<QuizState> build() async {
-    final filter = await _filterRepo.load();
-    if (!filter.isValid) {
-      return const QuizError('出題範囲が選択されていません');
+    try {
+      // filter と learning stats を並列ロード
+      final (filter, stats) = await (
+        _filterRepo.load(),
+        _learningRepo.loadAll(),
+      ).wait;
+
+      if (!filter.isValid) {
+        return const QuizError('出題範囲が選択されていません');
+      }
+      final questions = await _repository.loadSession(filter, stats);
+      if (questions.isEmpty) {
+        return const QuizError('条件に合う問題がありません');
+      }
+      return QuizReady(QuizSession(
+        questions: questions,
+        setStartTime: DateTime.now(),
+      ));
+    } on Object catch (e, st) {
+      if (kDebugMode) {
+        debugPrint('[QuizViewModel] クイズ読み込みに失敗しました: $e');
+        debugPrint('$st');
+      }
+      rethrow;
     }
-    final stats = await _learningRepo.loadAll();
-    final questions = await _repository.loadSession(filter, stats);
-    if (questions.isEmpty) {
-      return const QuizError('条件に合う問題がありません');
-    }
-    return QuizReady(QuizSession(
-      questions: questions,
-      setStartTime: DateTime.now(),
-    ));
   }
 
   Future<void> answer(String label) async {

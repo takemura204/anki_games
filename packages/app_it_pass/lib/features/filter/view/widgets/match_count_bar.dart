@@ -11,6 +11,7 @@ class _MatchCountBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final c = context.appColors;
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.baseline,
@@ -18,40 +19,40 @@ class _MatchCountBar extends StatelessWidget {
       children: [
         Text(
           '該当',
-          style: TextStyle(
-            color: Colors.white.withValues(alpha: 0.55),
-            fontSize: 12,
+          style: AppTextStyle.labelLarge.copyWith(
+            color: c.fgShade300,
             fontWeight: FontWeight.w500,
+            letterSpacing: 0,
           ),
         ),
-        const SizedBox(width: 8),
+        const Gap(AppSpacing.sm),
         if (!canApply)
           Text(
             '—',
-            style: TextStyle(
-              color: Colors.white.withValues(alpha: 0.35),
-              fontSize: 12,
+            style: AppTextStyle.labelLarge.copyWith(
+              color: c.fgShade200,
               fontWeight: FontWeight.bold,
+              letterSpacing: 0,
             ),
           )
         else if (matchCount == null)
-          const SizedBox(
+          SizedBox(
             width: 22,
             height: 22,
             child: CircularProgressIndicator(
               strokeWidth: 2,
-              color: Colors.white54,
+              color: c.fgShade300,
             ),
           )
         else
           _AnimatedMatchCount(count: matchCount!),
-        const SizedBox(width: 8),
+        const Gap(AppSpacing.sm),
         Text(
           '問',
-          style: TextStyle(
-            color: Colors.white.withValues(alpha: 0.55),
-            fontSize: 12,
+          style: AppTextStyle.labelLarge.copyWith(
+            color: c.fgShade300,
             fontWeight: FontWeight.w500,
+            letterSpacing: 0,
           ),
         ),
       ],
@@ -78,7 +79,7 @@ class _AnimatedMatchCountState extends State<_AnimatedMatchCount>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 380),
+      duration: const Duration(milliseconds: 380), // カウントアップ演出のチューニング値
     )..value = 1;
   }
 
@@ -117,9 +118,8 @@ class _AnimatedMatchCountState extends State<_AnimatedMatchCount>
               opacity: 0.2 + 0.8 * t,
               child: Text(
                 '${widget.count}',
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
+                style: AppTextStyle.bodyLarge.copyWith(
+                  color: context.appColors.fg,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 0.5,
                 ),

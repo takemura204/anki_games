@@ -6,26 +6,23 @@ class _SectionLabel extends StatelessWidget {
   final String label;
   final Widget? trailing;
 
-  static const _style = TextStyle(
-    color: Color(0x80FFFFFF),
-    fontSize: 11,
-    fontWeight: FontWeight.w600,
-    letterSpacing: 1.2,
-  );
-
   @override
   Widget build(BuildContext context) {
+    final style = AppTextStyle.labelMedium.copyWith(
+      color: context.appColors.fgShade300,
+    );
+
     if (trailing == null) {
       return Padding(
         padding: const EdgeInsets.only(bottom: 10),
-        child: Text(label, style: _style),
+        child: Text(label, style: style),
       );
     }
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
       child: Row(
         children: [
-          Text(label, style: _style),
+          Text(label, style: style),
           const Spacer(),
           trailing!,
         ],

@@ -11,4 +11,7 @@ abstract class LearningHistoryRepository {
     required bool isCorrect,
     required DateTime at,
   });
+
+  /// 学習履歴を全件削除する。
+  Future<void> deleteAll();
 }

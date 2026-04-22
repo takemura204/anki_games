@@ -6,6 +6,15 @@ List<String> _parseImages(Map<String, dynamic> json) {
   return imgs.map((e) => e as String).where((s) => s.isNotEmpty).toList();
 }
 
+/// JSON の `List<dynamic>` を `List<String>` に変換する（`as List<String>` は不可）。
+List<String> _parseStringList(Map<String, dynamic> json, String key) {
+  final list = json[key] as List<dynamic>?;
+  if (list == null) {
+    return [];
+  }
+  return list.map((e) => e as String).toList();
+}
+
 class QuestionChoice {
   const QuestionChoice({
     required this.label,
@@ -57,6 +66,7 @@ class Question {
     required this.answer,
     required this.explanationText,
     required this.explanationImages,
+    required this.explanationChoiceComments,
     required this.categoryRaw,
     required this.system,
     required this.major,
@@ -83,6 +93,8 @@ class Question {
       answer: json['answer'] as String,
       explanationText: explanation['text'] as String? ?? '',
       explanationImages: _parseImages(explanation),
+      explanationChoiceComments:
+          _parseStringList(explanation, 'choice_comments'),
       categoryRaw: category['raw'] as String? ?? '',
       system: category['system'] as String? ?? '',
       major: category['major'] as String? ?? '',
@@ -99,6 +111,7 @@ class Question {
   final String answer;
   final String explanationText;
   final List<String> explanationImages;
+  final List<String> explanationChoiceComments;
   final String categoryRaw;
   final String system;
   final String major;

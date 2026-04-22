@@ -16,8 +16,8 @@ class _OrderModeSection extends StatelessWidget {
       children: [
         const _SectionLabel('出題の順番'),
         Wrap(
-          spacing: 8,
-          runSpacing: 8,
+          spacing: AppSpacing.sm,
+          runSpacing: AppSpacing.sm,
           children: [
             _OrderModeChip(
               label: '最適化',
@@ -59,20 +59,22 @@ class _OrderModeChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final c = context.appColors;
     return GestureDetector(
       onTap: onTap,
       child: AnimatedContainer(
-        duration: const Duration(milliseconds: 200),
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+        duration: AppAnimation.fast,
+        padding: const EdgeInsets.symmetric(
+          horizontal: 12,
+          vertical: AppSpacing.sm,
+        ),
         decoration: BoxDecoration(
           color: selected
-              ? const Color(0xFF7C3AED).withValues(alpha: 0.28)
-              : Colors.white.withValues(alpha: 0.05),
-          borderRadius: BorderRadius.circular(12),
+              ? AppColors.itPassSeed.withValues(alpha: 0.28)
+              : c.surface1,
+          borderRadius: AppBorderRadius.md,
           border: Border.all(
-            color: selected
-                ? const Color(0xFF7C3AED)
-                : Colors.white.withValues(alpha: 0.12),
+            color: selected ? AppColors.itPassSeed : c.border1,
           ),
         ),
         child: Column(
@@ -81,17 +83,18 @@ class _OrderModeChip extends StatelessWidget {
           children: [
             Text(
               label,
-              style: TextStyle(
-                color: selected ? Colors.white : Colors.white54,
-                fontSize: 12,
+              style: AppTextStyle.labelLarge.copyWith(
+                color: selected ? c.fg : c.fgShade300,
                 fontWeight: FontWeight.bold,
+                letterSpacing: 0,
               ),
             ),
             Text(
               subtitle,
-              style: TextStyle(
-                color: Colors.white.withValues(alpha: selected ? 0.55 : 0.35),
-                fontSize: 10,
+              style: AppTextStyle.labelSmall.copyWith(
+                color: selected ? c.fgShade400 : c.fgShade200,
+                letterSpacing: 0,
+                fontWeight: FontWeight.normal,
               ),
             ),
           ],

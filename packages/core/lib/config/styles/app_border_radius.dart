@@ -8,5 +8,6 @@ abstract final class AppBorderRadius {
   static const md = BorderRadius.all(Radius.circular(12));
   static const lg = BorderRadius.all(Radius.circular(16));
   static const xl = BorderRadius.all(Radius.circular(24));
+  static const circle = BorderRadius.all(Radius.circular(90));
   static const full = BorderRadius.all(Radius.circular(999));
 }

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-IT パスポート過去問 JSON の explanation.text を OpenAI API で書き換えます。
+IT パスポート過去問 JSON の explanation.text と explanation.choice_comments を
+OpenAI API で書き換えます。
 処理済みの問題はスキップするため、途中で中断しても再開できます。
 
 使い方:
@@ -24,36 +25,68 @@ import argparse
 from pathlib import Path
 from openai import OpenAI
 
-ASSETS_DIR = Path(__file__).parent.parent / "assets" / "quiz" / "it_pass"
-PROGRESS_KEY = "_explanation_rewritten"
-DEFAULT_MODEL = "gpt-4o"
+ASSETS_DIR = Path(__file__).parent.parent / "packages" / "app_it_pass" / "assets" / "quiz"
+PROGRESS_KEY = "_rewritten"          # text + choice_comments 両方完了
+LEGACY_KEY = "_explanation_rewritten"  # 旧スクリプトで text のみ完了済み
+DEFAULT_MODEL = "gpt-4o-mini"
 
 SYSTEM_PROMPT = (
     "あなたはITパスポート試験の解説文を書き直すアシスタントです。\n"
-    "以下のルールに従って解説文を書き直してください：\n"
+    "以下のルールに従って書き直してください：\n"
     "- 技術的な内容・意味・結論は一切変えない\n"
     "- 専門用語・固有名詞・アルファベットの略語はそのまま使用する\n"
     "- 文の構造・語順・言い回しを変える（同義語の使用、文の分割・統合など）\n"
     "- 自然な日本語を維持する\n"
-    "- 書き直した文章のみを出力する（前置きや説明は不要）"
+    "- 指定された JSON 形式のみを出力する（余計な説明は不要）"
 )
 
 
-def rewrite_explanation(client: OpenAI, text: str, model: str) -> str:
-    """OpenAI API で解説文を書き換えて返す。"""
-    if not text or not text.strip():
-        return text
+def rewrite_question_explanation(
+    client: OpenAI,
+    text: str,
+    choice_comments: list[str],
+    model: str,
+) -> tuple[str, list[str]]:
+    """
+    text と choice_comments を1回の API 呼び出しでまとめて書き換える。
+    トークン節約のため両方を JSON で一括送信し、JSON で受け取る。
+    """
+    has_text = bool(text and text.strip())
+    has_comments = bool(choice_comments)
+
+    if not has_text and not has_comments:
+        return text, choice_comments
+
+    payload: dict = {}
+    if has_text:
+        payload["text"] = text
+    if has_comments:
+        payload["choice_comments"] = choice_comments
+
+    user_message = (
+        "以下の解説を書き直してください。\n"
+        "入力と同じキーを持つ JSON のみを出力してください（```json ブロックは不要）:\n\n"
+        + json.dumps(payload, ensure_ascii=False)
+    )
 
     response = client.chat.completions.create(
         model=model,
         messages=[
             {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": f"以下の解説文を書き直してください:\n\n{text}"},
+            {"role": "user", "content": user_message},
         ],
         temperature=0.7,
-        max_tokens=2048,
+        max_tokens=3000,
+        response_format={"type": "json_object"},
     )
-    return response.choices[0].message.content.strip()
+
+    raw = response.choices[0].message.content.strip()
+    result = json.loads(raw)
+
+    new_text = result.get("text", text) if has_text else text
+    new_comments = result.get("choice_comments", choice_comments) if has_comments else choice_comments
+
+    return new_text, new_comments
 
 
 def process_file(client: OpenAI, file_path: Path, model: str, dry_run: bool = False):
@@ -72,27 +105,47 @@ def process_file(client: OpenAI, file_path: Path, model: str, dry_run: bool = Fa
         no = q.get("no", i + 1)
         exp = q.get("explanation", {})
         text = exp.get("text", "")
+        choice_comments = exp.get("choice_comments", [])
 
-        # 既に処理済みはスキップ
+        # 新マーカーがあれば完全処理済み → スキップ
         if exp.get(PROGRESS_KEY):
             skipped += 1
             continue
 
-        # 空の解説もスキップ
-        if not text.strip():
+        # 旧マーカー(text のみ完了)がある場合は choice_comments だけ処理
+        text_already_done = bool(exp.get(LEGACY_KEY))
+
+        # text も choice_comments も空なら処理不要
+        if (text_already_done or not text.strip()) and not choice_comments:
             exp[PROGRESS_KEY] = True
             skipped += 1
             continue
 
-        print(f"  [{i+1:3}/{total}] Q{no:3} 書き換え中...", end=" ", flush=True)
+        has_comments = bool(choice_comments)
+
+        if text_already_done:
+            label = f"comments のみ ({len(choice_comments)}件)"
+        elif has_comments:
+            label = f"text + {len(choice_comments)}件のコメント"
+        else:
+            label = "text のみ"
+
+        print(f"  [{i+1:3}/{total}] Q{no:3} ({label}) 書き換え中...", end=" ", flush=True)
 
         if dry_run:
             print("(dry-run)")
             continue
 
         try:
-            new_text = rewrite_explanation(client, text, model)
-            exp["text"] = new_text
+            # text が既に書き換え済みの場合は空文字を渡して choice_comments だけ処理
+            rewrite_text = "" if text_already_done else text
+            new_text, new_comments = rewrite_question_explanation(
+                client, rewrite_text, choice_comments, model
+            )
+            if not text_already_done:
+                exp["text"] = new_text
+            if has_comments:
+                exp["choice_comments"] = new_comments
             exp[PROGRESS_KEY] = True
             processed += 1
             print("✓")
@@ -120,9 +173,10 @@ def clean_progress_markers(files: list[Path]):
         modified = False
         for q in data.get("questions", []):
             exp = q.get("explanation", {})
-            if PROGRESS_KEY in exp:
-                del exp[PROGRESS_KEY]
-                modified = True
+            for key in (PROGRESS_KEY, LEGACY_KEY):
+                if key in exp:
+                    del exp[key]
+                    modified = True
 
         if modified:
             with open(file_path, "w", encoding="utf-8") as f:
@@ -147,6 +201,10 @@ def main():
     all_files = sorted(
         f for f in ASSETS_DIR.glob("it_pass_*.json") if "sample" not in f.name
     )
+
+    if not all_files:
+        print(f"エラー: JSON ファイルが見つかりません: {ASSETS_DIR}")
+        return
 
     # クリーンアップモード
     if args.clean:

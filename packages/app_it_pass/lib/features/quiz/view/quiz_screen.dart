@@ -1,18 +1,27 @@
 import 'dart:math';
 import 'dart:ui';
 
+import 'package:app_it_pass/components/glass_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:confetti/confetti.dart';
 import 'package:core/config/constants/app_urls.dart';
+import 'package:app_it_pass/config/theme/it_pass_color_scheme.dart';
+import 'package:core/config/styles/app_animation.dart';
+import 'package:core/config/styles/app_border_radius.dart';
+import 'package:core/config/styles/app_colors.dart';
+import 'package:core/config/styles/app_spacing.dart';
+import 'package:core/config/styles/app_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../filter/view/filter_sheet.dart';
+import '../../../router/modal_sheet_router.dart';
 import '../../learning/model/learning_level.dart';
 import '../../learning/providers/it_pass_learning_stats_provider.dart';
 import '../../learning/repository/local_learning_history_repository.dart';
+import '../../note/providers/bookmark_provider.dart';
 import '../model/question.dart';
 import '../model/quiz_session.dart';
 import '../view_model/quiz_view_model.dart';
@@ -23,14 +32,11 @@ part 'modals/explanation_sheet.dart';
 part 'widgets/choice_button.dart';
 part 'widgets/footer.dart';
 part 'widgets/header.dart';
-part 'widgets/question_cardt.dart';
+part 'widgets/question_card.dart';
 part 'widgets/quiz_network_image.dart';
 part 'widgets/quiz_page_item.dart';
-part 'widgets/session_finished_widget.dart';
-
-// ---------------------------------------------------------------------------
-// Root widget
-// ---------------------------------------------------------------------------
+part 'widgets/quiz_skeleton.dart';
+part 'widgets/finished_result_page.dart';
 
 class QuizScreen extends ConsumerWidget {
   const QuizScreen({super.key});
@@ -45,13 +51,13 @@ class QuizScreen extends ConsumerWidget {
         children: [
           const _QuizGradientBackground(),
           asyncState.when(
-            loading: () => const Center(
-              child: CircularProgressIndicator(color: Colors.white),
-            ),
+            loading: () => const _QuizSkeleton(),
             error: (e, _) => Center(
               child: Text(
                 'エラーが発生しました\n$e',
-                style: const TextStyle(color: Colors.white70),
+                style: AppTextStyle.bodyMedium.copyWith(
+                  color: context.appColors.fgShade400,
+                ),
                 textAlign: TextAlign.center,
               ),
             ),
@@ -112,7 +118,7 @@ class _QuizContentState extends ConsumerState<_QuizContent>
     );
     _sheetController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 380),
+      duration: const Duration(milliseconds: 380), // シートスライドのチューニング値
     )..addStatusListener(_onSheetStatus);
     _sheetSlide = Tween<Offset>(
       begin: const Offset(0, 1),
@@ -190,7 +196,7 @@ class _QuizContentState extends ConsumerState<_QuizContent>
   void _goNext() {
     _sheetController.reverse();
     _pageController.nextPage(
-      duration: const Duration(milliseconds: 450),
+      duration: const Duration(milliseconds: 450), // ページスワイプのチューニング値
       curve: Curves.easeInOutCubic,
     );
   }
@@ -276,7 +282,7 @@ class _QuizContentState extends ConsumerState<_QuizContent>
         : const NeverScrollableScrollPhysics();
 
     final headerCenterLabel = _isOnResultPage
-        ? 'セット結果'
+        ? 'リザルト'
         : _isOnSessionEndPage
             ? '次のステップ'
             : null;
@@ -295,7 +301,7 @@ class _QuizContentState extends ConsumerState<_QuizContent>
             if (entry is _ResultEntry) {
               final elapsed =
                   _resultElapsesBySet[entry.setIndex] ?? Duration.zero;
-              return _SetResultPage(
+              return _FinishResultPage(
                 key: ValueKey('result_${entry.setIndex}'),
                 session: session,
                 elapsed: elapsed,
@@ -306,7 +312,14 @@ class _QuizContentState extends ConsumerState<_QuizContent>
             if (entry is _SessionEndEntry) {
               return _SessionEndPage(
                 key: const ValueKey('session_end'),
-                onOpenFilter: () => showQuizFilterSheet(context, ref),
+                onOpenFilter: () async {
+                  final applied = await ref
+                      .read(modalSheetRouterProvider)
+                      .showFilterSheet();
+                  if (applied == true) {
+                    ref.invalidate(quizViewModelProvider);
+                  }
+                },
               );
             }
 
@@ -334,8 +347,16 @@ class _QuizContentState extends ConsumerState<_QuizContent>
             cardRadius: cardRadius,
             session: session,
             centerLabel: headerCenterLabel,
-            onUserPressed: () {},
-            onFilterPressed: () => showQuizFilterSheet(context, ref),
+            showCenter: !_isOnResultPage,
+            onTapSetting: () =>
+                ref.read(modalSheetRouterProvider).showSettings(),
+            onTapFilter: () async {
+              final applied =
+                  await ref.read(modalSheetRouterProvider).showFilterSheet();
+              if (applied == true) {
+                ref.invalidate(quizViewModelProvider);
+              }
+            },
           ),
         ),
         Align(
@@ -346,8 +367,9 @@ class _QuizContentState extends ConsumerState<_QuizContent>
             showActionBar: showActionBar,
             onShowExplanation: _showSheet,
             onNext: _goNext,
-            onUserPressed: () {},
-            onFilterPressed: () => showQuizFilterSheet(context, ref),
+            onTapNote: () =>
+                ref.read(modalSheetRouterProvider).showNoteSheet(session),
+            onTapReport: () async {},
           ),
         ),
         Align(
@@ -360,10 +382,10 @@ class _QuizContentState extends ConsumerState<_QuizContent>
             gravity: 0.3,
             emissionFrequency: 0.06,
             colors: const [
-              Color(0xFF10B981),
-              Color(0xFF7C3AED),
-              Color(0xFF4F46E5),
-              Color(0xFFFBBF24),
+              AppColors.success,
+              AppColors.itPassSeed,
+              AppColors.itPassAccent,
+              AppColors.warning,
               Color(0xFF60A5FA),
             ],
           ),

@@ -35,6 +35,12 @@ class LocalLearningHistoryRepository implements LearningHistoryRepository {
   }
 
   @override
+  Future<void> deleteAll() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.remove(_prefsKey);
+  }
+
+  @override
   Future<void> recordAnswer({
     required String eraId,
     required int no,

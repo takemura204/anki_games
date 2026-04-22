@@ -25,10 +25,13 @@ class _ChoiceButtonState extends State<_ChoiceButton>
     super.initState();
     _pulseController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 120),
+      duration: const Duration(milliseconds: 120), // タップフィードバックのチューニング値
     );
     _scaleAnimation = Tween<double>(begin: 1, end: 0.96).animate(
-      CurvedAnimation(parent: _pulseController, curve: Curves.easeInOut),
+      CurvedAnimation(
+        parent: _pulseController,
+        curve: AppAnimation.standard,
+      ),
     );
   }
 
@@ -61,36 +64,38 @@ class _ChoiceButtonState extends State<_ChoiceButton>
     final Color textColor;
     final List<BoxShadow> glowShadows;
 
+    final c = context.appColors;
+
     if (!isAnswered) {
-      borderColor = Colors.white.withValues(alpha: 0.2);
-      bgColor = Colors.white.withValues(alpha: 0.05);
-      textColor = Colors.white;
+      borderColor = c.border2;
+      bgColor = c.surface1;
+      textColor = c.fg;
       glowShadows = [];
     } else if (isCorrect) {
-      borderColor = const Color(0xFF10B981);
-      bgColor = const Color(0xFF10B981).withValues(alpha: 0.18);
-      textColor = Colors.white;
+      borderColor = AppColors.success;
+      bgColor = AppColors.success.withValues(alpha: 0.18);
+      textColor = Colors.white; // 色付き背景上なので常に白
       glowShadows = [
         BoxShadow(
-          color: const Color(0xFF10B981).withValues(alpha: 0.55),
+          color: AppColors.success.withValues(alpha: 0.55),
           blurRadius: 20,
           spreadRadius: 1,
         ),
       ];
     } else if (isSelected) {
-      borderColor = const Color(0xFFEF4444);
-      bgColor = const Color(0xFFEF4444).withValues(alpha: 0.18);
-      textColor = Colors.white;
+      borderColor = AppColors.error;
+      bgColor = AppColors.error.withValues(alpha: 0.18);
+      textColor = Colors.white; // 色付き背景上なので常に白
       glowShadows = [
         BoxShadow(
-          color: const Color(0xFFEF4444).withValues(alpha: 0.4),
-          blurRadius: 16,
+          color: AppColors.error.withValues(alpha: 0.4),
+          blurRadius: AppSpacing.md,
         ),
       ];
     } else {
-      borderColor = Colors.white.withValues(alpha: 0.08);
-      bgColor = Colors.white.withValues(alpha: 0.02);
-      textColor = Colors.white38;
+      borderColor = c.surface2;
+      bgColor = c.surface1;
+      textColor = c.fgShade200;
       glowShadows = [];
     }
 
@@ -99,12 +104,12 @@ class _ChoiceButtonState extends State<_ChoiceButton>
       child: ScaleTransition(
         scale: _scaleAnimation,
         child: AnimatedContainer(
-          duration: const Duration(milliseconds: 320),
+          duration: const Duration(milliseconds: 320), // 選択状態変化のチューニング値
           curve: Curves.easeOutCubic,
           padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
             color: bgColor,
-            borderRadius: BorderRadius.circular(14),
+            borderRadius: AppBorderRadius.md,
             border: Border.all(color: borderColor, width: 1.5),
             boxShadow: glowShadows,
           ),
@@ -118,28 +123,26 @@ class _ChoiceButtonState extends State<_ChoiceButton>
                     width: 32,
                     height: 32,
                     decoration: BoxDecoration(
-                      color: Colors.white.withValues(alpha: 0.08),
+                      color: context.appColors.surface2,
                       shape: BoxShape.circle,
                     ),
                     child: Center(
                       child: Text(
                         widget.choice.label,
-                        style: TextStyle(
+                        style: AppTextStyle.titleSmall.copyWith(
                           color: textColor,
                           fontWeight: FontWeight.bold,
-                          fontSize: 14,
                         ),
                       ),
                     ),
                   ),
                   if (hasText) ...[
-                    const SizedBox(width: 12),
+                    const Gap(AppSpacing.sm),
                     Expanded(
                       child: Text(
                         widget.choice.text,
-                        style: TextStyle(
+                        style: AppTextStyle.bodyMedium.copyWith(
                           color: textColor,
-                          fontSize: 14,
                           height: 1.5,
                         ),
                       ),
@@ -149,31 +152,31 @@ class _ChoiceButtonState extends State<_ChoiceButton>
                   if (isAnswered && isCorrect)
                     const Icon(
                       Icons.check_circle_rounded,
-                      color: Color(0xFF10B981),
+                      color: AppColors.success,
                       size: 20,
                     ),
                   if (isAnswered && isSelected && !isCorrect)
                     const Icon(
                       Icons.cancel_rounded,
-                      color: Color(0xFFEF4444),
+                      color: AppColors.error,
                       size: 20,
                     ),
                 ],
               ),
               if (hasImage) ...[
-                const SizedBox(height: 8),
+                const Gap(AppSpacing.sm),
                 ...widget.choice.images.asMap().entries.map(
-                  (e) => Padding(
-                    padding: const EdgeInsets.only(top: 4),
-                    child: _QuizNetworkImage(
-                      url: e.value,
-                      heroTag: 'img_q${widget.session.currentQuestion.no}'
-                          '_choice_${widget.choice.label}_${e.key}',
-                      borderRadius: BorderRadius.circular(8),
-                      tapToView: false,
+                      (e) => Padding(
+                        padding: const EdgeInsets.only(top: AppSpacing.xs),
+                        child: _QuizNetworkImage(
+                          url: e.value,
+                          heroTag: 'img_q${widget.session.currentQuestion.no}'
+                              '_choice_${widget.choice.label}_${e.key}',
+                          borderRadius: AppBorderRadius.sm,
+                          tapToView: false,
+                        ),
+                      ),
                     ),
-                  ),
-                ),
               ],
             ],
           ),

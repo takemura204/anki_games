@@ -1,6 +1,6 @@
 part of '../quiz_screen.dart';
 
-class _ExplanationSheet extends StatefulWidget {
+class _ExplanationSheet extends ConsumerStatefulWidget {
   const _ExplanationSheet({
     required this.sheetController,
     required this.slideAnimation,
@@ -20,10 +20,10 @@ class _ExplanationSheet extends StatefulWidget {
   final VoidCallback onDismiss;
 
   @override
-  State<_ExplanationSheet> createState() => _ExplanationSheetState();
+  ConsumerState<_ExplanationSheet> createState() => _ExplanationSheetState();
 }
 
-class _ExplanationSheetState extends State<_ExplanationSheet> {
+class _ExplanationSheetState extends ConsumerState<_ExplanationSheet> {
   var _dragStartY = 0.0;
   final _scrollController = ScrollController();
 
@@ -60,6 +60,7 @@ class _ExplanationSheetState extends State<_ExplanationSheet> {
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
+    final c = context.appColors;
 
     return Align(
       alignment: Alignment.bottomCenter,
@@ -79,17 +80,9 @@ class _ExplanationSheetState extends State<_ExplanationSheet> {
                   top: Radius.circular(28),
                 ),
                 child: DecoratedBox(
-                  decoration: const BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: [
-                        Color(0xFF0D0B2B),
-                        Color(0xFF1A0A3C),
-                        Color(0xFF2D1B69),
-                      ],
-                    ),
-                    borderRadius: BorderRadius.vertical(
+                  decoration: BoxDecoration(
+                    gradient: context.appColors.bgGradient,
+                    borderRadius: const BorderRadius.vertical(
                       top: Radius.circular(28),
                     ),
                   ),
@@ -103,7 +96,12 @@ class _ExplanationSheetState extends State<_ExplanationSheet> {
                           thumbVisibility: true,
                           child: SingleChildScrollView(
                             controller: _scrollController,
-                            padding: const EdgeInsets.fromLTRB(20, 0, 20, 8),
+                            padding: const EdgeInsets.fromLTRB(
+                              AppSpacing.md,
+                              0,
+                              AppSpacing.md,
+                              AppSpacing.sm,
+                            ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -114,25 +112,74 @@ class _ExplanationSheetState extends State<_ExplanationSheet> {
                                     _buildAnswerChip(
                                       label: '正解',
                                       value: widget.question.answer,
-                                      valueColor: const Color(0xFF10B981),
+                                      valueColor: AppColors.success,
                                     ),
-                                    const SizedBox(width: 12),
+                                    const Gap(12),
                                     _buildAnswerChip(
                                       label: 'あなた',
                                       value: widget.selectedLabel,
                                       valueColor: widget.selectedLabel ==
                                               widget.question.answer
-                                          ? const Color(0xFF10B981)
-                                          : const Color(0xFFEF4444),
+                                          ? AppColors.success
+                                          : AppColors.error,
                                     ),
                                   ],
                                 ),
-                                const Gap(12),
+                                const Gap(AppSpacing.sm),
+                                if (widget.question.explanationChoiceComments
+                                    .isNotEmpty) ...[
+                                  const Gap(AppSpacing.sm),
+                                  Container(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: AppSpacing.md,
+                                        vertical: AppSpacing.sm),
+                                    decoration: BoxDecoration(
+                                      color: c.surface2,
+                                      borderRadius: AppBorderRadius.sm,
+                                    ),
+                                    child: Column(children: [
+                                      ...widget
+                                          .question.explanationChoiceComments
+                                          .asMap()
+                                          .entries
+                                          .map(
+                                            (e) => Padding(
+                                              padding: const EdgeInsets.only(
+                                                bottom: AppSpacing.xs + 2,
+                                              ),
+                                              child: Row(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    '${String.fromCharCode(97 + e.key)}. ',
+                                                    style: AppTextStyle
+                                                        .bodySmall
+                                                        .copyWith(color: c.fg),
+                                                  ),
+                                                  Expanded(
+                                                    child: Text(
+                                                      e.value,
+                                                      style: AppTextStyle
+                                                          .bodySmall
+                                                          .copyWith(
+                                                        color: c.fg,
+                                                        height: 1.5,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                    ]),
+                                  ),
+                                ],
+                                const Gap(AppSpacing.sm),
                                 Text(
                                   widget.question.explanationText,
-                                  style: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 13,
+                                  style: AppTextStyle.bodySmall.copyWith(
+                                    color: context.appColors.fg,
                                     height: 1.75,
                                   ),
                                 ),
@@ -145,7 +192,7 @@ class _ExplanationSheetState extends State<_ExplanationSheet> {
                                       .map(
                                         (e) => Padding(
                                           padding: const EdgeInsets.only(
-                                            bottom: 8,
+                                            bottom: AppSpacing.sm,
                                           ),
                                           child: _QuizNetworkImage(
                                             url: e.value,
@@ -157,13 +204,12 @@ class _ExplanationSheetState extends State<_ExplanationSheet> {
                                       ),
                                 ],
                                 const Gap(15),
-                                const Align(
+                                Align(
                                   alignment: Alignment.centerRight,
                                   child: Text(
                                     'Created by Gimini',
-                                    style: TextStyle(
-                                      color: Colors.white38,
-                                      fontSize: 9,
+                                    style: AppTextStyle.captionSmall.copyWith(
+                                      color: context.appColors.fgShade200,
                                       height: 1.5,
                                     ),
                                   ),
@@ -174,8 +220,13 @@ class _ExplanationSheetState extends State<_ExplanationSheet> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.fromLTRB(20, 8, 20, 20),
-                        child: _buildNextButton(),
+                        padding: const EdgeInsets.fromLTRB(
+                          AppSpacing.md,
+                          AppSpacing.sm,
+                          AppSpacing.md,
+                          AppSpacing.md,
+                        ),
+                        child: _buildBottomActions(),
                       ),
                     ],
                   ),
@@ -196,8 +247,9 @@ class _ExplanationSheetState extends State<_ExplanationSheet> {
           width: 40,
           height: 4,
           decoration: BoxDecoration(
-            color: Colors.white24,
-            borderRadius: BorderRadius.circular(2),
+            color: context.appColors.fgShade100,
+            borderRadius:
+                AppBorderRadius.sm - const BorderRadius.all(Radius.circular(4)),
           ),
         ),
       ),
@@ -207,18 +259,16 @@ class _ExplanationSheetState extends State<_ExplanationSheet> {
   Widget _buildHeader() {
     return Row(
       children: [
-        const Icon(
+        Icon(
           Icons.lightbulb_outline_rounded,
-          color: Colors.white,
+          color: context.appColors.fg,
           size: 18,
         ),
-        const SizedBox(width: 8),
-        const Text(
+        const Gap(AppSpacing.sm),
+        Text(
           '解説',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-            fontSize: 14,
+          style: AppTextStyle.titleSmall.copyWith(
+            color: context.appColors.fg,
           ),
         ),
         const Spacer(),
@@ -227,21 +277,20 @@ class _ExplanationSheetState extends State<_ExplanationSheet> {
             Uri.parse(AppUrls.contact),
             mode: LaunchMode.externalApplication,
           ),
-          child: const Row(
+          child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
               Icon(
                 Icons.flag_outlined,
-                color: Colors.white54,
+                color: context.appColors.fgShade300,
                 size: 14,
               ),
-              Gap(3),
+              const Gap(3),
               Text(
                 '誤りを報告',
-                style: TextStyle(
-                  color: Colors.white54,
-                  fontSize: 10,
-                  fontWeight: FontWeight.w600,
+                style: AppTextStyle.labelSmall.copyWith(
+                  color: context.appColors.fgShade300,
+                  letterSpacing: 0,
                 ),
               ),
             ],
@@ -259,7 +308,7 @@ class _ExplanationSheetState extends State<_ExplanationSheet> {
     return DecoratedBox(
       decoration: BoxDecoration(
         color: valueColor.withValues(alpha: 0.10),
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: AppBorderRadius.sm,
         border: Border.all(color: valueColor.withValues(alpha: 0.35)),
       ),
       child: Padding(
@@ -269,19 +318,54 @@ class _ExplanationSheetState extends State<_ExplanationSheet> {
           children: [
             Text(
               '$label: ',
-              style: const TextStyle(color: Colors.white70, fontSize: 12),
+              style: AppTextStyle.labelLarge.copyWith(
+                color: context.appColors.fgShade400,
+                fontWeight: FontWeight.normal,
+                letterSpacing: 0,
+              ),
             ),
             Text(
               value,
-              style: TextStyle(
-                color: valueColor,
-                fontWeight: FontWeight.bold,
-                fontSize: 14,
-              ),
+              style: AppTextStyle.titleSmall.copyWith(color: valueColor),
             ),
           ],
         ),
       ),
+    );
+  }
+
+  Widget _buildBottomActions() {
+    final q = widget.question;
+    final bookmarks = switch (ref.watch(bookmarkProvider)) {
+      AsyncData(:final value) => value,
+      _ => const <String>{},
+    };
+    final key = '${q.eraId}_${q.no}';
+    final isBookmarked = bookmarks.contains(key);
+
+    return Row(
+      children: [
+        GlassButton(
+          cardRadius: AppBorderRadius.md,
+          child: IconButton(
+            padding: EdgeInsets.zero,
+            constraints: const BoxConstraints(minWidth: 48, minHeight: 48),
+            icon: Icon(
+              isBookmarked
+                  ? Icons.bookmark_rounded
+                  : Icons.bookmark_border_rounded,
+              color: isBookmarked
+                  ? AppColors.itPassSeed
+                  : context.appColors.fgShade300,
+              size: 22,
+            ),
+            onPressed: () =>
+                ref.read(bookmarkProvider.notifier).toggle(q.eraId, q.no),
+          ),
+        ),
+        const Gap(AppSpacing.sm),
+        Expanded(child: _buildNextButton()),
+      ],
     );
   }
 
@@ -293,9 +377,9 @@ class _ExplanationSheetState extends State<_ExplanationSheet> {
         padding: const EdgeInsets.symmetric(vertical: 14),
         decoration: BoxDecoration(
           gradient: const LinearGradient(
-            colors: [Color(0xFF7C3AED), Color(0xFF4F46E5)],
+            colors: [AppColors.itPassSeed, AppColors.itPassAccent],
           ),
-          borderRadius: BorderRadius.circular(14),
+          borderRadius: AppBorderRadius.md,
         ),
         child: Center(
           child: Row(
@@ -303,20 +387,18 @@ class _ExplanationSheetState extends State<_ExplanationSheet> {
             children: [
               Text(
                 widget.isLast ? '結果を見る' : '次の問題へ',
-                style: const TextStyle(
+                style: AppTextStyle.titleMedium.copyWith(
                   color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 15,
                   letterSpacing: 1,
                 ),
               ),
-              const SizedBox(width: 8),
+              const Gap(AppSpacing.sm),
               Icon(
                 widget.isLast
                     ? Icons.flag_rounded
                     : Icons.keyboard_arrow_up_rounded,
                 color: Colors.white,
-                size: 20,
+                size: AppSpacing.md + 4,
               ),
             ],
           ),

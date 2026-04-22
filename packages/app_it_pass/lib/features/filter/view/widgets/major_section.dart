@@ -17,12 +17,15 @@ class _MajorSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final c = context.appColors;
+
     if (selectedSystems.isEmpty) {
       return Text(
         '分野を選択すると中分類で絞り込めます（任意）',
-        style: TextStyle(
-          color: Colors.white.withValues(alpha: 0.3),
-          fontSize: 12,
+        style: AppTextStyle.labelLarge.copyWith(
+          color: c.fgShade100,
+          letterSpacing: 0,
+          fontWeight: FontWeight.normal,
         ),
       );
     }
@@ -36,35 +39,35 @@ class _MajorSection extends StatelessWidget {
           isExpanded: isExpanded,
           onToggle: () => onExpansionToggle(system),
           child: Wrap(
-            spacing: 8,
-            runSpacing: 8,
+            spacing: AppSpacing.sm,
+            runSpacing: AppSpacing.sm,
             children: majors.map((major) {
               final selected = selectedMajors.contains(major);
               return GestureDetector(
                 onTap: () => onToggle(major),
                 child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 200),
+                  duration: AppAnimation.fast,
                   padding: const EdgeInsets.symmetric(
                     horizontal: 12,
                     vertical: 7,
                   ),
                   decoration: BoxDecoration(
                     color: selected
-                        ? const Color(0xFF10B981).withValues(alpha: 0.2)
-                        : Colors.white.withValues(alpha: 0.04),
-                    borderRadius: BorderRadius.circular(8),
+                        ? AppColors.success.withValues(alpha: 0.2)
+                        : c.surface1,
+                    borderRadius: AppBorderRadius.sm,
                     border: Border.all(
                       color: selected
-                          ? const Color(0xFF10B981).withValues(alpha: 0.6)
-                          : Colors.white.withValues(alpha: 0.1),
+                          ? AppColors.success.withValues(alpha: 0.6)
+                          : c.border1,
                     ),
                   ),
                   child: Text(
                     major,
-                    style: TextStyle(
-                      color:
-                          selected ? const Color(0xFF10B981) : Colors.white54,
-                      fontSize: 12,
+                    style: AppTextStyle.labelLarge.copyWith(
+                      color: selected ? AppColors.success : c.fgShade300,
+                      letterSpacing: 0,
+                      fontWeight: FontWeight.normal,
                     ),
                   ),
                 ),
