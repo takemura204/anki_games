@@ -34,4 +34,10 @@ abstract final class AppColors {
     300: Color(0xFF52C2CD),
     400: Color(0xFF3F959D),
   });
+
+  static const learningLevelUnseen = Color(0xFF9CA3AF);
+  static const learningLevelWeak = Color(0xFFFCA5A5);
+  static const learningLevelFuzzy = Color(0xFFFCD34D);
+  static const learningLevelFamiliar = Color(0xFF5EEAD4);
+  static const learningLevelMastered = Color(0xFF6EE7B7);
 }

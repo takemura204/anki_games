@@ -1,6 +1,6 @@
 part of '../quiz_screen.dart';
 
-class _FinishResultPage extends StatefulWidget {
+class _FinishResultPage extends ConsumerStatefulWidget {
   const _FinishResultPage({
     super.key,
     required this.session,
@@ -13,15 +13,16 @@ class _FinishResultPage extends StatefulWidget {
   final VoidCallback onContinue;
 
   @override
-  State<_FinishResultPage> createState() => _FinishResultPageState();
+  ConsumerState<_FinishResultPage> createState() => _FinishResultPageState();
 }
 
-class _FinishResultPageState extends State<_FinishResultPage>
+class _FinishResultPageState extends ConsumerState<_FinishResultPage>
     with TickerProviderStateMixin {
   late final AnimationController _checkController;
   late final Animation<double> _checkProgress;
   late final AnimationController _contentController;
   late final Animation<double> _contentFade;
+  int _todayCount = 0;
 
   @override
   void initState() {
@@ -34,7 +35,6 @@ class _FinishResultPageState extends State<_FinishResultPage>
       parent: _checkController,
       curve: AppAnimation.decelerate,
     );
-
     _contentController = AnimationController(
       vsync: this,
       duration: AppAnimation.slow,
@@ -43,8 +43,8 @@ class _FinishResultPageState extends State<_FinishResultPage>
       parent: _contentController,
       curve: AppAnimation.decelerate,
     );
-
     _checkController.forward().then((_) => _contentController.forward());
+    _loadTodayCount();
   }
 
   @override
@@ -54,13 +54,26 @@ class _FinishResultPageState extends State<_FinishResultPage>
     super.dispose();
   }
 
-  String _formatDuration(Duration d) {
+  Future<void> _loadTodayCount() async {
+    final records = await LocalQuizHistoryRepository().loadRecent(limit: 1000);
+    final today = DateTime.now();
+    final count = records.where((r) {
+      return r.answeredAt.year == today.year &&
+          r.answeredAt.month == today.month &&
+          r.answeredAt.day == today.day;
+    }).length;
+    if (mounted) setState(() => _todayCount = count);
+  }
+
+  static String _formatDuration(Duration d) {
     final m = d.inMinutes;
     final s = d.inSeconds % 60;
-    if (m == 0) {
-      return '$s秒';
-    }
-    return '$m分${s.toString().padLeft(2, '0')}秒';
+    return m == 0 ? s.toString() : m.toString();
+  }
+
+  static String _formatDurationUnit(Duration d) {
+    final m = d.inMinutes;
+    return m == 0 ? '秒' : '分';
   }
 
   @override
@@ -71,7 +84,7 @@ class _FinishResultPageState extends State<_FinishResultPage>
     final correctCount = session.setCorrectCount;
     final totalCount = session.currentSetAnswers.length;
     final rate = totalCount > 0 ? (correctCount / totalCount * 100).round() : 0;
-    final wrongAnswers = session.setWrongAnswers;
+    final allAnswers = session.currentSetAnswers;
 
     return SingleChildScrollView(
       padding: EdgeInsets.fromLTRB(
@@ -82,19 +95,34 @@ class _FinishResultPageState extends State<_FinishResultPage>
       ),
       child: Column(
         children: [
-          _buildCheckmark(correctCount, totalCount),
+          _Checkmark(
+            correct: correctCount,
+            total: totalCount,
+            progress: _checkProgress,
+          ),
           const Gap(28),
           FadeTransition(
             opacity: _contentFade,
             child: Column(
               children: [
-                _buildScoreCard(correctCount, totalCount, rate, widget.elapsed),
-                if (wrongAnswers.isNotEmpty) ...[
-                  const Gap(AppSpacing.md + 4),
-                  _buildWrongList(wrongAnswers),
+                _ScoreCard(
+                  correctCount: correctCount,
+                  totalCount: totalCount,
+                  rate: rate,
+                  elapsed: widget.elapsed,
+                  todayCount: _todayCount,
+                  formatDuration: _formatDuration,
+                  formatDurationUnit: _formatDurationUnit,
+                ),
+                if (allAnswers.isNotEmpty) ...[
+                  const Gap(AppSpacing.md),
+                  _AnswerList(answers: allAnswers),
                 ],
                 const Gap(AppSpacing.lg),
-                _buildContinueButton(),
+                _ContinueButton(
+                  hasNext: session.hasNextSet,
+                  onContinue: widget.onContinue,
+                ),
               ],
             ),
           ),
@@ -103,67 +131,98 @@ class _FinishResultPageState extends State<_FinishResultPage>
       ),
     );
   }
+}
 
-  Widget _buildCheckmark(int correct, int total) {
+class _Checkmark extends StatelessWidget {
+  const _Checkmark({
+    required this.correct,
+    required this.total,
+    required this.progress,
+  });
+
+  final int correct;
+  final int total;
+  final Animation<double> progress;
+
+  @override
+  Widget build(BuildContext context) {
     final isAllCorrect = correct == total && total > 0;
     final color = isAllCorrect ? AppColors.success : AppColors.itPassSeed;
 
     return AnimatedBuilder(
-      animation: _checkProgress,
-      builder: (context, _) {
-        return SizedBox(
-          width: 100,
-          height: 100,
-          child: CustomPaint(
-            painter: _CheckmarkPainter(
-              progress: _checkProgress.value,
-              color: color,
-            ),
+      animation: progress,
+      builder: (context, _) => SizedBox(
+        width: 100,
+        height: 100,
+        child: CustomPaint(
+          painter: _CheckmarkPainter(
+            progress: progress.value,
+            color: color,
           ),
-        );
-      },
+        ),
+      ),
     );
   }
+}
 
-  Widget _buildScoreCard(int correct, int total, int rate, Duration elapsed) {
+class _ScoreCard extends StatelessWidget {
+  const _ScoreCard({
+    required this.correctCount,
+    required this.totalCount,
+    required this.rate,
+    required this.elapsed,
+    required this.todayCount,
+    required this.formatDuration,
+    required this.formatDurationUnit,
+  });
+
+  final int correctCount;
+  final int totalCount;
+  final int rate;
+  final Duration elapsed;
+  final int todayCount;
+  final String Function(Duration) formatDuration;
+  final String Function(Duration) formatDurationUnit;
+  @override
+  Widget build(BuildContext context) {
+    final c = context.appColors;
+
     return ClipRRect(
       borderRadius: const BorderRadius.all(Radius.circular(20)),
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
         child: Container(
-          padding: const EdgeInsets.all(AppSpacing.lg),
+          padding: const EdgeInsets.all(AppSpacing.md),
           decoration: BoxDecoration(
-            color: context.appColors.surface2,
+            color: c.surface2,
             borderRadius: const BorderRadius.all(Radius.circular(20)),
-            border: Border.all(color: context.appColors.border1),
+            border: Border.all(color: c.border1),
           ),
           child: Column(
             children: [
-              Text(
-                rate == 100 ? '全問正解！' : '$correct / $total 正解',
-                style: AppTextStyle.displaySmall.copyWith(
-                  color: rate == 100 ? AppColors.success : context.appColors.fg,
-                  letterSpacing: 1,
-                ),
+              _StatItem(
+                name: '正答率',
+                value: rate == 100 ? '全問正解！' : '$correctCount',
+                unit: '/$totalCount',
+                valueLarge: true,
               ),
-              const Gap(AppSpacing.sm),
+              const Gap(AppSpacing.md),
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  _StatChip(
-                    icon: Icons.percent_rounded,
-                    label: '$rate%',
-                    color: rate >= 80
-                        ? AppColors.success
-                        : rate >= 60
-                            ? AppColors.warning
-                            : AppColors.error,
+                  Expanded(
+                    child: _StatItem(
+                      name: '解答時間',
+                      value: formatDuration(elapsed),
+                      unit: formatDurationUnit(elapsed),
+                    ),
                   ),
-                  const Gap(12),
-                  _StatChip(
-                    icon: Icons.timer_outlined,
-                    label: _formatDuration(elapsed),
-                    color: context.appColors.fgShade300,
+                  Container(width: 1, height: 48, color: c.border1),
+                  Expanded(
+                    child: _StatItem(
+                      name: '本日の累計',
+                      value: '$todayCount',
+                      unit: '問',
+                    ),
                   ),
                 ],
               ),
@@ -173,49 +232,175 @@ class _FinishResultPageState extends State<_FinishResultPage>
       ),
     );
   }
+}
 
-  Widget _buildWrongList(List<QuestionResult> wrongAnswers) {
+class _StatItem extends StatelessWidget {
+  const _StatItem({
+    required this.name,
+    required this.value,
+    required this.unit,
+    this.valueLarge = false,
+  });
+
+  final String name;
+  final String value;
+  final String unit;
+  final bool valueLarge;
+
+  @override
+  Widget build(BuildContext context) {
+    final c = context.appColors;
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
       children: [
-        Padding(
-          padding: const EdgeInsets.only(left: AppSpacing.xs, bottom: 10),
-          child: Row(
-            children: [
-              const Icon(
-                Icons.cancel_outlined,
-                color: AppColors.error,
-                size: AppSpacing.md,
+        _StatChip(label: name),
+        const Gap(AppSpacing.xs),
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.baseline,
+          textBaseline: TextBaseline.alphabetic,
+          children: [
+            Text(
+              value,
+              style: AppTextStyle.headlineMedium.copyWith(
+                color: c.fg,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 0.5,
               ),
-              const Gap(AppSpacing.xs + 2),
-              Text(
-                '不正解だった問題（${wrongAnswers.length}問）',
-                style: AppTextStyle.bodySmall.copyWith(
-                  color: AppColors.error,
-                  fontWeight: FontWeight.bold,
-                ),
+            ),
+            const Gap(AppSpacing.xs),
+            Text(
+              unit,
+              style: AppTextStyle.bodyMedium.copyWith(
+                color: c.fgShade400,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 0.5,
               ),
-            ],
-          ),
-        ),
-        ...wrongAnswers.map(
-          (r) => Padding(
-            padding: const EdgeInsets.only(bottom: AppSpacing.sm),
-            child: _WrongAnswerCard(result: r),
-          ),
+            ),
+          ],
         ),
       ],
     );
   }
+}
 
-  Widget _buildContinueButton() {
-    final hasNext = widget.session.hasNextSet;
-    final label = hasNext ? '次のセットへ' : '完了';
+class _AnswerList extends StatelessWidget {
+  const _AnswerList({required this.answers});
+
+  final List<QuestionResult> answers;
+
+  @override
+  Widget build(BuildContext context) {
+    final wrongAnswers = answers.where((r) => !r.isCorrect).toList();
+    final correctAnswers = answers.where((r) => r.isCorrect).toList();
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        if (wrongAnswers.isNotEmpty) ...[
+          _SectionHeader(
+            icon: AppIcons.incorrect,
+            color: AppColors.error,
+            label: '不正解(${wrongAnswers.length}問)',
+          ),
+          const Gap(AppSpacing.xs + 2),
+          ...wrongAnswers.asMap().entries.map(
+                (e) => Padding(
+                  padding: const EdgeInsets.only(bottom: AppSpacing.sm),
+                  child: _QuizAnswerCard(
+                    result: e.value,
+                    onTap: () => showModalBottomSheet(
+                      context: context,
+                      isScrollControlled: true,
+                      backgroundColor: Colors.transparent,
+                      builder: (_) => ResultDetailSheet(
+                        results: wrongAnswers,
+                        initialIndex: e.key,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+        ],
+        if (wrongAnswers.isNotEmpty && correctAnswers.isNotEmpty)
+          const Gap(AppSpacing.md),
+        if (correctAnswers.isNotEmpty) ...[
+          _SectionHeader(
+            icon: AppIcons.correct,
+            color: AppColors.success,
+            label: '正解(${correctAnswers.length}問)',
+          ),
+          const Gap(AppSpacing.xs + 2),
+          ...correctAnswers.asMap().entries.map(
+                (e) => Padding(
+                  padding: const EdgeInsets.only(bottom: AppSpacing.sm),
+                  child: _QuizAnswerCard(
+                    result: e.value,
+                    onTap: () => showModalBottomSheet(
+                      context: context,
+                      isScrollControlled: true,
+                      backgroundColor: Colors.transparent,
+                      builder: (_) => ResultDetailSheet(
+                        results: correctAnswers,
+                        initialIndex: e.key,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+        ],
+      ],
+    );
+  }
+}
+
+class _SectionHeader extends StatelessWidget {
+  const _SectionHeader({
+    required this.icon,
+    required this.color,
+    required this.label,
+  });
+
+  final IconData icon;
+  final Color color;
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(left: AppSpacing.xs, bottom: 4),
+      child: Row(
+        children: [
+          Text(
+            label,
+            style: AppTextStyle.bodySmall.copyWith(
+              color: color,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _ContinueButton extends StatelessWidget {
+  const _ContinueButton({
+    required this.hasNext,
+    required this.onContinue,
+  });
+
+  final bool hasNext;
+  final VoidCallback onContinue;
+
+  @override
+  Widget build(BuildContext context) {
+    final label = hasNext ? '次のクイズへ' : '完了';
     final icon =
         hasNext ? Icons.keyboard_arrow_up_rounded : Icons.check_rounded;
 
     return GestureDetector(
-      onTap: widget.onContinue,
+      onTap: onContinue,
       child: Container(
         width: double.infinity,
         padding: const EdgeInsets.symmetric(vertical: AppSpacing.md),
@@ -249,6 +434,131 @@ class _FinishResultPageState extends State<_FinishResultPage>
               Icon(icon, color: Colors.white, size: AppSpacing.md + 4),
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class _QuizAnswerCard extends ConsumerWidget {
+  const _QuizAnswerCard({required this.result, required this.onTap});
+
+  final QuestionResult result;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final q = result.question;
+    final storageKey = LocalLearningHistoryRepository.storageKey(q.eraId, q.no);
+
+    final liveBookmarks = switch (ref.watch(bookmarkProvider)) {
+      AsyncData(:final value) => value,
+      _ => const <String>{},
+    };
+    final isBookmarked = liveBookmarks.contains(storageKey);
+
+    final statsMap = switch (ref.watch(itPassLearningStatsProvider)) {
+      AsyncData(:final value) => value,
+      _ => const <String, QuestionLearningStats>{},
+    };
+    final level = LearningLevel.fromStats(statsMap[storageKey]);
+
+    final c = context.appColors;
+
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.md,
+          vertical: AppSpacing.md,
+        ),
+        decoration: BoxDecoration(
+          color: c.surface2,
+          borderRadius: AppBorderRadius.md,
+          border: Border.all(color: c.border1),
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Icon(
+              result.isCorrect ? AppIcons.correct : AppIcons.incorrect,
+              size: 16,
+              color: result.isCorrect ? AppColors.success : AppColors.error,
+            ),
+            const Gap(AppSpacing.xs),
+            Expanded(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Q${q.no}.',
+                    style: AppTextStyle.labelLarge.copyWith(
+                      color: c.fg,
+                      height: 1.3,
+                    ),
+                  ),
+                  const Gap(AppSpacing.xs),
+                  Expanded(
+                    child: Text(
+                      q.title,
+                      style: AppTextStyle.labelLarge.copyWith(
+                        color: c.fg,
+                        height: 1.3,
+                      ),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const Gap(AppSpacing.xs),
+            LearningLevelBadge(level: level),
+            const Gap(AppSpacing.xs),
+            GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onTap: () =>
+                  ref.read(bookmarkProvider.notifier).toggle(q.eraId, q.no),
+              child: Padding(
+                padding: const EdgeInsets.all(4),
+                child: Icon(
+                  isBookmarked ? AppIcons.bookmarked : AppIcons.bookmark,
+                  color: isBookmarked ? AppColors.itPassSeed : c.fgShade200,
+                  size: 20,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _StatChip extends StatelessWidget {
+  const _StatChip({required this.label});
+
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    final c = context.appColors;
+    final color = c.fgShade300;
+    return Container(
+      padding: const EdgeInsets.symmetric(
+        horizontal: AppSpacing.sm,
+        vertical: AppSpacing.xs,
+      ),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.15),
+        borderRadius: AppBorderRadius.full,
+        border: Border.all(color: color.withValues(alpha: 0.4)),
+      ),
+      child: Text(
+        label,
+        style: AppTextStyle.labelMedium.copyWith(
+          color: color,
+          fontWeight: FontWeight.bold,
         ),
       ),
     );
@@ -342,316 +652,6 @@ class _SessionEndPage extends StatelessWidget {
             ),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class _StatChip extends StatelessWidget {
-  const _StatChip({
-    required this.icon,
-    required this.label,
-    required this.color,
-  });
-
-  final IconData icon;
-  final String label;
-  final Color color;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 14,
-        vertical: AppSpacing.xs + 2,
-      ),
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.15),
-        borderRadius: AppBorderRadius.full,
-        border: Border.all(color: color.withValues(alpha: 0.4)),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(icon, color: color, size: 14),
-          const Gap(AppSpacing.xs + 2),
-          Text(
-            label,
-            style: AppTextStyle.bodyMedium.copyWith(
-              color: color,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _WrongAnswerCard extends StatefulWidget {
-  const _WrongAnswerCard({required this.result});
-
-  final QuestionResult result;
-
-  @override
-  State<_WrongAnswerCard> createState() => _WrongAnswerCardState();
-}
-
-class _WrongAnswerCardState extends State<_WrongAnswerCard> {
-  bool _expanded = false;
-
-  void _toggle() => setState(() => _expanded = !_expanded);
-
-  @override
-  Widget build(BuildContext context) {
-    final q = widget.result.question;
-    final c = context.appColors;
-    final bgAlpha = _expanded ? 0.04 : 0.08;
-
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 200),
-      curve: Curves.easeOutCubic,
-      decoration: BoxDecoration(
-        color: AppColors.error.withValues(alpha: bgAlpha),
-        borderRadius: AppBorderRadius.md,
-        border: Border.all(
-          color: AppColors.error.withValues(alpha: 0.3),
-        ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // ── ヘッダー行（常時表示） ──
-          GestureDetector(
-            behavior: HitTestBehavior.opaque,
-            onTap: _toggle,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Expanded(
-                        child: Text(
-                          'Q${q.no}. ${q.title}',
-                          style: AppTextStyle.labelLarge.copyWith(
-                            color: c.fgShade400,
-                            height: 1.4,
-                            fontWeight: FontWeight.normal,
-                          ),
-                          maxLines: _expanded ? null : 2,
-                          overflow: _expanded
-                              ? TextOverflow.visible
-                              : TextOverflow.ellipsis,
-                        ),
-                      ),
-                      const Gap(AppSpacing.xs),
-                      AnimatedRotation(
-                        turns: _expanded ? 0.5 : 0,
-                        duration: const Duration(milliseconds: 200),
-                        curve: Curves.easeOutCubic,
-                        child: Icon(
-                          Icons.expand_more_rounded,
-                          color: c.fgShade200,
-                          size: 20,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const Gap(AppSpacing.xs + 2),
-                  Row(
-                    children: [
-                      _AnswerBadge(
-                        label: 'あなた: ${widget.result.selectedLabel}',
-                        color: AppColors.error,
-                      ),
-                      const Gap(AppSpacing.sm),
-                      Icon(
-                        Icons.arrow_forward_rounded,
-                        color: c.fgShade100,
-                        size: 14,
-                      ),
-                      const Gap(AppSpacing.sm),
-                      _AnswerBadge(
-                        label: '正解: ${q.answer}',
-                        color: AppColors.success,
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ),
-
-          // ── 展開コンテンツ ──
-          AnimatedSize(
-            duration: const Duration(milliseconds: 220),
-            curve: Curves.easeOutCubic,
-            child: _expanded
-                ? Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Divider(
-                        height: 1,
-                        thickness: 1,
-                        color: AppColors.error.withValues(alpha: 0.2),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(14, 12, 14, 14),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            // 問題文
-                            if (q.body.text.isNotEmpty) ...[
-                              Text(
-                                q.body.text,
-                                style: AppTextStyle.bodySmall.copyWith(
-                                  color: c.fgShade300,
-                                  height: 1.6,
-                                ),
-                              ),
-                              const Gap(AppSpacing.sm),
-                            ],
-
-                            // 解説テキスト
-                            if (q.explanationText.isNotEmpty) ...[
-                              Row(
-                                children: [
-                                  Icon(
-                                    Icons.lightbulb_outline_rounded,
-                                    color: AppColors.warning,
-                                    size: 14,
-                                  ),
-                                  const Gap(4),
-                                  Text(
-                                    '解説',
-                                    style: AppTextStyle.labelSmall.copyWith(
-                                      color: AppColors.warning,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              const Gap(6),
-                              Text(
-                                q.explanationText,
-                                style: AppTextStyle.bodySmall.copyWith(
-                                  color: c.fgShade400,
-                                  height: 1.6,
-                                ),
-                              ),
-                            ],
-
-                            // 選択肢コメント
-                            if (q.explanationChoiceComments.isNotEmpty) ...[
-                              const Gap(AppSpacing.sm),
-                              ...List.generate(
-                                q.explanationChoiceComments.length,
-                                (i) {
-                                  final comment =
-                                      q.explanationChoiceComments[i];
-                                  if (comment.isEmpty) {
-                                    return const SizedBox.shrink();
-                                  }
-                                  final choiceLabel = i < q.choices.length
-                                      ? q.choices[i].label
-                                      : '${i + 1}';
-                                  final isCorrect = choiceLabel == q.answer;
-                                  final isSelected = choiceLabel ==
-                                      widget.result.selectedLabel;
-                                  return Padding(
-                                    padding: const EdgeInsets.only(bottom: 6),
-                                    child: Row(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          width: 20,
-                                          height: 20,
-                                          alignment: Alignment.center,
-                                          decoration: BoxDecoration(
-                                            color: isCorrect
-                                                ? AppColors.success
-                                                    .withValues(alpha: 0.15)
-                                                : isSelected
-                                                    ? AppColors.error
-                                                        .withValues(alpha: 0.15)
-                                                    : c.fgShade50
-                                                        .withValues(alpha: 0.5),
-                                            shape: BoxShape.circle,
-                                          ),
-                                          child: Text(
-                                            choiceLabel,
-                                            style: AppTextStyle.labelSmall
-                                                .copyWith(
-                                              color: isCorrect
-                                                  ? AppColors.success
-                                                  : isSelected
-                                                      ? AppColors.error
-                                                      : c.fgShade200,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
-                                        ),
-                                        const Gap(8),
-                                        Expanded(
-                                          child: Text(
-                                            comment,
-                                            style:
-                                                AppTextStyle.bodySmall.copyWith(
-                                              color: c.fgShade300,
-                                              height: 1.5,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  );
-                                },
-                              ),
-                            ],
-                          ],
-                        ),
-                      ),
-                    ],
-                  )
-                : const SizedBox.shrink(),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _AnswerBadge extends StatelessWidget {
-  const _AnswerBadge({required this.label, required this.color});
-
-  final String label;
-  final Color color;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: AppSpacing.sm,
-        vertical: 2,
-      ),
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.2),
-        borderRadius: AppBorderRadius.sm -
-            const BorderRadius.all(
-              Radius.circular(2),
-            ),
-      ),
-      child: Text(
-        label,
-        style: AppTextStyle.labelMedium.copyWith(
-          color: color,
-          fontWeight: FontWeight.bold,
-          letterSpacing: 0,
-        ),
       ),
     );
   }

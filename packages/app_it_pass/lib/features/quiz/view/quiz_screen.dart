@@ -19,10 +19,13 @@ import 'package:shimmer/shimmer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../router/modal_sheet_router.dart';
+import 'modals/result_detail_sheet.dart';
 import '../../learning/model/learning_level.dart';
+import '../../learning/model/question_learning_stats.dart';
 import '../../learning/providers/it_pass_learning_stats_provider.dart';
 import '../../learning/repository/local_learning_history_repository.dart';
 import '../../note/providers/bookmark_provider.dart';
+import '../../note/repository/local_quiz_history_repository.dart';
 import '../model/question.dart';
 import '../model/quiz_session.dart';
 import '../view_model/quiz_view_model.dart';
