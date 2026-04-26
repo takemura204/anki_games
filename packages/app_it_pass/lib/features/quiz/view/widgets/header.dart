@@ -37,7 +37,7 @@ class _Header extends StatelessWidget {
             child: IconButton(
               padding: EdgeInsets.zero,
               icon: Icon(
-                Icons.person_outline,
+                AppIcons.account,
                 color: c.fgShade400,
                 size: 22,
               ),
@@ -67,7 +67,7 @@ class _Header extends StatelessWidget {
                         Text(
                           '${session.indexInSet + 1}/${session.totalCount}',
                           style: AppTextStyle.labelLarge.copyWith(
-                            color: c.fg,
+                            color: c.fgShade400,
                             letterSpacing: 0,
                           ),
                         ),
@@ -107,7 +107,7 @@ class _Header extends StatelessWidget {
               iconSize: 22,
               padding: EdgeInsets.zero,
               color: c.fgShade400,
-              icon: const Icon(Icons.tune_outlined),
+              icon: const Icon(AppIcons.filter),
               onPressed: onTapFilter,
             ),
           ),

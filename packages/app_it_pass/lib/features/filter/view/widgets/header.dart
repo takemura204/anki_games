@@ -18,20 +18,29 @@ class _Header extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
-            child: Text(
-              '出題範囲を絞り込む',
-              style: AppTextStyle.titleLarge.copyWith(
-                color: c.fg,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 0,
-              ),
+            child: Row(
+              children: [
+                Icon(
+                  AppIcons.filter,
+                  color: c.fgShade400,
+                ),
+                const Gap(AppSpacing.xs),
+                Text(
+                  '出題範囲を絞り込む',
+                  style: AppTextStyle.titleLarge.copyWith(
+                    color: c.fgShade400,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 0,
+                  ),
+                ),
+              ],
             ),
           ),
           const Gap(AppSpacing.sm),
           GlassButton(
             cardRadius: AppBorderRadius.circle,
             child: IconButton(
-              icon: Icon(Icons.close, color: c.fgShade300),
+              icon: Icon(AppIcons.close, color: c.fgShade300),
               onPressed: onClose,
             ),
           ),

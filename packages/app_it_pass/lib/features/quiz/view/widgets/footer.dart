@@ -38,7 +38,7 @@ class _Footer extends StatelessWidget {
             child: IconButton(
               padding: EdgeInsets.zero,
               icon: Icon(
-                Icons.grid_view_outlined,
+                AppIcons.note,
                 color: context.appColors.fgShade400,
                 size: 22,
               ),
@@ -71,7 +71,7 @@ class _Footer extends StatelessWidget {
               iconSize: 22,
               padding: EdgeInsets.zero,
               color: context.appColors.fgShade400,
-              icon: const Icon(Icons.insert_chart_outlined),
+              icon: const Icon(AppIcons.report),
               onPressed: onTapReport,
             ),
           ),

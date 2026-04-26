@@ -5,6 +5,7 @@ import 'package:app_it_pass/config/theme/it_pass_color_scheme.dart';
 import 'package:core/config/styles/app_animation.dart';
 import 'package:core/config/styles/app_border_radius.dart';
 import 'package:core/config/styles/app_colors.dart';
+import 'package:core/config/styles/app_icons.dart';
 import 'package:core/config/styles/app_spacing.dart';
 import 'package:core/config/styles/app_text_style.dart';
 import 'package:flutter/material.dart';

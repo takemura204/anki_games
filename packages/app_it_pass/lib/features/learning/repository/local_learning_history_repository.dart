@@ -7,6 +7,7 @@ import 'learning_history_repository.dart';
 
 class LocalLearningHistoryRepository implements LearningHistoryRepository {
   static const _prefsKey = 'it_pass_learning_history_v1';
+  static const _masteredKey = 'it_pass_review_mastered_v1';
 
   static String storageKey(String eraId, int no) => '${eraId}_$no';
 
@@ -40,12 +41,40 @@ class LocalLearningHistoryRepository implements LearningHistoryRepository {
     await prefs.remove(_prefsKey);
   }
 
+  /// 復習リストから「覚えた」として永続除外する。
+  Future<void> markMastered(String eraId, int no) async {
+    final prefs = await SharedPreferences.getInstance();
+    final raw = prefs.getStringList(_masteredKey) ?? [];
+    final key = storageKey(eraId, no);
+    if (!raw.contains(key)) {
+      raw.add(key);
+      await prefs.setStringList(_masteredKey, raw);
+    }
+  }
+
+  /// 「覚えた」として除外されたキー集合を返す。
+  Future<Set<String>> loadMastered() async {
+    final prefs = await SharedPreferences.getInstance();
+    return (prefs.getStringList(_masteredKey) ?? []).toSet();
+  }
+
+  @override
+  Future<void> unmarkMastered(String eraId, int no) async {
+    final prefs = await SharedPreferences.getInstance();
+    final raw = prefs.getStringList(_masteredKey) ?? [];
+    final key = storageKey(eraId, no);
+    if (raw.remove(key)) {
+      await prefs.setStringList(_masteredKey, raw);
+    }
+  }
+
   @override
   Future<void> recordAnswer({
     required String eraId,
     required int no,
     required bool isCorrect,
     required DateTime at,
+    required String selectedLabel,
   }) async {
     final key = storageKey(eraId, no);
     final all = await loadAll();
@@ -55,6 +84,7 @@ class LocalLearningHistoryRepository implements LearningHistoryRepository {
       wrongCount: prev.wrongCount + (isCorrect ? 0 : 1),
       lastAnsweredAt: at,
       lastWasCorrect: isCorrect,
+      lastSelectedLabel: selectedLabel,
     );
     all[key] = next;
     await _save(all);

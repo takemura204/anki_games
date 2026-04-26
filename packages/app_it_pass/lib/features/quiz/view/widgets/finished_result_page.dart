@@ -209,6 +209,11 @@ class _FinishResultPageState extends State<_FinishResultPage>
   }
 
   Widget _buildContinueButton() {
+    final hasNext = widget.session.hasNextSet;
+    final label = hasNext ? '次のセットへ' : '完了';
+    final icon =
+        hasNext ? Icons.keyboard_arrow_up_rounded : Icons.check_rounded;
+
     return GestureDetector(
       onTap: widget.onContinue,
       child: Container(
@@ -227,25 +232,21 @@ class _FinishResultPageState extends State<_FinishResultPage>
             ),
           ],
         ),
-        child: const Center(
+        child: Center(
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                '次へ',
-                style: TextStyle(
+                label,
+                style: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
                   letterSpacing: 1,
                 ),
               ),
-              Gap(AppSpacing.sm),
-              Icon(
-                Icons.keyboard_arrow_up_rounded,
-                color: Colors.white,
-                size: AppSpacing.md + 4,
-              ),
+              const Gap(AppSpacing.sm),
+              Icon(icon, color: Colors.white, size: AppSpacing.md + 4),
             ],
           ),
         ),
@@ -278,13 +279,13 @@ class _SessionEndPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Icon(
-            Icons.filter_alt_outlined,
+            Icons.emoji_events_outlined,
             size: AppSpacing.xxl + AppSpacing.sm,
-            color: context.appColors.fgShade400,
+            color: AppColors.warning,
           ),
           const Gap(AppSpacing.md + 4),
           Text(
-            'このセットは完了しました',
+            '全問完了！',
             textAlign: TextAlign.center,
             style: AppTextStyle.headlineSmall.copyWith(
               color: context.appColors.fg,
@@ -292,7 +293,7 @@ class _SessionEndPage extends StatelessWidget {
           ),
           const Gap(12),
           Text(
-            '出題範囲を選び直すと、新しいセット（最大10問）で再開できます。',
+            'すべての問題を解き終えました。\n出題範囲を変えて新たな問題に挑戦しましょう。',
             textAlign: TextAlign.center,
             style: AppTextStyle.bodyMedium.copyWith(
               color: context.appColors.fgShade400,

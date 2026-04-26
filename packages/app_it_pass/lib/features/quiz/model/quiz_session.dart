@@ -15,8 +15,12 @@ class QuestionResult {
 }
 
 class QuizSession {
+  /// 1セット当たりの最大出題数。
+  static const setSize = 10;
+
   QuizSession({
-    required this.questions,
+    required this.allQuestions,
+    this.currentSetIndex = 0,
     this.currentIndex = 0,
     this.selectedLabel,
     this.answerState = AnswerState.unanswered,
@@ -25,9 +29,21 @@ class QuizSession {
     this.currentSetAnswers = const [],
     this.setElapsedAtResult,
     DateTime? setStartTime,
-  }) : setStartTime = setStartTime ?? DateTime.now();
+  })  : questions = allQuestions.sublist(
+          currentSetIndex * setSize,
+          ((currentSetIndex + 1) * setSize).clamp(0, allQuestions.length),
+        ),
+        setStartTime = setStartTime ?? DateTime.now();
 
+  /// フィルター後の全問題リスト（順序済み）。
+  final List<Question> allQuestions;
+
+  /// 現在表示しているセットのインデックス（0始まり）。
+  final int currentSetIndex;
+
+  /// 現在のセット内の問題リスト（最大 [setSize] 件）。
   final List<Question> questions;
+
   final int currentIndex;
   final String? selectedLabel;
   final AnswerState answerState;
@@ -41,10 +57,10 @@ class QuizSession {
   int get totalCount => questions.length;
   bool get isAnswered => answerState != AnswerState.unanswered;
 
-  /// 現在のセッション内での位置（0 始まり）。1 セッションは最大10問。
+  /// 現在のセッション内での位置（0始まり）。
   int get indexInSet => currentIndex;
 
-  /// セット内の経過時間（結果表示前）
+  /// セット内の経過時間（結果表示前）。
   Duration get setElapsed => DateTime.now().difference(setStartTime);
 
   int get setCorrectCount => currentSetAnswers.where((r) => r.isCorrect).length;
@@ -52,7 +68,15 @@ class QuizSession {
   List<QuestionResult> get setWrongAnswers =>
       currentSetAnswers.where((r) => !r.isCorrect).toList();
 
+  /// 次のセットが存在するかどうか。
+  bool get hasNextSet =>
+      (currentSetIndex + 1) * setSize < allQuestions.length;
+
+  /// 全セット数（切り上げ）。
+  int get totalSets => (allQuestions.length / setSize).ceil();
+
   QuizSession copyWith({
+    int? currentSetIndex,
     int? currentIndex,
     String? selectedLabel,
     AnswerState? answerState,
@@ -63,7 +87,8 @@ class QuizSession {
     DateTime? setStartTime,
   }) {
     return QuizSession(
-      questions: questions,
+      allQuestions: allQuestions,
+      currentSetIndex: currentSetIndex ?? this.currentSetIndex,
       currentIndex: currentIndex ?? this.currentIndex,
       selectedLabel: selectedLabel ?? this.selectedLabel,
       answerState: answerState ?? this.answerState,

@@ -1,34 +1,19 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
 import '../../learning/model/learning_level.dart';
 import '../../quiz/model/question.dart';
 
+part 'note_list_item.freezed.dart';
+
 enum NoteTab { review, bookmark, history }
 
-class NoteListItem {
-  const NoteListItem({
-    required this.question,
-    required this.level,
-    required this.isBookmarked,
-    this.selectedLabel,
-    this.lastWasCorrect,
-  });
-
-  final Question question;
-  final LearningLevel level;
-  final bool isBookmarked;
-
-  /// 履歴タブ: ユーザーが選択した選択肢ラベル
-  final String? selectedLabel;
-
-  /// 履歴タブ: 正解したか
-  final bool? lastWasCorrect;
-
-  NoteListItem copyWith({bool? isBookmarked}) {
-    return NoteListItem(
-      question: question,
-      level: level,
-      isBookmarked: isBookmarked ?? this.isBookmarked,
-      selectedLabel: selectedLabel,
-      lastWasCorrect: lastWasCorrect,
-    );
-  }
+@freezed
+abstract class NoteListItem with _$NoteListItem {
+  const factory NoteListItem({
+    required Question question,
+    required LearningLevel level,
+    required bool isBookmarked,
+    String? selectedLabel,
+    bool? lastWasCorrect,
+  }) = _NoteListItem;
 }

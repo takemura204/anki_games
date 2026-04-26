@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+part 'theme_mode_view_model.g.dart';
 
 const _kThemeModeKey = 'it_pass_theme_mode';
 
-final themeModeViewModelProvider =
-    NotifierProvider<ThemeModeViewModel, ThemeMode>(ThemeModeViewModel.new);
-
-class ThemeModeViewModel extends Notifier<ThemeMode> {
+@Riverpod(keepAlive: true)
+class ThemeModeViewModel extends _$ThemeModeViewModel {
   @override
   ThemeMode build() {
     _load();

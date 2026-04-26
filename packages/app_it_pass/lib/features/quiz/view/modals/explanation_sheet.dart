@@ -61,6 +61,10 @@ class _ExplanationSheetState extends ConsumerState<_ExplanationSheet> {
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
     final c = context.appColors;
+    final bookmarks = switch (ref.watch(bookmarkProvider)) {
+      AsyncData(:final value) => value,
+      _ => const <String>{}
+    };
 
     return Align(
       alignment: Alignment.bottomCenter,
@@ -89,8 +93,15 @@ class _ExplanationSheetState extends ConsumerState<_ExplanationSheet> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      _buildDragHandle(),
-                      Flexible(
+                      ModalHandle(),
+                      _ExplanationSheetHeader(
+                        isBookmarked: bookmarks.contains(
+                            '${widget.question.eraId}_${widget.question.no}'),
+                        onTapBookmark: () => ref
+                            .read(bookmarkProvider.notifier)
+                            .toggle(widget.question.eraId, widget.question.no),
+                      ),
+                      Expanded(
                         child: Scrollbar(
                           controller: _scrollController,
                           thumbVisibility: true,
@@ -105,8 +116,7 @@ class _ExplanationSheetState extends ConsumerState<_ExplanationSheet> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                _buildHeader(),
-                                const Gap(12),
+                                const Gap(AppSpacing.sm),
                                 Row(
                                   children: [
                                     _buildAnswerChip(
@@ -185,7 +195,7 @@ class _ExplanationSheetState extends ConsumerState<_ExplanationSheet> {
                                 ),
                                 if (widget
                                     .question.explanationImages.isNotEmpty) ...[
-                                  const Gap(12),
+                                  const Gap(AppSpacing.sm),
                                   ...widget.question.explanationImages
                                       .asMap()
                                       .entries
@@ -194,7 +204,7 @@ class _ExplanationSheetState extends ConsumerState<_ExplanationSheet> {
                                           padding: const EdgeInsets.only(
                                             bottom: AppSpacing.sm,
                                           ),
-                                          child: _QuizNetworkImage(
+                                          child: QuizNetworkImage(
                                             url: e.value,
                                             heroTag: 'img_q'
                                                 '${widget.question.no}'
@@ -203,16 +213,50 @@ class _ExplanationSheetState extends ConsumerState<_ExplanationSheet> {
                                         ),
                                       ),
                                 ],
-                                const Gap(15),
-                                Align(
-                                  alignment: Alignment.centerRight,
-                                  child: Text(
-                                    'Created by Gimini',
-                                    style: AppTextStyle.captionSmall.copyWith(
-                                      color: context.appColors.fgShade200,
-                                      height: 1.5,
+                                const Gap(AppSpacing.md),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    GestureDetector(
+                                      onTap: () => launchUrl(
+                                        Uri.parse(AppUrls.contact),
+                                        mode: LaunchMode.externalApplication,
+                                      ),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Icon(
+                                            AppIcons.flag,
+                                            color: context.appColors.fgShade300,
+                                            size: 14,
+                                          ),
+                                          const Gap(3),
+                                          Text(
+                                            '誤りを報告',
+                                            style: AppTextStyle.labelSmall
+                                                .copyWith(
+                                              color:
+                                                  context.appColors.fgShade300,
+                                              letterSpacing: 0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
-                                  ),
+                                    Align(
+                                      alignment: Alignment.centerRight,
+                                      child: Text(
+                                        'Created by Gimini',
+                                        style:
+                                            AppTextStyle.captionSmall.copyWith(
+                                          color: context.appColors.fgShade300,
+                                          height: 1.5,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ],
                             ),
@@ -226,7 +270,7 @@ class _ExplanationSheetState extends ConsumerState<_ExplanationSheet> {
                           AppSpacing.md,
                           AppSpacing.md,
                         ),
-                        child: _buildBottomActions(),
+                        child: _buildNextButton(),
                       ),
                     ],
                   ),
@@ -236,67 +280,6 @@ class _ExplanationSheetState extends ConsumerState<_ExplanationSheet> {
           ),
         ),
       ),
-    );
-  }
-
-  Widget _buildDragHandle() {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 12),
-        child: Container(
-          width: 40,
-          height: 4,
-          decoration: BoxDecoration(
-            color: context.appColors.fgShade100,
-            borderRadius:
-                AppBorderRadius.sm - const BorderRadius.all(Radius.circular(4)),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildHeader() {
-    return Row(
-      children: [
-        Icon(
-          Icons.lightbulb_outline_rounded,
-          color: context.appColors.fg,
-          size: 18,
-        ),
-        const Gap(AppSpacing.sm),
-        Text(
-          '解説',
-          style: AppTextStyle.titleSmall.copyWith(
-            color: context.appColors.fg,
-          ),
-        ),
-        const Spacer(),
-        GestureDetector(
-          onTap: () => launchUrl(
-            Uri.parse(AppUrls.contact),
-            mode: LaunchMode.externalApplication,
-          ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(
-                Icons.flag_outlined,
-                color: context.appColors.fgShade300,
-                size: 14,
-              ),
-              const Gap(3),
-              Text(
-                '誤りを報告',
-                style: AppTextStyle.labelSmall.copyWith(
-                  color: context.appColors.fgShade300,
-                  letterSpacing: 0,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ],
     );
   }
 
@@ -319,8 +302,7 @@ class _ExplanationSheetState extends ConsumerState<_ExplanationSheet> {
             Text(
               '$label: ',
               style: AppTextStyle.labelLarge.copyWith(
-                color: context.appColors.fgShade400,
-                fontWeight: FontWeight.normal,
+                color: valueColor,
                 letterSpacing: 0,
               ),
             ),
@@ -331,41 +313,6 @@ class _ExplanationSheetState extends ConsumerState<_ExplanationSheet> {
           ],
         ),
       ),
-    );
-  }
-
-  Widget _buildBottomActions() {
-    final q = widget.question;
-    final bookmarks = switch (ref.watch(bookmarkProvider)) {
-      AsyncData(:final value) => value,
-      _ => const <String>{},
-    };
-    final key = '${q.eraId}_${q.no}';
-    final isBookmarked = bookmarks.contains(key);
-
-    return Row(
-      children: [
-        GlassButton(
-          cardRadius: AppBorderRadius.md,
-          child: IconButton(
-            padding: EdgeInsets.zero,
-            constraints: const BoxConstraints(minWidth: 48, minHeight: 48),
-            icon: Icon(
-              isBookmarked
-                  ? Icons.bookmark_rounded
-                  : Icons.bookmark_border_rounded,
-              color: isBookmarked
-                  ? AppColors.itPassSeed
-                  : context.appColors.fgShade300,
-              size: 22,
-            ),
-            onPressed: () =>
-                ref.read(bookmarkProvider.notifier).toggle(q.eraId, q.no),
-          ),
-        ),
-        const Gap(AppSpacing.sm),
-        Expanded(child: _buildNextButton()),
-      ],
     );
   }
 
@@ -394,15 +341,73 @@ class _ExplanationSheetState extends ConsumerState<_ExplanationSheet> {
               ),
               const Gap(AppSpacing.sm),
               Icon(
-                widget.isLast
-                    ? Icons.flag_rounded
-                    : Icons.keyboard_arrow_up_rounded,
+                widget.isLast ? Icons.flag_rounded : AppIcons.nextUp,
                 color: Colors.white,
                 size: AppSpacing.md + 4,
               ),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class _ExplanationSheetHeader extends StatelessWidget {
+  const _ExplanationSheetHeader({
+    required this.isBookmarked,
+    required this.onTapBookmark,
+  });
+
+  final bool isBookmarked;
+  final VoidCallback onTapBookmark;
+
+  @override
+  Widget build(BuildContext context) {
+    final c = context.appColors;
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(
+        AppSpacing.md,
+        AppSpacing.md,
+        AppSpacing.md,
+        AppSpacing.xs,
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            child: Row(
+              children: [
+                Icon(
+                  AppIcons.explanation,
+                  color: c.fgShade400,
+                ),
+                const Gap(AppSpacing.xs),
+                Text(
+                  '解説',
+                  style: AppTextStyle.titleLarge.copyWith(
+                    color: c.fgShade400,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 0,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const Gap(AppSpacing.sm),
+          GlassButton(
+            cardRadius: AppBorderRadius.circle,
+            child: IconButton(
+              icon: Icon(
+                isBookmarked ? AppIcons.bookmarked : AppIcons.bookmark,
+                color: isBookmarked
+                    ? AppColors.itPassSeed
+                    : context.appColors.fgShade300,
+              ),
+              onPressed: onTapBookmark,
+            ),
+          ),
+          const Gap(AppSpacing.sm),
+        ],
       ),
     );
   }

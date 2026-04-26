@@ -1,7 +1,21 @@
-part of '../quiz_screen.dart';
+import 'dart:ui';
 
-class _QuestionCard extends StatelessWidget {
-  const _QuestionCard({
+import 'package:app_it_pass/features/learning/model/learning_level.dart';
+import 'package:app_it_pass/features/quiz/model/question.dart';
+import 'package:core/config/styles/app_border_radius.dart';
+import 'package:core/config/styles/app_spacing.dart';
+import 'package:core/config/styles/app_text_style.dart';
+import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
+
+import 'quiz_network_image.dart';
+
+// ignore: always_use_package_imports
+import '../../../../config/theme/it_pass_color_scheme.dart';
+
+class QuizQuestionCard extends StatelessWidget {
+  const QuizQuestionCard({
+    super.key,
     required this.question,
     required this.learningLevel,
   });
@@ -36,14 +50,12 @@ class _QuestionCard extends StatelessWidget {
                 AppSpacing.md,
                 AppSpacing.md,
                 AppSpacing.md,
-                hasImages ? 12 : AppSpacing.md,
+                hasImages ? AppSpacing.sm : AppSpacing.md,
               ),
               decoration: BoxDecoration(
                 color: c.surface2,
                 borderRadius: hasImages
-                    ? const BorderRadius.vertical(
-                        top: Radius.circular(radius),
-                      )
+                    ? const BorderRadius.vertical(top: Radius.circular(radius))
                     : cardRadius,
               ),
               child: Column(
@@ -62,7 +74,7 @@ class _QuestionCard extends StatelessWidget {
                                 vertical: AppSpacing.xs,
                               ),
                               decoration: BoxDecoration(
-                                color: c.fgShade100,
+                                color: c.fgShade50,
                                 borderRadius: AppBorderRadius.full,
                               ),
                               child: Text(
@@ -70,9 +82,9 @@ class _QuestionCard extends StatelessWidget {
                                     ? '${question.system} » ${question.major}'
                                     : question.system,
                                 style: AppTextStyle.labelSmall.copyWith(
-                                  color: Colors.white60,
+                                  color: c.fgShade400,
                                   letterSpacing: 0.5,
-                                  fontWeight: FontWeight.w600,
+                                  fontWeight: FontWeight.normal,
                                 ),
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
@@ -124,7 +136,7 @@ class _QuestionCard extends StatelessWidget {
                   if (hasImages) ...[
                     const Gap(AppSpacing.sm),
                     ...question.body.images.asMap().entries.map(
-                          (e) => _QuizNetworkImage(
+                          (e) => QuizNetworkImage(
                             url: e.value,
                             heroTag: 'img_q${question.no}_body_${e.key}',
                           ),
@@ -133,7 +145,7 @@ class _QuestionCard extends StatelessWidget {
                   const Gap(AppSpacing.sm),
                   Row(
                     children: [
-                      _LearningLevelBadge(level: learningLevel),
+                      LearningLevelBadge(level: learningLevel),
                       const Spacer(),
                       if (question.examDisplayName.isNotEmpty) ...[
                         Align(
@@ -160,51 +172,29 @@ class _QuestionCard extends StatelessWidget {
   }
 }
 
-class _LearningLevelBadge extends StatelessWidget {
-  const _LearningLevelBadge({required this.level});
+class LearningLevelBadge extends StatelessWidget {
+  const LearningLevelBadge({super.key, required this.level});
 
   final LearningLevel level;
 
   @override
   Widget build(BuildContext context) {
-    final (:fg, :bg) = switch (level) {
-      LearningLevel.unseen => (
-          fg: const Color(0xFF9CA3AF),
-          bg: const Color(0xFF9CA3AF).withValues(alpha: 0.2),
-        ),
-      LearningLevel.weak => (
-          fg: const Color(0xFFFCA5A5),
-          bg: AppColors.error.withValues(alpha: 0.25),
-        ),
-      LearningLevel.fuzzy => (
-          fg: const Color(0xFFFCD34D),
-          bg: AppColors.warning.withValues(alpha: 0.22),
-        ),
-      LearningLevel.familiar => (
-          fg: const Color(0xFF5EEAD4),
-          bg: const Color(0xFF14B8A6).withValues(alpha: 0.22),
-        ),
-      LearningLevel.mastered => (
-          fg: const Color(0xFF6EE7B7),
-          bg: AppColors.success.withValues(alpha: 0.22),
-        ),
-    };
     return Container(
       padding: const EdgeInsets.symmetric(
         horizontal: AppSpacing.sm,
         vertical: AppSpacing.xs,
       ),
       decoration: BoxDecoration(
-        color: bg,
+        color: level.colorBg,
         borderRadius: AppBorderRadius.full,
         border: Border.all(
-          color: fg.withValues(alpha: 0.45),
+          color: level.colorFg.withValues(alpha: 0.5),
         ),
       ),
       child: Text(
         level.label,
         style: AppTextStyle.labelSmall.copyWith(
-          color: fg,
+          color: level.colorFg,
           letterSpacing: 0.3,
         ),
       ),

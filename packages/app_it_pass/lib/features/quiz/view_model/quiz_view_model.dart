@@ -1,13 +1,16 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../filter/repository/filter_repository.dart';
 import '../../learning/providers/it_pass_learning_stats_provider.dart';
 import '../../learning/repository/learning_history_repository.dart';
 import '../../learning/repository/local_learning_history_repository.dart';
+import '../../note/repository/local_quiz_history_repository.dart';
 import '../model/quiz_session.dart';
 import '../repository/quiz_repository.dart';
+
+part 'quiz_view_model.g.dart';
 
 sealed class QuizState {
   const QuizState();
@@ -23,16 +26,13 @@ class QuizError extends QuizState {
   final String message;
 }
 
-final AsyncNotifierProvider<QuizViewModel, QuizState> quizViewModelProvider =
-    AsyncNotifierProvider.autoDispose<QuizViewModel, QuizState>(
-  QuizViewModel.new,
-);
-
-class QuizViewModel extends AsyncNotifier<QuizState> {
+@riverpod
+class QuizViewModel extends _$QuizViewModel {
   final _repository = QuizRepository();
   final _filterRepo = FilterRepository();
   final LearningHistoryRepository _learningRepo =
       LocalLearningHistoryRepository();
+  final _quizHistoryRepo = LocalQuizHistoryRepository();
 
   @override
   Future<QuizState> build() async {
@@ -46,12 +46,12 @@ class QuizViewModel extends AsyncNotifier<QuizState> {
       if (!filter.isValid) {
         return const QuizError('出題範囲が選択されていません');
       }
-      final questions = await _repository.loadSession(filter, stats);
-      if (questions.isEmpty) {
+      final allQuestions = await _repository.loadSession(filter, stats);
+      if (allQuestions.isEmpty) {
         return const QuizError('条件に合う問題がありません');
       }
       return QuizReady(QuizSession(
-        questions: questions,
+        allQuestions: allQuestions,
         setStartTime: DateTime.now(),
       ));
     } on Object catch (e, st) {
@@ -65,25 +65,34 @@ class QuizViewModel extends AsyncNotifier<QuizState> {
 
   Future<void> answer(String label) async {
     final current = state.value;
-    if (current is! QuizReady) {
-      return;
-    }
+    if (current is! QuizReady) return;
     final session = current.session;
-    if (session.isAnswered) {
-      return;
-    }
+    if (session.isAnswered) return;
 
     final isCorrect = label == session.currentQuestion.answer;
     await HapticFeedback.mediumImpact();
 
     final q = session.currentQuestion;
+    final now = DateTime.now();
     try {
-      await _learningRepo.recordAnswer(
-        eraId: q.eraId,
-        no: q.no,
-        isCorrect: isCorrect,
-        at: DateTime.now(),
-      );
+      await Future.wait([
+        _learningRepo.recordAnswer(
+          eraId: q.eraId,
+          no: q.no,
+          isCorrect: isCorrect,
+          at: now,
+          selectedLabel: label,
+        ),
+        _quizHistoryRepo.saveAnswer(
+          eraId: q.eraId,
+          no: q.no,
+          selectedLabel: label,
+          isCorrect: isCorrect,
+          answeredAt: now,
+        ),
+        // 不正解時は「覚えた」除外フラグを解除して復習リストに再登録させる
+        if (!isCorrect) _learningRepo.unmarkMastered(q.eraId, q.no),
+      ]);
     } on Object {
       // 履歴保存失敗でも解答表示は継続
     }
@@ -108,20 +117,17 @@ class QuizViewModel extends AsyncNotifier<QuizState> {
 
   void nextQuestion() {
     final current = state.value;
-    if (current is! QuizReady) {
-      return;
-    }
+    if (current is! QuizReady) return;
     final session = current.session;
     final nextIndex = session.currentIndex + 1;
     // 最後の問題の次はリザルトページへ遷移するため、インデックスは増やさない
-    if (nextIndex >= session.totalCount) {
-      return;
-    }
+    if (nextIndex >= session.totalCount) return;
 
     state = AsyncData(
       QuizReady(
         QuizSession(
-          questions: session.questions,
+          allQuestions: session.allQuestions,
+          currentSetIndex: session.currentSetIndex,
           currentIndex: nextIndex,
           currentSetAnswers: session.currentSetAnswers,
           setStartTime: session.setStartTime,
@@ -129,5 +135,23 @@ class QuizViewModel extends AsyncNotifier<QuizState> {
       ),
     );
     ref.invalidate(itPassLearningStatsProvider);
+  }
+
+  /// 次のセット（10問）へ進む。[QuizSession.hasNextSet] が true のときのみ有効。
+  void nextSet() {
+    final current = state.value;
+    if (current is! QuizReady) return;
+    final session = current.session;
+    if (!session.hasNextSet) return;
+
+    state = AsyncData(
+      QuizReady(
+        QuizSession(
+          allQuestions: session.allQuestions,
+          currentSetIndex: session.currentSetIndex + 1,
+          setStartTime: DateTime.now(),
+        ),
+      ),
+    );
   }
 }

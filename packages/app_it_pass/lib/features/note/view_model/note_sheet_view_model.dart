@@ -1,4 +1,5 @@
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../learning/model/learning_level.dart';
 import '../../learning/model/question_learning_stats.dart';
@@ -6,48 +7,52 @@ import '../../learning/repository/local_learning_history_repository.dart';
 import '../../quiz/repository/quiz_repository.dart';
 import '../model/note_list_item.dart';
 import '../repository/local_bookmark_repository.dart';
+import '../repository/local_quiz_history_repository.dart';
 
-final noteSheetViewModelProvider = AsyncNotifierProvider.autoDispose<
-    NoteSheetViewModel, NoteSheetReady>(NoteSheetViewModel.new);
+part 'note_sheet_view_model.freezed.dart';
+part 'note_sheet_view_model.g.dart';
 
-class NoteSheetReady {
-  const NoteSheetReady({
-    required this.reviewItems,
-    required this.bookmarkItems,
-    required this.stats,
-    required this.bookmarks,
-  });
-
-  /// LearningLevel が weak/fuzzy の問題
-  final List<NoteListItem> reviewItems;
-
-  /// 手動ブックマーク済みの問題
-  final List<NoteListItem> bookmarkItems;
-
-  /// 履歴タブで LearningLevel バッジを表示するために保持
-  final Map<String, QuestionLearningStats> stats;
-
-  /// 履歴タブのブックマーク初期値に使用
-  final Set<String> bookmarks;
+@freezed
+abstract class NoteSheetReady with _$NoteSheetReady {
+  const factory NoteSheetReady({
+    required List<NoteListItem> reviewItems,
+    required List<NoteListItem> bookmarkItems,
+    required List<NoteListItem> historyItems,
+    required Map<String, QuestionLearningStats> stats,
+    required Set<String> bookmarks,
+  }) = _NoteSheetReady;
 }
 
-class NoteSheetViewModel extends AsyncNotifier<NoteSheetReady> {
+@riverpod
+class NoteSheetViewModel extends _$NoteSheetViewModel {
   @override
   Future<NoteSheetReady> build() async {
-    final bookmarksFuture = LocalBookmarkRepository().loadAll();
-    final statsFuture = LocalLearningHistoryRepository().loadAll();
+    final bookmarkRepo = LocalBookmarkRepository();
+    final learningRepo = LocalLearningHistoryRepository();
+    final historyRepo = LocalQuizHistoryRepository();
 
-    final (bookmarks, stats) = await (bookmarksFuture, statsFuture).wait;
+    final (bookmarks, stats, historyRecords, masteredKeys) = await (
+      bookmarkRepo.loadAll(),
+      learningRepo.loadAll(),
+      historyRepo.loadRecent(
+          limit: LocalQuizHistoryRepository.defaultDisplayLimit),
+      learningRepo.loadMastered(),
+    ).wait;
 
     final weakKeys = stats.entries
         .where((e) {
+          if (masteredKeys.contains(e.key)) return false;
           final level = LearningLevel.fromStats(e.value);
           return level == LearningLevel.weak || level == LearningLevel.fuzzy;
         })
         .map((e) => e.key)
         .toSet();
 
-    final allKeys = {...bookmarks, ...weakKeys};
+    final reviewBookmarkKeys = {...bookmarks, ...weakKeys};
+    final historyKeys = historyRecords
+        .map((r) => LocalLearningHistoryRepository.storageKey(r.eraId, r.no))
+        .toSet();
+    final allKeys = {...reviewBookmarkKeys, ...historyKeys};
     final itemsByKey = await _loadItems(allKeys, stats, bookmarks);
 
     final reviewItems = weakKeys
@@ -60,9 +65,26 @@ class NoteSheetViewModel extends AsyncNotifier<NoteSheetReady> {
         .map((k) => itemsByKey[k]!)
         .toList();
 
+    final historyItems = historyRecords
+        .map((r) {
+          final key = LocalLearningHistoryRepository.storageKey(r.eraId, r.no);
+          final base = itemsByKey[key];
+          if (base == null) return null;
+          return NoteListItem(
+            question: base.question,
+            level: base.level,
+            isBookmarked: base.isBookmarked,
+            selectedLabel: r.selectedLabel,
+            lastWasCorrect: r.isCorrect,
+          );
+        })
+        .whereType<NoteListItem>()
+        .toList();
+
     return NoteSheetReady(
       reviewItems: reviewItems,
       bookmarkItems: bookmarkItems,
+      historyItems: historyItems,
       stats: stats,
       bookmarks: bookmarks,
     );
@@ -94,16 +116,17 @@ class NoteSheetViewModel extends AsyncNotifier<NoteSheetReady> {
           final questions = await repo.loadEra(eraId);
           for (final q in questions) {
             if (!nos.contains(q.no)) continue;
-            final key =
-                LocalLearningHistoryRepository.storageKey(eraId, q.no);
+            final key = LocalLearningHistoryRepository.storageKey(eraId, q.no);
+            final stat = stats[key];
             result[key] = NoteListItem(
               question: q,
-              level: LearningLevel.fromStats(stats[key]),
+              level: LearningLevel.fromStats(stat),
               isBookmarked: bookmarks.contains(key),
+              selectedLabel: stat?.lastSelectedLabel,
             );
           }
         } on Object {
-          // 不明な eraId はスキップ
+          // unknown eraId — skip
         }
       }),
     );

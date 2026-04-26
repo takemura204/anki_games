@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../features/note/view/note_sheet.dart';
-import '../features/quiz/model/quiz_session.dart';
 import '../features/settings/view/settings_sheet.dart';
 
 /// IT Pass のモーダルボトムシート表示を一元管理する Provider。
@@ -35,12 +34,12 @@ class ItPassModalSheetRouter {
   }
 
   /// 復習ノートシートを表示する。
-  Future<void> showNoteSheet(QuizSession session) async {
+  Future<void> showNoteSheet() async {
     await showModalBottomSheet<void>(
       context: _ctx,
       backgroundColor: Colors.transparent,
       isScrollControlled: true,
-      builder: (_) => NoteSheet(session: session),
+      builder: (_) => const NoteSheet(),
     );
   }
 }

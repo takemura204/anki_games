@@ -1,21 +1,54 @@
-part of '../quiz_screen.dart';
+import 'package:app_it_pass/features/quiz/model/question.dart';
+import 'package:core/config/styles/app_animation.dart';
+import 'package:core/config/styles/app_border_radius.dart';
+import 'package:core/config/styles/app_colors.dart';
+import 'package:core/config/styles/app_icons.dart';
+import 'package:core/config/styles/app_spacing.dart';
+import 'package:core/config/styles/app_text_style.dart';
+import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
-class _ChoiceButton extends StatefulWidget {
-  const _ChoiceButton({
+// ignore: always_use_package_imports
+import '../../../../config/theme/it_pass_color_scheme.dart';
+import 'quiz_network_image.dart';
+
+/// Quiz / NoteSheet 両方で使用する汎用選択肢ボタン。
+///
+/// - [isAnswered] が false のとき: タップ可能・中立スタイル
+/// - [isAnswered] が true のとき: [correctLabel] と [selectedLabel] に基づいてハイライト
+class QuizChoiceButton extends StatefulWidget {
+  const QuizChoiceButton({
+    super.key,
     required this.choice,
-    required this.session,
-    required this.onTap,
+    required this.questionNo,
+    required this.correctLabel,
+    required this.isAnswered,
+    this.selectedLabel,
+    this.onTap,
   });
 
   final QuestionChoice choice;
-  final QuizSession session;
-  final VoidCallback onTap;
+
+  /// 画像の Hero タグ生成に使用する問題番号
+  final int questionNo;
+
+  /// 正解の選択肢ラベル
+  final String correctLabel;
+
+  /// 回答済みか（true のとき色付きハイライトを表示）
+  final bool isAnswered;
+
+  /// 現在選択中のラベル（null = 未選択）
+  final String? selectedLabel;
+
+  /// タップコールバック。null または [isAnswered] が true のときはタップ不可。
+  final VoidCallback? onTap;
 
   @override
-  State<_ChoiceButton> createState() => _ChoiceButtonState();
+  State<QuizChoiceButton> createState() => _QuizChoiceButtonState();
 }
 
-class _ChoiceButtonState extends State<_ChoiceButton>
+class _QuizChoiceButtonState extends State<QuizChoiceButton>
     with SingleTickerProviderStateMixin {
   late final AnimationController _pulseController;
   late final Animation<double> _scaleAnimation;
@@ -25,13 +58,10 @@ class _ChoiceButtonState extends State<_ChoiceButton>
     super.initState();
     _pulseController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 120), // タップフィードバックのチューニング値
+      duration: const Duration(milliseconds: 120),
     );
     _scaleAnimation = Tween<double>(begin: 1, end: 0.96).animate(
-      CurvedAnimation(
-        parent: _pulseController,
-        curve: AppAnimation.standard,
-      ),
+      CurvedAnimation(parent: _pulseController, curve: AppAnimation.standard),
     );
   }
 
@@ -42,20 +72,17 @@ class _ChoiceButtonState extends State<_ChoiceButton>
   }
 
   Future<void> _handleTap() async {
-    if (widget.session.isAnswered) {
-      return;
-    }
+    if (widget.isAnswered || widget.onTap == null) return;
     await _pulseController.forward();
     await _pulseController.reverse();
-    widget.onTap();
+    widget.onTap!();
   }
 
   @override
   Widget build(BuildContext context) {
-    final isSelected = widget.session.selectedLabel == widget.choice.label;
-    final isCorrect =
-        widget.choice.label == widget.session.currentQuestion.answer;
-    final isAnswered = widget.session.isAnswered;
+    final isSelected = widget.selectedLabel == widget.choice.label;
+    final isCorrect = widget.choice.label == widget.correctLabel;
+    final isAnswered = widget.isAnswered;
     final hasImage = widget.choice.images.isNotEmpty;
     final hasText = widget.choice.text.isNotEmpty;
 
@@ -74,7 +101,7 @@ class _ChoiceButtonState extends State<_ChoiceButton>
     } else if (isCorrect) {
       borderColor = AppColors.success;
       bgColor = AppColors.success.withValues(alpha: 0.18);
-      textColor = Colors.white; // 色付き背景上なので常に白
+      textColor = Colors.white;
       glowShadows = [
         BoxShadow(
           color: AppColors.success.withValues(alpha: 0.55),
@@ -85,7 +112,7 @@ class _ChoiceButtonState extends State<_ChoiceButton>
     } else if (isSelected) {
       borderColor = AppColors.error;
       bgColor = AppColors.error.withValues(alpha: 0.18);
-      textColor = Colors.white; // 色付き背景上なので常に白
+      textColor = Colors.white;
       glowShadows = [
         BoxShadow(
           color: AppColors.error.withValues(alpha: 0.4),
@@ -104,7 +131,7 @@ class _ChoiceButtonState extends State<_ChoiceButton>
       child: ScaleTransition(
         scale: _scaleAnimation,
         child: AnimatedContainer(
-          duration: const Duration(milliseconds: 320), // 選択状態変化のチューニング値
+          duration: const Duration(milliseconds: 320),
           curve: Curves.easeOutCubic,
           padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
@@ -150,17 +177,11 @@ class _ChoiceButtonState extends State<_ChoiceButton>
                   ] else
                     const Spacer(),
                   if (isAnswered && isCorrect)
-                    const Icon(
-                      Icons.check_circle_rounded,
-                      color: AppColors.success,
-                      size: 20,
-                    ),
+                    const Icon(AppIcons.correct,
+                        color: AppColors.success, size: 20),
                   if (isAnswered && isSelected && !isCorrect)
-                    const Icon(
-                      Icons.cancel_rounded,
-                      color: AppColors.error,
-                      size: 20,
-                    ),
+                    const Icon(AppIcons.incorrect,
+                        color: AppColors.error, size: 20),
                 ],
               ),
               if (hasImage) ...[
@@ -168,10 +189,10 @@ class _ChoiceButtonState extends State<_ChoiceButton>
                 ...widget.choice.images.asMap().entries.map(
                       (e) => Padding(
                         padding: const EdgeInsets.only(top: AppSpacing.xs),
-                        child: _QuizNetworkImage(
+                        child: QuizNetworkImage(
                           url: e.value,
-                          heroTag: 'img_q${widget.session.currentQuestion.no}'
-                              '_choice_${widget.choice.label}_${e.key}',
+                          heroTag:
+                              'img_q${widget.questionNo}_choice_${widget.choice.label}_${e.key}',
                           borderRadius: AppBorderRadius.sm,
                           tapToView: false,
                         ),

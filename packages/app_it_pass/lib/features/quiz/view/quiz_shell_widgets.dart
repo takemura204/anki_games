@@ -1,9 +1,5 @@
 part of 'quiz_screen.dart';
 
-// ---------------------------------------------------------------------------
-// Answered action bar
-// ---------------------------------------------------------------------------
-
 class _AnsweredActionBar extends StatelessWidget {
   const _AnsweredActionBar({
     required this.onShowExplanation,
@@ -32,7 +28,7 @@ class _AnsweredActionBar extends StatelessWidget {
                 child: TextButton.icon(
                   onPressed: onShowExplanation,
                   icon: const Icon(
-                    Icons.lightbulb_outline_rounded,
+                    AppIcons.explanation,
                     color: AppColors.success,
                     size: 18,
                   ),
@@ -51,14 +47,14 @@ class _AnsweredActionBar extends StatelessWidget {
                   onPressed: onNext,
                   iconAlignment: IconAlignment.end,
                   icon: Icon(
-                    Icons.keyboard_arrow_up_rounded,
-                    color: c.fgShade400,
+                    AppIcons.nextUp,
+                    color: c.fg,
                     size: 20,
                   ),
                   label: Text(
                     '次の問題へ',
                     style: AppTextStyle.labelLarge.copyWith(
-                      color: c.fgShade400,
+                      color: c.fg,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -71,10 +67,6 @@ class _AnsweredActionBar extends StatelessWidget {
     );
   }
 }
-
-// ---------------------------------------------------------------------------
-// Gradient background
-// ---------------------------------------------------------------------------
 
 class _QuizGradientBackground extends StatelessWidget {
   const _QuizGradientBackground();

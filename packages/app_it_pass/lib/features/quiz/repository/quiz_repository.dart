@@ -95,15 +95,13 @@ class QuizRepository {
     return filtered;
   }
 
+  /// フィルター後の全問題を順序適用して返す（上限なし）。
+  /// セット分割は [QuizSession] が担う。
   Future<List<Question>> loadSession(
     QuizFilter filter,
     Map<String, QuestionLearningStats> learningStats,
   ) async {
     final filtered = await loadFilteredQuestions(filter, learningStats);
-    final ordered = QuizQuestionOrdering.apply(filtered, filter, learningStats);
-    if (ordered.length <= maxQuestionsPerSession) {
-      return ordered;
-    }
-    return ordered.sublist(0, maxQuestionsPerSession);
+    return QuizQuestionOrdering.apply(filtered, filter, learningStats);
   }
 }

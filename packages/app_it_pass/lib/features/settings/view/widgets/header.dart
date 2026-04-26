@@ -19,20 +19,29 @@ class _Header extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Expanded(
-            child: Text(
-              t.settings.title.toUpperCase(),
-              style: AppTextStyle.titleLarge.copyWith(
-                color: c.fg,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 0,
-              ),
+            child: Row(
+              children: [
+                Icon(
+                  AppIcons.account,
+                  color: c.fgShade400,
+                ),
+                const Gap(AppSpacing.xs),
+                Text(
+                  t.settings.title.toUpperCase(),
+                  style: AppTextStyle.titleLarge.copyWith(
+                    color: c.fgShade400,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 0,
+                  ),
+                ),
+              ],
             ),
           ),
           const Gap(AppSpacing.sm),
           GlassButton(
             cardRadius: AppBorderRadius.circle,
             child: IconButton(
-              icon: Icon(Icons.close, color: c.fgShade300),
+              icon: Icon(AppIcons.close, color: c.fgShade300),
               onPressed: onClose,
             ),
           ),

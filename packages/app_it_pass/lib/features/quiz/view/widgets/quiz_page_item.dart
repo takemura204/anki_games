@@ -34,21 +34,27 @@ class _QuizPageItem extends ConsumerWidget {
     final headerClearance = topPadding + 80.0;
     final sheetExtra = isSheetOpen ? screenHeight * 0.55 : 0.0;
     final footerClearance =
-        (session.isAnswered ? 80.0 : 16.0) + bottomPadding + 48.0 + sheetExtra;
+        (session.isAnswered ? AppSpacing.lg : AppSpacing.sm) +
+            bottomPadding +
+            48.0 +
+            sheetExtra;
 
     return SingleChildScrollView(
       padding: EdgeInsets.fromLTRB(20, headerClearance, 20, footerClearance),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          _QuestionCard(question: question, learningLevel: level),
+          QuizQuestionCard(question: question, learningLevel: level),
           const Gap(12),
           ...question.choices.map(
             (choice) => Padding(
               padding: const EdgeInsets.only(bottom: 10),
-              child: _ChoiceButton(
+              child: QuizChoiceButton(
                 choice: choice,
-                session: session,
+                questionNo: question.no,
+                correctLabel: question.answer,
+                isAnswered: session.isAnswered,
+                selectedLabel: session.selectedLabel,
                 onTap: () => onAnswer(choice.label),
               ),
             ),

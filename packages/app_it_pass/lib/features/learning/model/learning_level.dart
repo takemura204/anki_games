@@ -1,3 +1,4 @@
+import 'package:core/config/styles/app_colors.dart';
 import 'package:flutter/material.dart';
 
 import 'question_learning_stats.dart';
@@ -49,22 +50,24 @@ enum LearningLevel {
 }
 
 extension LearningLevelPalette on LearningLevel {
-  Color get filterForeground => switch (this) {
-        LearningLevel.unseen => const Color(0xFF9CA3AF),
-        LearningLevel.weak => const Color(0xFFFCA5A5),
-        LearningLevel.fuzzy => const Color(0xFFFCD34D),
-        LearningLevel.familiar => const Color(0xFF5EEAD4),
-        LearningLevel.mastered => const Color(0xFF6EE7B7),
+  Color get colorFg => switch (this) {
+        LearningLevel.unseen => AppColors.learningLevelUnseen,
+        LearningLevel.weak => AppColors.learningLevelWeak,
+        LearningLevel.fuzzy => AppColors.learningLevelFuzzy,
+        LearningLevel.familiar => AppColors.learningLevelFamiliar,
+        LearningLevel.mastered => AppColors.learningLevelMastered,
       };
 
-  Color get filterBackground => switch (this) {
-        LearningLevel.unseen => const Color(0xFF9CA3AF).withValues(alpha: 0.2),
-        LearningLevel.weak => const Color(0xFFEF4444).withValues(alpha: 0.25),
-        LearningLevel.fuzzy => const Color(0xFFF59E0B).withValues(alpha: 0.22),
+  Color get colorBg => switch (this) {
+        LearningLevel.unseen => const Color(0xFF9CA3AF).withValues(alpha: 0.22),
+        LearningLevel.weak =>
+          AppColors.learningLevelWeak.withValues(alpha: 0.22),
+        LearningLevel.fuzzy =>
+          AppColors.learningLevelFuzzy.withValues(alpha: 0.22),
         LearningLevel.familiar =>
-          const Color(0xFF14B8A6).withValues(alpha: 0.22),
+          AppColors.learningLevelFamiliar.withValues(alpha: 0.22),
         LearningLevel.mastered =>
-          const Color(0xFF10B981).withValues(alpha: 0.22),
+          AppColors.learningLevelMastered.withValues(alpha: 0.22),
       };
 }
 

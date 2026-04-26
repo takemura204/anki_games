@@ -10,7 +10,11 @@ abstract class LearningHistoryRepository {
     required int no,
     required bool isCorrect,
     required DateTime at,
+    required String selectedLabel,
   });
+
+  /// 「覚えた」として永続除外されたキーを解除し、復習リストに再登録させる。
+  Future<void> unmarkMastered(String eraId, int no);
 
   /// 学習履歴を全件削除する。
   Future<void> deleteAll();

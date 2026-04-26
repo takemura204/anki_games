@@ -1,11 +1,11 @@
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../repository/local_bookmark_repository.dart';
 
-final bookmarkProvider =
-    AsyncNotifierProvider<BookmarkNotifier, Set<String>>(BookmarkNotifier.new);
+part 'bookmark_provider.g.dart';
 
-class BookmarkNotifier extends AsyncNotifier<Set<String>> {
+@Riverpod(keepAlive: true)
+class BookmarkNotifier extends _$BookmarkNotifier {
   final _repo = LocalBookmarkRepository();
 
   @override

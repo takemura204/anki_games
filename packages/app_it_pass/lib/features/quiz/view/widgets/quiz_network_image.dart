@@ -1,7 +1,9 @@
-part of '../quiz_screen.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
 
-class _QuizNetworkImage extends StatelessWidget {
-  const _QuizNetworkImage({
+class QuizNetworkImage extends StatelessWidget {
+  const QuizNetworkImage({
+    super.key,
     required this.url,
     required this.heroTag,
     this.borderRadius,
@@ -24,7 +26,7 @@ class _QuizNetworkImage extends StatelessWidget {
         opaque: false,
         barrierColor: Colors.transparent,
         pageBuilder: (_, __, ___) =>
-            _ImageViewerPage(url: url, heroTag: heroTag),
+            _QuizImageViewerPage(url: url, heroTag: heroTag),
         transitionsBuilder: (_, animation, __, child) {
           return FadeTransition(opacity: animation, child: child);
         },
@@ -108,17 +110,17 @@ class _QuizNetworkImage extends StatelessWidget {
   }
 }
 
-class _ImageViewerPage extends StatefulWidget {
-  const _ImageViewerPage({required this.url, required this.heroTag});
+class _QuizImageViewerPage extends StatefulWidget {
+  const _QuizImageViewerPage({required this.url, required this.heroTag});
 
   final String url;
   final String heroTag;
 
   @override
-  State<_ImageViewerPage> createState() => _ImageViewerPageState();
+  State<_QuizImageViewerPage> createState() => _QuizImageViewerPageState();
 }
 
-class _ImageViewerPageState extends State<_ImageViewerPage>
+class _QuizImageViewerPageState extends State<_QuizImageViewerPage>
     with SingleTickerProviderStateMixin {
   final _transformationController = TransformationController();
   late final AnimationController _animController;

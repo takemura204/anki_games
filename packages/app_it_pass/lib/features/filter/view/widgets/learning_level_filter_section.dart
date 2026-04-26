@@ -71,8 +71,8 @@ class _LearningLevelFilterChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final fg = level.filterForeground;
-    final bg = level.filterBackground;
+    final fg = level.colorFg;
+    final bg = level.colorBg;
     final c = context.appColors;
     return GestureDetector(
       onTap: onTap,

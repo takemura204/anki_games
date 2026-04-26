@@ -2,7 +2,7 @@ import 'dart:math';
 import 'dart:ui';
 
 import 'package:app_it_pass/components/glass_widget.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+import 'package:app_it_pass/components/modal_handle.dart';
 import 'package:confetti/confetti.dart';
 import 'package:core/config/constants/app_urls.dart';
 import 'package:app_it_pass/config/theme/it_pass_color_scheme.dart';
@@ -11,6 +11,7 @@ import 'package:core/config/styles/app_border_radius.dart';
 import 'package:core/config/styles/app_colors.dart';
 import 'package:core/config/styles/app_spacing.dart';
 import 'package:core/config/styles/app_text_style.dart';
+import 'package:core/config/styles/app_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -26,18 +27,21 @@ import '../model/question.dart';
 import '../model/quiz_session.dart';
 import '../view_model/quiz_view_model.dart';
 
+import 'widgets/choice_button.dart';
+import 'widgets/question_card.dart';
+import 'widgets/quiz_network_image.dart';
+
 part 'quiz_paging.dart';
 part 'quiz_shell_widgets.dart';
 part 'modals/explanation_sheet.dart';
-part 'widgets/choice_button.dart';
 part 'widgets/footer.dart';
 part 'widgets/header.dart';
-part 'widgets/question_card.dart';
-part 'widgets/quiz_network_image.dart';
 part 'widgets/quiz_page_item.dart';
 part 'widgets/quiz_skeleton.dart';
 part 'widgets/finished_result_page.dart';
 
+//TODO:NoteSHeetのデザイン調整,FilteSheetのデザイン調整、FinishResultPageとNoteShhetの共通化
+//IDEA:1日の初めはQuizの開始画面でモチベーションを上げる画面を用意してたテスワイプで開始できるようにする。
 class QuizScreen extends ConsumerWidget {
   const QuizScreen({super.key});
 
@@ -73,10 +77,6 @@ class QuizScreen extends ConsumerWidget {
     );
   }
 }
-
-// ---------------------------------------------------------------------------
-// Content (stateful)
-// ---------------------------------------------------------------------------
 
 class _QuizContent extends ConsumerStatefulWidget {
   const _QuizContent({required this.session});
@@ -220,11 +220,17 @@ class _QuizContentState extends ConsumerState<_QuizContent>
   }
 
   void _onResultContinue() {
-    if (_currentViewPage + 1 < _pages.length) {
-      _pageController.nextPage(
-        duration: const Duration(milliseconds: 450),
-        curve: Curves.easeInOutCubic,
-      );
+    if (widget.session.hasNextSet) {
+      // 次のセットへ: didUpdateWidget が pages 再構築 + jumpToPage(0) を処理する
+      ref.read(quizViewModelProvider.notifier).nextSet();
+    } else {
+      // 全問完了: SessionEndPage へ進む
+      if (_currentViewPage + 1 < _pages.length) {
+        _pageController.nextPage(
+          duration: const Duration(milliseconds: 450),
+          curve: Curves.easeInOutCubic,
+        );
+      }
     }
   }
 
@@ -258,8 +264,6 @@ class _QuizContentState extends ConsumerState<_QuizContent>
       ref.read(quizViewModelProvider.notifier).nextQuestion();
     }
   }
-
-  // ---- build ----
 
   @override
   Widget build(BuildContext context) {
@@ -328,7 +332,8 @@ class _QuizContentState extends ConsumerState<_QuizContent>
             final pageSession = isCurrentPage
                 ? session
                 : QuizSession(
-                    questions: session.questions,
+                    allQuestions: session.allQuestions,
+                    currentSetIndex: session.currentSetIndex,
                     currentIndex: e.questionIndex,
                   );
             return _QuizPageItem(
@@ -347,7 +352,7 @@ class _QuizContentState extends ConsumerState<_QuizContent>
             cardRadius: cardRadius,
             session: session,
             centerLabel: headerCenterLabel,
-            showCenter: !_isOnResultPage,
+            showCenter: !_isOnResultPage && !_isOnSessionEndPage,
             onTapSetting: () =>
                 ref.read(modalSheetRouterProvider).showSettings(),
             onTapFilter: () async {
@@ -367,8 +372,7 @@ class _QuizContentState extends ConsumerState<_QuizContent>
             showActionBar: showActionBar,
             onShowExplanation: _showSheet,
             onNext: _goNext,
-            onTapNote: () =>
-                ref.read(modalSheetRouterProvider).showNoteSheet(session),
+            onTapNote: () => ref.read(modalSheetRouterProvider).showNoteSheet(),
             onTapReport: () async {},
           ),
         ),

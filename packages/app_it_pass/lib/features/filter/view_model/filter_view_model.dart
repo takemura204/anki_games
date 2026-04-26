@@ -1,6 +1,7 @@
 import 'dart:async';
 
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../learning/model/learning_level.dart';
 import '../../learning/repository/local_learning_history_repository.dart';
@@ -10,32 +11,24 @@ import '../model/quiz_filter.dart';
 import '../model/quiz_order_mode.dart';
 import '../repository/filter_repository.dart';
 
-class FilterState {
-  const FilterState({
-    required this.selectedEraIds,
-    this.selectedSystems = const {},
-    this.selectedMajors = const {},
-    this.selectedLearningLevels = const {},
-    this.quizOrderMode = QuizOrderMode.random,
-    this.expandedSystems = const {},
-    this.isApplying = false,
-    this.applyValidationMessage,
-    this.matchCount,
-  });
+part 'filter_view_model.freezed.dart';
+part 'filter_view_model.g.dart';
 
-  final Set<String> selectedEraIds;
-  final Set<String> selectedSystems;
-  final Set<String> selectedMajors;
-  final Set<LearningLevel> selectedLearningLevels;
-  final QuizOrderMode quizOrderMode;
-  final Set<String> expandedSystems;
-  final bool isApplying;
+@freezed
+abstract class FilterState with _$FilterState {
+  const FilterState._();
 
-  /// 適用ボタン検証エラー（条件変更でクリア）
-  final String? applyValidationMessage;
-
-  /// 現在の条件での該当問題数（初回計算前は null）
-  final int? matchCount;
+  const factory FilterState({
+    required Set<String> selectedEraIds,
+    @Default(<String>{}) Set<String> selectedSystems,
+    @Default(<String>{}) Set<String> selectedMajors,
+    @Default(<LearningLevel>{}) Set<LearningLevel> selectedLearningLevels,
+    @Default(QuizOrderMode.random) QuizOrderMode quizOrderMode,
+    @Default(<String>{}) Set<String> expandedSystems,
+    @Default(false) bool isApplying,
+    String? applyValidationMessage,
+    int? matchCount,
+  }) = _FilterState;
 
   bool get canApply => selectedEraIds.isNotEmpty;
 
@@ -46,43 +39,10 @@ class FilterState {
         selectedLearningLevels: selectedLearningLevels,
         quizOrderMode: quizOrderMode,
       );
-
-  FilterState copyWith({
-    Set<String>? selectedEraIds,
-    Set<String>? selectedSystems,
-    Set<String>? selectedMajors,
-    Set<LearningLevel>? selectedLearningLevels,
-    QuizOrderMode? quizOrderMode,
-    Set<String>? expandedSystems,
-    bool? isApplying,
-    String? applyValidationMessage,
-    bool clearApplyValidationMessage = false,
-    int? matchCount,
-  }) {
-    return FilterState(
-      selectedEraIds: selectedEraIds ?? this.selectedEraIds,
-      selectedSystems: selectedSystems ?? this.selectedSystems,
-      selectedMajors: selectedMajors ?? this.selectedMajors,
-      selectedLearningLevels:
-          selectedLearningLevels ?? this.selectedLearningLevels,
-      quizOrderMode: quizOrderMode ?? this.quizOrderMode,
-      expandedSystems: expandedSystems ?? this.expandedSystems,
-      isApplying: isApplying ?? this.isApplying,
-      applyValidationMessage: clearApplyValidationMessage
-          ? null
-          : (applyValidationMessage ?? this.applyValidationMessage),
-      matchCount: matchCount ?? this.matchCount,
-    );
-  }
 }
 
-final AsyncNotifierProvider<FilterViewModel, FilterState>
-    filterViewModelProvider =
-    AsyncNotifierProvider.autoDispose<FilterViewModel, FilterState>(
-  FilterViewModel.new,
-);
-
-class FilterViewModel extends AsyncNotifier<FilterState> {
+@riverpod
+class FilterViewModel extends _$FilterViewModel {
   final _repo = FilterRepository();
   final _quizRepo = QuizRepository();
   final _learningRepo = LocalLearningHistoryRepository();
@@ -106,30 +66,20 @@ class FilterViewModel extends AsyncNotifier<FilterState> {
   Future<void> _refreshMatchCount() async {
     final gen = ++_matchCountGeneration;
     final cur = state.value;
-    if (cur == null) {
-      return;
-    }
+    if (cur == null) return;
     if (!cur.canApply) {
-      if (gen != _matchCountGeneration) {
-        return;
-      }
+      if (gen != _matchCountGeneration) return;
       final latest = state.value;
-      if (latest == null) {
-        return;
-      }
+      if (latest == null) return;
       state = AsyncData(latest.copyWith(matchCount: 0));
       return;
     }
     final filter = cur.toFilter();
     final stats = await _learningRepo.loadAll();
     final n = (await _quizRepo.loadFilteredQuestions(filter, stats)).length;
-    if (gen != _matchCountGeneration) {
-      return;
-    }
+    if (gen != _matchCountGeneration) return;
     final latest = state.value;
-    if (latest == null) {
-      return;
-    }
+    if (latest == null) return;
     state = AsyncData(latest.copyWith(matchCount: n));
   }
 
@@ -139,9 +89,7 @@ class FilterViewModel extends AsyncNotifier<FilterState> {
 
   void toggleLearningLevel(LearningLevel level) {
     final current = state.value;
-    if (current == null) {
-      return;
-    }
+    if (current == null) return;
     final next = Set<LearningLevel>.from(current.selectedLearningLevels);
     if (next.contains(level)) {
       next.remove(level);
@@ -151,7 +99,7 @@ class FilterViewModel extends AsyncNotifier<FilterState> {
     state = AsyncData(
       current.copyWith(
         selectedLearningLevels: next,
-        clearApplyValidationMessage: true,
+        applyValidationMessage: null,
       ),
     );
     _scheduleMatchCountRefresh();
@@ -159,13 +107,11 @@ class FilterViewModel extends AsyncNotifier<FilterState> {
 
   void clearLearningLevels() {
     final current = state.value;
-    if (current == null) {
-      return;
-    }
+    if (current == null) return;
     state = AsyncData(
       current.copyWith(
         selectedLearningLevels: <LearningLevel>{},
-        clearApplyValidationMessage: true,
+        applyValidationMessage: null,
       ),
     );
     _scheduleMatchCountRefresh();
@@ -173,13 +119,11 @@ class FilterViewModel extends AsyncNotifier<FilterState> {
 
   void setQuizOrderMode(QuizOrderMode mode) {
     final current = state.value;
-    if (current == null) {
-      return;
-    }
+    if (current == null) return;
     state = AsyncData(
       current.copyWith(
         quizOrderMode: mode,
-        clearApplyValidationMessage: true,
+        applyValidationMessage: null,
       ),
     );
     _scheduleMatchCountRefresh();
@@ -187,9 +131,7 @@ class FilterViewModel extends AsyncNotifier<FilterState> {
 
   void toggleEra(String eraId) {
     final current = state.value;
-    if (current == null) {
-      return;
-    }
+    if (current == null) return;
     final ids = Set<String>.from(current.selectedEraIds);
     if (ids.contains(eraId)) {
       ids.remove(eraId);
@@ -199,7 +141,7 @@ class FilterViewModel extends AsyncNotifier<FilterState> {
     state = AsyncData(
       current.copyWith(
         selectedEraIds: ids,
-        clearApplyValidationMessage: true,
+        applyValidationMessage: null,
       ),
     );
     _scheduleMatchCountRefresh();
@@ -207,13 +149,11 @@ class FilterViewModel extends AsyncNotifier<FilterState> {
 
   void selectAllEras() {
     final current = state.value;
-    if (current == null) {
-      return;
-    }
+    if (current == null) return;
     state = AsyncData(
       current.copyWith(
         selectedEraIds: ExamMeta.all.map((m) => m.eraId).toSet(),
-        clearApplyValidationMessage: true,
+        applyValidationMessage: null,
       ),
     );
     _scheduleMatchCountRefresh();
@@ -221,13 +161,11 @@ class FilterViewModel extends AsyncNotifier<FilterState> {
 
   void clearAllEras() {
     final current = state.value;
-    if (current == null) {
-      return;
-    }
+    if (current == null) return;
     state = AsyncData(
       current.copyWith(
         selectedEraIds: <String>{},
-        clearApplyValidationMessage: true,
+        applyValidationMessage: null,
       ),
     );
     _scheduleMatchCountRefresh();
@@ -235,9 +173,7 @@ class FilterViewModel extends AsyncNotifier<FilterState> {
 
   void toggleSystem(String system) {
     final current = state.value;
-    if (current == null) {
-      return;
-    }
+    if (current == null) return;
     final systems = Set<String>.from(current.selectedSystems);
     final majors = Set<String>.from(current.selectedMajors);
     if (systems.contains(system)) {
@@ -250,7 +186,7 @@ class FilterViewModel extends AsyncNotifier<FilterState> {
       current.copyWith(
         selectedSystems: systems,
         selectedMajors: majors,
-        clearApplyValidationMessage: true,
+        applyValidationMessage: null,
       ),
     );
     _scheduleMatchCountRefresh();
@@ -258,9 +194,7 @@ class FilterViewModel extends AsyncNotifier<FilterState> {
 
   void toggleMajor(String major) {
     final current = state.value;
-    if (current == null) {
-      return;
-    }
+    if (current == null) return;
     final majors = Set<String>.from(current.selectedMajors);
     if (majors.contains(major)) {
       majors.remove(major);
@@ -270,7 +204,7 @@ class FilterViewModel extends AsyncNotifier<FilterState> {
     state = AsyncData(
       current.copyWith(
         selectedMajors: majors,
-        clearApplyValidationMessage: true,
+        applyValidationMessage: null,
       ),
     );
     _scheduleMatchCountRefresh();
@@ -278,9 +212,7 @@ class FilterViewModel extends AsyncNotifier<FilterState> {
 
   void toggleSystemExpansion(String system) {
     final current = state.value;
-    if (current == null) {
-      return;
-    }
+    if (current == null) return;
     final expanded = Set<String>.from(current.expandedSystems);
     if (expanded.contains(system)) {
       expanded.remove(system);
@@ -292,13 +224,11 @@ class FilterViewModel extends AsyncNotifier<FilterState> {
 
   Future<bool> apply() async {
     final current = state.value;
-    if (current == null || !current.canApply) {
-      return false;
-    }
+    if (current == null || !current.canApply) return false;
     state = AsyncData(
       current.copyWith(
         isApplying: true,
-        clearApplyValidationMessage: true,
+        applyValidationMessage: null,
       ),
     );
     final filter = current.toFilter();
@@ -309,7 +239,8 @@ class FilterViewModel extends AsyncNotifier<FilterState> {
         current.copyWith(
           isApplying: false,
           matchCount: 0,
-          applyValidationMessage: '条件に合う問題がありません。学習レベル・分野・試験回の組み合わせを見直してください。',
+          applyValidationMessage:
+              '条件に合う問題がありません。学習レベル・分野・試験回の組み合わせを見直してください。',
         ),
       );
       return false;
@@ -318,7 +249,7 @@ class FilterViewModel extends AsyncNotifier<FilterState> {
     state = AsyncData(
       current.copyWith(
         isApplying: false,
-        clearApplyValidationMessage: true,
+        applyValidationMessage: null,
         matchCount: count,
       ),
     );
