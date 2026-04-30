@@ -1,48 +1,74 @@
 part of '../filter_sheet.dart';
 
-class _SystemSection extends StatelessWidget {
-  const _SystemSection({
+class _SystemMajorSection extends StatelessWidget {
+  const _SystemMajorSection({
     required this.selectedSystems,
-    required this.onToggle,
+    required this.selectedMajors,
+    required this.expandedSystems,
+    required this.onSystemToggle,
+    required this.onMajorToggle,
+    required this.onExpansionToggle,
   });
 
   final Set<String> selectedSystems;
-  final ValueChanged<String> onToggle;
+  final Set<String> selectedMajors;
+  final Set<String> expandedSystems;
+  final ValueChanged<String> onSystemToggle;
+  final ValueChanged<String> onMajorToggle;
+  final ValueChanged<String> onExpansionToggle;
 
   @override
   Widget build(BuildContext context) {
     final systems = ExamMeta.categoryTree.keys.toList();
-    final c = context.appColors;
-    return Wrap(
-      spacing: 10,
-      runSpacing: 10,
-      children: systems.map((system) {
-        final selected = selectedSystems.contains(system);
-        return GestureDetector(
-          onTap: () => onToggle(system),
-          child: AnimatedContainer(
-            duration: AppAnimation.fast,
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-            decoration: BoxDecoration(
-              color: selected
-                  ? AppColors.itPassSeed.withValues(alpha: 0.3)
-                  : c.surface1,
-              borderRadius: AppBorderRadius.md,
-              border: Border.all(
-                color: selected ? AppColors.itPassSeed : c.border1,
-              ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        ...systems.map((system) {
+          final majors = ExamMeta.categoryTree[system] ?? [];
+          return _GlassExpansionTile(
+            title: system,
+            isSelected: selectedSystems.contains(system),
+            isExpanded: expandedSystems.contains(system),
+            onSelectToggle: () => onSystemToggle(system),
+            onExpansionToggle: () => onExpansionToggle(system),
+            child: Wrap(
+              spacing: AppSpacing.sm,
+              runSpacing: AppSpacing.sm,
+              children: majors
+                  .map(
+                    (major) => _MajorChip(
+                      label: major,
+                      isSelected: selectedMajors.contains(major),
+                      onTap: () => onMajorToggle(major),
+                    ),
+                  )
+                  .toList(),
             ),
-            child: Text(
-              system,
-              style: AppTextStyle.labelLarge.copyWith(
-                color: selected ? c.fg : c.fgShade300,
-                fontWeight: selected ? FontWeight.bold : FontWeight.normal,
-                letterSpacing: 0,
-              ),
+          );
+        }),
+        if (selectedSystems.isEmpty)
+          Padding(
+            padding: const EdgeInsets.only(top: AppSpacing.xs),
+            child: Row(
+              children: [
+                const Icon(
+                  Icons.warning_amber_rounded,
+                  color: AppColors.warning,
+                  size: 14,
+                ),
+                const Gap(AppSpacing.xs + 2),
+                Text(
+                  '分野を1つ以上選択してください',
+                  style: AppTextStyle.labelLarge.copyWith(
+                    color: AppColors.warning.withValues(alpha: 0.8),
+                    letterSpacing: 0,
+                    fontWeight: FontWeight.normal,
+                  ),
+                ),
+              ],
             ),
           ),
-        );
-      }).toList(),
+      ],
     );
   }
 }

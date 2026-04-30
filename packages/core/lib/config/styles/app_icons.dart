@@ -24,4 +24,7 @@ class AppIcons {
   static const IconData history = Icons.history_outlined;
   static const IconData nextRight = Icons.keyboard_arrow_right_rounded;
   static const IconData prevLeft = Icons.keyboard_arrow_left_rounded;
+
+  //ReportSheet
+  static const IconData progressChart = Icons.pie_chart_outline;
 }

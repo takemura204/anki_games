@@ -78,3 +78,41 @@ class _QuizGradientBackground extends StatelessWidget {
     );
   }
 }
+
+class _QuizErrorView extends StatelessWidget {
+  const _QuizErrorView({
+    required this.message,
+    required this.onOpenFilter,
+  });
+
+  final String message;
+  final VoidCallback onOpenFilter;
+
+  @override
+  Widget build(BuildContext context) {
+    final c = context.appColors;
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: AppSpacing.xl),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(Icons.filter_list_off_rounded, size: 52, color: c.fgShade300),
+            const Gap(AppSpacing.md),
+            Text(
+              message,
+              style: AppTextStyle.titleMedium.copyWith(color: c.fgShade400),
+              textAlign: TextAlign.center,
+            ),
+            const Gap(AppSpacing.lg),
+            FilledButton.icon(
+              onPressed: onOpenFilter,
+              icon: const Icon(Icons.tune_rounded),
+              label: const Text('出題設定を開く'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

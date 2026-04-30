@@ -74,6 +74,9 @@ class FilterSheet extends ConsumerWidget {
     FilterState filterState,
   ) {
     final vm = ref.read(filterViewModelProvider.notifier);
+    final allSystemsSelected =
+        filterState.selectedSystems.length == ExamMeta.categoryTree.length;
+    final noSystemsSelected = filterState.selectedSystems.isEmpty;
 
     return Column(
       children: [
@@ -85,100 +88,84 @@ class FilterSheet extends ConsumerWidget {
             padding: const EdgeInsets.symmetric(horizontal: 12),
             children: [
               const Gap(AppSpacing.sm),
-              _FilterSectionCard(
-                child: _OrderModeSection(
-                  mode: filterState.quizOrderMode,
-                  onChanged: vm.setQuizOrderMode,
-                ),
-              ),
-              const Gap(AppSpacing.sm),
-              _FilterSectionCard(
-                child: _LearningLevelFilterSection(
-                  selected: filterState.selectedLearningLevels,
-                  onToggle: vm.toggleLearningLevel,
-                  onClear: vm.clearLearningLevels,
-                ),
-              ),
-              const Gap(AppSpacing.sm),
-              _FilterSectionCard(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const _SectionLabel('分野（系統）'),
-                    _SystemSection(
-                      selectedSystems: filterState.selectedSystems,
-                      onToggle: vm.toggleSystem,
-                    ),
-                  ],
-                ),
-              ),
-              const Gap(AppSpacing.sm),
-              _FilterSectionCard(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const _SectionLabel('中分類'),
-                    _MajorSection(
-                      selectedSystems: filterState.selectedSystems,
-                      selectedMajors: filterState.selectedMajors,
-                      expandedSystems: filterState.expandedSystems,
-                      onToggle: vm.toggleMajor,
-                      onExpansionToggle: vm.toggleSystemExpansion,
-                    ),
-                  ],
-                ),
-              ),
-              const Gap(AppSpacing.sm),
+              //試験回
               _FilterSectionCard(
                 child: _EraSection(
                   selectedEraIds: filterState.selectedEraIds,
                   onToggle: vm.toggleEra,
                   onSelectAll: vm.selectAllEras,
                   onClearAll: vm.clearAllEras,
-                  canApply: filterState.canApply,
+                  hasEraSelected: filterState.hasEraSelected,
+                ),
+              ),
+              const Gap(AppSpacing.sm),
+              //分野
+              _FilterSectionCard(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _SectionLabel(
+                      '分野',
+                      trailing: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          _TextLinkButton(
+                            label: 'すべて選択',
+                            onTap:
+                                allSystemsSelected ? null : vm.selectAllSystems,
+                            active: allSystemsSelected,
+                          ),
+                          const Gap(AppSpacing.xs),
+                          _TextLinkButton(
+                            label: 'すべて解除',
+                            onTap:
+                                noSystemsSelected ? null : vm.clearAllSystems,
+                          ),
+                        ],
+                      ),
+                    ),
+                    _SystemMajorSection(
+                      selectedSystems: filterState.selectedSystems,
+                      selectedMajors: filterState.selectedMajors,
+                      expandedSystems: filterState.expandedSystems,
+                      onSystemToggle: vm.toggleSystem,
+                      onMajorToggle: vm.toggleMajor,
+                      onExpansionToggle: vm.toggleSystemExpansion,
+                    ),
+                  ],
+                ),
+              ),
+              const Gap(AppSpacing.sm),
+              //学習レベル
+              _FilterSectionCard(
+                child: _LearningLevelFilterSection(
+                  selected: filterState.selectedLearningLevels,
+                  onToggle: vm.toggleLearningLevel,
+                  onSelectAll: vm.selectAllLearningLevels,
+                  onClearAll: vm.clearLearningLevels,
+                ),
+              ),
+              const Gap(AppSpacing.sm),
+              //出題順
+              _FilterSectionCard(
+                child: _OrderModeSection(
+                  mode: filterState.quizOrderMode,
+                  onChanged: vm.setQuizOrderMode,
                 ),
               ),
               const Gap(AppSpacing.lg),
             ],
           ),
         ),
-        if (filterState.applyValidationMessage != null)
-          Padding(
-            padding: const EdgeInsets.fromLTRB(
-              AppSpacing.md,
-              0,
-              AppSpacing.md,
-              AppSpacing.sm,
-            ),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Icon(
-                  Icons.warning_amber_rounded,
-                  color: AppColors.warning,
-                  size: AppSpacing.md + 4,
-                ),
-                const Gap(AppSpacing.sm),
-                Expanded(
-                  child: Text(
-                    filterState.applyValidationMessage!,
-                    style: AppTextStyle.bodySmall.copyWith(
-                      color: AppColors.warning.withValues(alpha: 0.95),
-                      height: 1.4,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
         const Gap(5),
         _MatchCountBar(
           matchCount: filterState.matchCount,
-          canApply: filterState.canApply,
+          hasEraSelected: filterState.hasEraSelected,
         ),
         _ApplyButton(
           canApply: filterState.canApply,
           isApplying: filterState.isApplying,
+          buttonText: filterState.buttonText,
           onTap: () async {
             final ok = await vm.apply();
             if (ok) {

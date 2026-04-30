@@ -30,7 +30,15 @@ abstract class FilterState with _$FilterState {
     int? matchCount,
   }) = _FilterState;
 
-  bool get canApply => selectedEraIds.isNotEmpty;
+  bool get hasEraSelected => selectedEraIds.isNotEmpty;
+
+  bool get canApply => hasEraSelected && matchCount != 0;
+
+  String get buttonText {
+    if (!hasEraSelected) return '試験回を選択してください';
+    if (matchCount == 0) return '条件に合う問題がありません';
+    return 'この設定で出題する';
+  }
 
   QuizFilter toFilter() => QuizFilter(
         selectedEraIds: selectedEraIds,
@@ -52,11 +60,20 @@ class FilterViewModel extends _$FilterViewModel {
   @override
   Future<FilterState> build() async {
     final filter = await _repo.load();
+    final effectiveSystems = filter.selectedSystems.isEmpty
+        ? ExamMeta.categoryTree.keys.toSet()
+        : Set<String>.from(filter.selectedSystems);
+    final effectiveMajors = filter.selectedSystems.isEmpty
+        ? ExamMeta.categoryTree.values.expand((m) => m).toSet()
+        : Set<String>.from(filter.selectedMajors);
+    final effectiveLevels = filter.selectedLearningLevels.isEmpty
+        ? LearningLevel.values.toSet()
+        : Set<LearningLevel>.from(filter.selectedLearningLevels);
     final s = FilterState(
       selectedEraIds: Set.from(filter.selectedEraIds),
-      selectedSystems: Set.from(filter.selectedSystems),
-      selectedMajors: Set.from(filter.selectedMajors),
-      selectedLearningLevels: Set.from(filter.selectedLearningLevels),
+      selectedSystems: effectiveSystems,
+      selectedMajors: effectiveMajors,
+      selectedLearningLevels: effectiveLevels,
       quizOrderMode: filter.quizOrderMode,
     );
     scheduleMicrotask(_refreshMatchCount);
@@ -67,7 +84,7 @@ class FilterViewModel extends _$FilterViewModel {
     final gen = ++_matchCountGeneration;
     final cur = state.value;
     if (cur == null) return;
-    if (!cur.canApply) {
+    if (!cur.hasEraSelected) {
       if (gen != _matchCountGeneration) return;
       final latest = state.value;
       if (latest == null) return;
@@ -99,6 +116,18 @@ class FilterViewModel extends _$FilterViewModel {
     state = AsyncData(
       current.copyWith(
         selectedLearningLevels: next,
+        applyValidationMessage: null,
+      ),
+    );
+    _scheduleMatchCountRefresh();
+  }
+
+  void selectAllLearningLevels() {
+    final current = state.value;
+    if (current == null) return;
+    state = AsyncData(
+      current.copyWith(
+        selectedLearningLevels: LearningLevel.values.toSet(),
         applyValidationMessage: null,
       ),
     );
@@ -176,16 +205,54 @@ class FilterViewModel extends _$FilterViewModel {
     if (current == null) return;
     final systems = Set<String>.from(current.selectedSystems);
     final majors = Set<String>.from(current.selectedMajors);
+    final expanded = Set<String>.from(current.expandedSystems);
+    final systemMajors = ExamMeta.categoryTree[system] ?? <String>[];
+
     if (systems.contains(system)) {
       systems.remove(system);
-      majors.removeAll(ExamMeta.categoryTree[system] ?? <String>[]);
+      majors.removeAll(systemMajors);
+      expanded.remove(system);
     } else {
       systems.add(system);
+      majors.addAll(systemMajors);
+      expanded.add(system);
     }
     state = AsyncData(
       current.copyWith(
         selectedSystems: systems,
         selectedMajors: majors,
+        expandedSystems: expanded,
+        applyValidationMessage: null,
+      ),
+    );
+    _scheduleMatchCountRefresh();
+  }
+
+  void selectAllSystems() {
+    final current = state.value;
+    if (current == null) return;
+    final allSystems = ExamMeta.categoryTree.keys.toSet();
+    final allMajors =
+        ExamMeta.categoryTree.values.expand((m) => m).toSet();
+    state = AsyncData(
+      current.copyWith(
+        selectedSystems: allSystems,
+        selectedMajors: allMajors,
+        expandedSystems: allSystems,
+        applyValidationMessage: null,
+      ),
+    );
+    _scheduleMatchCountRefresh();
+  }
+
+  void clearAllSystems() {
+    final current = state.value;
+    if (current == null) return;
+    state = AsyncData(
+      current.copyWith(
+        selectedSystems: <String>{},
+        selectedMajors: <String>{},
+        expandedSystems: <String>{},
         applyValidationMessage: null,
       ),
     );
@@ -195,15 +262,41 @@ class FilterViewModel extends _$FilterViewModel {
   void toggleMajor(String major) {
     final current = state.value;
     if (current == null) return;
+
+    String? parentSystem;
+    for (final entry in ExamMeta.categoryTree.entries) {
+      if (entry.value.contains(major)) {
+        parentSystem = entry.key;
+        break;
+      }
+    }
+
     final majors = Set<String>.from(current.selectedMajors);
+    final systems = Set<String>.from(current.selectedSystems);
+    final expanded = Set<String>.from(current.expandedSystems);
+
     if (majors.contains(major)) {
       majors.remove(major);
+      if (parentSystem != null) {
+        final remaining = (ExamMeta.categoryTree[parentSystem] ?? <String>[])
+            .where((m) => majors.contains(m));
+        if (remaining.isEmpty) {
+          systems.remove(parentSystem);
+          expanded.remove(parentSystem);
+        }
+      }
     } else {
       majors.add(major);
+      if (parentSystem != null) {
+        systems.add(parentSystem);
+      }
     }
+
     state = AsyncData(
       current.copyWith(
         selectedMajors: majors,
+        selectedSystems: systems,
+        expandedSystems: expanded,
         applyValidationMessage: null,
       ),
     );
@@ -236,12 +329,7 @@ class FilterViewModel extends _$FilterViewModel {
     final count = (await _quizRepo.loadFilteredQuestions(filter, stats)).length;
     if (count == 0) {
       state = AsyncData(
-        current.copyWith(
-          isApplying: false,
-          matchCount: 0,
-          applyValidationMessage:
-              '条件に合う問題がありません。学習レベル・分野・試験回の組み合わせを見直してください。',
-        ),
+        current.copyWith(isApplying: false, matchCount: 0),
       );
       return false;
     }

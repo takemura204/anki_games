@@ -1,7 +1,7 @@
-part of '../filter_sheet.dart';
+part of '../report_sheet.dart';
 
-class _Header extends StatelessWidget {
-  const _Header({required this.onClose});
+class _ReportHeader extends StatelessWidget {
+  const _ReportHeader({required this.onClose});
 
   final VoidCallback onClose;
 
@@ -20,13 +20,10 @@ class _Header extends StatelessWidget {
           Expanded(
             child: Row(
               children: [
-                Icon(
-                  AppIcons.filter,
-                  color: c.fgShade400,
-                ),
+                Icon(AppIcons.report, color: c.fgShade400),
                 const Gap(AppSpacing.xs),
                 Text(
-                  '絞り込み',
+                  'レポート',
                   style: AppTextStyle.titleLarge.copyWith(
                     color: c.fgShade400,
                     fontWeight: FontWeight.bold,

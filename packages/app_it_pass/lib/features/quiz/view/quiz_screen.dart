@@ -1,8 +1,10 @@
 import 'dart:math';
 import 'dart:ui';
 
+import 'package:app_it_pass/components/checkmark_painter.dart';
 import 'package:app_it_pass/components/glass_widget.dart';
 import 'package:app_it_pass/components/modal_handle.dart';
+import 'package:app_it_pass/features/report/view_model/progress_dashboard_provider.dart';
 import 'package:confetti/confetti.dart';
 import 'package:core/config/constants/app_urls.dart';
 import 'package:app_it_pass/config/theme/it_pass_color_scheme.dart';
@@ -19,6 +21,7 @@ import 'package:shimmer/shimmer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../router/modal_sheet_router.dart';
+import '../../review/repository/review_repository.dart';
 import 'modals/result_detail_sheet.dart';
 import '../../learning/model/learning_level.dart';
 import '../../learning/model/question_learning_stats.dart';
@@ -51,6 +54,7 @@ class QuizScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final asyncState = ref.watch(quizViewModelProvider);
+    ref.read(progressDashboardProvider);
 
     return Scaffold(
       body: Stack(
@@ -69,6 +73,19 @@ class QuizScreen extends ConsumerWidget {
               ),
             ),
             data: (quizState) {
+              if (quizState is QuizError) {
+                return _QuizErrorView(
+                  message: quizState.message,
+                  onOpenFilter: () async {
+                    final applied = await ref
+                        .read(modalSheetRouterProvider)
+                        .showFilterSheet();
+                    if (applied == true) {
+                      ref.invalidate(quizViewModelProvider);
+                    }
+                  },
+                );
+              }
               if (quizState is! QuizReady) {
                 return const SizedBox.shrink();
               }
@@ -153,9 +170,11 @@ class _QuizContentState extends ConsumerState<_QuizContent>
       });
     }
 
-    // Questions reshuffled (all done → loop)
-    if (widget.session.currentIndex == 0 &&
-        oldWidget.session.currentIndex != 0) {
+    final setChanged =
+        widget.session.currentSetIndex != oldWidget.session.currentSetIndex;
+    final looped =
+        widget.session.currentIndex == 0 && oldWidget.session.currentIndex != 0;
+    if (setChanged || looped) {
       setState(() {
         _pages = _buildPages(widget.session.totalCount);
         _currentViewPage = 0;
@@ -253,6 +272,7 @@ class _QuizContentState extends ConsumerState<_QuizContent>
       setState(() {
         _currentViewPage = pageIndex;
       });
+      _confettiController.play();
       return;
     }
 
@@ -331,6 +351,9 @@ class _QuizContentState extends ConsumerState<_QuizContent>
             }
 
             final e = entry as _QuestionEntry;
+            if (e.questionIndex >= session.questions.length) {
+              return const SizedBox.shrink();
+            }
             final isCurrentPage = e.questionIndex == session.currentIndex;
             final pageSession = isCurrentPage
                 ? session
@@ -376,7 +399,8 @@ class _QuizContentState extends ConsumerState<_QuizContent>
             onShowExplanation: _showSheet,
             onNext: _goNext,
             onTapNote: () => ref.read(modalSheetRouterProvider).showNoteSheet(),
-            onTapReport: () async {},
+            onTapReport: () =>
+                ref.read(modalSheetRouterProvider).showReportSheet(),
           ),
         ),
         Align(

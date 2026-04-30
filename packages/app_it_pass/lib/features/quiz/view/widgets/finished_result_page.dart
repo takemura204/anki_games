@@ -45,6 +45,7 @@ class _FinishResultPageState extends ConsumerState<_FinishResultPage>
     );
     _checkController.forward().then((_) => _contentController.forward());
     _loadTodayCount();
+    WidgetsBinding.instance.addPostFrameCallback((_) => _maybeRequestReview());
   }
 
   @override
@@ -52,6 +53,24 @@ class _FinishResultPageState extends ConsumerState<_FinishResultPage>
     _checkController.dispose();
     _contentController.dispose();
     super.dispose();
+  }
+
+  Future<void> _maybeRequestReview() async {
+    final session = widget.session;
+    final total = session.currentSetAnswers.length;
+    if (total == 0) return;
+
+    final correct = session.setCorrectCount;
+    if (correct / total < 0.5) return;
+
+    final repo = ref.read(reviewRepositoryProvider);
+    final lastDate = await repo.getLastRequestDate();
+    if (lastDate != null &&
+        DateTime.now().difference(lastDate).inDays < 30) {
+      return;
+    }
+
+    await repo.saveLastRequestDate(DateTime.now());
   }
 
   Future<void> _loadTodayCount() async {
@@ -155,7 +174,7 @@ class _Checkmark extends StatelessWidget {
         width: 100,
         height: 100,
         child: CustomPaint(
-          painter: _CheckmarkPainter(
+          painter: CheckmarkPainter(
             progress: progress.value,
             color: color,
           ),
@@ -657,70 +676,3 @@ class _SessionEndPage extends StatelessWidget {
   }
 }
 
-class _CheckmarkPainter extends CustomPainter {
-  const _CheckmarkPainter({required this.progress, required this.color});
-
-  final double progress;
-  final Color color;
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final center = Offset(size.width / 2, size.height / 2);
-    final radius = size.width / 2 - 3;
-
-    canvas.drawCircle(
-      center,
-      radius,
-      Paint()
-        ..color = color.withValues(alpha: 0.15)
-        ..style = PaintingStyle.fill,
-    );
-
-    final arcProgress = (progress * 1.4).clamp(0.0, 1.0);
-    canvas.drawArc(
-      Rect.fromCircle(center: center, radius: radius),
-      -pi / 2,
-      2 * pi * arcProgress,
-      false,
-      Paint()
-        ..color = color
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 5
-        ..strokeCap = StrokeCap.round,
-    );
-
-    if (progress > 0.5) {
-      final checkProgress = ((progress - 0.5) * 2).clamp(0.0, 1.0);
-      final startPoint = Offset(size.width * 0.24, size.height * 0.5);
-      final midPoint = Offset(size.width * 0.44, size.height * 0.68);
-      final endPoint = Offset(size.width * 0.76, size.height * 0.33);
-
-      final checkPaint = Paint()
-        ..color = color
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 5
-        ..strokeCap = StrokeCap.round
-        ..strokeJoin = StrokeJoin.round;
-
-      final path = Path();
-      if (checkProgress < 0.5) {
-        final t = checkProgress * 2;
-        final current = Offset.lerp(startPoint, midPoint, t)!;
-        path
-          ..moveTo(startPoint.dx, startPoint.dy)
-          ..lineTo(current.dx, current.dy);
-      } else {
-        final t = (checkProgress - 0.5) * 2;
-        final current = Offset.lerp(midPoint, endPoint, t)!;
-        path
-          ..moveTo(startPoint.dx, startPoint.dy)
-          ..lineTo(midPoint.dx, midPoint.dy)
-          ..lineTo(current.dx, current.dy);
-      }
-      canvas.drawPath(path, checkPaint);
-    }
-  }
-
-  @override
-  bool shouldRepaint(_CheckmarkPainter old) => old.progress != progress;
-}

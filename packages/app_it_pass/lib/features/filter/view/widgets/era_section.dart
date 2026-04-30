@@ -12,35 +12,30 @@ class _EraSection extends StatelessWidget {
     required this.onToggle,
     required this.onSelectAll,
     required this.onClearAll,
-    required this.canApply,
+    required this.hasEraSelected,
   });
 
   final Set<String> selectedEraIds;
   final ValueChanged<String> onToggle;
   final VoidCallback onSelectAll;
   final VoidCallback onClearAll;
-  final bool canApply;
+  final bool hasEraSelected;
 
-  Map<ExamGroup, List<ExamMeta>> _buildGrouped() {
+  List<ExamMeta> _orderedMetas() {
     final raw = <ExamGroup, List<ExamMeta>>{};
     for (final meta in ExamMeta.all) {
       raw.putIfAbsent(meta.group, () => []).add(meta);
     }
-    return {
-      for (final g in _groupOrder)
-        if (raw.containsKey(g)) g: raw[g]!.reversed.toList(),
-    };
+    return _groupOrder
+        .where((g) => raw.containsKey(g))
+        .expand((g) => raw[g]!.reversed)
+        .toList();
   }
-
-  String _groupLabel(ExamGroup g) => switch (g) {
-        ExamGroup.reiwa => '令和',
-        ExamGroup.heisei => '平成',
-        ExamGroup.sample => 'サンプル',
-      };
 
   @override
   Widget build(BuildContext context) {
-    final grouped = _buildGrouped();
+    final allSelected = selectedEraIds.length == ExamMeta.all.length;
+    final noneSelected = selectedEraIds.isEmpty;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -52,25 +47,31 @@ class _EraSection extends StatelessWidget {
             children: [
               _TextLinkButton(
                 label: 'すべて選択',
-                onTap: onSelectAll,
-                active: selectedEraIds.length == ExamMeta.all.length,
+                onTap: allSelected ? null : onSelectAll,
+                active: allSelected,
               ),
               const Gap(AppSpacing.xs),
-              _TextLinkButton(label: 'すべて解除', onTap: onClearAll),
+              _TextLinkButton(
+                label: 'すべて解除',
+                onTap: noneSelected ? null : onClearAll,
+              ),
             ],
           ),
         ),
-        ...grouped.entries.map(
-          (entry) => _EraGroupSection(
-            groupLabel: _groupLabel(entry.key),
-            metas: entry.value,
-            selectedEraIds: selectedEraIds,
-            onToggle: onToggle,
-          ),
+        Wrap(
+          spacing: AppSpacing.sm,
+          runSpacing: AppSpacing.sm,
+          children: _orderedMetas().map((meta) {
+            return _EraChip(
+              label: meta.displayName,
+              selected: selectedEraIds.contains(meta.eraId),
+              onTap: () => onToggle(meta.eraId),
+            );
+          }).toList(),
         ),
-        if (!canApply)
+        if (!hasEraSelected)
           Padding(
-            padding: const EdgeInsets.only(top: AppSpacing.xs),
+            padding: const EdgeInsets.only(top: AppSpacing.sm),
             child: Row(
               children: [
                 const Icon(
@@ -95,53 +96,6 @@ class _EraSection extends StatelessWidget {
   }
 }
 
-class _EraGroupSection extends StatelessWidget {
-  const _EraGroupSection({
-    required this.groupLabel,
-    required this.metas,
-    required this.selectedEraIds,
-    required this.onToggle,
-  });
-
-  final String groupLabel;
-  final List<ExamMeta> metas;
-  final Set<String> selectedEraIds;
-  final ValueChanged<String> onToggle;
-
-  @override
-  Widget build(BuildContext context) {
-    final c = context.appColors;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(bottom: AppSpacing.sm),
-          child: Text(
-            groupLabel,
-            style: AppTextStyle.labelMedium.copyWith(
-              color: c.fgShade200,
-              letterSpacing: 0,
-              fontWeight: FontWeight.normal,
-            ),
-          ),
-        ),
-        Wrap(
-          spacing: AppSpacing.sm,
-          runSpacing: AppSpacing.sm,
-          children: metas.map((meta) {
-            return _EraChip(
-              label: meta.displayName,
-              selected: selectedEraIds.contains(meta.eraId),
-              onTap: () => onToggle(meta.eraId),
-            );
-          }).toList(),
-        ),
-        const Gap(AppSpacing.md),
-      ],
-    );
-  }
-}
-
 class _TextLinkButton extends StatelessWidget {
   const _TextLinkButton({
     required this.label,
@@ -150,12 +104,18 @@ class _TextLinkButton extends StatelessWidget {
   });
 
   final String label;
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
   final bool active;
 
   @override
   Widget build(BuildContext context) {
-    final color = active ? AppColors.itPassSeed : context.appColors.fgShade300;
+    final enabled = onTap != null;
+    final c = context.appColors;
+    final color = (active && enabled)
+        ? AppColors.itPassSeed
+        : enabled
+            ? c.fgShade400
+            : c.fgShade100;
     return GestureDetector(
       onTap: onTap,
       child: Text(

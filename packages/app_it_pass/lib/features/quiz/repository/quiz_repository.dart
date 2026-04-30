@@ -72,11 +72,11 @@ class QuizRepository {
     final perEra = await Future.wait(targets.map(_loadEra));
     final all = perEra.expand((q) => q).toList();
 
+    if (filter.selectedSystems.isEmpty) return [];
+    if (filter.selectedLearningLevels.isEmpty) return [];
+
     var filtered = all.where((q) {
-      if (filter.selectedSystems.isNotEmpty &&
-          !filter.selectedSystems.contains(q.system)) {
-        return false;
-      }
+      if (!filter.selectedSystems.contains(q.system)) return false;
       if (filter.selectedMajors.isNotEmpty &&
           !filter.selectedMajors.contains(q.major)) {
         return false;
@@ -84,13 +84,11 @@ class QuizRepository {
       return true;
     }).toList();
 
-    if (filter.selectedLearningLevels.isNotEmpty) {
-      filtered = filtered.where((q) {
-        final key = LocalLearningHistoryRepository.storageKey(q.eraId, q.no);
-        final level = LearningLevel.fromStats(learningStats[key]);
-        return filter.selectedLearningLevels.contains(level);
-      }).toList();
-    }
+    filtered = filtered.where((q) {
+      final key = LocalLearningHistoryRepository.storageKey(q.eraId, q.no);
+      final level = LearningLevel.fromStats(learningStats[key]);
+      return filter.selectedLearningLevels.contains(level);
+    }).toList();
 
     return filtered;
   }

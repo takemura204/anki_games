@@ -1,6 +1,8 @@
 import 'package:app_it_pass/config/theme/it_pass_color_scheme.dart';
+import 'package:app_it_pass/features/report/view_model/progress_dashboard_provider.dart';
 import 'package:app_it_pass/features/quiz/view/quiz_screen.dart';
 import 'package:app_it_pass/features/settings/view_model/theme_mode_view_model.dart';
+import 'package:app_it_pass/features/streak/view/streak_banner.dart';
 import 'package:core/config/styles/app_colors.dart';
 import 'package:core/config/theme/app_theme.dart' show buildAppTheme;
 import 'package:core/i18n/translations.g.dart';
@@ -34,6 +36,7 @@ class ItPassApp extends ConsumerWidget {
           .copyWith(extensions: [ItPassColorScheme.light]),
       darkTheme: buildAppTheme(seedColor: AppColors.itPassSeed, dark: true)
           .copyWith(extensions: [ItPassColorScheme.dark]),
+      builder: (context, child) => StreakBannerHost(child: child!),
       home: const QuizScreen(),
     );
   }

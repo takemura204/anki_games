@@ -3,11 +3,11 @@ part of '../filter_sheet.dart';
 class _MatchCountBar extends StatelessWidget {
   const _MatchCountBar({
     required this.matchCount,
-    required this.canApply,
+    required this.hasEraSelected,
   });
 
   final int? matchCount;
-  final bool canApply;
+  final bool hasEraSelected;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class _MatchCountBar extends StatelessWidget {
           ),
         ),
         const Gap(AppSpacing.sm),
-        if (!canApply)
+        if (!hasEraSelected)
           Text(
             '—',
             style: AppTextStyle.labelLarge.copyWith(

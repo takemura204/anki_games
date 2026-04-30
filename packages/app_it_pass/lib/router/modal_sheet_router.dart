@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../features/note/view/note_sheet.dart';
+import '../features/report/view/report_sheet.dart';
 import '../features/settings/view/settings_sheet.dart';
 
 /// IT Pass のモーダルボトムシート表示を一元管理する Provider。
@@ -40,6 +41,16 @@ class ItPassModalSheetRouter {
       backgroundColor: Colors.transparent,
       isScrollControlled: true,
       builder: (_) => const NoteSheet(),
+    );
+  }
+
+  /// レポートシートを表示する。
+  Future<void> showReportSheet() async {
+    await showModalBottomSheet<void>(
+      context: _ctx,
+      backgroundColor: Colors.transparent,
+      isScrollControlled: true,
+      builder: (_) => const ReportSheet(),
     );
   }
 }

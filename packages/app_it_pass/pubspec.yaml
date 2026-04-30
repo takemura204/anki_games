@@ -19,6 +19,7 @@ dependencies:
   drift_flutter: ^0.2.3
   envied:
   firebase_core: ^4.7.0
+  fl_chart: ^0.69.0
   flame:
   flame_forge2d:
   flex_color_scheme: ^8.4.0

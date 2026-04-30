@@ -38,6 +38,6 @@ abstract final class AppColors {
   static const learningLevelUnseen = Color(0xFF9CA3AF);
   static const learningLevelWeak = Color(0xFFFCA5A5);
   static const learningLevelFuzzy = Color(0xFFFCD34D);
-  static const learningLevelFamiliar = Color(0xFF5EEAD4);
-  static const learningLevelMastered = Color(0xFF6EE7B7);
+  static const learningLevelFamiliar = Color(0xFF6EE7B7);
+  static const learningLevelMastered = Color(0xFF7C3AED);
 }

@@ -15,7 +15,7 @@ class LocalQuizHistoryRepository {
     required bool isCorrect,
     required DateTime answeredAt,
   }) async {
-    final all = await _loadAll();
+    final all = await loadAll();
     all.add(QuizHistoryRecord(
       eraId: eraId,
       no: no,
@@ -29,7 +29,7 @@ class LocalQuizHistoryRepository {
   Future<List<QuizHistoryRecord>> loadRecent({
     int limit = defaultDisplayLimit,
   }) async {
-    final all = await _loadAll();
+    final all = await loadAll();
     all.sort((a, b) => b.answeredAt.compareTo(a.answeredAt));
     return all.take(limit).toList();
   }
@@ -39,7 +39,7 @@ class LocalQuizHistoryRepository {
     await prefs.remove(_prefsKey);
   }
 
-  Future<List<QuizHistoryRecord>> _loadAll() async {
+  Future<List<QuizHistoryRecord>> loadAll() async {
     final prefs = await SharedPreferences.getInstance();
     final raw = prefs.getString(_prefsKey);
     if (raw == null || raw.isEmpty) return [];
