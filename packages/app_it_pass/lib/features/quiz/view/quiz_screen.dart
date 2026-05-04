@@ -46,75 +46,39 @@ part 'widgets/quiz_page_item.dart';
 part 'widgets/quiz_skeleton.dart';
 part 'widgets/finished_result_page.dart';
 
-//TODO:NoteSHeetのデザイン調整,FilteSheetのデザイン調整、FinishResultPageとNoteShhetの共通化
 //IDEA:1日の初めはQuizの開始画面でモチベーションを上げる画面を用意してたテスワイプで開始できるようにする。
 class QuizScreen extends ConsumerWidget {
   const QuizScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final asyncState = ref.watch(quizViewModelProvider);
-    ref.read(progressDashboardProvider);
-
-    return Scaffold(
+    return const Scaffold(
       body: Stack(
         fit: StackFit.expand,
         children: [
-          const _QuizGradientBackground(),
-          asyncState.when(
-            loading: () => const _QuizSkeleton(),
-            error: (e, _) => Center(
-              child: Text(
-                'エラーが発生しました\n$e',
-                style: AppTextStyle.bodyMedium.copyWith(
-                  color: context.appColors.fgShade400,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ),
-            data: (quizState) {
-              if (quizState is QuizError) {
-                return _QuizErrorView(
-                  message: quizState.message,
-                  onOpenFilter: () async {
-                    final applied = await ref
-                        .read(modalSheetRouterProvider)
-                        .showFilterSheet();
-                    if (applied == true) {
-                      ref.invalidate(quizViewModelProvider);
-                    }
-                  },
-                );
-              }
-              if (quizState is! QuizReady) {
-                return const SizedBox.shrink();
-              }
-              return _QuizContent(session: quizState.session);
-            },
-          ),
+          _QuizGradientBackground(),
+          _QuizBody(),
         ],
       ),
     );
   }
 }
 
-class _QuizContent extends ConsumerStatefulWidget {
-  const _QuizContent({required this.session});
-
-  final QuizSession session;
+class _QuizBody extends ConsumerStatefulWidget {
+  const _QuizBody();
 
   @override
-  ConsumerState<_QuizContent> createState() => _QuizContentState();
+  ConsumerState<_QuizBody> createState() => _QuizBodyState();
 }
 
-class _QuizContentState extends ConsumerState<_QuizContent>
+class _QuizBodyState extends ConsumerState<_QuizBody>
     with TickerProviderStateMixin {
   late final PageController _pageController;
   late final ConfettiController _confettiController;
   late final AnimationController _sheetController;
   late final Animation<Offset> _sheetSlide;
 
-  late List<_PageEntry> _pages;
+  List<_PageEntry> _pages = const [];
   var _currentViewPage = 0;
   final _resultElapsesBySet = <int, Duration>{};
 
@@ -128,11 +92,7 @@ class _QuizContentState extends ConsumerState<_QuizContent>
   @override
   void initState() {
     super.initState();
-    _pages = _buildPages(widget.session.totalCount);
-
-    _pageController = PageController(
-      initialPage: _questionPageIndex(widget.session.currentIndex),
-    );
+    _pageController = PageController();
     _confettiController = ConfettiController(
       duration: const Duration(milliseconds: 1200),
     );
@@ -149,42 +109,6 @@ class _QuizContentState extends ConsumerState<_QuizContent>
   }
 
   @override
-  void didUpdateWidget(_QuizContent oldWidget) {
-    super.didUpdateWidget(oldWidget);
-
-    if (!oldWidget.session.isAnswered &&
-        widget.session.isAnswered &&
-        widget.session.answerState == AnswerState.correct) {
-      _confettiController.play();
-    }
-
-    if (!oldWidget.session.showExplanation &&
-        widget.session.showExplanation &&
-        widget.session.answerState == AnswerState.incorrect) {
-      Future.delayed(_inlineBannerDelay, () {
-        if (!mounted) {
-          return;
-        }
-        setState(() => _sheetMounted = true);
-        _sheetController.forward(from: 0);
-      });
-    }
-
-    final setChanged =
-        widget.session.currentSetIndex != oldWidget.session.currentSetIndex;
-    final looped =
-        widget.session.currentIndex == 0 && oldWidget.session.currentIndex != 0;
-    if (setChanged || looped) {
-      setState(() {
-        _pages = _buildPages(widget.session.totalCount);
-        _currentViewPage = 0;
-        _resultElapsesBySet.clear();
-      });
-      _pageController.jumpToPage(0);
-    }
-  }
-
-  @override
   void dispose() {
     _pageController.dispose();
     _confettiController.dispose();
@@ -194,15 +118,74 @@ class _QuizContentState extends ConsumerState<_QuizContent>
 
   // ---- helpers ----
 
-  int _questionPageIndex(int questionIndex) {
-    return questionIndex;
-  }
-
   bool get _isOnResultPage =>
       _pages.isNotEmpty && _pages[_currentViewPage] is _ResultEntry;
 
   bool get _isOnSessionEndPage =>
       _pages.isNotEmpty && _pages[_currentViewPage] is _SessionEndEntry;
+
+  // ---- provider change handler (didUpdateWidget の代替) ----
+
+  void _onProviderChanged(
+    AsyncValue<QuizState>? prev,
+    AsyncValue<QuizState> next,
+  ) {
+    final prevSession =
+        prev?.value is QuizReady ? (prev!.value as QuizReady).session : null;
+    final nextSession =
+        next.value is QuizReady ? (next.value as QuizReady).session : null;
+
+    if (next is AsyncLoading) {
+      _pageController.jumpToPage(0);
+      setState(() {
+        _pages = const [];
+        _currentViewPage = 0;
+        _sheetMounted = false;
+        _actionBarReady = false;
+        _resultElapsesBySet.clear();
+      });
+      return;
+    }
+
+    if (nextSession == null) return;
+
+    if (prevSession == null) {
+      setState(() {
+        _pages = _buildPages(nextSession.totalCount);
+        _currentViewPage = 0;
+      });
+      return;
+    }
+
+    if (!prevSession.isAnswered &&
+        nextSession.isAnswered &&
+        nextSession.answerState == AnswerState.correct) {
+      _confettiController.play();
+    }
+
+    if (!prevSession.showExplanation &&
+        nextSession.showExplanation &&
+        nextSession.answerState == AnswerState.incorrect) {
+      Future.delayed(_inlineBannerDelay, () {
+        if (!mounted) return;
+        setState(() => _sheetMounted = true);
+        _sheetController.forward(from: 0);
+      });
+    }
+
+    final setChanged =
+        nextSession.currentSetIndex != prevSession.currentSetIndex;
+    final looped =
+        nextSession.currentIndex == 0 && prevSession.currentIndex != 0;
+    if (setChanged || looped) {
+      setState(() {
+        _pages = _buildPages(nextSession.totalCount);
+        _currentViewPage = 0;
+        _resultElapsesBySet.clear();
+      });
+      _pageController.jumpToPage(0);
+    }
+  }
 
   // ---- actions ----
 
@@ -232,7 +215,9 @@ class _QuizContentState extends ConsumerState<_QuizContent>
   }
 
   void _showSheet() {
-    if (!_sheetMounted && widget.session.showExplanation) {
+    final quizState = ref.read(quizViewModelProvider).value;
+    if (quizState is! QuizReady) return;
+    if (!_sheetMounted && quizState.session.showExplanation) {
       setState(() {
         _sheetMounted = true;
         _actionBarReady = false;
@@ -242,11 +227,12 @@ class _QuizContentState extends ConsumerState<_QuizContent>
   }
 
   void _onResultContinue() {
-    if (widget.session.hasNextSet) {
-      // 次のセットへ: didUpdateWidget が pages 再構築 + jumpToPage(0) を処理する
+    final quizState = ref.read(quizViewModelProvider).value;
+    if (quizState is! QuizReady) return;
+    final session = quizState.session;
+    if (session.hasNextSet) {
       ref.read(quizViewModelProvider.notifier).nextSet();
     } else {
-      // 全問完了: SessionEndPage へ進む
       if (_currentViewPage + 1 < _pages.length) {
         _pageController.nextPage(
           duration: const Duration(milliseconds: 450),
@@ -261,9 +247,12 @@ class _QuizContentState extends ConsumerState<_QuizContent>
     final entry = _pages[pageIndex];
 
     if (entry is _ResultEntry) {
+      final quizState = ref.read(quizViewModelProvider).value;
+      final elapsed =
+          quizState is QuizReady ? quizState.session.setElapsed : Duration.zero;
       setState(() {
         _currentViewPage = pageIndex;
-        _resultElapsesBySet[entry.setIndex] = widget.session.setElapsed;
+        _resultElapsesBySet[entry.setIndex] = elapsed;
       });
       return;
     }
@@ -276,7 +265,6 @@ class _QuizContentState extends ConsumerState<_QuizContent>
       return;
     }
 
-    // Arrived at a question page
     setState(() {
       _currentViewPage = pageIndex;
       _sheetMounted = false;
@@ -288,23 +276,38 @@ class _QuizContentState extends ConsumerState<_QuizContent>
     }
   }
 
+  Future<void> _openFilter() async {
+    final applied =
+        await ref.read(modalSheetRouterProvider).showFilterSheet();
+    if (applied == true) {
+      ref.invalidate(quizViewModelProvider);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    final session = widget.session;
+    final asyncState = ref.watch(quizViewModelProvider);
+    ref.read(progressDashboardProvider);
+    ref.listen<AsyncValue<QuizState>>(quizViewModelProvider, _onProviderChanged);
+
+    final quizState = asyncState.value;
+    final session = quizState is QuizReady ? quizState.session : null;
+
     final cardRadius = BorderRadius.circular(90);
     final top = MediaQuery.of(context).padding.top;
     final bottom = MediaQuery.of(context).padding.bottom;
 
     // 正解: シートなしで即表示 / 不正解: シートアニメーション完了後のみ表示
-    final isIncorrect = session.answerState == AnswerState.incorrect;
-    final showActionBar = session.isAnswered &&
+    final isIncorrect = session?.answerState == AnswerState.incorrect;
+    final showActionBar = session != null &&
+        session.isAnswered &&
         !_isOnResultPage &&
         !_isOnSessionEndPage &&
         (isIncorrect ? _actionBarReady : !_sheetMounted);
 
     final physics = _isOnResultPage ||
             _isOnSessionEndPage ||
-            (session.isAnswered && !_sheetMounted)
+            (session != null && session.isAnswered && !_sheetMounted)
         ? const _ForwardOnlyPageScrollPhysics()
         : const NeverScrollableScrollPhysics();
 
@@ -316,59 +319,71 @@ class _QuizContentState extends ConsumerState<_QuizContent>
 
     return Stack(
       children: [
-        PageView.builder(
-          controller: _pageController,
-          scrollDirection: Axis.vertical,
-          physics: physics,
-          itemCount: _pages.length,
-          onPageChanged: _onPageChanged,
-          itemBuilder: (context, index) {
-            final entry = _pages[index];
-
-            if (entry is _ResultEntry) {
-              final elapsed =
-                  _resultElapsesBySet[entry.setIndex] ?? Duration.zero;
-              return _FinishResultPage(
-                key: ValueKey('result_${entry.setIndex}'),
-                session: session,
-                elapsed: elapsed,
-                onContinue: _onResultContinue,
+        asyncState.when(
+          loading: () => const _QuizSkeleton(),
+          error: (e, _) => _QuizErrorView(
+            message: 'データの読み込みに失敗しました\nフィルターを変更してお試しください',
+            onOpenFilter: _openFilter,
+          ),
+          data: (state) {
+            if (state is QuizError) {
+              return _QuizErrorView(
+                message: state.message,
+                onOpenFilter: _openFilter,
               );
             }
-
-            if (entry is _SessionEndEntry) {
-              return _SessionEndPage(
-                key: const ValueKey('session_end'),
-                onOpenFilter: () async {
-                  final applied = await ref
-                      .read(modalSheetRouterProvider)
-                      .showFilterSheet();
-                  if (applied == true) {
-                    ref.invalidate(quizViewModelProvider);
-                  }
-                },
-              );
-            }
-
-            final e = entry as _QuestionEntry;
-            if (e.questionIndex >= session.questions.length) {
+            if (state is! QuizReady || _pages.isEmpty) {
               return const SizedBox.shrink();
             }
-            final isCurrentPage = e.questionIndex == session.currentIndex;
-            final pageSession = isCurrentPage
-                ? session
-                : QuizSession(
-                    allQuestions: session.allQuestions,
-                    currentSetIndex: session.currentSetIndex,
-                    currentIndex: e.questionIndex,
+            return PageView.builder(
+              controller: _pageController,
+              scrollDirection: Axis.vertical,
+              physics: physics,
+              itemCount: _pages.length,
+              onPageChanged: _onPageChanged,
+              itemBuilder: (context, index) {
+                final entry = _pages[index];
+
+                if (entry is _ResultEntry) {
+                  final elapsed =
+                      _resultElapsesBySet[entry.setIndex] ?? Duration.zero;
+                  return _FinishResultPage(
+                    key: ValueKey('result_${entry.setIndex}'),
+                    session: state.session,
+                    elapsed: elapsed,
+                    onContinue: _onResultContinue,
                   );
-            return _QuizPageItem(
-              session: pageSession,
-              topPadding: top,
-              bottomPadding: bottom,
-              isSheetOpen: _sheetMounted && isCurrentPage,
-              onAnswer: (label) =>
-                  ref.read(quizViewModelProvider.notifier).answer(label),
+                }
+
+                if (entry is _SessionEndEntry) {
+                  return _SessionEndPage(
+                    key: const ValueKey('session_end'),
+                    onOpenFilter: _openFilter,
+                  );
+                }
+
+                final e = entry as _QuestionEntry;
+                if (e.questionIndex >= state.session.questions.length) {
+                  return const SizedBox.shrink();
+                }
+                final isCurrentPage =
+                    e.questionIndex == state.session.currentIndex;
+                final pageSession = isCurrentPage
+                    ? state.session
+                    : QuizSession(
+                        allQuestions: state.session.allQuestions,
+                        currentSetIndex: state.session.currentSetIndex,
+                        currentIndex: e.questionIndex,
+                      );
+                return _QuizPageItem(
+                  session: pageSession,
+                  topPadding: top,
+                  bottomPadding: bottom,
+                  isSheetOpen: _sheetMounted && isCurrentPage,
+                  onAnswer: (label) =>
+                      ref.read(quizViewModelProvider.notifier).answer(label),
+                );
+              },
             );
           },
         ),
@@ -381,13 +396,7 @@ class _QuizContentState extends ConsumerState<_QuizContent>
             showCenter: !_isOnResultPage && !_isOnSessionEndPage,
             onTapSetting: () =>
                 ref.read(modalSheetRouterProvider).showSettings(),
-            onTapFilter: () async {
-              final applied =
-                  await ref.read(modalSheetRouterProvider).showFilterSheet();
-              if (applied == true) {
-                ref.invalidate(quizViewModelProvider);
-              }
-            },
+            onTapFilter: _openFilter,
           ),
         ),
         Align(
@@ -421,7 +430,7 @@ class _QuizContentState extends ConsumerState<_QuizContent>
             ],
           ),
         ),
-        if (_sheetMounted)
+        if (_sheetMounted && session != null)
           _ExplanationSheet(
             sheetController: _sheetController,
             slideAnimation: _sheetSlide,

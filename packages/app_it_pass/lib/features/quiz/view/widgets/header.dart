@@ -11,7 +11,7 @@ class _Header extends StatelessWidget {
   });
 
   final BorderRadius cardRadius;
-  final QuizSession session;
+  final QuizSession? session;
   final VoidCallback onTapSetting;
   final VoidCallback onTapFilter;
   final String? centerLabel;
@@ -21,6 +21,7 @@ class _Header extends StatelessWidget {
   Widget build(BuildContext context) {
     final top = MediaQuery.of(context).padding.top;
     final c = context.appColors;
+    final currentSession = session;
 
     return Padding(
       padding: EdgeInsets.only(
@@ -61,45 +62,9 @@ class _Header extends StatelessWidget {
                       ),
                       textAlign: TextAlign.center,
                     )
-                  : Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          '${session.indexInSet + 1}/${session.totalCount}',
-                          style: AppTextStyle.labelLarge.copyWith(
-                            color: c.fgShade400,
-                            letterSpacing: 0,
-                          ),
-                        ),
-                        const Gap(AppSpacing.sm),
-                        Expanded(
-                          child: ClipRRect(
-                            borderRadius: AppBorderRadius.sm -
-                                const BorderRadius.all(Radius.circular(4)),
-                            child: TweenAnimationBuilder<double>(
-                              tween: Tween<double>(
-                                end: session.totalCount > 0
-                                    ? (session.indexInSet + 1) /
-                                        session.totalCount
-                                    : 0,
-                              ),
-                              duration: AppAnimation.slow,
-                              curve: Curves.easeOutCubic,
-                              builder: (context, value, _) {
-                                return LinearProgressIndicator(
-                                  value: value,
-                                  backgroundColor: c.fgShade50,
-                                  valueColor: AlwaysStoppedAnimation<Color>(
-                                    c.fgShade400,
-                                  ),
-                                  minHeight: AppSpacing.sm,
-                                );
-                              },
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+                  : currentSession == null
+                      ? const _ProgressSkeleton()
+                      : _ProgressContent(session: currentSession),
             ),
           GlassButton(
             cardRadius: cardRadius,
@@ -113,6 +78,88 @@ class _Header extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class _ProgressContent extends StatelessWidget {
+  const _ProgressContent({required this.session});
+
+  final QuizSession session;
+
+  @override
+  Widget build(BuildContext context) {
+    final c = context.appColors;
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Text(
+          '${session.indexInSet + 1}/${session.totalCount}',
+          style: AppTextStyle.labelLarge.copyWith(
+            color: c.fgShade400,
+            letterSpacing: 0,
+          ),
+        ),
+        const Gap(AppSpacing.sm),
+        Expanded(
+          child: ClipRRect(
+            borderRadius:
+                AppBorderRadius.sm - const BorderRadius.all(Radius.circular(4)),
+            child: TweenAnimationBuilder<double>(
+              tween: Tween<double>(
+                end: session.totalCount > 0
+                    ? (session.indexInSet + 1) / session.totalCount
+                    : 0,
+              ),
+              duration: AppAnimation.slow,
+              curve: Curves.easeOutCubic,
+              builder: (context, value, _) {
+                return LinearProgressIndicator(
+                  value: value,
+                  backgroundColor: c.fgShade50,
+                  valueColor: AlwaysStoppedAnimation<Color>(c.fgShade400),
+                  minHeight: AppSpacing.sm,
+                );
+              },
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _ProgressSkeleton extends StatelessWidget {
+  const _ProgressSkeleton();
+
+  @override
+  Widget build(BuildContext context) {
+    final c = context.appColors;
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Container(
+          width: 36,
+          height: 12,
+          decoration: BoxDecoration(
+            color: c.fgShade50,
+            borderRadius: AppBorderRadius.full,
+          ),
+        ),
+        const Gap(AppSpacing.sm),
+        Expanded(
+          child: ClipRRect(
+            borderRadius:
+                AppBorderRadius.sm - const BorderRadius.all(Radius.circular(4)),
+            child: LinearProgressIndicator(
+              value: null,
+              backgroundColor: c.fgShade50,
+              valueColor: AlwaysStoppedAnimation<Color>(c.fgShade100),
+              minHeight: AppSpacing.sm,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

@@ -12,7 +12,7 @@ class _Footer extends StatelessWidget {
   });
   final bool showActionBar;
   final BorderRadius cardRadius;
-  final QuizSession session;
+  final QuizSession? session;
   final VoidCallback onShowExplanation;
   final VoidCallback onNext;
 

@@ -27,7 +27,7 @@ class _Header extends StatelessWidget {
                 ),
                 const Gap(AppSpacing.xs),
                 Text(
-                  t.settings.title.toUpperCase(),
+                  '設定',
                   style: AppTextStyle.titleLarge.copyWith(
                     color: c.fgShade400,
                     fontWeight: FontWeight.bold,

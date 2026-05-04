@@ -59,5 +59,11 @@ tools/
 scripts/
 script/
 
-# Firebase / GCP service account keys (never commit)
+# Firebase / GCP
 *-firebase-adminsdk-*.json
+google-services.json
+GoogleService-Info.plist
+
+# IDE / Editor personal settings
+.cursor/
+.claude/

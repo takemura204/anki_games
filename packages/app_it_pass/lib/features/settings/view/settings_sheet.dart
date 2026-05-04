@@ -25,6 +25,9 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 part 'widgets/header.dart';
+part 'widgets/menu_item.dart';
+part 'widgets/divider.dart';
+part 'widgets/title.dart';
 
 class SettingsSheet extends ConsumerWidget {
   const SettingsSheet({super.key});
@@ -63,59 +66,106 @@ class SettingsSheet extends ConsumerWidget {
               const Gap(AppSpacing.sm),
               Expanded(
                 child: ListView(
-                  padding: const EdgeInsets.symmetric(horizontal: 12),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: AppSpacing.md),
                   children: [
                     const Gap(AppSpacing.sm),
-                    _ItPassToggleRow(
-                      icon: Icons.vibration_rounded,
-                      label: t.settings.vibration,
-                      value: settings.vibrationEnabled,
-                      onChanged: (_) => notifier.toggleVibration(),
-                    ),
-                    _ItPassThemeSelectorRow(),
-                    _ItPassDivider(color: c.fgShade50),
-                    _ItPassActionRow(
-                      icon: isPremium
-                          ? Icons.workspace_premium_rounded
-                          : Icons.workspace_premium_outlined,
-                      label:
-                          isPremium ? t.premium.activeBadge : t.premium.title,
-                      onTap: () async {
-                        Navigator.of(context).pop();
-                        await showModalBottomSheet<void>(
-                          context: context,
-                          backgroundColor: Colors.transparent,
-                          isScrollControlled: true,
-                          builder: (_) => const PaywallSheet(),
-                        );
-                      },
-                    ),
-                    if (kDebugMode)
-                      _ItPassActionRow(
-                        icon: Icons.developer_mode_rounded,
-                        label: t.premium.devToggle,
-                        onTap: () => ref
-                            .read(premiumViewModelProvider.notifier)
-                            .toggleMockPremium(),
+                    _Title(title: 'アカウント'),
+                    GlassContainer(
+                      cardRadius: BorderRadius.circular(16),
+                      padding: const EdgeInsets.all(AppSpacing.sm),
+                      child: Column(
+                        children: [
+                          _ActionMenuItem(
+                            icon: isPremium
+                                ? Icons.workspace_premium_rounded
+                                : Icons.workspace_premium_outlined,
+                            label: isPremium
+                                ? t.premium.activeBadge
+                                : t.premium.title,
+                            onTap: () async {
+                              Navigator.of(context).pop();
+                              await showModalBottomSheet<void>(
+                                context: context,
+                                backgroundColor: Colors.transparent,
+                                isScrollControlled: true,
+                                builder: (_) => const PaywallSheet(),
+                              );
+                            },
+                          ),
+                          if (kDebugMode) ...[
+                            _Divider(),
+                            _ActionMenuItem(
+                              icon: Icons.developer_mode_rounded,
+                              label: t.premium.devToggle,
+                              onTap: () => ref
+                                  .read(premiumViewModelProvider.notifier)
+                                  .toggleMockPremium(),
+                            ),
+                          ],
+                        ],
                       ),
-                    _ItPassDivider(color: c.fgShade50),
-                    _ItPassLinkRow(
-                      icon: Icons.description_outlined,
-                      label: t.settings.terms,
-                      url: AppUrls.termsOfService,
                     ),
-                    _ItPassLinkRow(
-                      icon: Icons.privacy_tip_outlined,
-                      label: t.settings.privacy,
-                      url: AppUrls.privacyPolicy,
+                    const Gap(AppSpacing.md),
+                    _Title(title: 'カスタム'),
+                    GlassContainer(
+                      cardRadius: BorderRadius.circular(16),
+                      padding: const EdgeInsets.all(AppSpacing.sm),
+                      child: Column(
+                        children: [
+                          _ToggleMenuItem(
+                            icon: Icons.vibration_rounded,
+                            label: t.settings.vibration,
+                            value: settings.vibrationEnabled,
+                            onChanged: (_) => notifier.toggleVibration(),
+                          ),
+                          _Divider(),
+                          _SegmentedMenuItem(),
+                        ],
+                      ),
                     ),
-                    _ItPassLinkRow(
-                      icon: Icons.mail_outline_rounded,
-                      label: t.settings.contact,
-                      url: AppUrls.contact,
+                    const Gap(AppSpacing.md),
+                    _Title(title: 'サポート'),
+                    GlassContainer(
+                      cardRadius: BorderRadius.circular(16),
+                      padding: const EdgeInsets.all(AppSpacing.sm),
+                      child: Column(
+                        children: [
+                          _LinkMenuItem(
+                            icon: Icons.mail_outline_rounded,
+                            label: 'ご意見・お問い合わせ',
+                            url: AppUrls.contact,
+                          ),
+                        ],
+                      ),
                     ),
-                    _ItPassDivider(color: c.fgShade50),
-                    _ItPassDeleteLearningDataRow(),
+                    const Gap(AppSpacing.md),
+                    _Title(title: 'その他'),
+                    GlassContainer(
+                      cardRadius: BorderRadius.circular(16),
+                      padding: const EdgeInsets.all(AppSpacing.sm),
+                      child: Column(
+                        children: [
+                          _LinkMenuItem(
+                            icon: Icons.description_outlined,
+                            label: t.settings.terms,
+                            url: AppUrls.termsOfService,
+                          ),
+                          _Divider(),
+                          _LinkMenuItem(
+                            icon: Icons.privacy_tip_outlined,
+                            label: t.settings.privacy,
+                            url: AppUrls.privacyPolicy,
+                          ),
+                        ],
+                      ),
+                    ),
+                    const Gap(AppSpacing.sm),
+                    GlassContainer(
+                      cardRadius: BorderRadius.circular(16),
+                      padding: const EdgeInsets.all(AppSpacing.sm),
+                      child: _DeleteDataMenuItem(),
+                    ),
                   ],
                 ),
               ),
@@ -124,275 +174,5 @@ class SettingsSheet extends ConsumerWidget {
         ),
       ),
     );
-  }
-}
-
-// ── Toggle row ──────────────────────────────────────────────────────────────
-
-class _ItPassToggleRow extends StatelessWidget {
-  const _ItPassToggleRow({
-    required this.icon,
-    required this.label,
-    required this.value,
-    required this.onChanged,
-  });
-
-  final IconData icon;
-  final String label;
-  final bool value;
-  final ValueChanged<bool> onChanged;
-
-  @override
-  Widget build(BuildContext context) {
-    final c = context.appColors;
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 2),
-      child: Row(
-        children: [
-          Icon(icon, size: 20, color: c.fgShade400),
-          const Gap(AppSpacing.md),
-          Expanded(
-            child: Text(
-              label,
-              style: AppTextStyle.bodyMedium.copyWith(color: c.fg),
-            ),
-          ),
-          Switch.adaptive(
-            value: value,
-            onChanged: onChanged,
-            activeThumbColor: AppColors.itPassSeed,
-            activeTrackColor: AppColors.itPassSeed.withValues(alpha: 0.25),
-            inactiveThumbColor: c.fgShade200,
-            inactiveTrackColor: c.surface2,
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-// ── Action row ──────────────────────────────────────────────────────────────
-
-class _ItPassActionRow extends StatelessWidget {
-  const _ItPassActionRow({
-    required this.icon,
-    required this.label,
-    required this.onTap,
-  });
-
-  final IconData icon;
-  final String label;
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    final c = context.appColors;
-    return InkWell(
-      onTap: onTap,
-      borderRadius: AppBorderRadius.sm,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: AppSpacing.md),
-        child: Row(
-          children: [
-            Icon(icon, size: 20, color: c.fgShade400),
-            const Gap(AppSpacing.md),
-            Expanded(
-              child: Text(
-                label,
-                style: AppTextStyle.bodyMedium.copyWith(color: c.fg),
-              ),
-            ),
-            Icon(Icons.chevron_right_rounded, size: 18, color: c.fgShade200),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-// ── Link row ────────────────────────────────────────────────────────────────
-
-class _ItPassLinkRow extends StatelessWidget {
-  const _ItPassLinkRow({
-    required this.icon,
-    required this.label,
-    required this.url,
-  });
-
-  final IconData icon;
-  final String label;
-  final String url;
-
-  @override
-  Widget build(BuildContext context) {
-    final c = context.appColors;
-    return InkWell(
-      onTap: () => launchUrl(Uri.parse(url), mode: LaunchMode.inAppWebView),
-      borderRadius: AppBorderRadius.sm,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: AppSpacing.md),
-        child: Row(
-          children: [
-            Icon(icon, size: 20, color: c.fgShade400),
-            const Gap(AppSpacing.md),
-            Expanded(
-              child: Text(
-                label,
-                style: AppTextStyle.bodyMedium.copyWith(color: c.fg),
-              ),
-            ),
-            Icon(Icons.open_in_new_rounded, size: 18, color: c.fgShade200),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-// ── Theme selector ───────────────────────────────────────────────────────────
-
-class _ItPassThemeSelectorRow extends ConsumerWidget {
-  const _ItPassThemeSelectorRow();
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final c = context.appColors;
-    final mode = ref.watch(themeModeViewModelProvider);
-    final notifier = ref.read(themeModeViewModelProvider.notifier);
-
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4),
-      child: Row(
-        children: [
-          Icon(Icons.palette_outlined, size: 20, color: c.fgShade400),
-          const Gap(AppSpacing.md),
-          Expanded(
-            child: Text(
-              'テーマ',
-              style: AppTextStyle.bodyMedium.copyWith(color: c.fg),
-            ),
-          ),
-          SegmentedButton<ThemeMode>(
-            segments: const [
-              ButtonSegment(
-                value: ThemeMode.system,
-                icon: Icon(Icons.brightness_auto_rounded, size: 16),
-                tooltip: 'システム',
-              ),
-              ButtonSegment(
-                value: ThemeMode.light,
-                icon: Icon(Icons.light_mode_outlined, size: 16),
-                tooltip: 'ライト',
-              ),
-              ButtonSegment(
-                value: ThemeMode.dark,
-                icon: Icon(Icons.dark_mode_outlined, size: 16),
-                tooltip: 'ダーク',
-              ),
-            ],
-            selected: {mode},
-            onSelectionChanged: (s) => notifier.setMode(s.first),
-            showSelectedIcon: false,
-            style: ButtonStyle(
-              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-              visualDensity: VisualDensity.compact,
-              padding: WidgetStatePropertyAll(
-                const EdgeInsets.symmetric(horizontal: AppSpacing.sm),
-              ),
-              backgroundColor: WidgetStateProperty.resolveWith((states) {
-                if (states.contains(WidgetState.selected)) {
-                  return AppColors.itPassSeed;
-                }
-                return c.surface1;
-              }),
-              foregroundColor: WidgetStateProperty.resolveWith((states) {
-                if (states.contains(WidgetState.selected)) {
-                  return Colors.white;
-                }
-                return c.fgShade400;
-              }),
-              side: WidgetStatePropertyAll(BorderSide(color: c.border1)),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-// ── Divider ─────────────────────────────────────────────────────────────────
-
-class _ItPassDivider extends StatelessWidget {
-  const _ItPassDivider({required this.color});
-
-  final Color color;
-
-  @override
-  Widget build(BuildContext context) {
-    return Divider(color: color, height: AppSpacing.lg);
-  }
-}
-
-// ── Delete learning data ─────────────────────────────────────────────────────
-
-class _ItPassDeleteLearningDataRow extends ConsumerWidget {
-  const _ItPassDeleteLearningDataRow();
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return InkWell(
-      onTap: () => _onTap(context, ref),
-      borderRadius: AppBorderRadius.sm,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: AppSpacing.md),
-        child: Row(
-          children: [
-            const Icon(
-              Icons.delete_outline_rounded,
-              size: 20,
-              color: Colors.red,
-            ),
-            const Gap(AppSpacing.md),
-            Expanded(
-              child: Text(
-                t.settings.deleteLearningData,
-                style: AppTextStyle.bodyMedium.copyWith(color: Colors.red),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Future<void> _onTap(BuildContext context, WidgetRef ref) async {
-    final confirmed = await showDialog<bool>(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        title: Text(t.settings.deleteLearningDataConfirmTitle),
-        content: Text(t.settings.deleteLearningDataConfirmBody),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.of(ctx).pop(false),
-            child: Text(t.settings.cancel),
-          ),
-          TextButton(
-            onPressed: () => Navigator.of(ctx).pop(true),
-            style: TextButton.styleFrom(foregroundColor: Colors.red),
-            child: Text(t.settings.deleteLearningDataConfirm),
-          ),
-        ],
-      ),
-    );
-
-    if (confirmed != true) {
-      return;
-    }
-    await LocalLearningHistoryRepository().deleteAll();
-    ref.invalidate(itPassLearningStatsProvider);
-    ref.invalidate(quizViewModelProvider);
-    if (context.mounted) {
-      Navigator.of(context).pop();
-    }
   }
 }

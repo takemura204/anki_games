@@ -27,9 +27,21 @@ class QuizReady extends QuizState {
   final QuizSession session;
 }
 
+enum QuizErrorType {
+  /// フィルターで出題範囲が未選択
+  noFilter,
+
+  /// フィルター条件に合う問題がない
+  noQuestions,
+
+  /// データ読み込み・解析に失敗
+  loadFailed,
+}
+
 class QuizError extends QuizState {
-  const QuizError(this.message);
+  const QuizError(this.message, {this.type = QuizErrorType.loadFailed});
   final String message;
+  final QuizErrorType type;
 }
 
 @riverpod
@@ -68,11 +80,17 @@ class QuizViewModel extends _$QuizViewModel {
       );
 
       if (!filter.isValid) {
-        return const QuizError('出題範囲が選択されていません');
+        return const QuizError(
+          '出題範囲が選択されていません',
+          type: QuizErrorType.noFilter,
+        );
       }
       final allQuestions = await _repository.loadSession(filter, stats);
       if (allQuestions.isEmpty) {
-        return const QuizError('条件に合う問題がありません');
+        return const QuizError(
+          '条件に合う問題がありません',
+          type: QuizErrorType.noQuestions,
+        );
       }
       return QuizReady(QuizSession(
         allQuestions: allQuestions,

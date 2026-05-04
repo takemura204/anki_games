@@ -1,1414 +1,1414 @@
 {
-  "exam": "サンプル問題２",
-  "era_id": "sample2",
-  "slug": "02_sample",
-  "source_url": "https://www.itpassportsiken.com/kakomon/02_sample/",
-  "fetched_at": "2026-04-17T11:58:09+00:00",
-  "count": 30,
-  "questions": [
-    {
-      "no": 1,
-      "url": "https://www.itpassportsiken.com/kakomon/02_sample/q1.html",
-      "title": "パレート図",
-      "body": {
-        "text": "図は，電子部品の不良品について，不良項目を個数の多い順に並べた棒グラフと，それらの累積比率を折れ線グラフで表したものである。この図の名称は何か。",
-        "sub_items": [],
-        "images": [
-          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q1/01.png"
-        ]
-      },
-      "choices": [
-        {
-          "label": "ア",
-          "text": "特性要因図",
-          "images": []
-        },
-        {
-          "label": "イ",
-          "text": "パレート図",
-          "images": []
-        },
-        {
-          "label": "ウ",
-          "text": "ベン図",
-          "images": []
-        },
-        {
-          "label": "エ",
-          "text": "マトリックス図",
-          "images": []
-        }
-      ],
-      "category": {
-        "raw": "ストラテジ系 » 企業活動 » 業務分析・データ利活用",
-        "system": "ストラテジ系",
-        "major": "企業活動",
-        "minor": "業務分析・データ利活用"
-      },
-      "answer": "イ",
-      "explanation": {
-        "text": "パレート図は、分析する項目を値が大きい順に並べた棒グラフと、全体に対する累積構成比を示す折れ線グラフを組み合わせたグラフです。これは主に、複数の分析対象から重要な要素を特定するために利用されます。\n・これは、現れた特性（結果）と影響を及ぼしたと思われる要因との関係を体系的に示した図です。\n・正しい。\n・複数の集合の関係性や範囲を視覚的に示すための図で、円などの閉じた図形を使って各集合を表し、図形の交わり方で集合間の関連性を示します。\n・表の縦軸と横軸に項目を設定し、各項目の交点で関連性や関連度合いを◎，○，△などで示す分析図です。",
-        "choice_comments": [],
-        "images": [
-          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q1/01_1.png",
-          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q1/01_2.png",
-          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q1/01_3.png"
-        ],
-        "_explanation_rewritten": true
-      }
-    },
-    {
-      "no": 2,
-      "url": "https://www.itpassportsiken.com/kakomon/02_sample/q2.html",
-      "title": "著作物利用のうち適法なもの",
-      "body": {
-        "text": "Webページを作成する際，著作権者に確認せずに行った著作物利用のうち，適法なものはどれか。",
-        "sub_items": [],
-        "images": []
-      },
-      "choices": [
-        {
-          "label": "ア",
-          "text": "カーテン生地のカタログに掲載された図柄が，著名デザイナ制作のもので，背景に最適だったので，スキャナーで取り込んで，色を変更して活用した。",
-          "images": []
-        },
-        {
-          "label": "イ",
-          "text": "車の販売台数を説明するために，通商白書の統計データを使って図表化し，Webページに活用した。",
-          "images": []
-        },
-        {
-          "label": "ウ",
-          "text": "最新情報を提供するために，新聞の写真をスキャナーで取り込んで活用した。",
-          "images": []
-        },
-        {
-          "label": "エ",
-          "text": "雑誌のイラストを加工して，Webページ上の自社広告に活用した。",
-          "images": []
-        }
-      ],
-      "category": {
-        "raw": "ストラテジ系 » 法務 » 知的財産権",
-        "system": "ストラテジ系",
-        "major": "法務",
-        "minor": "知的財産権"
-      },
-      "answer": "イ",
-      "explanation": {
-        "text": "著作権法は、著作物（思想や感情を創作物として表現したもの）および著作者の権利を保護する法律です。文芸、学術、音楽、美術に加え、コンピュータ関連ではプログラムやデータベースも著作物として認められています。\n\n国や地方公共団体の機関などが広く周知させるために作成し、その名義で公表する広報資料、調査統計資料、報告書などの著作物は、禁止の表示がない限り、新聞や雑誌などの刊行物に説明の材料として転載することが可能です。\n\n設問には「禁転載」に関する記述がありませんが、政府が発行する白書などには禁転載の記載がないことがあります。したがって、適法な行為は「イ」となります。\n・図柄はデザイナーの著作物であり、その著作権を侵害する行為です。\n・正しい。通商白書は経済産業省が作成した調査統計資料・報告書であり、国などの周知目的資料に該当するため、承諾を得ずに説明の材料として使用できます。\n・新聞の記事は新聞社の著作物であり、新聞社の著作権を侵害する行為です。\n・雑誌の記事は出版社の著作物であり、出版社の著作権を侵害する行為です。",
-        "choice_comments": [],
-        "images": [],
-        "_explanation_rewritten": true
-      }
-    },
-    {
-      "no": 3,
-      "url": "https://www.itpassportsiken.com/kakomon/02_sample/q3.html",
-      "title": "PPM分析",
-      "body": {
-        "text": "ある会社は四つの製品を販売している。その年のそれぞれの売上高，市場占有率，市場成長率を調べた結果，表のようになった。これに当てはまるプロダクトポートフォリオマトリックスはどれか。ここで，円の大きさ(面積)は売上高を表す。",
-        "sub_items": [],
-        "images": [
-          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q3/03.png"
-        ]
-      },
-      "choices": [
-        {
-          "label": "ア",
-          "text": "",
-          "images": [
-            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q3/03a.png"
-          ]
-        },
-        {
-          "label": "イ",
-          "text": "",
-          "images": [
-            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q3/03i.png"
-          ]
-        },
-        {
-          "label": "ウ",
-          "text": "",
-          "images": [
-            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q3/03u.png"
-          ]
-        },
-        {
-          "label": "エ",
-          "text": "",
-          "images": [
-            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q3/03e.png"
-          ]
-        }
-      ],
-      "category": {
-        "raw": "ストラテジ系 » 経営戦略マネジメント » 経営戦略手法",
-        "system": "ストラテジ系",
-        "major": "経営戦略マネジメント",
-        "minor": "経営戦略手法"
-      },
-      "answer": "ア",
-      "explanation": {
-        "text": "図中の円の大きさは「売上高」を示しています。\n\n各製品の売上高が記載されている表では、製品Dが最も高い売上高を持っています。図中でこの製品Dを表す最大の円は、他の円とは異なる位置に配置されています。製品Dの位置が、横軸の「市場占有率」と縦軸の「市場成長率」の両方において正しい配置となっている図が、表を示すプロダクトポートフォリオマトリックスとなります。\n\n表から見ると、製品Dの市場占有率は8%、市場成長率は4%であるため、正解は「ア」であるとわかります。",
-        "choice_comments": [],
-        "images": [
-          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q3/03_1.png"
-        ],
-        "_explanation_rewritten": true
-      }
-    },
-    {
-      "no": 4,
-      "url": "https://www.itpassportsiken.com/kakomon/02_sample/q4.html",
-      "title": "GPSを利用したサービス",
-      "body": {
-        "text": "GPSを利用したサービスを説明したものはどれか。",
-        "sub_items": [],
-        "images": []
-      },
-      "choices": [
-        {
-          "label": "ア",
-          "text": "衛星からの情報を利用し，自分の位置情報を算出して端末の地図上に現在地を表示する。",
-          "images": []
-        },
-        {
-          "label": "イ",
-          "text": "ケーブル敷設が難しい店舗やレイアウト変更が多いオフィスなどに，電波や赤外線を利用することで，ケーブルを使わずにPCをネットワークに接続する。",
-          "images": []
-        },
-        {
-          "label": "ウ",
-          "text": "高速道路などの有料道路の利用時に料金所，検札所の通過をスムーズに行うために自動で料金を精算する。",
-          "images": []
-        },
-        {
-          "label": "エ",
-          "text": "人工衛星を使って行う放送で，視聴者が各自でアンテナなどの受信設備を設置し，個別受信又は共同受信する。",
-          "images": []
-        }
-      ],
-      "category": {
-        "raw": "ストラテジ系 » ビジネスインダストリ » ビジネスシステム",
-        "system": "ストラテジ系",
-        "major": "ビジネスインダストリ",
-        "minor": "ビジネスシステム"
-      },
-      "answer": "ア",
-      "explanation": {
-        "text": "GPS(Global Positioning System)は、アメリカ合衆国が軍事目的で打ち上げた複数の衛星によって、地球上の位置を特定することができるシステムです。このシステムを利用することで、GPS受信機を持つ人々は自分の現在位置を確認することができます。\n\nもともとは軍事的な用途で開発されましたが、現在ではカーナビや携帯電話、ノートパソコンなどに搭載され、民間でも広く利用されています。\n・正しい。\n・無線LANや赤外線ネットワークに関する説明です。\n・ETC(Electronic Toll Collection)システムに関する説明です。\n・衛星放送に関する説明です。",
-        "choice_comments": [],
-        "images": [],
-        "_explanation_rewritten": true
-      }
-    },
-    {
-      "no": 5,
-      "url": "https://www.itpassportsiken.com/kakomon/02_sample/q5.html",
-      "title": "BPRを説明したものはどれか",
-      "body": {
-        "text": "BPRを説明したものはどれか。",
-        "sub_items": [],
-        "images": []
-      },
-      "choices": [
-        {
-          "label": "ア",
-          "text": "企業の提供する製品やサービスなどの価値を生み出すための業務の流れ，価値の連鎖を分析すること",
-          "images": []
-        },
-        {
-          "label": "イ",
-          "text": "業務プロセスを抜本的に改革し，ITを駆使して業務の処理能力とコスト効率を高めること",
-          "images": []
-        },
-        {
-          "label": "ウ",
-          "text": "自社に不足している機能を企業買収によって他社から取り込み，事業展開を速めること",
-          "images": []
-        },
-        {
-          "label": "エ",
-          "text": "不良品ゼロを目指した品質管理を，製造部門にとどまらず全社的な活動として取組むこと",
-          "images": []
-        }
-      ],
-      "category": {
-        "raw": "ストラテジ系 » システム戦略 » 情報システム戦略",
-        "system": "ストラテジ系",
-        "major": "システム戦略",
-        "minor": "情報システム戦略"
-      },
-      "answer": "イ",
-      "explanation": {
-        "text": "BPR(Business Process Reengineering)とは、現在の組織体制やビジネスルールを根本的に再評価し、職務や業務フロー、管理体制、情報システムを再構築する方法論です。このプロセスは、組織構造や情報システムを一貫性のあるビジネスプロセスに再統合し、効率や生産性を劇的に向上させることを目指します。\n・バリューチェーン分析についての説明です。\n・正しい。\n・M&Aに関する説明です。\n・QC(Quality Control)活動についての説明です。",
-        "choice_comments": [],
-        "images": [],
-        "_explanation_rewritten": true
-      }
-    },
-    {
-      "no": 6,
-      "url": "https://www.itpassportsiken.com/kakomon/02_sample/q6.html",
-      "title": "現行業務の分析",
-      "body": {
-        "text": "販売流通業の注文受付から納品までの業務遂行の流れを示している。図中のaはどれか。ここで，網掛けの部分は表示していない。",
-        "sub_items": [],
-        "images": [
-          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q6/06.png"
-        ]
-      },
-      "choices": [
-        {
-          "label": "ア",
-          "text": "出荷指示",
-          "images": []
-        },
-        {
-          "label": "イ",
-          "text": "積載",
-          "images": []
-        },
-        {
-          "label": "ウ",
-          "text": "棚卸し",
-          "images": []
-        },
-        {
-          "label": "エ",
-          "text": "配送",
-          "images": []
-        }
-      ],
-      "category": {
-        "raw": "ストラテジ系 » システム戦略 » 業務プロセス",
-        "system": "ストラテジ系",
-        "major": "システム戦略",
-        "minor": "業務プロセス"
-      },
-      "answer": "ア",
-      "explanation": {
-        "text": "問題文で使用されている用語の意味を確認しましょう。在庫引当とは、注文があった商品の在庫量を確かめることを指します。積載は、配送用の車両に商品を積み込む作業です。そして、配送は、配送業者などが商品を顧客の元へ運ぶことを意味します。棚卸は、帳簿上の在庫と実際の在庫の差を把握するために、定期的に実際の在庫数を確認する作業です。「棚から商品を取り出す」がaの次に来るため、その前に「積載」と「配送」が入ることはありません。また、「棚卸」は出荷ごとに行われるものではないため、これも誤りです。したがって、aに入るのは「出荷指示」が適切です。",
-        "choice_comments": [],
-        "images": [],
-        "_explanation_rewritten": true
-      }
-    },
-    {
-      "no": 7,
-      "url": "https://www.itpassportsiken.com/kakomon/02_sample/q7.html",
-      "title": "RFP",
-      "body": {
-        "text": "次期基幹システムを開発するシステムベンダーの選定に当たって，上司から“君がリーダーとなってRFPを作成しなさい”との指示を受けた。このRFPの説明として適切なものはどれか。",
-        "sub_items": [],
-        "images": []
-      },
-      "choices": [
-        {
-          "label": "ア",
-          "text": "システムベンダーなどに対して，次期基幹システム開発の提案を依頼する文書",
-          "images": []
-        },
-        {
-          "label": "イ",
-          "text": "システムベンダーなどに対して，次期基幹システムの開発を発注する文書",
-          "images": []
-        },
-        {
-          "label": "ウ",
-          "text": "社内のユーザーに対して，現行基幹システムの問題点を聞き出すための文書",
-          "images": []
-        },
-        {
-          "label": "エ",
-          "text": "社内のユーザーに対して，次期基幹システムに期待することを聞き出すための文書",
-          "images": []
-        }
-      ],
-      "category": {
-        "raw": "ストラテジ系 » システム企画 » 調達計画・実施",
-        "system": "ストラテジ系",
-        "major": "システム企画",
-        "minor": "調達計画・実施"
-      },
-      "answer": "ア",
-      "explanation": {
-        "text": "RFP（Request for Proposal）とは、提案依頼書のことで、情報システムを調達する予定の企業や組織が、ITベンダー候補に対して具体的なシステム提案を求めること、またはシステムや調達要件をまとめた文書を指します。\n\nRFP発行の目的は、「提案内容と見積もりを基に最適なITベンダーを選び、適切に調達を行うこと」です。",
-        "choice_comments": [],
-        "images": [],
-        "_explanation_rewritten": true
-      }
-    },
-    {
-      "no": 8,
-      "url": "https://www.itpassportsiken.com/kakomon/02_sample/q8.html",
-      "title": "プログラム開発の手順",
-      "body": {
-        "text": "プログラム開発の手順として正しいものはどれか。",
-        "sub_items": [],
-        "images": []
-      },
-      "choices": [
-        {
-          "label": "ア",
-          "text": "設計，テスト，プログラム作成",
-          "images": []
-        },
-        {
-          "label": "イ",
-          "text": "設計，プログラム作成，テスト",
-          "images": []
-        },
-        {
-          "label": "ウ",
-          "text": "テスト，設計，プログラム作成",
-          "images": []
-        },
-        {
-          "label": "エ",
-          "text": "プログラム作成，設計，テスト",
-          "images": []
-        }
-      ],
-      "category": {
-        "raw": "マネジメント系 » システム開発技術 » システム開発技術",
-        "system": "マネジメント系",
-        "major": "システム開発技術",
-        "minor": "システム開発技術"
-      },
-      "answer": "イ",
-      "explanation": {
-        "text": "プログラム開発は、「設計」「プログラム作成」「テスト」の順序で進められます。設計では、論理的に正しいプログラムを作成するために、フローチャートや木構造チャートなどを用いてプログラムの設計図を作成します。プログラム作成では、設計書の内容に基づき、プログラミング言語を使ってソースコードを記述し、コンピュータに指示を与える工程です。テストでは、プログラミングが仕様書通りに実行されているか、設計書に記載された機能が正しく実装されているかを確認します。",
-        "choice_comments": [],
-        "images": [],
-        "_explanation_rewritten": true
-      }
-    },
-    {
-      "no": 9,
-      "url": "https://www.itpassportsiken.com/kakomon/02_sample/q9.html",
-      "title": "スケジュール管理",
-      "body": {
-        "text": "作業量が等しい50項目の作業を，10日間で完了する計画を立てた。現在5日目が終わった時点で完了したのは20項目である。進捗の遅れを，現在完了した作業項目が本来終わっていなければならない日との差で表すとすると，遅れは何日か。",
-        "sub_items": [],
-        "images": []
-      },
-      "choices": [
-        {
-          "label": "ア",
-          "text": "1",
-          "images": []
-        },
-        {
-          "label": "イ",
-          "text": "2",
-          "images": []
-        },
-        {
-          "label": "ウ",
-          "text": "4",
-          "images": []
-        },
-        {
-          "label": "エ",
-          "text": "5",
-          "images": []
-        }
-      ],
-      "category": {
-        "raw": "マネジメント系 » プロジェクトマネジメント » プロジェクトマネジメント",
-        "system": "マネジメント系",
-        "major": "プロジェクトマネジメント",
-        "minor": "プロジェクトマネジメント"
-      },
-      "answer": "ア",
-      "explanation": {
-        "text": "作業計画では、10日間で50項目を完了させる予定であり、1日あたり5項目を進める計画です。\n\n5日目が終わる時点で、通常であれば25項目（5×5）が完了しているはずですが、実際には20項目しか完了していません。そのため、予定と実際の差は5項目です。\n\nこの5項目は1日分の作業量に相当するため、5日目終了時点での遅れは1日となります。",
-        "choice_comments": [],
-        "images": [],
-        "_explanation_rewritten": true
-      }
-    },
-    {
-      "no": 10,
-      "url": "https://www.itpassportsiken.com/kakomon/02_sample/q10.html",
-      "title": "サービスデスクの特徴",
-      "body": {
-        "text": "情報システムの運用管理におけるサービスデスクの特徴はどれか。",
-        "sub_items": [],
-        "images": []
-      },
-      "choices": [
-        {
-          "label": "ア",
-          "text": "問合せの内容は操作方法に限定する。",
-          "images": []
-        },
-        {
-          "label": "イ",
-          "text": "問合せの窓口は一本化すべきである。",
-          "images": []
-        },
-        {
-          "label": "ウ",
-          "text": "問合せは一過性なので履歴は必要ない。",
-          "images": []
-        },
-        {
-          "label": "エ",
-          "text": "ユーザー側からの問合せを待ち，サービスデスクからの発信はしない。",
-          "images": []
-        }
-      ],
-      "category": {
-        "raw": "マネジメント系 » サービスマネジメント » サービスマネジメントシステム",
-        "system": "マネジメント系",
-        "major": "サービスマネジメント",
-        "minor": "サービスマネジメントシステム"
-      },
-      "answer": "イ",
-      "explanation": {
-        "text": "サービスデスク（またはヘルプデスク）は、ユーザーに「単一の窓口」を提供し、多様な問い合わせを受け付け、その情報を一元的に管理します。また、問題解決に適した部門やプロセスへエスカレーションする役割を担う窓口や担当者のことです。\n・操作方法に限らず、使用中に発生する様々な問題や障害についてユーザーからの問い合わせに対応します。\n・これは正しいです。\n・問い合わせ内容を分析し、業務に活かすためにその内容を記録し、蓄積していきます。\n・問い合わせが多い内容をFAQ（Frequently Asked Questions）としてまとめたり、使用方法のマニュアルを整備したりしてユーザーをサポートします。",
-        "choice_comments": [],
-        "images": [],
-        "_explanation_rewritten": true
-      }
-    },
-    {
-      "no": 11,
-      "url": "https://www.itpassportsiken.com/kakomon/02_sample/q11.html",
-      "title": "システム監査人の役割",
-      "body": {
-        "text": "システム監査人の役割はどれか。",
-        "sub_items": [],
-        "images": []
-      },
-      "choices": [
-        {
-          "label": "ア",
-          "text": "監査役を選任する。",
-          "images": []
-        },
-        {
-          "label": "イ",
-          "text": "セキュリティ方針を決定する。",
-          "images": []
-        },
-        {
-          "label": "ウ",
-          "text": "被監査部門に改善勧告や対処の助言をする。",
-          "images": []
-        },
-        {
-          "label": "エ",
-          "text": "被監査部門に対して改善を命令する。",
-          "images": []
-        }
-      ],
-      "category": {
-        "raw": "マネジメント系 » システム監査 » システム監査",
-        "system": "マネジメント系",
-        "major": "システム監査",
-        "minor": "システム監査"
-      },
-      "answer": "ウ",
-      "explanation": {
-        "text": "システム監査とは、情報システムの信頼性、安全性、効率性を向上させるために、システム監査人が客観的な視点から情報システムを総合的に評価し、助言や勧告、さらに改善活動のフォローアップを行うことを指します。\n・監査役は、株主総会での普通決議によって選ばれます。\n・セキュリティ方針は、経営者が関与し、情報セキュリティを全社的に管理するセキュリティ委員会などで策定、承認、見直しが行われます。\n・正しい。\n・システム監査人の役割は、システム監査の結果に基づいた助言や改善活動のフォローアップを行うことであり、改善の「命令」を出すことはありません。",
-        "choice_comments": [],
-        "images": [],
-        "_explanation_rewritten": true
-      }
-    },
-    {
-      "no": 12,
-      "url": "https://www.itpassportsiken.com/kakomon/02_sample/q12.html",
-      "title": "ベン図",
-      "body": {
-        "text": "A，B，Cの3領域のうち，“AかつBであり，Cではない”範囲を塗りつぶしたベン図はどれか。",
-        "sub_items": [],
-        "images": []
-      },
-      "choices": [
-        {
-          "label": "ア",
-          "text": "",
-          "images": [
-            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q12/12a.png"
-          ]
-        },
-        {
-          "label": "イ",
-          "text": "",
-          "images": [
-            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q12/12i.png"
-          ]
-        },
-        {
-          "label": "ウ",
-          "text": "",
-          "images": [
-            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q12/12u.png"
-          ]
-        },
-        {
-          "label": "エ",
-          "text": "",
-          "images": [
-            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q12/12e.png"
-          ]
-        }
-      ],
-      "category": {
-        "raw": "テクノロジ系 » 基礎理論 » 離散数学",
-        "system": "テクノロジ系",
-        "major": "基礎理論",
-        "minor": "離散数学"
-      },
-      "answer": "イ",
-      "explanation": {
-        "text": "ベン図(Venn diagram)は、複数の集合の関係や範囲を視覚的に表現する図です。集合を円などの閉じた図形で表し、それらの図形の重なり方によって集合間の関係を示します。\n\n\"AかつB\"の範囲と\"Cではない\"範囲を考えると、これら2つの集合の共通部分である\"AかつBであり、Cではない\"範囲が「イ」のベン図に該当します。\n\nなお、4つのベン図は次のような論理式で表現できます。\n・A AND B AND C\n・A AND B AND (NOT C)\n・A AND B\n・NOT C",
-        "choice_comments": [],
-        "images": [
-          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q12/12u.png",
-          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q12/12e.png",
-          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q12/12i.png"
-        ],
-        "_explanation_rewritten": true
-      }
-    },
-    {
-      "no": 13,
-      "url": "https://www.itpassportsiken.com/kakomon/02_sample/q13.html",
-      "title": "データ構造の把握",
-      "body": {
-        "text": "図に示す連絡網で，B～LのうちAからの連絡が届かないものは幾つあるか。ここで，矢印線は連絡がとれる方向を表すものとする。",
-        "sub_items": [],
-        "images": [
-          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q13/13.png"
-        ]
-      },
-      "choices": [
-        {
-          "label": "ア",
-          "text": "1",
-          "images": []
-        },
-        {
-          "label": "イ",
-          "text": "3",
-          "images": []
-        },
-        {
-          "label": "ウ",
-          "text": "4",
-          "images": []
-        },
-        {
-          "label": "エ",
-          "text": "6",
-          "images": []
-        }
-      ],
-      "category": {
-        "raw": "テクノロジ系 » アルゴリズムとプログラミング » データ構造",
-        "system": "テクノロジ系",
-        "major": "アルゴリズムとプログラミング",
-        "minor": "データ構造"
-      },
-      "answer": "エ",
-      "explanation": {
-        "text": "図を確認し、連絡可能な方向にも注意を払うと、以下の地点にはAからの連絡が届かないことが判明します。\n\n[J,K,L]\nこれらの地点はAを含むネットワークから孤立しており、連絡が届きません。\n\n[G,F]\nGからEへの連絡は可能ですが、EからGへの連絡はできないため、Aからの連絡は届きません。\n\n[I]\nIからHへの連絡は可能ですが、HからIへの連絡はできないため、Aからの連絡は届きません。\n\nよって、正しい答えは「6」となります。",
-        "choice_comments": [],
-        "images": [],
-        "_explanation_rewritten": true
-      }
-    },
-    {
-      "no": 14,
-      "url": "https://www.itpassportsiken.com/kakomon/02_sample/q14.html",
-      "title": "PCの基本構成",
-      "body": {
-        "text": "PCの基本構成を表す図中のa～cに相当する機能の組合せはどれか。",
-        "sub_items": [],
-        "images": [
-          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q14/14.png"
-        ]
-      },
-      "choices": [
-        {
-          "label": "ア",
-          "text": "",
-          "images": [
-            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q14/14a.png"
-          ]
-        },
-        {
-          "label": "イ",
-          "text": "",
-          "images": [
-            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q14/14a.png"
-          ]
-        },
-        {
-          "label": "ウ",
-          "text": "",
-          "images": [
-            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q14/14a.png"
-          ]
-        },
-        {
-          "label": "エ",
-          "text": "",
-          "images": [
-            "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q14/14a.png"
-          ]
-        }
-      ],
-      "category": {
-        "raw": "テクノロジ系 » コンピュータ構成要素 » プロセッサ",
-        "system": "テクノロジ系",
-        "major": "コンピュータ構成要素",
-        "minor": "プロセッサ"
-      },
-      "answer": "エ",
-      "explanation": {
-        "text": "コンピュータは5つの基本機能である\"演算\"、\"制御\"、\"記憶\"、\"入力\"、\"出力\"から成り立っています。（5大機能）  \n- 演算と制御はCPUが担当します。  \n- 記憶は主記憶装置や補助記憶装置が担います。  \n- 入力にはキーボード、マウス、スキャナーなどがあります。  \n- 出力にはディスプレイ、スピーカー、プリンターなどが含まれます。  \n\n図中で他の機能に制御の流れを示す矢印が伸びているaは、制御機能を指しています。  \n\n次に、出力機能へデータを渡しているcですが、コンピュータでは演算結果を直接出力するのではなく、一度主記憶に書き込んでから出力します。そのため、唯一出力機能にデータを送るcは主記憶と考えられます。  \n\nbには、コンピュータの5大機能の中で残っている演算機能が該当します。  \n\nしたがって、aは制御機能、bは演算機能、cは主記憶となります。",
-        "choice_comments": [],
-        "images": [],
-        "_explanation_rewritten": true
-      }
-    },
-    {
-      "no": 15,
-      "url": "https://www.itpassportsiken.com/kakomon/02_sample/q15.html",
-      "title": "クライアントサーバシステム",
-      "body": {
-        "text": "クライアントサーバシステムにおいて，サーバ側で処理することが最も適切な処理はどれか。",
-        "sub_items": [],
-        "images": []
-      },
-      "choices": [
-        {
-          "label": "ア",
-          "text": "印刷結果のプレビュー処理",
-          "images": []
-        },
-        {
-          "label": "イ",
-          "text": "データベースの更新処理",
-          "images": []
-        },
-        {
-          "label": "ウ",
-          "text": "入力されたデータの形式チェック処理",
-          "images": []
-        },
-        {
-          "label": "エ",
-          "text": "プルダウンメニューの表示処理",
-          "images": []
-        }
-      ],
-      "category": {
-        "raw": "テクノロジ系 » システム構成要素 » システムの構成",
-        "system": "テクノロジ系",
-        "major": "システム構成要素",
-        "minor": "システムの構成"
-      },
-      "answer": "イ",
-      "explanation": {
-        "text": "クライアントサーバシステムで、クライアントが個別にデータベースの更新を行うと、同時更新によって不整合が発生する可能性があります。これを防ぐために、サーバ側で複数のクライアントからの更新要求を集中管理し、順番に処理することでデータベースの整合性を維持します。",
-        "choice_comments": [],
-        "images": [],
-        "_explanation_rewritten": true
-      }
-    },
-    {
-      "no": 16,
-      "url": "https://www.itpassportsiken.com/kakomon/02_sample/q16.html",
-      "title": "オープンソースソフトウェア",
-      "body": {
-        "text": "オープンソースソフトウェアの特徴はどれか。",
-        "sub_items": [],
-        "images": []
-      },
-      "choices": [
-        {
-          "label": "ア",
-          "text": "コピーはバックアップのために一つだけ取ることができる。",
-          "images": []
-        },
-        {
-          "label": "イ",
-          "text": "ソースコードを入手することができる。",
-          "images": []
-        },
-        {
-          "label": "ウ",
-          "text": "著作権を放棄している。",
-          "images": []
-        },
-        {
-          "label": "エ",
-          "text": "不具合が発生したときに補償を受けることができる。",
-          "images": []
-        }
-      ],
-      "category": {
-        "raw": "テクノロジ系 » ソフトウェア » オープンソースソフトウェア",
-        "system": "テクノロジ系",
-        "major": "ソフトウェア",
-        "minor": "オープンソースソフトウェア"
-      },
-      "answer": "イ",
-      "explanation": {
-        "text": "オープンソースソフトウェアとは、ソフトウェアの著作権を保持しつつ、そのソースコードを無償で公開するライセンス形態を指します。\n\nオープンソースソフトウェアの主な特徴には以下の点があります：\n- 再頒布が可能であること\n- ソースコードが入手可能であること\n- ソースコードを基に派生物を作成できること\n- 再配布の際に追加のライセンスが不要であること\n\nまた、オープンソースソフトウェアは著作物の利用、コピー、再配布、翻案を制限しませんが、著作権は放棄されているわけではありません。著作権が放棄されたソフトウェアはパブリックドメインと呼ばれます。さらに、オープンソースソフトウェアは「有用であるとは思うが無保証である」とされており、著作者はソフトウェアの動作について保証せず、損害が発生した場合の補償も行わないと定められています。",
-        "choice_comments": [],
-        "images": [],
-        "_explanation_rewritten": true
-      }
-    },
-    {
-      "no": 17,
-      "url": "https://www.itpassportsiken.com/kakomon/02_sample/q17.html",
-      "title": "ハードウェア制御",
-      "body": {
-        "text": "円周上に1～6の番号を順番に時計回りに記した円盤がある。この円盤は6秒の周期で時計回りに回転している。この円盤は暗室に置かれており，スポットライトで，設定された点滅の時間間隔で，円盤の最上部の点線で囲った部分だけを一瞬間照らすようになっている。点滅の時間間隔を5秒に設定したときに観察される番号は，どのように繰り返されるか。",
-        "sub_items": [],
-        "images": [
-          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q17/17.png"
-        ]
-      },
-      "choices": [
-        {
-          "label": "ア",
-          "text": "1，2，3，4，5，6",
-          "images": []
-        },
-        {
-          "label": "イ",
-          "text": "1，3，5，1，3，5",
-          "images": []
-        },
-        {
-          "label": "ウ",
-          "text": "1，4，1，4，1，4",
-          "images": []
-        },
-        {
-          "label": "エ",
-          "text": "1，6，5，4，3，2",
-          "images": []
-        }
-      ],
-      "category": {
-        "raw": "テクノロジ系 » ハードウェア » コンピュータ・入出力装置",
-        "system": "テクノロジ系",
-        "major": "ハードウェア",
-        "minor": "コンピュータ・入出力装置"
-      },
-      "answer": "ア",
-      "explanation": {
-        "text": "円盤は時計回りに6秒で1周するため、スタート地点を1とすると、円盤の最上部は次のように変化します。\n- 開始時点: 1\n- 1秒後: 6\n- 2秒後: 5\n- 3秒後: 4\n- 4秒後: 3\n- 5秒後: 2\n- 6秒後: 1\n- 7秒後: 6\n- 8秒後: 5\n- 9秒後: 4\n- 10秒後: 3\n- 11秒後: 2\n- 以降はこのパターンが繰り返されます\n\nスポットライトの照射間隔は5秒であり、1周は6秒かかるため、観察される番号は常に前回観察された番号の次の番号になります。\n\nしたがって、5秒ごとに 1→2→3→4→5→6→1→2→… という順番で繰り返されます。",
-        "choice_comments": [],
-        "images": [
-          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q17/17a.gif"
-        ],
-        "_explanation_rewritten": true
-      }
-    },
-    {
-      "no": 18,
-      "url": "https://www.itpassportsiken.com/kakomon/02_sample/q18.html",
-      "title": "画面設計",
-      "body": {
-        "text": "画面設計において，データを直接入力する方式よりも，候補一覧から選択する方式を採用した方が適切な場合はどれか。",
-        "sub_items": [],
-        "images": []
-      },
-      "choices": [
-        {
-          "label": "ア",
-          "text": "項目単位のチェックや修正が必要な場合",
-          "images": []
-        },
-        {
-          "label": "イ",
-          "text": "入力データの種類が少なく，データの内容が固定している場合",
-          "images": []
-        },
-        {
-          "label": "ウ",
-          "text": "入力データのとり得る値が多数ある場合",
-          "images": []
-        },
-        {
-          "label": "エ",
-          "text": "文章のような多量のデータを入力する場合",
-          "images": []
-        }
-      ],
-      "category": {
-        "raw": "テクノロジ系 » 情報デザイン » 情報デザイン",
-        "system": "テクノロジ系",
-        "major": "情報デザイン",
-        "minor": "情報デザイン"
-      },
-      "answer": "イ",
-      "explanation": {
-        "text": "候補一覧から選択するUI要素には、チェックボックス、ラジオボタン、リストボックスがあります。これらは選択肢があらかじめ固定されており、選択肢をすぐに見つけられる場合に適しています。  \n- 入力される値が固定されていない場合には不向きです。  \n- 正しい。  \n- 候補のリストが非常に多い場合、項目を見つけて選ぶのに直接入力するより時間がかかる可能性があります。  \n- 候補が多すぎると、画面内に収まりきれず、使い勝手が悪くなることがあります。",
-        "choice_comments": [],
-        "images": [],
-        "_explanation_rewritten": true
-      }
-    },
-    {
-      "no": 19,
-      "url": "https://www.itpassportsiken.com/kakomon/02_sample/q19.html",
-      "title": "キャプチャカード",
-      "body": {
-        "text": "ビデオデッキなどの映像機器から，映像をデジタルデータとしてコンピュータの中に取り込む装置はどれか。",
-        "sub_items": [],
-        "images": []
-      },
-      "choices": [
-        {
-          "label": "ア",
-          "text": "イメージスキャナー",
-          "images": []
-        },
-        {
-          "label": "イ",
-          "text": "キャプチャカード",
-          "images": []
-        },
-        {
-          "label": "ウ",
-          "text": "サウンドカード",
-          "images": []
-        },
-        {
-          "label": "エ",
-          "text": "タブレット",
-          "images": []
-        }
-      ],
-      "category": {
-        "raw": "テクノロジ系 » 情報メディア » マルチメディア技術",
-        "system": "テクノロジ系",
-        "major": "情報メディア",
-        "minor": "マルチメディア技術"
-      },
-      "answer": "イ",
-      "explanation": {
-        "text": "キャプチャカード（キャプチャボード）は、コンピュータに取り付ける拡張カードで、映像情報を静止画や動画ファイルとして取り込み保存する機能を持つハードウェアです。\n・紙媒体などの静止画像をデジタルデータに変換し、コンピュータに取り込む装置です。\n・これは正しいです。\n・コンピュータに音響信号の入出力機能を追加または強化するための拡張回路基板です。\n・薄型の筐体にタッチパネル式の表示装置とポインティングデバイスを備えたコンピュータ製品を指します（例としてiPadやGALAXY Tabなど）。\n\nビデオテープのダビングに関しては、USB接続でPCにダビングできるビデオキャプチャコードを使うと便利でおすすめです。",
-        "choice_comments": [],
-        "images": [
-          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q19/19.png"
-        ],
-        "_explanation_rewritten": true
-      }
-    },
-    {
-      "no": 20,
-      "url": "https://www.itpassportsiken.com/kakomon/02_sample/q20.html",
-      "title": "データ操作",
-      "body": {
-        "text": "“商品在庫”表の検索において，販売価格50,000円以上で在庫が10台未満の条件で検索される商品名はどれか。",
-        "sub_items": [],
-        "images": [
-          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q20/20.png"
-        ]
-      },
-      "choices": [
-        {
-          "label": "ア",
-          "text": "大型冷蔵庫，中型冷蔵庫，小型冷蔵庫，ポータブル冷蔵庫，空気清浄機，コーヒーメーカー，エアコン",
-          "images": []
-        },
-        {
-          "label": "イ",
-          "text": "大型冷蔵庫，中型冷蔵庫，小型冷蔵庫，空気清浄機，エアコン",
-          "images": []
-        },
-        {
-          "label": "ウ",
-          "text": "中型冷蔵庫，小型冷蔵庫，エアコン",
-          "images": []
-        },
-        {
-          "label": "エ",
-          "text": "中型冷蔵庫，小型冷蔵庫，ポータブル冷蔵庫，コーヒーメーカー，エアコン",
-          "images": []
-        }
-      ],
-      "category": {
-        "raw": "テクノロジ系 » データベース » データ操作",
-        "system": "テクノロジ系",
-        "major": "データベース",
-        "minor": "データ操作"
-      },
-      "answer": "ウ",
-      "explanation": {
-        "text": "「販売価格50,000円以上」と「在庫が10台未満」の条件をそれぞれ適用すると、次の結果が得られます。これらの条件を同時に満たすのは、中型冷蔵庫、小型冷蔵庫、エアコンの3つです。",
-        "choice_comments": [],
-        "images": [
-          "https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q20/20a.png"
-        ],
-        "_explanation_rewritten": true
-      }
-    },
-    {
-      "no": 21,
-      "url": "https://www.itpassportsiken.com/kakomon/02_sample/q21.html",
-      "title": "URLが示すもの",
-      "body": {
-        "text": "インターネットで利用されているURLが示すものはどれか。",
-        "sub_items": [],
-        "images": []
-      },
-      "choices": [
-        {
-          "label": "ア",
-          "text": "インターネット上の情報源(リソース)",
-          "images": []
-        },
-        {
-          "label": "イ",
-          "text": "インターネットに接続されたPCなどの所有者",
-          "images": []
-        },
-        {
-          "label": "ウ",
-          "text": "インターネットに接続されたサーバのIPアドレス",
-          "images": []
-        },
-        {
-          "label": "エ",
-          "text": "インターネットを利用したメールのアドレス",
-          "images": []
-        }
-      ],
-      "category": {
-        "raw": "テクノロジ系 » ネットワーク » ネットワーク応用",
-        "system": "テクノロジ系",
-        "major": "ネットワーク",
-        "minor": "ネットワーク応用"
-      },
-      "answer": "ア",
-      "explanation": {
-        "text": "URL（Uniform Resource Locator）は、WebサイトやWebページのアドレス、つまり住所を指します。通常は、HTMLやその他のリソースの場所として、サーバのホスト名（ドメイン）、ディレクトリ名、ファイル名を指定しますが、通信に用いるプロトコル名や宛先ポート番号も一緒に記述・指定することが可能です。",
-        "choice_comments": [],
-        "images": [],
-        "_explanation_rewritten": true
-      }
-    },
-    {
-      "no": 22,
-      "url": "https://www.itpassportsiken.com/kakomon/02_sample/q22.html",
-      "title": "パスワードの再発行",
-      "body": {
-        "text": "パスワードを忘れてしまった社内の利用者が，セキュリティ管理者から本人であることを確認された後に，適切にパスワードを受け取る方法はどれか。",
-        "sub_items": [],
-        "images": []
-      },
-      "choices": [
-        {
-          "label": "ア",
-          "text": "セキュリティ管理者が自分のPCに保管しているパスワードを読み出し，利用者は電子メールで受信する。",
-          "images": []
-        },
-        {
-          "label": "イ",
-          "text": "セキュリティ管理者がパスワードを初期化し，利用者は初期値を受け取り，新しいパスワードに変更する。",
-          "images": []
-        },
-        {
-          "label": "ウ",
-          "text": "セキュリティ管理者は暗号化して保管しているパスワードを共有域に複写し，利用者は復号鍵を電話で聞く。",
-          "images": []
-        },
-        {
-          "label": "エ",
-          "text": "セキュリティ管理者は暗号化して保管しているパスワードを復号し，利用者は秘密扱いの社内文書で受け取る。",
-          "images": []
-        }
-      ],
-      "category": {
-        "raw": "テクノロジ系 » セキュリティ » 情報セキュリティ対策・実装技術",
-        "system": "テクノロジ系",
-        "major": "セキュリティ",
-        "minor": "情報セキュリティ対策・実装技術"
-      },
-      "answer": "イ",
-      "explanation": {
-        "text": "パスワードを再発行する際には、以前のパスワードをそのまま使い回さず、新しいパスワードを設定するのが適切です。",
-        "choice_comments": [],
-        "images": [],
-        "_explanation_rewritten": true
-      }
-    },
-    {
-      "no": 23,
-      "url": "https://www.itpassportsiken.com/kakomon/02_sample/q23.html",
-      "title": "PCの初期設定",
-      "body": {
-        "text": "新入社員のMさんは，新規のPCが支給されたので，早速，〔新規PCの初期設定に関する規定〕に従ってPCの設定を行った。次の行為の中で，(1)～(4)の規定から考えて適切でないものはどれか。",
-        "sub_items": [],
-        "images": []
-      },
-      "choices": [
-        {
-          "label": "ア",
-          "text": "OSの自動アップデートの設定を実行したとき，すぐにアップデートが始まってしまったので，画面の指示に従いアップデートを行った。",
-          "images": []
-        },
-        {
-          "label": "イ",
-          "text": "Web ブラウザの設定方法が分からなかったので，設定方法をシステム管理者に質問した。",
-          "images": []
-        },
-        {
-          "label": "ウ",
-          "text": "ウイルス対策ソフトウェアの設定後，念のためハードディスク全体のウイルスチェックを行った。",
-          "images": []
-        },
-        {
-          "label": "エ",
-          "text": "新規PCには，3か月お試し版のウイルス対策ソフトウェアがプレインストール(バンドル)されていたので，自動でアップデートできる設定にして，このソフトウェアを利用した。",
-          "images": []
-        }
-      ],
-      "category": {
-        "raw": "テクノロジ系",
-        "system": "テクノロジ系",
-        "major": "",
-        "minor": ""
-      },
-      "answer": "エ",
-      "explanation": {
-        "text": "規則には「指定されたウィルス対策ソフトウェアをインストールすること」とあります。新しいPCには試用版のソフトウェアが多く含まれていますが、それらをそのまま使うことは、会社が提供したウィルス対策ソフトウェアを使用するという規定に違反しています。\n\nしたがって、不適切な行為は「エ」です。",
-        "choice_comments": [],
-        "images": [],
-        "_explanation_rewritten": true
-      }
-    },
-    {
-      "no": 24,
-      "url": "https://www.itpassportsiken.com/kakomon/02_sample/q24.html",
-      "title": "ブラウザのセキュリティ設定",
-      "body": {
-        "text": "Mさんは，〔新規PCの初期設定に関する規定〕の(2)について，設定しなければならない理由が分からなかったので，システム管理者のNさんに尋ねた。Nさんの答えとして適切なものはどれか。",
-        "sub_items": [],
-        "images": []
-      },
-      "choices": [
-        {
-          "label": "ア",
-          "text": "Webブラウザの脆弱性が発見され，その対応ソフトウェアが公開されたときに，自動でアップデートするため",
-          "images": []
-        },
-        {
-          "label": "イ",
-          "text": "Webページのボタンなどをクリックすると，有害なスクリプトプログラムの実行やプログラムのインストールが始まる可能性があるため",
-          "images": []
-        },
-        {
-          "label": "ウ",
-          "text": "Webメールと呼ばれるWebブラウザを使ったメールサービスを使うことがあるので，それを利用するときのセキュリティ対策のため",
-          "images": []
-        },
-        {
-          "label": "エ",
-          "text": "仕事中に，仕事とは関係のない有料サイトや趣味のWebページの閲覧をさせないため",
-          "images": []
-        }
-      ],
-      "category": {
-        "raw": "テクノロジ系",
-        "system": "テクノロジ系",
-        "major": "",
-        "minor": ""
-      },
-      "answer": "イ",
-      "explanation": {
-        "text": "Javaアプレット（Java Applet）とは、Web経由でブラウザにダウンロードされ、クライアント側で実行されるJavaで書かれたアプリケーションプログラムを指します。基本的にデスクトップ版Javaの全機能を備えているため、クライアントのコンピュータ上でさまざまな処理を行うことができます。アプレットはWebページにアクセスした際に自動的に読み込まれて動作しますが、悪意のあるアプレットが実行されるとコンピュータに被害をもたらす可能性があるため、セキュリティの観点からWebブラウザの設定を変更し、「アプレットの無効化」や「自動実行の禁止」などを行うことが推奨されます。\n・自動アップデートを設定する理由です。\n・正しい。\n・迷惑メール対策やウイルススキャンなどのメールセキュリティを導入する理由です。\n・コンテンツフィルターを設定する理由です。",
-        "choice_comments": [],
-        "images": [],
-        "_explanation_rewritten": true
-      }
-    },
-    {
-      "no": 25,
-      "url": "https://www.itpassportsiken.com/kakomon/02_sample/q25.html",
-      "title": "セキュリティ管理の重要性",
-      "body": {
-        "text": "システム管理者のNさんは，Mさんに，“組織が，このような規定を設けなければいけない最も重要な理由は，　からです。”と説明した。　に入れる記述として，適切なものはどれか。",
-        "sub_items": [],
-        "images": []
-      },
-      "choices": [
-        {
-          "label": "ア",
-          "text": "ウイルスに感染したPCが一時的に利用できなくなったり，そのPC上のデータが壊されたりする。",
-          "images": []
-        },
-        {
-          "label": "イ",
-          "text": "ウイルスに感染することで，LAN上に無駄なデータを大量に発信し，ネットワークの負荷を増大させ，組織の業務に支障を来すおそれがある。",
-          "images": []
-        },
-        {
-          "label": "ウ",
-          "text": "ウイルスの感染などによって，個人情報や機密情報がインターネット上に漏えいするおそれがある。",
-          "images": []
-        },
-        {
-          "label": "エ",
-          "text": "一人の職員のPCにウイルスが感染することで，ほかの社員のPCにも感染するおそれがある。",
-          "images": []
-        }
-      ],
-      "category": {
-        "raw": "テクノロジ系",
-        "system": "テクノロジ系",
-        "major": "",
-        "minor": ""
-      },
-      "answer": "ウ",
-      "explanation": {
-        "text": "近年、企業や病院、学校における個人データの流出事件が相次いで発生しています。個人情報や機密情報の流出は信頼を損なうだけでなく、場合によっては事業の存続に深刻な影響を与える可能性があります。\n\n統計によれば、2011年第4四半期時点で、1年間に報告される脆弱性関連情報は1,000件を超え、2004年7月8日からの累計では7,310件に達しています。主要ベンダーはこれに対応し、自社製品の脆弱性を解消する修正パッチや新種ウイルスに対抗するパターンファイルを頻繁に提供しており、これらを適用することで被害のリスクは大幅に軽減されます。\n\nコンピュータを脆弱性から守り、情報漏えいを防ぐためには、常に最新の状態に保つことや、脆弱性を狙った攻撃に備えて堅牢な設定を行うことが効果的な対策です。新たに導入するPCにこうした基準を設けるのは、初期設定を見直し、個人情報や機密情報の流出を防ぐために極めて重要です。\n\n参考URL: ソフトウェア等の脆弱性関連情報に関する届出状況\n　http://www.ipa.go.jp/security/vuln/report/vuln2011q4.html",
-        "choice_comments": [],
-        "images": [],
-        "_explanation_rewritten": true
-      }
-    },
-    {
-      "no": 26,
-      "url": "https://www.itpassportsiken.com/kakomon/02_sample/q26.html",
-      "title": "P2Pソフト対策",
-      "body": {
-        "text": "システム管理者のNさんは，Mさんに，“最近，WinnyやShareなどのピアツーピアと呼ばれるソフトウェアが原因で引き起こされる事故が多い。そのために，この規定では，　の項目が設けられている。”と説明した。　に入れる〔新規PCの初期設定に関する規定〕の番号として，適切なものはどれか。",
-        "sub_items": [],
-        "images": []
-      },
-      "choices": [
-        {
-          "label": "ア",
-          "text": "(1)",
-          "images": []
-        },
-        {
-          "label": "イ",
-          "text": "(2)",
-          "images": []
-        },
-        {
-          "label": "ウ",
-          "text": "(3)",
-          "images": []
-        },
-        {
-          "label": "エ",
-          "text": "(4)",
-          "images": []
-        }
-      ],
-      "category": {
-        "raw": "テクノロジ系",
-        "system": "テクノロジ系",
-        "major": "",
-        "minor": ""
-      },
-      "answer": "エ",
-      "explanation": {
-        "text": "ピアツーピア（Peer to Peer, P2P）は、多くの端末間で通信を行う形態の一つです。クライアントサーバシステムのように特定の端末がサービスを要求し、別の端末がサービスを提供するという区別はなく、サービスを要求する際には同等の他の端末に直接アクセスし、同時に自分の端末でもサービス要求を受け付けることができます。このように、どの端末もクライアントにもサーバにもなり得る通信形態が特徴です。\n\nWinnyやShareは、これらのソフトがインストールされた端末同士でP2Pネットワークを構築し、他のノードとファイルを共有することができるソフトウェアです。こうしたP2Pネットワークには「Antinny」や「山田オルタナティブ」といったウイルスに感染したファイルが多く存在し、ネットワークを通じて感染すると、コンピュータ内のファイル（特にデスクトップやマイドキュメントの内容、Outlook Expressのメールなど）を無断でWinnyなどを通じて共有する機能を持っています。これらは暴露ウイルスと呼ばれ、個人情報や政府、企業の機密情報が漏れる社会問題を引き起こしています。\n\nP2Pソフトはデフォルトでインストールされたものではなく、利用者が自ら選んでインストールするソフトウェアです。そのため、「担当部門で支給されたアプリケーションソフトウェア以外のソフトウェアをインストールするときは，担当部門長の許可を得る」の規定を徹底することは、P2Pソフトウェアによる情報漏えいから組織を未然に守る手段となります。",
-        "choice_comments": [],
-        "images": [],
-        "_explanation_rewritten": true
-      }
-    },
-    {
-      "no": 27,
-      "url": "https://www.itpassportsiken.com/kakomon/02_sample/q27.html",
-      "title": "抽出に必要なデータ項目",
-      "body": {
-        "text": "Fさんは，毎月の1か月間の商品別売上実績を表にまとめることにした。商品別の月間売上実績を算出するために，最低限必要な販売実績データの項目の組合せはどれか。",
-        "sub_items": [],
-        "images": []
-      },
-      "choices": [
-        {
-          "label": "ア",
-          "text": "商品名称，金額",
-          "images": []
-        },
-        {
-          "label": "イ",
-          "text": "販売日付，商品名称，金額",
-          "images": []
-        },
-        {
-          "label": "ウ",
-          "text": "販売日付，商品名称，分類，金額",
-          "images": []
-        },
-        {
-          "label": "エ",
-          "text": "販売日付，商品名称，分類，単価，金額",
-          "images": []
-        }
-      ],
-      "category": {
-        "raw": "テクノロジ系",
-        "system": "テクノロジ系",
-        "major": "",
-        "minor": ""
-      },
-      "answer": "イ",
-      "explanation": {
-        "text": "商品別の月間売上実績を求めるために必要な項目は以下の通りです。\n\n　商品別→販売実績データの\"商品名称\"\n　月間→販売実績データの\"販売日付\"\n　売上実績→販売実績データの\"金額\"\n\nこの集計においては、\"分類\"や\"単価\"は必要ないため、これら3つの項目が最低限必要となります。",
-        "choice_comments": [],
-        "images": [],
-        "_explanation_rewritten": true
-      }
-    },
-    {
-      "no": 28,
-      "url": "https://www.itpassportsiken.com/kakomon/02_sample/q28.html",
-      "title": "データ操作の手順",
-      "body": {
-        "text": "Fさんは，先月1か月間の商品別売上実績を表にまとめることにした。販売実績データを基に，商品別の月間売上実績を算出する手順として適切なものはどれか。",
-        "sub_items": [],
-        "images": []
-      },
-      "choices": [
-        {
-          "label": "ア",
-          "text": "(1)　商品名称を基に，データを整列する。 (2)　同一の商品名称の金額の合計を求める。 (3)　販売日付を基に，先月に販売のある商品のデータを抽出する。",
-          "images": []
-        },
-        {
-          "label": "イ",
-          "text": "(1)　同一の商品名称の金額の合計を求める。 (2)　分類を基に，データを整列する。 (3)　販売日付を基に，先月に販売のある商品のデータを抽出する。",
-          "images": []
-        },
-        {
-          "label": "ウ",
-          "text": "(1)　販売日付を基に，先月1か月のデータを抽出する。 (2)　商品名称を基に抽出したデータを整列する。 (3)　同一の商品名称の金額の合計を求める。",
-          "images": []
-        },
-        {
-          "label": "エ",
-          "text": "(1)　販売日付を基に，先月1か月のデータを抽出する。 (2)　分類を基に，抽出したデータを整列する。 (3)　同一の分類の単価の合計を求める。",
-          "images": []
-        }
-      ],
-      "category": {
-        "raw": "テクノロジ系",
-        "system": "テクノロジ系",
-        "major": "",
-        "minor": ""
-      },
-      "answer": "ウ",
-      "explanation": {
-        "text": "集計は、まず\"販売日付\"が集計対象の月に該当する行を選び出し、その後\"商品名称\"ごとに\"金額\"を合計する手順です。\n・1ヵ月分のデータを抽出する前に金額を合計しているため、これは誤りです。\n・「ア」と同じ理由で誤りです。\n・これが正しいです。\n・求めるのは商品ごとの月間売上実績であり、単価の合計ではありません。",
-        "choice_comments": [],
-        "images": [],
-        "_explanation_rewritten": true
-      }
-    },
-    {
-      "no": 29,
-      "url": "https://www.itpassportsiken.com/kakomon/02_sample/q29.html",
-      "title": "増加率の計算式",
-      "body": {
-        "text": "Fさんは，商品別の月間売上の増加率を確認するために，先々月と先月の商品別の月間売上実績を比較することにした。増加率を計算するための式はどれか。",
-        "sub_items": [],
-        "images": []
-      },
-      "choices": [
-        {
-          "label": "ア",
-          "text": "先月の売上実績－先々月の売上実績",
-          "images": []
-        },
-        {
-          "label": "イ",
-          "text": "(先月の売上実績－先々月の売上実績)／2",
-          "images": []
-        },
-        {
-          "label": "ウ",
-          "text": "(先月の売上実績－先々月の売上実績)／先々月の売上実績",
-          "images": []
-        },
-        {
-          "label": "エ",
-          "text": "(先月の売上実績－先々月の売上実績)／先月の売上実績",
-          "images": []
-        }
-      ],
-      "category": {
-        "raw": "テクノロジ系",
-        "system": "テクノロジ系",
-        "major": "",
-        "minor": ""
-      },
-      "answer": "ウ",
-      "explanation": {
-        "text": "例を簡略化して説明すると、先々月の売上が100で、先月の売上が110の場合、売上の増加分は10です。この増加分は、先々月の売上100に対して10%（0.1）の増加と計算できます。\n\nこの計算を式にすると次のようになります：\n\n　(110 - 100) / 100 = 10 / 100 = 0.1\n\nここで、110は先月の売上を、100は先々月の売上を示しています。この式を一般化すると、\n\n　(先月の売上実績 - 先々月の売上実績) / 先々月の売上実績\n\nとなります。",
-        "choice_comments": [],
-        "images": [],
-        "_explanation_rewritten": true
-      }
-    },
-    {
-      "no": 30,
-      "url": "https://www.itpassportsiken.com/kakomon/02_sample/q30.html",
-      "title": "売上実績を算出する手順",
-      "body": {
-        "text": "Fさんは，都道府県別の先月の売上実績を表にまとめることにした。会員の住所を基に，都道府県別の先月の売上実績を算出する手順として適切なものはどれか。",
-        "sub_items": [],
-        "images": []
-      },
-      "choices": [
-        {
-          "label": "ア",
-          "text": "(1)　会員番号をキーとして，販売実績データと会員台帳を結合する。 (2)　会員番号を基に，結合した情報を整列する。 (3)　同一の会員番号の金額の合計を求める。 (4)　住所1を基に整列する。 (5)　同一の都道府県単位に，金額の合計を求める。",
-          "images": []
-        },
-        {
-          "label": "イ",
-          "text": "(1)　会員番号をキーとして，販売実績データと会員台帳を結合する。 (2)　住所1を基に，結合した情報を整列する。 (3)　同一の都道府県単位に金額の合計を求める。",
-          "images": []
-        },
-        {
-          "label": "ウ",
-          "text": "(1)　販売日付を基に，販売実績データから先月のデータを抽出する。 (2)　会員番号をキーとして，抽出した販売実績データと会員台帳を結合する。 (3)　住所1を基に，結合した情報を整列する。 (4)　同一の都道府県単位に，金額の合計を求める。",
-          "images": []
-        },
-        {
-          "label": "エ",
-          "text": "(1)　販売日付を基に，販売実績データから先月のデータを抽出する。 (2)　会員番号を基に，抽出した販売実績データを整列する。 (3)　同一の会員番号の金額の合計を求める。",
-          "images": []
-        }
-      ],
-      "category": {
-        "raw": "テクノロジ系",
-        "system": "テクノロジ系",
-        "major": "",
-        "minor": ""
-      },
-      "answer": "ウ",
-      "explanation": {
-        "text": "これは都道府県ごとの先月の売上実績に関する説明です。必要な項目は以下の通りです。\n\n　- 都道府県別: 会員台帳の\"住所1\"\n　- 先月: 販売実績データの\"販売日付\"\n　- 売上実績: 販売実績データの\"金額\"\n\nまず、商品別の月間売上実績を算出する手順と同様に、販売実績データから先月の売上に該当する行を抽出します。その後、各行がどの都道府県での売上であるかを特定するために、販売実績データの\"会員番号\"と会員台帳の\"会員番号\"をキーとして両方のテーブルを結合します。この操作で販売実績データの\"会員番号\"が会員台帳の各行とリンクされます。最後に、住所1を基にして同じ都道府県ごとにグループ化し、各グループの\"金額\"を合計します。",
-        "choice_comments": [],
-        "images": [],
-        "_explanation_rewritten": true
-      }
-    }
-  ]
+	"exam": "サンプル問題２",
+	"era_id": "sample2",
+	"slug": "02_sample",
+	"source_url": "https://www.itpassportsiken.com/kakomon/02_sample/",
+	"fetched_at": "2026-04-17T11:58:09+00:00",
+	"count": 30,
+	"questions": [
+		{
+			"no": 1,
+			"url": "https://www.itpassportsiken.com/kakomon/02_sample/q1.html",
+			"title": "パレート図",
+			"body": {
+				"text": "図は，電子部品の不良品について，不良項目を個数の多い順に並べた棒グラフと，それらの累積比率を折れ線グラフで表したものである。この図の名称は何か。",
+				"sub_items": [],
+				"images": [
+					"https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q1/01.png"
+				]
+			},
+			"choices": [
+				{
+					"label": "ア",
+					"text": "特性要因図",
+					"images": []
+				},
+				{
+					"label": "イ",
+					"text": "パレート図",
+					"images": []
+				},
+				{
+					"label": "ウ",
+					"text": "ベン図",
+					"images": []
+				},
+				{
+					"label": "エ",
+					"text": "マトリックス図",
+					"images": []
+				}
+			],
+			"category": {
+				"raw": "ストラテジ系 » 企業活動 » 業務分析・データ利活用",
+				"system": "ストラテジ系",
+				"major": "企業活動",
+				"minor": "業務分析・データ利活用"
+			},
+			"answer": "イ",
+			"explanation": {
+				"text": "パレート図は、分析する項目を値が大きい順に並べた棒グラフと、全体に対する累積構成比を示す折れ線グラフを組み合わせたグラフです。これは主に、複数の分析対象から重要な要素を特定するために利用されます。\n・これは、現れた特性（結果）と影響を及ぼしたと思われる要因との関係を体系的に示した図です。\n・正しい。\n・複数の集合の関係性や範囲を視覚的に示すための図で、円などの閉じた図形を使って各集合を表し、図形の交わり方で集合間の関連性を示します。\n・表の縦軸と横軸に項目を設定し、各項目の交点で関連性や関連度合いを◎，○，△などで示す分析図です。",
+				"choice_comments": [],
+				"images": [
+					"https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q1/01_1.png",
+					"https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q1/01_2.png",
+					"https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q1/01_3.png"
+				],
+				"_explanation_rewritten": true
+			}
+		},
+		{
+			"no": 2,
+			"url": "https://www.itpassportsiken.com/kakomon/02_sample/q2.html",
+			"title": "著作物利用のうち適法なもの",
+			"body": {
+				"text": "Webページを作成する際，著作権者に確認せずに行った著作物利用のうち，適法なものはどれか。",
+				"sub_items": [],
+				"images": []
+			},
+			"choices": [
+				{
+					"label": "ア",
+					"text": "カーテン生地のカタログに掲載された図柄が，著名デザイナ制作のもので，背景に最適だったので，スキャナーで取り込んで，色を変更して活用した。",
+					"images": []
+				},
+				{
+					"label": "イ",
+					"text": "車の販売台数を説明するために，通商白書の統計データを使って図表化し，Webページに活用した。",
+					"images": []
+				},
+				{
+					"label": "ウ",
+					"text": "最新情報を提供するために，新聞の写真をスキャナーで取り込んで活用した。",
+					"images": []
+				},
+				{
+					"label": "エ",
+					"text": "雑誌のイラストを加工して，Webページ上の自社広告に活用した。",
+					"images": []
+				}
+			],
+			"category": {
+				"raw": "ストラテジ系 » 法務 » 知的財産権",
+				"system": "ストラテジ系",
+				"major": "法務",
+				"minor": "知的財産権"
+			},
+			"answer": "イ",
+			"explanation": {
+				"text": "著作権法は、著作物（思想や感情を創作物として表現したもの）および著作者の権利を保護する法律です。文芸、学術、音楽、美術に加え、コンピュータ関連ではプログラムやデータベースも著作物として認められています。\n\n国や地方公共団体の機関などが広く周知させるために作成し、その名義で公表する広報資料、調査統計資料、報告書などの著作物は、禁止の表示がない限り、新聞や雑誌などの刊行物に説明の材料として転載することが可能です。\n\n設問には「禁転載」に関する記述がありませんが、政府が発行する白書などには禁転載の記載がないことがあります。したがって、適法な行為は「イ」となります。\n・図柄はデザイナーの著作物であり、その著作権を侵害する行為です。\n・正しい。通商白書は経済産業省が作成した調査統計資料・報告書であり、国などの周知目的資料に該当するため、承諾を得ずに説明の材料として使用できます。\n・新聞の記事は新聞社の著作物であり、新聞社の著作権を侵害する行為です。\n・雑誌の記事は出版社の著作物であり、出版社の著作権を侵害する行為です。",
+				"choice_comments": [],
+				"images": [],
+				"_explanation_rewritten": true
+			}
+		},
+		{
+			"no": 3,
+			"url": "https://www.itpassportsiken.com/kakomon/02_sample/q3.html",
+			"title": "PPM分析",
+			"body": {
+				"text": "ある会社は四つの製品を販売している。その年のそれぞれの売上高，市場占有率，市場成長率を調べた結果，表のようになった。これに当てはまるプロダクトポートフォリオマトリックスはどれか。ここで，円の大きさ(面積)は売上高を表す。",
+				"sub_items": [],
+				"images": [
+					"https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q3/03.png"
+				]
+			},
+			"choices": [
+				{
+					"label": "ア",
+					"text": "",
+					"images": [
+						"https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q3/03a.png"
+					]
+				},
+				{
+					"label": "イ",
+					"text": "",
+					"images": [
+						"https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q3/03i.png"
+					]
+				},
+				{
+					"label": "ウ",
+					"text": "",
+					"images": [
+						"https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q3/03u.png"
+					]
+				},
+				{
+					"label": "エ",
+					"text": "",
+					"images": [
+						"https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q3/03e.png"
+					]
+				}
+			],
+			"category": {
+				"raw": "ストラテジ系 » 経営戦略マネジメント » 経営戦略手法",
+				"system": "ストラテジ系",
+				"major": "経営戦略マネジメント",
+				"minor": "経営戦略手法"
+			},
+			"answer": "ア",
+			"explanation": {
+				"text": "図中の円の大きさは「売上高」を示しています。\n\n各製品の売上高が記載されている表では、製品Dが最も高い売上高を持っています。図中でこの製品Dを表す最大の円は、他の円とは異なる位置に配置されています。製品Dの位置が、横軸の「市場占有率」と縦軸の「市場成長率」の両方において正しい配置となっている図が、表を示すプロダクトポートフォリオマトリックスとなります。\n\n表から見ると、製品Dの市場占有率は8%、市場成長率は4%であるため、正解は「ア」であるとわかります。",
+				"choice_comments": [],
+				"images": [
+					"https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q3/03_1.png"
+				],
+				"_explanation_rewritten": true
+			}
+		},
+		{
+			"no": 4,
+			"url": "https://www.itpassportsiken.com/kakomon/02_sample/q4.html",
+			"title": "GPSを利用したサービス",
+			"body": {
+				"text": "GPSを利用したサービスを説明したものはどれか。",
+				"sub_items": [],
+				"images": []
+			},
+			"choices": [
+				{
+					"label": "ア",
+					"text": "衛星からの情報を利用し，自分の位置情報を算出して端末の地図上に現在地を表示する。",
+					"images": []
+				},
+				{
+					"label": "イ",
+					"text": "ケーブル敷設が難しい店舗やレイアウト変更が多いオフィスなどに，電波や赤外線を利用することで，ケーブルを使わずにPCをネットワークに接続する。",
+					"images": []
+				},
+				{
+					"label": "ウ",
+					"text": "高速道路などの有料道路の利用時に料金所，検札所の通過をスムーズに行うために自動で料金を精算する。",
+					"images": []
+				},
+				{
+					"label": "エ",
+					"text": "人工衛星を使って行う放送で，視聴者が各自でアンテナなどの受信設備を設置し，個別受信又は共同受信する。",
+					"images": []
+				}
+			],
+			"category": {
+				"raw": "ストラテジ系 » ビジネスインダストリ » ビジネスシステム",
+				"system": "ストラテジ系",
+				"major": "ビジネスインダストリ",
+				"minor": "ビジネスシステム"
+			},
+			"answer": "ア",
+			"explanation": {
+				"text": "GPS(Global Positioning System)は、アメリカ合衆国が軍事目的で打ち上げた複数の衛星によって、地球上の位置を特定することができるシステムです。このシステムを利用することで、GPS受信機を持つ人々は自分の現在位置を確認することができます。\n\nもともとは軍事的な用途で開発されましたが、現在ではカーナビや携帯電話、ノートパソコンなどに搭載され、民間でも広く利用されています。\n・正しい。\n・無線LANや赤外線ネットワークに関する説明です。\n・ETC(Electronic Toll Collection)システムに関する説明です。\n・衛星放送に関する説明です。",
+				"choice_comments": [],
+				"images": [],
+				"_explanation_rewritten": true
+			}
+		},
+		{
+			"no": 5,
+			"url": "https://www.itpassportsiken.com/kakomon/02_sample/q5.html",
+			"title": "BPRを説明したものはどれか",
+			"body": {
+				"text": "BPRを説明したものはどれか。",
+				"sub_items": [],
+				"images": []
+			},
+			"choices": [
+				{
+					"label": "ア",
+					"text": "企業の提供する製品やサービスなどの価値を生み出すための業務の流れ，価値の連鎖を分析すること",
+					"images": []
+				},
+				{
+					"label": "イ",
+					"text": "業務プロセスを抜本的に改革し，ITを駆使して業務の処理能力とコスト効率を高めること",
+					"images": []
+				},
+				{
+					"label": "ウ",
+					"text": "自社に不足している機能を企業買収によって他社から取り込み，事業展開を速めること",
+					"images": []
+				},
+				{
+					"label": "エ",
+					"text": "不良品ゼロを目指した品質管理を，製造部門にとどまらず全社的な活動として取組むこと",
+					"images": []
+				}
+			],
+			"category": {
+				"raw": "ストラテジ系 » システム戦略 » 情報システム戦略",
+				"system": "ストラテジ系",
+				"major": "システム戦略",
+				"minor": "情報システム戦略"
+			},
+			"answer": "イ",
+			"explanation": {
+				"text": "BPR(Business Process Reengineering)とは、現在の組織体制やビジネスルールを根本的に再評価し、職務や業務フロー、管理体制、情報システムを再構築する方法論です。このプロセスは、組織構造や情報システムを一貫性のあるビジネスプロセスに再統合し、効率や生産性を劇的に向上させることを目指します。\n・バリューチェーン分析についての説明です。\n・正しい。\n・M&Aに関する説明です。\n・QC(Quality Control)活動についての説明です。",
+				"choice_comments": [],
+				"images": [],
+				"_explanation_rewritten": true
+			}
+		},
+		{
+			"no": 6,
+			"url": "https://www.itpassportsiken.com/kakomon/02_sample/q6.html",
+			"title": "現行業務の分析",
+			"body": {
+				"text": "販売流通業の注文受付から納品までの業務遂行の流れを示している。図中のaはどれか。ここで，網掛けの部分は表示していない。",
+				"sub_items": [],
+				"images": [
+					"https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q6/06.png"
+				]
+			},
+			"choices": [
+				{
+					"label": "ア",
+					"text": "出荷指示",
+					"images": []
+				},
+				{
+					"label": "イ",
+					"text": "積載",
+					"images": []
+				},
+				{
+					"label": "ウ",
+					"text": "棚卸し",
+					"images": []
+				},
+				{
+					"label": "エ",
+					"text": "配送",
+					"images": []
+				}
+			],
+			"category": {
+				"raw": "ストラテジ系 » システム戦略 » 業務プロセス",
+				"system": "ストラテジ系",
+				"major": "システム戦略",
+				"minor": "業務プロセス"
+			},
+			"answer": "ア",
+			"explanation": {
+				"text": "問題文で使用されている用語の意味を確認しましょう。在庫引当とは、注文があった商品の在庫量を確かめることを指します。積載は、配送用の車両に商品を積み込む作業です。そして、配送は、配送業者などが商品を顧客の元へ運ぶことを意味します。棚卸は、帳簿上の在庫と実際の在庫の差を把握するために、定期的に実際の在庫数を確認する作業です。「棚から商品を取り出す」がaの次に来るため、その前に「積載」と「配送」が入ることはありません。また、「棚卸」は出荷ごとに行われるものではないため、これも誤りです。したがって、aに入るのは「出荷指示」が適切です。",
+				"choice_comments": [],
+				"images": [],
+				"_explanation_rewritten": true
+			}
+		},
+		{
+			"no": 7,
+			"url": "https://www.itpassportsiken.com/kakomon/02_sample/q7.html",
+			"title": "RFP",
+			"body": {
+				"text": "次期基幹システムを開発するシステムベンダーの選定に当たって，上司から“君がリーダーとなってRFPを作成しなさい”との指示を受けた。このRFPの説明として適切なものはどれか。",
+				"sub_items": [],
+				"images": []
+			},
+			"choices": [
+				{
+					"label": "ア",
+					"text": "システムベンダーなどに対して，次期基幹システム開発の提案を依頼する文書",
+					"images": []
+				},
+				{
+					"label": "イ",
+					"text": "システムベンダーなどに対して，次期基幹システムの開発を発注する文書",
+					"images": []
+				},
+				{
+					"label": "ウ",
+					"text": "社内のユーザーに対して，現行基幹システムの問題点を聞き出すための文書",
+					"images": []
+				},
+				{
+					"label": "エ",
+					"text": "社内のユーザーに対して，次期基幹システムに期待することを聞き出すための文書",
+					"images": []
+				}
+			],
+			"category": {
+				"raw": "ストラテジ系 » システム企画 » 調達計画・実施",
+				"system": "ストラテジ系",
+				"major": "システム企画",
+				"minor": "調達計画・実施"
+			},
+			"answer": "ア",
+			"explanation": {
+				"text": "RFP（Request for Proposal）とは、提案依頼書のことで、情報システムを調達する予定の企業や組織が、ITベンダー候補に対して具体的なシステム提案を求めること、またはシステムや調達要件をまとめた文書を指します。\n\nRFP発行の目的は、「提案内容と見積もりを基に最適なITベンダーを選び、適切に調達を行うこと」です。",
+				"choice_comments": [],
+				"images": [],
+				"_explanation_rewritten": true
+			}
+		},
+		{
+			"no": 8,
+			"url": "https://www.itpassportsiken.com/kakomon/02_sample/q8.html",
+			"title": "プログラム開発の手順",
+			"body": {
+				"text": "プログラム開発の手順として正しいものはどれか。",
+				"sub_items": [],
+				"images": []
+			},
+			"choices": [
+				{
+					"label": "ア",
+					"text": "設計，テスト，プログラム作成",
+					"images": []
+				},
+				{
+					"label": "イ",
+					"text": "設計，プログラム作成，テスト",
+					"images": []
+				},
+				{
+					"label": "ウ",
+					"text": "テスト，設計，プログラム作成",
+					"images": []
+				},
+				{
+					"label": "エ",
+					"text": "プログラム作成，設計，テスト",
+					"images": []
+				}
+			],
+			"category": {
+				"raw": "マネジメント系 » システム開発技術 » システム開発技術",
+				"system": "マネジメント系",
+				"major": "システム開発技術",
+				"minor": "システム開発技術"
+			},
+			"answer": "イ",
+			"explanation": {
+				"text": "プログラム開発は、「設計」「プログラム作成」「テスト」の順序で進められます。設計では、論理的に正しいプログラムを作成するために、フローチャートや木構造チャートなどを用いてプログラムの設計図を作成します。プログラム作成では、設計書の内容に基づき、プログラミング言語を使ってソースコードを記述し、コンピュータに指示を与える工程です。テストでは、プログラミングが仕様書通りに実行されているか、設計書に記載された機能が正しく実装されているかを確認します。",
+				"choice_comments": [],
+				"images": [],
+				"_explanation_rewritten": true
+			}
+		},
+		{
+			"no": 9,
+			"url": "https://www.itpassportsiken.com/kakomon/02_sample/q9.html",
+			"title": "スケジュール管理",
+			"body": {
+				"text": "作業量が等しい50項目の作業を，10日間で完了する計画を立てた。現在5日目が終わった時点で完了したのは20項目である。進捗の遅れを，現在完了した作業項目が本来終わっていなければならない日との差で表すとすると，遅れは何日か。",
+				"sub_items": [],
+				"images": []
+			},
+			"choices": [
+				{
+					"label": "ア",
+					"text": "1",
+					"images": []
+				},
+				{
+					"label": "イ",
+					"text": "2",
+					"images": []
+				},
+				{
+					"label": "ウ",
+					"text": "4",
+					"images": []
+				},
+				{
+					"label": "エ",
+					"text": "5",
+					"images": []
+				}
+			],
+			"category": {
+				"raw": "マネジメント系 » プロジェクトマネジメント » プロジェクトマネジメント",
+				"system": "マネジメント系",
+				"major": "プロジェクトマネジメント",
+				"minor": "プロジェクトマネジメント"
+			},
+			"answer": "ア",
+			"explanation": {
+				"text": "作業計画では、10日間で50項目を完了させる予定であり、1日あたり5項目を進める計画です。\n\n5日目が終わる時点で、通常であれば25項目（5×5）が完了しているはずですが、実際には20項目しか完了していません。そのため、予定と実際の差は5項目です。\n\nこの5項目は1日分の作業量に相当するため、5日目終了時点での遅れは1日となります。",
+				"choice_comments": [],
+				"images": [],
+				"_explanation_rewritten": true
+			}
+		},
+		{
+			"no": 10,
+			"url": "https://www.itpassportsiken.com/kakomon/02_sample/q10.html",
+			"title": "サービスデスクの特徴",
+			"body": {
+				"text": "情報システムの運用管理におけるサービスデスクの特徴はどれか。",
+				"sub_items": [],
+				"images": []
+			},
+			"choices": [
+				{
+					"label": "ア",
+					"text": "問合せの内容は操作方法に限定する。",
+					"images": []
+				},
+				{
+					"label": "イ",
+					"text": "問合せの窓口は一本化すべきである。",
+					"images": []
+				},
+				{
+					"label": "ウ",
+					"text": "問合せは一過性なので履歴は必要ない。",
+					"images": []
+				},
+				{
+					"label": "エ",
+					"text": "ユーザー側からの問合せを待ち，サービスデスクからの発信はしない。",
+					"images": []
+				}
+			],
+			"category": {
+				"raw": "マネジメント系 » サービスマネジメント » サービスマネジメントシステム",
+				"system": "マネジメント系",
+				"major": "サービスマネジメント",
+				"minor": "サービスマネジメントシステム"
+			},
+			"answer": "イ",
+			"explanation": {
+				"text": "サービスデスク（またはヘルプデスク）は、ユーザーに「単一の窓口」を提供し、多様な問い合わせを受け付け、その情報を一元的に管理します。また、問題解決に適した部門やプロセスへエスカレーションする役割を担う窓口や担当者のことです。\n・操作方法に限らず、使用中に発生する様々な問題や障害についてユーザーからの問い合わせに対応します。\n・これは正しいです。\n・問い合わせ内容を分析し、業務に活かすためにその内容を記録し、蓄積していきます。\n・問い合わせが多い内容をFAQ（Frequently Asked Questions）としてまとめたり、使用方法のマニュアルを整備したりしてユーザーをサポートします。",
+				"choice_comments": [],
+				"images": [],
+				"_explanation_rewritten": true
+			}
+		},
+		{
+			"no": 11,
+			"url": "https://www.itpassportsiken.com/kakomon/02_sample/q11.html",
+			"title": "システム監査人の役割",
+			"body": {
+				"text": "システム監査人の役割はどれか。",
+				"sub_items": [],
+				"images": []
+			},
+			"choices": [
+				{
+					"label": "ア",
+					"text": "監査役を選任する。",
+					"images": []
+				},
+				{
+					"label": "イ",
+					"text": "セキュリティ方針を決定する。",
+					"images": []
+				},
+				{
+					"label": "ウ",
+					"text": "被監査部門に改善勧告や対処の助言をする。",
+					"images": []
+				},
+				{
+					"label": "エ",
+					"text": "被監査部門に対して改善を命令する。",
+					"images": []
+				}
+			],
+			"category": {
+				"raw": "マネジメント系 » システム監査 » システム監査",
+				"system": "マネジメント系",
+				"major": "システム監査",
+				"minor": "システム監査"
+			},
+			"answer": "ウ",
+			"explanation": {
+				"text": "システム監査とは、情報システムの信頼性、安全性、効率性を向上させるために、システム監査人が客観的な視点から情報システムを総合的に評価し、助言や勧告、さらに改善活動のフォローアップを行うことを指します。\n・監査役は、株主総会での普通決議によって選ばれます。\n・セキュリティ方針は、経営者が関与し、情報セキュリティを全社的に管理するセキュリティ委員会などで策定、承認、見直しが行われます。\n・正しい。\n・システム監査人の役割は、システム監査の結果に基づいた助言や改善活動のフォローアップを行うことであり、改善の「命令」を出すことはありません。",
+				"choice_comments": [],
+				"images": [],
+				"_explanation_rewritten": true
+			}
+		},
+		{
+			"no": 12,
+			"url": "https://www.itpassportsiken.com/kakomon/02_sample/q12.html",
+			"title": "ベン図",
+			"body": {
+				"text": "A，B，Cの3領域のうち，“AかつBであり，Cではない”範囲を塗りつぶしたベン図はどれか。",
+				"sub_items": [],
+				"images": []
+			},
+			"choices": [
+				{
+					"label": "ア",
+					"text": "",
+					"images": [
+						"https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q12/12a.png"
+					]
+				},
+				{
+					"label": "イ",
+					"text": "",
+					"images": [
+						"https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q12/12i.png"
+					]
+				},
+				{
+					"label": "ウ",
+					"text": "",
+					"images": [
+						"https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q12/12u.png"
+					]
+				},
+				{
+					"label": "エ",
+					"text": "",
+					"images": [
+						"https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q12/12e.png"
+					]
+				}
+			],
+			"category": {
+				"raw": "テクノロジ系 » 基礎理論 » 離散数学",
+				"system": "テクノロジ系",
+				"major": "基礎理論",
+				"minor": "離散数学"
+			},
+			"answer": "イ",
+			"explanation": {
+				"text": "ベン図(Venn diagram)は、複数の集合の関係や範囲を視覚的に表現する図です。集合を円などの閉じた図形で表し、それらの図形の重なり方によって集合間の関係を示します。\n\n\"AかつB\"の範囲と\"Cではない\"範囲を考えると、これら2つの集合の共通部分である\"AかつBであり、Cではない\"範囲が「イ」のベン図に該当します。\n\nなお、4つのベン図は次のような論理式で表現できます。\n・A AND B AND C\n・A AND B AND (NOT C)\n・A AND B\n・NOT C",
+				"choice_comments": [],
+				"images": [
+					"https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q12/12u.png",
+					"https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q12/12e.png",
+					"https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q12/12i.png"
+				],
+				"_explanation_rewritten": true
+			}
+		},
+		{
+			"no": 13,
+			"url": "https://www.itpassportsiken.com/kakomon/02_sample/q13.html",
+			"title": "データ構造の把握",
+			"body": {
+				"text": "図に示す連絡網で，B～LのうちAからの連絡が届かないものは幾つあるか。ここで，矢印線は連絡がとれる方向を表すものとする。",
+				"sub_items": [],
+				"images": [
+					"https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q13/13.png"
+				]
+			},
+			"choices": [
+				{
+					"label": "ア",
+					"text": "1",
+					"images": []
+				},
+				{
+					"label": "イ",
+					"text": "3",
+					"images": []
+				},
+				{
+					"label": "ウ",
+					"text": "4",
+					"images": []
+				},
+				{
+					"label": "エ",
+					"text": "6",
+					"images": []
+				}
+			],
+			"category": {
+				"raw": "テクノロジ系 » アルゴリズムとプログラミング » データ構造",
+				"system": "テクノロジ系",
+				"major": "アルゴリズムとプログラミング",
+				"minor": "データ構造"
+			},
+			"answer": "エ",
+			"explanation": {
+				"text": "図を確認し、連絡可能な方向にも注意を払うと、以下の地点にはAからの連絡が届かないことが判明します。\n\n[J,K,L]\nこれらの地点はAを含むネットワークから孤立しており、連絡が届きません。\n\n[G,F]\nGからEへの連絡は可能ですが、EからGへの連絡はできないため、Aからの連絡は届きません。\n\n[I]\nIからHへの連絡は可能ですが、HからIへの連絡はできないため、Aからの連絡は届きません。\n\nよって、正しい答えは「6」となります。",
+				"choice_comments": [],
+				"images": [],
+				"_explanation_rewritten": true
+			}
+		},
+		{
+			"no": 14,
+			"url": "https://www.itpassportsiken.com/kakomon/02_sample/q14.html",
+			"title": "PCの基本構成",
+			"body": {
+				"text": "PCの基本構成を表す図中のa～cに相当する機能の組合せはどれか。",
+				"sub_items": [],
+				"images": [
+					"https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q14/14.png"
+				]
+			},
+			"choices": [
+				{
+					"label": "ア",
+					"text": "",
+					"images": [
+						"https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q14/14a.png"
+					]
+				},
+				{
+					"label": "イ",
+					"text": "",
+					"images": [
+						"https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q14/14a.png"
+					]
+				},
+				{
+					"label": "ウ",
+					"text": "",
+					"images": [
+						"https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q14/14a.png"
+					]
+				},
+				{
+					"label": "エ",
+					"text": "",
+					"images": [
+						"https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q14/14a.png"
+					]
+				}
+			],
+			"category": {
+				"raw": "テクノロジ系 » コンピュータ構成要素 » プロセッサ",
+				"system": "テクノロジ系",
+				"major": "コンピュータ構成要素",
+				"minor": "プロセッサ"
+			},
+			"answer": "エ",
+			"explanation": {
+				"text": "コンピュータは5つの基本機能である\"演算\"、\"制御\"、\"記憶\"、\"入力\"、\"出力\"から成り立っています。（5大機能）  \n- 演算と制御はCPUが担当します。  \n- 記憶は主記憶装置や補助記憶装置が担います。  \n- 入力にはキーボード、マウス、スキャナーなどがあります。  \n- 出力にはディスプレイ、スピーカー、プリンターなどが含まれます。  \n\n図中で他の機能に制御の流れを示す矢印が伸びているaは、制御機能を指しています。  \n\n次に、出力機能へデータを渡しているcですが、コンピュータでは演算結果を直接出力するのではなく、一度主記憶に書き込んでから出力します。そのため、唯一出力機能にデータを送るcは主記憶と考えられます。  \n\nbには、コンピュータの5大機能の中で残っている演算機能が該当します。  \n\nしたがって、aは制御機能、bは演算機能、cは主記憶となります。",
+				"choice_comments": [],
+				"images": [],
+				"_explanation_rewritten": true
+			}
+		},
+		{
+			"no": 15,
+			"url": "https://www.itpassportsiken.com/kakomon/02_sample/q15.html",
+			"title": "クライアントサーバシステム",
+			"body": {
+				"text": "クライアントサーバシステムにおいて，サーバ側で処理することが最も適切な処理はどれか。",
+				"sub_items": [],
+				"images": []
+			},
+			"choices": [
+				{
+					"label": "ア",
+					"text": "印刷結果のプレビュー処理",
+					"images": []
+				},
+				{
+					"label": "イ",
+					"text": "データベースの更新処理",
+					"images": []
+				},
+				{
+					"label": "ウ",
+					"text": "入力されたデータの形式チェック処理",
+					"images": []
+				},
+				{
+					"label": "エ",
+					"text": "プルダウンメニューの表示処理",
+					"images": []
+				}
+			],
+			"category": {
+				"raw": "テクノロジ系 » システム構成要素 » システムの構成",
+				"system": "テクノロジ系",
+				"major": "システム構成要素",
+				"minor": "システムの構成"
+			},
+			"answer": "イ",
+			"explanation": {
+				"text": "クライアントサーバシステムで、クライアントが個別にデータベースの更新を行うと、同時更新によって不整合が発生する可能性があります。これを防ぐために、サーバ側で複数のクライアントからの更新要求を集中管理し、順番に処理することでデータベースの整合性を維持します。",
+				"choice_comments": [],
+				"images": [],
+				"_explanation_rewritten": true
+			}
+		},
+		{
+			"no": 16,
+			"url": "https://www.itpassportsiken.com/kakomon/02_sample/q16.html",
+			"title": "オープンソースソフトウェア",
+			"body": {
+				"text": "オープンソースソフトウェアの特徴はどれか。",
+				"sub_items": [],
+				"images": []
+			},
+			"choices": [
+				{
+					"label": "ア",
+					"text": "コピーはバックアップのために一つだけ取ることができる。",
+					"images": []
+				},
+				{
+					"label": "イ",
+					"text": "ソースコードを入手することができる。",
+					"images": []
+				},
+				{
+					"label": "ウ",
+					"text": "著作権を放棄している。",
+					"images": []
+				},
+				{
+					"label": "エ",
+					"text": "不具合が発生したときに補償を受けることができる。",
+					"images": []
+				}
+			],
+			"category": {
+				"raw": "テクノロジ系 » ソフトウェア » オープンソースソフトウェア",
+				"system": "テクノロジ系",
+				"major": "ソフトウェア",
+				"minor": "オープンソースソフトウェア"
+			},
+			"answer": "イ",
+			"explanation": {
+				"text": "オープンソースソフトウェアとは、ソフトウェアの著作権を保持しつつ、そのソースコードを無償で公開するライセンス形態を指します。\n\nオープンソースソフトウェアの主な特徴には以下の点があります：\n- 再頒布が可能であること\n- ソースコードが入手可能であること\n- ソースコードを基に派生物を作成できること\n- 再配布の際に追加のライセンスが不要であること\n\nまた、オープンソースソフトウェアは著作物の利用、コピー、再配布、翻案を制限しませんが、著作権は放棄されているわけではありません。著作権が放棄されたソフトウェアはパブリックドメインと呼ばれます。さらに、オープンソースソフトウェアは「有用であるとは思うが無保証である」とされており、著作者はソフトウェアの動作について保証せず、損害が発生した場合の補償も行わないと定められています。",
+				"choice_comments": [],
+				"images": [],
+				"_explanation_rewritten": true
+			}
+		},
+		{
+			"no": 17,
+			"url": "https://www.itpassportsiken.com/kakomon/02_sample/q17.html",
+			"title": "ハードウェア制御",
+			"body": {
+				"text": "円周上に1～6の番号を順番に時計回りに記した円盤がある。この円盤は6秒の周期で時計回りに回転している。この円盤は暗室に置かれており，スポットライトで，設定された点滅の時間間隔で，円盤の最上部の点線で囲った部分だけを一瞬間照らすようになっている。点滅の時間間隔を5秒に設定したときに観察される番号は，どのように繰り返されるか。",
+				"sub_items": [],
+				"images": [
+					"https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q17/17.png"
+				]
+			},
+			"choices": [
+				{
+					"label": "ア",
+					"text": "1，2，3，4，5，6",
+					"images": []
+				},
+				{
+					"label": "イ",
+					"text": "1，3，5，1，3，5",
+					"images": []
+				},
+				{
+					"label": "ウ",
+					"text": "1，4，1，4，1，4",
+					"images": []
+				},
+				{
+					"label": "エ",
+					"text": "1，6，5，4，3，2",
+					"images": []
+				}
+			],
+			"category": {
+				"raw": "テクノロジ系 » ハードウェア » コンピュータ・入出力装置",
+				"system": "テクノロジ系",
+				"major": "ハードウェア",
+				"minor": "コンピュータ・入出力装置"
+			},
+			"answer": "ア",
+			"explanation": {
+				"text": "円盤は時計回りに6秒で1周するため、スタート地点を1とすると、円盤の最上部は次のように変化します。\n- 開始時点: 1\n- 1秒後: 6\n- 2秒後: 5\n- 3秒後: 4\n- 4秒後: 3\n- 5秒後: 2\n- 6秒後: 1\n- 7秒後: 6\n- 8秒後: 5\n- 9秒後: 4\n- 10秒後: 3\n- 11秒後: 2\n- 以降はこのパターンが繰り返されます\n\nスポットライトの照射間隔は5秒であり、1周は6秒かかるため、観察される番号は常に前回観察された番号の次の番号になります。\n\nしたがって、5秒ごとに 1→2→3→4→5→6→1→2→… という順番で繰り返されます。",
+				"choice_comments": [],
+				"images": [
+					"https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q17/17a.gif"
+				],
+				"_explanation_rewritten": true
+			}
+		},
+		{
+			"no": 18,
+			"url": "https://www.itpassportsiken.com/kakomon/02_sample/q18.html",
+			"title": "画面設計",
+			"body": {
+				"text": "画面設計において，データを直接入力する方式よりも，候補一覧から選択する方式を採用した方が適切な場合はどれか。",
+				"sub_items": [],
+				"images": []
+			},
+			"choices": [
+				{
+					"label": "ア",
+					"text": "項目単位のチェックや修正が必要な場合",
+					"images": []
+				},
+				{
+					"label": "イ",
+					"text": "入力データの種類が少なく，データの内容が固定している場合",
+					"images": []
+				},
+				{
+					"label": "ウ",
+					"text": "入力データのとり得る値が多数ある場合",
+					"images": []
+				},
+				{
+					"label": "エ",
+					"text": "文章のような多量のデータを入力する場合",
+					"images": []
+				}
+			],
+			"category": {
+				"raw": "テクノロジ系 » 情報デザイン » 情報デザイン",
+				"system": "テクノロジ系",
+				"major": "情報デザイン",
+				"minor": "情報デザイン"
+			},
+			"answer": "イ",
+			"explanation": {
+				"text": "候補一覧から選択するUI要素には、チェックボックス、ラジオボタン、リストボックスがあります。これらは選択肢があらかじめ固定されており、選択肢をすぐに見つけられる場合に適しています。  \n- 入力される値が固定されていない場合には不向きです。  \n- 正しい。  \n- 候補のリストが非常に多い場合、項目を見つけて選ぶのに直接入力するより時間がかかる可能性があります。  \n- 候補が多すぎると、画面内に収まりきれず、使い勝手が悪くなることがあります。",
+				"choice_comments": [],
+				"images": [],
+				"_explanation_rewritten": true
+			}
+		},
+		{
+			"no": 19,
+			"url": "https://www.itpassportsiken.com/kakomon/02_sample/q19.html",
+			"title": "キャプチャカード",
+			"body": {
+				"text": "ビデオデッキなどの映像機器から，映像をデジタルデータとしてコンピュータの中に取り込む装置はどれか。",
+				"sub_items": [],
+				"images": []
+			},
+			"choices": [
+				{
+					"label": "ア",
+					"text": "イメージスキャナー",
+					"images": []
+				},
+				{
+					"label": "イ",
+					"text": "キャプチャカード",
+					"images": []
+				},
+				{
+					"label": "ウ",
+					"text": "サウンドカード",
+					"images": []
+				},
+				{
+					"label": "エ",
+					"text": "タブレット",
+					"images": []
+				}
+			],
+			"category": {
+				"raw": "テクノロジ系 » 情報メディア » マルチメディア技術",
+				"system": "テクノロジ系",
+				"major": "情報メディア",
+				"minor": "マルチメディア技術"
+			},
+			"answer": "イ",
+			"explanation": {
+				"text": "キャプチャカード（キャプチャボード）は、コンピュータに取り付ける拡張カードで、映像情報を静止画や動画ファイルとして取り込み保存する機能を持つハードウェアです。\n・紙媒体などの静止画像をデジタルデータに変換し、コンピュータに取り込む装置です。\n・これは正しいです。\n・コンピュータに音響信号の入出力機能を追加または強化するための拡張回路基板です。\n・薄型の筐体にタッチパネル式の表示装置とポインティングデバイスを備えたコンピュータ製品を指します（例としてiPadやGALAXY Tabなど）。\n\nビデオテープのダビングに関しては、USB接続でPCにダビングできるビデオキャプチャコードを使うと便利でおすすめです。",
+				"choice_comments": [],
+				"images": [
+					"https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q19/19.png"
+				],
+				"_explanation_rewritten": true
+			}
+		},
+		{
+			"no": 20,
+			"url": "https://www.itpassportsiken.com/kakomon/02_sample/q20.html",
+			"title": "データ操作",
+			"body": {
+				"text": "“商品在庫”表の検索において，販売価格50,000円以上で在庫が10台未満の条件で検索される商品名はどれか。",
+				"sub_items": [],
+				"images": [
+					"https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q20/20.png"
+				]
+			},
+			"choices": [
+				{
+					"label": "ア",
+					"text": "大型冷蔵庫，中型冷蔵庫，小型冷蔵庫，ポータブル冷蔵庫，空気清浄機，コーヒーメーカー，エアコン",
+					"images": []
+				},
+				{
+					"label": "イ",
+					"text": "大型冷蔵庫，中型冷蔵庫，小型冷蔵庫，空気清浄機，エアコン",
+					"images": []
+				},
+				{
+					"label": "ウ",
+					"text": "中型冷蔵庫，小型冷蔵庫，エアコン",
+					"images": []
+				},
+				{
+					"label": "エ",
+					"text": "中型冷蔵庫，小型冷蔵庫，ポータブル冷蔵庫，コーヒーメーカー，エアコン",
+					"images": []
+				}
+			],
+			"category": {
+				"raw": "テクノロジ系 » データベース » データ操作",
+				"system": "テクノロジ系",
+				"major": "データベース",
+				"minor": "データ操作"
+			},
+			"answer": "ウ",
+			"explanation": {
+				"text": "「販売価格50,000円以上」と「在庫が10台未満」の条件をそれぞれ適用すると、次の結果が得られます。これらの条件を同時に満たすのは、中型冷蔵庫、小型冷蔵庫、エアコンの3つです。",
+				"choice_comments": [],
+				"images": [
+					"https://storage.googleapis.com/anki-quiz-dev.firebasestorage.app/it_pass/02_sample/q20/20a.png"
+				],
+				"_explanation_rewritten": true
+			}
+		},
+		{
+			"no": 21,
+			"url": "https://www.itpassportsiken.com/kakomon/02_sample/q21.html",
+			"title": "URLが示すもの",
+			"body": {
+				"text": "インターネットで利用されているURLが示すものはどれか。",
+				"sub_items": [],
+				"images": []
+			},
+			"choices": [
+				{
+					"label": "ア",
+					"text": "インターネット上の情報源(リソース)",
+					"images": []
+				},
+				{
+					"label": "イ",
+					"text": "インターネットに接続されたPCなどの所有者",
+					"images": []
+				},
+				{
+					"label": "ウ",
+					"text": "インターネットに接続されたサーバのIPアドレス",
+					"images": []
+				},
+				{
+					"label": "エ",
+					"text": "インターネットを利用したメールのアドレス",
+					"images": []
+				}
+			],
+			"category": {
+				"raw": "テクノロジ系 » ネットワーク » ネットワーク応用",
+				"system": "テクノロジ系",
+				"major": "ネットワーク",
+				"minor": "ネットワーク応用"
+			},
+			"answer": "ア",
+			"explanation": {
+				"text": "URL（Uniform Resource Locator）は、WebサイトやWebページのアドレス、つまり住所を指します。通常は、HTMLやその他のリソースの場所として、サーバのホスト名（ドメイン）、ディレクトリ名、ファイル名を指定しますが、通信に用いるプロトコル名や宛先ポート番号も一緒に記述・指定することが可能です。",
+				"choice_comments": [],
+				"images": [],
+				"_explanation_rewritten": true
+			}
+		},
+		{
+			"no": 22,
+			"url": "https://www.itpassportsiken.com/kakomon/02_sample/q22.html",
+			"title": "パスワードの再発行",
+			"body": {
+				"text": "パスワードを忘れてしまった社内の利用者が，セキュリティ管理者から本人であることを確認された後に，適切にパスワードを受け取る方法はどれか。",
+				"sub_items": [],
+				"images": []
+			},
+			"choices": [
+				{
+					"label": "ア",
+					"text": "セキュリティ管理者が自分のPCに保管しているパスワードを読み出し，利用者は電子メールで受信する。",
+					"images": []
+				},
+				{
+					"label": "イ",
+					"text": "セキュリティ管理者がパスワードを初期化し，利用者は初期値を受け取り，新しいパスワードに変更する。",
+					"images": []
+				},
+				{
+					"label": "ウ",
+					"text": "セキュリティ管理者は暗号化して保管しているパスワードを共有域に複写し，利用者は復号鍵を電話で聞く。",
+					"images": []
+				},
+				{
+					"label": "エ",
+					"text": "セキュリティ管理者は暗号化して保管しているパスワードを復号し，利用者は秘密扱いの社内文書で受け取る。",
+					"images": []
+				}
+			],
+			"category": {
+				"raw": "テクノロジ系 » セキュリティ » 情報セキュリティ対策・実装技術",
+				"system": "テクノロジ系",
+				"major": "セキュリティ",
+				"minor": "情報セキュリティ対策・実装技術"
+			},
+			"answer": "イ",
+			"explanation": {
+				"text": "パスワードを再発行する際には、以前のパスワードをそのまま使い回さず、新しいパスワードを設定するのが適切です。",
+				"choice_comments": [],
+				"images": [],
+				"_explanation_rewritten": true
+			}
+		},
+		{
+			"no": 23,
+			"url": "https://www.itpassportsiken.com/kakomon/02_sample/q23.html",
+			"title": "PCの初期設定",
+			"body": {
+				"text": "新入社員のMさんは，新規のPCが支給されたので，早速，〔新規PCの初期設定に関する規定〕に従ってPCの設定を行った。次の行為の中で，(1)～(4)の規定から考えて適切でないものはどれか。",
+				"sub_items": [],
+				"images": []
+			},
+			"choices": [
+				{
+					"label": "ア",
+					"text": "OSの自動アップデートの設定を実行したとき，すぐにアップデートが始まってしまったので，画面の指示に従いアップデートを行った。",
+					"images": []
+				},
+				{
+					"label": "イ",
+					"text": "Web ブラウザの設定方法が分からなかったので，設定方法をシステム管理者に質問した。",
+					"images": []
+				},
+				{
+					"label": "ウ",
+					"text": "ウイルス対策ソフトウェアの設定後，念のためハードディスク全体のウイルスチェックを行った。",
+					"images": []
+				},
+				{
+					"label": "エ",
+					"text": "新規PCには，3か月お試し版のウイルス対策ソフトウェアがプレインストール(バンドル)されていたので，自動でアップデートできる設定にして，このソフトウェアを利用した。",
+					"images": []
+				}
+			],
+			"category": {
+				"raw": "テクノロジ系",
+				"system": "テクノロジ系",
+				"major": "",
+				"minor": ""
+			},
+			"answer": "エ",
+			"explanation": {
+				"text": "規則には「指定されたウィルス対策ソフトウェアをインストールすること」とあります。新しいPCには試用版のソフトウェアが多く含まれていますが、それらをそのまま使うことは、会社が提供したウィルス対策ソフトウェアを使用するという規定に違反しています。\n\nしたがって、不適切な行為は「エ」です。",
+				"choice_comments": [],
+				"images": [],
+				"_explanation_rewritten": true
+			}
+		},
+		{
+			"no": 24,
+			"url": "https://www.itpassportsiken.com/kakomon/02_sample/q24.html",
+			"title": "ブラウザのセキュリティ設定",
+			"body": {
+				"text": "Mさんは，〔新規PCの初期設定に関する規定〕の(2)について，設定しなければならない理由が分からなかったので，システム管理者のNさんに尋ねた。Nさんの答えとして適切なものはどれか。",
+				"sub_items": [],
+				"images": []
+			},
+			"choices": [
+				{
+					"label": "ア",
+					"text": "Webブラウザの脆弱性が発見され，その対応ソフトウェアが公開されたときに，自動でアップデートするため",
+					"images": []
+				},
+				{
+					"label": "イ",
+					"text": "Webページのボタンなどをクリックすると，有害なスクリプトプログラムの実行やプログラムのインストールが始まる可能性があるため",
+					"images": []
+				},
+				{
+					"label": "ウ",
+					"text": "Webメールと呼ばれるWebブラウザを使ったメールサービスを使うことがあるので，それを利用するときのセキュリティ対策のため",
+					"images": []
+				},
+				{
+					"label": "エ",
+					"text": "仕事中に，仕事とは関係のない有料サイトや趣味のWebページの閲覧をさせないため",
+					"images": []
+				}
+			],
+			"category": {
+				"raw": "テクノロジ系",
+				"system": "テクノロジ系",
+				"major": "",
+				"minor": ""
+			},
+			"answer": "イ",
+			"explanation": {
+				"text": "Javaアプレット（Java Applet）とは、Web経由でブラウザにダウンロードされ、クライアント側で実行されるJavaで書かれたアプリケーションプログラムを指します。基本的にデスクトップ版Javaの全機能を備えているため、クライアントのコンピュータ上でさまざまな処理を行うことができます。アプレットはWebページにアクセスした際に自動的に読み込まれて動作しますが、悪意のあるアプレットが実行されるとコンピュータに被害をもたらす可能性があるため、セキュリティの観点からWebブラウザの設定を変更し、「アプレットの無効化」や「自動実行の禁止」などを行うことが推奨されます。\n・自動アップデートを設定する理由です。\n・正しい。\n・迷惑メール対策やウイルススキャンなどのメールセキュリティを導入する理由です。\n・コンテンツフィルターを設定する理由です。",
+				"choice_comments": [],
+				"images": [],
+				"_explanation_rewritten": true
+			}
+		},
+		{
+			"no": 25,
+			"url": "https://www.itpassportsiken.com/kakomon/02_sample/q25.html",
+			"title": "セキュリティ管理の重要性",
+			"body": {
+				"text": "システム管理者のNさんは，Mさんに，“組織が，このような規定を設けなければいけない最も重要な理由は，　からです。”と説明した。　に入れる記述として，適切なものはどれか。",
+				"sub_items": [],
+				"images": []
+			},
+			"choices": [
+				{
+					"label": "ア",
+					"text": "ウイルスに感染したPCが一時的に利用できなくなったり，そのPC上のデータが壊されたりする。",
+					"images": []
+				},
+				{
+					"label": "イ",
+					"text": "ウイルスに感染することで，LAN上に無駄なデータを大量に発信し，ネットワークの負荷を増大させ，組織の業務に支障を来すおそれがある。",
+					"images": []
+				},
+				{
+					"label": "ウ",
+					"text": "ウイルスの感染などによって，個人情報や機密情報がインターネット上に漏えいするおそれがある。",
+					"images": []
+				},
+				{
+					"label": "エ",
+					"text": "一人の職員のPCにウイルスが感染することで，ほかの社員のPCにも感染するおそれがある。",
+					"images": []
+				}
+			],
+			"category": {
+				"raw": "テクノロジ系",
+				"system": "テクノロジ系",
+				"major": "",
+				"minor": ""
+			},
+			"answer": "ウ",
+			"explanation": {
+				"text": "近年、企業や病院、学校における個人データの流出事件が相次いで発生しています。個人情報や機密情報の流出は信頼を損なうだけでなく、場合によっては事業の存続に深刻な影響を与える可能性があります。\n\n統計によれば、2011年第4四半期時点で、1年間に報告される脆弱性関連情報は1,000件を超え、2004年7月8日からの累計では7,310件に達しています。主要ベンダーはこれに対応し、自社製品の脆弱性を解消する修正パッチや新種ウイルスに対抗するパターンファイルを頻繁に提供しており、これらを適用することで被害のリスクは大幅に軽減されます。\n\nコンピュータを脆弱性から守り、情報漏えいを防ぐためには、常に最新の状態に保つことや、脆弱性を狙った攻撃に備えて堅牢な設定を行うことが効果的な対策です。新たに導入するPCにこうした基準を設けるのは、初期設定を見直し、個人情報や機密情報の流出を防ぐために極めて重要です。\n\n参考URL: ソフトウェア等の脆弱性関連情報に関する届出状況\n　http://www.ipa.go.jp/security/vuln/report/vuln2011q4.html",
+				"choice_comments": [],
+				"images": [],
+				"_explanation_rewritten": true
+			}
+		},
+		{
+			"no": 26,
+			"url": "https://www.itpassportsiken.com/kakomon/02_sample/q26.html",
+			"title": "P2Pソフト対策",
+			"body": {
+				"text": "システム管理者のNさんは，Mさんに，“最近，WinnyやShareなどのピアツーピアと呼ばれるソフトウェアが原因で引き起こされる事故が多い。そのために，この規定では，　の項目が設けられている。”と説明した。　に入れる〔新規PCの初期設定に関する規定〕の番号として，適切なものはどれか。",
+				"sub_items": [],
+				"images": []
+			},
+			"choices": [
+				{
+					"label": "ア",
+					"text": "(1)",
+					"images": []
+				},
+				{
+					"label": "イ",
+					"text": "(2)",
+					"images": []
+				},
+				{
+					"label": "ウ",
+					"text": "(3)",
+					"images": []
+				},
+				{
+					"label": "エ",
+					"text": "(4)",
+					"images": []
+				}
+			],
+			"category": {
+				"raw": "テクノロジ系",
+				"system": "テクノロジ系",
+				"major": "",
+				"minor": ""
+			},
+			"answer": "エ",
+			"explanation": {
+				"text": "ピアツーピア（Peer to Peer, P2P）は、多くの端末間で通信を行う形態の一つです。クライアントサーバシステムのように特定の端末がサービスを要求し、別の端末がサービスを提供するという区別はなく、サービスを要求する際には同等の他の端末に直接アクセスし、同時に自分の端末でもサービス要求を受け付けることができます。このように、どの端末もクライアントにもサーバにもなり得る通信形態が特徴です。\n\nWinnyやShareは、これらのソフトがインストールされた端末同士でP2Pネットワークを構築し、他のノードとファイルを共有することができるソフトウェアです。こうしたP2Pネットワークには「Antinny」や「山田オルタナティブ」といったウイルスに感染したファイルが多く存在し、ネットワークを通じて感染すると、コンピュータ内のファイル（特にデスクトップやマイドキュメントの内容、Outlook Expressのメールなど）を無断でWinnyなどを通じて共有する機能を持っています。これらは暴露ウイルスと呼ばれ、個人情報や政府、企業の機密情報が漏れる社会問題を引き起こしています。\n\nP2Pソフトはデフォルトでインストールされたものではなく、利用者が自ら選んでインストールするソフトウェアです。そのため、「担当部門で支給されたアプリケーションソフトウェア以外のソフトウェアをインストールするときは，担当部門長の許可を得る」の規定を徹底することは、P2Pソフトウェアによる情報漏えいから組織を未然に守る手段となります。",
+				"choice_comments": [],
+				"images": [],
+				"_explanation_rewritten": true
+			}
+		},
+		{
+			"no": 27,
+			"url": "https://www.itpassportsiken.com/kakomon/02_sample/q27.html",
+			"title": "抽出に必要なデータ項目",
+			"body": {
+				"text": "Fさんは，毎月の1か月間の商品別売上実績を表にまとめることにした。商品別の月間売上実績を算出するために，最低限必要な販売実績データの項目の組合せはどれか。",
+				"sub_items": [],
+				"images": []
+			},
+			"choices": [
+				{
+					"label": "ア",
+					"text": "商品名称，金額",
+					"images": []
+				},
+				{
+					"label": "イ",
+					"text": "販売日付，商品名称，金額",
+					"images": []
+				},
+				{
+					"label": "ウ",
+					"text": "販売日付，商品名称，分類，金額",
+					"images": []
+				},
+				{
+					"label": "エ",
+					"text": "販売日付，商品名称，分類，単価，金額",
+					"images": []
+				}
+			],
+			"category": {
+				"raw": "テクノロジ系",
+				"system": "テクノロジ系",
+				"major": "",
+				"minor": ""
+			},
+			"answer": "イ",
+			"explanation": {
+				"text": "商品別の月間売上実績を求めるために必要な項目は以下の通りです。\n\n　商品別→販売実績データの\"商品名称\"\n　月間→販売実績データの\"販売日付\"\n　売上実績→販売実績データの\"金額\"\n\nこの集計においては、\"分類\"や\"単価\"は必要ないため、これら3つの項目が最低限必要となります。",
+				"choice_comments": [],
+				"images": [],
+				"_explanation_rewritten": true
+			}
+		},
+		{
+			"no": 28,
+			"url": "https://www.itpassportsiken.com/kakomon/02_sample/q28.html",
+			"title": "データ操作の手順",
+			"body": {
+				"text": "Fさんは，先月1か月間の商品別売上実績を表にまとめることにした。販売実績データを基に，商品別の月間売上実績を算出する手順として適切なものはどれか。",
+				"sub_items": [],
+				"images": []
+			},
+			"choices": [
+				{
+					"label": "ア",
+					"text": "(1)　商品名称を基に，データを整列する。 (2)　同一の商品名称の金額の合計を求める。 (3)　販売日付を基に，先月に販売のある商品のデータを抽出する。",
+					"images": []
+				},
+				{
+					"label": "イ",
+					"text": "(1)　同一の商品名称の金額の合計を求める。 (2)　分類を基に，データを整列する。 (3)　販売日付を基に，先月に販売のある商品のデータを抽出する。",
+					"images": []
+				},
+				{
+					"label": "ウ",
+					"text": "(1)　販売日付を基に，先月1か月のデータを抽出する。 (2)　商品名称を基に抽出したデータを整列する。 (3)　同一の商品名称の金額の合計を求める。",
+					"images": []
+				},
+				{
+					"label": "エ",
+					"text": "(1)　販売日付を基に，先月1か月のデータを抽出する。 (2)　分類を基に，抽出したデータを整列する。 (3)　同一の分類の単価の合計を求める。",
+					"images": []
+				}
+			],
+			"category": {
+				"raw": "テクノロジ系",
+				"system": "テクノロジ系",
+				"major": "",
+				"minor": ""
+			},
+			"answer": "ウ",
+			"explanation": {
+				"text": "集計は、まず\"販売日付\"が集計対象の月に該当する行を選び出し、その後\"商品名称\"ごとに\"金額\"を合計する手順です。\n・1ヵ月分のデータを抽出する前に金額を合計しているため、これは誤りです。\n・「ア」と同じ理由で誤りです。\n・これが正しいです。\n・求めるのは商品ごとの月間売上実績であり、単価の合計ではありません。",
+				"choice_comments": [],
+				"images": [],
+				"_explanation_rewritten": true
+			}
+		},
+		{
+			"no": 29,
+			"url": "https://www.itpassportsiken.com/kakomon/02_sample/q29.html",
+			"title": "増加率の計算式",
+			"body": {
+				"text": "Fさんは，商品別の月間売上の増加率を確認するために，先々月と先月の商品別の月間売上実績を比較することにした。増加率を計算するための式はどれか。",
+				"sub_items": [],
+				"images": []
+			},
+			"choices": [
+				{
+					"label": "ア",
+					"text": "先月の売上実績－先々月の売上実績",
+					"images": []
+				},
+				{
+					"label": "イ",
+					"text": "(先月の売上実績－先々月の売上実績)／2",
+					"images": []
+				},
+				{
+					"label": "ウ",
+					"text": "(先月の売上実績－先々月の売上実績)／先々月の売上実績",
+					"images": []
+				},
+				{
+					"label": "エ",
+					"text": "(先月の売上実績－先々月の売上実績)／先月の売上実績",
+					"images": []
+				}
+			],
+			"category": {
+				"raw": "テクノロジ系",
+				"system": "テクノロジ系",
+				"major": "",
+				"minor": ""
+			},
+			"answer": "ウ",
+			"explanation": {
+				"text": "例を簡略化して説明すると、先々月の売上が100で、先月の売上が110の場合、売上の増加分は10です。この増加分は、先々月の売上100に対して10%（0.1）の増加と計算できます。\n\nこの計算を式にすると次のようになります：\n\n　(110 - 100) / 100 = 10 / 100 = 0.1\n\nここで、110は先月の売上を、100は先々月の売上を示しています。この式を一般化すると、\n\n　(先月の売上実績 - 先々月の売上実績) / 先々月の売上実績\n\nとなります。",
+				"choice_comments": [],
+				"images": [],
+				"_explanation_rewritten": true
+			}
+		},
+		{
+			"no": 30,
+			"url": "https://www.itpassportsiken.com/kakomon/02_sample/q30.html",
+			"title": "売上実績を算出する手順",
+			"body": {
+				"text": "Fさんは，都道府県別の先月の売上実績を表にまとめることにした。会員の住所を基に，都道府県別の先月の売上実績を算出する手順として適切なものはどれか。",
+				"sub_items": [],
+				"images": []
+			},
+			"choices": [
+				{
+					"label": "ア",
+					"text": "(1)　会員番号をキーとして，販売実績データと会員台帳を結合する。 (2)　会員番号を基に，結合した情報を整列する。 (3)　同一の会員番号の金額の合計を求める。 (4)　住所1を基に整列する。 (5)　同一の都道府県単位に，金額の合計を求める。",
+					"images": []
+				},
+				{
+					"label": "イ",
+					"text": "(1)　会員番号をキーとして，販売実績データと会員台帳を結合する。 (2)　住所1を基に，結合した情報を整列する。 (3)　同一の都道府県単位に金額の合計を求める。",
+					"images": []
+				},
+				{
+					"label": "ウ",
+					"text": "(1)　販売日付を基に，販売実績データから先月のデータを抽出する。 (2)　会員番号をキーとして，抽出した販売実績データと会員台帳を結合する。 (3)　住所1を基に，結合した情報を整列する。 (4)　同一の都道府県単位に，金額の合計を求める。",
+					"images": []
+				},
+				{
+					"label": "エ",
+					"text": "(1)　販売日付を基に，販売実績データから先月のデータを抽出する。 (2)　会員番号を基に，抽出した販売実績データを整列する。 (3)　同一の会員番号の金額の合計を求める。",
+					"images": []
+				}
+			],
+			"category": {
+				"raw": "テクノロジ系",
+				"system": "テクノロジ系",
+				"major": "",
+				"minor": ""
+			},
+			"answer": "ウ",
+			"explanation": {
+				"text": "これは都道府県ごとの先月の売上実績に関する説明です。必要な項目は以下の通りです。\n\n　- 都道府県別: 会員台帳の\"住所1\"\n　- 先月: 販売実績データの\"販売日付\"\n　- 売上実績: 販売実績データの\"金額\"\n\nまず、商品別の月間売上実績を算出する手順と同様に、販売実績データから先月の売上に該当する行を抽出します。その後、各行がどの都道府県での売上であるかを特定するために、販売実績データの\"会員番号\"と会員台帳の\"会員番号\"をキーとして両方のテーブルを結合します。この操作で販売実績データの\"会員番号\"が会員台帳の各行とリンクされます。最後に、住所1を基にして同じ都道府県ごとにグループ化し、各グループの\"金額\"を合計します。",
+				"choice_comments": [],
+				"images": [],
+				"_explanation_rewritten": true
+			}
+		}
+	]
 }
