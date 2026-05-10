@@ -19,7 +19,7 @@ class _MajorChip extends StatelessWidget {
       borderRadius: AppBorderRadius.sm,
       child: InkWell(
         borderRadius: AppBorderRadius.sm,
-        onTap: onTap,
+        onTap: onTap.withHaptic(HapticType.selection),
         child: AnimatedContainer(
           duration: AppAnimation.fast,
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7),

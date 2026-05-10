@@ -12,8 +12,8 @@
 			"name": "it_pass",
 			"request": "launch",
 			"type": "dart",
-			"cwd": "packages/app_it_pass",
-			"program": "lib/main.dart"
+			"program": "lib/main_it_pass.dart",
+			"args": ["--flavor", "it_pass"]
 		}
 	]
 }

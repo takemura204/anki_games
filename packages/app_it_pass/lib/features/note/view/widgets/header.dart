@@ -38,7 +38,7 @@ class _Header extends StatelessWidget {
               cardRadius: AppBorderRadius.circle,
               child: IconButton(
                 icon: Icon(AppIcons.back, color: c.fgShade400),
-                onPressed: onBack,
+                onPressed: onBack.withHaptic(),
               ),
             )
           else
@@ -111,7 +111,7 @@ class _Header extends StatelessWidget {
                   isBookmarked ? AppIcons.bookmarked : AppIcons.bookmark,
                   color: isBookmarked ? AppColors.itPassSeed : c.fgShade300,
                 ),
-                onPressed: onBookmark,
+                onPressed: onBookmark.withHaptic(),
               ),
             )
           else
@@ -119,7 +119,7 @@ class _Header extends StatelessWidget {
               cardRadius: AppBorderRadius.circle,
               child: IconButton(
                 icon: Icon(AppIcons.close, color: c.fgShade300),
-                onPressed: onClose,
+                onPressed: onClose.withHaptic(),
               ),
             ),
         ],

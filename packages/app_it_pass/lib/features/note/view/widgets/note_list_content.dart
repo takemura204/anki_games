@@ -1,11 +1,12 @@
 part of '../note_sheet.dart';
 
-typedef _NoteItemSelectedCallback = void Function(
-  NoteListItem item, {
-  bool fromReview,
-  List<NoteListItem>? reviewQueue,
-  int reviewIndex,
-});
+typedef _NoteItemSelectedCallback =
+    void Function(
+      NoteListItem item, {
+      bool fromReview,
+      List<NoteListItem>? reviewQueue,
+      int reviewIndex,
+    });
 
 class _NoteListContent extends ConsumerWidget {
   const _NoteListContent({
@@ -27,8 +28,9 @@ class _NoteListContent extends ConsumerWidget {
         key: const ValueKey('error'),
         child: Text(
           e.toString(),
-          style: AppTextStyle.bodyMedium
-              .copyWith(color: context.appColors.fgShade300),
+          style: AppTextStyle.bodyMedium.copyWith(
+            color: context.appColors.fgShade300,
+          ),
         ),
       ),
       data: (ready) {
@@ -50,7 +52,7 @@ class _NoteListContent extends ConsumerWidget {
             bottom: AppSpacing.sm,
           ),
           itemCount: items.length,
-          separatorBuilder: (_, __) => const Gap(AppSpacing.sm),
+          separatorBuilder: (_, _) => const Gap(AppSpacing.sm),
           itemBuilder: (context, i) => _NoteQuizItemCard(
             item: items[i],
             onTap: () => onSelectItem(
@@ -78,8 +80,9 @@ class _NoteListContent extends ConsumerWidget {
           const Gap(AppSpacing.sm),
           Text(
             'データがありません',
-            style: AppTextStyle.bodyMedium
-                .copyWith(color: context.appColors.fgShade300),
+            style: AppTextStyle.bodyMedium.copyWith(
+              color: context.appColors.fgShade300,
+            ),
           ),
         ],
       ),
@@ -103,8 +106,8 @@ class _NoteListSkeleton extends StatelessWidget {
           vertical: AppSpacing.sm,
         ),
         itemCount: 6,
-        separatorBuilder: (_, __) => const Gap(AppSpacing.sm),
-        itemBuilder: (_, __) => const _SkeletonCard(),
+        separatorBuilder: (_, _) => const Gap(AppSpacing.sm),
+        itemBuilder: (_, _) => const _SkeletonCard(),
       ),
     );
   }
@@ -185,7 +188,7 @@ class _StartReviewButton extends StatelessWidget {
         AppSpacing.md,
       ),
       child: GestureDetector(
-        onTap: onTap,
+        onTap: onTap.withHaptic(HapticType.medium),
         child: Container(
           width: double.infinity,
           padding: const EdgeInsets.symmetric(vertical: 14),
@@ -203,7 +206,11 @@ class _StartReviewButton extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Icon(Icons.play_arrow_rounded, color: Colors.white, size: 20),
+              const Icon(
+                Icons.play_arrow_rounded,
+                color: Colors.white,
+                size: 20,
+              ),
               const Gap(AppSpacing.xs),
               Text(
                 '復習する（$count問）',

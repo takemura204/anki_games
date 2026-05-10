@@ -43,7 +43,7 @@ class _GlassExpansionTile extends StatelessWidget {
                   children: [
                     Expanded(
                       child: InkWell(
-                        onTap: onSelectToggle,
+                        onTap: onSelectToggle.withHaptic(HapticType.selection),
                         child: Padding(
                           padding: const EdgeInsets.symmetric(
                             horizontal: AppSpacing.md,
@@ -60,7 +60,7 @@ class _GlassExpansionTile extends StatelessWidget {
                       ),
                     ),
                     InkWell(
-                      onTap: onExpansionToggle,
+                      onTap: onExpansionToggle.withHaptic(),
                       child: Padding(
                         padding: const EdgeInsets.all(12),
                         child: AnimatedRotation(

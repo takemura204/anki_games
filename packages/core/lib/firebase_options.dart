@@ -51,7 +51,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyAN8vb4k-YK0Dul_hKfJZ2Bt9hnueIT0Oo',
-    appId: '1:951744047426:android:77798e5cd4063982a640db',
+    appId: '1:951744047426:android:06ae6f560ecfcefba640db',
     messagingSenderId: '951744047426',
     projectId: 'anki-quiz-dev',
     storageBucket: 'anki-quiz-dev.firebasestorage.app',
@@ -59,10 +59,11 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyCy8e07VXn_j39w2c67mWJerO5CNxZEGmM',
-    appId: '1:951744047426:ios:e6aae903143375d2a640db',
+    appId: '1:951744047426:ios:105801277eb464b0a640db',
     messagingSenderId: '951744047426',
     projectId: 'anki-quiz-dev',
     storageBucket: 'anki-quiz-dev.firebasestorage.app',
-    iosBundleId: 'jp.block.puzzle.RunnerTests',
+    iosBundleId: 'jp.tkmr.it-pass',
   );
+
 }

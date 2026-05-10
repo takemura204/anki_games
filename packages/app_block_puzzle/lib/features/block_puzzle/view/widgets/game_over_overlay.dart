@@ -1,4 +1,5 @@
 import 'package:app_block_puzzle/features/quiz/view/widgets/quiz_session_stats_widget.dart';
+import 'package:core/config/ads/ad_config.dart';
 import 'package:core/features/admob/admob_interstitial.dart';
 import 'package:core/features/admob/admob_reward.dart';
 import 'package:core/features/purchase/view_model/premium_view_model.dart';
@@ -83,7 +84,7 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
 
     _controller.forward();
 
-    _rewardedAdService = RewardedAdService();
+    _rewardedAdService = RewardedAdService(ref.read(adConfigProvider));
     final gameState = ref.read(blockPuzzleViewModelProvider);
     final isPremium =
         ref.read(premiumViewModelProvider).asData?.value.isPremium ?? false;
@@ -312,7 +313,7 @@ class _GameOverOverlayState extends ConsumerState<GameOverOverlay>
                             if (isPremiumNow) {
                               proceed();
                             } else {
-                              AdmobInterstitial()
+                              AdmobInterstitial(ref.read(adConfigProvider))
                                   .loadAndShow(onDismissed: proceed);
                             }
                           },

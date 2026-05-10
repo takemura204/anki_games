@@ -1,27 +1,18 @@
-import 'dart:io';
-
 import 'package:flutter/foundation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
-import '../../config/env/env.dart';
+import '../../config/ads/ad_config.dart';
 
 /// インタースティシャル広告のロードと表示を管理するサービス。
 ///
-/// [loadAndShow] を呼ぶとロード後に自動で全画面表示する。
-/// 表示後は広告リソースを自動解放する。
+/// コンストラクタに adConfigProvider から取得した AdConfig を渡す:
+/// ```dart
+/// AdmobInterstitial(ref.read(adConfigProvider)).loadAndShow();
+/// ```
 class AdmobInterstitial {
-  static String _adUnitId() {
-    if (Platform.isAndroid) {
-      return kDebugMode
-          ? Env.interstitialAdUnitIdAndroidDebug
-          : Env.interstitialAdUnitIdAndroidRelease;
-    } else if (Platform.isIOS) {
-      return kDebugMode
-          ? Env.interstitialAdUnitIdIosDebug
-          : Env.interstitialAdUnitIdIosRelease;
-    }
-    throw UnsupportedError('Unsupported platform');
-  }
+  AdmobInterstitial(this._adConfig);
+
+  final AdConfig _adConfig;
 
   /// 広告をロードし、準備完了後に全画面表示する。
   ///
@@ -29,7 +20,7 @@ class AdmobInterstitial {
   /// ロード失敗時は何もしない。
   void loadAndShow({VoidCallback? onDismissed}) {
     InterstitialAd.load(
-      adUnitId: _adUnitId(),
+      adUnitId: _adConfig.interstitial,
       request: const AdRequest(),
       adLoadCallback: InterstitialAdLoadCallback(
         onAdLoaded: (ad) {

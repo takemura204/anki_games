@@ -57,7 +57,7 @@ class _ActionMenuItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final c = context.appColors;
     return InkWell(
-      onTap: onTap,
+      onTap: onTap.withHaptic(),
       borderRadius: AppBorderRadius.sm,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: AppSpacing.sm),
@@ -94,7 +94,8 @@ class _LinkMenuItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final c = context.appColors;
     return InkWell(
-      onTap: () => launchUrl(Uri.parse(url), mode: LaunchMode.inAppWebView),
+      onTap: (() => launchUrl(Uri.parse(url), mode: LaunchMode.inAppWebView))
+          .withHaptic(),
       borderRadius: AppBorderRadius.sm,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: AppSpacing.md),
@@ -191,7 +192,7 @@ class _DeleteDataMenuItem extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return InkWell(
-      onTap: () => _onTap(context, ref),
+      onTap: (() => _onTap(context, ref)).withHaptic(),
       borderRadius: AppBorderRadius.sm,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: AppSpacing.md),

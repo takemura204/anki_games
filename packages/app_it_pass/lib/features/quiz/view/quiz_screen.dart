@@ -7,6 +7,7 @@ import 'package:app_it_pass/components/modal_handle.dart';
 import 'package:app_it_pass/features/report/view_model/progress_dashboard_provider.dart';
 import 'package:confetti/confetti.dart';
 import 'package:core/config/constants/app_urls.dart';
+import 'package:core/config/haptic/haptics.dart';
 import 'package:app_it_pass/config/theme/it_pass_color_scheme.dart';
 import 'package:core/config/styles/app_animation.dart';
 import 'package:core/config/styles/app_border_radius.dart';
@@ -14,6 +15,8 @@ import 'package:core/config/styles/app_colors.dart';
 import 'package:core/config/styles/app_spacing.dart';
 import 'package:core/config/styles/app_text_style.dart';
 import 'package:core/config/styles/app_icons.dart';
+import 'package:core/features/admob/admob_banner.dart';
+import 'package:core/features/admob/admob_native.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -277,8 +280,7 @@ class _QuizBodyState extends ConsumerState<_QuizBody>
   }
 
   Future<void> _openFilter() async {
-    final applied =
-        await ref.read(modalSheetRouterProvider).showFilterSheet();
+    final applied = await ref.read(modalSheetRouterProvider).showFilterSheet();
     if (applied == true) {
       ref.invalidate(quizViewModelProvider);
     }
@@ -288,7 +290,8 @@ class _QuizBodyState extends ConsumerState<_QuizBody>
   Widget build(BuildContext context) {
     final asyncState = ref.watch(quizViewModelProvider);
     ref.read(progressDashboardProvider);
-    ref.listen<AsyncValue<QuizState>>(quizViewModelProvider, _onProviderChanged);
+    ref.listen<AsyncValue<QuizState>>(
+        quizViewModelProvider, _onProviderChanged);
 
     final quizState = asyncState.value;
     final session = quizState is QuizReady ? quizState.session : null;

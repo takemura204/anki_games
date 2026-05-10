@@ -111,7 +111,7 @@ class _DotState extends State<_Dot> with SingleTickerProviderStateMixin {
     }
     return AnimatedBuilder(
       animation: _progress,
-      builder: (_, __) => SizedBox(
+      builder: (_, _) => SizedBox(
         width: _size,
         height: _size,
         child: CustomPaint(
@@ -126,38 +126,34 @@ class _DotState extends State<_Dot> with SingleTickerProviderStateMixin {
   }
 
   Widget get _frozenDot => Container(
-        width: _size,
-        height: _size,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: Colors.white.withValues(alpha: 0.15),
-          border: Border.all(
-            color: Colors.white.withValues(alpha: 0.3),
-          ),
-        ),
-        child: const Center(
-          child: Icon(Icons.ac_unit, size: 14, color: Colors.white70),
-        ),
-      );
+    width: _size,
+    height: _size,
+    decoration: BoxDecoration(
+      shape: BoxShape.circle,
+      color: Colors.white.withValues(alpha: 0.15),
+      border: Border.all(color: Colors.white.withValues(alpha: 0.3)),
+    ),
+    child: const Center(
+      child: Icon(Icons.ac_unit, size: 14, color: Colors.white70),
+    ),
+  );
 
   Widget get _missedDot => Container(
-        width: _size,
-        height: _size,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: Colors.white.withValues(alpha: 0.08),
-        ),
-      );
+    width: _size,
+    height: _size,
+    decoration: BoxDecoration(
+      shape: BoxShape.circle,
+      color: Colors.white.withValues(alpha: 0.08),
+    ),
+  );
 
   Widget get _notYetDot => Container(
-        width: _size,
-        height: _size,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: Colors.white.withValues(alpha: 0.08),
-          border: Border.all(
-            color: Colors.white.withValues(alpha: 0.2),
-          ),
-        ),
-      );
+    width: _size,
+    height: _size,
+    decoration: BoxDecoration(
+      shape: BoxShape.circle,
+      color: Colors.white.withValues(alpha: 0.08),
+      border: Border.all(color: Colors.white.withValues(alpha: 0.2)),
+    ),
+  );
 }

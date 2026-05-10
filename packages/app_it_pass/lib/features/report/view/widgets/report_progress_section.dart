@@ -55,7 +55,7 @@ class _ProgressSection extends HookConsumerWidget {
           ],
         ),
       ),
-      error: (_, __) => const SizedBox.shrink(),
+      error: (_, _) => const SizedBox.shrink(),
       data: (data) {
         final tab = _tabs[selectedTab.value];
         final progress = switch (tab) {
@@ -104,10 +104,7 @@ class _SectionTitle extends StatelessWidget {
       children: [
         Icon(AppIcons.progressChart, color: color, size: 16),
         const Gap(AppSpacing.xs),
-        Text(
-          '学習進捗',
-          style: AppTextStyle.titleSmall.copyWith(color: color),
-        ),
+        Text('学習進捗', style: AppTextStyle.titleSmall.copyWith(color: color)),
       ],
     );
   }
@@ -159,7 +156,7 @@ class _TabChip extends StatelessWidget {
   Widget build(BuildContext context) {
     final c = context.appColors;
     return GestureDetector(
-      onTap: onTap,
+      onTap: onTap.withHaptic(HapticType.selection),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 180),
         padding: const EdgeInsets.symmetric(
@@ -344,8 +341,9 @@ class _ProgressSkeleton extends StatelessWidget {
       decoration: BoxDecoration(
         color: _shimmerBase,
         shape: shape,
-        borderRadius:
-            shape == BoxShape.rectangle ? BorderRadius.circular(6) : null,
+        borderRadius: shape == BoxShape.rectangle
+            ? BorderRadius.circular(6)
+            : null,
       ),
     );
   }

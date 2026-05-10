@@ -1,26 +1,25 @@
-import 'dart:io';
-
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 
-import '../../../config/env/env.dart';
+import '../model/revenue_cat_config.dart';
 import 'i_purchase_service.dart';
 
 const _entitlementId = 'premium';
-const _offeringId = 'subscriptions';
+const _offeringId = 'premium';
 
 /// RevenueCat を使った本番課金サービス。
 ///
-/// `purchases_flutter` v9 の API を使用する。
 /// [configure] はアプリ起動時に1度だけ呼ぶこと。
 class RealPurchaseService implements IPurchaseService {
+  RealPurchaseService(this._config);
+
+  final RevenueCatConfig _config;
   final List<OnPremiumStatusChanged> _listeners = [];
 
   @override
   Future<void> configure() async {
-    final apiKey =
-        Platform.isIOS ? Env.revenueCatApiKeyIos : Env.revenueCatApiKeyAndroid;
-    await Purchases.configure(PurchasesConfiguration(apiKey));
+    await Purchases.configure(PurchasesConfiguration(_config.apiKey));
     Purchases.addCustomerInfoUpdateListener((info) {
       _notifyListeners(isPremium: _isPremiumFromInfo(info));
     });
@@ -40,8 +39,17 @@ class RealPurchaseService implements IPurchaseService {
   Future<String?> getMonthlyPriceString() async {
     try {
       final offerings = await Purchases.getOfferings();
-      return _findPackage(offerings)?.storeProduct.priceString;
-    } on Exception catch (_) {
+      _debugDumpOfferings(offerings);
+      final price = _findMonthlyPackage(offerings)?.storeProduct.priceString;
+      if (price == null) {
+        debugPrint(
+          '[RevenueCat] getMonthlyPriceString: package not found'
+          ' in offering "$_offeringId"',
+        );
+      }
+      return price;
+    } on Exception catch (e) {
+      debugPrint('[RevenueCat] getMonthlyPriceString error: $e');
       return null;
     }
   }
@@ -50,8 +58,27 @@ class RealPurchaseService implements IPurchaseService {
   Future<String?> getMonthlyProductTitle() async {
     try {
       final offerings = await Purchases.getOfferings();
-      return _findPackage(offerings)?.storeProduct.title;
-    } on Exception catch (_) {
+      return _findMonthlyPackage(offerings)?.storeProduct.title;
+    } on Exception catch (e) {
+      debugPrint('[RevenueCat] getMonthlyProductTitle error: $e');
+      return null;
+    }
+  }
+
+  @override
+  Future<String?> getLifetimePriceString() async {
+    try {
+      final offerings = await Purchases.getOfferings();
+      final price = _findLifetimePackage(offerings)?.storeProduct.priceString;
+      if (price == null) {
+        debugPrint(
+          '[RevenueCat] getLifetimePriceString: package not found'
+          ' in offering "$_offeringId"',
+        );
+      }
+      return price;
+    } on Exception catch (e) {
+      debugPrint('[RevenueCat] getLifetimePriceString error: $e');
       return null;
     }
   }
@@ -59,10 +86,30 @@ class RealPurchaseService implements IPurchaseService {
   @override
   Future<void> purchaseMonthly() async {
     final offerings = await Purchases.getOfferings();
-    final package = _findPackage(offerings);
+    final package = _findMonthlyPackage(offerings);
     if (package == null) {
       throw Exception(
         'Monthly package not available in offering "$_offeringId"',
+      );
+    }
+    try {
+      await Purchases.purchase(PurchaseParams.package(package));
+    } on PlatformException catch (e) {
+      final code = PurchasesErrorHelper.getErrorCode(e);
+      if (code == PurchasesErrorCode.purchaseCancelledError) {
+        return;
+      }
+      rethrow;
+    }
+  }
+
+  @override
+  Future<void> purchaseLifetime() async {
+    final offerings = await Purchases.getOfferings();
+    final package = _findLifetimePackage(offerings);
+    if (package == null) {
+      throw Exception(
+        'Lifetime package not available in offering "$_offeringId"',
       );
     }
     try {
@@ -83,6 +130,22 @@ class RealPurchaseService implements IPurchaseService {
   }
 
   @override
+  Future<String?> getExpirationDateString() async {
+    try {
+      final info = await Purchases.getCustomerInfo();
+      final raw = info.entitlements.all[_entitlementId]?.expirationDate;
+      if (raw == null) {
+        return null;
+      }
+      final date = DateTime.parse(raw).toLocal();
+      return '${date.year}年${date.month}月${date.day}日';
+    } on Exception catch (e) {
+      debugPrint('[RevenueCat] getExpirationDateString error: $e');
+      return null;
+    }
+  }
+
+  @override
   void addPremiumStatusListener(OnPremiumStatusChanged listener) {
     _listeners.add(listener);
   }
@@ -93,14 +156,10 @@ class RealPurchaseService implements IPurchaseService {
   }
 
   @override
-  Future<void> logIn(String userId) async {
-    await Purchases.logIn(userId);
-  }
+  Future<void> logIn(String userId) => Purchases.logIn(userId);
 
   @override
-  Future<void> logOut() async {
-    await Purchases.logOut();
-  }
+  Future<void> logOut() => Purchases.logOut();
 
   @override
   Future<void> toggleMockPremium() async {}
@@ -108,18 +167,31 @@ class RealPurchaseService implements IPurchaseService {
   bool _isPremiumFromInfo(CustomerInfo info) =>
       info.entitlements.all[_entitlementId]?.isActive ?? false;
 
-  /// "subscriptions" offering からパッケージを取得する。
-  ///
-  /// まず [Offering.monthly]（packageType = monthly）で検索し、
-  /// 見つからない場合は [Env.premium1m] の product identifier で線形探索する。
-  Package? _findPackage(Offerings offerings) {
+  Package? _findMonthlyPackage(Offerings offerings) {
     final offering = offerings.all[_offeringId];
     if (offering == null) {
       return null;
     }
     return offering.monthly ??
         offering.availablePackages.cast<Package?>().firstWhere(
-              (p) => p?.storeProduct.identifier == Env.premium1m,
+              (p) =>
+                  p?.identifier == _config.premium1mProductId ||
+                  p?.storeProduct.identifier == _config.premium1mProductId,
+              orElse: () => null,
+            );
+  }
+
+  Package? _findLifetimePackage(Offerings offerings) {
+    final offering = offerings.all[_offeringId];
+    if (offering == null) {
+      return null;
+    }
+    return offering.lifetime ??
+        offering.availablePackages.cast<Package?>().firstWhere(
+              (p) =>
+                  p?.identifier == _config.premiumLifetimeProductId ||
+                  p?.storeProduct.identifier ==
+                      _config.premiumLifetimeProductId,
               orElse: () => null,
             );
   }
@@ -127,6 +199,25 @@ class RealPurchaseService implements IPurchaseService {
   void _notifyListeners({required bool isPremium}) {
     for (final listener in List.of(_listeners)) {
       listener(isPremium);
+    }
+  }
+
+  void _debugDumpOfferings(Offerings offerings) {
+    debugPrint(
+      '[RevenueCat] current offering: ${offerings.current?.identifier}',
+    );
+    debugPrint(
+      '[RevenueCat] all offering IDs: ${offerings.all.keys.toList()}',
+    );
+    for (final entry in offerings.all.entries) {
+      for (final p in entry.value.availablePackages) {
+        debugPrint(
+          '[RevenueCat] offering "${entry.key}" package:'
+          ' rcId=${p.identifier}'
+          ' storeId=${p.storeProduct.identifier}'
+          ' type=${p.packageType.name}',
+        );
+      }
     }
   }
 }

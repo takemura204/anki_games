@@ -26,7 +26,7 @@ class _AnsweredActionBar extends StatelessWidget {
             children: [
               Expanded(
                 child: TextButton.icon(
-                  onPressed: onShowExplanation,
+                  onPressed: onShowExplanation.withHaptic(HapticType.medium),
                   icon: const Icon(
                     AppIcons.explanation,
                     color: AppColors.success,
@@ -44,7 +44,7 @@ class _AnsweredActionBar extends StatelessWidget {
               Container(width: 1, height: 28, color: c.fgShade50),
               Expanded(
                 child: TextButton.icon(
-                  onPressed: onNext,
+                  onPressed: onNext.withHaptic(HapticType.medium),
                   iconAlignment: IconAlignment.end,
                   icon: Icon(
                     AppIcons.nextUp,

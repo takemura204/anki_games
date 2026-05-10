@@ -26,20 +26,21 @@ dependencies:
   flutter_hooks:
   flutter_localizations:
     sdk: flutter
-  flutter_riverpod:
+  flutter_riverpod: ^3.0.0
   flutter_svg:
   flutter_tts: ^4.0.0
   freezed_annotation:
   gap:
   go_router:
-  google_mobile_ads:
-  hooks_riverpod:
+  google_mobile_ads: ^8.0.0
+  hooks_riverpod: ^3.0.0
   json_annotation:
   pedantic_mono:
   purchases_flutter: ^9.15.1
-  riverpod_annotation:
+  riverpod_annotation: ^4.0.0
   sensors_plus:
   shared_preferences:
+  shimmer: ^3.0.0
   slang:
   slang_flutter:
   url_launcher:
@@ -55,7 +56,7 @@ dev_dependencies:
   freezed:
   json_serializable:
   melos: ^6.3.3
-  riverpod_generator:
+  riverpod_generator: ^4.0.0
 
 flutter:
   uses-material-design: true

@@ -9,6 +9,7 @@ import 'package:app_it_pass/features/report/view_model/report_stats_provider.dar
 import 'package:app_it_pass/features/streak/view/streak_banner.dart';
 import 'package:app_it_pass/features/streak/view_model/streak_view_model.dart';
 import 'package:core/config/extensions/context_extension.dart';
+import 'package:core/config/haptic/haptics.dart';
 import 'package:core/config/styles/app_border_radius.dart';
 import 'package:core/config/styles/app_colors.dart';
 import 'package:core/config/styles/app_icons.dart';
@@ -24,7 +25,6 @@ import 'package:shimmer/shimmer.dart';
 import '../model/progress_dashboard_data.dart';
 import '../model/report_stats.dart';
 
-part 'widgets/report_debug_section.dart';
 part 'widgets/report_header.dart';
 part 'widgets/report_stats_grid.dart';
 part 'widgets/report_progress_section.dart';
@@ -47,9 +47,7 @@ class ReportSheet extends ConsumerWidget {
           decoration: BoxDecoration(
             color: context.appColors.surfaceSheet,
             borderRadius: const BorderRadius.vertical(top: Radius.circular(28)),
-            border: Border(
-              top: BorderSide(color: context.appColors.border1),
-            ),
+            border: Border(top: BorderSide(color: context.appColors.border1)),
           ),
           child: Column(
             children: [
@@ -58,8 +56,9 @@ class ReportSheet extends ConsumerWidget {
               const Gap(AppSpacing.sm),
               Expanded(
                 child: ListView(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: AppSpacing.md),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: AppSpacing.md,
+                  ),
                   children: [
                     const Gap(AppSpacing.sm),
                     StreakSummaryCard(streak: streak),
@@ -68,13 +67,11 @@ class ReportSheet extends ConsumerWidget {
                       loading: () => const Center(
                         child: CircularProgressIndicator(color: Colors.white54),
                       ),
-                      error: (_, __) => const SizedBox.shrink(),
+                      error: (_, _) => const SizedBox.shrink(),
                       data: (stats) => _StatsGrid(stats: stats),
                     ),
                     const Gap(AppSpacing.lg),
                     const _ProgressSection(),
-                    const Gap(AppSpacing.lg),
-                    const _DebugSection(),
                     const Gap(AppSpacing.lg),
                   ],
                 ),

@@ -24,14 +24,30 @@ abstract class IPurchaseService {
   /// App Store / Google Play に登録した商品名。取得できない場合は `null` を返す。
   Future<String?> getMonthlyProductTitle();
 
+  /// 買い切りプランの価格文字列（例: "¥4,800"）を返す。
+  ///
+  /// 取得できない場合は `null` を返す。
+  Future<String?> getLifetimePriceString();
+
   /// 月額プランを購入する。
   ///
   /// ユーザーがキャンセルした場合は何もしない。
   /// エラー時は例外をスローする。
   Future<void> purchaseMonthly();
 
+  /// 買い切りプランを購入する。
+  ///
+  /// ユーザーがキャンセルした場合は何もしない。
+  /// エラー時は例外をスローする。
+  Future<void> purchaseLifetime();
+
   /// 過去の購入を復元し、プレミアム状態かどうかを返す。
   Future<bool> restorePurchases();
+
+  /// プレミアムの次回更新日（または有効期限）を "yyyy年MM月dd日" 形式で返す。
+  ///
+  /// 買い切りや取得できない場合は `null` を返す。
+  Future<String?> getExpirationDateString();
 
   /// プレミアム状態が変化したときに呼ばれるリスナーを登録する。
   void addPremiumStatusListener(OnPremiumStatusChanged listener);

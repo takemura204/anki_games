@@ -8,6 +8,8 @@ import 'package:core/config/styles/app_colors.dart';
 import 'package:core/config/styles/app_icons.dart';
 import 'package:core/config/styles/app_spacing.dart';
 import 'package:core/config/styles/app_text_style.dart';
+import 'package:core/config/haptic/haptics.dart';
+import 'package:core/features/admob/admob_native.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -152,6 +154,13 @@ class FilterSheet extends ConsumerWidget {
                   mode: filterState.quizOrderMode,
                   onChanged: vm.setQuizOrderMode,
                 ),
+              ),
+              const Gap(AppSpacing.md),
+              GlassContainer(
+                cardRadius: AppBorderRadius.md,
+                padding: const EdgeInsets.symmetric(
+                    horizontal: AppSpacing.sm, vertical: AppSpacing.sm),
+                child: const AdmobNative(),
               ),
               const Gap(AppSpacing.lg),
             ],

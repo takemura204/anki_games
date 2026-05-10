@@ -65,7 +65,7 @@ class _OrderModeChip extends StatelessWidget {
       borderRadius: AppBorderRadius.md,
       child: InkWell(
         borderRadius: AppBorderRadius.md,
-        onTap: onTap,
+        onTap: onTap.withHaptic(HapticType.selection),
         child: AnimatedContainer(
           duration: AppAnimation.fast,
           padding: const EdgeInsets.symmetric(

@@ -63,7 +63,7 @@ class _TabPill extends StatelessWidget {
     final c = context.appColors;
     final color = selected ? Colors.white : c.fgShade300;
     return GestureDetector(
-      onTap: onTap,
+      onTap: onTap.withHaptic(HapticType.selection),
       child: AnimatedContainer(
         duration: AppAnimation.fast,
         padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 7),

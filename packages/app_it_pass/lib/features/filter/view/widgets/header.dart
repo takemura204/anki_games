@@ -41,7 +41,7 @@ class _Header extends StatelessWidget {
             cardRadius: AppBorderRadius.circle,
             child: IconButton(
               icon: Icon(AppIcons.close, color: c.fgShade300),
-              onPressed: onClose,
+              onPressed: onClose.withHaptic(),
             ),
           ),
         ],

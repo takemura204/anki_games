@@ -4,12 +4,14 @@ import 'package:app_it_pass/components/glass_widget.dart';
 import 'package:app_it_pass/components/modal_handle.dart';
 import 'package:app_it_pass/config/theme/it_pass_color_scheme.dart';
 import 'package:core/config/constants/app_urls.dart';
+import 'package:core/config/haptic/haptics.dart';
 import 'package:core/config/styles/app_animation.dart';
 import 'package:core/config/styles/app_border_radius.dart';
 import 'package:core/config/styles/app_colors.dart';
 import 'package:core/config/styles/app_icons.dart';
 import 'package:core/config/styles/app_spacing.dart';
 import 'package:core/config/styles/app_text_style.dart';
+import 'package:core/features/admob/admob_banner.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -57,15 +59,16 @@ class _PushSlidePage<T> extends Page<T> {
       settings: this,
       transitionDuration: const Duration(milliseconds: 300),
       reverseTransitionDuration: const Duration(milliseconds: 250),
-      pageBuilder: (_, __, ___) => child,
-      transitionsBuilder: (_, animation, __, child) {
+      pageBuilder: (_, _, _) => child,
+      transitionsBuilder: (_, animation, _, child) {
         return SlideTransition(
-          position: Tween<Offset>(
-            begin: const Offset(1.0, 0.0),
-            end: Offset.zero,
-          ).animate(
-            CurvedAnimation(parent: animation, curve: Curves.easeOutCubic),
-          ),
+          position:
+              Tween<Offset>(
+                begin: const Offset(1.0, 0.0),
+                end: Offset.zero,
+              ).animate(
+                CurvedAnimation(parent: animation, curve: Curves.easeOutCubic),
+              ),
           child: FadeTransition(
             opacity: CurvedAnimation(
               parent: animation,
@@ -126,7 +129,8 @@ class _NoteSheetState extends ConsumerState<NoteSheet> {
     final currentDetailItem = _detailArgs != null
         ? _detailArgs!.reviewQueue[_detailCurrentIndex]
         : null;
-    final isBookmarked = currentDetailItem != null &&
+    final isBookmarked =
+        currentDetailItem != null &&
         liveBookmarks.contains(
           LocalLearningHistoryRepository.storageKey(
             currentDetailItem.question.eraId,
@@ -143,9 +147,7 @@ class _NoteSheetState extends ConsumerState<NoteSheet> {
           decoration: BoxDecoration(
             color: context.appColors.surfaceSheet,
             borderRadius: const BorderRadius.vertical(top: Radius.circular(28)),
-            border: Border(
-              top: BorderSide(color: context.appColors.border1),
-            ),
+            border: Border(top: BorderSide(color: context.appColors.border1)),
           ),
           child: Column(
             children: [
@@ -154,7 +156,9 @@ class _NoteSheetState extends ConsumerState<NoteSheet> {
                 isDetail: _detailArgs != null,
                 onClose: () => Navigator.of(context).pop(),
                 onBack: () => _navigatorKey.currentState?.maybePop(),
-                onBookmark: () => ref.read(bookmarkProvider.notifier).toggle(
+                onBookmark: () => ref
+                    .read(bookmarkProvider.notifier)
+                    .toggle(
                       currentDetailItem!.question.eraId,
                       currentDetailItem.question.no,
                     ),

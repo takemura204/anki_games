@@ -1,49 +1,27 @@
-import 'dart:io';
-
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:shimmer/shimmer.dart';
 
-import '../../config/env/env.dart';
+import '../../config/ads/ad_config.dart';
 
-/// ネイティブ広告を表示するウィジェット。
-///
-/// [templateType] でテンプレートサイズを選択する。
-/// [height] を指定しない場合はテンプレートに応じたデフォルト高さを使用する。
-class NativeAdBanner extends StatefulWidget {
-  /// ネイティブ広告ウィジェットを作成する。
-  const NativeAdBanner({
+class AdmobNative extends ConsumerStatefulWidget {
+  const AdmobNative({
     this.templateType = TemplateType.medium,
     this.height,
     super.key,
   });
 
-  /// 使用するネイティブテンプレートの種類。
   final TemplateType templateType;
-
-  /// コンテナの高さ。null の場合はテンプレート種類に応じたデフォルト値を使用する。
   final double? height;
 
   @override
-  State<NativeAdBanner> createState() => _NativeAdBannerState();
+  ConsumerState<AdmobNative> createState() => _AdmobNativeState();
 }
 
-class _NativeAdBannerState extends State<NativeAdBanner> {
+class _AdmobNativeState extends ConsumerState<AdmobNative> {
   NativeAd? _nativeAd;
   var _isLoaded = false;
-
-  String get _adUnitId {
-    if (Platform.isAndroid) {
-      return kDebugMode
-          ? Env.nativeAdUnitIdAndroidDebug
-          : Env.nativeAdUnitIdAndroidRelease;
-    } else if (Platform.isIOS) {
-      return kDebugMode
-          ? Env.nativeAdUnitIdIosDebug
-          : Env.nativeAdUnitIdIosRelease;
-    }
-    throw UnsupportedError('Unsupported platform');
-  }
 
   double get _defaultHeight =>
       widget.templateType == TemplateType.small ? 90 : 300;
@@ -55,8 +33,9 @@ class _NativeAdBannerState extends State<NativeAdBanner> {
   }
 
   void _loadAd() {
+    final adUnitId = ref.read(adConfigProvider).native;
     _nativeAd = NativeAd(
-      adUnitId: _adUnitId,
+      adUnitId: adUnitId,
       request: const AdRequest(),
       listener: NativeAdListener(
         onAdLoaded: (_) {
@@ -86,12 +65,26 @@ class _NativeAdBannerState extends State<NativeAdBanner> {
 
   @override
   Widget build(BuildContext context) {
+    final height = widget.height ?? _defaultHeight;
+
     if (!_isLoaded || _nativeAd == null) {
-      return const SizedBox.shrink();
+      return Shimmer.fromColors(
+        baseColor: Colors.white.withValues(alpha: 0.08),
+        highlightColor: Colors.white.withValues(alpha: 0.18),
+        child: Container(
+          width: double.infinity,
+          height: height,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(8),
+          ),
+        ),
+      );
     }
+
     return SizedBox(
       width: double.infinity,
-      height: widget.height ?? _defaultHeight,
+      height: height,
       child: AdWidget(ad: _nativeAd!),
     );
   }

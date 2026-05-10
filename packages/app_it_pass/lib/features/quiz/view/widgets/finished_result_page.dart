@@ -419,7 +419,7 @@ class _ContinueButton extends StatelessWidget {
         hasNext ? Icons.keyboard_arrow_up_rounded : Icons.check_rounded;
 
     return GestureDetector(
-      onTap: onContinue,
+      onTap: onContinue.withHaptic(HapticType.medium),
       child: Container(
         width: double.infinity,
         padding: const EdgeInsets.symmetric(vertical: AppSpacing.md),
@@ -485,7 +485,7 @@ class _QuizAnswerCard extends ConsumerWidget {
     final c = context.appColors;
 
     return GestureDetector(
-      onTap: onTap,
+      onTap: onTap.withHaptic(),
       child: Container(
         padding: const EdgeInsets.symmetric(
           horizontal: AppSpacing.md,
@@ -536,8 +536,10 @@ class _QuizAnswerCard extends ConsumerWidget {
             const Gap(AppSpacing.xs),
             GestureDetector(
               behavior: HitTestBehavior.opaque,
-              onTap: () =>
-                  ref.read(bookmarkProvider.notifier).toggle(q.eraId, q.no),
+              onTap: (() => ref
+                      .read(bookmarkProvider.notifier)
+                      .toggle(q.eraId, q.no))
+                  .withHaptic(),
               child: Padding(
                 padding: const EdgeInsets.all(4),
                 child: Icon(
@@ -631,7 +633,7 @@ class _SessionEndPage extends StatelessWidget {
           ),
           const Gap(AppSpacing.xl + 4),
           GestureDetector(
-            onTap: onOpenFilter,
+            onTap: onOpenFilter.withHaptic(HapticType.medium),
             child: Container(
               width: double.infinity,
               padding: const EdgeInsets.symmetric(vertical: AppSpacing.md),

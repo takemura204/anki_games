@@ -1,5 +1,6 @@
 import 'package:app_block_puzzle/router/screen_router.dart';
 import 'package:core/config/theme/app_theme.dart' show buildAppTheme;
+import 'package:core/features/purchase/model/revenue_cat_config.dart';
 import 'package:core/features/purchase/service/i_purchase_service.dart';
 import 'package:core/features/purchase/service/mock_purchase_service.dart';
 import 'package:core/features/purchase/service/real_purchase_service.dart';
@@ -36,9 +37,15 @@ Future<void> runBlockPuzzleApp({required bool initializeFirebase}) async {
     'assets/sounds/block_puzzle/block_select.mp3',
   ]);
 
+  // blockPuzzle の RevenueCat キーが確定したら packages/app_block_puzzle/lib/config/env/.env に移す
   final purchaseService = kDebugMode
       ? MockPurchaseService() as IPurchaseService
-      : RealPurchaseService();
+      : RealPurchaseService(const RevenueCatConfig(
+          apiKeyIos: '',
+          apiKeyAndroid: '',
+          premium1mProductId: '',
+          premiumLifetimeProductId: '',
+        ));
   await purchaseService.configure();
 
   runApp(

@@ -44,6 +44,14 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
+# Android signing (機密情報 — リポジトリに含めない)
+android/key.properties
+android/*.jks
+android/*.keystore
+packages/**/android/key.properties
+packages/**/android/*.jks
+packages/**/android/*.keystore
+
 # iOS
 .storekit
 

@@ -117,7 +117,7 @@ class _TextLinkButton extends StatelessWidget {
             ? c.fgShade400
             : c.fgShade100;
     return GestureDetector(
-      onTap: onTap,
+      onTap: onTap.withHaptic(),
       child: Text(
         label,
         style: AppTextStyle.labelMedium.copyWith(

@@ -1,46 +1,31 @@
-import 'dart:io';
-
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../config/env/env.dart';
+import '../../config/ads/ad_config.dart';
 
-/// バナー広告を表示するウィジェット
-class AdmobBanner extends StatefulWidget {
+class AdmobBanner extends ConsumerStatefulWidget {
   const AdmobBanner({super.key});
 
   @override
-  State<AdmobBanner> createState() => _AdmobBannerState();
+  ConsumerState<AdmobBanner> createState() => _AdmobBannerState();
 }
 
-class _AdmobBannerState extends State<AdmobBanner> {
+class _AdmobBannerState extends ConsumerState<AdmobBanner> {
   BannerAd? _bannerAd;
   var _isAdLoaded = false;
   var _isLoading = false;
-
-  String get _bannerAdUnitId {
-    if (Platform.isAndroid) {
-      return kDebugMode
-          ? Env.bannerAdUnitIdAndroidDebug
-          : Env.bannerAdUnitIdAndroidRelease;
-    } else if (Platform.isIOS) {
-      return kDebugMode
-          ? Env.bannerAdUnitIdIosDebug
-          : Env.bannerAdUnitIdIosRelease;
-    }
-    throw UnsupportedError('Unsupported platform');
-  }
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
 
     if (_isLoading) {
-      return; // すでにロード開始済みなら何もしない
+      return;
     }
     _isLoading = true;
 
+    final adUnitId = ref.read(adConfigProvider).banner;
     final width = MediaQuery.of(context).size.width;
 
     AdSize.getLargeAnchoredAdaptiveBannerAdSize(width.truncate())
@@ -50,7 +35,7 @@ class _AdmobBannerState extends State<AdmobBanner> {
       }
 
       _bannerAd = BannerAd(
-        adUnitId: _bannerAdUnitId,
+        adUnitId: adUnitId,
         size: adSize,
         request: const AdRequest(),
         listener: BannerAdListener(
@@ -90,10 +75,6 @@ class _AdmobBannerState extends State<AdmobBanner> {
         child: AdWidget(ad: _bannerAd!),
       );
     }
-
-    // ロード中・未ロード時のプレースホルダ
-    return const SizedBox(
-      height: 60,
-    );
+    return const SizedBox(height: 60);
   }
 }

@@ -28,12 +28,14 @@ class _ApplyButton extends StatelessWidget {
         child: Material(
           color: Colors.transparent,
           child: InkWell(
-            onTap: (canApply && !isApplying) ? onTap : null,
+            onTap: (canApply && !isApplying)
+                ? onTap.withHaptic(HapticType.medium)
+                : null,
             splashColor: Colors.white.withValues(alpha: 0.15),
             highlightColor: Colors.white.withValues(alpha: 0.05),
             child: AnimatedContainer(
               duration: AppAnimation.fast,
-              height: 52,
+              height: 60,
               decoration: BoxDecoration(
                 gradient: canApply
                     ? const LinearGradient(

@@ -13,14 +13,38 @@ IPurchaseService purchaseService(Ref ref) {
 }
 
 /// 月額プランの価格文字列プロバイダ（例: "¥480"）。
+///
+/// [premiumViewModelProvider] の初期化（= RevenueCat SDK configure）完了後に取得する。
 @riverpod
-Future<String?> monthlyPrice(Ref ref) =>
-    ref.watch(purchaseServiceProvider).getMonthlyPriceString();
+Future<String?> monthlyPrice(Ref ref) async {
+  await ref.watch(premiumViewModelProvider.future);
+  return ref.read(purchaseServiceProvider).getMonthlyPriceString();
+}
 
 /// 月額プランの商品タイトルプロバイダ。
 @riverpod
-Future<String?> monthlyTitle(Ref ref) =>
-    ref.watch(purchaseServiceProvider).getMonthlyProductTitle();
+Future<String?> monthlyTitle(Ref ref) async {
+  await ref.watch(premiumViewModelProvider.future);
+  return ref.read(purchaseServiceProvider).getMonthlyProductTitle();
+}
+
+/// 買い切りプランの価格文字列プロバイダ（例: "¥4,800"）。
+///
+/// [premiumViewModelProvider] の初期化（= RevenueCat SDK configure）完了後に取得する。
+@riverpod
+Future<String?> lifetimePrice(Ref ref) async {
+  await ref.watch(premiumViewModelProvider.future);
+  return ref.read(purchaseServiceProvider).getLifetimePriceString();
+}
+
+/// プレミアムの次回更新日文字列プロバイダ（例: "2026年6月9日"）。
+///
+/// 買い切りや非プレミアムの場合は `null`。
+@riverpod
+Future<String?> premiumExpirationDate(Ref ref) async {
+  await ref.watch(premiumViewModelProvider.future);
+  return ref.read(purchaseServiceProvider).getExpirationDateString();
+}
 
 /// プレミアム状態を表す値オブジェクト。
 class PremiumState {
@@ -47,6 +71,7 @@ class PremiumViewModel extends _$PremiumViewModel {
   @override
   Future<PremiumState> build() async {
     final service = ref.read(purchaseServiceProvider);
+    await service.configure();
 
     _listener = (isPremium) {
       state = AsyncData(PremiumState(isPremium: isPremium));
@@ -73,8 +98,18 @@ class PremiumViewModel extends _$PremiumViewModel {
     state = AsyncData(PremiumState(isPremium: isPremium));
   }
 
+  /// 買い切りプランを購入する。
+  Future<void> purchaseLifetime() async {
+    await ref.read(purchaseServiceProvider).purchaseLifetime();
+  }
+
   /// デバッグ専用: プレミアム状態をトグルする。
   Future<void> toggleMockPremium() async {
     await ref.read(purchaseServiceProvider).toggleMockPremium();
+  }
+
+  /// デバッグ専用: プレミアム状態を直接 true にセットする。
+  void debugSetPremium() {
+    state = const AsyncData(PremiumState(isPremium: true));
   }
 }

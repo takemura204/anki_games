@@ -258,6 +258,15 @@ class _ExplanationSheetState extends ConsumerState<_ExplanationSheet> {
                                     ),
                                   ],
                                 ),
+                                const Gap(AppSpacing.md),
+                                GlassContainer(
+                                  cardRadius: AppBorderRadius.md,
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: AppSpacing.sm,
+                                      vertical: AppSpacing.sm),
+                                  child: const AdmobNative(),
+                                ),
+                                const Gap(AppSpacing.md),
                               ],
                             ),
                           ),

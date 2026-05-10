@@ -25,9 +25,9 @@ class QuizNetworkImage extends StatelessWidget {
       PageRouteBuilder<void>(
         opaque: false,
         barrierColor: Colors.transparent,
-        pageBuilder: (_, __, ___) =>
+        pageBuilder: (_, _, _) =>
             _QuizImageViewerPage(url: url, heroTag: heroTag),
-        transitionsBuilder: (_, animation, __, child) {
+        transitionsBuilder: (_, animation, _, child) {
           return FadeTransition(opacity: animation, child: child);
         },
         transitionDuration: const Duration(milliseconds: 280),
@@ -132,14 +132,15 @@ class _QuizImageViewerPageState extends State<_QuizImageViewerPage>
   @override
   void initState() {
     super.initState();
-    _animController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 250),
-    )..addListener(() {
-        if (_animation != null) {
-          _transformationController.value = _animation!.value;
-        }
-      });
+    _animController =
+        AnimationController(
+          vsync: this,
+          duration: const Duration(milliseconds: 250),
+        )..addListener(() {
+          if (_animation != null) {
+            _transformationController.value = _animation!.value;
+          }
+        });
   }
 
   @override
@@ -151,15 +152,16 @@ class _QuizImageViewerPageState extends State<_QuizImageViewerPage>
 
   void _animateTo(Matrix4 target) {
     _animController.stop();
-    _animation = Matrix4Tween(
-      begin: _transformationController.value,
-      end: target,
-    ).animate(
-      CurvedAnimation(
-        parent: _animController,
-        curve: Curves.easeInOutCubic,
-      ),
-    );
+    _animation =
+        Matrix4Tween(
+          begin: _transformationController.value,
+          end: target,
+        ).animate(
+          CurvedAnimation(
+            parent: _animController,
+            curve: Curves.easeInOutCubic,
+          ),
+        );
     _animController.forward(from: 0);
   }
 

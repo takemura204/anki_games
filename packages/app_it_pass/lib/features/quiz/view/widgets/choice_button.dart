@@ -1,4 +1,5 @@
 import 'package:app_it_pass/features/quiz/model/question.dart';
+import 'package:core/config/haptic/haptics.dart';
 import 'package:core/config/styles/app_animation.dart';
 import 'package:core/config/styles/app_border_radius.dart';
 import 'package:core/config/styles/app_colors.dart';
@@ -73,6 +74,7 @@ class _QuizChoiceButtonState extends State<QuizChoiceButton>
 
   Future<void> _handleTap() async {
     if (widget.isAnswered || widget.onTap == null) return;
+    Haptics.light();
     await _pulseController.forward();
     await _pulseController.reverse();
     widget.onTap!();

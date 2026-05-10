@@ -1,6 +1,8 @@
-# melos_managed_dependency_overrides: app_block_puzzle,core
+# melos_managed_dependency_overrides: app_block_puzzle,app_it_pass,core
 dependency_overrides:
   app_block_puzzle:
     path: packages/app_block_puzzle
+  app_it_pass:
+    path: packages/app_it_pass
   core:
     path: packages/core

@@ -60,8 +60,8 @@ android {
         }
         create("it_pass") {
             dimension = "app"
-            applicationId = "jp.it.game"
-            resValue("string", "app_name", "IT Pass")
+            applicationId = "jp.tkmr.it_pass"
+            resValue("string", "app_name", "ITパスポート")
         }
     }
 

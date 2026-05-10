@@ -4,6 +4,7 @@ import 'package:app_it_pass/components/glass_widget.dart';
 import 'package:app_it_pass/components/modal_handle.dart';
 import 'package:app_it_pass/config/theme/it_pass_color_scheme.dart';
 import 'package:core/config/constants/app_urls.dart';
+import 'package:core/config/haptic/haptics.dart';
 import 'package:core/config/styles/app_border_radius.dart';
 import 'package:core/config/styles/app_colors.dart';
 import 'package:core/config/styles/app_icons.dart';
@@ -186,10 +187,10 @@ class _ResultDetailSheetState extends ConsumerState<ResultDetailSheet> {
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
                               GestureDetector(
-                                onTap: () => launchUrl(
-                                  Uri.parse(AppUrls.contact),
-                                  mode: LaunchMode.externalApplication,
-                                ),
+                                onTap: (() => launchUrl(
+                                      Uri.parse(AppUrls.contact),
+                                      mode: LaunchMode.externalApplication,
+                                    )).withHaptic(),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
@@ -280,7 +281,7 @@ class _SheetHeader extends StatelessWidget {
                 isBookmarked ? AppIcons.bookmarked : AppIcons.bookmark,
                 color: isBookmarked ? AppColors.itPassSeed : c.fgShade300,
               ),
-              onPressed: onBookmark,
+              onPressed: onBookmark.withHaptic(),
             ),
           ),
         ],
@@ -326,7 +327,7 @@ class _SheetFooter extends StatelessWidget {
               children: [
                 Expanded(
                   child: TextButton.icon(
-                    onPressed: canGoPrev ? onPrev : null,
+                    onPressed: canGoPrev ? onPrev.withHaptic() : null,
                     icon: Icon(
                       AppIcons.prevLeft,
                       color: canGoPrev ? c.fg : c.fgShade200,
@@ -343,7 +344,7 @@ class _SheetFooter extends StatelessWidget {
                 Container(width: 1, height: 28, color: c.fgShade50),
                 Expanded(
                   child: TextButton.icon(
-                    onPressed: canGoNext ? onNext : null,
+                    onPressed: canGoNext ? onNext.withHaptic() : null,
                     iconAlignment: IconAlignment.end,
                     icon: Icon(
                       AppIcons.nextRight,

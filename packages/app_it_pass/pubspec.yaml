@@ -5,7 +5,7 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ">=3.0.0 <4.0.0"
+  sdk: ">=3.10.0 <4.0.0"
 
 dependencies:
   audioplayers:
@@ -29,18 +29,18 @@ dependencies:
   flutter_hooks:
   flutter_localizations:
     sdk: flutter
-  flutter_riverpod:
+  flutter_riverpod: ^3.0.0
   flutter_svg:
   flutter_tts: ^4.0.0
   freezed_annotation:
   gap:
   go_router:
   google_mobile_ads:
-  hooks_riverpod:
+  hooks_riverpod: ^3.0.0
   json_annotation:
   pedantic_mono:
   purchases_flutter: ^9.15.1
-  riverpod_annotation:
+  riverpod_annotation: ^4.0.0
   sensors_plus:
   shared_preferences:
   shimmer: ^3.0.0
@@ -59,22 +59,23 @@ dev_dependencies:
   freezed:
   json_serializable:
   melos: ^6.3.3
-  riverpod_generator:
+  riverpod_generator: ^4.0.0
 
 flutter:
   uses-material-design: true
   assets:
     - assets/quiz/
+    - assets/logo/
 
 flutter_launcher_icons:
   android: true
-  image_path_android: "../core/assets/logo/logo_light.png"
-  adaptive_icon_foreground: "../core/assets/logo/logo_light.png"
+  image_path_android: "assets/logo/logo_it_pass.png"
+  adaptive_icon_foreground: "assets/logo/logo_it_pass.png"
   adaptive_icon_background: "#FFFFFF"
-  adaptive_icon_monochrome: "../core/assets/logo/logo_dark.png"
+  adaptive_icon_monochrome: "assets/logo/logo_it_pass.png"
   ios: true
-  image_path_ios: "../core/assets/logo/logo_light.png"
+  image_path_ios: "assets/logo/logo_it_pass.png"
   remove_alpha_ios: true
-  image_path_ios_dark_transparent: "../core/assets/logo/logo_dark.png"
-  image_path_ios_tinted_grayscale: "../core/assets/logo/logo_light.png"
+  image_path_ios_dark_transparent: "assets/logo/logo_it_pass.png"
+  image_path_ios_tinted_grayscale: "assets/logo/logo_it_pass.png"
   desaturate_tinted_to_grayscale_ios: true

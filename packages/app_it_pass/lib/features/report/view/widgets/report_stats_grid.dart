@@ -180,7 +180,7 @@ class _Sparkline extends StatelessWidget {
     }
 
     var running = 0.0;
-    final cumulative = data.map((v) {
+    final cumulative = [0.0, ...data].map((v) {
       running += v;
       return running;
     }).toList();

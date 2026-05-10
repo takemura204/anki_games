@@ -1,7 +1,7 @@
 import 'package:app_block_puzzle/features/block_puzzle/view/modals/theme_selector_sheet.dart';
 import 'package:app_block_puzzle/features/home/view/widgets/quiz_start_bottom_sheet.dart';
+import 'package:app_block_puzzle/features/purchase/view/paywall_sheet.dart';
 import 'package:app_block_puzzle/features/settings/view/settings_dialog.dart';
-import 'package:core/features/purchase/view/paywall_bottom_sheet.dart';
 import 'package:core/features/quiz/view_model/quiz_view_model.dart';
 import 'package:core/utils/router/router_constants.dart';
 import 'package:flutter/material.dart';

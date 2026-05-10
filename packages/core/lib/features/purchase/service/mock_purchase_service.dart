@@ -24,10 +24,20 @@ class MockPurchaseService implements IPurchaseService {
   Future<String?> getMonthlyPriceString() async => '¥480';
 
   @override
-  Future<String?> getMonthlyProductTitle() async => 'Block. Premium';
+  Future<String?> getMonthlyProductTitle() async => 'IT Pass Premium';
+
+  @override
+  Future<String?> getLifetimePriceString() async => '¥4,800';
 
   @override
   Future<void> purchaseMonthly() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool(_mockPremiumKey, true);
+    _notifyListeners(isPremium: true);
+  }
+
+  @override
+  Future<void> purchaseLifetime() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool(_mockPremiumKey, true);
     _notifyListeners(isPremium: true);
@@ -39,6 +49,16 @@ class MockPurchaseService implements IPurchaseService {
     final value = prefs.getBool(_mockPremiumKey) ?? false;
     _notifyListeners(isPremium: value);
     return value;
+  }
+
+  @override
+  Future<String?> getExpirationDateString() async {
+    final isPremium = await this.isPremium();
+    if (!isPremium) {
+      return null;
+    }
+    final next = DateTime.now().add(const Duration(days: 30));
+    return '${next.year}年${next.month}月${next.day}日（モック）';
   }
 
   @override

@@ -37,12 +37,8 @@ class _Header extends StatelessWidget {
             cardRadius: cardRadius,
             child: IconButton(
               padding: EdgeInsets.zero,
-              icon: Icon(
-                AppIcons.account,
-                color: c.fgShade400,
-                size: 22,
-              ),
-              onPressed: onTapSetting,
+              icon: Icon(AppIcons.account, color: c.fgShade400, size: 22),
+              onPressed: onTapSetting.withHaptic(),
             ),
           ),
           if (showCenter)
@@ -63,8 +59,8 @@ class _Header extends StatelessWidget {
                       textAlign: TextAlign.center,
                     )
                   : currentSession == null
-                      ? const _ProgressSkeleton()
-                      : _ProgressContent(session: currentSession),
+                  ? const _ProgressSkeleton()
+                  : _ProgressContent(session: currentSession),
             ),
           GlassButton(
             cardRadius: cardRadius,
@@ -73,7 +69,7 @@ class _Header extends StatelessWidget {
               padding: EdgeInsets.zero,
               color: c.fgShade400,
               icon: const Icon(AppIcons.filter),
-              onPressed: onTapFilter,
+              onPressed: onTapFilter.withHaptic(),
             ),
           ),
         ],
@@ -138,12 +134,16 @@ class _ProgressSkeleton extends StatelessWidget {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Container(
-          width: 36,
-          height: 12,
-          decoration: BoxDecoration(
-            color: c.fgShade50,
-            borderRadius: AppBorderRadius.full,
+        Shimmer.fromColors(
+          baseColor: c.fgShade50,
+          highlightColor: c.fgShade100,
+          child: Container(
+            width: 30,
+            height: 12,
+            decoration: BoxDecoration(
+              color: c.fgShade200,
+              borderRadius: AppBorderRadius.full,
+            ),
           ),
         ),
         const Gap(AppSpacing.sm),
@@ -151,11 +151,14 @@ class _ProgressSkeleton extends StatelessWidget {
           child: ClipRRect(
             borderRadius:
                 AppBorderRadius.sm - const BorderRadius.all(Radius.circular(4)),
-            child: LinearProgressIndicator(
-              value: null,
-              backgroundColor: c.fgShade50,
-              valueColor: AlwaysStoppedAnimation<Color>(c.fgShade100),
-              minHeight: AppSpacing.sm,
+            child: Shimmer.fromColors(
+              baseColor: c.fgShade50,
+              highlightColor: c.fgShade100,
+              child: LinearProgressIndicator(
+                value: null,
+                backgroundColor: c.fgShade50,
+                valueColor: AlwaysStoppedAnimation<Color>(c.fgShade100),
+              ),
             ),
           ),
         ),

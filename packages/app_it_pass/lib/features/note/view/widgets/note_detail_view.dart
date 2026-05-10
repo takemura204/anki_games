@@ -30,10 +30,7 @@ class _NoteDetailView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            QuizQuestionCard(
-              question: q,
-              learningLevel: item.level,
-            ),
+            QuizQuestionCard(question: q, learningLevel: item.level),
             const Gap(12),
             ...q.choices.map(
               (choice) => Padding(
@@ -54,14 +51,16 @@ class _NoteDetailView extends StatelessWidget {
                 choiceComments: q.explanationChoiceComments,
                 colors: c,
               ),
+
             if (fromReview) ...[
               const Gap(AppSpacing.sm),
               Divider(height: AppSpacing.lg, color: c.border1),
-              _ReviewActionButtons(
-                onKnown: onKnown,
-                onUnsure: onUnsure,
-              ),
+              _ReviewActionButtons(onKnown: onKnown, onUnsure: onUnsure),
             ],
+            const Gap(AppSpacing.sm),
+            Divider(height: AppSpacing.lg, color: c.border1),
+
+            const AdmobBanner(),
             Gap(AppSpacing.md),
           ],
         ),
@@ -117,10 +116,7 @@ class _ExplanationSection extends StatelessWidget {
 }
 
 class _ChoiceCommentsSection extends StatelessWidget {
-  const _ChoiceCommentsSection({
-    required this.comments,
-    required this.colors,
-  });
+  const _ChoiceCommentsSection({required this.comments, required this.colors});
 
   final List<String> comments;
   final ItPassColorScheme colors;
@@ -173,10 +169,10 @@ class _ReferenceSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         GestureDetector(
-          onTap: () => launchUrl(
-            Uri.parse(AppUrls.contact),
-            mode: LaunchMode.externalApplication,
-          ),
+          onTap: (() => launchUrl(
+                Uri.parse(AppUrls.contact),
+                mode: LaunchMode.externalApplication,
+              )).withHaptic(),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -229,7 +225,11 @@ class _BrowseActionButtons extends StatelessWidget {
     final c = context.appColors;
     return Padding(
       padding: const EdgeInsets.fromLTRB(
-          AppSpacing.md, AppSpacing.xs, AppSpacing.md, AppSpacing.md),
+        AppSpacing.md,
+        AppSpacing.xs,
+        AppSpacing.md,
+        AppSpacing.md,
+      ),
       child: ClipRRect(
         borderRadius: const BorderRadius.all(Radius.circular(20)),
         child: BackdropFilter(
@@ -244,7 +244,7 @@ class _BrowseActionButtons extends StatelessWidget {
               children: [
                 Expanded(
                   child: TextButton.icon(
-                    onPressed: canGoPrev ? onPrev : null,
+                    onPressed: canGoPrev ? onPrev.withHaptic() : null,
                     icon: Icon(
                       AppIcons.prevLeft,
                       color: canGoPrev ? c.fg : c.fgShade200,
@@ -261,7 +261,7 @@ class _BrowseActionButtons extends StatelessWidget {
                 Container(width: 1, height: 28, color: c.fgShade50),
                 Expanded(
                   child: TextButton.icon(
-                    onPressed: canGoNext ? onNext : null,
+                    onPressed: canGoNext ? onNext.withHaptic() : null,
                     iconAlignment: IconAlignment.end,
                     icon: Icon(
                       AppIcons.nextRight,
@@ -297,25 +297,30 @@ class _ReviewActionButtons extends StatelessWidget {
       children: [
         Expanded(
           child: GestureDetector(
-            onTap: onUnsure,
+            onTap: onUnsure.withHaptic(HapticType.medium),
             child: Container(
               padding: const EdgeInsets.symmetric(vertical: 13),
               decoration: BoxDecoration(
                 color: AppColors.error.withValues(alpha: 0.1),
                 borderRadius: AppBorderRadius.lg,
-                border:
-                    Border.all(color: AppColors.error.withValues(alpha: 0.5)),
+                border: Border.all(
+                  color: AppColors.error.withValues(alpha: 0.5),
+                ),
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Icon(Icons.replay_rounded,
-                      color: AppColors.error, size: 20),
+                  const Icon(
+                    Icons.replay_rounded,
+                    color: AppColors.error,
+                    size: 20,
+                  ),
                   const Gap(AppSpacing.sm),
                   Text(
                     'もう一度',
-                    style: AppTextStyle.titleSmall
-                        .copyWith(color: AppColors.error),
+                    style: AppTextStyle.titleSmall.copyWith(
+                      color: AppColors.error,
+                    ),
                   ),
                 ],
               ),
@@ -326,7 +331,7 @@ class _ReviewActionButtons extends StatelessWidget {
         Expanded(
           flex: 2,
           child: GestureDetector(
-            onTap: onKnown,
+            onTap: onKnown.withHaptic(HapticType.medium),
             child: Container(
               padding: const EdgeInsets.symmetric(vertical: 13),
               decoration: BoxDecoration(
@@ -347,8 +352,9 @@ class _ReviewActionButtons extends StatelessWidget {
                   const Gap(AppSpacing.sm),
                   Text(
                     '覚えた',
-                    style:
-                        AppTextStyle.titleSmall.copyWith(color: Colors.white),
+                    style: AppTextStyle.titleSmall.copyWith(
+                      color: Colors.white,
+                    ),
                   ),
                 ],
               ),

@@ -16,11 +16,11 @@ PODS:
   - Flutter (1.0.0)
   - flutter_tts (0.0.1):
     - Flutter
-  - Google-Mobile-Ads-SDK (12.2.0):
+  - Google-Mobile-Ads-SDK (13.2.0):
     - GoogleUserMessagingPlatform (>= 1.1)
-  - google_mobile_ads (6.0.0):
+  - google_mobile_ads (8.0.0):
     - Flutter
-    - Google-Mobile-Ads-SDK (~> 12.2.0)
+    - Google-Mobile-Ads-SDK (~> 13.2.0)
     - webview_flutter_wkwebview
   - GoogleUserMessagingPlatform (3.1.0)
   - GoogleUtilities/Environment (8.1.0):
@@ -142,8 +142,8 @@ SPEC CHECKSUMS:
   FirebaseCoreInternal: 7c12fc3011d889085e765e317d7b9fd1cef97af9
   Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
   flutter_tts: 91ad1884033cd95ef6e9338754adad54f01f090f
-  Google-Mobile-Ads-SDK: 1dfb0c3cb46c7e2b00b0f4de74a1e06d9ea25d67
-  google_mobile_ads: cab27248050510554aa646195eacc393ce7406ad
+  Google-Mobile-Ads-SDK: f0365e190d66539c65cea8ded43e2c367abb5477
+  google_mobile_ads: 504fb83892207cb9ab7223e13ad6090e6f63d62b
   GoogleUserMessagingPlatform: befe603da6501006420c206222acd449bba45a9c
   GoogleUtilities: 00c88b9a86066ef77f0da2fab05f65d7768ed8e1
   path_provider_foundation: 2b6b4c569c0fb62ec74538f866245ac84301af46
@@ -156,7 +156,7 @@ SPEC CHECKSUMS:
   sqlite3: a51c07cf16e023d6c48abd5e5791a61a47354921
   sqlite3_flutter_libs: f9114e4bbe1f2e03dd543373c53d23245982ca13
   url_launcher_ios: 5334b05cef931de560670eeae103fd3e431ac3fe
-  webview_flutter_wkwebview: a4af96a051138e28e29f60101d094683b9f82188
+  webview_flutter_wkwebview: 29eb20d43355b48fe7d07113835b9128f84e3af4
 
 PODFILE CHECKSUM: f0c0afb173e5f61e541cb22fd1255ca4a3da28c6
 

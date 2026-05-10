@@ -100,7 +100,7 @@ class _LearningLevelFilterChip extends StatelessWidget {
       borderRadius: AppBorderRadius.full,
       child: InkWell(
         borderRadius: AppBorderRadius.full,
-        onTap: onTap,
+        onTap: onTap.withHaptic(HapticType.selection),
         child: AnimatedContainer(
           duration: AppAnimation.fast,
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),

@@ -18,7 +18,7 @@ class _NoteQuizItemCard extends ConsumerWidget {
     final c = context.appColors;
 
     return GestureDetector(
-      onTap: onTap,
+      onTap: onTap.withHaptic(),
       child: Container(
         padding: const EdgeInsets.symmetric(
             horizontal: AppSpacing.md, vertical: AppSpacing.md),
@@ -84,8 +84,10 @@ class _NoteQuizItemCard extends ConsumerWidget {
             const Gap(AppSpacing.sm),
             GestureDetector(
               behavior: HitTestBehavior.opaque,
-              onTap: () =>
-                  ref.read(bookmarkProvider.notifier).toggle(q.eraId, q.no),
+              onTap: (() => ref
+                      .read(bookmarkProvider.notifier)
+                      .toggle(q.eraId, q.no))
+                  .withHaptic(),
               child: Padding(
                 padding: const EdgeInsets.all(4),
                 child: Icon(

@@ -8,13 +8,15 @@ import 'package:app_it_pass/features/settings/view_model/theme_mode_view_model.d
 import 'package:app_it_pass/features/learning/repository/local_learning_history_repository.dart';
 import 'package:app_it_pass/features/quiz/view_model/quiz_view_model.dart';
 import 'package:core/config/constants/app_urls.dart';
+import 'package:core/config/haptic/haptics.dart';
 import 'package:core/config/extensions/context_extension.dart';
 import 'package:core/config/styles/app_border_radius.dart';
 import 'package:core/config/styles/app_colors.dart';
 import 'package:core/config/styles/app_icons.dart';
 import 'package:core/config/styles/app_spacing.dart';
 import 'package:core/config/styles/app_text_style.dart';
-import 'package:core/features/purchase/view/paywall_bottom_sheet.dart';
+import 'package:core/features/admob/admob_native.dart';
+import 'package:app_it_pass/features/purchase/view/paywall_sheet.dart';
 import 'package:core/features/purchase/view_model/premium_view_model.dart';
 import 'package:core/features/settings/view_model/settings_view_model.dart';
 import 'package:core/i18n/translations.g.dart';
@@ -66,8 +68,9 @@ class SettingsSheet extends ConsumerWidget {
               const Gap(AppSpacing.sm),
               Expanded(
                 child: ListView(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: AppSpacing.md),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: AppSpacing.md,
+                  ),
                   children: [
                     const Gap(AppSpacing.sm),
                     _Title(title: 'アカウント'),
@@ -80,9 +83,7 @@ class SettingsSheet extends ConsumerWidget {
                             icon: isPremium
                                 ? Icons.workspace_premium_rounded
                                 : Icons.workspace_premium_outlined,
-                            label: isPremium
-                                ? t.premium.activeBadge
-                                : t.premium.title,
+                            label: isPremium ? 'プレミアム会員' : '無料会員',
                             onTap: () async {
                               Navigator.of(context).pop();
                               await showModalBottomSheet<void>(
@@ -93,16 +94,6 @@ class SettingsSheet extends ConsumerWidget {
                               );
                             },
                           ),
-                          if (kDebugMode) ...[
-                            _Divider(),
-                            _ActionMenuItem(
-                              icon: Icons.developer_mode_rounded,
-                              label: t.premium.devToggle,
-                              onTap: () => ref
-                                  .read(premiumViewModelProvider.notifier)
-                                  .toggleMockPremium(),
-                            ),
-                          ],
                         ],
                       ),
                     ),
@@ -140,6 +131,15 @@ class SettingsSheet extends ConsumerWidget {
                       ),
                     ),
                     const Gap(AppSpacing.md),
+                    GlassContainer(
+                      cardRadius: AppBorderRadius.md,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: AppSpacing.sm,
+                        vertical: AppSpacing.sm,
+                      ),
+                      child: const AdmobNative(),
+                    ),
+                    const Gap(AppSpacing.md),
                     _Title(title: 'その他'),
                     GlassContainer(
                       cardRadius: BorderRadius.circular(16),
@@ -160,12 +160,13 @@ class SettingsSheet extends ConsumerWidget {
                         ],
                       ),
                     ),
-                    const Gap(AppSpacing.sm),
+                    const Gap(AppSpacing.md),
                     GlassContainer(
                       cardRadius: BorderRadius.circular(16),
                       padding: const EdgeInsets.all(AppSpacing.sm),
                       child: _DeleteDataMenuItem(),
                     ),
+                    const Gap(AppSpacing.xl),
                   ],
                 ),
               ),
