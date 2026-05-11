@@ -1,5 +1,5 @@
 name: app_it_pass
-description: "ITパスポート試験対策クイズアプリ"
+description: "ITパスポート試験対策過去問アプリ"
 
 publish_to: 'none'
 version: 1.0.0+1
@@ -18,6 +18,8 @@ dependencies:
   drift: ^2.22.1
   drift_flutter: ^0.2.3
   envied:
+  cloud_firestore: ^6.3.0
+  firebase_auth: ^6.4.0
   firebase_core: ^4.7.0
   fl_chart: ^0.69.0
   flame:
@@ -36,14 +38,18 @@ dependencies:
   gap:
   go_router:
   google_mobile_ads:
+  google_sign_in: ^6.2.0
   hooks_riverpod: ^3.0.0
   json_annotation:
+  package_info_plus: ^10.1.0
   pedantic_mono:
   purchases_flutter: ^9.15.1
   riverpod_annotation: ^4.0.0
   sensors_plus:
+  share_plus:
   shared_preferences:
   shimmer: ^3.0.0
+  sign_in_with_apple: ^8.0.0
   slang:
   slang_flutter:
   url_launcher:

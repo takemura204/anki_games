@@ -4,7 +4,7 @@ import 'package:flutter/material.dart' show DateUtils;
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../daily_study_log/repository/local_daily_study_log_repository.dart';
-import '../../learning/repository/local_learning_history_repository.dart';
+import '../../learning/providers/learning_history_provider.dart';
 import '../../note/repository/local_quiz_history_repository.dart';
 import '../model/report_stats.dart';
 
@@ -12,7 +12,7 @@ final reportStatsProvider = FutureProvider<ReportStats>((ref) async {
   final historyRepo = LocalQuizHistoryRepository();
   final dailyLogRepo = LocalDailyStudyLogRepository();
 
-  final learningStats = await LocalLearningHistoryRepository().loadAll();
+  final learningStats = await ref.read(learningHistoryRepositoryProvider).loadAll();
 
   final (allHistory, allLogs) = await (
     historyRepo.loadAll(),

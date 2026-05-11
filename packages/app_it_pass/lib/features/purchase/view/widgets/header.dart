@@ -12,7 +12,11 @@ class _Header extends StatelessWidget {
         GlassContainer(
           padding: const EdgeInsets.all(AppSpacing.sm),
           cardRadius: AppBorderRadius.circle,
-          child: Icon(Icons.workspace_premium_rounded, size: 25, color: c.fg),
+          child: Icon(
+            Icons.workspace_premium_rounded,
+            size: 25,
+            color: c.fgShade400,
+          ),
         ),
         const Gap(AppSpacing.xs),
         Text(

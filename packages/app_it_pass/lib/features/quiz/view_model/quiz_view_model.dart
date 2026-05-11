@@ -6,8 +6,9 @@ import '../../daily_study_log/repository/local_daily_study_log_repository.dart';
 import '../../filter/repository/filter_repository.dart';
 import '../../learning/model/learning_level.dart';
 import '../../learning/providers/it_pass_learning_stats_provider.dart';
-import '../../learning/repository/learning_history_repository.dart';
-import '../../learning/repository/local_learning_history_repository.dart';
+import '../../learning/providers/learning_history_provider.dart';
+import '../../learning/repository/local_learning_history_repository.dart'
+    show LocalLearningHistoryRepository;
 import '../../note/repository/local_quiz_history_repository.dart';
 import '../../streak/view_model/streak_view_model.dart';
 import '../model/exam_meta.dart';
@@ -48,8 +49,6 @@ class QuizError extends QuizState {
 class QuizViewModel extends _$QuizViewModel {
   final _repository = QuizRepository();
   final _filterRepo = FilterRepository();
-  final LearningHistoryRepository _learningRepo =
-      LocalLearningHistoryRepository();
   final _quizHistoryRepo = LocalQuizHistoryRepository();
   final _dailyLogRepo = LocalDailyStudyLogRepository();
 
@@ -63,7 +62,7 @@ class QuizViewModel extends _$QuizViewModel {
       // filter と learning stats を並列ロード
       final (rawFilter, stats) = await (
         _filterRepo.load(),
-        _learningRepo.loadAll(),
+        ref.read(learningHistoryRepositoryProvider).loadAll(),
       ).wait;
 
       // 旧保存フィルター互換: 空の selectedSystems / selectedLearningLevels は全選択扱い
@@ -135,7 +134,7 @@ class QuizViewModel extends _$QuizViewModel {
 
     try {
       await Future.wait([
-        _learningRepo.recordAnswer(
+        ref.read(learningHistoryRepositoryProvider).recordAnswer(
           eraId: q.eraId,
           no: q.no,
           isCorrect: isCorrect,
@@ -150,8 +149,8 @@ class QuizViewModel extends _$QuizViewModel {
           answeredAt: now,
         ),
         ref.read(streakViewModelProvider.notifier).recordStudy(),
-        // 不正解時は「覚えた」除外フラグを解除して復習リストに再登録させる
-        if (!isCorrect) _learningRepo.unmarkMastered(q.eraId, q.no),
+        if (!isCorrect)
+          ref.read(learningHistoryRepositoryProvider).unmarkMastered(q.eraId, q.no),
         if (isFirstWrong) _dailyLogRepo.incrementNewReview(),
       ]);
       ref.invalidate(reportStatsProvider);

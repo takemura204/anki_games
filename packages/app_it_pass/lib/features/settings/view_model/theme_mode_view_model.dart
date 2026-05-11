@@ -11,7 +11,7 @@ class ThemeModeViewModel extends _$ThemeModeViewModel {
   @override
   ThemeMode build() {
     _load();
-    return ThemeMode.system;
+    return ThemeMode.dark;
   }
 
   void _load() {
@@ -30,7 +30,7 @@ class ThemeModeViewModel extends _$ThemeModeViewModel {
   static ThemeMode _parse(String? raw) => switch (raw) {
         'light' => ThemeMode.light,
         'dark' => ThemeMode.dark,
-        _ => ThemeMode.system,
+        _ => ThemeMode.dark,
       };
 
   static String _serialize(ThemeMode mode) => switch (mode) {

@@ -19,7 +19,9 @@ import 'package:shimmer/shimmer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../learning/model/learning_level.dart';
-import '../../learning/repository/local_learning_history_repository.dart';
+import '../../learning/providers/learning_history_provider.dart';
+import '../../learning/repository/local_learning_history_repository.dart'
+    show LocalLearningHistoryRepository;
 import '../../quiz/view/widgets/choice_button.dart';
 import '../../quiz/view/widgets/question_card.dart';
 import '../model/note_list_item.dart';

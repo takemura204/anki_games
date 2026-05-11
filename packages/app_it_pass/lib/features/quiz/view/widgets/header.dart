@@ -37,7 +37,7 @@ class _Header extends StatelessWidget {
             cardRadius: cardRadius,
             child: IconButton(
               padding: EdgeInsets.zero,
-              icon: Icon(AppIcons.account, color: c.fgShade400, size: 22),
+              icon: Icon(AppIcons.settings, color: c.fgShade400, size: 22),
               onPressed: onTapSetting.withHaptic(),
             ),
           ),

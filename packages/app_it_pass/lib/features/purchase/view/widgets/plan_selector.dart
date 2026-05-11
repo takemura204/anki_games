@@ -16,29 +16,32 @@ class _PlanSelector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GlassButton(
-      cardRadius: AppBorderRadius.md,
-      child: Column(
-        children: [
-          _PlanRow(
-            title: '1ヶ月プラン',
-            subtitle: '毎月自動更新。いつでもキャンセル可能。',
-            priceAsync: monthlyPriceAsync,
-            isSelected: selectedPlan == _Plan.monthly,
-            onTap: () => onSelect(_Plan.monthly),
-            c: c,
-            priceSuffix: '月',
-          ),
-          Divider(height: 1, indent: 14, endIndent: 14, color: c.fgShade50),
-          _PlanRow(
-            title: '買い切りプラン',
-            subtitle: '１度切りのお支払い。無制限に利用可能。',
-            priceAsync: lifetimePriceAsync,
-            isSelected: selectedPlan == _Plan.lifetime,
-            onTap: () => onSelect(_Plan.lifetime),
-            c: c,
-          ),
-        ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: AppSpacing.sm),
+      child: GlassButton(
+        cardRadius: AppBorderRadius.md,
+        child: Column(
+          children: [
+            _PlanRow(
+              title: '1ヶ月プラン',
+              subtitle: '毎月自動更新。いつでもキャンセル可能。',
+              priceAsync: monthlyPriceAsync,
+              isSelected: selectedPlan == _Plan.monthly,
+              onTap: () => onSelect(_Plan.monthly),
+              c: c,
+              priceSuffix: '月',
+            ),
+            Divider(height: 1, indent: 14, endIndent: 14, color: c.fgShade50),
+            _PlanRow(
+              title: '買い切りプラン',
+              subtitle: '１度切りのお支払い。無制限に利用可能。',
+              priceAsync: lifetimePriceAsync,
+              isSelected: selectedPlan == _Plan.lifetime,
+              onTap: () => onSelect(_Plan.lifetime),
+              c: c,
+            ),
+          ],
+        ),
       ),
     );
   }

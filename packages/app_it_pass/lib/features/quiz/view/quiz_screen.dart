@@ -49,6 +49,7 @@ part 'widgets/quiz_page_item.dart';
 part 'widgets/quiz_skeleton.dart';
 part 'widgets/finished_result_page.dart';
 
+//TODO:FirebaseAuthで連携時にFirestoreでデータ連携を実装してデータ同期
 //IDEA:1日の初めはQuizの開始画面でモチベーションを上げる画面を用意してたテスワイプで開始できるようにする。
 class QuizScreen extends ConsumerWidget {
   const QuizScreen({super.key});
@@ -58,10 +59,7 @@ class QuizScreen extends ConsumerWidget {
     return const Scaffold(
       body: Stack(
         fit: StackFit.expand,
-        children: [
-          _QuizGradientBackground(),
-          _QuizBody(),
-        ],
+        children: [_QuizGradientBackground(), _QuizBody()],
       ),
     );
   }
@@ -103,12 +101,10 @@ class _QuizBodyState extends ConsumerState<_QuizBody>
       vsync: this,
       duration: const Duration(milliseconds: 380), // シートスライドのチューニング値
     )..addStatusListener(_onSheetStatus);
-    _sheetSlide = Tween<Offset>(
-      begin: const Offset(0, 1),
-      end: Offset.zero,
-    ).animate(
-      CurvedAnimation(parent: _sheetController, curve: Curves.easeOutCubic),
-    );
+    _sheetSlide = Tween<Offset>(begin: const Offset(0, 1), end: Offset.zero)
+        .animate(
+          CurvedAnimation(parent: _sheetController, curve: Curves.easeOutCubic),
+        );
   }
 
   @override
@@ -133,10 +129,12 @@ class _QuizBodyState extends ConsumerState<_QuizBody>
     AsyncValue<QuizState>? prev,
     AsyncValue<QuizState> next,
   ) {
-    final prevSession =
-        prev?.value is QuizReady ? (prev!.value as QuizReady).session : null;
-    final nextSession =
-        next.value is QuizReady ? (next.value as QuizReady).session : null;
+    final prevSession = prev?.value is QuizReady
+        ? (prev!.value as QuizReady).session
+        : null;
+    final nextSession = next.value is QuizReady
+        ? (next.value as QuizReady).session
+        : null;
 
     if (next is AsyncLoading) {
       _pageController.jumpToPage(0);
@@ -251,8 +249,9 @@ class _QuizBodyState extends ConsumerState<_QuizBody>
 
     if (entry is _ResultEntry) {
       final quizState = ref.read(quizViewModelProvider).value;
-      final elapsed =
-          quizState is QuizReady ? quizState.session.setElapsed : Duration.zero;
+      final elapsed = quizState is QuizReady
+          ? quizState.session.setElapsed
+          : Duration.zero;
       setState(() {
         _currentViewPage = pageIndex;
         _resultElapsesBySet[entry.setIndex] = elapsed;
@@ -291,7 +290,9 @@ class _QuizBodyState extends ConsumerState<_QuizBody>
     final asyncState = ref.watch(quizViewModelProvider);
     ref.read(progressDashboardProvider);
     ref.listen<AsyncValue<QuizState>>(
-        quizViewModelProvider, _onProviderChanged);
+      quizViewModelProvider,
+      _onProviderChanged,
+    );
 
     final quizState = asyncState.value;
     final session = quizState is QuizReady ? quizState.session : null;
@@ -302,13 +303,15 @@ class _QuizBodyState extends ConsumerState<_QuizBody>
 
     // 正解: シートなしで即表示 / 不正解: シートアニメーション完了後のみ表示
     final isIncorrect = session?.answerState == AnswerState.incorrect;
-    final showActionBar = session != null &&
+    final showActionBar =
+        session != null &&
         session.isAnswered &&
         !_isOnResultPage &&
         !_isOnSessionEndPage &&
         (isIncorrect ? _actionBarReady : !_sheetMounted);
 
-    final physics = _isOnResultPage ||
+    final physics =
+        _isOnResultPage ||
             _isOnSessionEndPage ||
             (session != null && session.isAnswered && !_sheetMounted)
         ? const _ForwardOnlyPageScrollPhysics()
@@ -317,8 +320,8 @@ class _QuizBodyState extends ConsumerState<_QuizBody>
     final headerCenterLabel = _isOnResultPage
         ? 'リザルト'
         : _isOnSessionEndPage
-            ? '次のステップ'
-            : null;
+        ? '次のステップ'
+        : null;
 
     return Stack(
       children: [

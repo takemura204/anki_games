@@ -21,10 +21,7 @@ class _Header extends StatelessWidget {
           Expanded(
             child: Row(
               children: [
-                Icon(
-                  AppIcons.account,
-                  color: c.fgShade400,
-                ),
+                Icon(AppIcons.settings, color: c.fgShade400),
                 const Gap(AppSpacing.xs),
                 Text(
                   '設定',

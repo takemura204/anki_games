@@ -82,7 +82,7 @@ class PaywallSheet extends HookConsumerWidget {
                 lifetimePriceAsync: lifetimePriceAsync,
                 onSelect: (plan) => selectedPlan.value = plan,
               ),
-              const Gap(AppSpacing.md),
+              const Gap(AppSpacing.lg),
               _CTASection(
                 c: c,
                 selectedPlan: selectedPlan.value,
@@ -120,9 +120,9 @@ class PaywallSheet extends HookConsumerWidget {
       if (context.mounted && isPremium) Navigator.of(context).pop();
     } on Exception catch (_) {
       if (context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(t.premium.errorPurchaseFailed)),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text(t.premium.errorPurchaseFailed)));
       }
     } finally {
       isLoading.value = false;
@@ -147,9 +147,9 @@ class PaywallSheet extends HookConsumerWidget {
       if (context.mounted && isPremium) Navigator.of(context).pop();
     } on Exception catch (_) {
       if (context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(t.premium.errorPurchaseFailed)),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text(t.premium.errorPurchaseFailed)));
       }
     } finally {
       isLoading.value = false;

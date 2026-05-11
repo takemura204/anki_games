@@ -4,7 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../learning/model/learning_level.dart';
-import '../../learning/repository/local_learning_history_repository.dart';
+import '../../learning/providers/learning_history_provider.dart';
 import '../../quiz/model/exam_meta.dart';
 import '../../quiz/repository/quiz_repository.dart';
 import '../model/quiz_filter.dart';
@@ -53,7 +53,6 @@ abstract class FilterState with _$FilterState {
 class FilterViewModel extends _$FilterViewModel {
   final _repo = FilterRepository();
   final _quizRepo = QuizRepository();
-  final _learningRepo = LocalLearningHistoryRepository();
 
   var _matchCountGeneration = 0;
 
@@ -92,7 +91,7 @@ class FilterViewModel extends _$FilterViewModel {
       return;
     }
     final filter = cur.toFilter();
-    final stats = await _learningRepo.loadAll();
+    final stats = await ref.read(learningHistoryRepositoryProvider).loadAll();
     final n = (await _quizRepo.loadFilteredQuestions(filter, stats)).length;
     if (gen != _matchCountGeneration) return;
     final latest = state.value;
@@ -325,7 +324,7 @@ class FilterViewModel extends _$FilterViewModel {
       ),
     );
     final filter = current.toFilter();
-    final stats = await _learningRepo.loadAll();
+    final stats = await ref.read(learningHistoryRepositoryProvider).loadAll();
     final count = (await _quizRepo.loadFilteredQuestions(filter, stats)).length;
     if (count == 0) {
       state = AsyncData(

@@ -15,24 +15,24 @@ class LocalLearningHistoryRepository implements LearningHistoryRepository {
   Future<Map<String, QuestionLearningStats>> loadAll() async {
     final prefs = await SharedPreferences.getInstance();
     final raw = prefs.getString(_prefsKey);
-    if (raw == null || raw.isEmpty) {
-      return {};
-    }
+    if (raw == null || raw.isEmpty) return {};
     final decoded = jsonDecode(raw) as Map<String, dynamic>;
     return decoded.map(
-      (k, v) => MapEntry(
-        k,
-        QuestionLearningStats.fromJson(v as Map<String, dynamic>),
-      ),
+      (k, v) => MapEntry(k, QuestionLearningStats.fromJson(v as Map<String, dynamic>)),
     );
   }
 
   Future<void> _save(Map<String, QuestionLearningStats> map) async {
     final prefs = await SharedPreferences.getInstance();
-    final encoded = jsonEncode(
-      map.map((k, v) => MapEntry(k, v.toJson())),
-    );
+    final encoded = jsonEncode(map.map((k, v) => MapEntry(k, v.toJson())));
     await prefs.setString(_prefsKey, encoded);
+  }
+
+  Future<void> saveAll(Map<String, QuestionLearningStats> map) => _save(map);
+
+  Future<void> saveAllMastered(Set<String> keys) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setStringList(_masteredKey, keys.toList());
   }
 
   @override
@@ -41,7 +41,7 @@ class LocalLearningHistoryRepository implements LearningHistoryRepository {
     await prefs.remove(_prefsKey);
   }
 
-  /// 復習リストから「覚えた」として永続除外する。
+  @override
   Future<void> markMastered(String eraId, int no) async {
     final prefs = await SharedPreferences.getInstance();
     final raw = prefs.getStringList(_masteredKey) ?? [];
@@ -52,7 +52,7 @@ class LocalLearningHistoryRepository implements LearningHistoryRepository {
     }
   }
 
-  /// 「覚えた」として除外されたキー集合を返す。
+  @override
   Future<Set<String>> loadMastered() async {
     final prefs = await SharedPreferences.getInstance();
     return (prefs.getStringList(_masteredKey) ?? []).toSet();

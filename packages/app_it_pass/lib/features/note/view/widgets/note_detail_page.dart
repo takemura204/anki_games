@@ -38,7 +38,7 @@ class _NoteDetailPageState extends ConsumerState<_NoteDetailPage> {
   void _goToNextReviewItem({required bool known}) {
     if (known) {
       final q = _args.reviewQueue[_currentIndex].question;
-      LocalLearningHistoryRepository().markMastered(q.eraId, q.no).then((_) {
+      ref.read(learningHistoryRepositoryProvider).markMastered(q.eraId, q.no).then((_) {
         widget.onMarkMastered();
       });
     }

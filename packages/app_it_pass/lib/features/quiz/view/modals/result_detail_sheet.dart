@@ -17,7 +17,9 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../../../learning/model/learning_level.dart';
 import '../../../learning/model/question_learning_stats.dart';
-import '../../../learning/repository/local_learning_history_repository.dart';
+import '../../../learning/providers/learning_history_provider.dart';
+import '../../../learning/repository/local_learning_history_repository.dart'
+    show LocalLearningHistoryRepository;
 import '../../../note/providers/bookmark_provider.dart';
 import '../../model/quiz_session.dart';
 import '../widgets/choice_button.dart';
@@ -51,7 +53,7 @@ class _ResultDetailSheetState extends ConsumerState<ResultDetailSheet> {
   }
 
   Future<void> _loadStats() async {
-    final stats = await LocalLearningHistoryRepository().loadAll();
+    final stats = await ref.read(learningHistoryRepositoryProvider).loadAll();
     if (mounted) setState(() => _learningStats = stats);
   }
 

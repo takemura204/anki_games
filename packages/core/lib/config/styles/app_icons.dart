@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class AppIcons {
   const AppIcons();
   //Button
-  static const IconData account = Icons.person_outline;
+  static const IconData settings = Icons.settings_outlined;
   static const IconData filter = Icons.tune_outlined;
   static const IconData note = Icons.book_outlined;
   static const IconData report = Icons.insert_chart_outlined;
@@ -27,4 +27,7 @@ class AppIcons {
 
   //ReportSheet
   static const IconData progressChart = Icons.pie_chart_outline;
+
+  //SettingsSheet
+  static const IconData profile = Icons.person_outline_rounded;
 }

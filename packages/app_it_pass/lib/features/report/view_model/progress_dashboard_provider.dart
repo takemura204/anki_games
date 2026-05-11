@@ -1,14 +1,16 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../learning/model/learning_level.dart';
-import '../../learning/repository/local_learning_history_repository.dart';
+import '../../learning/providers/learning_history_provider.dart';
+import '../../learning/repository/local_learning_history_repository.dart'
+    show LocalLearningHistoryRepository;
 import '../../quiz/model/exam_meta.dart';
 import '../../quiz/repository/quiz_repository.dart';
 import '../model/progress_dashboard_data.dart';
 
 final progressDashboardProvider =
     FutureProvider<ProgressDashboardData>((ref) async {
-  final learningStats = await LocalLearningHistoryRepository().loadAll();
+  final learningStats = await ref.read(learningHistoryRepositoryProvider).loadAll();
   final repo = QuizRepository();
 
   final results = await Future.wait(

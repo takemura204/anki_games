@@ -3,7 +3,9 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../learning/model/learning_level.dart';
 import '../../learning/model/question_learning_stats.dart';
-import '../../learning/repository/local_learning_history_repository.dart';
+import '../../learning/providers/learning_history_provider.dart';
+import '../../learning/repository/local_learning_history_repository.dart'
+    show LocalLearningHistoryRepository;
 import '../../quiz/repository/quiz_repository.dart';
 import '../model/note_list_item.dart';
 import '../repository/local_bookmark_repository.dart';
@@ -28,7 +30,7 @@ class NoteSheetViewModel extends _$NoteSheetViewModel {
   @override
   Future<NoteSheetReady> build() async {
     final bookmarkRepo = LocalBookmarkRepository();
-    final learningRepo = LocalLearningHistoryRepository();
+    final learningRepo = ref.read(learningHistoryRepositoryProvider);
     final historyRepo = LocalQuizHistoryRepository();
 
     final (bookmarks, stats, historyRecords, masteredKeys) = await (
