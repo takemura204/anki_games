@@ -1,0 +1,7 @@
+include: package:pedantic_mono/analysis_options.yaml
+
+linter:
+  rules:
+    # Flutter 公式コードでも準拠しないスタイルルール
+    always_put_control_body_on_new_line: false
+    lines_longer_than_80_chars: false

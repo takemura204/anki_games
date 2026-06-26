@@ -13,6 +13,7 @@ enum HapticType {
   selection,
 }
 
+// ignore: avoid_classes_with_only_static_members
 /// 振動ユーティリティ。
 abstract final class Haptics {
   static Future<void> light() => HapticFeedback.lightImpact();

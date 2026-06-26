@@ -14,6 +14,27 @@
 			"type": "dart",
 			"program": "lib/main_it_pass.dart",
 			"args": ["--flavor", "it_pass"]
+		},
+		{
+			"name": "it_pass (emulator)",
+			"request": "launch",
+			"type": "dart",
+			"program": "lib/main_it_pass.dart",
+			"args": ["--flavor", "it_pass", "--dart-define=USE_EMULATOR=true"]
+		},
+		{
+			"name": "fe",
+			"request": "launch",
+			"type": "dart",
+			"program": "lib/main_fe.dart",
+			"args": ["--flavor", "fe"]
+		},
+		{
+			"name": "fe (emulator)",
+			"request": "launch",
+			"type": "dart",
+			"program": "lib/main_fe.dart",
+			"args": ["--flavor", "fe", "--dart-define=USE_EMULATOR=true"]
 		}
 	]
 }

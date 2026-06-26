@@ -1,4 +1,4 @@
-package jp.tt.block.puzzle
+package jp.block.puzzle
 
 import io.flutter.embedding.android.FlutterActivity
 

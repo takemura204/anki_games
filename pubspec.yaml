@@ -8,6 +8,8 @@ environment:
   sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
+  app_fe:
+    path: packages/app_fe
   app_it_pass:
     path: packages/app_it_pass
   audioplayers:

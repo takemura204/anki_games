@@ -19,6 +19,9 @@ class RealPurchaseService implements IPurchaseService {
 
   @override
   Future<void> configure() async {
+    if (kDebugMode) {
+      await Purchases.setLogLevel(LogLevel.verbose);
+    }
     await Purchases.configure(PurchasesConfiguration(_config.apiKey));
     Purchases.addCustomerInfoUpdateListener((info) {
       _notifyListeners(isPremium: _isPremiumFromInfo(info));

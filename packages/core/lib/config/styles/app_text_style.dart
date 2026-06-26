@@ -40,20 +40,20 @@ abstract final class AppTextStyle {
   // ── Title ─────────────────────────────────────────────────────────
   static const titleLarge = TextStyle(
     fontFamily: fontFamily,
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: FontWeight.w600,
     letterSpacing: 2,
   );
 
   static const titleMedium = TextStyle(
     fontFamily: fontFamily,
-    fontSize: 15,
+    fontSize: 18,
     fontWeight: FontWeight.w700,
   );
 
   static const titleSmall = TextStyle(
     fontFamily: fontFamily,
-    fontSize: 14,
+    fontSize: 16,
     fontWeight: FontWeight.w600,
   );
 

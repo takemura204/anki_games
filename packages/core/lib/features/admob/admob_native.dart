@@ -4,6 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:shimmer/shimmer.dart';
 
 import '../../config/ads/ad_config.dart';
+import '../purchase/view_model/premium_view_model.dart';
 
 class AdmobNative extends ConsumerStatefulWidget {
   const AdmobNative({
@@ -65,6 +66,10 @@ class _AdmobNativeState extends ConsumerState<AdmobNative> {
 
   @override
   Widget build(BuildContext context) {
+    final isPremium =
+        ref.watch(premiumViewModelProvider).asData?.value.isPremium ?? false;
+    if (isPremium) return const SizedBox.shrink();
+
     final height = widget.height ?? _defaultHeight;
 
     if (!_isLoaded || _nativeAd == null) {

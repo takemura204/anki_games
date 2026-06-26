@@ -1,0 +1,88 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  test:
+    name: Flutter Test (core)
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.41.3"
+          channel: stable
+          cache: true
+
+      - name: Install dependencies (core)
+        working-directory: packages/core
+        run: flutter pub get
+
+      - name: Generate code (core)
+        working-directory: packages/core
+        run: dart run build_runner build --delete-conflicting-outputs
+
+      - name: Run tests with coverage
+        working-directory: packages/core
+        run: flutter test --coverage
+
+      - name: Filter generated files from coverage
+        working-directory: packages/core
+        run: |
+          lcov --remove coverage/lcov.info \
+               '*.g.dart' '*.freezed.dart' \
+               --output-file coverage/lcov.info \
+               --ignore-errors unused 2>/dev/null || true
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: packages/core/coverage/lcov.info
+
+  analyze:
+    name: Flutter Analyze
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.41.3"
+          channel: stable
+          cache: true
+
+      - name: Install dependencies (core)
+        working-directory: packages/core
+        run: flutter pub get
+
+      - name: Install dependencies (app_it_pass)
+        working-directory: packages/app_it_pass
+        run: flutter pub get
+
+      - name: Generate code (app_it_pass)
+        working-directory: packages/app_it_pass
+        run: dart run build_runner build --delete-conflicting-outputs
+
+      - name: Flutter analyze (app_it_pass)
+        working-directory: packages/app_it_pass
+        run: flutter analyze --fatal-infos
+
+      - name: Flutter analyze (core)
+        working-directory: packages/core
+        run: flutter analyze --fatal-infos
+
+      - name: Install dependencies (app_fe)
+        working-directory: packages/app_fe
+        run: flutter pub get
+
+      - name: Flutter analyze (app_fe)
+        working-directory: packages/app_fe
+        run: flutter analyze --fatal-infos

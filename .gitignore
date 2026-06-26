@@ -35,6 +35,7 @@ migrate_working_dir/
 
 # Symbolication related
 app.*.symbols
+debug-info/
 
 # Obfuscation related
 app.*.map.json
@@ -72,6 +73,18 @@ script/
 google-services.json
 GoogleService-Info.plist
 
+# App Store Connect API key（プロジェクト内に置く場合）
+private_keys/
+*.p8
+
+# Google Play サービスアカウント JSON
+play-service-account*.json
+
 # IDE / Editor personal settings
 .cursor/
 .claude/
+
+# 機密ドキュメント（ポートフォリオ公開時は非公開）
+docs/kpi.md
+docs/consulting.md
+docs/specs/

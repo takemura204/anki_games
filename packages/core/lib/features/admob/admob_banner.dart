@@ -3,6 +3,7 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../config/ads/ad_config.dart';
+import '../purchase/view_model/premium_view_model.dart';
 
 class AdmobBanner extends ConsumerStatefulWidget {
   const AdmobBanner({super.key});
@@ -46,6 +47,7 @@ class _AdmobBannerState extends ConsumerState<AdmobBanner> {
             setState(() => _isAdLoaded = true);
           },
           onAdFailedToLoad: (Ad ad, LoadAdError error) {
+            debugPrint('BannerAd failed to load: $error');
             ad.dispose();
             if (!mounted) {
               return;
@@ -68,6 +70,10 @@ class _AdmobBannerState extends ConsumerState<AdmobBanner> {
 
   @override
   Widget build(BuildContext context) {
+    final isPremium =
+        ref.watch(premiumViewModelProvider).asData?.value.isPremium ?? false;
+    if (isPremium) return const SizedBox.shrink();
+
     if (_isAdLoaded && _bannerAd != null) {
       return SizedBox(
         width: _bannerAd!.size.width.toDouble(),

@@ -1,27 +1,42 @@
 // Cursor / VS Code はこのファイルを自動では読みません。
-// 実際に効くのは「ユーザー」keybindings.json（例: macOS Cursor は
-// ~/Library/Application Support/Cursor/User/keybindings.json）。
-// この配列は同期用のテンプレートです。コピーする場合は下記の順で。
+// 実際に効くのは「ユーザー」keybindings.json:
+//   macOS: ~/Library/Application Support/Cursor/User/keybindings.json
 //
-// 1) Cmd+S が「保存」に負けないよう、同じ when で -workbench.action.files.save を先に置く
-// 2) runCommands で dart.hotReload / flutter.hotRestart の直後に bring-flutter-target-to-front
+// == 前提 ==
+// - Cursor は最大化ウィンドウ（通常ウィンドウ）で使用。ネイティブ全画面（緑ボタン）は使わない。
+//   → Simulator.app が frontmost になれば1画面切替が成立。Cursor に戻るのは Cmd+Tab。
+// - flutter.hotReloadOnSave / dart.flutterHotReloadOnSave は "never" に設定済み（二重発火防止）。
+//   → リロードはすべて下記 keybinding が行う。
 //
-// Mac: Cmd+S = HR + 前面 / Shift+Cmd+S = ホットリスタート + 前面（従来の flutter.hotRestart 単体は置き換え）
-// 他OS: Ctrl+S / Ctrl+Shift+S 版は key を差し替えて同じ構造に。
+// == 動作フロー ==
+//   Cmd+S      → [1] files.save（= editor.formatOnSave で成形）
+//              → [2] dart.hotReload
+//              → [3] task: bring-flutter-target-to-front（Simulator/エミュレーター前面化）
 //
-// workspaceKeybindings.ankiGamesFlutterEmuFocus.enabled は本リポジトリの .vscode/settings.json で true。
+//   Shift+Cmd+S → [1] files.save
+//              → [2] flutter.hotRestart
+//              → [3] task: bring-flutter-target-to-front
+//
+// == 有効化フラグ ==
+// .vscode/settings.json: "workspaceKeybindings.flutterEmulatorFocus.enabled": true
+// （このリポジトリではデフォルト有効。無効にしたい場合は false にすると通常の保存に戻る）
+//
+// == ユーザー keybindings.json への適用 ==
+// 1. ~/Library/Application Support/Cursor/User/keybindings.json を開く
+// 2. 既存の配列末尾に下記エントリを追加（他のエントリは消さない）
 
 [
 	{
 		"key": "cmd+s",
 		"command": "-workbench.action.files.save",
-		"when": "config.workspaceKeybindings.ankiGamesFlutterEmuFocus.enabled && inDebugMode && debugType == dart && (dart-code:service.reloadSources || dart-code:isInDartDebugSession)"
+		"when": "config.workspaceKeybindings.flutterEmulatorFocus.enabled && inDebugMode && debugType == dart && (dart-code:service.reloadSources || dart-code:isInDartDebugSession)"
 	},
 	{
 		"key": "cmd+s",
 		"command": "runCommands",
 		"args": {
 			"commands": [
+				"workbench.action.files.save",
 				"dart.hotReload",
 				{
 					"command": "workbench.action.tasks.runTask",
@@ -29,13 +44,19 @@
 				}
 			]
 		},
-		"when": "config.workspaceKeybindings.ankiGamesFlutterEmuFocus.enabled && inDebugMode && debugType == dart && (dart-code:service.reloadSources || dart-code:isInDartDebugSession)"
+		"when": "config.workspaceKeybindings.flutterEmulatorFocus.enabled && inDebugMode && debugType == dart && (dart-code:service.reloadSources || dart-code:isInDartDebugSession)"
+	},
+	{
+		"key": "shift+cmd+s",
+		"command": "-workbench.action.files.saveAs",
+		"when": "config.workspaceKeybindings.flutterEmulatorFocus.enabled && inDebugMode && debugType == dart && (dart-code:service.reloadSources || dart-code:isInDartDebugSession)"
 	},
 	{
 		"key": "shift+cmd+s",
 		"command": "runCommands",
 		"args": {
 			"commands": [
+				"workbench.action.files.save",
 				"flutter.hotRestart",
 				{
 					"command": "workbench.action.tasks.runTask",
@@ -43,6 +64,6 @@
 				}
 			]
 		},
-		"when": "config.workspaceKeybindings.ankiGamesFlutterEmuFocus.enabled && dart-code:anyFlutterProjectLoaded && inDebugMode && debugType == dart"
+		"when": "config.workspaceKeybindings.flutterEmulatorFocus.enabled && inDebugMode && debugType == dart && (dart-code:service.reloadSources || dart-code:isInDartDebugSession)"
 	}
 ]

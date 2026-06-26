@@ -16,6 +16,21 @@
 			"problemMatcher": []
 		},
 		{
+			"label": "build_runner watch",
+			"type": "shell",
+			"command": "dart run build_runner watch --delete-conflicting-outputs",
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"isBackground": true,
+			"presentation": {
+				"reveal": "always",
+				"panel": "dedicated",
+				"showReuseMessage": false
+			},
+			"problemMatcher": []
+		},
+		{
 			"label": "bring-flutter-target-to-front",
 			"type": "shell",
 			"command": "${workspaceFolder}/script/bring_flutter_target_to_front.sh",

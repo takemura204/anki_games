@@ -10,4 +10,16 @@ abstract final class AppSpacing {
   static const double xl = 32;
   static const double xxl = 48;
   static const double xxxl = 64;
+
+  /// オンボーディング下部フッターオーバーレイのクリアランス。
+  static const double onboardingFooterClearance = 80;
+}
+
+/// 画面幅ブレークポイント定数。
+///
+/// `AdaptiveBody` や `LayoutBuilder` の判断基準として使う。
+/// デバイス種別ではなく利用可能幅で判断する。
+abstract final class AppBreakpoints {
+  /// コンパクト幅の上限。これを超えるとタブレット扱い。
+  static const double compact = 600;
 }

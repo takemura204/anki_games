@@ -14,7 +14,21 @@
 
   ],
   "products" : [
-
+    {
+      "displayPrice" : "11.99",
+      "familyShareable" : false,
+      "internalID" : "6761177483",
+      "localizations" : [
+        {
+          "description" : "プレミアム機能を永久に利用できます。",
+          "displayName" : "買い切りプラン",
+          "locale" : "ja"
+        }
+      ],
+      "productID" : "premium_lifetime",
+      "referenceName" : "買い切りプラン",
+      "type" : "Consumable"
+    }
   ],
   "settings" : {
     "_applicationInternalID" : "6759854662",

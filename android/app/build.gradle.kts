@@ -8,6 +8,7 @@ plugins {
     id("kotlin-android")
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
+    id("com.github.triplet.play") version "3.13.0"
 }
 
 // key.properties からリリース署名情報を読み込む
@@ -63,6 +64,11 @@ android {
             applicationId = "jp.tkmr.it_pass"
             resValue("string", "app_name", "ITパスポート")
         }
+        create("fe") {
+            dimension = "app"
+            applicationId = "jp.tkmr.fe"
+            resValue("string", "app_name", "基本情報技術者")
+        }
     }
 
     buildTypes {
@@ -78,4 +84,13 @@ android {
 
 flutter {
     source = "../.."
+}
+
+play {
+    val credPath = System.getenv("PLAY_SERVICE_ACCOUNT_JSON")
+    if (!credPath.isNullOrEmpty()) {
+        serviceAccountCredentials.set(file(credPath))
+    }
+    track.set("internal")
+    defaultToAppBundles.set(true)
 }

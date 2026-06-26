@@ -2,15 +2,17 @@ name: app_it_pass
 description: "ITパスポート試験対策過去問アプリ"
 
 publish_to: 'none'
-version: 1.0.0+1
+version: 1.0.0+11
 
 environment:
   sdk: ">=3.10.0 <4.0.0"
 
 dependencies:
+  app_tracking_transparency: ^2.0.7
   audioplayers:
   auto_size_text: ^3.0.0
   cached_network_image: ^3.4.1
+  cloud_firestore: ^6.3.0
   confetti: ^0.8.0
   core:
     path: ../core
@@ -18,7 +20,6 @@ dependencies:
   drift: ^2.22.1
   drift_flutter: ^0.2.3
   envied:
-  cloud_firestore: ^6.3.0
   firebase_auth: ^6.4.0
   firebase_core: ^4.7.0
   fl_chart: ^0.69.0
@@ -27,12 +28,15 @@ dependencies:
   flex_color_scheme: ^8.4.0
   flutter:
     sdk: flutter
+  flutter_cache_manager: ^3.4.1
   flutter_card_swiper: ^7.0.1
   flutter_hooks:
+  flutter_local_notifications: ^18.0.0
   flutter_localizations:
     sdk: flutter
   flutter_riverpod: ^3.0.0
   flutter_svg:
+  flutter_timezone: ^5.0.0
   flutter_tts: ^4.0.0
   freezed_annotation:
   gap:
@@ -43,6 +47,7 @@ dependencies:
   json_annotation:
   package_info_plus: ^10.1.0
   pedantic_mono:
+  permission_handler: ^11.0.0
   purchases_flutter: ^9.15.1
   riverpod_annotation: ^4.0.0
   sensors_plus:
@@ -52,6 +57,7 @@ dependencies:
   sign_in_with_apple: ^8.0.0
   slang:
   slang_flutter:
+  timezone: ^0.9.0
   url_launcher:
 
 dev_dependencies:
@@ -70,8 +76,8 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/quiz/
     - assets/logo/
+    - assets/image/
 
 flutter_launcher_icons:
   android: true

@@ -37,6 +37,10 @@
 	</array>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-6280947803421936~9894832541</string>
+	<key>NSUserNotificationUsageDescription</key>
+	<string>学習リマインダーをお届けするために通知を使用します。</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>あなたに合った広告を表示するために使用します。許可しなくても引き続きご利用いただけます。</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSRequiresIPhoneOS</key>

@@ -7,7 +7,7 @@ abstract class ItPassEnv {
   // ── AdMob: Banner ──────────────────────────────────────────────────────────
   @EnviedField(
     varName: 'BANNER_AD_UNIT_ID_ANDROID_DEBUG',
-    defaultValue: 'ca-app-pub-3940256099942544/6300978111',
+    defaultValue: 'ca-app-pub-6280947803421936/1817497206',
   )
   static const String bannerAndroidDebug = _ItPassEnv.bannerAndroidDebug;
 
@@ -19,7 +19,7 @@ abstract class ItPassEnv {
 
   @EnviedField(
     varName: 'BANNER_AD_UNIT_ID_IOS_DEBUG',
-    defaultValue: 'ca-app-pub-3940256099942544/2934735716',
+    defaultValue: 'ca-app-pub-6280947803421936/3327459385',
   )
   static const String bannerIosDebug = _ItPassEnv.bannerIosDebug;
 
@@ -32,7 +32,7 @@ abstract class ItPassEnv {
   // ── AdMob: Native ──────────────────────────────────────────────────────────
   @EnviedField(
     varName: 'NATIVE_AD_UNIT_ID_ANDROID_DEBUG',
-    defaultValue: 'ca-app-pub-3940256099942544/2247696110',
+    defaultValue: 'ca-app-pub-6280947803421936/9795675137',
   )
   static const String nativeAndroidDebug = _ItPassEnv.nativeAndroidDebug;
 
@@ -44,7 +44,7 @@ abstract class ItPassEnv {
 
   @EnviedField(
     varName: 'NATIVE_AD_UNIT_ID_IOS_DEBUG',
-    defaultValue: 'ca-app-pub-3940256099942544/3986624511',
+    defaultValue: 'ca-app-pub-6280947803421936/2683471872',
   )
   static const String nativeIosDebug = _ItPassEnv.nativeIosDebug;
 
@@ -57,7 +57,7 @@ abstract class ItPassEnv {
   // ── AdMob: Rewarded ────────────────────────────────────────────────────────
   @EnviedField(
     varName: 'REWARDED_AD_UNIT_ID_ANDROID_DEBUG',
-    defaultValue: 'ca-app-pub-3940256099942544/5224354917',
+    defaultValue: 'ca-app-pub-6280947803421936/4543348450',
   )
   static const String rewardedAndroidDebug = _ItPassEnv.rewardedAndroidDebug;
 
@@ -70,7 +70,7 @@ abstract class ItPassEnv {
 
   @EnviedField(
     varName: 'REWARDED_AD_UNIT_ID_IOS_DEBUG',
-    defaultValue: 'ca-app-pub-3940256099942544/1712485313',
+    defaultValue: 'ca-app-pub-6280947803421936/7069823880',
   )
   static const String rewardedIosDebug = _ItPassEnv.rewardedIosDebug;
 
@@ -83,7 +83,7 @@ abstract class ItPassEnv {
   // ── AdMob: Interstitial ────────────────────────────────────────────────────
   @EnviedField(
     varName: 'INTERSTITIAL_AD_UNIT_ID_ANDROID_DEBUG',
-    defaultValue: 'ca-app-pub-3940256099942544/1033173712',
+    defaultValue: 'ca-app-pub-6280947803421936/6303537126',
   )
   static const String interstitialAndroidDebug =
       _ItPassEnv.interstitialAndroidDebug;
@@ -97,7 +97,7 @@ abstract class ItPassEnv {
 
   @EnviedField(
     varName: 'INTERSTITIAL_AD_UNIT_ID_IOS_DEBUG',
-    defaultValue: 'ca-app-pub-3940256099942544/4560639518',
+    defaultValue: 'ca-app-pub-6280947803421936/2304197929',
   )
   static const String interstitialIosDebug = _ItPassEnv.interstitialIosDebug;
 
