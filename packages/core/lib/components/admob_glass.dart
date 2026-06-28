@@ -10,21 +10,27 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 /// GlassContainer + AdmobNative のまとまり。
 /// プレミアム時は GlassContainer ごと非表示になる。
+///
+/// [isPremium] を指定するとプロバイダーを参照しない（テスト向け）。
 class AdmobNativeGlass extends ConsumerWidget {
   const AdmobNativeGlass({
     super.key,
     this.templateType = TemplateType.medium,
     this.height,
+    this.isPremium,
   });
 
   final TemplateType templateType;
   final double? height;
 
+  /// null の場合は [premiumViewModelProvider] を参照する。
+  final bool? isPremium;
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isPremium =
-        ref.watch(premiumViewModelProvider).asData?.value.isPremium ?? false;
-    if (isPremium) return const SizedBox.shrink();
+    final premium = isPremium ??
+        (ref.watch(premiumViewModelProvider).asData?.value.isPremium ?? false);
+    if (premium) return const SizedBox.shrink();
 
     return GlassContainer(
       cardRadius: AppBorderRadius.md,
@@ -39,14 +45,19 @@ class AdmobNativeGlass extends ConsumerWidget {
 
 /// GlassContainer + AdmobBanner のまとまり。
 /// プレミアム時は GlassContainer ごと非表示になる。
+///
+/// [isPremium] を指定するとプロバイダーを参照しない（テスト向け）。
 class AdmobBannerGlass extends ConsumerWidget {
-  const AdmobBannerGlass({super.key});
+  const AdmobBannerGlass({super.key, this.isPremium});
+
+  /// null の場合は [premiumViewModelProvider] を参照する。
+  final bool? isPremium;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isPremium =
-        ref.watch(premiumViewModelProvider).asData?.value.isPremium ?? false;
-    if (isPremium) return const SizedBox.shrink();
+    final premium = isPremium ??
+        (ref.watch(premiumViewModelProvider).asData?.value.isPremium ?? false);
+    if (premium) return const SizedBox.shrink();
 
     return const GlassContainer(
       cardRadius: AppBorderRadius.md,

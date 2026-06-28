@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:core/components/buttons.dart';
 import 'package:core/components/glass_widget.dart';
 import 'package:core/components/modal_handle.dart';
-import 'package:core/config/brand/it_pass_color_scheme.dart';
+import 'package:core/config/brand/app_color_scheme.dart';
 import 'package:core/config/constants/app_urls.dart';
 import 'package:core/config/haptic/haptics.dart';
 import 'package:core/config/styles/app_animation.dart';
@@ -113,7 +113,7 @@ class _NoteSheetState extends ConsumerState<NoteSheet> {
     });
   }
 
-  void _onDetailPageChanged(int index, int masteredCount) {
+  void _onDetailPageChanged(int index) {
     setState(() {
       _detailCurrentIndex = index;
     });
@@ -193,7 +193,7 @@ class _NoteSheetState extends ConsumerState<NoteSheet> {
                           key: ValueKey('note_detail_${_detailArgs.hashCode}'),
                           child: _NoteDetailPage(
                             args: _detailArgs!,
-                            onMarkMastered: () =>
+                            onReviewAnswered: () =>
                                 ref.invalidate(noteSheetViewModelProvider),
                             onPageChanged: _onDetailPageChanged,
                           ),

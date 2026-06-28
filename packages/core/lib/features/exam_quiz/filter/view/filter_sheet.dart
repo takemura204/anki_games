@@ -5,7 +5,7 @@ import 'package:core/components/buttons.dart';
 import 'package:core/components/category_filter_section.dart';
 import 'package:core/components/glass_widget.dart';
 import 'package:core/components/modal_handle.dart';
-import 'package:core/config/brand/it_pass_color_scheme.dart';
+import 'package:core/config/brand/app_color_scheme.dart';
 import 'package:core/config/haptic/haptics.dart';
 import 'package:core/config/styles/app_animation.dart';
 import 'package:core/config/styles/app_border_radius.dart';

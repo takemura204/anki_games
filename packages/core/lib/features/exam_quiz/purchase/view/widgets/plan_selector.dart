@@ -8,7 +8,7 @@ class _PlanSelector extends StatelessWidget {
     required this.lifetimePriceAsync,
     required this.onSelect,
   });
-  final ItPassColorScheme c;
+  final AppColorScheme c;
   final _Plan selectedPlan;
   final AsyncValue<String?> monthlyPriceAsync;
   final AsyncValue<String?> lifetimePriceAsync;
@@ -31,7 +31,12 @@ class _PlanSelector extends StatelessWidget {
               c: c,
               priceSuffix: '月',
             ),
-            Divider(height: 1, indent: 14, endIndent: 14, color: c.fgShade50),
+            Divider(
+              height: 1,
+              indent: 14,
+              endIndent: 14,
+              color: c.fgShade50,
+            ),
             _PlanRow(
               title: '買い切りプラン',
               subtitle: '１度切りのお支払い。無制限に利用可能。',
@@ -62,7 +67,7 @@ class _PlanRow extends StatelessWidget {
   final AsyncValue<String?> priceAsync;
   final bool isSelected;
   final VoidCallback onTap;
-  final ItPassColorScheme c;
+  final AppColorScheme c;
   final String? priceSuffix;
 
   @override

@@ -1,11 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import '../../../utils/router/modal_router.dart';
-import '../../../utils/router/router_constants.dart';
-import '../../quiz/view_model/quiz_view_model.dart';
 
 part 'settings_view_model.g.dart';
 
@@ -85,29 +79,5 @@ class SettingsViewModel extends _$SettingsViewModel {
     state = state.copyWith(ttsEnabled: next);
     SharedPreferences.getInstance()
         .then((prefs) => prefs.setBool(_ttsKey, next));
-  }
-
-  /// 学習データの削除確認ダイアログを表示し、承認されたら全データを削除して設定シートを閉じる。
-  Future<void> onDeleteLearningData() async {
-    final confirmed =
-        await ref.read(modalRouterProvider).showDeleteLearningDataConfirm();
-    if (!confirmed) {
-      return;
-    }
-    await ref.read(quizViewModelProvider.notifier).deleteAllLearningData();
-    rootNavigatorKey.currentContext?.pop();
-  }
-
-  /// ゲーム画面の設定シートからホーム画面に戻る。
-  /// 設定シート自体は GoRouter の pop で閉じつつ、ゲーム画面も同時に pop する。
-  void goHome() {
-    // 設定シートはモーダルルートなので Navigator.pop で閉じてから
-    // GoRouter で game ルートを pop してホームに戻る。
-    final ctx = rootNavigatorKey.currentContext;
-    if (ctx == null) {
-      return;
-    }
-    // popUntil でルートスタックの最初（HomeScreen）まで戻る
-    Navigator.of(ctx).popUntil((Route<dynamic> route) => route.isFirst);
   }
 }

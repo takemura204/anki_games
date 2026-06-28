@@ -16,8 +16,9 @@ class NotificationService {
   // 曜日別リマインダー: ID 10(月)〜16(日)
   static const _weeklyBaseId = 10;
   static const _streakWarningId = 2;
-  static const _channelId = 'it_pass_reminder';
   static const _channelName = '学習リマインダー';
+
+  String _channelId = 'exam_reminder';
 
   // 曜日別メッセージ (index 0=月, 1=火, ... 6=日)
   static const _weekdayTitles = [
@@ -42,7 +43,8 @@ class NotificationService {
 
   final _plugin = FlutterLocalNotificationsPlugin();
 
-  Future<void> initialize() async {
+  Future<void> initialize({String channelId = 'exam_reminder'}) async {
+    _channelId = channelId;
     tz_data.initializeTimeZones();
     final timezoneInfo = await FlutterTimezone.getLocalTimezone();
     tz.setLocalLocation(tz.getLocation(timezoneInfo.identifier));
@@ -173,13 +175,13 @@ class NotificationService {
     return dt;
   }
 
-  NotificationDetails _buildDetails() => const NotificationDetails(
+  NotificationDetails _buildDetails() => NotificationDetails(
         android: AndroidNotificationDetails(
           _channelId,
           _channelName,
           channelDescription: '毎日の学習リマインダーと継続サポート通知',
         ),
-        iOS: DarwinNotificationDetails(
+        iOS: const DarwinNotificationDetails(
           presentAlert: true,
           presentBadge: true,
           presentSound: true,

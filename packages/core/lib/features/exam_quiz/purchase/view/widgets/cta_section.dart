@@ -11,7 +11,7 @@ class _CTASection extends StatelessWidget {
     required this.onPurchase,
     required this.onRestore,
   });
-  final ItPassColorScheme c;
+  final AppColorScheme c;
   final _Plan selectedPlan;
   final AsyncValue<String?> monthlyPriceAsync;
   final AsyncValue<String?> lifetimePriceAsync;
@@ -38,6 +38,13 @@ class _CTASection extends StatelessWidget {
           height: 60,
         ),
         const Gap(AppSpacing.md),
+        Text(
+          t.premium.subscriptionDisclosure,
+          textAlign: TextAlign.center,
+          style: TextStyle(fontSize: 8, color: c.fgShade300),
+        ),
+
+        const Gap(AppSpacing.sm),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -47,7 +54,16 @@ class _CTASection extends StatelessWidget {
               label: t.premium.terms,
               onTap: () => launchUrl(
                 Uri.parse(AppUrls.termsOfService),
-                mode: LaunchMode.inAppWebView,
+                mode: LaunchMode.externalApplication,
+              ),
+              c: c,
+            ),
+            Text('·', style: TextStyle(fontSize: 11, color: c.fgShade200)),
+            _SmallLink(
+              label: t.premium.eula,
+              onTap: () => launchUrl(
+                Uri.parse(AppUrls.appleStandardEula),
+                mode: LaunchMode.externalApplication,
               ),
               c: c,
             ),
@@ -56,12 +72,13 @@ class _CTASection extends StatelessWidget {
               label: t.premium.privacy,
               onTap: () => launchUrl(
                 Uri.parse(AppUrls.privacyPolicy),
-                mode: LaunchMode.inAppWebView,
+                mode: LaunchMode.externalApplication,
               ),
               c: c,
             ),
           ],
         ),
+        const Gap(AppSpacing.sm),
       ],
     );
   }
@@ -71,7 +88,7 @@ class _SmallLink extends StatelessWidget {
   const _SmallLink({required this.label, required this.onTap, required this.c});
   final String label;
   final VoidCallback onTap;
-  final ItPassColorScheme c;
+  final AppColorScheme c;
 
   @override
   Widget build(BuildContext context) {

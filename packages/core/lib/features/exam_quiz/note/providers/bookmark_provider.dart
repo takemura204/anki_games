@@ -1,3 +1,4 @@
+import 'package:core/config/brand/brand_config.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../repository/local_bookmark_repository.dart';
@@ -6,10 +7,14 @@ part 'bookmark_provider.g.dart';
 
 @Riverpod(keepAlive: true)
 class BookmarkNotifier extends _$BookmarkNotifier {
-  final _repo = LocalBookmarkRepository();
+  late final LocalBookmarkRepository _repo;
 
   @override
-  Future<Set<String>> build() => _repo.loadAll();
+  Future<Set<String>> build() {
+    final prefix = ref.watch(brandConfigProvider).analyticsBrandKey;
+    _repo = LocalBookmarkRepository(prefsPrefix: prefix);
+    return _repo.loadAll();
+  }
 
   Future<void> toggle(String eraId, int no) async {
     final key = LocalBookmarkRepository.storageKey(eraId, no);

@@ -7,7 +7,7 @@ class _ActiveContent extends StatelessWidget {
     required this.expirationAsync,
     required this.onClose,
   });
-  final ItPassColorScheme c;
+  final AppColorScheme c;
   final ColorScheme colorScheme;
   final AsyncValue<String?> expirationAsync;
   final VoidCallback onClose;

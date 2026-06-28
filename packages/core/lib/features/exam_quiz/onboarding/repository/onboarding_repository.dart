@@ -1,7 +1,12 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class OnboardingRepository {
-  static const _key = 'it_pass_onboarding_v1';
+  OnboardingRepository({required String prefsPrefix})
+      : _prefix = prefsPrefix;
+
+  final String _prefix;
+
+  String get _key => '${_prefix}_onboarding_v1';
 
   Future<bool> isCompleted() async {
     final prefs = await SharedPreferences.getInstance();

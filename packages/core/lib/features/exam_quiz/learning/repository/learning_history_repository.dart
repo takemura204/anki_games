@@ -11,11 +11,5 @@ abstract class LearningHistoryRepository {
     required String selectedLabel,
   });
 
-  Future<void> markMastered(String eraId, int no);
-
-  Future<Set<String>> loadMastered();
-
-  Future<void> unmarkMastered(String eraId, int no);
-
   Future<void> deleteAll();
 }

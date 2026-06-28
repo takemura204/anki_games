@@ -14,9 +14,10 @@ import '../../streak/repository/local_streak_repository.dart';
 const _lastBackupAtKeyPrefix = 'last_backup_at_';
 
 class BackupService {
-  BackupService({required this.uid});
+  BackupService({required this.uid, required this.prefsPrefix});
 
   final String uid;
+  final String prefsPrefix;
 
   String get _lastBackupAtKey => '$_lastBackupAtKeyPrefix$uid';
 
@@ -77,15 +78,13 @@ class BackupService {
   // ---- private helpers ----
 
   Future<Map<String, dynamic>> _readLocal() async {
-    final localHistory = LocalLearningHistoryRepository();
+    final localHistory = LocalLearningHistoryRepository(prefsPrefix: prefsPrefix);
     final history = await localHistory.loadAll();
-    final mastered = await localHistory.loadMastered();
     final logs = await LocalDailyStudyLogRepository().loadAll();
     final streak = await LocalStreakRepository().load();
-    final bookmarks = await LocalBookmarkRepository().loadAll();
+    final bookmarks = await LocalBookmarkRepository(prefsPrefix: prefsPrefix).loadAll();
     return {
       'learningHistory': history.map((k, v) => MapEntry(k, v.toJson())),
-      'masteredKeys': mastered.toList(),
       'dailyStudyLogs': logs.map((l) => l.toJson()).toList(),
       'streak': streak.toJson(),
       'bookmarks': bookmarks.toList(),
@@ -93,10 +92,10 @@ class BackupService {
   }
 
   Future<void> _saveToLocal(Map<String, dynamic> data) async {
-    final localHistory = LocalLearningHistoryRepository();
+    final localHistory = LocalLearningHistoryRepository(prefsPrefix: prefsPrefix);
     final localDailyLog = LocalDailyStudyLogRepository();
     final localStreak = LocalStreakRepository();
-    final localBookmark = LocalBookmarkRepository();
+    final localBookmark = LocalBookmarkRepository(prefsPrefix: prefsPrefix);
 
     final historyRaw = data['learningHistory'] as Map<String, dynamic>? ?? {};
     await localHistory.saveAll(
@@ -107,9 +106,6 @@ class BackupService {
         ),
       ),
     );
-
-    final masteredRaw = data['masteredKeys'] as List<dynamic>? ?? [];
-    await localHistory.saveAllMastered(masteredRaw.cast<String>().toSet());
 
     final logsRaw = data['dailyStudyLogs'] as List<dynamic>? ?? [];
     await localDailyLog.saveAll(
@@ -163,14 +159,6 @@ class BackupService {
         ).toJson();
       }
     }
-
-    // masteredKeys: union
-    final localMastered =
-        (local['masteredKeys'] as List<dynamic>?)?.cast<String>().toSet() ??
-            {};
-    final remoteMastered =
-        (remote['masteredKeys'] as List<dynamic>?)?.cast<String>().toSet() ??
-            {};
 
     // dailyStudyLogs: per-date max values
     final localLogs =
@@ -251,7 +239,6 @@ class BackupService {
 
     return {
       'learningHistory': mergedHistory,
-      'masteredKeys': {...localMastered, ...remoteMastered}.toList(),
       'dailyStudyLogs': logsByDate.values.toList(),
       'streak': mergedStreak,
       'bookmarks': {...localBookmarks, ...remoteBookmarks}.toList(),

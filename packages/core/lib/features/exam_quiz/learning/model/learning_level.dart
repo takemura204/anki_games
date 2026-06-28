@@ -1,9 +1,10 @@
 import 'package:core/config/styles/app_colors.dart';
 import 'package:flutter/material.dart';
 
+import 'leitner_box.dart';
 import 'question_learning_stats.dart';
 
-/// UI 用の学習レベル（5段階）。閾値は [fromStats] 先頭の定数で調整。
+/// UI 用の学習レベル（5段階）。箱番号と1:1で対応する。
 enum LearningLevel {
   unseen('未学習'),
   weak('苦手'),
@@ -14,38 +15,20 @@ enum LearningLevel {
   const LearningLevel(this.label);
   final String label;
 
-  /// 試行回数がこれ以上かつ正答率が十分なとき「覚えた」
-  static const _masteredMinAttempts = 4;
+  /// Leitner ボックス番号からレベルを導出する。
+  static LearningLevel fromBox(int box) => switch (box) {
+    1 => LearningLevel.weak,
+    2 => LearningLevel.fuzzy,
+    3 => LearningLevel.familiar,
+    _ => LearningLevel.mastered,
+  };
 
-  /// 「覚えた」に必要な最低正答率
-  static const _masteredMinAccuracy = 0.85;
-
-  /// 「おぼ覚えた」に必要な最低正答率（未満は「うろ覚え」側）
-  static const _familiarMinAccuracy = 0.65;
-
+  /// stats からレベルを導出する（box フィールド未設定時は旧データ推定）。
   static LearningLevel fromStats(QuestionLearningStats? stats) {
-    if (stats == null) {
-      return LearningLevel.unseen;
-    }
+    if (stats == null) return LearningLevel.unseen;
     final total = stats.correctCount + stats.wrongCount;
-    if (total == 0) {
-      return LearningLevel.unseen;
-    }
-    final wrong = stats.wrongCount;
-    final correct = stats.correctCount;
-    if (wrong > correct) {
-      return LearningLevel.weak;
-    }
-    final acc = correct / total;
-    if (total >= _masteredMinAttempts &&
-        acc >= _masteredMinAccuracy &&
-        stats.lastWasCorrect == true) {
-      return LearningLevel.mastered;
-    }
-    if (correct > wrong && acc >= _familiarMinAccuracy) {
-      return LearningLevel.familiar;
-    }
-    return LearningLevel.fuzzy;
+    if (total == 0) return LearningLevel.unseen;
+    return fromBox(resolvedBox(stats));
   }
 }
 

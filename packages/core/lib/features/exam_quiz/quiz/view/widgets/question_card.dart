@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:core/components/glass_widget.dart';
 import 'package:core/components/quiz_network_image.dart';
-import 'package:core/config/brand/it_pass_color_scheme.dart';
+import 'package:core/config/brand/app_color_scheme.dart';
 import 'package:core/config/haptic/haptics.dart';
 import 'package:core/config/styles/app_border_radius.dart';
 import 'package:core/config/styles/app_icons.dart';

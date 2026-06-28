@@ -25,7 +25,7 @@ import 'config/app_fe_exam_config.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await NotificationService.instance.initialize();
+  await NotificationService.instance.initialize(channelId: 'fe_reminder');
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await MobileAds.instance.initialize();
   await LocaleSettings.useDeviceLocale();

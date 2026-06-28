@@ -2,7 +2,7 @@ part of '../paywall_sheet.dart';
 
 class _Header extends StatelessWidget {
   const _Header({required this.c, required this.colorScheme});
-  final ItPassColorScheme c;
+  final AppColorScheme c;
   final ColorScheme colorScheme;
 
   @override

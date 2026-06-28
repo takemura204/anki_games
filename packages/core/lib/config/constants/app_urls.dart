@@ -5,13 +5,15 @@ class AppUrls {
 
   // 外部サイトのURL (url_launcherなどで使用)
   static const termsOfService =
-      'https://takemurataiki.notion.site/Block-31345f5f1f2980e48524c2ba4d080282?source=copy_link';
+      'https://takemurataiki.notion.site/31345f5f1f2980e48524c2ba4d080282';
   static const privacyPolicy =
-      'https://takemurataiki.notion.site/Block-31345f5f1f298086b4d5c77a8bd69326?source=copy_link';
+      'https://takemurataiki.notion.site/31345f5f1f298086b4d5c77a8bd69326';
   static const contact = 'https://forms.gle/7aFu5spztuxJtREd6';
 
-  static const appStoreUrl =
-      'https://apps.apple.com/jp/app/id6767179815';
+  static const appleStandardEula =
+      'https://www.apple.com/legal/internet-services/itunes/dev/stdeula/';
+
+  static const appStoreUrl = 'https://apps.apple.com/jp/app/id6767179815';
   static const appStoreReviewUrl =
       'itms-apps://itunes.apple.com/app/id6767179815?action=write-review';
 }

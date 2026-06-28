@@ -34,7 +34,7 @@ ITパスポート試験の学習者が直面する根本的な課題は「何を
 | 課題 | 解決策 |
 |---|---|
 | どの問題を優先すべきかわからない | 正答率・誤答回数・最終解答日に基づく**重み付き出題アルゴリズム** |
-| 端末を変えたら学習記録が消える | drift（SQLite）でオフライン保持 + Firestore でクロスデバイス同期 |
+| 端末を変えたら学習記録が消える | SharedPreferences でオフライン保持 + Firestore でクロスデバイス同期 |
 | 学習が続かない | 連続学習ストリーク・通知リマインダー・進捗ダッシュボード |
 
 ---
@@ -56,7 +56,7 @@ ITパスポート試験の学習者が直面する根本的な課題は「何を
 │  │  sub Widget  │              │ Repository (abstract)        │  │
 │  │ (private /   │              │ ┌────────────┐ ┌──────────┐ │  │
 │  │ StatelessWidget)            │ │ Local impl │ │ Firestore│ │  │
-│  └──────────────┘              │ │ (drift/SP) │ │  impl    │ │  │
+│  └──────────────┘              │ │(SharedPref)│ │  impl    │ │  │
 │                                │ └────────────┘ └──────────┘ │  │
 │                                └──────────────────────────────┘  │
 └─────────────────────────────────────────────────────────────────┘
@@ -64,7 +64,7 @@ ITパスポート試験の学習者が直面する根本的な課題は「何を
 
 - **View**: `HookConsumerWidget`（Hooks + Riverpod を同時利用）。純粋な表示ロジックのみ。
 - **ViewModel**: `AutoDisposeAsyncNotifier<State>`。画面単位の状態を一元管理。ナビゲーション離脱で自動破棄。
-- **Repository**: 抽象インターフェース＋Local/Firestore の2実装。ViewModel はインターフェースにしか依存しないため、テスト時にインメモリ Fake へ差し替え可能。
+- **Repository**: Local（SharedPreferences）/ Firestore の2実装。ViewModel は抽象インターフェースにしか依存しないため、テスト時にインメモリ Fake へ差し替え可能。ローカルキーは `BrandConfig.analyticsBrandKey` をプレフィックスにすることで、複数ブランドを同一端末で共存させても衝突しない。
 
 ### feature ディレクトリ構成
 
@@ -93,10 +93,10 @@ features/exam_quiz/
         ▼
 QuizViewModel.answer(choiceIndex)
         │
-        ├── LocalLearningHistoryRepository.save()   → drift (SQLite)
+        ├── LocalLearningHistoryRepository.save()   → SharedPreferences (JSON)
         ├── LocalDailyStudyLogRepository.record()   → SharedPreferences
         ├── StreakViewModel.recordStudy()            → SharedPreferences
-        └── [ログイン済み] FirestoreLearningHistoryRepository.save() → Firestore
+        └── [ログイン済み] BackupService.upload()    → Firestore（加算マージ）
 ```
 
 ---
@@ -118,11 +118,12 @@ BLoC・旧 Provider との比較で選択した。
 
 > 詳細は [docs/adr/0001-riverpod-over-bloc.md](docs/adr/0001-riverpod-over-bloc.md)
 
-### なぜ drift（SQLite）+ Firestore の二層同期か
+### なぜ SharedPreferences + Firestore の二層同期か
 
-- **オフラインファースト設計**: 学習記録の読み書きはすべて drift（ローカル）に対して行う。Firestore へは「バックアップ兼他端末同期」として非同期にプッシュする。これにより、ネットワーク不安定・未ログイン時でも一切機能が落ちない。
+- **オフラインファースト設計**: 学習記録の読み書きはすべて SharedPreferences（ローカル）に対して行う。問題ごとの統計は JSON 化して1キーに保存する軽量設計。Firestore へは「バックアップ兼他端末同期」として非同期にプッシュする。これにより、ネットワーク不安定・未ログイン時でも一切機能が落ちない。
+- **なぜ SQLite（drift）でないか**: 試験クイズの学習統計は「問題キー → 統計」の単純な KV 構造で、複雑なリレーションや範囲クエリを必要としない。SQLite を導入するとスキーマ定義・マイグレーション・コード生成の運用コストが増えるため、KV ストアで十分と判断した。
 - **マージ戦略**: ローカルとリモートが乖離した場合は「正答数・誤答数を加算マージ」を採用。単純な上書きは「片方の端末の記録が消える」問題を起こすため選択しなかった。
-- **コスト管理**: Firestore 読み取りは起動時の1回だけ（以降はローカル参照）。アクティブユーザーでも月間読み取り数が無料枠に収まる設計。
+- **コスト管理**: Firestore 読み取りは起動・ログイン時のみ（以降はローカル参照）。アクティブユーザーでも月間読み取り数が無料枠に収まる設計。
 
 > 詳細は [docs/adr/0002-drift-firestore-dual-layer.md](docs/adr/0002-drift-firestore-dual-layer.md)
 
@@ -196,7 +197,7 @@ priority = base(1.0)
 | 習熟度バッジ | 5段階（未学習〜完璧）を問題ごとに可視化 |
 | 学習ログ | 日次解答数・正答率・学習時間をグラフ表示 |
 | ストリーク | 連続学習日数のカウント。1日サボり時はフリーズ機能で救済 |
-| オフライン対応 | drift（SQLite）でローカル保存。ネット不要で全機能動作 |
+| オフライン対応 | SharedPreferences でローカル保存。ネット不要で全機能動作 |
 | Firestore 同期 | ログイン時に学習履歴をクラウドバックアップ・複数端末同期 |
 | オンボーディング | 初回起動の目標設定・チュートリアル。通知許可の適切なタイミング誘導 |
 | 通知 | `flutter_local_notifications` による毎日のリマインダー |
@@ -219,14 +220,15 @@ anki_games/
 │   │           └── exam_quiz/  # 16 feature（quiz/filter/learning/report/...）
 │   ├── app_it_pass/        # ITパスポートアプリ（Config 差し込みのみ）
 │   ├── app_fe/             # 基本情報技術者試験アプリ（Config 差し込みのみ）
-│   └── app_block_puzzle/   # ブロックパズル + 英単語クイズ（別ドメイン）
+│   └── quiz_data/          # 問題データ（CSV/JSON）管理パッケージ
 ├── .github/workflows/      # GitHub Actions（analyze / test）
 ├── Makefile                # iOS/Android リリース自動化
 ├── melos.yaml              # モノレポタスク管理
 └── docs/
-    ├── adr/                # Architecture Decision Records（意思決定の記録）
-    ├── architecture.md     # アーキテクチャ詳細
-    ├── testing.md          # テスト戦略
+    ├── adr/                 # Architecture Decision Records（意思決定の記録）
+    ├── architecture.md      # アーキテクチャ詳細
+    ├── testing.md           # テスト戦略
+    ├── testing_roadmap.md   # テスト学習ロードマップ（未経験者向け）
     └── portfolio_roadmap.md # 開発ロードマップ
 ```
 
@@ -296,7 +298,9 @@ make release-it-pass
 
 ## 9. テスト戦略
 
-詳細は [docs/testing.md](docs/testing.md) を参照。
+テスト戦略の詳細は [docs/testing.md](docs/testing.md)、テストの学習ロードマップ（未経験者向け）は [docs/testing_roadmap.md](docs/testing_roadmap.md) を参照。
+
+**現状**: `packages/core` に Unit / Widget テスト計49本。CI（GitHub Actions）で毎 push 実行・カバレッジを artifact 保存。
 
 **テストピラミッド方針**
 
@@ -309,16 +313,19 @@ make release-it-pass
    /----------\  Unit: 70% — コアドメインロジック（出題アルゴリズム・習熟度判定・ストリーク）
 ```
 
-**Unit テストの対象（優先度順）**
+**Unit テストの対象と状況**
 
-| クラス | テスト観点 |
-|---|---|
-| `QuizQuestionOrdering` | 各モードの順序・優先度スコアの境界値 |
-| `LearningLevel.fromStats` | 5段階分類の全分岐（nullチェック含む） |
-| `LocalStreakRepository.recordStudy` | 連続/途切れ/フリーズ消費/同日重複 |
-| `ReportStats` 集計 | 累計・日次配列の長さ・正答率 |
+| クラス | テスト観点 | 状況 |
+|---|---|---|
+| `QuizQuestionOrdering` | 各モードの順序・優先度スコアの境界値 | ✅ 実装済 |
+| `LearningLevel.fromStats` | 5段階分類の全分岐（nullチェック含む） | ✅ 実装済 |
+| `QuestionLearningStats` | fromJson/toJson ラウンドトリップ | ✅ 実装済 |
+| `LocalStreakRepository.recordStudy` | 連続/途切れ/フリーズ消費/同日重複 | ✅ 実装済 |
+| `ReportStats` 集計 | 累計・日次配列の長さ・正答率 | ✅ 実装済 |
+| `QuizChoiceButton`（Widget） | 正誤フィードバック・タップ無効化 | ✅ 実装済 |
+| `QuizViewModel` | 出題ロード・回答・状態遷移 | 🔜 予定 |
 
-**モック方針**: `mocktail`（コード生成不要）+ 手書き Fake Repository。`ProviderContainer(overrides: [...])` で Riverpod 依存を差し替え。
+**モック方針**: 単純な依存差し替えは手書き Fake Repository を優先し、呼び出し回数の検証が要る場合のみ `mocktail` を使う。Riverpod 依存は `ProviderContainer(overrides: [...])` で差し替える。
 
 ---
 
@@ -326,17 +333,24 @@ make release-it-pass
 
 ### 現在の構成
 
+push / pull_request（main・develop）で2ジョブを並列実行する。
+
 ```
 Push → GitHub Actions
-         └── flutter analyze（全パッケージ: core / app_it_pass / app_fe）
-               + --fatal-infos（info 以上もエラー扱い）
+   ├── test ジョブ
+   │     ├── build_runner build（コード生成）
+   │     ├── flutter test --coverage（packages/core: 49本）
+   │     └── lcov から *.g.dart / *.freezed.dart を除外 → artifact 保存
+   │
+   └── analyze ジョブ
+         └── flutter analyze --fatal-infos（core / app_it_pass / app_fe）
+               ※ info 以上もエラー扱い
 ```
 
-### 整備中（docs/portfolio_roadmap.md Phase A-3）
+### 今後の整備
 
 ```
-flutter test --coverage（packages/core）
-  └── lcov から *.g.dart / *.freezed.dart を除外 → カバレッジレポート生成
+カバレッジゲート: コアドメイン 80% 未満で CI を fail させる（閾値チェック）
 ```
 
 ### リリース（手動）
@@ -355,15 +369,15 @@ make release-it-pass
 
 ### 現時点の制約
 
-- **テストカバレッジ**: コアロジックの Unit テストは整備中（`docs/portfolio_roadmap.md` の Phase A 対応中）。
+- **テストカバレッジ**: コアドメインの Unit / Widget テストは49本あるが、ViewModel 層のカバレッジが薄い（`QuizViewModel` は未テスト）。
 - **DI の不徹底**: `QuizViewModel` など一部の ViewModel が Repository を直接 `new` しており、Provider override によるテスト時差し替えが完全ではない。
-- **Riverpod 記法の混在**: `reportStatsProvider` など一部が `@riverpod` 生成でなく素の `FutureProvider` を使用している。統一対応予定。
+- **Riverpod 記法の混在**: 一部が `@riverpod` 生成でなく素の `FutureProvider` を使用している。統一対応予定。
 
 ### 今後の改善（ロードマップより）
 
 - Widget テストの追加（クイズ回答フロー・結果画面）
-- CI にテスト・カバレッジゲートを追加
-- `features/quiz`（旧ブロックパズル用）と `features/exam_quiz` の重複コード整理
+- CI にカバレッジゲートを追加（現状はテスト実行のみ）
+- `QuizViewModel` の Repository 直接 new を Provider override 可能な形へ統一
 - サブスクリプション導線の改善（paywall 最適化）
 - E2E スモークテスト（Maestro または Patrol）
 

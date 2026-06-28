@@ -1,5 +1,7 @@
+import 'package:core/config/brand/brand_config.dart';
 import 'package:core/features/exam_quiz/config/exam_config.dart';
 import 'package:core/features/exam_quiz/learning/model/learning_level.dart';
+import 'package:core/features/exam_quiz/learning/model/leitner_box.dart';
 import 'package:core/features/exam_quiz/learning/model/question_learning_stats.dart';
 import 'package:core/features/exam_quiz/learning/providers/learning_history_provider.dart';
 import 'package:core/features/exam_quiz/learning/repository/local_learning_history_repository.dart'
@@ -31,35 +33,44 @@ class NoteSheetViewModel extends _$NoteSheetViewModel {
   @override
   Future<NoteSheetReady> build() async {
     final examConfig = ref.watch(examConfigProvider);
-    final bookmarkRepo = LocalBookmarkRepository();
-    final learningRepo = await ref.watch(learningHistoryRepositoryProvider.future);
+    final prefix = ref.watch(brandConfigProvider).analyticsBrandKey;
+    final bookmarkRepo = LocalBookmarkRepository(prefsPrefix: prefix);
+    final learningRepo =
+        await ref.watch(learningHistoryRepositoryProvider.future);
     final historyRepo = ref.read(localQuizHistoryRepositoryProvider);
 
-    final (bookmarks, stats, historyRecords, masteredKeys) = await (
+    final (bookmarks, stats, historyRecords) = await (
       bookmarkRepo.loadAll(),
       learningRepo.loadAll(),
-      historyRepo.loadRecent(
-          ),
-      learningRepo.loadMastered(),
+      historyRepo.loadRecent(),
     ).wait;
 
-    final weakKeys = stats.entries
+    final now = DateTime.now();
+
+    // 復習対象: due(期限到来)の苦手(box1)/うろ覚え(box2)
+    final reviewKeys = stats.entries
         .where((e) {
-          if (masteredKeys.contains(e.key)) return false;
           final level = LearningLevel.fromStats(e.value);
-          return level == LearningLevel.weak || level == LearningLevel.fuzzy;
+          if (level != LearningLevel.weak && level != LearningLevel.fuzzy) {
+            return false;
+          }
+          final last = e.value.lastAnsweredAt;
+          if (last == null) return true; // 未記録は即時対象
+          final box = resolvedBox(e.value);
+          return isDue(box, last, now: now);
         })
         .map((e) => e.key)
         .toSet();
 
-    final reviewBookmarkKeys = {...bookmarks, ...weakKeys};
+    final reviewBookmarkKeys = {...bookmarks, ...reviewKeys};
     final historyKeys = historyRecords
         .map((r) => LocalLearningHistoryRepository.storageKey(r.eraId, r.no))
         .toSet();
     final allKeys = {...reviewBookmarkKeys, ...historyKeys};
-    final itemsByKey = await _loadItems(allKeys, stats, bookmarks, examConfig: examConfig);
+    final itemsByKey =
+        await _loadItems(allKeys, stats, bookmarks, examConfig: examConfig);
 
-    final reviewItems = weakKeys
+    final reviewItems = reviewKeys
         .where(itemsByKey.containsKey)
         .map((k) => itemsByKey[k]!)
         .toList();

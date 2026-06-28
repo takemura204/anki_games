@@ -141,6 +141,22 @@ UIバグ修正       → core/features/exam_quiz/ の1ファイルを修正
 
 各ステップ末で `flutter analyze 0件` + `app_it_pass の既存動作維持` を確認。
 
+## pubspec.yaml 依存管理基準
+
+モノレポ内の各パッケージは以下の3層ルールで依存を管理する。
+
+| 層 | ファイル | 宣言すべき依存 |
+|---|---|---|
+| **共有ライブラリ** | `packages/core/pubspec.yaml` | アプリ横断で共有する全実装パッケージをここに集約（唯一の真実）。新しいパッケージを追加するときは原則 core に書く |
+| **アプリシェル** | `packages/app_*/pubspec.yaml` | `core`（path）と、そのアプリの `lib/` 内で直接 `import 'package:x/...'` するパッケージのみ。core 経由で使えるものは書かない |
+| **ビルドホスト** | `pubspec.yaml`（root）| `app_*`（path）+ `flutter`（SDK）のみ。コード生成・lint ツールは dev_dependencies に。直接 import するコードはここに置かない |
+
+**判断の一問一答：**
+- core の `lib/` 内で `import 'package:foo/...'` する → core の dependencies に書く
+- app の `lib/` 内で直接 import する → そのアプリの dependencies に書く（core にも書く場合は省略不可）
+- import せず推移的に使う → 書かない
+- コード生成が必要（`build_runner` / `freezed` / `riverpod_generator` 等）→ コードを持つパッケージの dev_dependencies に書く
+
 ## Firebase 戦略
 
 - 単一プロジェクト（`anki-quiz-dev`）を共有（現状維持）

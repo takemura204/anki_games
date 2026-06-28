@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:core/components/buttons.dart';
 import 'package:core/components/glass_widget.dart';
 import 'package:core/components/modal_handle.dart';
-import 'package:core/config/brand/it_pass_color_scheme.dart';
+import 'package:core/config/brand/app_color_scheme.dart';
 import 'package:core/config/constants/app_urls.dart';
 import 'package:core/config/haptic/haptics.dart';
 import 'package:core/config/styles/app_animation.dart';
@@ -82,6 +82,7 @@ class PaywallSheet extends HookConsumerWidget {
                 lifetimePriceAsync: lifetimePriceAsync,
                 onSelect: (plan) => selectedPlan.value = plan,
               ),
+
               const Gap(AppSpacing.lg),
               _CTASection(
                 c: c,

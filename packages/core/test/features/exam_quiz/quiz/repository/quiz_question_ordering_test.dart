@@ -56,7 +56,7 @@ void main() {
         expect(result[3].no, 3);
       });
 
-      test('入力リストを破壊しない（元の順序が変わらない）', () {
+      test('入力リストを破壊しない', () {
         final original = [...questions];
         QuizQuestionOrdering.apply(
           questions,
@@ -92,13 +92,20 @@ void main() {
       });
     });
 
-    group('optimized モード — 優先度スコア', () {
-      test('未学習（stats なし）が学習済みより高優先になる', () {
+    group('optimized モード — due ベース', () {
+      final now = DateTime(2025, 6, 20);
+
+      test('未学習(stats なし)が期限外より優先される', () {
         final seen = _q('era1', 1);
         final unseen = _q('era1', 2);
+        // seen は box3・1日前回答 → due = 3日後 → 期限外
         final stats = {
           LocalLearningHistoryRepository.storageKey('era1', 1):
-              const QuestionLearningStats(correctCount: 3),
+              QuestionLearningStats(
+            correctCount: 3,
+            box: 3,
+            lastAnsweredAt: now.subtract(const Duration(days: 1)),
+          ),
         };
 
         final result = QuizQuestionOrdering.apply(
@@ -106,57 +113,61 @@ void main() {
           _filter(QuizOrderMode.optimized),
           stats,
           eraIdOrder: eraIdOrder,
+          now: now,
         );
 
+        // unseen(group=1) < 期限外(group=2) なので unseen が先頭
         expect(result.first.no, 2);
       });
 
-      test('誤答が多い問題が正答が多い問題より高優先になる', () {
-        final weak = _q('era1', 1);
-        final strong = _q('era1', 2);
+      test('期限到来済みが未学習より優先される', () {
+        final due = _q('era1', 1);
+        final unseen = _q('era1', 2);
+        // due は box1・7日前回答 → due = 0日後 → 到来
         final stats = {
           LocalLearningHistoryRepository.storageKey('era1', 1):
-              const QuestionLearningStats(correctCount: 1, wrongCount: 5),
-          LocalLearningHistoryRepository.storageKey('era1', 2):
-              const QuestionLearningStats(correctCount: 5),
+              QuestionLearningStats(
+            correctCount: 1,
+            box: 1,
+            lastAnsweredAt: now.subtract(const Duration(days: 7)),
+          ),
         };
 
         final result = QuizQuestionOrdering.apply(
-          [strong, weak],
+          [unseen, due],
           _filter(QuizOrderMode.optimized),
           stats,
           eraIdOrder: eraIdOrder,
+          now: now,
         );
 
         expect(result.first.no, 1);
       });
 
-      test('直前の回答が不正解の問題がブーストされる', () {
-        final lastWrong = _q('era1', 1);
-        final lastCorrect = _q('era1', 2);
-        final now = DateTime.now();
+      test('苦手(box1)の期限到来が得意(box3)の期限到来より優先', () {
+        final weak = _q('era1', 1);
+        final familiar = _q('era1', 2);
         final stats = {
           LocalLearningHistoryRepository.storageKey('era1', 1):
               QuestionLearningStats(
-            correctCount: 2,
-            wrongCount: 2,
-            lastAnsweredAt: now,
-            lastWasCorrect: false,
+            correctCount: 1,
+            box: 1,
+            lastAnsweredAt: now.subtract(const Duration(days: 1)),
           ),
           LocalLearningHistoryRepository.storageKey('era1', 2):
               QuestionLearningStats(
-            correctCount: 2,
-            wrongCount: 2,
-            lastAnsweredAt: now,
-            lastWasCorrect: true,
+            correctCount: 3,
+            box: 3,
+            lastAnsweredAt: now.subtract(const Duration(days: 5)),
           ),
         };
 
         final result = QuizQuestionOrdering.apply(
-          [lastCorrect, lastWrong],
+          [familiar, weak],
           _filter(QuizOrderMode.optimized),
           stats,
           eraIdOrder: eraIdOrder,
+          now: now,
         );
 
         expect(result.first.no, 1);
@@ -168,6 +179,7 @@ void main() {
           _filter(QuizOrderMode.optimized),
           {},
           eraIdOrder: eraIdOrder,
+          now: now,
         );
         expect(result.length, questions.length);
       });
@@ -178,6 +190,7 @@ void main() {
           _filter(QuizOrderMode.optimized),
           {},
           eraIdOrder: eraIdOrder,
+          now: now,
         );
         expect(result, isEmpty);
       });

@@ -1,5 +1,5 @@
 import 'dart:ui';
-import 'package:core/config/brand/it_pass_color_scheme.dart';
+import 'package:core/config/brand/app_color_scheme.dart';
 import 'package:core/config/styles/app_spacing.dart';
 import 'package:flutter/material.dart';
 

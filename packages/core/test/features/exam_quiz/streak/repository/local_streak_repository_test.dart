@@ -26,6 +26,14 @@ void main() {
       expect(result.currentStreak, 1);
     });
 
+    test('4日連続でストリークが4になる', () async {
+      await repo.recordStudy(DateTime(2026, 6));
+      await repo.recordStudy(DateTime(2026, 6, 2));
+      await repo.recordStudy(DateTime(2026, 6, 3));
+      final result = await repo.recordStudy(DateTime(2026, 6, 4));
+      expect(result.currentStreak, 4);
+    });
+
     test('連続した日はストリークが加算される', () async {
       await repo.recordStudy(DateTime(2026, 6));
       await repo.recordStudy(DateTime(2026, 6, 2));

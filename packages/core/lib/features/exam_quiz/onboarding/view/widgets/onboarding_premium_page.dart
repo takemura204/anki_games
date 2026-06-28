@@ -1,7 +1,7 @@
 import 'package:core/components/adaptive_body.dart';
 import 'package:core/components/buttons.dart';
 import 'package:core/components/glass_widget.dart';
-import 'package:core/config/brand/it_pass_color_scheme.dart';
+import 'package:core/config/brand/app_color_scheme.dart';
 import 'package:core/config/constants/app_urls.dart';
 import 'package:core/config/haptic/haptics.dart';
 import 'package:core/config/styles/app_animation.dart';
@@ -74,119 +74,146 @@ class _OnboardingPremiumPageState extends ConsumerState<OnboardingPremiumPage>
       child: SafeArea(
         bottom: false,
         child: SingleChildScrollView(
-        padding: EdgeInsets.fromLTRB(
-          AppSpacing.md,
-          AppSpacing.xxxl,
-          AppSpacing.md,
-          bottom + AppSpacing.sm,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-          // Section 1: ヘッダー
-          OnboardingFadeSlide(
-            fade: _anim.topFade,
-            slide: _anim.topSlide,
-            child: _PremiumHeader(c: c, colorScheme: colorScheme),
+          padding: EdgeInsets.fromLTRB(
+            AppSpacing.md,
+            AppSpacing.xxxl,
+            AppSpacing.md,
+            bottom + AppSpacing.sm,
           ),
-          const Gap(AppSpacing.lg),
-          // Section 2: プラン選択 + ボタン
-          OnboardingFadeSlide(
-            fade: _anim.bottomFade,
-            slide: _anim.bottomSlide,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                if (isPremium)
-                  _PremiumActiveCard(c: c, onClose: widget.onSkip)
-                else ...[
-                  _PremiumFeatureListSection(c: c),
-                  const Gap(AppSpacing.lg),
-                  _PremiumPlanSelectorSection(
-                    c: c,
-                    selectedPlan: ob.selectedPlan,
-                    monthlyPriceAsync: monthlyPriceAsync,
-                    lifetimePriceAsync: lifetimePriceAsync,
-                    onSelect: notifier.selectPlan,
-                  ),
-                  const Gap(AppSpacing.lg),
-                  PrimaryButton(
-                    label: 'プレミアムを体験する',
-                    onPressed:
-                        (ob.isPurchaseLoading || monthlyPriceAsync.isLoading)
-                        ? null
-                        : widget.onPurchase,
-                    isLoading: ob.isPurchaseLoading,
-                    height: 60,
-                  ),
-                  const Gap(AppSpacing.sm),
-                  TextButton(
-                    onPressed: widget.onSkip,
-                    style: TextButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: AppSpacing.sm,
-                      ),
-                    ),
-                    child: Text(
-                      'あとにする',
-                      style: AppTextStyle.bodySmall.copyWith(
-                        color: c.fgShade300,
-                        decoration: TextDecoration.underline,
-                        decorationColor: c.fgShade300,
-                      ),
-                    ),
-                  ),
-                  const Gap(AppSpacing.sm),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      _PremiumSmallLink(
-                        label: t.premium.restoreButton,
-                        onTap: () {},
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              // Section 1: ヘッダー
+              OnboardingFadeSlide(
+                fade: _anim.topFade,
+                slide: _anim.topSlide,
+                child: _PremiumHeader(c: c, colorScheme: colorScheme),
+              ),
+              const Gap(AppSpacing.lg),
+              // Section 2: プラン選択 + ボタン
+              OnboardingFadeSlide(
+                fade: _anim.bottomFade,
+                slide: _anim.bottomSlide,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    if (isPremium)
+                      _PremiumActiveCard(c: c, onClose: widget.onSkip)
+                    else ...[
+                      _PremiumFeatureListSection(c: c),
+                      const Gap(AppSpacing.lg),
+                      _PremiumPlanSelectorSection(
                         c: c,
+                        selectedPlan: ob.selectedPlan,
+                        monthlyPriceAsync: monthlyPriceAsync,
+                        lifetimePriceAsync: lifetimePriceAsync,
+                        onSelect: notifier.selectPlan,
                       ),
-                      Text(
-                        '·',
-                        style: TextStyle(fontSize: 11, color: c.fgShade200),
+                      const Gap(AppSpacing.lg),
+                      PrimaryButton(
+                        label: 'プレミアムを体験する',
+                        onPressed:
+                            (ob.isPurchaseLoading ||
+                                monthlyPriceAsync.isLoading)
+                            ? null
+                            : widget.onPurchase,
+                        isLoading: ob.isPurchaseLoading,
+                        height: 60,
                       ),
-                      _PremiumSmallLink(
-                        label: t.premium.terms,
-                        onTap: () => launchUrl(
-                          Uri.parse(AppUrls.termsOfService),
-                          mode: LaunchMode.inAppWebView,
+                      const Gap(AppSpacing.sm),
+                      TextButton(
+                        onPressed: widget.onSkip,
+                        style: TextButton.styleFrom(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: AppSpacing.sm,
+                          ),
                         ),
-                        c: c,
-                      ),
-                      Text(
-                        '·',
-                        style: TextStyle(fontSize: 11, color: c.fgShade200),
-                      ),
-                      _PremiumSmallLink(
-                        label: t.premium.privacy,
-                        onTap: () => launchUrl(
-                          Uri.parse(AppUrls.privacyPolicy),
-                          mode: LaunchMode.inAppWebView,
+                        child: Text(
+                          'あとにする',
+                          style: AppTextStyle.bodySmall.copyWith(
+                            color: c.fgShade400,
+                            fontWeight: FontWeight.w600,
+                            decoration: TextDecoration.underline,
+                            decorationColor: c.fgShade400,
+                          ),
                         ),
-                        c: c,
                       ),
+                      const Gap(AppSpacing.lg),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          _PremiumSmallLink(
+                            label: t.premium.restoreButton,
+                            onTap: () => ref
+                                .read(premiumViewModelProvider.notifier)
+                                .restore(),
+                            c: c,
+                          ),
+                          Text(
+                            '·',
+                            style: TextStyle(fontSize: 11, color: c.fgShade200),
+                          ),
+                          _PremiumSmallLink(
+                            label: t.premium.terms,
+                            onTap: () => launchUrl(
+                              Uri.parse(AppUrls.termsOfService),
+                              mode: LaunchMode.externalApplication,
+                            ),
+                            c: c,
+                          ),
+                          Text(
+                            '·',
+                            style: TextStyle(fontSize: 11, color: c.fgShade200),
+                          ),
+                          _PremiumSmallLink(
+                            label: t.premium.eula,
+                            onTap: () => launchUrl(
+                              Uri.parse(AppUrls.appleStandardEula),
+                              mode: LaunchMode.externalApplication,
+                            ),
+                            c: c,
+                          ),
+                          Text(
+                            '·',
+                            style: TextStyle(fontSize: 11, color: c.fgShade200),
+                          ),
+                          _PremiumSmallLink(
+                            label: t.premium.privacy,
+                            onTap: () => launchUrl(
+                              Uri.parse(AppUrls.privacyPolicy),
+                              mode: LaunchMode.externalApplication,
+                            ),
+                            c: c,
+                          ),
+                        ],
+                      ),
+                      const Gap(AppSpacing.sm),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: AppSpacing.lg,
+                        ),
+                        child: Text(
+                          t.premium.subscriptionDisclosure,
+                          textAlign: TextAlign.start,
+                          style: TextStyle(fontSize: 8, color: c.fgShade300),
+                        ),
+                      ),
+                      const Gap(AppSpacing.md),
                     ],
-                  ),
-                  const Gap(AppSpacing.md),
-                ],
-              ],
-            ),
+                  ],
+                ),
+              ),
+            ],
           ),
-          ],
         ),
       ),
-    ),
     );
   }
 }
 
 class _PremiumHeader extends StatelessWidget {
   const _PremiumHeader({required this.c, required this.colorScheme});
-  final ItPassColorScheme c;
+  final AppColorScheme c;
   final ColorScheme colorScheme;
 
   @override
@@ -224,7 +251,7 @@ class _PremiumHeader extends StatelessWidget {
 
 class _PremiumFeatureListSection extends StatelessWidget {
   const _PremiumFeatureListSection({required this.c});
-  final ItPassColorScheme c;
+  final AppColorScheme c;
 
   static const List<(IconData, String, String)> _features = [
     (Icons.block_outlined, '広告', '非表示'),
@@ -298,7 +325,7 @@ class _PremiumPlanSelectorSection extends StatelessWidget {
     required this.lifetimePriceAsync,
     required this.onSelect,
   });
-  final ItPassColorScheme c;
+  final AppColorScheme c;
   final OnboardingPlan selectedPlan;
   final AsyncValue<String?> monthlyPriceAsync;
   final AsyncValue<String?> lifetimePriceAsync;
@@ -352,7 +379,7 @@ class _PlanRow extends StatelessWidget {
   final AsyncValue<String?> priceAsync;
   final bool isSelected;
   final VoidCallback onTap;
-  final ItPassColorScheme c;
+  final AppColorScheme c;
   final String? priceSuffix;
 
   @override
@@ -445,7 +472,7 @@ class _PlanRow extends StatelessWidget {
 
 class _PremiumActiveCard extends StatelessWidget {
   const _PremiumActiveCard({required this.c, required this.onClose});
-  final ItPassColorScheme c;
+  final AppColorScheme c;
   final VoidCallback onClose;
 
   @override
@@ -492,7 +519,7 @@ class _PremiumSmallLink extends StatelessWidget {
   });
   final String label;
   final VoidCallback onTap;
-  final ItPassColorScheme c;
+  final AppColorScheme c;
 
   @override
   Widget build(BuildContext context) {

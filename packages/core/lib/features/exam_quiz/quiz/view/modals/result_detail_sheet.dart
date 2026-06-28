@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:core/components/admob_glass.dart';
 import 'package:core/components/glass_widget.dart';
 import 'package:core/components/modal_handle.dart';
-import 'package:core/config/brand/it_pass_color_scheme.dart';
+import 'package:core/config/brand/app_color_scheme.dart';
 import 'package:core/config/constants/app_urls.dart';
 import 'package:core/config/haptic/haptics.dart';
 import 'package:core/config/styles/app_border_radius.dart';
@@ -54,8 +54,7 @@ class _ResultDetailSheetState extends ConsumerState<ResultDetailSheet> {
 
   Future<void> _loadStats() async {
     final stats =
-        await (ref.read(learningHistoryRepositoryProvider).asData?.value ??
-                LocalLearningHistoryRepository())
+        await (await ref.read(learningHistoryRepositoryProvider.future))
             .loadAll();
     if (mounted) setState(() => _learningStats = stats);
   }
@@ -384,7 +383,7 @@ class _ChoiceCommentsBox extends StatelessWidget {
   const _ChoiceCommentsBox({required this.comments, required this.colors});
 
   final List<String> comments;
-  final ItPassColorScheme colors;
+  final AppColorScheme colors;
 
   @override
   Widget build(BuildContext context) {

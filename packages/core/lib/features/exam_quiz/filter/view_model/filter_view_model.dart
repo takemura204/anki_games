@@ -6,8 +6,6 @@ import 'package:core/features/exam_quiz/filter/model/quiz_order_mode.dart';
 import 'package:core/features/exam_quiz/filter/repository/filter_repository.dart';
 import 'package:core/features/exam_quiz/learning/model/learning_level.dart';
 import 'package:core/features/exam_quiz/learning/providers/learning_history_provider.dart';
-import 'package:core/features/exam_quiz/learning/repository/local_learning_history_repository.dart'
-    show LocalLearningHistoryRepository;
 import 'package:core/features/exam_quiz/model/exam_meta.dart';
 import 'package:core/features/exam_quiz/quiz/repository/quiz_repository.dart';
 import 'package:core/features/purchase/view_model/premium_view_model.dart';
@@ -129,8 +127,7 @@ class FilterViewModel extends _$FilterViewModel {
     }
     final filter = cur.toFilter();
     final examConfig = ref.read(examConfigProvider);
-    final stats = await (ref.read(learningHistoryRepositoryProvider).asData?.value ??
-            LocalLearningHistoryRepository())
+    final stats = await (await ref.read(learningHistoryRepositoryProvider.future))
         .loadAll();
     final n = (await _quizRepo.loadFilteredQuestions(
       filter,
@@ -372,8 +369,7 @@ class FilterViewModel extends _$FilterViewModel {
     );
     final filter = current.toFilter();
     final examConfig = ref.read(examConfigProvider);
-    final stats = await (ref.read(learningHistoryRepositoryProvider).asData?.value ??
-            LocalLearningHistoryRepository())
+    final stats = await (await ref.read(learningHistoryRepositoryProvider.future))
         .loadAll();
     final count = (await _quizRepo.loadFilteredQuestions(
       filter,

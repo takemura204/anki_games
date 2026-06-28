@@ -6,6 +6,7 @@ class QuestionLearningStats {
     this.lastAnsweredAt,
     this.lastWasCorrect,
     this.lastSelectedLabel,
+    this.box,
   });
 
   factory QuestionLearningStats.fromJson(Map<String, dynamic> json) {
@@ -17,6 +18,7 @@ class QuestionLearningStats {
           : null,
       lastWasCorrect: json['lastWasCorrect'] as bool?,
       lastSelectedLabel: json['lastSelectedLabel'] as String?,
+      box: json['box'] as int?,
     );
   }
 
@@ -28,12 +30,17 @@ class QuestionLearningStats {
   /// 最後に選択した選択肢ラベル（復習タブで前回の回答を表示するために使用）
   final String? lastSelectedLabel;
 
+  /// Leitner ボックス番号（1〜4）。null は未学習（記録なし）。
+  /// 旧データは boxFromLegacyStats() で初期値を推定して使用する。
+  final int? box;
+
   QuestionLearningStats copyWith({
     int? correctCount,
     int? wrongCount,
     DateTime? lastAnsweredAt,
     bool? lastWasCorrect,
     String? lastSelectedLabel,
+    int? box,
   }) {
     return QuestionLearningStats(
       correctCount: correctCount ?? this.correctCount,
@@ -41,6 +48,7 @@ class QuestionLearningStats {
       lastAnsweredAt: lastAnsweredAt ?? this.lastAnsweredAt,
       lastWasCorrect: lastWasCorrect ?? this.lastWasCorrect,
       lastSelectedLabel: lastSelectedLabel ?? this.lastSelectedLabel,
+      box: box ?? this.box,
     );
   }
 
@@ -50,5 +58,6 @@ class QuestionLearningStats {
         'lastAnsweredAt': lastAnsweredAt?.toIso8601String(),
         'lastWasCorrect': lastWasCorrect,
         'lastSelectedLabel': lastSelectedLabel,
+        'box': box,
       };
 }

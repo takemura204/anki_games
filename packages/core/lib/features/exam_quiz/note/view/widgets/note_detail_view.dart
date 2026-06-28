@@ -78,7 +78,7 @@ class _ExplanationSection extends StatelessWidget {
 
   final String explanationText;
   final List<String> choiceComments;
-  final ItPassColorScheme colors;
+  final AppColorScheme colors;
 
   @override
   Widget build(BuildContext context) {
@@ -119,7 +119,7 @@ class _ChoiceCommentsSection extends StatelessWidget {
   const _ChoiceCommentsSection({required this.comments, required this.colors});
 
   final List<String> comments;
-  final ItPassColorScheme colors;
+  final AppColorScheme colors;
 
   @override
   Widget build(BuildContext context) {

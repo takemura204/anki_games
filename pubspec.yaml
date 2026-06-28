@@ -12,60 +12,17 @@ dependencies:
     path: packages/app_fe
   app_it_pass:
     path: packages/app_it_pass
-  audioplayers:
-  auto_size_text: ^3.0.0
-  cached_network_image: ^3.4.1
-  confetti: ^0.8.0
-  cupertino_icons:
-  drift: ^2.22.1
-  drift_flutter: ^0.2.3
-  envied:
-  firebase_core: ^4.7.0
-  flame:
-  flame_forge2d:
-  flex_color_scheme: ^8.4.0
   flutter:
     sdk: flutter
-  flutter_card_swiper: ^7.0.1
-  flutter_hooks:
-  flutter_localizations:
-    sdk: flutter
-  flutter_riverpod: ^3.0.0
-  flutter_svg:
-  flutter_tts: ^4.0.0
-  freezed_annotation:
-  gap:
-  go_router:
-  google_mobile_ads: ^8.0.0
-  hooks_riverpod: ^3.0.0
-  json_annotation:
-  pedantic_mono:
-  purchases_flutter: ^9.15.1
-  riverpod_annotation: ^4.0.0
-  sensors_plus:
-  shared_preferences:
-  slang:
-  slang_flutter:
-  url_launcher:
-
 
 dev_dependencies:
-  app_block_puzzle:
-    path: packages/app_block_puzzle
-  build_runner:
   core:
     path: packages/core
-  drift_dev: ^2.22.1
-  envied_generator:
-  flutter_gen_runner:
-  flutter_launcher_icons:
+  flutter_launcher_icons: ^0.14.4
   flutter_test:
     sdk: flutter
-  freezed:
-  json_serializable:
   melos: ^6.3.3
-  riverpod_generator: ^4.0.0
-  slang_build_runner:
+  pedantic_mono: ^1.32.0
 
 flutter:
   uses-material-design: true

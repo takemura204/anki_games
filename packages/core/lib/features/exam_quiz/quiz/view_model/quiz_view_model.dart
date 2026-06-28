@@ -1,10 +1,11 @@
+import 'package:core/config/brand/brand_config.dart';
 import 'package:core/features/exam_quiz/auth/auth_user_provider.dart';
 import 'package:core/features/exam_quiz/backup/service/backup_service.dart';
 import 'package:core/features/exam_quiz/config/exam_config.dart';
 import 'package:core/features/exam_quiz/daily_study_log/repository/local_daily_study_log_repository.dart';
 import 'package:core/features/exam_quiz/filter/repository/filter_repository.dart';
 import 'package:core/features/exam_quiz/learning/model/learning_level.dart';
-import 'package:core/features/exam_quiz/learning/providers/it_pass_learning_stats_provider.dart';
+import 'package:core/features/exam_quiz/learning/providers/exam_learning_stats_provider.dart';
 import 'package:core/features/exam_quiz/learning/providers/learning_history_provider.dart';
 import 'package:core/features/exam_quiz/learning/repository/learning_history_repository.dart';
 import 'package:core/features/exam_quiz/learning/repository/local_learning_history_repository.dart'
@@ -216,7 +217,7 @@ class QuizViewModel extends _$QuizViewModel {
     final q = session.currentQuestion;
     final now = DateTime.now();
 
-    final statsSnapshot = ref.read(itPassLearningStatsProvider).value ?? {};
+    final statsSnapshot = ref.read(examLearningStatsProvider).value ?? {};
     final statKey = LocalLearningHistoryRepository.storageKey(q.eraId, q.no);
     final isFirstWrong =
         !isCorrect && (statsSnapshot[statKey]?.wrongCount ?? 0) == 0;
@@ -274,7 +275,6 @@ class QuizViewModel extends _$QuizViewModel {
         ),
         _dailyLogRepo.incrementAnswered(isCorrect: isCorrect),
         ref.read(streakViewModelProvider.notifier).recordStudy(),
-        if (!isCorrect) _learningRepo.unmarkMastered(q.eraId, q.no),
         if (isFirstWrong) _dailyLogRepo.incrementNewReview(),
       ]);
       ref
@@ -310,7 +310,7 @@ class QuizViewModel extends _$QuizViewModel {
         ),
       ),
     );
-    ref.invalidate(itPassLearningStatsProvider);
+    ref.invalidate(examLearningStatsProvider);
 
     _saveResume(
       questions: session.allQuestions,
@@ -323,7 +323,8 @@ class QuizViewModel extends _$QuizViewModel {
     if (!isSync) return;
     final uid = ref.read(authUserProvider).asData?.value?.uid;
     if (uid == null) return;
-    BackupService(uid: uid).upload().ignore();
+    final prefix = ref.read(brandConfigProvider).analyticsBrandKey;
+    BackupService(uid: uid, prefsPrefix: prefix).upload().ignore();
   }
 
   /// 次のセット（10問）へ進む。[QuizSession.hasNextSet] が true のときのみ有効。

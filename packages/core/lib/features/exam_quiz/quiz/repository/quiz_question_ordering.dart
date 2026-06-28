@@ -2,28 +2,20 @@ import 'dart:math';
 
 import 'package:core/features/exam_quiz/filter/model/quiz_filter.dart';
 import 'package:core/features/exam_quiz/filter/model/quiz_order_mode.dart';
+import 'package:core/features/exam_quiz/learning/model/leitner_box.dart';
 import 'package:core/features/exam_quiz/learning/model/question_learning_stats.dart';
 import 'package:core/features/exam_quiz/learning/repository/local_learning_history_repository.dart';
 import 'package:core/features/exam_quiz/model/question.dart';
 
-/// 試験対策向け重み付き出題の係数（調整しやすいようここに集約）
-const _kBase = 1.0;
-const _kUnseenBoost = 4.0;
-const _kPerWrong = 1.5;
-const _kPerCorrect = -0.35;
-const _kDaysCap = 30;
-const _kPerDay = 0.08;
-const _kLastWrongBoost = 2.0;
-
 class QuizQuestionOrdering {
   QuizQuestionOrdering._();
 
-  /// eraId → 出題順インデックス。apply() 呼び出し時に試験リストから生成する。
   static List<Question> apply(
     List<Question> filtered,
     QuizFilter filter,
     Map<String, QuestionLearningStats> stats, {
     required List<String> eraIdOrder,
+    DateTime? now,
   }) {
     switch (filter.quizOrderMode) {
       case QuizOrderMode.sequential:
@@ -31,7 +23,7 @@ class QuizQuestionOrdering {
       case QuizOrderMode.random:
         return _random(filtered);
       case QuizOrderMode.optimized:
-        return _weighted(filtered, stats);
+        return _optimized(filtered, stats, now: now ?? DateTime.now());
     }
   }
 
@@ -46,61 +38,67 @@ class QuizQuestionOrdering {
         final ai = index[a.eraId] ?? 0;
         final bi = index[b.eraId] ?? 0;
         final c = ai.compareTo(bi);
-        if (c != 0) {
-          return c;
-        }
+        if (c != 0) return c;
         return a.no.compareTo(b.no);
       });
     return sorted;
   }
 
   static List<Question> _random(List<Question> questions) {
-    final list = [...questions]..shuffle(Random());
-    return list;
+    return [...questions]..shuffle(Random());
   }
 
-  static double _priority(
-    Question q,
-    Map<String, QuestionLearningStats> stats,
-  ) {
-    final key = LocalLearningHistoryRepository.storageKey(q.eraId, q.no);
-    final s = stats[key];
-    if (s == null) {
-      return _kBase + _kUnseenBoost;
-    }
-    var p = _kBase;
-    p += s.wrongCount * _kPerWrong;
-    p += s.correctCount * _kPerCorrect;
-    final last = s.lastAnsweredAt;
-    final dayCount = last == null
-        ? _kDaysCap
-        : DateTime.now().difference(last).inDays.clamp(0, _kDaysCap);
-    p += dayCount * _kPerDay;
-    if (s.lastWasCorrect == false) {
-      p += _kLastWrongBoost;
-    }
-    return p;
-  }
-
-  static List<Question> _weighted(
+  /// due ベースの優先順:
+  ///   1. 復習期限到来(due): 箱番号が小さいほど上、同箱は超過日数が大きいほど上
+  ///   2. 未学習(unseen)
+  ///   3. 期限外: 期限が近いほど上（埋め草）
+  /// 同点は乱数でシャッフル。
+  static List<Question> _optimized(
     List<Question> questions,
-    Map<String, QuestionLearningStats> stats,
-  ) {
+    Map<String, QuestionLearningStats> stats, {
+    required DateTime now,
+  }) {
     final rnd = Random();
-    final scored = <({Question q, double pr, double tie})>[
+
+    // 優先度を (group, tiebreaker, noise) で表現してソートする。
+    // group: 0=due, 1=unseen, 2=not-yet-due (小さいほど高優先)
+    final scored = <({Question q, int group, double secondary, double noise})>[
       for (final q in questions)
-        (
-          q: q,
-          pr: _priority(q, stats),
-          tie: rnd.nextDouble(),
-        ),
+        () {
+          final key = LocalLearningHistoryRepository.storageKey(q.eraId, q.no);
+          final s = stats[key];
+          if (s == null || s.correctCount + s.wrongCount == 0) {
+            return (q: q, group: 1, secondary: 0.0, noise: rnd.nextDouble());
+          }
+          final box = resolvedBox(s);
+          final last = s.lastAnsweredAt;
+          if (last == null) {
+            return (q: q, group: 1, secondary: 0.0, noise: rnd.nextDouble());
+          }
+          final due = dueAt(box, last);
+          if (!now.isBefore(due)) {
+            // 期限到来: 箱が小さい(苦手寄り)ほど優先、同じ箱は超過日数が大きいほど優先
+            final overdueDays = now.difference(due).inDays.toDouble();
+            return (
+              q: q,
+              group: 0,
+              secondary: box * 1000.0 - overdueDays, // 小さいほど優先
+              noise: rnd.nextDouble(),
+            );
+          } else {
+            // 期限外: 期限が近いほど優先
+            final daysUntilDue = due.difference(now).inDays.toDouble();
+            return (q: q, group: 2, secondary: daysUntilDue, noise: rnd.nextDouble());
+          }
+        }(),
     ]..sort((a, b) {
-        final c = b.pr.compareTo(a.pr);
-        if (c != 0) {
-          return c;
-        }
-        return a.tie.compareTo(b.tie);
+        final gc = a.group.compareTo(b.group);
+        if (gc != 0) return gc;
+        final sc = a.secondary.compareTo(b.secondary);
+        if (sc != 0) return sc;
+        return a.noise.compareTo(b.noise);
       });
+
     return scored.map((e) => e.q).toList();
   }
 }

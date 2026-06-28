@@ -3,13 +3,13 @@ part of '../note_sheet.dart';
 class _NoteDetailPage extends ConsumerStatefulWidget {
   const _NoteDetailPage({
     required this.args,
-    required this.onMarkMastered,
+    required this.onReviewAnswered,
     required this.onPageChanged,
   });
 
   final _DetailPageArgs args;
-  final VoidCallback onMarkMastered;
-  final void Function(int index, int masteredCount) onPageChanged;
+  final VoidCallback onReviewAnswered;
+  final void Function(int index) onPageChanged;
 
   @override
   ConsumerState<_NoteDetailPage> createState() => _NoteDetailPageState();
@@ -18,7 +18,6 @@ class _NoteDetailPage extends ConsumerStatefulWidget {
 class _NoteDetailPageState extends ConsumerState<_NoteDetailPage> {
   late final PageController _pageController;
   late int _currentIndex;
-  int _masteredCount = 0;
 
   _DetailPageArgs get _args => widget.args;
 
@@ -35,28 +34,23 @@ class _NoteDetailPageState extends ConsumerState<_NoteDetailPage> {
     super.dispose();
   }
 
-  void _goToNextReviewItem({required bool known}) {
-    if (known) {
-      final q = _args.reviewQueue[_currentIndex].question;
-      final repo = ref.read(learningHistoryRepositoryProvider).asData?.value;
-      repo?.markMastered(q.eraId, q.no).then((_) {
-        widget.onMarkMastered();
-      });
-    }
+  void _handleReviewAction({required bool isCorrect}) {
+    final q = _args.reviewQueue[_currentIndex].question;
+    final repo = ref.read(learningHistoryRepositoryProvider).asData?.value;
+    repo
+        ?.recordAnswer(
+          eraId: q.eraId,
+          no: q.no,
+          isCorrect: isCorrect,
+          at: DateTime.now(),
+          selectedLabel: isCorrect ? q.answer : '',
+        )
+        .then((_) => widget.onReviewAnswered());
 
     final isLast = _currentIndex >= _args.reviewQueue.length - 1;
     if (isLast) {
-      if (known) {
-        setState(() => _masteredCount = _args.reviewQueue.length);
-        widget.onPageChanged(_currentIndex, _args.reviewQueue.length);
-      }
       if (mounted) Navigator.of(context).pop();
       return;
-    }
-
-    if (known) {
-      setState(() => _masteredCount++);
-      widget.onPageChanged(_currentIndex, _masteredCount);
     }
     _pageController.nextPage(
       duration: const Duration(milliseconds: 300),
@@ -91,7 +85,7 @@ class _NoteDetailPageState extends ConsumerState<_NoteDetailPage> {
                 : const ClampingScrollPhysics(),
             onPageChanged: (index) {
               setState(() => _currentIndex = index);
-              widget.onPageChanged(index, _masteredCount);
+              widget.onPageChanged(index);
             },
             itemCount: _args.reviewQueue.length,
             itemBuilder: (context, index) => _NoteDetailView(
@@ -99,10 +93,10 @@ class _NoteDetailPageState extends ConsumerState<_NoteDetailPage> {
               item: _args.reviewQueue[index],
               fromReview: _args.fromReview,
               onKnown: _args.fromReview
-                  ? () => _goToNextReviewItem(known: true)
+                  ? () => _handleReviewAction(isCorrect: true)
                   : null,
               onUnsure: _args.fromReview
-                  ? () => _goToNextReviewItem(known: false)
+                  ? () => _handleReviewAction(isCorrect: false)
                   : null,
             ),
           ),

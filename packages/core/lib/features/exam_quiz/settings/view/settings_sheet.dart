@@ -5,7 +5,7 @@ import 'package:core/components/app_bottom_sheet.dart';
 import 'package:core/components/glass_widget.dart';
 import 'package:core/components/modal_handle.dart';
 import 'package:core/config/ads/ad_config.dart';
-import 'package:core/config/brand/it_pass_color_scheme.dart';
+import 'package:core/config/brand/app_color_scheme.dart';
 import 'package:core/config/constants/app_urls.dart';
 import 'package:core/config/extensions/context_extension.dart';
 import 'package:core/config/haptic/haptics.dart';

@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../model/leitner_box.dart';
 import '../model/question_learning_stats.dart';
 import 'learning_history_repository.dart';
 import 'local_learning_history_repository.dart';
@@ -17,9 +18,6 @@ class FirestoreLearningHistoryRepository implements LearningHistoryRepository {
           .collection('users')
           .doc(uid)
           .collection('learningHistory');
-
-  DocumentReference<Map<String, dynamic>> get _userDoc =>
-      FirebaseFirestore.instance.collection('users').doc(uid);
 
   @override
   Future<Map<String, QuestionLearningStats>> loadAll() async {
@@ -39,12 +37,22 @@ class FirestoreLearningHistoryRepository implements LearningHistoryRepository {
     required String selectedLabel,
   }) async {
     final key = LocalLearningHistoryRepository.storageKey(eraId, no);
-    await _historyCol.doc(key).set({
+    final doc = _historyCol.doc(key);
+    final snap = await doc.get();
+    final prev = snap.exists
+        ? QuestionLearningStats.fromJson(snap.data()!)
+        : const QuestionLearningStats();
+    final nextBox = advance(
+      prev.box ?? (prev.correctCount + prev.wrongCount == 0 ? null : boxFromLegacyStats(prev)),
+      isCorrect: isCorrect,
+    );
+    await doc.set({
       'correctCount': FieldValue.increment(isCorrect ? 1 : 0),
       'wrongCount': FieldValue.increment(isCorrect ? 0 : 1),
       'lastAnsweredAt': at.toIso8601String(),
       'lastWasCorrect': isCorrect,
       'lastSelectedLabel': selectedLabel,
+      'box': nextBox,
       'updatedAt': FieldValue.serverTimestamp(),
     }, SetOptions(merge: true));
   }
@@ -72,41 +80,7 @@ class FirestoreLearningHistoryRepository implements LearningHistoryRepository {
     for (final doc in snap.docs) {
       batch.delete(doc.reference);
     }
-    batch.delete(_userDoc);
     await batch.commit();
-  }
-
-  @override
-  Future<void> markMastered(String eraId, int no) async {
-    final key = LocalLearningHistoryRepository.storageKey(eraId, no);
-    await _userDoc.set({
-      'masteredKeys': FieldValue.arrayUnion([key]),
-    }, SetOptions(merge: true));
-  }
-
-  @override
-  Future<void> unmarkMastered(String eraId, int no) async {
-    final key = LocalLearningHistoryRepository.storageKey(eraId, no);
-    await _userDoc.set({
-      'masteredKeys': FieldValue.arrayRemove([key]),
-    }, SetOptions(merge: true));
-  }
-
-  @override
-  Future<Set<String>> loadMastered() async {
-    final snap = await _userDoc.get();
-    if (!snap.exists) return {};
-    final raw = snap.data()?['masteredKeys'];
-    if (raw == null) return {};
-    return List<String>.from(raw as List).toSet();
-  }
-
-  Future<void> saveMastered(Set<String> keys) async {
-    await _userDoc.set({'masteredKeys': keys.toList()}, SetOptions(merge: true));
-  }
-
-  Future<void> _updateMasteredKeys(List<String> keys) async {
-    await _userDoc.set({'masteredKeys': keys}, SetOptions(merge: true));
   }
 
   /// uid 変化時のみ双方向マージを実行する。
@@ -123,7 +97,8 @@ class FirestoreLearningHistoryRepository implements LearningHistoryRepository {
   }
 
   Future<void> _runBidirectionalMerge(
-      LocalLearningHistoryRepository local) async {
+    LocalLearningHistoryRepository local,
+  ) async {
     final remoteHistory = await loadAll();
     final localHistory = await local.loadAll();
 
@@ -148,15 +123,5 @@ class FirestoreLearningHistoryRepository implements LearningHistoryRepository {
 
     await local.saveAll(merged);
     await batchWrite(toUpload);
-
-    final remoteMastered = await loadMastered();
-    final localMastered = await local.loadMastered();
-    final union = {...localMastered, ...remoteMastered};
-    if (union.length > localMastered.length) {
-      await local.saveAllMastered(union);
-    }
-    if (union.length > remoteMastered.length) {
-      await _updateMasteredKeys(union.toList());
-    }
   }
 }

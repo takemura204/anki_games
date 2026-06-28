@@ -43,10 +43,14 @@ enum NotificationTimeSlot {
     NotificationTimeSlot.bedtime => Icons.bedtime_rounded,
   };
 
-  String get notificationBody => switch (this) {
-    NotificationTimeSlot.morning => '今日のITパスポート学習を始めましょう。合格まであと一歩！',
-    NotificationTimeSlot.commute => '隙間の5分でITパスポートに合格しよう。今日も1問ずつ積み上げよう',
-    NotificationTimeSlot.evening => '帰りの時間を学習に。今日の問題をこなしてストリークを守ろう',
-    NotificationTimeSlot.bedtime => '寝る前の5分で知識を定着。明日の自分への投資をしよう',
+  String notificationBody(String appDisplayName) => switch (this) {
+    NotificationTimeSlot.morning =>
+      '今日の$appDisplayName学習を始めましょう。合格まであと一歩！',
+    NotificationTimeSlot.commute =>
+      '隙間の5分で$appDisplayNameに合格しよう。今日も1問ずつ積み上げよう',
+    NotificationTimeSlot.evening =>
+      '帰りの時間を学習に。今日の問題をこなしてストリークを守ろう',
+    NotificationTimeSlot.bedtime =>
+      '寝る前の5分で知識を定着。明日の自分への投資をしよう',
   };
 }

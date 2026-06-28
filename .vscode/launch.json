@@ -2,13 +2,6 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "block_puzzle",
-			"request": "launch",
-			"type": "dart",
-			"cwd": "packages/app_block_puzzle",
-			"program": "lib/main.dart"
-		},
-		{
 			"name": "it_pass",
 			"request": "launch",
 			"type": "dart",

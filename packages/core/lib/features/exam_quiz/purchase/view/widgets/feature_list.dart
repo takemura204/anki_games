@@ -2,7 +2,7 @@ part of '../paywall_sheet.dart';
 
 class _FeatureList extends StatelessWidget {
   const _FeatureList({required this.c});
-  final ItPassColorScheme c;
+  final AppColorScheme c;
 
   static const List<(IconData, String, String)> _features = [
     (Icons.block_outlined, '広告', '非表示'),

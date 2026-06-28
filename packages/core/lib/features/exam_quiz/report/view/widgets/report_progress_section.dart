@@ -35,10 +35,6 @@ class _ProgressSection extends HookConsumerWidget {
     const _SystemTab('ストラテジ系'),
     const _SystemTab('マネジメント系'),
     const _SystemTab('テクノロジ系'),
-    if (kDebugMode) ...[
-      const _EraTab(eraId: 'sample1', label: 'サンプル①'),
-      const _EraTab(eraId: 'sample2', label: 'サンプル②'),
-    ],
   ];
 
   @override
@@ -83,12 +79,18 @@ class _ProgressSection extends HookConsumerWidget {
                 onTap: (i) => selectedTab.value = i,
               ),
               const Gap(AppSpacing.sm),
-              Row(
-                children: [
-                  _DonutChart(progress: progress),
-                  const Gap(AppSpacing.md),
-                  Expanded(child: _LevelList(progress: progress)),
-                ],
+              LayoutBuilder(
+                builder: (_, constraints) {
+                  final chartSize =
+                      (constraints.maxWidth * 0.35).clamp(110.0, 180.0);
+                  return Row(
+                    children: [
+                      _DonutChart(progress: progress, size: chartSize),
+                      const Gap(AppSpacing.md),
+                      Expanded(child: _LevelList(progress: progress)),
+                    ],
+                  );
+                },
               ),
             ],
           ),
@@ -192,32 +194,39 @@ class _TabChip extends StatelessWidget {
 }
 
 class _DonutChart extends StatelessWidget {
-  const _DonutChart({required this.progress});
+  const _DonutChart({required this.progress, required this.size});
 
   final SystemProgress progress;
+  final double size;
+
+  static const _baseSize = 120.0;
 
   @override
   Widget build(BuildContext context) {
+    final scale = size / _baseSize;
+    final centerRadius = 40.0 * scale;
+    final sectionRadius = 12.0 * scale;
+
     final sections = LearningLevel.values.reversed.map((level) {
       final count = progress.countFor(level);
       return PieChartSectionData(
         value: count == 0 ? 0.001 : count.toDouble(),
         color: level.colorFg,
-        radius: 12,
+        radius: sectionRadius,
         showTitle: false,
       );
     }).toList();
 
     return SizedBox(
-      width: context.width * 0.3,
-      height: context.width * 0.3,
+      width: size,
+      height: size,
       child: Stack(
         alignment: Alignment.center,
         children: [
           PieChart(
             PieChartData(
               sections: sections,
-              centerSpaceRadius: 40,
+              centerSpaceRadius: centerRadius,
               sectionsSpace: 1.5,
               startDegreeOffset: -90,
             ),

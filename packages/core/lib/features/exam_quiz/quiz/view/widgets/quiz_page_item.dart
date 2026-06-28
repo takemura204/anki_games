@@ -75,7 +75,7 @@ class _QuizPageItemState extends ConsumerState<_QuizPageItem> {
   Widget build(BuildContext context) {
     final session = widget.session;
     final question = session.currentQuestion;
-    final statsAsync = ref.watch(itPassLearningStatsProvider);
+    final statsAsync = ref.watch(examLearningStatsProvider);
     final key = LocalLearningHistoryRepository.storageKey(
       question.eraId,
       question.no,

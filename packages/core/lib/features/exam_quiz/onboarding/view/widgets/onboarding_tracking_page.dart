@@ -1,6 +1,6 @@
 import 'package:core/components/adaptive_body.dart';
 import 'package:core/components/glass_widget.dart';
-import 'package:core/config/brand/it_pass_color_scheme.dart';
+import 'package:core/config/brand/app_color_scheme.dart';
 import 'package:core/config/haptic/haptics.dart';
 import 'package:core/config/styles/app_border_radius.dart';
 import 'package:core/config/styles/app_spacing.dart';
@@ -11,9 +11,14 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 class OnboardingTrackingPage extends StatefulWidget {
-  const OnboardingTrackingPage({super.key, required this.onAllow});
+  const OnboardingTrackingPage({
+    super.key,
+    required this.onAllow,
+    required this.appDisplayName,
+  });
 
   final VoidCallback onAllow;
+  final String appDisplayName;
 
   @override
   State<OnboardingTrackingPage> createState() => _OnboardingTrackingPageState();
@@ -99,7 +104,7 @@ class _OnboardingTrackingPageState extends State<OnboardingTrackingPage>
                 child: Column(
                   children: [
                     if (defaultTargetPlatform == TargetPlatform.iOS)
-                      _IosAttMockup(onAllow: widget.onAllow)
+                      _IosAttMockup(onAllow: widget.onAllow, appDisplayName: widget.appDisplayName)
                     else
                       _AndroidUmpMockup(),
                     const Gap(AppSpacing.md),
@@ -123,9 +128,10 @@ class _OnboardingTrackingPageState extends State<OnboardingTrackingPage>
 }
 
 class _IosAttMockup extends StatelessWidget {
-  const _IosAttMockup({this.onAllow});
+  const _IosAttMockup({this.onAllow, required this.appDisplayName});
 
   final VoidCallback? onAllow;
+  final String appDisplayName;
 
   @override
   Widget build(BuildContext context) {
@@ -174,7 +180,7 @@ class _IosAttMockup extends StatelessWidget {
           ),
           const Gap(AppSpacing.md),
           Text(
-            '"ITパスポート" が他社のアプリやWebサイトを横断してあなたのアクティビティをトラッキングすることを許可しますか?',
+            '"$appDisplayName" が他社のアプリやWebサイトを横断してあなたのアクティビティをトラッキングすることを許可しますか?',
             style: AppTextStyle.bodyMedium.copyWith(
               color: c.fgShade400,
               fontWeight: FontWeight.bold,

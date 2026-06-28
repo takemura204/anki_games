@@ -15,15 +15,19 @@ abstract class BrandConfig {
   const BrandConfig();
   String get appName;
 
+  /// ユーザー向け表示名（例: 'ITパスポート', '基本情報技術者'）。
+  /// オンボーディングや通知文面など UI に埋め込む名称として使用する。
+  String get appDisplayName => appName;
+
   /// Firebase Analytics / Firestore でアプリを識別するキー（例: 'it_pass', 'fe'）
   String get analyticsBrandKey;
 
   Color get seedColor;
 
-  /// ダークモード用 ThemeExtension（例: ItPassColorScheme.dark）
+  /// ダークモード用 ThemeExtension（例: AppColorScheme.dark）
   List<ThemeExtension<dynamic>> get darkThemeExtensions;
 
-  /// ライトモード用 ThemeExtension（例: ItPassColorScheme.light）
+  /// ライトモード用 ThemeExtension（例: AppColorScheme.light）
   List<ThemeExtension<dynamic>> get lightThemeExtensions;
 
   AdConfig get adConfig;

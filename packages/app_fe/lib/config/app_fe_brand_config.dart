@@ -1,6 +1,6 @@
 import 'package:core/config/ads/ad_config.dart';
+import 'package:core/config/brand/app_color_scheme.dart';
 import 'package:core/config/brand/brand_config.dart';
-import 'package:core/config/brand/it_pass_color_scheme.dart';
 import 'package:core/config/brand/store_ids.dart';
 import 'package:core/features/purchase/model/revenue_cat_config.dart';
 import 'package:flutter/material.dart';
@@ -19,11 +19,11 @@ class AppFeBrandConfig extends BrandConfig {
 
   @override
   List<ThemeExtension<dynamic>> get darkThemeExtensions =>
-      [ItPassColorScheme.dark];
+      [AppColorScheme.dark];
 
   @override
   List<ThemeExtension<dynamic>> get lightThemeExtensions =>
-      [ItPassColorScheme.light];
+      [AppColorScheme.light];
 
   // TODO(fe): 本番用 AdMob ID に差し替える
   @override

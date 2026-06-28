@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:confetti/confetti.dart';
 import 'package:core/components/adaptive_body.dart';
 import 'package:core/components/explanation_card.dart';
-import 'package:core/config/brand/it_pass_color_scheme.dart';
+import 'package:core/config/brand/app_color_scheme.dart';
 import 'package:core/config/styles/app_colors.dart';
 import 'package:core/config/styles/app_spacing.dart';
 import 'package:core/config/styles/app_text_style.dart';

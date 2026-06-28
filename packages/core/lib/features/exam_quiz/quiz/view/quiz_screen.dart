@@ -8,12 +8,12 @@ import 'package:core/components/checkmark_painter.dart';
 import 'package:core/components/explanation_card.dart';
 import 'package:core/components/glass_widget.dart';
 import 'package:core/config/ads/ad_config.dart';
-import 'package:core/config/brand/it_pass_color_scheme.dart';
+import 'package:core/config/brand/app_color_scheme.dart';
+import 'package:core/config/brand/brand_config.dart';
 import 'package:core/config/haptic/haptics.dart';
 import 'package:core/config/lifecycle/app_lifecycle_provider.dart';
 import 'package:core/config/lifecycle/lifecycle_observer.dart';
 import 'package:core/config/quotes/motivation_quotes.dart';
-import 'package:core/config/router/modal_sheet_router.dart';
 import 'package:core/config/styles/app_animation.dart';
 import 'package:core/config/styles/app_border_radius.dart';
 import 'package:core/config/styles/app_colors.dart';
@@ -24,15 +24,15 @@ import 'package:core/features/admob/admob_interstitial.dart';
 import 'package:core/features/exam_quiz/backup/providers/auto_restore_message_provider.dart';
 import 'package:core/features/exam_quiz/learning/model/learning_level.dart';
 import 'package:core/features/exam_quiz/learning/model/question_learning_stats.dart';
-import 'package:core/features/exam_quiz/learning/providers/it_pass_learning_stats_provider.dart';
+import 'package:core/features/exam_quiz/learning/providers/exam_learning_stats_provider.dart';
 import 'package:core/features/exam_quiz/learning/repository/local_learning_history_repository.dart';
 import 'package:core/features/exam_quiz/note/providers/bookmark_provider.dart';
 import 'package:core/features/exam_quiz/notification/service/notification_service.dart';
-import 'package:core/features/exam_quiz/onboarding/repository/onboarding_repository.dart';
 import 'package:core/features/exam_quiz/onboarding/view_model/onboarding_ui_notifier.dart';
 import 'package:core/features/exam_quiz/onboarding/view_model/onboarding_view_model.dart';
 import 'package:core/features/exam_quiz/report/view_model/progress_dashboard_provider.dart';
 import 'package:core/features/exam_quiz/review/review_repository.dart';
+import 'package:core/features/exam_quiz/router/modal_sheet_router.dart';
 import 'package:core/features/purchase/view_model/premium_view_model.dart';
 import 'package:core/i18n/translations.g.dart';
 import 'package:flutter/material.dart';
@@ -150,7 +150,7 @@ class _QuizBodyState extends ConsumerState<_QuizBody> {
   }
 
   Future<void> _maybeInitOnboarding() async {
-    final completed = await OnboardingRepository().isCompleted();
+    final completed = await ref.read(onboardingViewModelProvider.future);
     if (!mounted) return;
     if (!completed) {
       setState(() {
@@ -573,6 +573,7 @@ class _QuizBodyState extends ConsumerState<_QuizBody> {
                   return OnboardingTrackingPage(
                     key: const ValueKey('ob_tracking'),
                     onAllow: _onTrackingNext,
+                    appDisplayName: ref.read(brandConfigProvider).appDisplayName,
                   );
                 }
 

@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:core/config/brand/brand_config.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -8,7 +9,12 @@ import '../model/quiz_history_record.dart';
 part 'local_quiz_history_repository.g.dart';
 
 class LocalQuizHistoryRepository {
-  static const _prefsKey = 'it_pass_quiz_history_v1';
+  LocalQuizHistoryRepository({required String prefsPrefix})
+      : _prefix = prefsPrefix;
+
+  final String _prefix;
+
+  String get _prefsKey => '${_prefix}_quiz_history_v1';
   static const defaultDisplayLimit = 50;
 
   Future<void> saveAnswer({
@@ -65,5 +71,7 @@ class LocalQuizHistoryRepository {
 }
 
 @Riverpod(keepAlive: true)
-LocalQuizHistoryRepository localQuizHistoryRepository(Ref ref) =>
-    LocalQuizHistoryRepository();
+LocalQuizHistoryRepository localQuizHistoryRepository(Ref ref) {
+  final prefix = ref.watch(brandConfigProvider).analyticsBrandKey;
+  return LocalQuizHistoryRepository(prefsPrefix: prefix);
+}

@@ -1,4 +1,4 @@
-import 'package:core/config/brand/it_pass_color_scheme.dart';
+import 'package:core/config/brand/app_color_scheme.dart';
 import 'package:core/config/haptic/haptics.dart';
 import 'package:core/config/styles/app_animation.dart';
 import 'package:core/config/styles/app_border_radius.dart';

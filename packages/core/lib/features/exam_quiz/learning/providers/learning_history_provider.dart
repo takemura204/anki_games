@@ -1,3 +1,4 @@
+import 'package:core/config/brand/brand_config.dart';
 import 'package:core/features/exam_quiz/auth/auth_user_provider.dart';
 import 'package:flutter/widgets.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -12,7 +13,8 @@ class LearningHistoryNotifier
   @override
   Future<LearningHistoryRepository> build() async {
     final isSync = ref.watch(isSyncEnabledProvider);
-    final local = LocalLearningHistoryRepository();
+    final prefix = ref.watch(brandConfigProvider).analyticsBrandKey;
+    final local = LocalLearningHistoryRepository(prefsPrefix: prefix);
 
     if (!isSync) return local;
 
@@ -20,7 +22,7 @@ class LearningHistoryNotifier
     if (user == null) return local;
 
     final didRestore =
-        await BackupService(uid: user.uid).downloadIfNewer();
+        await BackupService(uid: user.uid, prefsPrefix: prefix).downloadIfNewer();
 
     if (didRestore) {
       WidgetsBinding.instance.addPostFrameCallback((_) {

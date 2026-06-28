@@ -490,7 +490,7 @@ class _QuizAnswerCard extends ConsumerWidget {
     };
     final isBookmarked = liveBookmarks.contains(storageKey);
 
-    final statsMap = switch (ref.watch(itPassLearningStatsProvider)) {
+    final statsMap = switch (ref.watch(examLearningStatsProvider)) {
       AsyncData(:final value) => value,
       _ => const <String, QuestionLearningStats>{},
     };

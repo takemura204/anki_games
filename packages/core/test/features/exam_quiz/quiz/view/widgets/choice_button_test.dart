@@ -1,4 +1,4 @@
-import 'package:core/config/brand/it_pass_color_scheme.dart';
+import 'package:core/config/brand/app_color_scheme.dart';
 import 'package:core/config/styles/app_icons.dart';
 import 'package:core/features/exam_quiz/model/question.dart';
 import 'package:core/features/exam_quiz/quiz/view/widgets/choice_button.dart';
@@ -8,7 +8,7 @@ import 'package:flutter_test/flutter_test.dart';
 Widget _wrap(Widget child) {
   return MaterialApp(
     theme: ThemeData(
-      extensions: const [ItPassColorScheme.dark],
+      extensions: const [AppColorScheme.dark],
     ),
     home: Scaffold(body: child),
   );

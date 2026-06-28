@@ -5,7 +5,12 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'bookmark_repository.dart';
 
 class LocalBookmarkRepository implements BookmarkRepository {
-  static const _prefsKey = 'it_pass_bookmarks_v1';
+  LocalBookmarkRepository({required String prefsPrefix})
+      : _prefix = prefsPrefix;
+
+  final String _prefix;
+
+  String get _prefsKey => '${_prefix}_bookmarks_v1';
 
   static String storageKey(String eraId, int no) => '${eraId}_$no';
 

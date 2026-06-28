@@ -31,7 +31,7 @@ const _useEmulator = bool.fromEnvironment('USE_EMULATOR');
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await NotificationService.instance.initialize();
+  await NotificationService.instance.initialize(channelId: 'it_pass_reminder');
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await MobileAds.instance.initialize();
   if (kDebugMode) {

@@ -19,11 +19,12 @@ if (keyPropertiesFile.exists()) {
 }
 
 android {
-    namespace = "jp.block.puzzle"
+    namespace = "jp.tkmr.it_pass"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
+        isCoreLibraryDesugaringEnabled = true
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
@@ -54,11 +55,6 @@ android {
     flavorDimensions += "app"
 
     productFlavors {
-        create("blockPuzzle") {
-            dimension = "app"
-            applicationId = "jp.block.puzzle"
-            resValue("string", "app_name", "Block.")
-        }
         create("it_pass") {
             dimension = "app"
             applicationId = "jp.tkmr.it_pass"
@@ -84,6 +80,10 @@ android {
 
 flutter {
     source = "../.."
+}
+
+dependencies {
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
 }
 
 play {

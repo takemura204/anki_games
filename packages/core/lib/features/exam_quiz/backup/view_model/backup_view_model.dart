@@ -1,3 +1,4 @@
+import 'package:core/config/brand/brand_config.dart';
 import 'package:core/features/exam_quiz/auth/auth_user_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -13,8 +14,11 @@ class BackupViewModel extends AsyncNotifier<void> {
   Future<void> upload() async {
     final uid = ref.read(authUserProvider).asData?.value?.uid;
     if (uid == null) return;
+    final prefix = ref.read(brandConfigProvider).analyticsBrandKey;
     state = const AsyncLoading();
-    state = await AsyncValue.guard(() => BackupService(uid: uid).upload());
+    state = await AsyncValue.guard(
+      () => BackupService(uid: uid, prefsPrefix: prefix).upload(),
+    );
     if (!state.hasError) {
       ref
         ..invalidate(bookmarkProvider)
@@ -26,7 +30,8 @@ class BackupViewModel extends AsyncNotifier<void> {
   Future<DateTime?> lastBackupAt() async {
     final uid = ref.read(authUserProvider).asData?.value?.uid;
     if (uid == null) return null;
-    return BackupService(uid: uid).localBackupAt();
+    final prefix = ref.read(brandConfigProvider).analyticsBrandKey;
+    return BackupService(uid: uid, prefsPrefix: prefix).localBackupAt();
   }
 }
 

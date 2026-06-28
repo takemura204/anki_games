@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:core/components/glass_widget.dart';
 import 'package:core/components/modal_handle.dart';
-import 'package:core/config/brand/it_pass_color_scheme.dart';
+import 'package:core/config/brand/app_color_scheme.dart';
 import 'package:core/config/haptic/haptics.dart';
 import 'package:core/config/styles/app_border_radius.dart';
 import 'package:core/config/styles/app_icons.dart';
@@ -171,7 +171,7 @@ class ProfilePage extends HookConsumerWidget {
 
   Widget _buildNameRow(
     BuildContext context,
-    ItPassColorScheme c,
+    AppColorScheme c,
     ValueNotifier<bool> isEditing,
     TextEditingController controller,
     FocusNode focusNode,
@@ -561,7 +561,7 @@ class _DeleteAccountButton extends StatelessWidget {
 
 class _Divider extends StatelessWidget {
   const _Divider(this.c);
-  final ItPassColorScheme c;
+  final AppColorScheme c;
 
   @override
   Widget build(BuildContext context) {
