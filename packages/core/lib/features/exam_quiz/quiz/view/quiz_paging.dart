@@ -41,6 +41,10 @@ final class _OnboardingNotificationEntry extends _OnboardingBaseEntry {
   const _OnboardingNotificationEntry();
 }
 
+final class _OnboardingGoalEntry extends _OnboardingBaseEntry {
+  const _OnboardingGoalEntry();
+}
+
 final class _OnboardingPremiumEntry extends _OnboardingBaseEntry {
   const _OnboardingPremiumEntry();
 }

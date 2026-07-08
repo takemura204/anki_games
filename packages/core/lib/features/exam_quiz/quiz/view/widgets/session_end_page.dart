@@ -53,12 +53,12 @@ class _SessionEndPage extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: AppSpacing.md),
               decoration: BoxDecoration(
                 gradient: const LinearGradient(
-                  colors: [ItPassColors.seed, ItPassColors.accent],
+                  colors: [AppPalette.seed, AppPalette.accent],
                 ),
                 borderRadius: AppBorderRadius.lg,
                 boxShadow: [
                   BoxShadow(
-                    color: ItPassColors.seed.withValues(alpha: 0.4),
+                    color: AppPalette.seed.withValues(alpha: 0.4),
                     blurRadius: AppSpacing.md + 4,
                     offset: const Offset(0, AppSpacing.xs + 2),
                   ),

@@ -69,7 +69,7 @@ class GenderPickerModal extends HookWidget {
                                 children: [
                                   Radio<Gender>(
                                     value: Gender.values[i],
-                                    activeColor: ItPassColors.seed,
+                                    activeColor: AppPalette.seed,
                                     materialTapTargetSize:
                                         MaterialTapTargetSize.shrinkWrap,
                                   ),
@@ -78,7 +78,7 @@ class GenderPickerModal extends HookWidget {
                                     style: AppTextStyle.bodyMedium.copyWith(
                                       color:
                                           Gender.values[i] == selected.value
-                                          ? ItPassColors.seed
+                                          ? AppPalette.seed
                                           : c.fg,
                                       fontWeight:
                                           Gender.values[i] == selected.value

@@ -65,7 +65,7 @@ class AgeRangePickerModal extends HookWidget {
                             children: [
                               Radio<AgeRange>(
                                 value: AgeRange.values[i],
-                                activeColor: ItPassColors.seed,
+                                activeColor: AppPalette.seed,
                                 materialTapTargetSize:
                                     MaterialTapTargetSize.shrinkWrap,
                               ),
@@ -73,7 +73,7 @@ class AgeRangePickerModal extends HookWidget {
                                 AgeRange.values[i].label,
                                 style: AppTextStyle.bodyMedium.copyWith(
                                   color: AgeRange.values[i] == selected.value
-                                      ? ItPassColors.seed
+                                      ? AppPalette.seed
                                       : c.fg,
                                   fontWeight:
                                       AgeRange.values[i] == selected.value

@@ -11,6 +11,10 @@ import 'package:core/config/styles/app_border_radius.dart';
 import 'package:core/config/styles/app_icons.dart';
 import 'package:core/config/styles/app_spacing.dart';
 import 'package:core/config/styles/app_text_style.dart';
+import 'package:core/features/exam_quiz/onboarding/repository/local_study_goal_repository.dart';
+import 'package:core/features/exam_quiz/onboarding/view/widgets/onboarding_page_anim.dart';
+import 'package:core/features/purchase/model/plan_type.dart';
+import 'package:core/features/purchase/model/pricing.dart';
 import 'package:core/features/purchase/view_model/premium_view_model.dart';
 import 'package:core/i18n/translations.g.dart';
 import 'package:flutter/foundation.dart';
@@ -26,24 +30,35 @@ part 'widgets/plan_selector.dart';
 part 'widgets/cta_section.dart';
 part 'widgets/active_content.dart';
 
-enum _Plan { monthly, lifetime }
-
 class PaywallSheet extends HookConsumerWidget {
-  const PaywallSheet({super.key});
+  const PaywallSheet({super.key, this.saleMode = false});
+
+  /// true のとき premium_sale Offering の価格で購入し、セールバナーを表示する。
+  final bool saleMode;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isPremium =
         ref.watch(premiumViewModelProvider).asData?.value.isPremium ?? false;
-    final monthlyPriceAsync = ref.watch(monthlyPriceProvider);
-    final lifetimePriceAsync = ref.watch(lifetimePriceProvider);
+    final pricingAsync = ref.watch(pricingProvider);
     final expirationAsync = ref.watch(premiumExpirationDateProvider);
+    final recommendedPlan =
+        ref.watch(recommendedPlanProvider).asData?.value ?? PlanType.monthly;
     final isLoading = useState(false);
-    final selectedPlan = useState(_Plan.monthly);
-
+    final selectedPlan = useState(recommendedPlan);
+    final animCtrl = useAnimationController(
+      duration: const Duration(milliseconds: 500),
+    );
+    final anim = useMemoized(() => OnboardingPageAnim.from(animCtrl));
+    useEffect(() {
+      WidgetsBinding.instance.addPostFrameCallback((_) => animCtrl.forward());
+      return null;
+    }, const []);
     final c = context.appColors;
     final colorScheme = Theme.of(context).colorScheme;
     final bottomPadding = MediaQuery.of(context).padding.bottom;
+
+    final screenHeight = MediaQuery.of(context).size.height;
 
     return ClipRRect(
       borderRadius: const BorderRadius.vertical(top: Radius.circular(28)),
@@ -53,104 +68,107 @@ class PaywallSheet extends HookConsumerWidget {
           borderRadius: const BorderRadius.vertical(top: Radius.circular(28)),
           border: Border(top: BorderSide(color: c.border1)),
         ),
-        padding: EdgeInsets.only(
-          left: AppSpacing.md,
-          right: AppSpacing.md,
-          bottom: MediaQuery.of(context).padding.bottom,
-        ),
+        // シートの最大高を画面の 92% に制限し、overflow を防ぐ
+        constraints: BoxConstraints(maxHeight: screenHeight * 0.92),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            // ハンドルは固定（スクロール対象外）
             const ModalHandle(),
-            const Gap(AppSpacing.lg),
-            _Header(c: c, colorScheme: colorScheme),
-            const Gap(AppSpacing.lg),
-            if (isPremium)
-              _ActiveContent(
-                c: c,
-                colorScheme: colorScheme,
-                expirationAsync: expirationAsync,
-                onClose: () => Navigator.of(context).pop(),
-              )
-            else ...[
-              _FeatureList(c: c),
-              const Gap(AppSpacing.lg),
-              _PlanSelector(
-                c: c,
-                selectedPlan: selectedPlan.value,
-                monthlyPriceAsync: monthlyPriceAsync,
-                lifetimePriceAsync: lifetimePriceAsync,
-                onSelect: (plan) => selectedPlan.value = plan,
+            // コンテンツはスクロール可能
+            Flexible(
+              child: SingleChildScrollView(
+                padding: EdgeInsets.fromLTRB(
+                  AppSpacing.md,
+                  AppSpacing.lg,
+                  AppSpacing.md,
+                  bottomPadding,
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    if (isPremium)
+                      _ActiveContent(
+                        c: c,
+                        colorScheme: colorScheme,
+                        expirationAsync: expirationAsync,
+                        onClose: () => Navigator.of(context).pop(),
+                      )
+                    else ...[
+                      OnboardingFadeSlide(
+                        fade: anim.topFade,
+                        slide: anim.topSlide,
+                        child: _Header(c: c, colorScheme: colorScheme),
+                      ),
+                      const Gap(AppSpacing.lg),
+                      OnboardingFadeSlide(
+                        fade: anim.bottomFade,
+                        slide: anim.bottomSlide,
+                        child: Column(
+                          children: [
+                            _FeatureList(c: c),
+                            const Gap(AppSpacing.lg),
+                            _PlanSelector(
+                              c: c,
+                              selectedPlan: selectedPlan.value,
+                              pricingAsync: pricingAsync,
+                              saleMode: saleMode,
+                              recommendedPlan: recommendedPlan,
+                              onSelect: (plan) => selectedPlan.value = plan,
+                            ),
+                            const Gap(AppSpacing.lg),
+                            _CTASection(
+                              c: c,
+                              selectedPlan: selectedPlan.value,
+                              pricingAsync: pricingAsync,
+                              saleMode: saleMode,
+                              isLoading: isLoading,
+                              onPurchase: () => _onPurchase(
+                                context,
+                                ref,
+                                isLoading,
+                                selectedPlan.value,
+                              ),
+                              onRestore: () =>
+                                  _onRestore(context, ref, isLoading),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ],
+                ),
               ),
-
-              const Gap(AppSpacing.lg),
-              _CTASection(
-                c: c,
-                selectedPlan: selectedPlan.value,
-                monthlyPriceAsync: monthlyPriceAsync,
-                lifetimePriceAsync: lifetimePriceAsync,
-                isLoading: isLoading,
-                bottomPadding: bottomPadding,
-                onPurchase: selectedPlan.value == _Plan.monthly
-                    ? () => _onPurchaseMonthly(context, ref, isLoading)
-                    : () => _onPurchaseLifetime(context, ref, isLoading),
-                onRestore: () => _onRestore(context, ref, isLoading),
-              ),
-            ],
+            ),
           ],
         ),
       ),
     );
   }
 
-  Future<void> _onPurchaseMonthly(
+  Future<void> _onPurchase(
     BuildContext context,
     WidgetRef ref,
     ValueNotifier<bool> isLoading,
+    PlanType plan,
   ) async {
     if (kDebugMode) {
       ref.read(premiumViewModelProvider.notifier).debugSetPremium();
-      if (context.mounted) Navigator.of(context).pop();
       return;
     }
     isLoading.value = true;
     try {
-      await ref.read(premiumViewModelProvider.notifier).purchase();
+      await ref
+          .read(premiumViewModelProvider.notifier)
+          .purchasePlan(plan, sale: saleMode);
       final isPremium =
           ref.read(premiumViewModelProvider).asData?.value.isPremium ?? false;
       if (context.mounted && isPremium) Navigator.of(context).pop();
     } on Exception catch (_) {
       if (context.mounted) {
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(SnackBar(content: Text(t.premium.errorPurchaseFailed)));
-      }
-    } finally {
-      isLoading.value = false;
-    }
-  }
-
-  Future<void> _onPurchaseLifetime(
-    BuildContext context,
-    WidgetRef ref,
-    ValueNotifier<bool> isLoading,
-  ) async {
-    if (kDebugMode) {
-      ref.read(premiumViewModelProvider.notifier).debugSetPremium();
-      if (context.mounted) Navigator.of(context).pop();
-      return;
-    }
-    isLoading.value = true;
-    try {
-      await ref.read(premiumViewModelProvider.notifier).purchaseLifetime();
-      final isPremium =
-          ref.read(premiumViewModelProvider).asData?.value.isPremium ?? false;
-      if (context.mounted && isPremium) Navigator.of(context).pop();
-    } on Exception catch (_) {
-      if (context.mounted) {
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(SnackBar(content: Text(t.premium.errorPurchaseFailed)));
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(t.premium.errorPurchaseFailed)),
+        );
       }
     } finally {
       isLoading.value = false;
@@ -179,9 +197,9 @@ class PaywallSheet extends HookConsumerWidget {
       }
     } on Exception catch (_) {
       if (context.mounted) {
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(SnackBar(content: Text(t.premium.errorRestoreFailed)));
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(t.premium.errorRestoreFailed)),
+        );
       }
     } finally {
       isLoading.value = false;

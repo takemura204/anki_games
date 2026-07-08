@@ -108,7 +108,7 @@ class QuizQuestionCard extends StatelessWidget {
                                   ? AppIcons.bookmarked
                                   : AppIcons.bookmark,
                               color: isBookmarked
-                                  ? ItPassColors.seed
+                                  ? AppPalette.seed
                                   : c.fgShade300,
                             ),
                             onPressed: onBookmark!.withHaptic(),

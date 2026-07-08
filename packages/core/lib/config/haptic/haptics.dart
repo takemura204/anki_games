@@ -13,7 +13,6 @@ enum HapticType {
   selection,
 }
 
-// ignore: avoid_classes_with_only_static_members
 /// 振動ユーティリティ。
 abstract final class Haptics {
   static Future<void> light() => HapticFeedback.lightImpact();
@@ -21,10 +20,10 @@ abstract final class Haptics {
   static Future<void> selection() => HapticFeedback.selectionClick();
 
   static Future<void> of(HapticType type) => switch (type) {
-        HapticType.light => HapticFeedback.lightImpact(),
-        HapticType.medium => HapticFeedback.mediumImpact(),
-        HapticType.selection => HapticFeedback.selectionClick(),
-      };
+    HapticType.light => HapticFeedback.lightImpact(),
+    HapticType.medium => HapticFeedback.mediumImpact(),
+    HapticType.selection => HapticFeedback.selectionClick(),
+  };
 }
 
 /// [VoidCallback] に振動を付与する extension。

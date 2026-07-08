@@ -5,12 +5,18 @@ class _FinishResultPage extends ConsumerStatefulWidget {
     super.key,
     required this.session,
     required this.elapsed,
-    required this.onContinue,
+  required this.onContinue,
+  required this.onReviewRequested,
   });
 
   final QuizSession session;
   final Duration elapsed;
   final VoidCallback onContinue;
+
+  /// レビュー訴求が実行されたときに呼ばれるコールバック。
+  /// 呼び出し元（_QuizBodyState）はこれを受けてセッションフラグをONにし、
+  /// 同セッションでの広告表示を抑制する。
+  final VoidCallback onReviewRequested;
 
   @override
   ConsumerState<_FinishResultPage> createState() => _FinishResultPageState();
@@ -45,9 +51,8 @@ class _FinishResultPageState extends ConsumerState<_FinishResultPage>
     );
     _checkController.forward().then((_) => _contentController.forward());
     _loadTodayCount();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      _maybeRequestReview();
-      _maybeShowInterstitial();
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      await _maybeRequestReview();
     });
   }
 
@@ -58,46 +63,44 @@ class _FinishResultPageState extends ConsumerState<_FinishResultPage>
     super.dispose();
   }
 
-  static const _resultAdCooldown = Duration(minutes: 10);
+  /// レビュー訴求を試みる。表示した場合は true を返す。
+  Future<bool> _maybeRequestReview() async {
+    if (!mounted) return false;
 
-  void _maybeShowInterstitial() {
-    final isPremium =
-        ref.read(premiumViewModelProvider).asData?.value.isPremium ?? false;
-    if (isPremium) {
-      debugPrint('[AdInterstitial][Result] skipped: プレミアムユーザー');
-      return;
-    }
-
-    final last = ref.read(appLifecycleProvider).lastResultAdShownAt;
-    final now = DateTime.now();
-    final elapsed = last != null ? now.difference(last) : null;
-    final cooldownPassed = last == null || elapsed! >= _resultAdCooldown;
-    if (!cooldownPassed) {
-      debugPrint('[AdInterstitial][Result] skipped: クールダウン中 (残り${(_resultAdCooldown - elapsed).inSeconds}s)');
-      return;
-    }
-
-    debugPrint('[AdInterstitial][Result] ✅ loadAndShow() 呼び出し');
-    ref.read(appLifecycleProvider.notifier).recordResultAdShown();
-    AdmobInterstitial(ref.read(adConfigProvider)).loadAndShow();
-  }
-
-  Future<void> _maybeRequestReview() async {
     final session = widget.session;
     final total = session.currentSetAnswers.length;
-    if (total == 0) return;
+    if (total == 0) return false;
 
     final correct = session.setCorrectCount;
-    if (correct / total < 0.5) return;
+    if (correct / total < 0.5) return false;
+
+    // 累計2セット目以降のみ（初回セッションでは出さない）
+    final count =
+        await ref.read(quizSessionCountRepositoryProvider).getCount();
+    if (count < 2) return false;
 
     final repo = ref.read(reviewRepositoryProvider);
     final lastDate = await repo.getLastRequestDate();
-    if (lastDate != null && DateTime.now().difference(lastDate).inDays < 30) {
-      return;
+    if (lastDate != null &&
+        DateTime.now().difference(lastDate).inDays < 30) {
+      return false;
     }
 
+    if (!mounted) return false;
     await repo.saveLastRequestDate(DateTime.now());
+
+    widget.onReviewRequested();
+    unawaited(
+      PostResultAnalytics.logResultAction(
+        actionType: PostResultAnalytics.actionReview,
+        isPremium: false,
+      ),
+    );
+    unawaited(PostResultAnalytics.logReviewRequest());
+    await InAppReview.instance.requestReview();
+    return true;
   }
+
 
   Future<void> _loadTodayCount() async {
     final count = await ref
@@ -190,7 +193,7 @@ class _Checkmark extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isAllCorrect = correct == total && total > 0;
-    final color = isAllCorrect ? AppColors.success : ItPassColors.seed;
+    final color = isAllCorrect ? AppColors.success : AppPalette.seed;
 
     return AnimatedBuilder(
       animation: progress,
@@ -439,12 +442,12 @@ class _ContinueButton extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: AppSpacing.md),
         decoration: BoxDecoration(
           gradient: const LinearGradient(
-            colors: [ItPassColors.seed, ItPassColors.accent],
+            colors: [AppPalette.seed, AppPalette.accent],
           ),
           borderRadius: AppBorderRadius.lg,
           boxShadow: [
             BoxShadow(
-              color: ItPassColors.seed.withValues(alpha: 0.4),
+              color: AppPalette.seed.withValues(alpha: 0.4),
               blurRadius: AppSpacing.md + 4,
               offset: const Offset(0, AppSpacing.xs + 2),
             ),
@@ -559,7 +562,7 @@ class _QuizAnswerCard extends ConsumerWidget {
                 padding: const EdgeInsets.all(4),
                 child: Icon(
                   isBookmarked ? AppIcons.bookmarked : AppIcons.bookmark,
-                  color: isBookmarked ? ItPassColors.seed : c.fgShade200,
+                  color: isBookmarked ? AppPalette.seed : c.fgShade200,
                   size: 20,
                 ),
               ),

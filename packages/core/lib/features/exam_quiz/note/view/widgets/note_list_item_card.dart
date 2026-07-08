@@ -91,7 +91,7 @@ class _NoteQuizItemCard extends ConsumerWidget {
                 padding: const EdgeInsets.all(4),
                 child: Icon(
                   isBookmarked ? AppIcons.bookmarked : AppIcons.bookmark,
-                  color: isBookmarked ? ItPassColors.seed : c.fgShade200,
+                  color: isBookmarked ? AppPalette.seed : c.fgShade200,
                   size: 20,
                 ),
               ),

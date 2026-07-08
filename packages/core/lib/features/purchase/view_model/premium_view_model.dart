@@ -1,3 +1,6 @@
+import 'package:core/features/purchase/model/plan_type.dart';
+import 'package:core/features/purchase/model/pricing.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../service/i_purchase_service.dart';
@@ -12,15 +15,6 @@ IPurchaseService purchaseService(Ref ref) {
   );
 }
 
-/// 月額プランの価格文字列プロバイダ（例: "¥480"）。
-///
-/// [premiumViewModelProvider] の初期化（= RevenueCat SDK configure）完了後に取得する。
-@riverpod
-Future<String?> monthlyPrice(Ref ref) async {
-  await ref.watch(premiumViewModelProvider.future);
-  return ref.read(purchaseServiceProvider).getMonthlyPriceString();
-}
-
 /// 月額プランの商品タイトルプロバイダ。
 @riverpod
 Future<String?> monthlyTitle(Ref ref) async {
@@ -28,14 +22,15 @@ Future<String?> monthlyTitle(Ref ref) async {
   return ref.read(purchaseServiceProvider).getMonthlyProductTitle();
 }
 
-/// 買い切りプランの価格文字列プロバイダ（例: "¥4,800"）。
+/// 通常・セール両 Offering の価格を一括取得するプロバイダ。
 ///
-/// [premiumViewModelProvider] の初期化（= RevenueCat SDK configure）完了後に取得する。
-@riverpod
-Future<String?> lifetimePrice(Ref ref) async {
-  await ref.watch(premiumViewModelProvider.future);
-  return ref.read(purchaseServiceProvider).getLifetimePriceString();
-}
+/// RevenueCat の `getOfferings()` を 1 回だけ呼び出し [Pricing] モデルを返す。
+final FutureProvider<Pricing> pricingProvider = FutureProvider<Pricing>(
+  (ref) async {
+    await ref.watch(premiumViewModelProvider.future);
+    return ref.read(purchaseServiceProvider).getPricing();
+  },
+);
 
 /// プレミアムの次回更新日文字列プロバイダ（例: "2026年6月9日"）。
 ///
@@ -63,7 +58,7 @@ class PremiumState {
 ///
 /// - 初期化時に [IPurchaseService.isPremium] で状態を取得する
 /// - [IPurchaseService.addPremiumStatusListener] でリアルタイム更新を受信する
-/// - [purchase] / [restore] で購入・復元を実行する
+/// - [purchasePlan] / [restore] で購入・復元を実行する
 @Riverpod(keepAlive: true)
 class PremiumViewModel extends _$PremiumViewModel {
   late OnPremiumStatusChanged _listener;
@@ -83,12 +78,12 @@ class PremiumViewModel extends _$PremiumViewModel {
     return PremiumState(isPremium: isPremium);
   }
 
-  /// 月額プランを購入する。
+  /// プランを購入する。[sale] が true の場合は premium_sale Offering を使用する。
   ///
   /// 購入完了後はリスナー経由で state が自動更新される。
   /// ユーザーキャンセルは無視し、その他のエラーは例外をスローする。
-  Future<void> purchase() async {
-    await ref.read(purchaseServiceProvider).purchaseMonthly();
+  Future<void> purchasePlan(PlanType plan, {bool sale = false}) async {
+    await ref.read(purchaseServiceProvider).purchase(plan, sale: sale);
   }
 
   /// 過去の購入を復元する。
@@ -96,11 +91,6 @@ class PremiumViewModel extends _$PremiumViewModel {
     final isPremium =
         await ref.read(purchaseServiceProvider).restorePurchases();
     state = AsyncData(PremiumState(isPremium: isPremium));
-  }
-
-  /// 買い切りプランを購入する。
-  Future<void> purchaseLifetime() async {
-    await ref.read(purchaseServiceProvider).purchaseLifetime();
   }
 
   /// デバッグ専用: プレミアム状態をトグルする。

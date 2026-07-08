@@ -4,36 +4,30 @@ class _CTASection extends StatelessWidget {
   const _CTASection({
     required this.c,
     required this.selectedPlan,
-    required this.monthlyPriceAsync,
-    required this.lifetimePriceAsync,
+    required this.pricingAsync,
+    required this.saleMode,
     required this.isLoading,
-    required this.bottomPadding,
     required this.onPurchase,
     required this.onRestore,
   });
   final AppColorScheme c;
-  final _Plan selectedPlan;
-  final AsyncValue<String?> monthlyPriceAsync;
-  final AsyncValue<String?> lifetimePriceAsync;
+  final PlanType selectedPlan;
+  final AsyncValue<Pricing> pricingAsync;
+  final bool saleMode;
   final ValueNotifier<bool> isLoading;
-  final double bottomPadding;
   final VoidCallback onPurchase;
   final VoidCallback onRestore;
 
   @override
   Widget build(BuildContext context) {
-    final priceAsync = selectedPlan == _Plan.monthly
-        ? monthlyPriceAsync
-        : lifetimePriceAsync;
-    final isPriceLoading = priceAsync.isLoading || isLoading.value;
-    final canPurchase = !isPriceLoading;
+    final isPriceLoading = pricingAsync.isLoading || isLoading.value;
 
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
         PrimaryButton(
-          label: 'プレミアムを体験する',
-          onPressed: canPurchase ? onPurchase : null,
+          label: saleMode ? 'セール価格で始める' : 'プレミアムを体験する',
+          onPressed: isPriceLoading ? null : onPurchase,
           isLoading: isPriceLoading,
           height: 60,
         ),
@@ -43,7 +37,6 @@ class _CTASection extends StatelessWidget {
           textAlign: TextAlign.center,
           style: TextStyle(fontSize: 8, color: c.fgShade300),
         ),
-
         const Gap(AppSpacing.sm),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,

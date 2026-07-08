@@ -121,4 +121,10 @@ abstract class ItPassEnv {
 
   @EnviedField(varName: 'PREMIUM_LIFETIME', defaultValue: '')
   static const String premiumLifetime = _ItPassEnv.premiumLifetime;
+
+  @EnviedField(varName: 'PREMIUM_1M_SALE', defaultValue: '')
+  static const String premium1mSale = _ItPassEnv.premium1mSale;
+
+  @EnviedField(varName: 'PREMIUM_LIFETIME_SALE', defaultValue: '')
+  static const String premiumLifetimeSale = _ItPassEnv.premiumLifetimeSale;
 }

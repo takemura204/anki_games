@@ -9,7 +9,6 @@ import 'package:core/config/brand/app_color_scheme.dart';
 import 'package:core/config/constants/app_urls.dart';
 import 'package:core/config/extensions/context_extension.dart';
 import 'package:core/config/haptic/haptics.dart';
-import 'package:core/config/lifecycle/app_lifecycle_provider.dart';
 import 'package:core/config/styles/app_border_radius.dart';
 import 'package:core/config/styles/app_icons.dart';
 import 'package:core/config/styles/app_spacing.dart';
@@ -23,7 +22,10 @@ import 'package:core/features/exam_quiz/notification/view_model/notification_vie
 import 'package:core/features/exam_quiz/onboarding/view_model/onboarding_view_model.dart';
 import 'package:core/features/exam_quiz/profile/view/profile_page.dart';
 import 'package:core/features/exam_quiz/profile/view_model/profile_view_model.dart';
+import 'package:core/features/exam_quiz/purchase/repository/local_sale_promo_repository.dart';
 import 'package:core/features/exam_quiz/purchase/view/paywall_sheet.dart';
+import 'package:core/features/exam_quiz/quiz/repository/motivation_last_shown_repository.dart';
+import 'package:core/features/purchase/model/pricing.dart';
 import 'package:core/features/purchase/view_model/premium_view_model.dart';
 import 'package:core/features/settings/view_model/settings_view_model.dart';
 import 'package:core/i18n/translations.g.dart';
@@ -34,7 +36,6 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -93,18 +94,17 @@ class _SettingsPage extends HookConsumerWidget {
           .read(backupViewModelProvider.notifier)
           .lastBackupAt()
           .then((v) => lastBackupAt.value = v);
-      NotificationService.instance
-          .isPermissionGranted()
-          .then((v) => permissionGranted.value = v);
+      NotificationService.instance.isPermissionGranted().then(
+        (v) => permissionGranted.value = v,
+      );
 
       final observer = _PermissionObserver(
         onResumed: () async {
-          final nowGranted =
-              await NotificationService.instance.isPermissionGranted();
+          final nowGranted = await NotificationService.instance
+              .isPermissionGranted();
           if (permissionGranted.value != true && nowGranted) {
             permissionGranted.value = true;
-            final s =
-                ref.read(notificationViewModelProvider).asData?.value;
+            final s = ref.read(notificationViewModelProvider).asData?.value;
             if (s != null && !s.enabled) {
               await ref
                   .read(notificationViewModelProvider.notifier)
@@ -128,7 +128,7 @@ class _SettingsPage extends HookConsumerWidget {
     ref.listen<AsyncValue<void>>(backupViewModelProvider, (prev, next) {
       if (prev?.isLoading == true && !next.isLoading) {
         final messenger = ScaffoldMessenger.of(context);
-          if (next.hasError) {
+        if (next.hasError) {
           messenger.showSnackBar(
             const SnackBar(
               content: Text('処理に失敗しました'),
@@ -151,7 +151,10 @@ class _SettingsPage extends HookConsumerWidget {
     });
 
     final notifSettings = notificationAsync.asData?.value;
-    final notifValueText = _notificationValueText(notifSettings, permissionGranted.value);
+    final notifValueText = _notificationValueText(
+      notifSettings,
+      permissionGranted.value,
+    );
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -190,6 +193,7 @@ class _SettingsPage extends HookConsumerWidget {
                       label: 'プレミアム',
                       valueText: isPremium ? '加入中' : '未登録',
                       onTap: () async {
+                        if (!context.mounted) return;
                         await showModalBottomSheet<void>(
                           context: context,
                           backgroundColor: Colors.transparent,
@@ -237,37 +241,30 @@ class _SettingsPage extends HookConsumerWidget {
                       label: '学習リマインダー',
                       valueText: notifValueText,
                       onTap: () async {
-                        final status =
-                            await Permission.notification.status;
+                        final granted = await NotificationService.instance
+                            .requestPermission(context);
                         if (!context.mounted) return;
-                        if (status.isGranted) {
-                          await showModalBottomSheet<void>(
-                            context: context,
-                            backgroundColor: Colors.transparent,
-                            isScrollControlled: true,
-                            constraints: const BoxConstraints(),
-                            builder: (_) => const _NotificationSheet(),
+                        permissionGranted.value = granted;
+                        if (!granted) return;
+                        if (notifSettings == null || !notifSettings.enabled) {
+                          await _autoEnableNotification(
+                            notifSettings,
+                            ref.read(notificationViewModelProvider.notifier),
                           );
-                          if (context.mounted) {
-                            NotificationService.instance
-                                .isPermissionGranted()
-                                .then((v) => permissionGranted.value = v)
-                                .ignore();
-                          }
-                        } else if (status.isDenied) {
-                          final result =
-                              await Permission.notification.request();
-                          permissionGranted.value = result.isGranted;
-                          if (result.isGranted) {
-                            await _autoEnableNotification(
-                              notifSettings,
-                              ref.read(
-                                notificationViewModelProvider.notifier,
-                              ),
-                            );
-                          }
-                        } else {
-                          await openAppSettings();
+                        }
+                        if (!context.mounted) return;
+                        await showModalBottomSheet<void>(
+                          context: context,
+                          backgroundColor: Colors.transparent,
+                          isScrollControlled: true,
+                          constraints: const BoxConstraints(),
+                          builder: (_) => const _NotificationSheet(),
+                        );
+                        if (context.mounted) {
+                          NotificationService.instance
+                              .isPermissionGranted()
+                              .then((v) => permissionGranted.value = v)
+                              .ignore();
                         }
                       },
                     ),
@@ -341,25 +338,13 @@ class _SettingsPage extends HookConsumerWidget {
                         label: 'インタースティシャル広告テスト',
                         trailingIcon: null,
                         onTap: () {
-                          AdmobInterstitial(ref.read(adConfigProvider)).loadAndShow();
+                          AdmobInterstitial(
+                            ref.read(adConfigProvider),
+                          ).loadAndShow();
                           debugPrint('[AdInterstitial][DEBUG] 手動テスト呼び出し');
                         },
                       ),
-                      const _Divider(),
-                      _MenuItem(
-                        icon: Icons.timer_off_outlined,
-                        label: 'クールダウンリセット',
-                        trailingIcon: null,
-                        onTap: () {
-                          ref.read(appLifecycleProvider.notifier).resetCooldowns();
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              content: Text('クールダウンをリセットしました'),
-                              behavior: SnackBarBehavior.floating,
-                            ),
-                          );
-                        },
-                      ),
+
                       const _Divider(),
                       _MenuItem(
                         icon: Icons.school_outlined,
@@ -375,6 +360,95 @@ class _SettingsPage extends HookConsumerWidget {
                               rootNavigator: true,
                             ).pop();
                           }
+                        },
+                      ),
+                      const _Divider(),
+                      _MenuItem(
+                        icon: Icons.notifications_active_outlined,
+                        label: '通知を送信',
+                        trailingIcon: null,
+                        onTap: () async {
+                          final granted = await NotificationService.instance
+                              .requestPermission(context);
+                          if (!context.mounted) return;
+                          if (!granted) return;
+                          await NotificationService.instance
+                              .showTestNotification();
+                          if (!context.mounted) return;
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('テスト通知を送信しました'),
+                              behavior: SnackBarBehavior.floating,
+                            ),
+                          );
+                        },
+                      ),
+                      const _Divider(),
+                      _MenuItem(
+                        icon: Icons.price_check_outlined,
+                        label: '価格デバッグ',
+                        trailingIcon: null,
+                        onTap: () async {
+                          final pricing = await ref.read(
+                            pricingProvider.future,
+                          );
+                          if (!context.mounted) return;
+                          await showDialog<void>(
+                            context: context,
+                            builder: (_) =>
+                                _PricingDebugDialog(pricing: pricing),
+                          );
+                        },
+                      ),
+                      const _Divider(),
+                      _MenuItem(
+                        icon: Icons.auto_awesome_outlined,
+                        label: 'モチベーションカードをリセット',
+                        trailingIcon: null,
+                        onTap: () async {
+                          await MotivationLastShownRepository().reset();
+                          if (!context.mounted) return;
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text(
+                                'リセット完了。次回アプリ起動時にモチベーションカードが表示されます。',
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                      const _Divider(),
+                      _MenuItem(
+                        icon: Icons.redeem_outlined,
+                        label: 'セールバナーを確認',
+                        trailingIcon: null,
+                        onTap: () async {
+                          await ref.read(salePromoRepositoryProvider).restart();
+                          if (!context.mounted) return;
+                          await showModalBottomSheet<void>(
+                            context: context,
+                            isScrollControlled: true,
+                            backgroundColor: Colors.transparent,
+                            builder: (_) => const PaywallSheet(saleMode: true),
+                          );
+                        },
+                      ),
+                      const _Divider(),
+                      _MenuItem(
+                        icon: Icons.restart_alt_outlined,
+                        label: 'セール本日表示済みフラグをリセット',
+                        trailingIcon: null,
+                        onTap: () async {
+                          await ref.read(salePromoRepositoryProvider).restart();
+                          if (!context.mounted) return;
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text(
+                                'リセット完了。次回クイズ結果画面（累計2セット目以降）'
+                                'でセールが表示されます。',
+                              ),
+                            ),
+                          );
                         },
                       ),
                     ],
@@ -476,8 +550,9 @@ class _NotificationSheet extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final c = context.appColors;
     final notificationAsync = ref.watch(notificationViewModelProvider);
-    final notificationNotifier =
-        ref.read(notificationViewModelProvider.notifier);
+    final notificationNotifier = ref.read(
+      notificationViewModelProvider.notifier,
+    );
     final settings = notificationAsync.asData?.value;
     final isEnabled = settings?.enabled ?? false;
     final hour = settings?.hour;
@@ -497,8 +572,10 @@ class _NotificationSheet extends HookConsumerWidget {
             padding: const EdgeInsets.symmetric(horizontal: AppSpacing.md),
             child: Text(
               '学習リマインダー',
-              style: AppTextStyle.titleMedium
-                  .copyWith(color: c.fg, fontWeight: FontWeight.bold),
+              style: AppTextStyle.titleMedium.copyWith(
+                color: c.fg,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
           const Gap(AppSpacing.sm),
@@ -509,7 +586,7 @@ class _NotificationSheet extends HookConsumerWidget {
               padding: const EdgeInsets.all(AppSpacing.sm),
               child: Column(
                 children: [
-                    _ToggleMenuItem(
+                  _ToggleMenuItem(
                     icon: Icons.notifications_outlined,
                     label: 'リマインダー',
                     value: isEnabled,
@@ -672,7 +749,7 @@ class _NotificationTimePickerSheetState
                       child: Text(
                         '完了',
                         style: AppTextStyle.bodyMedium.copyWith(
-                          color: ItPassColors.seed,
+                          color: AppPalette.seed,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -690,15 +767,15 @@ class _NotificationTimePickerSheetState
                           initialItem: _hour,
                         ),
                         itemExtent: 40,
-                        onSelectedItemChanged: (i) =>
-                            setState(() => _hour = i),
+                        onSelectedItemChanged: (i) => setState(() => _hour = i),
                         children: List.generate(
                           24,
                           (i) => Center(
                             child: Text(
                               i.toString().padLeft(2, '0'),
-                              style: AppTextStyle.titleMedium
-                                  .copyWith(color: c.fg),
+                              style: AppTextStyle.titleMedium.copyWith(
+                                color: c.fg,
+                              ),
                             ),
                           ),
                         ),
@@ -721,8 +798,9 @@ class _NotificationTimePickerSheetState
                           (i) => Center(
                             child: Text(
                               (i * 5).toString().padLeft(2, '0'),
-                              style: AppTextStyle.titleMedium
-                                  .copyWith(color: c.fg),
+                              style: AppTextStyle.titleMedium.copyWith(
+                                color: c.fg,
+                              ),
                             ),
                           ),
                         ),
@@ -738,4 +816,157 @@ class _NotificationTimePickerSheetState
       ),
     );
   }
+}
+
+class _PricingDebugDialog extends StatelessWidget {
+  const _PricingDebugDialog({required this.pricing});
+
+  final Pricing pricing;
+
+  static String _fmt(String? v) => v ?? '(null)';
+
+  List<_DiagRow> _diagRows() {
+    final rows = <_DiagRow>[];
+
+    if (!pricing.saleMonthlyFound) {
+      rows.add(
+        const _DiagRow(
+          icon: '🔴',
+          text:
+              '月額: premium_sale Offering にパッケージなし\n'
+              '→ RevenueCat の Offering 設定を確認してください',
+        ),
+      );
+    } else if (pricing.monthlyDiscountPercent == null) {
+      rows.add(
+        const _DiagRow(
+          icon: '⚠️',
+          text:
+              '月額: Offering は取得できたが価格が通常と同額\n'
+              '→ App Store Connect の商品価格を確認してください',
+        ),
+      );
+    } else {
+      rows.add(
+        _DiagRow(
+          icon: '✅',
+          text: '月額: 割引あり (${pricing.monthlyDiscountPercent}% OFF)',
+        ),
+      );
+    }
+
+    if (!pricing.saleLifetimeFound) {
+      rows.add(
+        const _DiagRow(
+          icon: '🔴',
+          text:
+              '買い切り: premium_sale Offering にパッケージなし\n'
+              '→ RevenueCat の Offering 設定を確認してください',
+        ),
+      );
+    } else if (pricing.lifetimeDiscountAmount == null) {
+      rows.add(
+        const _DiagRow(
+          icon: '⚠️',
+          text:
+              '買い切り: Offering は取得できたが価格が通常と同額\n'
+              '→ App Store Connect の商品価格を確認してください',
+        ),
+      );
+    } else {
+      rows.add(
+        _DiagRow(
+          icon: '✅',
+          text: '買い切り: 割引あり (${pricing.lifetimeDiscountAmount})',
+        ),
+      );
+    }
+
+    return rows;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: const Text('価格デバッグ'),
+      content: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Text(
+              '── Offering 取得状況 ──',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            Text(
+              '月額パッケージ: ${pricing.saleMonthlyFound ? "✅ 取得済み" : "🔴 未取得"}',
+            ),
+            Text(
+              '買い切りパッケージ: ${pricing.saleLifetimeFound ? "✅ 取得済み" : "🔴 未取得"}',
+            ),
+            const SizedBox(height: 12),
+            const Text(
+              '── 月額 ──',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            Text('通常価格: ${_fmt(pricing.monthlyNormal)}'),
+            Text('セール価格: ${_fmt(pricing.monthlySale)}'),
+            Text('1日あたり: ${_fmt(pricing.monthlySalePerDay)}'),
+            Text(
+              '割引率: ${pricing.monthlyDiscountPercent != null ? '${pricing.monthlyDiscountPercent}% OFF' : '(なし)'}',
+            ),
+            const SizedBox(height: 12),
+            const Text(
+              '── 買い切り ──',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            Text('通常価格: ${_fmt(pricing.lifetimeNormal)}'),
+            Text('セール価格: ${_fmt(pricing.lifetimeSale)}'),
+            Text('割引額: ${_fmt(pricing.lifetimeDiscountAmount)}'),
+            Text(
+              '通常 raw price: ${pricing.debugLifetimeNormalRawPrice ?? "(null)"}',
+            ),
+            Text(
+              'セール raw price: ${pricing.debugLifetimeSaleRawPrice ?? "(null)"}',
+            ),
+            Text(
+              '通常 store product ID: ${_fmt(pricing.debugLifetimeNormalProductId)}',
+            ),
+            Text(
+              'セール store product ID: ${_fmt(pricing.debugLifetimeSaleProductId)}',
+            ),
+            const SizedBox(height: 16),
+            const Text(
+              '── 診断 ──',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            ..._diagRows().map(
+              (r) => Padding(
+                padding: const EdgeInsets.only(top: 4),
+                child: Text('${r.icon} ${r.text}'),
+              ),
+            ),
+            const SizedBox(height: 8),
+            const Text(
+              '※ 詳細は Xcode コンソールの [RevenueCat] ログを確認\n'
+              '  "premium_sale offering found:" の行に注目してください。',
+              style: TextStyle(fontSize: 11, color: Colors.grey),
+            ),
+          ],
+        ),
+      ),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.of(context).pop(),
+          child: const Text('閉じる'),
+        ),
+      ],
+    );
+  }
+}
+
+class _DiagRow {
+  const _DiagRow({required this.icon, required this.text});
+  final String icon;
+  final String text;
 }

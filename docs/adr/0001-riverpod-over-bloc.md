@@ -41,7 +41,7 @@ ViewModel は原則 `AutoDisposeAsyncNotifier<State>` で実装し、`AsyncNotif
 
 - **良い点**: テスト時の差し替えが `overrides` だけで完結。状態の自動破棄でリソースリークが起きにくい。
 - **悪い点**: `riverpod_generator` を使う場合、`build_runner` の実行が必要。コード生成ファイル（`.g.dart`）が増えるため `.gitignore` に含め、CI でも再生成する。
-- **悪い点**: 旧来の `FutureProvider` と `@riverpod` 記法が混在すると可読性が下がる。統一化対応中（`docs/portfolio_roadmap.md` B-2 参照）。
+- **悪い点**: 旧来の `FutureProvider` と `@riverpod` 記法が混在すると可読性が下がる。統一化対応中。
 
 ## Alternatives Considered
 

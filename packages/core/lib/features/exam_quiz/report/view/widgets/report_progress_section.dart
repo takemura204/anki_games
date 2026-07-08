@@ -172,12 +172,12 @@ class _TabChip extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           color: isSelected
-              ? ItPassColors.seed.withValues(alpha: 0.25)
+              ? AppPalette.seed.withValues(alpha: 0.25)
               : c.surface2,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
             color: isSelected
-                ? ItPassColors.seed.withValues(alpha: 0.6)
+                ? AppPalette.seed.withValues(alpha: 0.6)
                 : Colors.transparent,
           ),
         ),

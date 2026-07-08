@@ -1,7 +1,7 @@
-import 'package:core/config/brand/it_pass_colors.dart';
+import 'package:core/config/brand/app_palette.dart';
 import 'package:flutter/material.dart';
 
-export 'package:core/config/brand/it_pass_colors.dart';
+export 'package:core/config/brand/app_palette.dart';
 
 /// IT Pass アプリのライト/ダーク対応カラーセット。
 ///
@@ -97,12 +97,12 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> {
       begin: Alignment.topLeft,
       end: Alignment.bottomRight,
       colors: [
-        ItPassColors.bgStart,
-        ItPassColors.bgMid,
-        ItPassColors.bgEnd,
+        AppPalette.bgStart,
+        AppPalette.bgMid,
+        AppPalette.bgEnd,
       ],
     ),
-    bgSolid: ItPassColors.bgStart,
+    bgSolid: AppPalette.bgStart,
   );
 
   /// ライトモード（白/淡ラベンダーベース）

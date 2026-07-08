@@ -22,6 +22,9 @@ abstract class BrandConfig {
   /// Firebase Analytics / Firestore でアプリを識別するキー（例: 'it_pass', 'fe'）
   String get analyticsBrandKey;
 
+  /// ローカル通知チャンネル ID（例: 'it_pass_reminder'）。
+  String get notificationChannelId => '${analyticsBrandKey}_reminder';
+
   Color get seedColor;
 
   /// ダークモード用 ThemeExtension（例: AppColorScheme.dark）
@@ -35,6 +38,15 @@ abstract class BrandConfig {
   RevenueCatConfig get revenueCatConfig;
 
   StoreIds get storeIds;
+
+  /// オンボーディング導入ページのロゴ SVG アセットパス。
+  String get introLogoAsset;
+
+  /// オンボーディング機能紹介ページ: 習熟度画像の SVG アセットパス。
+  String get onboardingLevelAsset;
+
+  /// オンボーディング機能紹介ページ: リマインダー画像の SVG アセットパス。
+  String get onboardingRemindAsset;
 }
 
 /// ブランド設定プロバイダー。各アプリの `main.dart` で必ずオーバーライドする。

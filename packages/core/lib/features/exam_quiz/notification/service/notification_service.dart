@@ -16,6 +16,7 @@ class NotificationService {
   // 曜日別リマインダー: ID 10(月)〜16(日)
   static const _weeklyBaseId = 10;
   static const _streakWarningId = 2;
+  static const _testNotificationId = 99;
   static const _channelName = '学習リマインダー';
 
   String _channelId = 'exam_reminder';
@@ -62,30 +63,38 @@ class NotificationService {
   }
 
   /// 通知権限を要求する。
-  /// iOS で既に拒否済みの場合は設定アプリへの誘導ダイアログを表示する。
-  Future<bool> requestPermission(BuildContext context) async {
-    if (defaultTargetPlatform == TargetPlatform.iOS) {
-      final iosImpl = _plugin.resolvePlatformSpecificImplementation<
-          IOSFlutterLocalNotificationsPlugin>();
-      final granted = await iosImpl?.requestPermissions(
-        alert: true,
-        badge: true,
-        sound: true,
-      );
-      return granted ?? false;
-    }
-
-    // Android
+  /// iOS: flutter_local_notifications の requestPermissions で OS ダイアログを確実に表示。
+  /// Android: permission_handler で OS ダイアログを表示。
+  /// [showSettingsDialogOnDenied] が true のとき、拒否済みなら設定アプリへの誘導ダイアログを表示。
+  /// オンボーディングなど「拒否しても問題ない」文脈では false を渡す。
+  Future<bool> requestPermission(
+    BuildContext context, {
+    bool showSettingsDialogOnDenied = true,
+  }) async {
     final status = await Permission.notification.status;
     if (status.isGranted) return true;
 
-    if (status.isPermanentlyDenied) {
-      if (context.mounted) await _showOpenSettingsDialog(context);
-      return false;
+    bool granted;
+    if (defaultTargetPlatform == TargetPlatform.iOS) {
+      // iOS は UNUserNotificationCenter.requestAuthorization を直接呼ぶ実装を使用。
+      // permission_handler は notDetermined を denied と同様に扱うため OS ダイアログが出ない場合がある。
+      final iosImpl = _plugin.resolvePlatformSpecificImplementation<
+          IOSFlutterLocalNotificationsPlugin>();
+      granted = await iosImpl?.requestPermissions(
+            alert: true,
+            badge: true,
+            sound: true,
+          ) ??
+          false;
+    } else {
+      final result = await Permission.notification.request();
+      granted = result.isGranted;
     }
 
-    final result = await Permission.notification.request();
-    return result.isGranted;
+    if (!granted && showSettingsDialogOnDenied && context.mounted) {
+      await _showOpenSettingsDialog(context);
+    }
+    return granted;
   }
 
   Future<bool> isPermissionGranted() async {
@@ -116,6 +125,14 @@ class NotificationService {
   }
 
   Future<void> cancelAll() => _plugin.cancelAll();
+
+  Future<void> showTestNotification() => _plugin.show(
+        _testNotificationId,
+        'テスト通知',
+        '通知は正常に届いています。',
+        _buildDetails(),
+        payload: 'quiz_start',
+      );
 
   Future<void> _scheduleWeeklyReminders(int hour, int minute) async {
     // 曜日ごとに個別スケジュール (flutter の weekday: 1=月 〜 7=日)

@@ -180,8 +180,8 @@ class _OnboardingQuizPageState extends ConsumerState<OnboardingQuizPage>
             emissionFrequency: 0.06,
             colors: const [
               AppColors.success,
-              ItPassColors.seed,
-              ItPassColors.accent,
+              AppPalette.seed,
+              AppPalette.accent,
               AppColors.warning,
               Color(0xFF60A5FA),
             ],

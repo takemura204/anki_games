@@ -18,8 +18,8 @@ class _ConfettiOverlay extends StatelessWidget {
         emissionFrequency: 0.06,
         colors: const [
           AppColors.success,
-          ItPassColors.seed,
-          ItPassColors.accent,
+          AppPalette.seed,
+          AppPalette.accent,
           AppColors.warning,
           Color(0xFF60A5FA),
         ],

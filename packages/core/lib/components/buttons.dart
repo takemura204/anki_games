@@ -46,7 +46,7 @@ class PrimaryButton extends StatelessWidget {
             decoration: BoxDecoration(
               gradient: _enabled
                   ? const LinearGradient(
-                      colors: [ItPassColors.seed, ItPassColors.accent],
+                      colors: [AppPalette.seed, AppPalette.accent],
                     )
                   : null,
               color: _enabled ? null : c.surface2,

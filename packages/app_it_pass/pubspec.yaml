@@ -2,7 +2,7 @@ name: app_it_pass
 description: "ITパスポート試験対策過去問アプリ"
 
 publish_to: 'none'
-version: 1.0.0+13
+version: 1.0.0+18
 
 environment:
   sdk: ">=3.10.0 <4.0.0"
@@ -31,7 +31,6 @@ flutter:
   uses-material-design: true
   assets:
     - assets/logo/
-    - assets/image/
 
 flutter_launcher_icons:
   android: true

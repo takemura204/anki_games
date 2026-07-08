@@ -43,7 +43,9 @@ build-ios-it-pass:
 	$(FLUTTER) build ipa --release \
 		--flavor it_pass \
 		-t lib/main_it_pass.dart \
-		--export-options-plist=ios/ExportOptions.plist
+		--export-options-plist=ios/ExportOptions.plist \
+		--obfuscate \
+		--split-debug-info=build/symbols/it_pass/ios
 
 upload-ios-it-pass:
 	xcrun altool --upload-app --type ios \
@@ -65,7 +67,9 @@ open-ios-it-pass:
 build-android-it-pass:
 	$(FLUTTER) build appbundle --release \
 		--flavor it_pass \
-		-t lib/main_it_pass.dart
+		-t lib/main_it_pass.dart \
+		--obfuscate \
+		--split-debug-info=build/symbols/it_pass/android
 
 upload-android-it-pass:
 	cd android && ./gradlew publishIt_passReleaseBundle

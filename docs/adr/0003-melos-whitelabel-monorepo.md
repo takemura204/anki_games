@@ -53,7 +53,7 @@ ProviderScope(
 
 - **良い点**: 修正コストが O(1)（1箇所）から O(n)（n アプリ分）に増えない。Melos による一括タスク管理。
 - **良い点**: `core` の API が public に絞られ、アプリパッケージが `core` の内部実装に依存しにくくなる。
-- **悪い点**: モノレポ化の後付けで import 置換コストが発生した（反省点: `docs/portfolio_roadmap.md` 12節参照）。
+- **悪い点**: モノレポ化の後付けで import 置換コストが発生した。
 - **悪い点**: Melos の学習コストが若干ある。`dart run melos bootstrap` 忘れによる pub get エラーが発生しやすい。
 
 ## Alternatives Considered

@@ -5,19 +5,60 @@ import '../../config/ads/ad_config.dart';
 
 /// インタースティシャル広告のロードと表示を管理するサービス。
 ///
-/// コンストラクタに adConfigProvider から取得した AdConfig を渡す:
-/// ```dart
-/// AdmobInterstitial(ref.read(adConfigProvider)).loadAndShow();
-/// ```
+/// [preload] で事前ロードしておき、[showIfReady] で即時表示する。
+/// 事前ロードなしの従来フローは [loadAndShow] で引き続き使用できる。
 class AdmobInterstitial {
   AdmobInterstitial(this._adConfig);
 
   final AdConfig _adConfig;
+  InterstitialAd? _preloadedAd;
 
-  /// 広告をロードし、準備完了後に全画面表示する。
+  bool get hasPreloadedAd => _preloadedAd != null;
+
+  /// 広告を事前ロードして保持する。
   ///
-  /// 広告が閉じられた後に [onDismissed] が呼ばれる。
-  /// ロード失敗時は何もしない。
+  /// 既にロード済みの場合は上書きしない。
+  void preload() {
+    if (_preloadedAd != null) return;
+    InterstitialAd.load(
+      adUnitId: _adConfig.interstitial,
+      request: const AdRequest(),
+      adLoadCallback: InterstitialAdLoadCallback(
+        onAdLoaded: (ad) => _preloadedAd = ad,
+        onAdFailedToLoad: (error) {
+          debugPrint('[AdInterstitial] preload failed: $error');
+        },
+      ),
+    );
+  }
+
+  /// 事前ロード済み広告を表示する。
+  ///
+  /// 広告が準備できている場合は全画面表示して `true` を返す。
+  /// 広告未準備の場合は何もせず `false` を返す。
+  /// 広告を閉じた後または表示失敗時に [onDismissed] が呼ばれる。
+  bool showIfReady({VoidCallback? onDismissed}) {
+    final ad = _preloadedAd;
+    if (ad == null) return false;
+    _preloadedAd = null;
+    ad
+      ..fullScreenContentCallback = FullScreenContentCallback(
+        onAdDismissedFullScreenContent: (a) {
+          a.dispose();
+          onDismissed?.call();
+        },
+        onAdFailedToShowFullScreenContent: (a, _) {
+          a.dispose();
+          onDismissed?.call();
+        },
+      )
+      ..show();
+    return true;
+  }
+
+  /// 広告をロードし、準備完了後に全画面表示する（従来フロー）。
+  ///
+  /// lifecycle_observer などの既存呼び出し元向けに維持する。
   void loadAndShow({VoidCallback? onDismissed}) {
     InterstitialAd.load(
       adUnitId: _adConfig.interstitial,
@@ -41,4 +82,9 @@ class AdmobInterstitial {
       ),
     );
   }
-}
+
+  /// 保持中の広告リソースを解放する。
+  void dispose() {
+    _preloadedAd?.dispose();
+    _preloadedAd = null;
+  }}

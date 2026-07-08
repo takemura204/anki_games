@@ -1,3 +1,6 @@
+import 'package:core/features/purchase/model/plan_type.dart';
+import 'package:core/features/purchase/model/pricing.dart';
+
 /// プレミアム状態変化コールバックの型エイリアス。
 // ignore: avoid_positional_boolean_parameters
 typedef OnPremiumStatusChanged = void Function(bool isPremium);
@@ -14,32 +17,20 @@ abstract class IPurchaseService {
   /// ネットワークエラーなど取得に失敗した場合は `false` を返す。
   Future<bool> isPremium();
 
-  /// 月額プランの価格文字列（例: "¥480"）を返す。
-  ///
-  /// 取得できない場合は `null` を返す。
-  Future<String?> getMonthlyPriceString();
-
   /// 月額プランの商品タイトルを返す。
   ///
   /// App Store / Google Play に登録した商品名。取得できない場合は `null` を返す。
   Future<String?> getMonthlyProductTitle();
 
-  /// 買い切りプランの価格文字列（例: "¥4,800"）を返す。
-  ///
-  /// 取得できない場合は `null` を返す。
-  Future<String?> getLifetimePriceString();
+  /// 通常・セール両 Offering の価格を 1 回の getOfferings() 呼び出しで取得する。
+  Future<Pricing> getPricing();
 
-  /// 月額プランを購入する。
+  /// プランを購入する。
   ///
-  /// ユーザーがキャンセルした場合は何もしない。
-  /// エラー時は例外をスローする。
-  Future<void> purchaseMonthly();
-
-  /// 買い切りプランを購入する。
-  ///
-  /// ユーザーがキャンセルした場合は何もしない。
-  /// エラー時は例外をスローする。
-  Future<void> purchaseLifetime();
+  /// [sale] が `true` の場合は `premium_sale` Offering を使用し、
+  /// 該当 Offering が未設定の場合は通常 Offering にフォールバックする。
+  /// ユーザーがキャンセルした場合は何もしない。エラー時は例外をスローする。
+  Future<void> purchase(PlanType plan, {bool sale = false});
 
   /// 過去の購入を復元し、プレミアム状態かどうかを返す。
   Future<bool> restorePurchases();

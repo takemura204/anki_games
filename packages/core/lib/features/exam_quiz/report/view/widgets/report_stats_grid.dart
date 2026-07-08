@@ -170,8 +170,8 @@ class _Sparkline extends StatelessWidget {
 
   final List<double> data;
 
-  static const Color _lineColor = ItPassColors.seed;
-  static const Color _lineColorEnd = ItPassColors.accent;
+  static const Color _lineColor = AppPalette.seed;
+  static const Color _lineColorEnd = AppPalette.accent;
 
   @override
   Widget build(BuildContext context) {

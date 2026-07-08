@@ -57,7 +57,7 @@ class _FeatureList extends StatelessWidget {
                         //   Icons.check_circle_rounded,
                         //   key: const ValueKey('checked'),
                         //   size: 18,
-                        //   color: ItPassColors.seed,
+                        //   color: AppPalette.seed,
                         // ),
                       ],
                     ),

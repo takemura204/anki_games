@@ -40,7 +40,7 @@ class PickerConfirmButton extends StatelessWidget {
               decoration: BoxDecoration(
                 gradient: enabled
                     ? const LinearGradient(
-                        colors: [ItPassColors.seed, ItPassColors.accent],
+                        colors: [AppPalette.seed, AppPalette.accent],
                       )
                     : null,
                 color: enabled ? null : c.surface2,

@@ -67,7 +67,7 @@ class _OnboardingDonePageState extends State<OnboardingDonePage>
                 size: const Size(100, 100),
                 painter: CheckmarkPainter(
                   progress: _checkProgress.value,
-                  color: ItPassColors.seed,
+                  color: AppPalette.seed,
                 ),
               ),
             ),

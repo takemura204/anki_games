@@ -4,20 +4,25 @@ class _PlanSelector extends StatelessWidget {
   const _PlanSelector({
     required this.c,
     required this.selectedPlan,
-    required this.monthlyPriceAsync,
-    required this.lifetimePriceAsync,
+    required this.pricingAsync,
+    required this.saleMode,
+    required this.recommendedPlan,
     required this.onSelect,
   });
   final AppColorScheme c;
-  final _Plan selectedPlan;
-  final AsyncValue<String?> monthlyPriceAsync;
-  final AsyncValue<String?> lifetimePriceAsync;
-  final void Function(_Plan) onSelect;
+  final PlanType selectedPlan;
+  final AsyncValue<Pricing> pricingAsync;
+  final bool saleMode;
+  final PlanType recommendedPlan;
+  final void Function(PlanType) onSelect;
 
   @override
   Widget build(BuildContext context) {
+    final pricing = pricingAsync.asData?.value ?? const Pricing();
+    final isLoading = pricingAsync.isLoading;
+
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: AppSpacing.sm),
+      padding: const EdgeInsets.symmetric(horizontal: AppSpacing.xs),
       child: GlassButton(
         cardRadius: AppBorderRadius.md,
         child: Column(
@@ -25,10 +30,16 @@ class _PlanSelector extends StatelessWidget {
             _PlanRow(
               title: '1ヶ月プラン',
               subtitle: '毎月更新。いつでもキャンセル可能。',
-              priceAsync: monthlyPriceAsync,
-              isSelected: selectedPlan == _Plan.monthly,
-              onTap: () => onSelect(_Plan.monthly),
+              normalPrice: pricing.monthlyNormal,
+              salePrice: saleMode ? pricing.monthlySale : null,
+              discountBadge: saleMode && pricing.monthlyDiscountPercent != null
+                  ? '${pricing.monthlyDiscountPercent}% OFF'
+                  : null,
+              isSelected: selectedPlan == PlanType.monthly,
+              isRecommended: recommendedPlan == PlanType.monthly,
+              onTap: () => onSelect(PlanType.monthly),
               c: c,
+              isLoading: isLoading,
               priceSuffix: '月',
             ),
             Divider(
@@ -39,11 +50,17 @@ class _PlanSelector extends StatelessWidget {
             ),
             _PlanRow(
               title: '買い切りプラン',
-              subtitle: '１度切りのお支払い。無制限に利用可能。',
-              priceAsync: lifetimePriceAsync,
-              isSelected: selectedPlan == _Plan.lifetime,
-              onTap: () => onSelect(_Plan.lifetime),
+              subtitle: '合格まで使い放題。追加課金なし。',
+              normalPrice: pricing.lifetimeNormal,
+              salePrice: saleMode ? pricing.lifetimeSale : null,
+              discountBadge: saleMode && pricing.lifetimeDiscountAmount != null
+                  ? pricing.lifetimeDiscountAmount
+                  : null,
+              isSelected: selectedPlan == PlanType.lifetime,
+              isRecommended: recommendedPlan == PlanType.lifetime,
+              onTap: () => onSelect(PlanType.lifetime),
               c: c,
+              isLoading: isLoading,
             ),
           ],
         ),
@@ -56,19 +73,31 @@ class _PlanRow extends StatelessWidget {
   const _PlanRow({
     required this.title,
     required this.subtitle,
-    required this.priceAsync,
+    required this.normalPrice,
     required this.isSelected,
+    required this.isRecommended,
     required this.onTap,
     required this.c,
+    required this.isLoading,
+    this.salePrice,
+    this.discountBadge,
     this.priceSuffix,
   });
   final String title;
   final String subtitle;
-  final AsyncValue<String?> priceAsync;
+  final String? normalPrice;
+  final String? salePrice;
+  final String? discountBadge;
   final bool isSelected;
+  final bool isRecommended;
   final VoidCallback onTap;
   final AppColorScheme c;
+  final bool isLoading;
   final String? priceSuffix;
+
+  String get _displaySuffix => priceSuffix != null ? '/$priceSuffix' : '';
+  bool get _hasDiscount =>
+      salePrice != null && normalPrice != null && salePrice != normalPrice;
 
   @override
   Widget build(BuildContext context) {
@@ -78,10 +107,10 @@ class _PlanRow extends StatelessWidget {
         duration: AppAnimation.fast,
         decoration: BoxDecoration(
           color: isSelected
-              ? ItPassColors.seed.withValues(alpha: 0.1)
+              ? AppPalette.seed.withValues(alpha: 0.1)
               : Colors.transparent,
           border: Border.all(
-            color: isSelected ? ItPassColors.seed : Colors.transparent,
+            color: isSelected ? AppPalette.seed : Colors.transparent,
             width: 1.5,
           ),
           borderRadius: AppBorderRadius.md,
@@ -99,7 +128,7 @@ class _PlanRow extends StatelessWidget {
                       Icons.check_circle_rounded,
                       key: ValueKey('checked'),
                       size: 22,
-                      color: ItPassColors.seed,
+                      color: AppPalette.seed,
                     )
                   : Icon(
                       Icons.radio_button_unchecked_rounded,
@@ -113,12 +142,59 @@ class _PlanRow extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    title,
-                    style: AppTextStyle.titleSmall.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: c.fg,
-                    ),
+                  Row(
+                    children: [
+                      Text(
+                        title,
+                        style: AppTextStyle.titleSmall.copyWith(
+                          fontWeight: FontWeight.bold,
+                          color: c.fg,
+                        ),
+                      ),
+                      if (isRecommended && discountBadge == null) ...[
+                        const Gap(6),
+                        Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 6,
+                            vertical: 2,
+                          ),
+                          decoration: BoxDecoration(
+                            color: c.fg,
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          child: Text(
+                            'おすすめ',
+                            style: AppTextStyle.labelSmall.copyWith(
+                              color: AppPalette.seed,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                      if (discountBadge != null) ...[
+                        const Gap(6),
+                        Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 6,
+                            vertical: 2,
+                          ),
+                          decoration: BoxDecoration(
+                            color: Colors.orange.withValues(alpha: 0.15),
+                            borderRadius: BorderRadius.circular(4),
+                            border: Border.all(
+                              color: Colors.orange.withValues(alpha: 0.5),
+                            ),
+                          ),
+                          child: Text(
+                            discountBadge!,
+                            style: AppTextStyle.labelSmall.copyWith(
+                              color: Colors.orange.shade800,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ],
                   ),
                   Text(
                     subtitle,
@@ -129,30 +205,44 @@ class _PlanRow extends StatelessWidget {
                 ],
               ),
             ),
-            if (priceAsync.isLoading)
+            if (isLoading)
               SizedBox(
                 width: 14,
                 height: 14,
                 child: CircularProgressIndicator(strokeWidth: 1.5, color: c.fg),
               )
-            else ...[
-              Text(
-                priceAsync.asData?.value != null
-                    ? '${priceAsync.asData!.value}'
-                    : '---',
-                style: AppTextStyle.titleMedium.copyWith(
-                  color: c.fg,
-                  fontWeight: FontWeight.bold,
-                ),
+            else
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  if (_hasDiscount) ...[
+                    Text(
+                      '$normalPrice$_displaySuffix',
+                      style: AppTextStyle.labelSmall.copyWith(
+                        color: c.fgShade300,
+                        decoration: TextDecoration.lineThrough,
+                        decorationColor: c.fgShade300,
+                      ),
+                    ),
+                    Text(
+                      '${salePrice!}$_displaySuffix',
+                      style: AppTextStyle.titleMedium.copyWith(
+                        color: c.fg,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ] else
+                    Text(
+                      (salePrice ?? normalPrice) != null
+                          ? '${salePrice ?? normalPrice}$_displaySuffix'
+                          : '---',
+                      style: AppTextStyle.titleMedium.copyWith(
+                        color: c.fg,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                ],
               ),
-              if (priceSuffix != null) ...[
-                const Gap(AppSpacing.xs),
-                Text(
-                  '/$priceSuffix',
-                  style: AppTextStyle.labelMedium.copyWith(color: c.fgShade400),
-                ),
-              ],
-            ],
           ],
         ),
       ),

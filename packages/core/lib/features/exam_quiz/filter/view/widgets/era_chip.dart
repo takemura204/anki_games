@@ -30,12 +30,12 @@ class _EraChip extends StatelessWidget {
           ),
           decoration: BoxDecoration(
             color: !isLocked && selected
-                ? ItPassColors.accent.withValues(alpha: 0.25)
+                ? AppPalette.accent.withValues(alpha: 0.25)
                 : c.surface1,
             borderRadius: AppBorderRadius.sm,
             border: Border.all(
               color: !isLocked && selected
-                  ? ItPassColors.seed.withValues(alpha: 0.7)
+                  ? AppPalette.seed.withValues(alpha: 0.7)
                   : c.border1,
             ),
           ),

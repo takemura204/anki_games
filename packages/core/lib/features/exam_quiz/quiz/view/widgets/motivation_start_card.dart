@@ -111,7 +111,7 @@ class _QuoteCard extends StatelessWidget {
         children: [
           Icon(
             Icons.format_quote_rounded,
-            color: ItPassColors.seed.withValues(alpha: 0.9),
+            color: AppPalette.seed.withValues(alpha: 0.9),
             size: 40,
           ),
           const Gap(AppSpacing.sm),

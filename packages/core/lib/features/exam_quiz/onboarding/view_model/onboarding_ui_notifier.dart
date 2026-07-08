@@ -7,7 +7,9 @@ import 'package:core/features/exam_quiz/filter/repository/filter_repository.dart
 import 'package:core/features/exam_quiz/notification/model/notification_settings.dart';
 import 'package:core/features/exam_quiz/notification/model/notification_time_slot.dart';
 import 'package:core/features/exam_quiz/notification/view_model/notification_view_model.dart';
-import 'package:core/features/exam_quiz/onboarding/model/onboarding_plan.dart';
+import 'package:core/features/exam_quiz/onboarding/model/study_goal.dart';
+import 'package:core/features/exam_quiz/onboarding/repository/local_study_goal_repository.dart';
+import 'package:core/features/purchase/model/plan_type.dart';
 import 'package:core/features/purchase/view_model/premium_view_model.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
@@ -24,7 +26,8 @@ class OnboardingUiState {
     this.customNotificationHour,
     this.customNotificationMinute,
     this.isNotificationLoading = false,
-    this.selectedPlan = OnboardingPlan.monthly,
+    this.selectedPlan = PlanType.monthly,
+    this.selectedGoal,
     this.isPurchaseLoading = false,
     this.quizSelectedLabel,
     this.quizIsAnswered = false,
@@ -38,7 +41,8 @@ class OnboardingUiState {
   final int? customNotificationHour;
   final int? customNotificationMinute;
   final bool isNotificationLoading;
-  final OnboardingPlan selectedPlan;
+  final PlanType selectedPlan;
+  final StudyGoal? selectedGoal;
   final bool isPurchaseLoading;
   final String? quizSelectedLabel;
   final bool quizIsAnswered;
@@ -52,7 +56,8 @@ class OnboardingUiState {
     Object? customNotificationHour = _sentinel,
     Object? customNotificationMinute = _sentinel,
     bool? isNotificationLoading,
-    OnboardingPlan? selectedPlan,
+    PlanType? selectedPlan,
+    Object? selectedGoal = _sentinel,
     bool? isPurchaseLoading,
     Object? quizSelectedLabel = _sentinel,
     bool? quizIsAnswered,
@@ -73,6 +78,9 @@ class OnboardingUiState {
       isNotificationLoading:
           isNotificationLoading ?? this.isNotificationLoading,
       selectedPlan: selectedPlan ?? this.selectedPlan,
+      selectedGoal: selectedGoal == _sentinel
+          ? this.selectedGoal
+          : selectedGoal as StudyGoal?,
       isPurchaseLoading: isPurchaseLoading ?? this.isPurchaseLoading,
       quizSelectedLabel: quizSelectedLabel == _sentinel
           ? this.quizSelectedLabel
@@ -155,8 +163,23 @@ class OnboardingUiNotifier extends _$OnboardingUiNotifier {
     state = state.copyWith(quizShowActionBar: true);
   }
 
-  void selectPlan(OnboardingPlan plan) {
+  void selectPlan(PlanType plan) {
     state = state.copyWith(selectedPlan: plan);
+  }
+
+  /// 学習期間目標を選択し、推奨プランを pre-select する。
+  void selectGoal(StudyGoal goal) {
+    state = state.copyWith(
+      selectedGoal: goal,
+      selectedPlan: goal.recommendedPlan,
+    );
+  }
+
+  /// 学習期間目標を保存する。
+  Future<void> submitGoal() async {
+    final goal = state.selectedGoal;
+    if (goal == null) return;
+    await ref.read(studyGoalRepositoryProvider).saveGoal(goal);
   }
 
   void setNotificationLoading({required bool loading}) {
@@ -204,6 +227,8 @@ class OnboardingUiNotifier extends _$OnboardingUiNotifier {
   }
 
   /// プレミアム購入を実行し、プレミアムになったかどうかを返す。
+  ///
+  /// セール Offering で購入する（オンボーディング中はセール価格）。
   Future<bool> submitPurchase() async {
     if (kDebugMode) {
       ref.read(premiumViewModelProvider.notifier).debugSetPremium();
@@ -211,10 +236,9 @@ class OnboardingUiNotifier extends _$OnboardingUiNotifier {
     }
     setPurchaseLoading(loading: true);
     try {
-      final premiumNotifier = ref.read(premiumViewModelProvider.notifier);
-      await (state.selectedPlan == OnboardingPlan.monthly
-          ? premiumNotifier.purchase()
-          : premiumNotifier.purchaseLifetime());
+      await ref
+          .read(premiumViewModelProvider.notifier)
+          .purchasePlan(state.selectedPlan, sale: true);
       return ref.read(premiumViewModelProvider).asData?.value.isPremium ??
           false;
     } finally {

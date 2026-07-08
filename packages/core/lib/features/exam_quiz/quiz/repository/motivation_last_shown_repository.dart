@@ -27,4 +27,10 @@ class MotivationLastShownRepository {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setInt(_key, DateTime.now().millisecondsSinceEpoch);
   }
+
+  /// デバッグ用: 表示記録を消去して次回起動時に再表示させる。
+  Future<void> reset() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.remove(_key);
+  }
 }

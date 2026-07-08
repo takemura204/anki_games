@@ -104,8 +104,8 @@ class _ToggleMenuItem extends StatelessWidget {
           Switch.adaptive(
             value: value,
             onChanged: onChanged,
-            activeThumbColor: ItPassColors.seed,
-            activeTrackColor: ItPassColors.seed.withValues(alpha: 0.25),
+            activeThumbColor: AppPalette.seed,
+            activeTrackColor: AppPalette.seed.withValues(alpha: 0.25),
             inactiveThumbColor: c.fgShade200,
             inactiveTrackColor: c.surface2,
           ),

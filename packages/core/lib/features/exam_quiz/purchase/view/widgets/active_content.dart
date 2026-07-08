@@ -34,7 +34,7 @@ class _ActiveContent extends StatelessWidget {
                 children: [
                   const Icon(
                     Icons.check_circle_rounded,
-                    color: ItPassColors.seed,
+                    color: AppPalette.seed,
                     size: 20,
                   ),
                   const Gap(AppSpacing.sm),

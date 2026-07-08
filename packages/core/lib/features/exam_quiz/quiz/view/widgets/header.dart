@@ -9,6 +9,7 @@ class _Header extends StatelessWidget {
     this.centerLabel,
     this.showCenter = true,
     this.showSideButtons = true,
+    this.isOnboarding = false,
   });
 
   final BorderRadius cardRadius;
@@ -18,7 +19,7 @@ class _Header extends StatelessWidget {
   final String? centerLabel;
   final bool showCenter;
   final bool showSideButtons;
-
+  final bool isOnboarding;
   @override
   Widget build(BuildContext context) {
     final top = MediaQuery.of(context).padding.top;

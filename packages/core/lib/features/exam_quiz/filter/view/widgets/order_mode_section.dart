@@ -74,11 +74,11 @@ class _OrderModeChip extends StatelessWidget {
           ),
           decoration: BoxDecoration(
             color: selected
-                ? ItPassColors.seed.withValues(alpha: 0.28)
+                ? AppPalette.seed.withValues(alpha: 0.28)
                 : c.surface1,
             borderRadius: AppBorderRadius.md,
             border: Border.all(
-              color: selected ? ItPassColors.seed : c.border1,
+              color: selected ? AppPalette.seed : c.border1,
             ),
           ),
           child: Row(

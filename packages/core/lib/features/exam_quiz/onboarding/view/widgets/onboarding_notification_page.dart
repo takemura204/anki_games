@@ -167,7 +167,7 @@ class _NotificationSlotRadioCard extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: AppBorderRadius.md,
             border: Border.all(
-              color: isSelected ? ItPassColors.seed : Colors.transparent,
+              color: isSelected ? AppPalette.seed : Colors.transparent,
               width: 1.5,
             ),
           ),
@@ -186,7 +186,7 @@ class _NotificationSlotRadioCard extends StatelessWidget {
                         ? const Icon(
                             Icons.radio_button_checked_rounded,
                             key: ValueKey('checked'),
-                            color: ItPassColors.seed,
+                            color: AppPalette.seed,
                             size: 22,
                           )
                         : Icon(
@@ -351,7 +351,7 @@ class _TimePickerSheetState extends State<_TimePickerSheet> {
                       child: Text(
                         '完了',
                         style: AppTextStyle.bodyMedium.copyWith(
-                          color: ItPassColors.seed,
+                          color: AppPalette.seed,
                           fontWeight: FontWeight.bold,
                         ),
                       ),

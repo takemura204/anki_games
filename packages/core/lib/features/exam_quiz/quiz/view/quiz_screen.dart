@@ -30,6 +30,8 @@ import 'package:core/features/exam_quiz/note/providers/bookmark_provider.dart';
 import 'package:core/features/exam_quiz/notification/service/notification_service.dart';
 import 'package:core/features/exam_quiz/onboarding/view_model/onboarding_ui_notifier.dart';
 import 'package:core/features/exam_quiz/onboarding/view_model/onboarding_view_model.dart';
+import 'package:core/features/exam_quiz/purchase/repository/local_sale_promo_repository.dart';
+import 'package:core/features/exam_quiz/purchase/view/paywall_sheet.dart';
 import 'package:core/features/exam_quiz/report/view_model/progress_dashboard_provider.dart';
 import 'package:core/features/exam_quiz/review/review_repository.dart';
 import 'package:core/features/exam_quiz/router/modal_sheet_router.dart';
@@ -38,18 +40,22 @@ import 'package:core/i18n/translations.g.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:in_app_review/in_app_review.dart';
 import 'package:shimmer/shimmer.dart';
 
 import '../../onboarding/view/widgets/onboarding_category_page.dart';
 import '../../onboarding/view/widgets/onboarding_done_page.dart';
 import '../../onboarding/view/widgets/onboarding_feature_page.dart';
+import '../../onboarding/view/widgets/onboarding_goal_page.dart';
 import '../../onboarding/view/widgets/onboarding_intro_page.dart';
 import '../../onboarding/view/widgets/onboarding_notification_page.dart';
-import '../../onboarding/view/widgets/onboarding_premium_page.dart';
+import '../../onboarding/view/widgets/onboarding_pay_wall_page.dart';
 import '../../onboarding/view/widgets/onboarding_quiz_page.dart';
 import '../../onboarding/view/widgets/onboarding_review_page.dart';
 import '../../onboarding/view/widgets/onboarding_tracking_page.dart';
+import '../analytics/post_result_analytics.dart';
 import '../model/quiz_session.dart';
+import '../repository/local_quiz_session_count_repository.dart';
 import '../repository/motivation_last_shown_repository.dart';
 import '../sync/quiz_sync_notifier.dart';
 import '../view_model/quiz_view_model.dart';
@@ -111,12 +117,12 @@ class _QuizBody extends ConsumerStatefulWidget {
 class _QuizBodyState extends ConsumerState<_QuizBody> {
   late final PageController _pageController;
   late final ConfettiController _confettiController;
+  late final AdmobInterstitial _admobInterstitial;
   List<_PageEntry> _pages = const [_MotivationEntry(), _LoadingEntry()];
   var _currentViewPage = 0;
   final _resultElapsesBySet = <int, Duration>{};
 
   var _hasShownMotivation = false;
-
   var _isOnboarding = false;
 
   /// モチベーション画面スワイプ後の自動ジャンプ中は true にして
@@ -126,6 +132,10 @@ class _QuizBodyState extends ConsumerState<_QuizBody> {
   /// ユーザーのドラッグ操作によるページ遷移かどうかを追跡する
   var _isUserSwipe = false;
 
+  /// 現在のセッション（セット）でレビューまたは広告を既に表示したかどうか。
+  /// nextSet / 全問完了時にリセットする。
+  var _postResultShownThisSession = false;
+
   @override
   void initState() {
     super.initState();
@@ -133,7 +143,33 @@ class _QuizBodyState extends ConsumerState<_QuizBody> {
     _confettiController = ConfettiController(
       duration: const Duration(milliseconds: 1200),
     );
+    _admobInterstitial = AdmobInterstitial(ref.read(adConfigProvider));
     _initMotivationVisibility();
+  }
+
+  /// セット（10問）の結果ページ表示から3秒後に呼ばれる、1日1回のセール表示。
+  ///
+  /// 累計2セット以上完了したユーザーのみが対象（初回セッションでは出さない）。
+  /// 同セッションでレビュー訴求済み（[_postResultShownThisSession]）の場合は
+  /// 訴求が重複するため出さない。
+  Future<void> _maybeShowDailySaleAfterResult() async {
+    if (!mounted || !_isOnResultPage || _postResultShownThisSession) return;
+
+    final count = await ref.read(quizSessionCountRepositoryProvider).getCount();
+    if (count < 1) return;
+
+    if (!mounted || !_isOnResultPage || _postResultShownThisSession) return;
+    final shouldShow = await ref
+        .read(salePromoRepositoryProvider)
+        .checkAndMarkDailySale();
+    if (!shouldShow || !mounted) return;
+
+    await showModalBottomSheet<void>(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (_) => const PaywallSheet(saleMode: true),
+    );
   }
 
   Future<void> _initMotivationVisibility() async {
@@ -160,6 +196,7 @@ class _QuizBodyState extends ConsumerState<_QuizBody> {
           _OnboardingIntroEntry(),
           _OnboardingTrackingEntry(),
           _OnboardingNotificationEntry(),
+          _OnboardingGoalEntry(),
           _OnboardingCategoryEntry(),
           _OnboardingQuizEntry(),
           _OnboardingFeatureEntry(),
@@ -182,11 +219,11 @@ class _QuizBodyState extends ConsumerState<_QuizBody> {
         _OnboardingIntroEntry(),
         _OnboardingTrackingEntry(),
         _OnboardingNotificationEntry(),
+        _OnboardingGoalEntry(),
         _OnboardingCategoryEntry(),
         _OnboardingQuizEntry(),
         _OnboardingFeatureEntry(),
         _OnboardingReviewEntry(),
-
         _OnboardingPremiumEntry(),
         _OnboardingDoneEntry(),
         _MotivationEntry(),
@@ -212,6 +249,7 @@ class _QuizBodyState extends ConsumerState<_QuizBody> {
       _OnboardingReviewEntry _ => _goNext,
       _OnboardingNotificationEntry _ =>
         ob.selectedNotificationSlot == null ? null : _onNotificationNext,
+      _OnboardingGoalEntry _ => ob.selectedGoal == null ? null : _onGoalNext,
       _OnboardingPremiumEntry _ => null,
       _OnboardingDoneEntry _ => _goNext,
       _ => null,
@@ -223,11 +261,17 @@ class _QuizBodyState extends ConsumerState<_QuizBody> {
     _goNext();
   }
 
+  Future<void> _onGoalNext() async {
+    await ref.read(onboardingUiProvider.notifier).submitGoal();
+    if (mounted) _goNext();
+  }
+
   Future<void> _onNotificationNext() async {
     final notifier = ref.read(onboardingUiProvider.notifier)
       ..setNotificationLoading(loading: true);
     final granted = await NotificationService.instance.requestPermission(
       context,
+      showSettingsDialogOnDenied: false,
     );
     if (!mounted) return;
     await notifier.saveNotificationSettings(granted: granted);
@@ -237,8 +281,9 @@ class _QuizBodyState extends ConsumerState<_QuizBody> {
   Future<void> _onPremiumPurchase() async {
     final messenger = ScaffoldMessenger.of(context);
     try {
-      final isPremium =
-          await ref.read(onboardingUiProvider.notifier).submitPurchase();
+      final isPremium = await ref
+          .read(onboardingUiProvider.notifier)
+          .submitPurchase();
       if (isPremium && mounted) _goNext();
     } on Exception catch (_) {
       if (mounted) {
@@ -258,6 +303,7 @@ class _QuizBodyState extends ConsumerState<_QuizBody> {
   void dispose() {
     _pageController.dispose();
     _confettiController.dispose();
+    _admobInterstitial.dispose();
     super.dispose();
   }
 
@@ -362,10 +408,60 @@ class _QuizBodyState extends ConsumerState<_QuizBody> {
   }
 
   void _onResultContinue() {
+    final shown = _tryShowPreloadedAdOnContinue(
+      onDismissed: _doNavigateFromResult,
+    );
+    if (!shown) _doNavigateFromResult();
+  }
+
+  /// preload 済み広告を出す条件が揃っていれば表示して `true` を返す。
+  ///
+  /// 表示後は [onDismissed] でナビゲーションを呼び出す。
+  /// 表示しなかった場合は `false` を返し、呼び出し元が即時ナビゲートする。
+  bool _tryShowPreloadedAdOnContinue({required VoidCallback onDismissed}) {
+    if (_postResultShownThisSession) return false;
+
+    final isPremium =
+        ref.read(premiumViewModelProvider).asData?.value.isPremium ?? false;
+    if (isPremium) return false;
+
+    final last = ref.read(appLifecycleProvider).lastResultAdShownAt;
+    final cooldownPassed =
+        last == null ||
+        DateTime.now().difference(last) >=
+            const Duration(minutes: 10); // 結果ページ広告クールダウン
+    if (!cooldownPassed) return false;
+
+    if (!_admobInterstitial.hasPreloadedAd) return false;
+
+    _postResultShownThisSession = true;
+    ref.read(appLifecycleProvider.notifier).recordResultAdShown();
+
+    final shown = _admobInterstitial.showIfReady(
+      onDismissed: () {
+        unawaited(PostResultAnalytics.logAdDismiss());
+        onDismissed();
+      },
+    );
+    if (shown) {
+      unawaited(
+        PostResultAnalytics.logResultAction(
+          actionType: PostResultAnalytics.actionAd,
+          isPremium: isPremium,
+        ),
+      );
+      unawaited(PostResultAnalytics.logAdImpression());
+    }
+    return shown;
+  }
+
+  void _doNavigateFromResult() {
+    if (!mounted) return;
     final quizState = ref.read(quizViewModelProvider).value;
     if (quizState is! QuizReady) return;
     final session = quizState.session;
     if (session.hasNextSet) {
+      setState(() => _postResultShownThisSession = false);
       ref.read(quizViewModelProvider.notifier).nextSet();
     } else {
       if (_currentViewPage + 1 < _pages.length) {
@@ -446,12 +542,22 @@ class _QuizBodyState extends ConsumerState<_QuizBody> {
         _resultElapsesBySet[entry.setIndex] = elapsed;
       });
       ref.read(quizViewModelProvider.notifier).recordSetElapsed(elapsed);
+      unawaited(
+        ref.read(quizSessionCountRepositoryProvider).increment(),
+      );
+      unawaited(
+        Future.delayed(
+          const Duration(seconds: 3),
+          _maybeShowDailySaleAfterResult,
+        ),
+      );
       return;
     }
 
     if (entry is _SessionEndEntry) {
       setState(() {
         _currentViewPage = pageIndex;
+        _postResultShownThisSession = false;
       });
       _confettiController.play();
       ref.read(quizViewModelProvider.notifier).clearResume();
@@ -471,6 +577,18 @@ class _QuizBodyState extends ConsumerState<_QuizBody> {
         ref.read(quizViewModelProvider.notifier).nextQuestion();
       }
       _skipNextQuestion = false;
+
+      // 最終問題（セット内最後の _QuestionEntry）を表示したタイミングで広告を事前ロード
+      if (entry is _QuestionEntry) {
+        final quizState = ref.read(quizViewModelProvider).value;
+        if (quizState is QuizReady &&
+            entry.questionIndex == quizState.session.totalCount - 1) {
+          final isPremium =
+              ref.read(premiumViewModelProvider).asData?.value.isPremium ??
+              false;
+          if (!isPremium) _admobInterstitial.preload();
+        }
+      }
     }
   }
 
@@ -512,7 +630,6 @@ class _QuizBodyState extends ConsumerState<_QuizBody> {
         !_isOnResultPage &&
         !_isOnSessionEndPage &&
         !_isOnOnboardingPage;
-
 
     final physics = _isOnboarding
         ? const NeverScrollableScrollPhysics()
@@ -573,7 +690,9 @@ class _QuizBodyState extends ConsumerState<_QuizBody> {
                   return OnboardingTrackingPage(
                     key: const ValueKey('ob_tracking'),
                     onAllow: _onTrackingNext,
-                    appDisplayName: ref.read(brandConfigProvider).appDisplayName,
+                    appDisplayName: ref
+                        .read(brandConfigProvider)
+                        .appDisplayName,
                   );
                 }
 
@@ -606,8 +725,12 @@ class _QuizBodyState extends ConsumerState<_QuizBody> {
                   );
                 }
 
+                if (entry is _OnboardingGoalEntry) {
+                  return const OnboardingGoalPage(key: ValueKey('ob_goal'));
+                }
+
                 if (entry is _OnboardingPremiumEntry) {
-                  return OnboardingPremiumPage(
+                  return OnboardingPayWallPage(
                     key: const ValueKey('ob_premium'),
                     onPurchase: _onPremiumPurchase,
                     onSkip: _goNext,
@@ -655,6 +778,8 @@ class _QuizBodyState extends ConsumerState<_QuizBody> {
                     session: state.session,
                     elapsed: elapsed,
                     onContinue: _onResultContinue,
+                    onReviewRequested: () =>
+                        setState(() => _postResultShownThisSession = true),
                   );
                 }
 
@@ -701,11 +826,13 @@ class _QuizBodyState extends ConsumerState<_QuizBody> {
                 !_isOnSessionEndPage &&
                 !_isOnOnboardingPage,
             showSideButtons: !_isOnOnboardingPage,
+            isOnboarding: _isOnOnboardingPage,
             onTapSetting: () =>
                 ref.read(modalSheetRouterProvider).showSettings(),
             onTapFilter: _openFilter,
           ),
         ),
+
         Align(
           alignment: Alignment.bottomCenter,
           child: _Footer(

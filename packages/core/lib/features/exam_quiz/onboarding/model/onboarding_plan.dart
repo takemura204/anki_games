@@ -1,1 +1,0 @@
-enum OnboardingPlan { monthly, lifetime }

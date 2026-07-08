@@ -208,7 +208,7 @@ class ProfilePage extends HookConsumerWidget {
               icon: const Icon(
                 Icons.check_rounded,
                 size: 20,
-                color: ItPassColors.seed,
+                color: AppPalette.seed,
               ),
               onPressed: () async {
                 await notifier.updateDisplayName(controller.text);
@@ -440,7 +440,7 @@ class _ProfileInfoCard extends HookWidget {
               child: ClipRRect(
                 borderRadius: AppBorderRadius.md,
                 child: ColoredBox(
-                  color: ItPassColors.bgStart.withValues(alpha: 0.7),
+                  color: AppPalette.bgStart.withValues(alpha: 0.7),
                   child: Center(
                     child: Text(
                       'コピーしました',

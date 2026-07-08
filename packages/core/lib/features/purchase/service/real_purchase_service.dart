@@ -1,3 +1,5 @@
+import 'package:core/features/purchase/model/plan_type.dart';
+import 'package:core/features/purchase/model/pricing.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
@@ -6,7 +8,8 @@ import '../model/revenue_cat_config.dart';
 import 'i_purchase_service.dart';
 
 const _entitlementId = 'premium';
-const _offeringId = 'premium';
+const _normalOfferingId = 'premium';
+const _saleOfferingId = 'premium_sale';
 
 /// RevenueCat を使った本番課金サービス。
 ///
@@ -39,80 +42,112 @@ class RealPurchaseService implements IPurchaseService {
   }
 
   @override
-  Future<String?> getMonthlyPriceString() async {
-    try {
-      final offerings = await Purchases.getOfferings();
-      _debugDumpOfferings(offerings);
-      final price = _findMonthlyPackage(offerings)?.storeProduct.priceString;
-      if (price == null) {
-        debugPrint(
-          '[RevenueCat] getMonthlyPriceString: package not found'
-          ' in offering "$_offeringId"',
-        );
-      }
-      return price;
-    } on Exception catch (e) {
-      debugPrint('[RevenueCat] getMonthlyPriceString error: $e');
-      return null;
-    }
-  }
-
-  @override
   Future<String?> getMonthlyProductTitle() async {
     try {
       final offerings = await Purchases.getOfferings();
-      return _findMonthlyPackage(offerings)?.storeProduct.title;
+      return _findMonthlyPackage(offerings, _normalOfferingId)
+          ?.storeProduct
+          .title;
     } on Exception catch (e) {
       debugPrint('[RevenueCat] getMonthlyProductTitle error: $e');
       return null;
     }
   }
 
+  static const _mockPricing = Pricing(
+    monthlyNormal: '¥450',
+    monthlySale: '¥300',
+    monthlySalePerDay: '¥10',
+    lifetimeNormal: '¥1,800',
+    lifetimeSale: '¥1,500',
+    monthlyDiscountPercent: 33,
+    lifetimeDiscountAmount: '¥300 OFF',
+    saleMonthlyFound: true,
+    saleLifetimeFound: true,
+    debugLifetimeNormalProductId: 'mock_lifetime_normal',
+    debugLifetimeSaleProductId: 'mock_lifetime_sale',
+    debugLifetimeNormalRawPrice: 1800,
+    debugLifetimeSaleRawPrice: 1500,
+  );
+
   @override
-  Future<String?> getLifetimePriceString() async {
+  Future<Pricing> getPricing() async {
+    if (kDebugMode) return _mockPricing;
     try {
       final offerings = await Purchases.getOfferings();
-      final price = _findLifetimePackage(offerings)?.storeProduct.priceString;
-      if (price == null) {
-        debugPrint(
-          '[RevenueCat] getLifetimePriceString: package not found'
-          ' in offering "$_offeringId"',
-        );
-      }
-      return price;
-    } on Exception catch (e) {
-      debugPrint('[RevenueCat] getLifetimePriceString error: $e');
-      return null;
-    }
-  }
+      _debugDumpOfferings(offerings);
 
-  @override
-  Future<void> purchaseMonthly() async {
-    final offerings = await Purchases.getOfferings();
-    final package = _findMonthlyPackage(offerings);
-    if (package == null) {
-      throw Exception(
-        'Monthly package not available in offering "$_offeringId"',
+      final normalMonthly =
+          _findMonthlyPackage(offerings, _normalOfferingId)?.storeProduct;
+      final normalLifetime =
+          _findLifetimePackage(offerings, _normalOfferingId)?.storeProduct;
+      final saleMonthly =
+          _findMonthlyPackage(offerings, _saleOfferingId)?.storeProduct;
+      final saleLifetime =
+          _findLifetimePackage(offerings, _saleOfferingId)?.storeProduct;
+
+      String? monthlySalePerDay;
+      if (saleMonthly != null) {
+        monthlySalePerDay = '¥${(saleMonthly.price / 30).round()}';
+      }
+
+      int? monthlyDiscountPercent;
+      if (normalMonthly != null &&
+          saleMonthly != null &&
+          saleMonthly.price < normalMonthly.price) {
+        monthlyDiscountPercent =
+            ((normalMonthly.price - saleMonthly.price) /
+                    normalMonthly.price *
+                    100)
+                .round();
+      }
+
+      String? lifetimeDiscountAmount;
+      if (normalLifetime != null &&
+          saleLifetime != null &&
+          saleLifetime.price < normalLifetime.price) {
+        final diff = normalLifetime.price - saleLifetime.price;
+        lifetimeDiscountAmount = '¥${diff.round()} OFF';
+      }
+
+      return Pricing(
+        monthlyNormal: normalMonthly?.priceString,
+        monthlySale: saleMonthly?.priceString,
+        monthlySalePerDay: monthlySalePerDay,
+        lifetimeNormal: normalLifetime?.priceString,
+        lifetimeSale: saleLifetime?.priceString,
+        monthlyDiscountPercent: monthlyDiscountPercent,
+        lifetimeDiscountAmount: lifetimeDiscountAmount,
+        saleMonthlyFound: saleMonthly != null,
+        saleLifetimeFound: saleLifetime != null,
+        debugLifetimeNormalProductId: normalLifetime?.identifier,
+        debugLifetimeSaleProductId: saleLifetime?.identifier,
+        debugLifetimeNormalRawPrice: normalLifetime?.price,
+        debugLifetimeSaleRawPrice: saleLifetime?.price,
       );
-    }
-    try {
-      await Purchases.purchase(PurchaseParams.package(package));
-    } on PlatformException catch (e) {
-      final code = PurchasesErrorHelper.getErrorCode(e);
-      if (code == PurchasesErrorCode.purchaseCancelledError) {
-        return;
-      }
-      rethrow;
+    } on Exception catch (e) {
+      debugPrint('[RevenueCat] getPricing error: $e');
+      return const Pricing();
     }
   }
 
   @override
-  Future<void> purchaseLifetime() async {
+  Future<void> purchase(PlanType plan, {bool sale = false}) async {
     final offerings = await Purchases.getOfferings();
-    final package = _findLifetimePackage(offerings);
+    final offeringId = sale ? _saleOfferingId : _normalOfferingId;
+
+    Package? package;
+    if (plan == PlanType.monthly) {
+      package = _findMonthlyPackage(offerings, offeringId) ??
+          (sale ? _findMonthlyPackage(offerings, _normalOfferingId) : null);
+    } else {
+      package = _findLifetimePackage(offerings, offeringId) ??
+          (sale ? _findLifetimePackage(offerings, _normalOfferingId) : null);
+    }
+
     if (package == null) {
       throw Exception(
-        'Lifetime package not available in offering "$_offeringId"',
+        '${plan.name} package not available in offering "$offeringId"',
       );
     }
     try {
@@ -170,34 +205,65 @@ class RealPurchaseService implements IPurchaseService {
   bool _isPremiumFromInfo(CustomerInfo info) =>
       info.entitlements.all[_entitlementId]?.isActive ?? false;
 
-  Package? _findMonthlyPackage(Offerings offerings) {
-    final offering = offerings.all[_offeringId];
-    if (offering == null) {
-      return null;
+  Package? _findMonthlyPackage(Offerings offerings, String offeringId) {
+    if (offeringId == _saleOfferingId) {
+      return _findPackageById(
+        offerings,
+        preferOfferingId: _saleOfferingId,
+        fallbackOfferingId: _normalOfferingId,
+        packageId: _config.premium1mSaleProductId,
+      );
     }
-    return offering.monthly ??
-        offering.availablePackages.cast<Package?>().firstWhere(
-              (p) =>
-                  p?.identifier == _config.premium1mProductId ||
-                  p?.storeProduct.identifier == _config.premium1mProductId,
-              orElse: () => null,
-            );
+    final offering = offerings.all[offeringId];
+    if (offering == null) return null;
+    // product ID で確定取得。未設定時は offering.monthly にフォールバック。
+    return _findPackageByProductId(offering, _config.premium1mProductId) ??
+        offering.monthly;
   }
 
-  Package? _findLifetimePackage(Offerings offerings) {
-    final offering = offerings.all[_offeringId];
-    if (offering == null) {
-      return null;
+  Package? _findLifetimePackage(Offerings offerings, String offeringId) {
+    if (offeringId == _saleOfferingId) {
+      return _findPackageById(
+        offerings,
+        preferOfferingId: _saleOfferingId,
+        fallbackOfferingId: _normalOfferingId,
+        packageId: _config.premiumLifetimeSaleProductId,
+      );
     }
-    return offering.lifetime ??
-        offering.availablePackages.cast<Package?>().firstWhere(
-              (p) =>
-                  p?.identifier == _config.premiumLifetimeProductId ||
-                  p?.storeProduct.identifier ==
-                      _config.premiumLifetimeProductId,
-              orElse: () => null,
-            );
+    final offering = offerings.all[offeringId];
+    if (offering == null) return null;
+    // product ID で確定取得。未設定時は offering.lifetime にフォールバック。
+    return _findPackageByProductId(offering, _config.premiumLifetimeProductId) ??
+        offering.lifetime;
   }
+
+  /// [preferOfferingId] の Offering にパッケージがなければ [fallbackOfferingId] も探す。
+  /// パッケージ ID または ストア商品 ID が [packageId] と一致するものを返す。
+  Package? _findPackageById(
+    Offerings offerings, {
+    required String preferOfferingId,
+    required String fallbackOfferingId,
+    required String packageId,
+  }) {
+    for (final offeringId in [preferOfferingId, fallbackOfferingId]) {
+      final offering = offerings.all[offeringId];
+      if (offering == null) continue;
+      final found = _findPackageByProductId(offering, packageId);
+      if (found != null) return found;
+    }
+    return null;
+  }
+
+  Package? _findPackageByProductId(
+    Offering offering,
+    String productId,
+  ) =>
+      offering.availablePackages.cast<Package?>().firstWhere(
+            (p) =>
+                p?.identifier == productId ||
+                p?.storeProduct.identifier == productId,
+            orElse: () => null,
+          );
 
   void _notifyListeners({required bool isPremium}) {
     for (final listener in List.of(_listeners)) {
@@ -218,9 +284,25 @@ class RealPurchaseService implements IPurchaseService {
           '[RevenueCat] offering "${entry.key}" package:'
           ' rcId=${p.identifier}'
           ' storeId=${p.storeProduct.identifier}'
-          ' type=${p.packageType.name}',
+          ' type=${p.packageType.name}'
+          ' price=${p.storeProduct.price}'
+          ' priceString=${p.storeProduct.priceString}',
         );
       }
+    }
+    final saleOffering = offerings.all[_saleOfferingId];
+    debugPrint(
+      '[RevenueCat] premium_sale offering found: ${saleOffering != null}',
+    );
+    if (saleOffering != null) {
+      debugPrint(
+        '[RevenueCat] premium_sale.monthly: ${saleOffering.monthly?.storeProduct.identifier} '
+        'price=${saleOffering.monthly?.storeProduct.price}',
+      );
+      debugPrint(
+        '[RevenueCat] premium_sale.lifetime: ${saleOffering.lifetime?.storeProduct.identifier} '
+        'price=${saleOffering.lifetime?.storeProduct.price}',
+      );
     }
   }
 }

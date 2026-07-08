@@ -68,10 +68,10 @@ class _TabPill extends StatelessWidget {
         duration: AppAnimation.fast,
         padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 7),
         decoration: BoxDecoration(
-          color: selected ? ItPassColors.seed : c.surface2,
+          color: selected ? AppPalette.seed : c.surface2,
           borderRadius: AppBorderRadius.full,
           border: Border.all(
-            color: selected ? ItPassColors.seed : c.border1,
+            color: selected ? AppPalette.seed : c.border1,
           ),
         ),
         child: Row(

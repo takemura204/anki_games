@@ -109,7 +109,7 @@ class _Header extends StatelessWidget {
               child: IconButton(
                 icon: Icon(
                   isBookmarked ? AppIcons.bookmarked : AppIcons.bookmark,
-                  color: isBookmarked ? ItPassColors.seed : c.fgShade300,
+                  color: isBookmarked ? AppPalette.seed : c.fgShade300,
                 ),
                 onPressed: onBookmark.withHaptic(),
               ),

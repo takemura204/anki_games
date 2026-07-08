@@ -129,7 +129,7 @@ class _TextLinkButton extends StatelessWidget {
     final enabled = onTap != null;
     final c = context.appColors;
     final color = (active && enabled)
-        ? ItPassColors.seed
+        ? AppPalette.seed
         : enabled
         ? c.fgShade400
         : c.fgShade100;

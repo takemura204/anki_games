@@ -38,11 +38,11 @@ class CategoryExpansionTile extends StatelessWidget {
           duration: AppAnimation.fast,
           decoration: BoxDecoration(
             color: isSelected
-                ? ItPassColors.seed.withValues(alpha: 0.12)
+                ? AppPalette.seed.withValues(alpha: 0.12)
                 : c.surface1,
             borderRadius: AppBorderRadius.md,
             border: Border.all(
-              color: isSelected ? ItPassColors.seed : c.border1,
+              color: isSelected ? AppPalette.seed : c.border1,
             ),
           ),
           child: Material(
@@ -66,7 +66,7 @@ class CategoryExpansionTile extends StatelessWidget {
                                     ? Icons.check_circle_rounded
                                     : Icons.circle_outlined,
                                 color: isSelected
-                                    ? ItPassColors.seed
+                                    ? AppPalette.seed
                                     : c.fgShade200,
                                 size: AppSpacing.md + 4,
                               ),
@@ -151,12 +151,12 @@ class CategoryMajorChip extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
           decoration: BoxDecoration(
             color: isSelected
-                ? ItPassColors.seed.withValues(alpha: 0.25)
+                ? AppPalette.seed.withValues(alpha: 0.25)
                 : c.surface1,
             borderRadius: AppBorderRadius.sm,
             border: Border.all(
               color: isSelected
-                  ? ItPassColors.seed.withValues(alpha: 0.7)
+                  ? AppPalette.seed.withValues(alpha: 0.7)
                   : c.border1,
             ),
           ),
