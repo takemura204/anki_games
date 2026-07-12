@@ -1,0 +1,90 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+
+# Symbolication related
+app.*.symbols
+debug-info/
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# Android signing (機密情報 — リポジトリに含めない)
+android/key.properties
+android/*.jks
+android/*.keystore
+packages/**/android/key.properties
+packages/**/android/*.jks
+packages/**/android/*.keystore
+
+# iOS
+.storekit
+
+# Flutter
+*.freezed.dart
+*.g.dart
+*.gen.dart
+pubspec.lock
+
+# 単語生成ツールの大容量データファイル
+tools/
+.env
+scripts/
+script/
+
+# Firebase / GCP
+*-firebase-adminsdk-*.json
+google-services.json
+GoogleService-Info.plist
+
+# App Store Connect API key（プロジェクト内に置く場合）
+private_keys/
+*.p8
+
+# Google Play サービスアカウント JSON
+play-service-account*.json
+
+# IDE / Editor personal settings
+.cursor/
+.claude/
+
+# 機密ドキュメント（ポートフォリオ公開時は非公開）
+docs/kpi.md
+docs/consulting.md
+docs/specs/

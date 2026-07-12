@@ -1,0 +1,47 @@
+# Cursor インデックス / コンテキスト除外設定
+# 目的: メモリ消費・インデックスノイズ・Agent コンテキスト肥大を抑える
+# .gitignore も尊重されるが、ここで明示して防御を二重化する
+
+# --- ビルド成果物 / 生成物 ---
+build/
+**/build/
+.dart_tool/
+**/.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+**/Pods/
+**/.gradle/
+**/.symbols
+debug-info/
+
+# --- 生成コード ---
+**/*.g.dart
+**/*.freezed.dart
+**/*.gen.dart
+**/*.config.dart
+**/*.mocks.dart
+
+# --- ロックファイル ---
+pubspec.lock
+**/pubspec.lock
+**/Podfile.lock
+
+# --- 大容量データ / ツール（生成・補助） ---
+tools/
+scripts/
+script/
+
+# --- ログ / デバッグ出力 ---
+*.log
+**/*.log
+
+# --- 機密情報 ---
+.env
+*-firebase-adminsdk-*.json
+google-services.json
+GoogleService-Info.plist
+private_keys/
+*.p8
+*.jks
+*.keystore
+*.storekit

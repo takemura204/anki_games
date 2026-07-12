@@ -1,0 +1,4 @@
+#include "../Debug.xcconfig"
+BUNDLE_ID = jp.tkmr.fe
+APP_NAME = 基本情報技術者
+DEVELOPMENT_TEAM = A6MZ7WPLWN

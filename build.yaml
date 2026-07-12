@@ -1,0 +1,5 @@
+# コード生成は各パッケージで実行する（例: packages/core で slang / riverpod）。
+# ルートの lib は空のため、ここでは slang を設定しない。
+targets:
+  $default:
+    builders:

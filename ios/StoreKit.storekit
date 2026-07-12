@@ -1,0 +1,93 @@
+{
+  "appPolicies" : {
+    "eula" : "",
+    "policies" : [
+      {
+        "locale" : "en_US",
+        "policyText" : "",
+        "policyURL" : ""
+      }
+    ]
+  },
+  "identifier" : "DBBED909",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "11.99",
+      "familyShareable" : false,
+      "internalID" : "6761177483",
+      "localizations" : [
+        {
+          "description" : "プレミアム機能を永久に利用できます。",
+          "displayName" : "買い切りプラン",
+          "locale" : "ja"
+        }
+      ],
+      "productID" : "premium_lifetime",
+      "referenceName" : "買い切りプラン",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6759854662",
+    "_askToBuyEnabled" : false,
+    "_billingGracePeriodEnabled" : false,
+    "_billingIssuesEnabled" : false,
+    "_developerTeamID" : "A6MZ7WPLWN",
+    "_disableDialogs" : false,
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 796221016.65307796,
+    "_locale" : "ja",
+    "_renewalBillingIssuesEnabled" : false,
+    "_storefront" : "JPN",
+    "_storeKitErrors" : [
+
+    ],
+    "_timeRate" : 0
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "21998170",
+      "localizations" : [
+
+      ],
+      "name" : "subscription",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "2.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6761177482",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "1ヶ月間プレミアム機能を利用できます。",
+              "displayName" : "1ヶ月プラン",
+              "locale" : "ja"
+            }
+          ],
+          "productID" : "premium_1m",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "1ヶ月プラン",
+          "subscriptionGroupID" : "21998170",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 4,
+    "minor" : 0
+  }
+}

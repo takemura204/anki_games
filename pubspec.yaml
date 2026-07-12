@@ -1,0 +1,41 @@
+name: anki_games
+description: "anki_games - Flutter monorepo"
+
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  app_fe:
+    path: packages/app_fe
+  app_it_pass:
+    path: packages/app_it_pass
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  core:
+    path: packages/core
+  flutter_launcher_icons: ^0.14.4
+  flutter_test:
+    sdk: flutter
+  melos: ^6.3.3
+  pedantic_mono: ^1.32.0
+
+flutter:
+  uses-material-design: true
+
+flutter_launcher_icons:
+  android: true
+  image_path_android: "packages/app_it_pass/assets/logo/logo_it_pass.png"
+  adaptive_icon_foreground: "packages/app_it_pass/assets/logo/logo_it_pass.png"
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_monochrome: "packages/app_it_pass/assets/logo/logo_it_pass.png"
+  ios: true
+  image_path_ios: "packages/app_it_pass/assets/logo/logo_it_pass.png"
+  remove_alpha_ios: true
+  image_path_ios_dark_transparent: "packages/app_it_pass/assets/logo/logo_it_pass.png"
+  image_path_ios_tinted_grayscale: "packages/app_it_pass/assets/logo/logo_it_pass.png"
+  desaturate_tinted_to_grayscale_ios: true

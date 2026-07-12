@@ -1,0 +1,4 @@
+storePassword=<キーストアのパスワード>
+keyPassword=<キーのパスワード>
+keyAlias=<キーのエイリアス（例: upload）>
+storeFile=<キーストアファイルのパス（例: /Users/yourname/upload-keystore.jks）>

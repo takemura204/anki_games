@@ -1,0 +1,4 @@
+#include "../Debug.xcconfig"
+BUNDLE_ID = jp.tkmr.it-pass
+APP_NAME = ITパスポート
+DEVELOPMENT_TEAM = A6MZ7WPLWN

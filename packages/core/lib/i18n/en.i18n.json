@@ -1,0 +1,26 @@
+{
+	"appTitle": "Mono Games",
+	"common": {
+		"loading": "Loading...",
+		"error": "An error occurred",
+		"retry": "Retry",
+		"ok": "OK",
+		"cancel": "Cancel"
+	},
+	"premium": {
+		"restoreButton": "Restore purchases",
+		"terms": "Terms of Service",
+		"privacy": "Privacy Policy",
+		"errorPurchaseFailed": "Purchase failed",
+		"errorRestoreFailed": "Failed to restore purchases",
+		"restoreSuccess": "Purchases restored",
+		"restoreNotFound": "No previous purchase found"
+	},
+	"settings": {
+		"title": "Settings",
+		"vibration": "Vibration",
+		"terms": "Terms of Service",
+		"privacy": "Privacy Policy",
+		"contact": "Contact"
+	}
+}

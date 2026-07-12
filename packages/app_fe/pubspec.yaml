@@ -1,0 +1,25 @@
+name: app_fe
+description: "基本情報技術者試験対策過去問アプリ"
+
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.10.0 <4.0.0"
+
+dependencies:
+  core:
+    path: ../core
+  firebase_core: ^4.7.0
+  flutter:
+    sdk: flutter
+  google_mobile_ads: ^8.0.0
+  hooks_riverpod: ^3.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  pedantic_mono: ^1.32.0
+
+flutter:
+  uses-material-design: true

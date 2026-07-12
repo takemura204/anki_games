@@ -1,0 +1,17 @@
+name: anki_games_workspace
+packages:
+  - .
+  - packages/**
+
+scripts:
+  analyze:
+    run: melos exec --fail-fast -- "flutter analyze --fatal-infos"
+    description: 全パッケージの静的解析（core / app_it_pass / app_fe）
+
+  test:
+    run: melos exec --scope=core -- "flutter test"
+    description: core パッケージのテスト実行
+
+  codegen:core:
+    run: dart run melos exec -c 1 --scope=core --depends-on=build_runner -- "sh -c 'dart run build_runner build --delete-conflicting-outputs && dart run slang'"
+    description: packages/core のコード生成（build_runner + dart run slang）

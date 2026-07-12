@@ -1,0 +1,86 @@
+{
+	// ユーザー keybindings.json: Cmd+S=保存(整形)→HR→前面 / Shift+Cmd+S=全保存→再起動→前面（when 句と連動）
+	"workspaceKeybindings.flutterEmulatorFocus.enabled": true,
+	"dart.flutterSdkPath": "/Users/takemurataiki/.local/share/mise/installs/flutter/3.41.7-stable",
+	"dart.lineLength": 80,
+	"editor.formatOnSave": true,
+	"biome.enabled": true,
+	"[json]": {
+		"editor.defaultFormatter": "biomejs.biome",
+		"editor.formatOnSave": true
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "biomejs.biome",
+		"editor.formatOnSave": true
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "biomejs.biome",
+		"editor.formatOnSave": true
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "biomejs.biome",
+		"editor.formatOnSave": true
+	},
+	"[yaml]": {
+		"editor.defaultFormatter": "biomejs.biome",
+		"editor.formatOnSave": true
+	},
+	"[dart]": {
+		"editor.defaultFormatter": "Dart-Code.dart-code",
+		"editor.formatOnSave": true
+	},
+	"i18n-ally.localesPaths": ["lib/i18n"],
+	"i18n-ally.pathMatcher": "{locale}.i18n.json",
+	"i18n-ally.keystyle": "nested",
+	"i18n-ally.sourceLanguage": "ja",
+	"files.watcherExclude": {
+		"**/.git/objects/**": true,
+		"**/.git/subtree-cache/**": true,
+		"**/build/**": true,
+		"**/.dart_tool/**": true,
+		"**/.gradle/**": true,
+		"**/Pods/**": true,
+		"**/ios/.symlinks/**": true,
+		"**/tools/**": true,
+		"**/scripts/**": true,
+		"**/script/**": true,
+		"**/debug-info/**": true,
+		"**/*.symbols": true,
+		"**/*.log": true
+	},
+	"search.exclude": {
+		"**/build": true,
+		"**/.dart_tool": true,
+		"**/.gradle": true,
+		"**/Pods": true,
+		"**/tools": true,
+		"**/scripts": true,
+		"**/script": true,
+		"**/debug-info": true,
+		"**/*.g.dart": true,
+		"**/*.freezed.dart": true,
+		"**/*.gen.dart": true,
+		"**/*.config.dart": true,
+		"**/pubspec.lock": true,
+		"**/*.log": true
+	},
+	"files.exclude": {
+		"**/.dart_tool": true,
+		"**/build": true,
+		"**/debug-info": true,
+		"**/*.symbols": true
+	},
+	"dart.analysisExcludedFolders": [
+		"build",
+		"tools",
+		"scripts",
+		"script",
+		"debug-info"
+	],
+	"dart.flutterHotReloadOnSave": "never",
+	"dart.hotReloadOnSave": "never",
+	"dart.previewFlutterUiGuides": true,
+	"dart.previewFlutterUiGuidesCustomTracking": true,
+	"dart.showTodos": false,
+	"dart.openDevTools": "never"
+}

@@ -1,0 +1,100 @@
+{
+  "emulators": {
+    "firestore": {
+      "port": 8080
+    },
+    "auth": {
+      "port": 9099
+    },
+    "ui": {
+      "enabled": true,
+      "port": 4000
+    }
+  },
+  "firestore": {
+    "rules": "firestore.rules"
+  },
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "anki-quiz-dev",
+          "appId": "1:951744047426:android:77798e5cd4063982a640db",
+          "fileOutput": "android/app/google-services.json"
+        },
+        "buildConfigurations": {
+          "src/it_pass": {
+            "projectId": "anki-quiz-dev",
+            "appId": "1:951744047426:android:06ae6f560ecfcefba640db",
+            "fileOutput": "android/app/src/it_pass/google-services.json"
+          }
+        }
+      },
+      "ios": {
+        "default": {
+          "projectId": "anki-quiz-dev",
+          "appId": "1:951744047426:ios:e6aae903143375d2a640db",
+          "uploadDebugSymbols": false,
+          "fileOutput": "ios/Runner/GoogleService-Info.plist"
+        },
+        "buildConfigurations": {
+          "Release-it_pass": {
+            "projectId": "anki-quiz-dev",
+            "appId": "1:951744047426:ios:105801277eb464b0a640db",
+            "uploadDebugSymbols": false,
+            "fileOutput": "ios/Runner/GoogleService-Info.plist"
+          }
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "anki-quiz-dev",
+          "configurations": {
+            "android": "1:951744047426:android:77798e5cd4063982a640db",
+            "ios": "1:951744047426:ios:e6aae903143375d2a640db"
+          }
+        },
+        "packages/core/lib/firebase_options.dart": {
+          "projectId": "anki-quiz-dev",
+          "configurations": {
+            "android": "1:951744047426:android:06ae6f560ecfcefba640db",
+            "ios": "1:951744047426:ios:105801277eb464b0a640db"
+          }
+        }
+      }
+    }
+  },
+  "hosting": [
+    {
+      "target": "quiz-data",
+      "public": "packages/quiz_data",
+      "ignore": [
+        "scripts/**",
+        "*.dart",
+        "pubspec.yaml",
+        "pubspec.lock",
+        ".dart_tool/**"
+      ],
+      "headers": [
+        {
+          "source": "/manifest.json",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, must-revalidate"
+            }
+          ]
+        },
+        {
+          "source": "/quiz/**/*.json",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=31536000, immutable"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

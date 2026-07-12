@@ -1,0 +1,6 @@
+# melos_managed_dependency_overrides: app_it_pass,core
+dependency_overrides:
+  app_it_pass:
+    path: packages/app_it_pass
+  core:
+    path: packages/core

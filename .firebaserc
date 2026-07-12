@@ -1,0 +1,13 @@
+{
+  "projects": {},
+  "targets": {
+    "anki-quiz-dev": {
+      "hosting": {
+        "quiz-data": [
+          "quiz-data-anki-quiz-dev"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

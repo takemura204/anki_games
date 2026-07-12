@@ -1,0 +1,17 @@
+languageIds:
+  - dart
+
+# slang: lib/i18n/{locale}.i18n.json のネスト JSON（settings.deleteLearningData 等）
+localesPaths:
+  - packages/core/lib/i18n
+pathMatcher: '{locale}.i18n.json'
+keyStyle: nested
+
+usageMatchRegex:
+  # t.key.path形式（slang）- tが単独の変数名の場合のみマッチ
+  - "(?<![\\w.])t\\.([a-zA-Z][a-zA-Z0-9]*(?:\\.[a-zA-Z][a-zA-Z0-9]*)*)(?![\\w])"
+
+refactorTemplates:
+  - "t.$1"
+
+monopoly: true
