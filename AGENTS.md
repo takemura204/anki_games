@@ -34,3 +34,10 @@ features/xxx/
 - `flutter analyze` — lint (run after every implementation)
 - `flutter test` — tests
 - `dart run build_runner build --delete-conflicting-outputs` — code generation
+
+## GitHub Workflow (Team Development Simulation)
+- Do not commit directly to `main`.
+- Always create a Git branch before making changes: `feature/issue-<number>-<name>`.
+- Use Conventional Commits (`feat:`, `fix:`, `test:`, `refactor:`, `chore:`, `docs:`).
+- Keep commits small and atomic.
+- After implementing, create a commit, and instruct the user to open a PR and self-review.
